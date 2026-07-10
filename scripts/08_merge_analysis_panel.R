@@ -21,9 +21,12 @@ months <- make_month_grid(cfg$study$start_year, 1, cfg$study$end_year, 12)
 clim_cols <- c(
   "month_id", "mean_temp", "mean_tmin", "mean_tmax",
   "hot_nights", "very_hot_days", "extremely_hot_days", "cold_days",
-  "longest_hot_night_run", "longest_very_hot_run",
-  "relative_humidity", "rainfall", "dew_point",
-  "max_hot_night_spell_touching", "max_very_hot_spell_touching"
+  "longest_hot_night_run", "longest_very_hot_run", "longest_cold_run",
+  "relative_humidity", "absolute_humidity", "rainfall", "dew_point",
+  "max_hot_night_spell_touching", "max_very_hot_spell_touching", "max_cold_spell_touching",
+  "days_in_hot_night_spell_ge3", "days_in_hot_night_spell_ge5",
+  "days_in_very_hot_spell_ge2", "days_in_very_hot_spell_ge5",
+  "days_in_2d3n_window", "month_has_2d3n_window"
 )
 clim_cols <- intersect(clim_cols, names(climate))
 
@@ -75,38 +78,11 @@ stop_if_not_synthetic(panel)
 
 write_csv_safe(panel, file.path(root, "data_processed", "synthetic_analysis_panel.csv"))
 
-# Variable dictionary
-dict <- data.frame(
-  variable = c(
-    "month_id", "n_events", "population", "days_in_month", "offset_log",
-    "hot_nights", "very_hot_days", "extremely_hot_days", "cold_days",
-    "mean_temp", "mean_tmin", "mean_tmax", "relative_humidity", "rainfall",
-    "NO2", "O3", "PM25", "PM10", "covid_phase", "data_status"
-  ),
-  description = c(
-    "YYYY-MM month identifier",
-    "Monthly event count (SYNTHETIC in this file)",
-    "Age-sex population denominator",
-    "Number of days in calendar month",
-    "log(population * days_in_month)",
-    "Count of days with Tmin >= 28C",
-    "Count of days with Tmax >= 33C",
-    "Count of days with Tmax >= 35C",
-    "Count of days with Tmin <= 12C",
-    "Monthly mean of daily mean temperature",
-    "Monthly mean of daily minimum temperature",
-    "Monthly mean of daily maximum temperature",
-    "Monthly mean relative humidity (%)",
-    "Monthly total rainfall (mm)",
-    "Nitrogen dioxide (µg/m3 or placeholder)",
-    "Ozone (µg/m3 or placeholder)",
-    "PM2.5 (µg/m3 or placeholder)",
-    "PM10 (µg/m3 or placeholder)",
-    "COVID period phase",
-    "Must equal SYNTHETIC for this development panel"
-  ),
-  stringsAsFactors = FALSE
-)
-write_csv_safe(dict, file.path(root, "data_processed", "variable_dictionary.csv"))
+# Variable dictionary is maintained in data_processed/variable_dictionary.csv
+# (updated by literature-informed weather metrics). Avoid overwriting here with
+# a narrower schema.
+if (!file.exists(file.path(root, "data_processed", "variable_dictionary.csv"))) {
+  warning("variable_dictionary.csv missing; write a minimal stub.")
+}
 
 message("Merged synthetic analysis panel: ", nrow(panel), " rows")

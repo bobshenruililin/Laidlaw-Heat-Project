@@ -69,6 +69,36 @@ longest_true_run <- function(x) {
   as.integer(max(runs$lengths[runs$values]))
 }
 
+# Absolute humidity (g/m^3) via Tetens vapour pressure from air temperature (°C)
+# and relative humidity (%). Preferred over RH alone for cold/infection pathways
+# (see Yang/Chong et al. 2025 weekly stroke analysis).
+absolute_humidity_gm3 <- function(temp_c, rh_pct) {
+  temp_c <- as.numeric(temp_c)
+  rh_pct <- as.numeric(rh_pct)
+  es <- 6.112 * exp((17.67 * temp_c) / (temp_c + 243.5))
+  e <- es * (rh_pct / 100)
+  216.7 * e / (temp_c + 273.15)
+}
+
+# Flag days belonging to a simple 2D3N-type window: within a 5-day window,
+# at least 2 very-hot days and 3 hot nights (Wang et al. 2019-inspired).
+flag_2d3n_window <- function(very_hot_day, hot_night, window = 5L) {
+  vhd <- as.logical(very_hot_day)
+  hn <- as.logical(hot_night)
+  vhd[is.na(vhd)] <- FALSE
+  hn[is.na(hn)] <- FALSE
+  n <- length(vhd)
+  out <- rep(FALSE, n)
+  if (n < window) return(out)
+  for (i in seq_len(n - window + 1L)) {
+    idx <- i:(i + window - 1L)
+    if (sum(vhd[idx]) >= 2L && sum(hn[idx]) >= 3L) {
+      out[idx] <- TRUE
+    }
+  }
+  out
+}
+
 parse_hko_number <- function(x) {
   x <- trimws(as.character(x))
   x[x %in% c("", "***", "----", "--", "NA", "N/A")] <- NA_character_

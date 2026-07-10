@@ -53,9 +53,14 @@ longest_very_hot_run
 
 ### Additional spell / wet-heat metrics (if possible)
 
-- Number of days belonging to hot-night spells of ≥3 consecutive nights
-- Number of days belonging to very-hot-day spells of ≥2 consecutive days
+- Number of days belonging to hot-night spells of ≥3 and ≥5 consecutive nights
+- Number of days belonging to very-hot-day spells of ≥2 and ≥5 consecutive days
 - Maximum **full** spell length touching each month (including spells crossing month boundaries)
+- 2D3N-style combination indicators (Wang et al. 2019-inspired)
+- Monthly mean **absolute humidity** (preferred over RH alone for cold/infection pathways)
+- If hourly temperature is available: **hot-night excess (HNe)** in °C·h above 28°C at night (Guo et al. 2024). Daily Tmin alone cannot reconstruct true HNe.
+
+**Why HNe matters:** Guo et al. (2024) found official binary hot nights (Tmin≥28) were not associated with excess hospitalization risk in daily hot-season models, whereas nighttime heat *intensity* was. We keep official counts as the policy-aligned primary exposure, but need intensity/spell alternatives as scientific checks.
 - Wet-bulb temperature, or components needed to derive it
 - Heat index only if temperature and humidity are temporally aligned
 - Typhoon signal days

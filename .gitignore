@@ -5,24 +5,7 @@
 .Ruserdata
 *.Rproj
 
-# Secrets / secure HA extracts (never commit real HA data)
-data_raw/ha_secure_placeholder/*
-!data_raw/ha_secure_placeholder/README.md
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Python
-__pycache__/
-*.pyc
-.venv/
-
-# Temp
-*.tmp
-*~
-
-# LaTeX build junk
+# LaTeX build artifacts
 *.aux
 *.log
 *.out
@@ -30,4 +13,24 @@ __pycache__/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-communications/latex/*.pdf
+
+# Secrets / secure HA extracts (never commit real HA data)
+data_raw/ha_secure_placeholder/*
+!data_raw/ha_secure_placeholder/README.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*~
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Local correspondence (do not commit)
+communications/
+*_email*.md
+*email_to*
+*email_from*
+*email_reply*

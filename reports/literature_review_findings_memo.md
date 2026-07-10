@@ -1,8 +1,9 @@
 # Literature review findings memo (internal)
 
 **Date:** 10 July 2026  
-**Audience:** Bob / Bishai lab (internal — not for the current Bishai email unless requested)  
+**Audience:** Project team (internal)  
 **Search date:** 2026-07-10  
+
 
 ## Strongest established findings
 

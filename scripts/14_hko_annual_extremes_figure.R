@@ -203,14 +203,6 @@ ggsave(
   bg = "white"
 )
 
-# Also place a copy where the research-note LaTeX expects it
-dir.create("communications/latex/figures", showWarnings = FALSE, recursive = TRUE)
-file.copy(
-  "figures/hko_annual_extremes_2013_2023.pdf",
-  "communications/latex/figures/hko_annual_extremes_2013_2023.pdf",
-  overwrite = TRUE
-)
-
 write_csv(annual_extremes, "outputs/tables/hko_annual_extremes_2013_2023.csv")
 write_csv(validation_long, "outputs/tables/hko_annual_extremes_validation.csv")
 

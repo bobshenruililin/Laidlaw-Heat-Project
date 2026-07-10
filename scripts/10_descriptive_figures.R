@@ -1,5 +1,7 @@
 #!/usr/bin/env Rscript
 # 10_descriptive_figures.R
+# Exploratory pipeline figures (not manuscript-ready).
+# Validated HKO annual extremes figure is produced by scripts/14_*.R → figures/.
 
 source(file.path("scripts", "utils.R"))
 root <- project_root()
@@ -13,30 +15,13 @@ pollution <- utils::read.csv(file.path(root, "data_processed", "pollution_monthl
                              stringsAsFactors = FALSE)
 pop <- utils::read.csv(file.path(root, "data_processed", "population_monthly_age_sex_2013_2023.csv"),
                        stringsAsFactors = FALSE)
-annual <- utils::read.csv(file.path(root, "outputs", "tables", "weather_annual_extremes_2013_2023.csv"),
-                          stringsAsFactors = FALSE)
 
-fig_dir <- file.path(root, "outputs", "figures")
+fig_dir <- file.path(root, "outputs", "figures", "exploratory")
 dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
 
 theme_set(theme_bw(base_size = 12))
 
-# Figure 1: annual extremes
-ann_long <- annual |>
-  tidyr::pivot_longer(cols = c(hot_nights, very_hot_days, extremely_hot_days, cold_days),
-                      names_to = "metric", values_to = "days")
-p1 <- ggplot(ann_long, aes(x = year, y = days, colour = metric)) +
-  geom_line(linewidth = 1) +
-  geom_point(size = 2) +
-  labs(
-    title = "Annual thermal extremes at HKO Headquarters",
-    subtitle = "Official thresholds; derived from dailyExtract",
-    x = NULL, y = "Days per year", colour = NULL
-  ) +
-  scale_x_continuous(breaks = 2013:2023)
-ggsave(file.path(fig_dir, "fig01_annual_thermal_extremes.png"), p1, width = 9, height = 5, dpi = 150)
-
-# Figure 2: monthly temperature and hot nights
+# Monthly temperature and hot nights
 climate$month_date <- as.Date(climate$month_date)
 p2 <- ggplot(climate, aes(x = month_date)) +
   geom_col(aes(y = hot_nights), fill = "#c45c26", alpha = 0.7) +
@@ -48,12 +33,13 @@ p2 <- ggplot(climate, aes(x = month_date)) +
   )
 ggsave(file.path(fig_dir, "fig02_monthly_temp_hot_nights.png"), p2, width = 10, height = 5, dpi = 150)
 
-# Figure 3: pollution trends
+# Pollution trends (placeholder until real EPIC series)
 if (all(c("NO2", "O3", "PM25", "PM10") %in% names(pollution))) {
   pollution$month_date <- as.Date(paste0(pollution$month_id, "-01"))
   pol_long <- pollution |>
     tidyr::pivot_longer(cols = c(NO2, O3, PM25, PM10), names_to = "pollutant", values_to = "value")
-  subtitle_pol <- if (any(grepl("PLACEHOLDER", pollution$data_status %||% ""))) {
+  is_placeholder <- any(grepl("PLACEHOLDER", pollution$data_status %||% ""))
+  subtitle_pol <- if (is_placeholder) {
     "PLACEHOLDER series for pipeline testing — replace with EPIC data"
   } else {
     "Imported EPD-based monthly series"
@@ -61,20 +47,22 @@ if (all(c("NO2", "O3", "PM25", "PM10") %in% names(pollution))) {
   p3 <- ggplot(pol_long, aes(x = month_date, y = value, colour = pollutant)) +
     geom_line(alpha = 0.85) +
     labs(title = "Monthly air pollution series", subtitle = subtitle_pol, x = NULL, y = "Concentration", colour = NULL)
-  ggsave(file.path(fig_dir, "fig03_pollution_trends.png"), p3, width = 10, height = 5, dpi = 150)
+  pol_name <- if (is_placeholder) "PLACEHOLDER_pollution_trends.png" else "fig03_pollution_trends.png"
+  ggsave(file.path(fig_dir, pol_name), p3, width = 10, height = 5, dpi = 150)
 }
 
-# Figure 4: population aging
+# Population aging
 pop_mid <- pop |>
   dplyr::filter(month == 6) |>
   dplyr::group_by(year, age_group) |>
   dplyr::summarise(population = sum(population), .groups = "drop")
 pop_mid$age_group <- factor(pop_mid$age_group, levels = cfg$population$preferred_age_groups)
-subtitle_pop <- if (any(grepl("SYNTHETIC", pop$data_status %||% ""))) {
-    "SYNTHETIC denominators for pipeline testing — replace with C&SD"
-  } else {
-    "C&SD-based mid-year denominators"
-  }
+is_synthetic_pop <- any(grepl("SYNTHETIC", pop$data_status %||% ""))
+subtitle_pop <- if (is_synthetic_pop) {
+  "SYNTHETIC denominators for pipeline testing — replace with C&SD"
+} else {
+  "C&SD-based mid-year denominators"
+}
 p4 <- ggplot(pop_mid, aes(x = year, y = population / 1000, colour = age_group)) +
   geom_line() +
   labs(
@@ -82,17 +70,18 @@ p4 <- ggplot(pop_mid, aes(x = year, y = population / 1000, colour = age_group)) 
     subtitle = subtitle_pop,
     x = NULL, y = "Population (thousands)", colour = "Age group"
   )
-ggsave(file.path(fig_dir, "fig04_population_aging.png"), p4, width = 10, height = 6, dpi = 150)
+pop_name <- if (is_synthetic_pop) "SYNTHETIC_population_aging.png" else "fig04_population_aging.png"
+ggsave(file.path(fig_dir, pop_name), p4, width = 10, height = 6, dpi = 150)
 
-# Copy figure shells / captions
 writeLines(c(
-  "# Figure captions (first-stage)",
+  "# Exploratory figure captions",
   "",
-  "1. Annual hot nights, very hot days, extremely hot days, and cold days at HKO.",
-  "2. Monthly mean temperature and hot-night counts.",
-  "3. Pollution trends (real EPD or PLACEHOLDER).",
-  "4. Population aging by age group (real C&SD or SYNTHETIC).",
-  "5–7. Admission-rate and exposure-response figures deferred until HA data arrive."
-), file.path(root, "outputs", "figure_shells", "figure_captions.md"))
+  "These figures support pipeline checks. They are not manuscript figures.",
+  "",
+  "- `fig02_monthly_temp_hot_nights.png` — monthly mean temperature and hot-night counts (real HKO).",
+  "- Pollution / population panels are labeled PLACEHOLDER or SYNTHETIC until real series replace them.",
+  "- Validated annual extremes figure: `figures/hko_annual_extremes_2013_2023.pdf` (script 14).",
+  "- Admission-rate and exposure–response figures deferred until HA data arrive."
+), file.path(fig_dir, "README.md"))
 
-message("Descriptive figures written to ", fig_dir)
+message("Exploratory figures written to ", fig_dir)

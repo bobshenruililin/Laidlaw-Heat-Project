@@ -77,10 +77,14 @@ for (nm in names(shells)) {
   write_csv_safe(shells[[nm]], file.path(shell_dir, paste0(nm, ".csv")))
 }
 
-# Populate weather trend shell from real climate annual table if present
+# Populate weather trend shell from annual extremes table if present
 ann_path <- file.path(root, "outputs", "tables", "weather_annual_extremes_2013_2023.csv")
+hko_path <- file.path(root, "outputs", "tables", "hko_annual_extremes_2013_2023.csv")
 if (file.exists(ann_path)) {
   ann <- utils::read.csv(ann_path, stringsAsFactors = FALSE)
+  write_csv_safe(ann, file.path(shell_dir, "table03_weather_trends_FILLED.csv"))
+} else if (file.exists(hko_path)) {
+  ann <- utils::read.csv(hko_path, stringsAsFactors = FALSE)
   write_csv_safe(ann, file.path(shell_dir, "table03_weather_trends_FILLED.csv"))
 }
 

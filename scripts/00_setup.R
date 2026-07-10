@@ -14,15 +14,16 @@ dirs <- c(
   "data_raw/chp_flu",
   "data_raw/ha_secure_placeholder",
   "data_processed",
+  "figures",
   "outputs/tables",
+  "outputs/figures/exploratory",
   "outputs/figures/synthetic_diagnostic_plots",
   "outputs/model_objects",
   "outputs/table_shells",
-  "outputs/figure_shells",
+  "literature",
   "memos",
-  "reports",
-  "manuscript",
-  "docs"
+  "reports/latex",
+  "manuscript"
 )
 for (d in dirs) dir.create(file.path(root, d), recursive = TRUE, showWarnings = FALSE)
 

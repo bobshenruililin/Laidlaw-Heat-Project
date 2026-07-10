@@ -1,7 +1,6 @@
 # Literature Review Draft (internal)
 
 **Target use:** refine Introduction and pre-analysis plan before HA results.  
-**Not for automatic attachment to the current Bishai email.**  
 **Word target:** ~1,500–2,200. This draft is intentionally concise and citation-conservative.
 
 ## 1. Temperature and acute myocardial infarction

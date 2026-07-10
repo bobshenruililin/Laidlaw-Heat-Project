@@ -1,24 +1,6 @@
 #!/usr/bin/env Rscript
-# run_pipeline.R — execute scripts 00–13 in order
+# run_pipeline.R — execute scripts 00–14 in order
 
-scripts <- sprintf("scripts/%02d_%s.R", 0:13, c(
-  "setup",
-  "download_or_import_weather",
-  "build_weather_monthly",
-  "download_or_import_pollution",
-  "build_pollution_monthly",
-  "build_population_denominators",
-  "build_confounders",
-  "simulate_ha_outcomes",
-  "merge_analysis_panel",
-  "descriptive_tables",
-  "descriptive_figures",
-  "fit_main_models_synthetic",
-  "model_diagnostics",
-  "make_report_outputs"
-))
-
-# Actual filenames differ slightly — use explicit list
 scripts <- c(
   "scripts/00_setup.R",
   "scripts/01_download_or_import_weather.R",
@@ -33,7 +15,8 @@ scripts <- c(
   "scripts/10_descriptive_figures.R",
   "scripts/11_fit_main_models_synthetic.R",
   "scripts/12_model_diagnostics.R",
-  "scripts/13_make_report_outputs.R"
+  "scripts/13_make_report_outputs.R",
+  "scripts/14_hko_annual_extremes_figure.R"
 )
 
 root <- normalizePath(".", winslash = "/", mustWork = TRUE)

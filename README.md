@@ -88,13 +88,25 @@ Primary heat metric: **monthly number of hot nights**.
 
 ## Important documents
 
+### For Professor Bishai (progress package)
+
+- `communications/email_to_professor_bishai.md` — concise update email
+- `reports/professor_progress_report.md` — readable progress report
+- `reports/decision_and_data_needs_one_page.md` — one-page decisions/data needs
+- `communications/proposed_meeting_agenda.md` — proposed team meeting
+- `reports/technical_code_appendix.md` — technical appendix (optional attachment)
+
+### Project core
+
 - `reports/initial_exploration_note.md` — Phase-1 source exploration
 - `reports/first_stage_exploratory_report.md` — first-stage exploratory report
 - `analysis_plan/assumption_ledger.md` — assumptions and confirmation checklist
 - `memos/data_request_roro.md` — HA data request
 - `memos/environmental_data_request_hogan.md` — climate/pollution request
 - `memos/literature_baseline.md` — literature baseline
-- `manuscript/methods_draft.md` — draft Methods section
+- `manuscript/introduction_draft.md` — draft Introduction
+- `manuscript/literature_review_draft.md` — draft literature review
+- `manuscript/methods_draft_revised.md` — revised Methods with `[TO CONFIRM]` tags
 
 ## Standards
 

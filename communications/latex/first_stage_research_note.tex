@@ -1,0 +1,473 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=0.82in]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!55!black,
+    urlcolor=blue!60!black,
+    citecolor=blue!55!black
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small First-Stage Research Note}
+\rhead{\small Bob Shen}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist[itemize]{leftmargin=1.35em, itemsep=0.25em, topsep=0.25em}
+\setlist[enumerate]{leftmargin=1.5em, itemsep=0.25em, topsep=0.25em}
+
+\newcommand{\realdata}{\textcolor{green!40!black}{\textbf{Real data}}}
+\newcommand{\synthetic}{\textcolor{orange!75!black}{\textbf{Synthetic only}}}
+\newcommand{\pending}{\textcolor{red!65!black}{\textbf{Pending}}}
+
+\title{
+    \textbf{First-Stage Research Note}\\[0.25em]
+    \large Thermal Extremes and Cardiovascular Admissions in Hong Kong,
+    2013--2023
+}
+\author{
+    Bob Shen Ruililin\\
+    Laidlaw Scholars Programme, The University of Hong Kong
+}
+\date{10 July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\small
+\textit{
+This note distinguishes real public-data findings from synthetic workflow
+testing. No real Hospital Authority outcome association has yet been estimated.
+}
+\end{center}
+
+\section*{Executive Summary}
+
+During the first stage of the project, I built and executed a reproducible
+R workflow intended to support the eventual analysis of monthly Hospital
+Authority (HA) cardiovascular admissions. I also processed real Hong Kong
+Observatory (HKO) weather data into monthly averages and officially defined
+thermal-extreme measures.
+
+The principal findings at this stage are methodological and descriptive:
+
+\begin{itemize}
+    \item The HKO exposure-processing pipeline reproduces published annual
+    counts of hot nights, very hot days, and cold days for all 11 years
+    2013--2023 (33/33 annual totals match HKO \textit{Year's Weather} summaries).
+    \item The study period contains substantial variation in thermal extremes.
+    For example, HKO recorded 10 hot nights and 17 very hot days in 2013,
+    compared with 61 hot nights and 54 very hot days in 2021.
+    \item Cold exposure has not disappeared. HKO recorded 14 cold days in
+    2013 and 13 in 2021. The appropriate scientific question is therefore not
+    whether heat has simply replaced cold, but whether an emerging heat burden
+    now coexists with persistent cold-related risk.
+    \item The planned health-outcome workflow has been tested using synthetic
+    counts. This validates the mechanics of data merging, offsets, count
+    models, diagnostics, and output generation, but provides no evidence about
+    actual AMI or stroke admissions.
+    \item The primary remaining dependency is a clearly defined, securely
+    accessible HA outcome extract. Public C\&SD population and EPD pollution
+    data can be completed in parallel.
+\end{itemize}
+
+The next scientific milestone is therefore not a more elaborate model. It is
+agreement on the HA outcome definition, episode structure, age bands, and
+secure data-access process.
+
+\section{Research Question and Current Framing}
+
+Earlier Hong Kong research used daily observations and reported a strong
+association between cooler temperatures and acute myocardial infarction
+(AMI) admissions. Goggins et al.\ found that, below an estimated threshold of
+$24^\circ$C, each $1^\circ$C decrease was associated with a 3.7\% increase in
+Hong Kong AMI admissions using an average temperature lag of 0--13 days.
+No statistically significant heat effect was detected, and same-day
+nitrogen dioxide was the strongest pollutant predictor \cite{goggins2013}.
+
+The present project asks whether the contemporary cardiovascular risk profile
+remains predominantly cold-related or now includes detectable associations
+with increasingly frequent heat extremes. The proposed study population is
+Hong Kong residents aged 35 years and older, and the intended outcomes are
+monthly admissions for AMI, ischemic stroke, and hemorrhagic stroke.
+
+The most defensible current framing is:
+
+\begin{quote}
+\textit{How are officially defined thermal extremes---particularly hot nights
+and cold days---associated with contemporary cardiovascular hospital burden
+in an aging Hong Kong, and how do these associations vary by diagnosis and
+age?}
+\end{quote}
+
+This framing does not assume in advance that a ``regime shift'' has occurred.
+A persistent cold-dominant association would remain scientifically and
+operationally important.
+
+\section{Work Completed}
+
+\subsection{Climate-data processing}
+
+I built the weather-processing portion of the R pipeline using HKO daily
+observations at the Observatory Headquarters. It converts daily data into
+monthly variables including mean, minimum, and maximum temperature; relative
+humidity and rainfall; hot nights ($T_{\min}\ge 28^\circ$C); very hot days
+($T_{\max}\ge 33^\circ$C); extremely hot days ($T_{\max}\ge 35^\circ$C); cold
+days ($T_{\min}\le 12^\circ$C); and longest consecutive runs of hot nights and
+very hot days.
+
+The pipeline includes date coverage, missingness, plausible-value, and
+annual-total checks. Annual extreme counts for 2013--2023 agree with the
+corresponding published HKO summaries (see Figure~\ref{fig:hko-extremes} and
+the validation table in the repository).
+
+\subsection{Statistical dry run}
+
+I created an explicitly synthetic HA-like panel with structure
+$\mathrm{month}\times\mathrm{age}\times\mathrm{sex}\times\mathrm{diagnosis}$
+to test merging, population$\times$days offsets, Poisson/Negative Binomial
+specifications, interactions, COVID sensitivities, diagnostics, and automatic
+table/figure generation. This demonstrates that the workflow can accept an HA
+file once its structure is finalized. It does \textbf{not} produce substantive
+cardiovascular findings.
+
+\subsection{Research documents}
+
+The repository also contains draft materials for the analysis plan and
+assumption log; data requests for Roro and Hogan; a preliminary Methods
+section; table and figure shells; and a literature baseline. The purpose of
+the present note is to summarize the scientifically relevant content without
+requiring the reader to inspect the code.
+
+\section{Preliminary Findings from Real HKO Data}
+
+Table~\ref{tab:hko} presents selected benchmark years from official HKO annual
+summaries. It is not intended as a formal trend analysis.
+
+\begin{table}[ht]
+\centering
+\caption{Selected HKO thermal-extreme benchmarks}
+\label{tab:hko}
+\small
+\begin{tabular}{lrrrrl}
+\toprule
+Year & Mean temp. & Hot nights & Very hot days & Cold days & Status\\
+     & ($^\circ$C) & & & &\\
+\midrule
+2013 & 23.3 & 10 & 17 & 14 & Core period\\
+2017 & 23.9 & 41 & 29 & 9  & Core period\\
+2021 & 24.6 & 61 & 54 & 13 & Core period\\
+2024 & 24.8 & 50 & 52 & 11 & Context only\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{1. The study period contains meaningful heat-exposure contrast}
+
+The later study period contains substantially more hot nights and very hot
+days than 2013. This is useful analytically: the 2013--2023 period is not
+uniformly hot and therefore contains exposure variation with which to estimate
+associations. This should not yet be described as a formal trend finding.
+
+\subsection*{2. Hot nights are a defensible primary heat metric}
+
+Monthly average temperature can obscure short episodes of extreme exposure.
+Hot nights measure the absence of overnight thermal relief and are defined
+consistently by HKO. Very hot days, mean minimum temperature, heat-spell
+duration, and wet-bulb temperature should be considered alternative exposure
+specifications rather than entered simultaneously into one highly collinear
+primary model.
+
+\subsection*{3. Cold remains part of the exposure distribution}
+
+Cold days remained present even in warm years. The project should therefore
+retain both heat and cold metrics and avoid framing the analysis as a forced
+competition in which one must replace the other.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.91\textwidth]
+    {figures/hko_annual_extremes_2013_2023.pdf}
+    \caption{
+    Annual counts of hot nights, very hot days, and cold days at the
+    Hong Kong Observatory Headquarters, 2013--2023. Hot nights are defined as days
+    with a minimum temperature of at least $28^\circ$C; very hot days
+    as days with a maximum temperature of at least $33^\circ$C; and
+    cold days as days with a minimum temperature of at most
+    $12^\circ$C. These are environmental exposure descriptors and not
+    health-outcome results. Pipeline annual totals match official HKO
+    \textit{Year's Weather} summaries for all years shown (33/33 checks).
+    }
+    \label{fig:hko-extremes}
+\end{figure}
+
+\section{Lessons from the Coding and Dry Run}
+
+\subsection{Population offsets are essential}
+
+Because the older population changed substantially during the study period,
+raw admission counts cannot be interpreted as changing risk. The proposed
+offset is $\log(P_{ast}\times D_t)$, where $P_{ast}$ is the population for
+age group $a$, sex $s$, and month $t$, and $D_t$ is days in that month.
+
+\subsection{The effective environmental sample is 132 months}
+
+Although stratification may produce several thousand outcome rows, the
+territory-wide environmental exposures vary across only 132 months. Inference
+will need to recognize common monthly exposure and repeated observations
+within outcome strata.
+
+\subsection{Monthly data favor burden estimation over acute-trigger analysis}
+
+Earlier Hong Kong studies used daily data and distributed lag structures.
+Heat effects may occur over short lags, while cold effects may persist over
+longer periods. Monthly aggregation may therefore attenuate heat associations
+more strongly than cold associations. Results should be interpreted as monthly
+hospital-burden associations, not estimates of same-day physiological
+triggering.
+
+\subsection{Outcome definition matters as much as model choice}
+
+Before analysis, it is necessary to determine whether the file counts
+admissions, patients, or completed episodes; whether principal diagnosis is
+available; how transfers and readmissions are handled; whether ED attendance
+followed by admission is counted twice; and whether emergency and elective
+admissions can be distinguished.
+
+\section{Proposed Statistical Framework}
+
+The primary analyses should be diagnosis-specific. A provisional Negative
+Binomial model includes heat exposure $H_t$ (initially monthly hot nights),
+cold exposure $C_t$, age, sex, diagnosis, month effects, a smooth time trend,
+prespecified covariates $\mathbf{Z}_t$, and the population--time offset.
+Poisson regression should be fitted as a baseline and checked for
+overdispersion. Principal effect estimates would be rate ratios per five
+additional hot nights or cold days. Interactions (thermal$\times$age,
+thermal$\times$diagnosis, heat$\times$ozone) should be introduced separately.
+
+\section{Data Status and Transfer}
+
+\begin{table}[ht]
+\centering
+\caption{Current data status}
+\small
+\begin{tabularx}{\textwidth}{
+    >{\raggedright\arraybackslash}p{2.2cm}
+    >{\raggedright\arraybackslash}p{2.0cm}
+    X
+    >{\raggedright\arraybackslash}p{2.6cm}}
+\toprule
+Source & Status & What is needed & Proposed handling\\
+\midrule
+HKO weather &
+\realdata\ processed &
+Complete final quality review; add wet-bulb or multi-station measures only if
+they improve the prespecified analysis. &
+Public data; institutional email, repository, or shared drive.\\
+C\&SD population &
+\pending &
+Download the half-yearly age-sex population table and construct monthly
+denominators, retaining 65--69 and 70--74 where possible. &
+Public CSV/XLSX/JSON; shared drive or repository.\\
+EPD pollution &
+\pending &
+Download NO$_2$, O$_3$, PM$_{2.5}$, and PM$_{10}$ for selected general
+stations (monthly portal limit implies $\ge$2 exports for 132 months). &
+Public CSV; shared drive or institutional email.\\
+HA outcomes &
+\pending &
+Confirm coding, principal diagnosis, episode structure, age bands, suppression,
+and approved analysis environment. &
+Approved HA/HKU secure process only unless Roro confirms otherwise.\\
+Synthetic outcomes &
+\synthetic &
+Retain only for pipeline tests; never merge into substantive output. &
+Repository, clearly labelled synthetic.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Public environmental and population files can ordinarily be exchanged through
+institutional email or a shared drive. No patient-level, restricted,
+small-cell, or unvetted HA output should be sent by ordinary email until Roro
+confirms governance status.
+
+\section{Questions That Require Team Input}
+
+Four issues are immediate blockers:
+
+\begin{enumerate}
+    \item \textbf{Coding and diagnosis position.} ICD-9-CM, ICD-10, or local
+    coding? Can principal diagnoses be identified?
+    \item \textbf{Unit of outcome.} Admissions, unique patients, or completed
+    episodes? How are transfers and readmissions handled?
+    \item \textbf{Granularity and suppression.} Can five-year age bands be
+    supplied, especially 65--69 and 70--74? What small-cell rules apply?
+    \item \textbf{Secure access.} Secure-server analysis versus approved
+    aggregate transfer? Which packages and output-vetting procedures apply?
+\end{enumerate}
+
+Choices that can be deferred without delaying the project include extending
+outcomes through 2024, district analyses, comorbidity extensions, the final
+pollution station set, influenza in primary versus sensitivity models, and the
+exact correlated-count model for final inference. My current default is to
+retain 2013--2023 as the core period and request 2024 only if readily
+available.
+
+\section{Proposed Next Steps}
+
+\begin{enumerate}
+    \item Send Roro focused HA extraction questions and request a mock schema
+    or data dictionary.
+    \item Download and process real C\&SD population data.
+    \item Obtain EPD files for NO$_2$, O$_3$, PM$_{2.5}$, and PM$_{10}$
+    (general stations first).
+    \item Produce a final environmental QC report (missingness, correlations,
+    annual exposure plots).
+    \item Freeze a short pre-analysis plan after the HA schema is confirmed.
+    \item Run descriptive validation of HA counts before regression.
+    \item Fit the prespecified model ladder.
+\end{enumerate}
+
+I have also begun a structured literature update, which I will use to refine
+the Introduction and prespecify historical comparisons before examining HA
+results.
+
+\section{Proposed Meeting}
+
+A 30-minute meeting with Dr.\ Bishai, Hogan, Roro, and Bob would be sufficient
+to unlock the next stage: confirm the primary question and 2013--2023 core
+period; confirm HA outcome, coding, and episode structure; confirm age bands
+and suppression; confirm secure access; allocate C\&SD/EPD responsibility; and
+agree a date for the first validated HA descriptive report.
+
+\section*{Conclusion}
+
+The first-stage work has established that the environmental exposure pipeline
+is feasible, reproducible, and capable of representing both heat and cold
+extremes. It has also produced an analysis framework ready to receive the
+clinical and population files. The project has not yet produced a
+cardiovascular association result. The next step should prioritize outcome
+validity and secure data integration rather than additional model complexity.
+
+\clearpage
+\appendix
+\section{Working Manuscript Introduction}
+
+Temperature-related cardiovascular morbidity is an important concern in
+subtropical cities, where populations may experience both intense humid heat
+and episodic cold despite generally warm climates. Acute myocardial infarction
+and stroke may respond differently to thermal exposure, and the observed
+burden can vary according to age, housing, behavioral adaptation, air
+pollution, and access to temperature-controlled environments. These questions
+are especially relevant in Hong Kong, a densely populated and rapidly aging
+city with substantial seasonal variation and a growing frequency of hot
+nights and very hot days.
+
+Earlier Hong Kong evidence emphasized cold-related cardiovascular risk.
+Using daily data from 2000--2009, Goggins et al.\ reported that decreases in
+temperature below an estimated $24^\circ$C threshold were associated with
+increased AMI admissions, while no statistically significant heat effect was
+observed \cite{goggins2013}. The same study identified nitrogen dioxide as an
+important predictor of AMI admissions.
+
+Hong Kong's thermal environment has changed since these historical study
+periods. At the Hong Kong Observatory, the number of hot nights increased from
+10 in 2013 to 61 in 2021, while very hot days increased from 17 to 54 in the
+same selected-year comparison \cite{hko2013,hko2021}. Cold days nevertheless
+continued to occur, indicating that contemporary preparedness must consider
+potentially overlapping heat and cold hazards.
+
+Demographic change may further alter the distribution of cardiovascular
+burden. Age-sex-specific population denominators and appropriate person-time
+offsets are necessary to distinguish changing population structure from
+changes in admission rates. The environmental context has also evolved:
+temperature and pollutants should not be treated as statistically
+interchangeable covariates, and ozone in particular may act as a confounder,
+effect modifier, or pathway variable.
+
+This study will examine monthly AMI, ischemic stroke, and hemorrhagic stroke
+admissions among Hong Kong residents aged 35 years or older from 2013 to 2023.
+It will assess associations with HKO-defined thermal extremes, emphasizing hot
+nights and cold days, while accounting for population denominators,
+seasonality, long-term trends, and COVID-period disruption. The objective is
+not to assume that heat has replaced cold, but to determine whether the
+historically cold-dominant pattern remains sufficient to describe
+contemporary cardiovascular hospital burden in a warming and aging Hong Kong.
+
+\clearpage
+\section{Use of AI-Assisted Tools}
+
+AI-assisted tools were used for code scaffolding, methodological
+brainstorming, and review of potential data and modeling issues. Synthetic
+data were used to test the workflow before access to HA outcomes. All
+substantive claims about HKO annual extremes were checked against official
+HKO \textit{Year's Weather} pages. Literature citations used in this note
+were restricted to verified primary sources; a fuller evidence matrix is under
+construction as an internal deliverable.
+
+\clearpage
+\begin{thebibliography}{9}
+
+\bibitem{goggins2013}
+Goggins WB, Chan EYY, Yang C-Y.
+Weather, pollution, and acute myocardial infarction in Hong Kong and Taiwan.
+\textit{International Journal of Cardiology}.
+2013;168(1):243--249.
+doi:10.1016/j.ijcard.2012.09.087.
+
+\bibitem{hko2013}
+Hong Kong Observatory.
+\textit{The Year's Weather -- 2013}.
+\url{https://www.hko.gov.hk/en/wxinfo/pastwx/ywx2013.htm}
+
+\bibitem{hko2017}
+Hong Kong Observatory.
+\textit{The Year's Weather -- 2017}.
+\url{https://www.hko.gov.hk/en/wxinfo/pastwx/2017/ywx2017.htm}
+
+\bibitem{hko2021}
+Hong Kong Observatory.
+\textit{The Year's Weather -- 2021}.
+\url{https://www.hko.gov.hk/en/wxinfo/pastwx/2021/ywx2021.htm}
+
+\bibitem{hko2024}
+Hong Kong Observatory.
+\textit{The Year's Weather -- 2024}.
+\url{https://www.hko.gov.hk/en/wxinfo/pastwx/2024/ywx2024.htm}
+
+\bibitem{hkoopendata}
+Hong Kong Observatory.
+\textit{Hong Kong Observatory Open Data}.
+\url{https://www.hko.gov.hk/en/abouthko/opendata_intro.htm}
+
+\bibitem{epd}
+Environmental Protection Department.
+\textit{Environmental Protection Interactive Centre: Air Quality Data}.
+\url{https://cd.epic.epd.gov.hk/EPICDI/air/station/?lang=en}
+
+\bibitem{csd}
+Census and Statistics Department.
+\textit{Hong Kong Population: Population by Sex and Age Group}.
+\url{https://data.gov.hk/en-data/dataset/hk-censtatd-tablechart-110-01001}
+
+\end{thebibliography}
+
+\end{document}

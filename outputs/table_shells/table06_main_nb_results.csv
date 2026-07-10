@@ -1,0 +1,5 @@
+"exposure","rr","rr_low","rr_high","p_value","notes"
+"Hot nights (per 5)",,,,,"Real HA results TBD; synthetic demo in synthetic_model_results.csv"
+"Cold days (per 5)",,,,,"Real HA results TBD; synthetic demo in synthetic_model_results.csv"
+"Very hot days (per 5)",,,,,"Real HA results TBD; synthetic demo in synthetic_model_results.csv"
+"Mean Tmin (per 1C)",,,,,"Real HA results TBD; synthetic demo in synthetic_model_results.csv"

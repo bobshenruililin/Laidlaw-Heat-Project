@@ -1,0 +1,4 @@
+"period","mean_temp","hot_nights","cold_days","NO2","O3","notes"
+"pre_covid",,,,,,"Fill from descriptive_weather_by_period.csv / pollution tables"
+"covid_2020_2022",,,,,,"Fill from descriptive_weather_by_period.csv / pollution tables"
+"post_reopening_2023",,,,,,"Fill from descriptive_weather_by_period.csv / pollution tables"

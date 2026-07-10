@@ -1,0 +1,6 @@
+"domain","source","status","key_variables"
+"Weather","HKO dailyExtract / open data","Built","hot_nights, very_hot_days, cold_days, temps, RH, rainfall"
+"Pollution","EPD EPIC","Manual/placeholder","NO2, O3, PM25, PM10"
+"Population","C&SD 110-01002","Manual/synthetic scaffold","age-sex population"
+"Outcomes","Hospital Authority","Not available — synthetic only","n_events by age/sex/dx"
+"Confounders","CHP/COVID/holidays","Partial","covid_phase, holidays, flu"

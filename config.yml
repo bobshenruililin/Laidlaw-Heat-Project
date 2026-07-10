@@ -1,0 +1,85 @@
+project:
+  name: "hk-thermal-cvd-2013-2023"
+  title: "Thermal extremes, aging, pollution, and cardiovascular hospital burden in Hong Kong, 2013–2023"
+  seed: 20250308
+
+study:
+  start_year: 2013
+  start_month: 1
+  end_year: 2023
+  end_month: 12
+  optional_extension_year: 2024
+  min_age: 35
+
+paths:
+  raw: "data_raw"
+  processed: "data_processed"
+  outputs: "outputs"
+  scripts: "scripts"
+
+weather:
+  primary_station: "HKO"
+  station_label: "Hong Kong Observatory Headquarters"
+  completeness_threshold: 0.90
+  thresholds:
+    hot_night_tmin_c: 28
+    very_hot_day_tmax_c: 33
+    extremely_hot_day_tmax_c: 35
+    cold_day_tmin_c: 12
+  sources:
+    daily_extract_dir: "data_raw/hko/daily_extract"
+    open_data_dir: "data_raw/hko"
+
+pollution:
+  completeness_threshold: 0.75
+  primary_station_type: "general"
+  roadside_for_sensitivity_only: true
+  pollutants: ["NO2", "O3", "PM25", "PM10"]
+  raw_dir: "data_raw/epd"
+
+population:
+  source_table: "110-01002"
+  source_label: "C&SD population by sex and age"
+  interpolation: "linear_midyear"
+  raw_dir: "data_raw/csd_population"
+  preferred_age_groups:
+    - "35-39"
+    - "40-44"
+    - "45-49"
+    - "50-54"
+    - "55-59"
+    - "60-64"
+    - "65-69"
+    - "70-74"
+    - "75-79"
+    - "80-84"
+    - "85+"
+
+covid_phases:
+  pre_covid: ["2013-01", "2020-01"]
+  early_covid: ["2020-02", "2021-12"]
+  fifth_wave: ["2022-01", "2022-04"]
+  late_2022: ["2022-05", "2022-12"]
+  post_reopening: ["2023-01", "2023-12"]
+
+modeling:
+  default_family: "negative_binomial"
+  hot_nights_scale: 5
+  very_hot_days_scale: 5
+  cold_days_scale: 5
+  time_trend_df: 4
+  primary_heat_metric: "hot_nights"
+  alternative_heat_metric: "very_hot_days"
+
+diagnosis_groups:
+  - "AMI"
+  - "ischemic_stroke"
+  - "hemorrhagic_stroke"
+
+sexes:
+  - "Female"
+  - "Male"
+
+synthetic:
+  label: "SYNTHETIC"
+  seed: 20250308

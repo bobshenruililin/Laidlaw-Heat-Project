@@ -1,0 +1,4 @@
+status: PLACEHOLDER_ONLY
+warning: No real EPD files found. Pollution values are synthetic placeholders.
+written: /workspace/data_raw/epd/epd_monthly_PLACEHOLDER.csv
+checked_at: 2026-07-10 07:37:13.631987

@@ -1,0 +1,7 @@
+pipeline_completed_at: 2026-07-10 07:37:32.351429
+climate_monthly: TRUE
+pollution_monthly: TRUE
+population_monthly: TRUE
+synthetic_panel: TRUE
+synthetic_model_results: TRUE
+ha_data: NOT_AVAILABLE

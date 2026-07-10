@@ -64,7 +64,9 @@ weather_daily <- dplyr::bind_rows(daily_list) |>
     hot_night = tmin >= cfg$weather$thresholds$hot_night_tmin_c,
     very_hot_day = tmax >= cfg$weather$thresholds$very_hot_day_tmax_c,
     extremely_hot_day = tmax >= cfg$weather$thresholds$extremely_hot_day_tmax_c,
-    cold_day = tmin <= cfg$weather$thresholds$cold_day_tmin_c
+    cold_day = tmin <= cfg$weather$thresholds$cold_day_tmin_c,
+    absolute_humidity = absolute_humidity_gm3(tmean, relative_humidity),
+    in_2d3n_window = flag_2d3n_window(very_hot_day, hot_night, window = 5L)
   )
 
 # Full-series spell IDs for cross-month spell length touching each month
@@ -86,6 +88,7 @@ add_spell_id <- function(flag) {
 
 weather_daily$hot_night_spell_id <- add_spell_id(weather_daily$hot_night)
 weather_daily$very_hot_spell_id <- add_spell_id(weather_daily$very_hot_day)
+weather_daily$cold_spell_id <- add_spell_id(weather_daily$cold_day)
 
 spell_lengths_hot <- weather_daily |>
   dplyr::filter(hot_night_spell_id > 0) |>
@@ -95,13 +98,19 @@ spell_lengths_vhd <- weather_daily |>
   dplyr::filter(very_hot_spell_id > 0) |>
   dplyr::count(very_hot_spell_id, name = "spell_len")
 
+spell_lengths_cold <- weather_daily |>
+  dplyr::filter(cold_spell_id > 0) |>
+  dplyr::count(cold_spell_id, name = "spell_len")
+
 weather_daily <- weather_daily |>
   dplyr::left_join(spell_lengths_hot, by = "hot_night_spell_id") |>
   dplyr::left_join(spell_lengths_vhd, by = "very_hot_spell_id", suffix = c("_hot", "_vhd")) |>
   dplyr::rename(
     hot_night_spell_len = spell_len_hot,
     very_hot_spell_len = spell_len_vhd
-  )
+  ) |>
+  dplyr::left_join(spell_lengths_cold, by = "cold_spell_id") |>
+  dplyr::rename(cold_spell_len = spell_len)
 
 completeness_thr <- cfg$weather$completeness_threshold %||% 0.90
 
@@ -123,6 +132,7 @@ climate_monthly <- weather_daily |>
     mean_tmin = mean(tmin, na.rm = TRUE),
     mean_tmax = mean(tmax, na.rm = TRUE),
     relative_humidity = mean(relative_humidity, na.rm = TRUE),
+    absolute_humidity = mean(absolute_humidity, na.rm = TRUE),
     rainfall = sum(rainfall, na.rm = TRUE),
     dew_point = mean(dew_point, na.rm = TRUE),
     hot_nights = ifelse(tmin_completeness >= completeness_thr, sum(hot_night, na.rm = TRUE), NA_integer_),
@@ -131,19 +141,27 @@ climate_monthly <- weather_daily |>
     extremely_hot_days = ifelse(tmax_completeness >= completeness_thr, sum(extremely_hot_day, na.rm = TRUE), NA_integer_),
     longest_hot_night_run = longest_true_run(hot_night),
     longest_very_hot_run = longest_true_run(very_hot_day),
+    longest_cold_run = longest_true_run(cold_day),
     max_hot_night_spell_touching = ifelse(any(!is.na(hot_night_spell_len)), max(hot_night_spell_len, na.rm = TRUE), 0L),
     max_very_hot_spell_touching = ifelse(any(!is.na(very_hot_spell_len)), max(very_hot_spell_len, na.rm = TRUE), 0L),
+    max_cold_spell_touching = ifelse(any(!is.na(cold_spell_len)), max(cold_spell_len, na.rm = TRUE), 0L),
     days_in_hot_night_spell_ge3 = sum(hot_night_spell_len >= 3, na.rm = TRUE),
+    days_in_hot_night_spell_ge5 = sum(hot_night_spell_len >= 5, na.rm = TRUE),
     days_in_very_hot_spell_ge2 = sum(very_hot_spell_len >= 2, na.rm = TRUE),
+    days_in_very_hot_spell_ge5 = sum(very_hot_spell_len >= 5, na.rm = TRUE),
+    days_in_2d3n_window = sum(in_2d3n_window, na.rm = TRUE),
+    month_has_2d3n_window = as.integer(any(in_2d3n_window, na.rm = TRUE)),
     station = cfg$weather$primary_station,
     .groups = "drop"
   ) |>
   dplyr::mutate(
     dplyr::across(
       c(hot_nights, cold_days, very_hot_days, extremely_hot_days,
-        longest_hot_night_run, longest_very_hot_run,
-        max_hot_night_spell_touching, max_very_hot_spell_touching,
-        days_in_hot_night_spell_ge3, days_in_very_hot_spell_ge2),
+        longest_hot_night_run, longest_very_hot_run, longest_cold_run,
+        max_hot_night_spell_touching, max_very_hot_spell_touching, max_cold_spell_touching,
+        days_in_hot_night_spell_ge3, days_in_hot_night_spell_ge5,
+        days_in_very_hot_spell_ge2, days_in_very_hot_spell_ge5,
+        days_in_2d3n_window, month_has_2d3n_window),
       as.integer
     )
   )

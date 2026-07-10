@@ -1,0 +1,514 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=0.85in]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage[authoryear,round]{natbib}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  urlcolor=blue!60!black,
+  citecolor=blue!55!black
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Literature Review --- Thermal Extremes \& CVD Admissions}
+\rhead{\small Bob Shen / Laidlaw}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist[itemize]{leftmargin=1.35em, itemsep=0.2em, topsep=0.2em}
+\setlist[enumerate]{leftmargin=1.5em, itemsep=0.2em, topsep=0.2em}
+
+\newcommand{\adds}{\textcolor{green!40!black}{\textbf{Adds.}}}
+\newcommand{\inspires}{\textcolor{blue!55!black}{\textbf{Inspires.}}}
+\newcommand{\debates}{\textcolor{orange!70!black}{\textbf{Debates.}}}
+\newcommand{\impl}{\textcolor{purple!55!black}{\textbf{Implementation.}}}
+
+\title{
+  \textbf{Critical Literature Review}\\[0.3em]
+  \large What Each Source Adds, Inspires, or Debates for a Monthly Study of\\
+  Thermal Extremes and Cardiovascular Admissions in Hong Kong, 2013--2023
+}
+\author{
+  Bob Shen Ruililin\\
+  Laidlaw Scholars Programme, The University of Hong Kong\\[0.4em]
+  \small Supervisor: Professor David Bishai
+}
+\date{10 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\small\textit{
+Quality over quantity. This note is not a catalogue of every temperature--health paper.
+It is a working map from a small set of high-leverage sources to concrete choices in
+research design, modelling, and the project's R pipeline.
+}
+\end{center}
+
+\tableofcontents
+\vspace{0.8em}
+
+%----------------------------------------------------------------------
+\section{Purpose and reading guide}
+%----------------------------------------------------------------------
+
+The project asks whether \emph{officially defined} thermal extremes---especially hot
+nights and cold days---are associated with monthly principal-diagnosis inpatient
+admissions for acute myocardial infarction (AMI), ischemic stroke, and hemorrhagic
+stroke among Hong Kong residents aged 35+, during 2013--2023, in an aging city that
+still experiences cold.
+
+That question sits inside a crowded Hong Kong literature. Claiming ``first'' is
+unsafe. Claiming ``nothing is known'' is false. The useful task is sharper:
+identify what prior work already settles, what it leaves open, and what it forces
+us to change in our own design and code.
+
+Each core source below is read through four lenses:
+
+\begin{itemize}
+  \item \adds{} Empirical or conceptual content we should treat as established
+        background.
+  \item \inspires{} A design idea, metric, or modelling habit worth adopting or
+        adapting.
+  \item \debates{} A tension with our current plan, a novelty constraint, or a
+        claim we must weaken.
+  \item \impl{} Concrete implications for \texttt{config.yml}, scripts, data
+        requests, or interpretation rules.
+\end{itemize}
+
+A recurring intellectual distinction runs through the review:
+
+\begin{quote}
+\textbf{Trigger versus burden.} Daily distributed-lag models estimate acute
+\emph{triggering} of events over specific lags. Monthly extreme-count models
+estimate broader hospital-\emph{burden} associations. Both are scientifically
+legitimate; they answer different questions and produce non-comparable
+coefficients \citep{bhaskaran2013,gasparrini2010}.
+\end{quote}
+
+%----------------------------------------------------------------------
+\section{Hong Kong historical baseline: cold-dominant cardiovascular risk}
+%----------------------------------------------------------------------
+
+\subsection{Goggins et al.\ (2013) --- AMI, weather, and pollution}
+
+\adds{} In Hong Kong (2000--2009), daily AMI admissions rose as temperatures cooled
+below an estimated $\sim$24$^\circ$C threshold ($\sim$3.7\% per 1$^\circ$C using
+multi-day lags). A statistically significant heat effect was not the main story in
+that decade. Same-day NO$_2$ was the strongest pollutant predictor among those
+examined \citep{goggins2013}.
+
+\inspires{} Keep cold as a \emph{co-primary} exposure, not a historical footnote.
+Treat heat as an open empirical question rather than a presumed replacement for
+cold. Retain NO$_2$ in staged pollution models for AMI.
+
+\debates{} This paper cannot be used as a numeric benchmark for our monthly rate
+ratios. Different decade, daily mean temperature, and lag structure. A ``regime
+shift from cold to heat'' claim would require methodologically harmonized
+comparisons that we do not currently have.
+
+\impl{} Primary model should include cold days alongside hot nights
+(\texttt{scripts/11\_*.R} already does this). Do not enter highly collinear heat
+metrics together. Avoid direct numeric comparison tables against Goggins
+per-$^\circ$C estimates in manuscripts.
+
+\subsection{Goggins et al.\ (2012) --- stroke subtypes separately}
+
+\adds{} Hemorrhagic stroke (HS) showed a strong, approximately linear inverse
+association with mean temperature across the observed range (lags 0--4;
+$\sim$2.7\% higher admissions per 1$^\circ$C lower). Ischemic stroke (IS) was weaker
+and mainly apparent below $\sim$22$^\circ$C with longer lags (0--13). Pollutants were
+not associated with either subtype. Effects were stronger among older adults and
+women for HS \citep{goggins2012stroke}.
+
+\inspires{} Never pool ``stroke'' as the primary endpoint. Model AMI, IS, and HS
+separately. Expect different lag biology even if our monthly design cannot resolve
+daily lags: HS may be more acute; IS more delayed/cold-threshold.
+
+\debates{} Monthly aggregation may attenuate short-lag HS signals more than
+longer-lag IS/cold signals. A null monthly HS--heat association would not refute
+daily HS--cold biology.
+
+\impl{} Keep diagnosis-stratified models mandatory (already planned). Prefer
+principal diagnosis. Request sex-specific extracts. Age bands should separate
+65--69 and 70--74 rather than collapsing into ``65+''.
+
+\subsection{Lam et al.\ (2018) --- diabetes as effect modifier for AMI}
+
+\adds{} Among public-hospital AMI admissions (2002--2011), patients with diabetes
+showed stronger cold-season temperature associations than patients without
+diabetes, and some hot-season sensitivity that non-DM patients lacked
+\citep{lam2018amiDiabetes}.
+
+\inspires{} Vulnerability is not only chronological age. Comorbidity can reshape
+the temperature--AMI curve.
+
+\debates{} Aggregate monthly extracts may not support diabetes stratification.
+If comorbidity is unavailable, we must not pretend age alone captures the Lam
+finding.
+
+\impl{} Ask Roro whether a diabetes flag (or DM-related secondary diagnosis) is
+feasible as a sensitivity stratum. If not, document this as a known limitation in
+the assumption ledger (A27) rather than inventing proxies.
+
+%----------------------------------------------------------------------
+\section{The decisive recent overlap: hot nights are not a blank slate}
+%----------------------------------------------------------------------
+
+\subsection{Guo et al.\ (2024) --- official hot nights versus nighttime heat intensity}
+
+This is the single most important paper for our novelty and exposure strategy.
+
+\adds{} Using daily Hong Kong hospitalizations in hot seasons (May--October,
+2000--2019), Guo et al.\ compared three nighttime metrics
+\citep{guo2024hotnights}:
+\begin{itemize}
+  \item \textbf{HNday28$^\circ$C}: official hot night (Tmin $\ge$ 28$^\circ$C);
+  \item \textbf{HNe}: hot-night excess (hourly degrees above 28$^\circ$C at night,
+        $^\circ$C$\cdot$h);
+  \item \textbf{HNday90th}: nights above the 90th percentile of HNe.
+\end{itemize}
+Extreme HNe was associated with higher non-cancer non-external hospitalizations
+(about 3.1\% over lags 0--4), with larger effects in older and lower-SES groups and
+for circulatory admissions. Critically, the official binary HNday28$^\circ$C metric
+did \emph{not} show an overall excess-risk association, whereas intensity-based
+metrics did.
+
+\inspires{} Distinguish \emph{policy metrics} from \emph{biological metrics}.
+Official binary hot nights remain policy-aligned and communicable. Intensity and
+spell metrics may be closer to physiological stress. Consecutive intensive hot
+nights mattered; late-season unusual nighttime heat was especially hazardous in
+their interpretation.
+
+\debates{} We cannot claim to be the first Hong Kong hot-night hospitalization
+study. We also cannot treat a null finding for monthly official hot-night counts
+as proof that nighttime heat is harmless. Guo's result predicts that binary counts
+may be weak, while intensity/spell alternatives may be more informative.
+
+\impl{}
+\begin{enumerate}
+  \item Keep official monthly hot-night counts as the \emph{primary policy-aligned}
+        heat exposure.
+  \item Prespecify intensity/spell alternatives as co-equal scientific checks, not
+        post-hoc rescue analyses.
+  \item Request hourly temperature (or precomputed HNe) from Hogan if feasible;
+        daily Tmin alone cannot reconstruct true HNe.
+  \item Until hourly data arrive, implement daily-derived spell summaries already
+        foreshadowed in \texttt{scripts/02\_build\_weather\_monthly.R}
+        (longest run; days in spells $\ge$3 or $\ge$5; 2D3N-style event flags).
+  \item In manuscripts, state explicitly: ``A null official-hot-night association
+        would be compatible with Guo et al.\ (2024) and would not close the
+        nighttime-heat question.''
+\end{enumerate}
+
+\subsection{Wang et al.\ (2019) --- extremely hot weather events as combinations}
+
+\adds{} Using official VHD (Tmax $\ge$ 33$^\circ$C) and HN (Tmin $\ge$ 28$^\circ$C)
+definitions, Wang et al.\ showed that event \emph{structure} matters for mortality:
+single hot nights raised risk; five or more consecutive VHDs/HNs raised it further;
+combined patterns such as 2D3N (two very hot days with three hot nights) were
+especially informative; females and older adults were more vulnerable
+\citep{wang2019ehwe}.
+
+\inspires{} Count-based monthly totals discard sequence. Two months with ten hot
+nights can differ radically if one has scattered nights and the other has a
+five-night siege. Spell and combination metrics recover some of that information
+even after monthly aggregation.
+
+\debates{} Mortality $\neq$ admissions. Warning-system behavioural responses may
+also differ. Still, the exposure engineering lesson transfers cleanly.
+
+\impl{} Extend monthly climate outputs with:
+\begin{itemize}
+  \item \texttt{days\_in\_hot\_night\_spell\_ge5}
+  \item \texttt{days\_in\_very\_hot\_spell\_ge5}
+  \item \texttt{longest\_cold\_run}
+  \item a monthly indicator for whether a 2D3N-type event touches the month
+\end{itemize}
+These are already partially scaffolded; they should be first-class alternative
+exposures in modelling scripts, not orphan columns.
+
+%----------------------------------------------------------------------
+\section{Pollution, influenza, and the cold pathway}
+%----------------------------------------------------------------------
+
+\subsection{Guo et al.\ (2025) --- temperature effects amplified on polluted days}
+
+\adds{} Over 2000--2019, PM$_{2.5}$ amplified temperature--hospitalization
+associations in Hong Kong; NO$_2$ intensified circulatory risks; risks were higher
+on days with one or more elevated pollutants than on unpolluted days
+\citep{guo2025temppollution}.
+
+\inspires{} Pollution is not only a confounder checklist item. It can modify
+temperature effects. Staged models should include interaction or stratified
+``polluted month'' specifications once real EPIC series exist.
+
+\debates{} Ozone remains ambiguous: correlated with hot sunny weather, possibly
+pathway rather than pure confounder. Adjusting for O$_3$ in the primary heat model
+may attenuate the very association of interest.
+
+\impl{} Preserve staged pollution modelling:
+(1) no pollutant;
+(2) single-pollutant (NO$_2$, PM$_{2.5}$, O$_3$ separately);
+(3) multi-pollutant sensitivity;
+(4) optional temperature $\times$ pollution product terms.
+Do not put O$_3$ into the default primary heat model without reporting the
+unadjusted heat estimate beside it. Consider an Ox-style redox summary
+($\frac{1}{3}$NO$_2 + \frac{2}{3}$O$_3$) as an exploratory combined oxidant metric
+once real pollution data arrive \citep{wang2025coldflu}.
+
+\subsection{Yang/Wei/Chong et al.\ (2025) --- cold, influenza, and stroke}
+
+\adds{} In a 22-year weekly Hong Kong analysis ($\sim$1.17 million stroke-related
+admissions), cold temperature and influenza activity (ILI+ rates) were both
+associated with higher stroke admissions \citep{wang2025coldflu}. Absolute humidity
+was preferred over relative humidity as a humidity metric less entangled with
+temperature.
+
+\inspires{} Influenza is a scientifically serious co-exposure for cold-season
+stroke, not a decorative covariate. Absolute humidity is a better humidity
+construct than RH for some infection/cold pathways.
+
+\debates{} Weekly pooled stroke (ICD-9 430--434, primary and secondary diagnoses)
+is not our monthly principal-diagnosis AMI/IS/HS design. Their finding strengthens
+cold + flu hypotheses but does not license pooled-stroke primary analysis.
+
+\impl{}
+\begin{itemize}
+  \item Keep influenza in sensitivity models initially (assumption A23), with a
+        clear path to promote it if CHP series are strong.
+  \item Build absolute humidity from temperature and RH (Tetens vapour pressure)
+        in the weather pipeline; do not rely on RH alone.
+  \item Request strain-aware ILI+ if available; otherwise a total ILI+ or
+        consultation proxy is still better than nothing.
+\end{itemize}
+
+%----------------------------------------------------------------------
+\section{Warm-climate winter excess and the ``heat replaced cold'' myth}
+%----------------------------------------------------------------------
+
+\subsection{Sipil{\"a} et al.\ (2017) and Lorking et al.\ (2020)}
+
+\adds{} Stroke seasonality shows autumn/winter excess even in temperate Finland
+\citep{sipila2017} and winter excess in tropical Thailand \citep{lorking2020}.
+Warm climates are not heat-only climates for cerebrovascular burden.
+
+\inspires{} Our framing should be coexistence, not succession: emerging heat
+burden \emph{and} persistent cold risk in an aging subtropical city.
+
+\debates{} Seasonality studies are not temperature-extreme studies. They support
+motivation, not exposure definitions.
+
+\impl{} Retain cold days as co-primary. In the research note and Introduction,
+replace any ``heat replacing cold'' language with coexistence language. The
+validated HKO figure already shows cold days persisting through high-heat years
+(e.g., 13 cold days in 2021 alongside 61 hot nights).
+
+%----------------------------------------------------------------------
+\section{Outcome validity: why principal diagnosis is non-negotiable}
+%----------------------------------------------------------------------
+
+\subsection{Cho et al.\ (2024) and Liu et al.\ (2025)}
+
+\adds{} East Asian administrative-data validation work shows that carefully defined
+AMI and stroke algorithms can achieve high positive predictive values for first
+events (around 90\% in the Korean NHIS validation), with lower but still useful
+PPVs for recurrent events \citep{cho2024korea,liu2025tianjin}. Episode construction
+matters.
+
+\inspires{} Insist on principal diagnosis, episode/transfer rules, and first versus
+recurrent distinctions where feasible.
+
+\debates{} Hong Kong HA coding may be ICD-9-CM, ICD-10, or mixed across 2013--2023.
+External PPVs do not automatically transfer.
+
+\impl{} Data request to Roro should treat principal diagnosis, admission type,
+transfer linkage, and coding system-by-year as hard requirements. Small-cell
+suppression must never be coded as zero. If only secondary-diagnosis-inclusive
+extracts are available, demote claims accordingly.
+
+%----------------------------------------------------------------------
+\section{Methodological scaffolding: what good time-series practice demands}
+%----------------------------------------------------------------------
+
+\subsection{Bhaskaran et al.\ (2013) and Gasparrini DLNMs}
+
+\adds{} Time-series environmental epidemiology requires explicit handling of
+seasonality, long-term trend, time-varying confounders, lagged associations, and
+diagnostics \citep{bhaskaran2013}. DLNMs flexibly capture nonlinear
+exposure--lag--response surfaces when daily data exist \citep{gasparrini2010}.
+Globally, cold still accounts for a large share of temperature-attributable
+mortality even as heat receives more public attention \citep{gasparrini2015}.
+Morbidity associations are often weaker and more heterogeneous than mortality
+associations \citep{ye2012}.
+
+\inspires{} Our monthly design is a deliberate trade-off: we gain alignment with
+official monthly extreme counts, demographic offsets, and hospital-burden
+interpretation; we lose daily lag resolution. That trade-off should be stated as a
+feature of the question, not apologized for as a defect.
+
+\debates{} If HA ever releases daily aggregates, a companion daily DLNM would be
+scientifically powerful---especially for testing whether Guo-style HNe effects
+appear for principal-diagnosis AMI/IS/HS. Until then, do not overclaim lag biology.
+
+\impl{} Current NB models with month fixed effects, smooth time trend, COVID
+phases, and population $\times$ days offsets are consistent with Bhaskaran-style
+discipline at monthly resolution. Diagnostics (residual ACF/PACF, overdispersion
+checks) should remain mandatory before any real-data inference. Consider a future
+optional daily module rather than forcing DLNM syntax onto 132 monthly points.
+
+%----------------------------------------------------------------------
+\section{Synthesis: what remains defensible for this project}
+%----------------------------------------------------------------------
+
+After reading the above as a system rather than a pile of citations, the
+defensible contribution is:
+
+\begin{quote}
+Among Hong Kong residents aged 35+, estimate \textbf{monthly} associations of
+\textbf{officially defined} thermal extremes (especially hot nights and cold days)
+with \textbf{principal-diagnosis inpatient} AMI, ischemic stroke, and hemorrhagic
+stroke during \textbf{2013--2023}, using age--sex population offsets, separate older
+age bands, COVID-period handling, and staged pollution adjustment---without
+assuming that heat has replaced cold, and without claiming primacy over recent
+daily hot-night hospitalization research.
+\end{quote}
+
+\subsection{Prespecified hypotheses (recommended)}
+
+\begin{enumerate}
+  \item Cold days are positively associated with monthly AMI and ischemic-stroke
+        admission rates.
+  \item Official hot-night counts may show weak or null associations (compatible
+        with Guo 2024); spell/intensity alternatives may be more informative,
+        especially in older age groups.
+  \item Associations differ by diagnosis (AMI vs IS vs HS).
+  \item Ozone adjustment may attenuate heat associations if ozone partly lies on
+        the pathway; total and pathway-adjusted estimates should both be reported.
+  \item Influenza adjustment may attenuate cold--stroke associations in
+        sensitivity models.
+\end{enumerate}
+
+\subsection{Claims to avoid}
+
+\begin{itemize}
+  \item ``First Hong Kong temperature--CVD study.''
+  \item ``First Hong Kong hot-night hospitalization study.''
+  \item ``Little is known about hot nights and cardiovascular admissions in Hong Kong.''
+  \item ``We will demonstrate a regime shift from cold to heat.''
+  \item Direct numeric comparison of monthly RRs with Goggins daily per-$^\circ$C
+        estimates.
+\end{itemize}
+
+%----------------------------------------------------------------------
+\section{From literature to pipeline: implementation backlog}
+%----------------------------------------------------------------------
+
+The following items translate the review into repository work. Items marked
+\textbf{[done/partial]} already exist in some form; others are next steps.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.2cm} X >{\raggedright\arraybackslash}p{2.4cm}@{}}
+\toprule
+\textbf{Literature cue} & \textbf{Pipeline / design action} & \textbf{Where} \\
+\midrule
+Guo 2024 intensity vs binary
+  & Keep official hot nights primary; add spell/intensity alternatives; write null-interpretation rule
+  & \texttt{config.yml}; Methods; script 11 \\
+Wang 2019 5HN / 2D3N
+  & Export monthly spell-ge5 and 2D3N-touch indicators as modelling covariates
+  & script 02; variable dictionary \\
+Yang/Chong 2025 absolute humidity
+  & Compute monthly mean absolute humidity from $T$ and RH (Tetens)
+  & \texttt{utils.R}; script 02 \\
+Yang/Chong 2025 influenza
+  & Load CHP ILI series; flu sensitivity model
+  & \texttt{data\_raw/chp\_flu}; scripts 06, 11 \\
+Guo 2025 pollution modification
+  & Staged pollutant models + optional polluted-month interactions; cautious O$_3$
+  & scripts 04, 11; assumption ledger A31 \\
+Goggins 2012 subtypes
+  & Mandatory diagnosis-stratified fits; no pooled stroke primary
+  & script 11 \\
+Lam 2018 diabetes
+  & Request DM flag if feasible; else document limitation
+  & Roro memo; ledger A27 \\
+Cho/Liu coding validity
+  & Principal diagnosis + episode rules as hard extract requirements
+  & Roro memo \\
+Bhaskaran diagnostics
+  & Residual ACF/PACF and dispersion checks before inference
+  & script 12 \\
+Gasparrini daily DLNM
+  & Optional future daily module if HA daily aggregates become available
+  & new script later \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Creative but disciplined extensions}
+
+Three ideas are worth considering without diluting the core paper:
+
+\begin{enumerate}
+  \item \textbf{Burden decomposition.} Even before causal claims, report how much of
+        year-to-year variation in extreme counts is concentrated in multi-day
+        spells. This is descriptive epidemiology that links HKO operations to
+        hospital planning.
+  \item \textbf{Care-seeking versus biology under COVID.} Use all-cause emergency
+        admissions (if obtained) as a utilization tracer. Temperature associations
+        that vanish only in 2020--2022 may reflect access disruption rather than
+        biology.
+  \item \textbf{Policy metric audit.} Treat the project partly as an audit of
+        whether official extreme-day definitions, designed for warnings, also track
+        diagnosis-specific hospital burden at monthly scale. That framing remains
+        novel even after Guo 2024, because Guo's null for HNday28 was daily,
+        hot-season, and not principal-diagnosis AMI/IS/HS with demographic offsets.
+\end{enumerate}
+
+%----------------------------------------------------------------------
+\section{Search documentation and limitations of this review}
+%----------------------------------------------------------------------
+
+\begin{itemize}
+  \item \textbf{Date:} 2026-07-10 (this pass).
+  \item \textbf{Sources:} PubMed, PMC, publisher DOI pages (Lancet RH--WP, ACS ES\&T,
+        Springer, PLOS, STOTEN), Epidemiology and Health, prior project evidence
+        matrix.
+  \item \textbf{Priority:} Hong Kong temperature--CVD; hot nights; stroke
+        seasonality; coding validity; time-series methods.
+  \item \textbf{Not claimed:} Exhaustive systematic review with dual screening and
+        PRISMA flow. Living evidence matrix:
+        \texttt{literature/evidence\_matrix.csv}.
+  \item \textbf{Human follow-up:} complete author list for Liu et al.\ (2025) from
+        PDF; confirm HA coding system before locking ICD algorithms.
+\end{itemize}
+
+\section*{Bottom line}
+
+The literature does not ask us to abandon hot nights. It asks us to stop treating
+the official binary count as self-justifying, to keep cold in the foreground, to
+separate stroke subtypes, to stage pollution carefully, and to interpret monthly
+results as hospital-burden evidence rather than daily-trigger evidence. Those
+constraints make the project more honest---and, if executed well, more useful.
+
+\bibliographystyle{plainnat}
+\bibliography{../../literature/references}
+
+\end{document}

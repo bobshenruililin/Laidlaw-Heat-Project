@@ -68,12 +68,16 @@ Rscript scripts/run_pipeline.R
 
 Or run scripts individually in order (`00` through `14`). Script `14` rebuilds the validated annual extremes figure under `figures/`.
 
-To recompile the research note:
+To recompile the research note or literature review:
 
 ```bash
 cd reports/latex
 pdflatex -interaction=nonstopmode first_stage_research_note.tex
-# copy PDF to reports/First_Stage_Research_Note.pdf if desired
+pdflatex -interaction=nonstopmode literature_review_critical.tex
+bibtex literature_review_critical
+pdflatex -interaction=nonstopmode literature_review_critical.tex
+pdflatex -interaction=nonstopmode literature_review_critical.tex
+# copy PDFs to reports/ if desired
 ```
 
 ## Principal outputs
@@ -81,6 +85,7 @@ pdflatex -interaction=nonstopmode first_stage_research_note.tex
 | Output | Path |
 |---|---|
 | First-stage research note | `reports/First_Stage_Research_Note.pdf` |
+| Critical literature review | `reports/Literature_Review_Critical.pdf` |
 | Validated annual extremes figure | `figures/hko_annual_extremes_2013_2023.pdf` |
 | Figure validation note | `reports/hko_figure_validation_note.md` |
 | Monthly climate panel | `data_processed/climate_monthly_2013_2023.csv` |
@@ -103,3 +108,4 @@ pdflatex -interaction=nonstopmode first_stage_research_note.tex
 - Earlier Hong Kong daily studies (e.g. Goggins et al.) found cold-dominant cardiovascular associations; heat remains an open empirical question for this monthly design.
 - Guo et al. (2024) examined hot nights and hospitalization in Hong Kong: official binary hot nights were not associated with excess risk, whereas hot-night *intensity* was. Novelty claims must respect that overlap.
 - The scientific question is whether an emerging heat burden coexists with persistent cold risk in an aging city—not whether heat has simply replaced cold.
+- See `reports/Literature_Review_Critical.pdf` for the Adds / Inspires / Debates / Implementation map.

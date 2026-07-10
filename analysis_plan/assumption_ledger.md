@@ -36,6 +36,10 @@ Audit-friendly record of working assumptions for the Hong Kong thermal extremes 
 | A30 | Primary heat model | Hot nights + cold days (not all heat metrics together) | Medium | Collinearity among heat metrics | Follow modeling plan | Bob |
 | A31 | Ozone role | Staged; may confound, modify, or partly mediate heat | High | Mis-adjustment can attenuate heat associations | Report total vs pathway-adjusted effects | Team |
 | A32 | Historical comparison | Qualitative unless methods harmonized with older daily studies | High | Monthly vs daily DLNM coefficients not directly comparable | Avoid “regime shift” claims | Team |
+| A33 | Official hot-night null | Compatible with Guo 2024; does not close nighttime-heat question | Medium | Binary policy metric ≠ intensity biology | Prespecify spell/intensity alternatives | Team |
+| A34 | Absolute humidity | Prefer AH (Tetens) over RH alone for humidity pathways | Medium | RH entangled with temperature | Built in weather script; use in flu/cold sensitivities | Bob |
+| A35 | Spell / 2D3N metrics | Alternative heat exposures alongside official counts | Medium | Sequence discarded by monthly totals | Model as alternatives, not post-hoc rescue | Bob |
+| A36 | Pooled stroke endpoint | Not primary; analyze IS and HS separately | Low | Subtypes differ biologically and historically | Enforce in modelling scripts | Bob |
 
 ## Human confirmation checklist
 

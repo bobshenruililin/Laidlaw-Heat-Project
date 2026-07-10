@@ -130,6 +130,31 @@ model_dx <- MASS::glm.nb(
   data = panel
 )
 
+# Literature-inspired alternative: spell intensity proxy (Wang 2019 / Guo 2024)
+# Official binary hot-night counts may be weak; days in long spells are a
+# monthly-feasible intensity surrogate until hourly HNe is available.
+res_spell <- NULL
+model_spell <- NULL
+if ("days_in_hot_night_spell_ge5" %in% names(panel)) {
+  message("Fitting spell-ge5 alternative heat model (literature-inspired)...")
+  model_spell <- MASS::glm.nb(
+    n_events ~
+      I(days_in_hot_night_spell_ge5 / 5) +
+      I(cold_days / 5) +
+      age_group + sex + diagnosis_group + month_f +
+      splines::ns(time_index, df = cfg$modeling$time_trend_df) +
+      covid_phase + offset(offset_log),
+    data = panel
+  )
+  rn_spell <- names(coef(model_spell))
+  res_spell <- extract_rr(
+    model_spell,
+    terms = rn_spell[grepl("days_in_hot_night_spell_ge5|cold_days", rn_spell)]
+  )
+  res_spell$model <- "alt_nb_hn_spell_ge5_cold_days"
+  res_spell$data_status <- "SYNTHETIC"
+}
+
 # Staged pollution models (even if pollution is placeholder — workflow only)
 message("Fitting staged pollution models...")
 model_no_pol <- model_main
@@ -155,7 +180,7 @@ model_pois <- glm(
 )
 disp <- sum(residuals(model_pois, type = "pearson")^2) / model_pois$df.residual
 
-results <- dplyr::bind_rows(res_main, res_vhd, res_temp)
+results <- dplyr::bind_rows(res_main, res_vhd, res_temp, res_spell)
 results$note <- "SYNTHETIC workflow demonstration only; not substantive epidemiologic findings"
 write_csv_safe(results, file.path(root, "outputs", "tables", "synthetic_model_results.csv"))
 
@@ -166,6 +191,7 @@ saveRDS(list(
   model_temp = model_temp,
   model_age = model_age,
   model_dx = model_dx,
+  model_spell = model_spell,
   model_o3 = model_o3,
   model_pois = model_pois,
   vcov_main = vcov_tw,

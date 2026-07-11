@@ -1,0 +1,16 @@
+hko_validation: 33/33 MATCH
+hot_nights_2013: 10
+hot_nights_2021: 61
+cold_days_2013: 14
+cold_days_2021: 13
+mean_hn_2013_2018: 30.7
+mean_hn_2019_2023: 53.0
+mean_cold_2013_2018: 15.5
+mean_cold_2019_2023: 10.4
+pop_65_69_2013: 295100
+pop_65_69_2023: 568500
+pct_65_69: 92.6
+pop_70_74_2013: 213100
+pop_70_74_2023: 424800
+pct_70_74: 99.3
+mean_spell_share: 0.415

@@ -18,6 +18,13 @@
 data_raw/ha_secure_placeholder/*
 !data_raw/ha_secure_placeholder/README.md
 
+# Large rebuildable processed artifacts (regenerate via pipeline)
+data_processed/synthetic_analysis_panel.csv
+data_processed/synthetic_ha_outcomes.csv
+data_processed/climate_daily_hko.csv
+data_processed/.cache/
+outputs/model_objects/*.rds
+
 # OS / editor
 .DS_Store
 Thumbs.db

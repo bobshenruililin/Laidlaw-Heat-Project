@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "csd_population_annual.schema.json",
+  "title": "C&SD annual mid-year population by age and sex",
+  "description": "Normalized annual file after MDT import (persons, not thousands).",
+  "type": "object",
+  "required": ["year", "sex", "age_group", "population"],
+  "properties": {
+    "year": { "type": "integer", "minimum": 1961, "maximum": 2035 },
+    "sex": { "type": "string", "enum": ["Female", "Male"] },
+    "age_group": {
+      "type": "string",
+      "enum": [
+        "35-39", "40-44", "45-49", "50-54", "55-59", "60-64",
+        "65-69", "70-74", "75-79", "80-84", "85+"
+      ]
+    },
+    "population": { "type": "number", "exclusiveMinimum": 0 },
+    "source_table": { "type": "string" },
+    "reference_time": { "type": "string", "enum": ["Mid-year", "Year-end"] }
+  },
+  "additionalProperties": true
+}

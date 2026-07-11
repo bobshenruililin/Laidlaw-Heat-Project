@@ -15,8 +15,7 @@ ensure_packages(c("yaml", "dplyr", "readr"))
 epd_dir <- file.path(root, cfg$pollution$raw_dir)
 dir.create(epd_dir, recursive = TRUE, showWarnings = FALSE)
 
-readme <- file.path(epd_dir, "README_manual_download.md")
-writeLines(c(
+write_readme_if_absent(file.path(epd_dir, "README_manual_download.md"), c(
   "# EPD pollution raw data — manual download instructions",
   "",
   "Primary portal: https://cd.epic.epd.gov.hk/EPICDI/air/",
@@ -35,6 +34,8 @@ writeLines(c(
   "   - `epd_roadside_daily_*.csv`",
   "7. Keep a station metadata file if possible (`stations_metadata.csv`).",
   "",
+  "Schema contract: `schemas/epd_monthly.schema.json`",
+  "",
   "## Completeness rule",
   "",
   "Station-month valid if ≥75% of expected observations are present.",
@@ -44,7 +45,7 @@ writeLines(c(
   "Document units as provided by EPD (typically µg/m³ for these pollutants in recent reports).",
   "",
   "Do not overwrite raw files after download; append new versions with dates if revised."
-), readme)
+))
 
 csv_files <- list.files(epd_dir, pattern = "\\.csv$", full.names = TRUE)
 csv_files <- csv_files[!grepl("placeholder|README", basename(csv_files), ignore.case = TRUE)]
@@ -100,4 +101,4 @@ if (length(csv_files)) {
   )
 }
 
-message("Pollution import step complete. See ", readme)
+message("Pollution import step complete. See ", file.path(epd_dir, "README_manual_download.md"))

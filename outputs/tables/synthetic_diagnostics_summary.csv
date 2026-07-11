@@ -1,2 +1,2 @@
 "n_obs","poisson_dispersion","nb_theta","nb_converged","durbin_watson_monthly_resid","recommendation","data_status"
-8712,57.0975067309018,12.225289151623,TRUE,2.35455883322119,"If residual ACF persists on real HA data, use clustered SE / GEE / GLARMA sensitivity","SYNTHETIC"
+8712,63.060203193819,12.1714623848661,TRUE,2.26277148459916,"If residual ACF persists on real HA data, use clustered SE / GEE / GLARMA sensitivity","SYNTHETIC"

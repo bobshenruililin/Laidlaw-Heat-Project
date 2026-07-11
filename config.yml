@@ -3,6 +3,16 @@ project:
   title: "Thermal extremes, aging, pollution, and cardiovascular hospital burden in Hong Kong, 2013–2023"
   seed: 20250308
 
+# Pipeline mode:
+#   dev  — synthetic HA outcomes + model dry-run (default)
+#   real — requires approved HA aggregate; refuses SYNTHETIC outcomes
+pipeline:
+  mode: "dev"
+  run_synthetic_models: true
+  include_2024_extension: true
+  weather_cache: true
+  refresh_csd: false
+
 study:
   start_year: 2013
   start_month: 1
@@ -16,6 +26,7 @@ paths:
   processed: "data_processed"
   outputs: "outputs"
   scripts: "scripts"
+  schemas: "schemas"
 
 weather:
   primary_station: "HKO"
@@ -38,10 +49,16 @@ pollution:
   raw_dir: "data_raw/epd"
 
 population:
-  source_table: "110-01002"
-  source_label: "C&SD population by sex and age"
+  # Primary: Table 110-01001 (5-year age groups; includes 65-69 and 70-74).
+  # Archive: Table 110-01002 (single-year age) also downloaded for audit.
+  source_table: "110-01001"
+  source_label: "C&SD population by sex and age group (mid-year)"
   interpolation: "linear_midyear"
   raw_dir: "data_raw/csd_population"
+  mdt_url: "https://www.censtatd.gov.hk/data/MDT_76_110-01001_POP_Raw_K_1dp_per_n.csv"
+  mdt_single_year_url: "https://www.censtatd.gov.hk/data/MDT_76_110-01002_POP_Raw_K_1dp_per_n.csv"
+  reference_time_code: "1"   # H=1 Mid-year; H=2 Year-end
+  values_are_thousands: true
   preferred_age_groups:
     - "35-39"
     - "40-44"

@@ -23,6 +23,7 @@ scripts <- c(
   "scripts/12_model_diagnostics.R",
   "scripts/13_make_report_outputs.R",
   "scripts/14_hko_annual_extremes_figure.R",
+  "scripts/16_exposure_aging_deliverable.R",
   "scripts/15_smoke_checks.R"
 )
 

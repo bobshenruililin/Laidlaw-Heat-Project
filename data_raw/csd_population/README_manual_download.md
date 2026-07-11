@@ -1,19 +1,38 @@
-# C&SD population denominators — import instructions
+# C&SD population denominators
 
-Preferred source: Census and Statistics Department Table 110-01002
-(Population by sex and age), or 110-01001 / single-year age tables that can
-construct 65–69 and 70–74 separately.
+**Automated primary source (used by `scripts/05_build_population_denominators.R`):**
 
-## How to obtain
+C&SD MDT CSV for Table **110-01001** (Population by sex and age group), mid-year (`H=1`).
 
-1. Open https://www.censtatd.gov.hk/en/web_table.html?id=110-01002
-2. Customise to mid-year (or half-yearly) population by sex and age for 2012–2024.
-3. Use the page API button to copy the GET URL (includes encrypted `param`), OR download CSV/XLSX.
-4. Save into this folder as `csd_population_age_sex.csv` with columns such as:
-   year, sex, age, population   OR   year, sex, age_group, population
-5. Re-run this script.
+```text
+https://www.censtatd.gov.hk/data/MDT_76_110-01001_POP_Raw_K_1dp_per_n.csv
+```
 
-Alternative table excluding foreign domestic helpers: 110-01002A — useful as sensitivity
-if HA residency definitions suggest FDH exclusion.
+Values in the MDT are in thousands (`'000`); the build script converts to persons.
+
+Single-year ages (Table **110-01002**) are also downloaded for audit:
+
+```text
+https://www.censtatd.gov.hk/data/MDT_76_110-01002_POP_Raw_K_1dp_per_n.csv
+```
+
+Normalized annual output written by the pipeline:
+
+```text
+csd_population_age_sex_annual_normalized.csv
+```
+
+Schema: `schemas/csd_population_annual.schema.json`
+
+## Manual alternative
+
+1. Open https://www.censtatd.gov.hk/en/web_table.html?id=110-01001
+2. Place a normalized file here named `csd_population_age_sex.csv` with columns:
+   `year, sex, age_group, population` (persons, not thousands).
+3. Re-run `scripts/05_build_population_denominators.R`.
+
+Sensitivity (exclude foreign domestic helpers): Table 110-01001A / 110-01002A.
+
+Set `pipeline.refresh_csd: true` in `config.yml` to force re-download of MDT files.
 
 API docs: https://www.censtatd.gov.hk/datagovhk/WT_data_dict_en.pdf

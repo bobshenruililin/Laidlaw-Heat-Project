@@ -14,8 +14,8 @@ dir.create(shell_dir, recursive = TRUE, showWarnings = FALSE)
 shells <- list(
   table01_data_sources = data.frame(
     domain = c("Weather", "Pollution", "Population", "Outcomes", "Confounders"),
-    source = c("HKO dailyExtract / open data", "EPD EPIC", "C&SD 110-01002", "Hospital Authority", "CHP/COVID/holidays"),
-    status = c("Built", "Manual/placeholder", "Manual/synthetic scaffold", "Not available — synthetic only", "Partial"),
+    source = c("HKO dailyExtract / open data", "EPD EPIC", "C&SD 110-01001 MDT", "Hospital Authority", "CHP/COVID/holidays"),
+    status = c("Built (REAL)", "Manual/placeholder", "Built (CSD_IMPORTED when MDT present)", "Not available — synthetic only in dev", "Partial"),
     key_variables = c(
       "hot_nights, very_hot_days, cold_days, temps, RH, rainfall",
       "NO2, O3, PM25, PM10",

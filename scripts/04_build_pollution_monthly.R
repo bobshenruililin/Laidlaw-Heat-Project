@@ -92,6 +92,12 @@ pollution_monthly <- pollution_monthly |>
   )
 
 stopifnot(!any(duplicated(pollution_monthly$month_id)))
+assert_month_id(pollution_monthly$month_id)
+validate_required_columns(
+  pollution_monthly,
+  c("month_id", "NO2", "O3", "PM25", "PM10"),
+  "pollution_monthly"
+)
 write_csv_safe(pollution_monthly, file.path(root, "data_processed", "pollution_monthly_2013_2023.csv"))
 
 message("Pollution monthly build complete. Rows: ", nrow(pollution_monthly))

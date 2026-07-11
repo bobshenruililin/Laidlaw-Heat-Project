@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "epd_monthly.schema.json",
+  "title": "EPD monthly pollution series",
+  "description": "Minimum contract for monthly territory-wide general-station pollution inputs.",
+  "type": "object",
+  "required": ["month_id", "NO2", "O3", "PM25", "PM10"],
+  "properties": {
+    "month_id": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"
+    },
+    "NO2": { "type": ["number", "null"] },
+    "O3": { "type": ["number", "null"] },
+    "PM25": { "type": ["number", "null"] },
+    "PM10": { "type": ["number", "null"] },
+    "SO2": { "type": ["number", "null"] },
+    "O3_mda8": { "type": ["number", "null"] },
+    "station_set": { "type": ["string", "null"] },
+    "unit": { "type": ["string", "null"] },
+    "data_status": {
+      "type": "string",
+      "enum": [
+        "EPD_IMPORTED_REVIEW_STATION_RULES",
+        "EPD_GENERAL_STATIONS",
+        "PLACEHOLDER_NOT_FOR_INFERENCE"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

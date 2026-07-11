@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ha_monthly_aggregate.schema.json",
+  "title": "Hospital Authority monthly CVD aggregate extract",
+  "description": "Contract for approved de-identified monthly HA extracts. Never commit real HA microdata.",
+  "type": "object",
+  "required": [
+    "month_id",
+    "age_group",
+    "sex",
+    "diagnosis_group",
+    "n_events"
+  ],
+  "properties": {
+    "year": { "type": "integer", "minimum": 2013, "maximum": 2030 },
+    "month": { "type": "integer", "minimum": 1, "maximum": 12 },
+    "month_id": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"
+    },
+    "age_group": {
+      "type": "string",
+      "enum": [
+        "35-39", "40-44", "45-49", "50-54", "55-59", "60-64",
+        "65-69", "70-74", "75-79", "80-84", "85+"
+      ]
+    },
+    "sex": { "type": "string", "enum": ["Female", "Male"] },
+    "diagnosis_group": {
+      "type": "string",
+      "enum": ["AMI", "ischemic_stroke", "hemorrhagic_stroke"]
+    },
+    "care_setting": {
+      "type": "string",
+      "enum": ["inpatient", "ed", "ed_only", "unknown"]
+    },
+    "admission_type": {
+      "type": ["string", "null"],
+      "enum": ["emergency", "unplanned", "elective", "unknown", null]
+    },
+    "n_events": { "type": ["integer", "null"], "minimum": 0 },
+    "n_patients": { "type": ["integer", "null"], "minimum": 0 },
+    "n_deaths_in_hospital": { "type": ["integer", "null"], "minimum": 0 },
+    "bed_days": { "type": ["number", "null"], "minimum": 0 },
+    "suppression_flag": { "type": "boolean" },
+    "coding_system": { "type": ["string", "null"] },
+    "coding_version": { "type": ["string", "null"] },
+    "data_revision_date": { "type": ["string", "null"] },
+    "data_status": {
+      "type": "string",
+      "enum": ["HA_APPROVED_AGGREGATE", "HA_MOCK_SCHEMA", "SYNTHETIC"]
+    }
+  },
+  "additionalProperties": true
+}

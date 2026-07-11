@@ -14,7 +14,7 @@ Audit-friendly record of working assumptions for the Hong Kong thermal extremes 
 | A08 | ED/inpatient overlap | Analyze separately; do not pool unless mutually exclusive | High | Avoids double-counting | Confirm ED-only flag | Roro |
 | A09 | Age-group availability | Prefer 5-year bands through 85+ | Medium | Needed for aging hypotheses | Confirm extract strata | Roro |
 | A10 | 65–69 and 70–74 | Must remain separate if feasible | Low | Intervention-relevant cohorts grew substantially | Confirm with Roro | Roro/Hogan note |
-| A11 | Population denominator source | C&SD Table 110-01002 (sex × age) | Low | Supplies age-sex denominators | Bob validates download/API | Bob |
+| A11 | Population denominator source | C&SD Table 110-01001 MDT (mid-year age×sex); 110-01002 archived | Low | Supplies age-sex denominators with 65–69 / 70–74 split | Bob validates MDT import / QC totals | Bob |
 | A12 | Population interpolation | Linear interpolation between mid-year estimates to month midpoints | Medium | Avoids step changes at year boundaries | Team approval; calendar-year assignment as sensitivity | Team |
 | A13 | Population universe | Match HA resident/eligibility definition | High | Prevents denominator mismatch | Align with Roro/C&SD notes; FDH exclusion sensitivity | Roro/Bob |
 | A14 | Weather station choice | HKO Headquarters primary | Medium | Matches official extreme-day definitions | Confirm with Hogan; multi-station sensitivity | Hogan |

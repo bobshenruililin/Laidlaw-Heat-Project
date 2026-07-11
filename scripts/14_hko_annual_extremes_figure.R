@@ -3,21 +3,13 @@
 # Publication-quality three-panel annual thermal-extreme figure (2013–2023).
 # Environmental exposure descriptors only — not health-outcome results.
 
-user_lib <- Sys.getenv("R_LIBS_USER", unset = file.path(Sys.getenv("HOME"), "R", "library"))
-dir.create(user_lib, recursive = TRUE, showWarnings = FALSE)
-.libPaths(c(user_lib, .libPaths()))
-
-suppressPackageStartupMessages({
-  library(ggplot2)
-  library(dplyr)
-  library(tidyr)
-  library(readr)
-  library(lubridate)
-  library(scales)
-})
+source(file.path("scripts", "utils.R"))
+root <- project_root()
+setwd(root)
+ensure_packages(c("ggplot2", "dplyr", "tidyr", "readr", "lubridate", "scales"))
 
 climate <- readr::read_csv(
-  "data_processed/climate_monthly_2013_2023.csv",
+  file.path(root, "data_processed", "climate_monthly_2013_2023.csv"),
   show_col_types = FALSE
 )
 
@@ -26,6 +18,7 @@ stopifnot(all(c("hot_nights", "very_hot_days", "cold_days") %in% names(climate))
 stopifnot(nrow(climate) == 132L)
 stopifnot(!any(duplicated(climate$month_id)))
 stopifnot(all(climate$station == "HKO"))
+assert_month_id(climate$month_id)
 
 climate <- climate |>
   mutate(
@@ -56,18 +49,19 @@ annual_extremes <- climate |>
 stopifnot(all(annual_extremes$n_months == 12))
 stopifnot(nrow(annual_extremes) == 11L)
 
-# Official HKO Year's Weather totals (Headquarters), transcribed from
-# https://www.hko.gov.hk/en/wxinfo/pastwx/ ... ywxYYYY.htm
-official <- tibble::tibble(
-  year = 2013:2023,
-  hot_nights_official = c(10L, 34L, 37L, 36L, 41L, 26L, 46L, 50L, 61L, 52L, 56L),
-  very_hot_days_official = c(17L, 33L, 28L, 38L, 29L, 36L, 33L, 47L, 54L, 52L, 54L),
-  cold_days_official = c(14L, 21L, 7L, 21L, 9L, 21L, 1L, 11L, 13L, 13L, 14L),
-  official_source = sprintf(
-    "HKO The Year's Weather – %d",
-    2013:2023
-  )
-)
+# Shared official totals live in utils::hko_official_annual_extremes()
+official <- hko_official_annual_extremes() |>
+  mutate(official_source = sprintf("HKO The Year's Weather – %d", year))
+
+v <- validate_hko_annual_extremes(annual_extremes)
+if (!v$all_ok) {
+  warning("HKO validation mismatches detected — see validation table.")
+} else {
+  message(sprintf(
+    "All validated annual totals MATCH official HKO Year's Weather summaries (%d/%d).",
+    v$n_metric_checks_ok, v$n_metric_checks
+  ))
+}
 
 validation_long <- annual_extremes |>
   select(year, hot_nights, very_hot_days, cold_days) |>
@@ -103,12 +97,6 @@ validation_long <- annual_extremes |>
     ),
     notes = "Station = HKO Headquarters; thresholds Tmin>=28, Tmax>=33, Tmin<=12"
   )
-
-if (any(validation_long$validation_status == "MISMATCH")) {
-  warning("HKO validation mismatches detected — see validation table.")
-} else {
-  message("All validated annual totals MATCH official HKO Year's Weather summaries.")
-}
 
 annual_long <- annual_extremes |>
   select(year, hot_nights, very_hot_days, cold_days) |>

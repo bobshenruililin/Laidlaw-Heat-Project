@@ -6,7 +6,7 @@ source(file.path("scripts", "utils.R"))
 root <- project_root()
 setwd(root)
 cfg <- load_config(root)
-ensure_packages(c("yaml", "jsonlite", "dplyr", "tidyr", "lubridate"))
+ensure_packages(c("yaml", "jsonlite", "dplyr", "tidyr", "lubridate", "digest"))
 
 extract_dir <- file.path(root, cfg$weather$sources$daily_extract_dir)
 years <- seq(cfg$study$start_year, cfg$study$optional_extension_year %||% cfg$study$end_year)
@@ -22,7 +22,6 @@ parse_year_extract <- function(path, year) {
     mo <- as.integer(mobj$month)
     for (day_vec in mobj$dayData) {
       day_label <- trimws(as.character(day_vec[[1]]))
-      # Skip Mean / Normal summary rows
       if (!grepl("^[0-9]{1,2}$", day_label)) next
       day <- as.integer(day_label)
       rows[[length(rows) + 1]] <- data.frame(
@@ -46,71 +45,79 @@ parse_year_extract <- function(path, year) {
   dplyr::bind_rows(rows)
 }
 
-daily_list <- list()
-for (y in years) {
-  path <- file.path(extract_dir, sprintf("dailyExtract_%d.xml", y))
-  if (!file.exists(path)) {
-    warning("Missing daily extract: ", path)
-    next
-  }
-  daily_list[[as.character(y)]] <- parse_year_extract(path, y)
-}
-if (!length(daily_list)) stop("No dailyExtract files found in ", extract_dir)
-
-weather_daily <- dplyr::bind_rows(daily_list) |>
-  dplyr::arrange(date) |>
-  dplyr::mutate(
-    station = cfg$weather$primary_station,
-    hot_night = tmin >= cfg$weather$thresholds$hot_night_tmin_c,
-    very_hot_day = tmax >= cfg$weather$thresholds$very_hot_day_tmax_c,
-    extremely_hot_day = tmax >= cfg$weather$thresholds$extremely_hot_day_tmax_c,
-    cold_day = tmin <= cfg$weather$thresholds$cold_day_tmin_c,
-    absolute_humidity = absolute_humidity_gm3(tmean, relative_humidity),
-    in_2d3n_window = flag_2d3n_window(very_hot_day, hot_night, window = 5L)
-  )
-
-# Full-series spell IDs for cross-month spell length touching each month
-add_spell_id <- function(flag) {
-  flag <- as.logical(flag)
-  flag[is.na(flag)] <- FALSE
-  ids <- integer(length(flag))
-  cur <- 0L
-  for (i in seq_along(flag)) {
-    if (flag[i]) {
-      if (i == 1L || !flag[i - 1L]) cur <- cur + 1L
-      ids[i] <- cur
-    } else {
-      ids[i] <- 0L
+use_cache <- isTRUE(cfg$pipeline$weather_cache %||% TRUE)
+if (use_cache && weather_cache_is_valid(root, extract_dir, years)) {
+  message("Using cached daily weather parse (SHA match).")
+  weather_daily <- load_weather_daily_cache(root)
+} else {
+  daily_list <- list()
+  for (y in years) {
+    path <- file.path(extract_dir, sprintf("dailyExtract_%d.xml", y))
+    if (!file.exists(path)) {
+      warning("Missing daily extract: ", path)
+      next
     }
+    daily_list[[as.character(y)]] <- parse_year_extract(path, y)
   }
-  ids
+  if (!length(daily_list)) stop("No dailyExtract files found in ", extract_dir)
+
+  weather_daily <- dplyr::bind_rows(daily_list) |>
+    dplyr::arrange(date) |>
+    dplyr::mutate(
+      station = cfg$weather$primary_station,
+      hot_night = tmin >= cfg$weather$thresholds$hot_night_tmin_c,
+      very_hot_day = tmax >= cfg$weather$thresholds$very_hot_day_tmax_c,
+      extremely_hot_day = tmax >= cfg$weather$thresholds$extremely_hot_day_tmax_c,
+      cold_day = tmin <= cfg$weather$thresholds$cold_day_tmin_c,
+      absolute_humidity = absolute_humidity_gm3(tmean, relative_humidity),
+      in_2d3n_window = flag_2d3n_window(very_hot_day, hot_night, window = 5L)
+    )
+
+  # Full-series spell IDs for cross-month spell length touching each month
+  add_spell_id <- function(flag) {
+    flag <- as.logical(flag)
+    flag[is.na(flag)] <- FALSE
+    ids <- integer(length(flag))
+    cur <- 0L
+    for (i in seq_along(flag)) {
+      if (flag[i]) {
+        if (i == 1L || !flag[i - 1L]) cur <- cur + 1L
+        ids[i] <- cur
+      } else {
+        ids[i] <- 0L
+      }
+    }
+    ids
+  }
+
+  weather_daily$hot_night_spell_id <- add_spell_id(weather_daily$hot_night)
+  weather_daily$very_hot_spell_id <- add_spell_id(weather_daily$very_hot_day)
+  weather_daily$cold_spell_id <- add_spell_id(weather_daily$cold_day)
+
+  spell_lengths_hot <- weather_daily |>
+    dplyr::filter(hot_night_spell_id > 0) |>
+    dplyr::count(hot_night_spell_id, name = "spell_len")
+
+  spell_lengths_vhd <- weather_daily |>
+    dplyr::filter(very_hot_spell_id > 0) |>
+    dplyr::count(very_hot_spell_id, name = "spell_len")
+
+  spell_lengths_cold <- weather_daily |>
+    dplyr::filter(cold_spell_id > 0) |>
+    dplyr::count(cold_spell_id, name = "spell_len")
+
+  weather_daily <- weather_daily |>
+    dplyr::left_join(spell_lengths_hot, by = "hot_night_spell_id") |>
+    dplyr::left_join(spell_lengths_vhd, by = "very_hot_spell_id", suffix = c("_hot", "_vhd")) |>
+    dplyr::rename(
+      hot_night_spell_len = spell_len_hot,
+      very_hot_spell_len = spell_len_vhd
+    ) |>
+    dplyr::left_join(spell_lengths_cold, by = "cold_spell_id") |>
+    dplyr::rename(cold_spell_len = spell_len)
+
+  if (use_cache) save_weather_daily_cache(root, weather_daily, extract_dir, years)
 }
-
-weather_daily$hot_night_spell_id <- add_spell_id(weather_daily$hot_night)
-weather_daily$very_hot_spell_id <- add_spell_id(weather_daily$very_hot_day)
-weather_daily$cold_spell_id <- add_spell_id(weather_daily$cold_day)
-
-spell_lengths_hot <- weather_daily |>
-  dplyr::filter(hot_night_spell_id > 0) |>
-  dplyr::count(hot_night_spell_id, name = "spell_len")
-
-spell_lengths_vhd <- weather_daily |>
-  dplyr::filter(very_hot_spell_id > 0) |>
-  dplyr::count(very_hot_spell_id, name = "spell_len")
-
-spell_lengths_cold <- weather_daily |>
-  dplyr::filter(cold_spell_id > 0) |>
-  dplyr::count(cold_spell_id, name = "spell_len")
-
-weather_daily <- weather_daily |>
-  dplyr::left_join(spell_lengths_hot, by = "hot_night_spell_id") |>
-  dplyr::left_join(spell_lengths_vhd, by = "very_hot_spell_id", suffix = c("_hot", "_vhd")) |>
-  dplyr::rename(
-    hot_night_spell_len = spell_len_hot,
-    very_hot_spell_len = spell_len_vhd
-  ) |>
-  dplyr::left_join(spell_lengths_cold, by = "cold_spell_id") |>
-  dplyr::rename(cold_spell_len = spell_len)
 
 completeness_thr <- cfg$weather$completeness_threshold %||% 0.90
 

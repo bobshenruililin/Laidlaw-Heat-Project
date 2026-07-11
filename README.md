@@ -96,8 +96,10 @@ Primary planned heat exposure: monthly count of hot nights. Cold days are retain
 | Output | Path |
 |---|---|
 | First-stage research note | `reports/First_Stage_Research_Note.pdf` |
+| Exposure & aging context note | `reports/Exposure_Aging_Context_Note.pdf` |
 | Critical literature review | `reports/Literature_Review_Critical.pdf` |
 | Validated annual extremes figure | `figures/hko_annual_extremes_2013_2023.pdf` |
+| Exposure–aging figures | `figures/exposure_aging/` |
 | Figure validation note | `reports/hko_figure_validation_note.md` |
 | Monthly climate panel | `data_processed/climate_monthly_2013_2023.csv` |
 | C&SD population monthly | `data_processed/population_monthly_age_sex_2013_2023.csv` |

@@ -7,7 +7,7 @@
 
 ## Status — 12 July 2026
 
-Roro confirmed: **ICD-9** (DAE records included — definition TBD); **patient-level complete admissions**; **no ED-to-inpatient** episodes in this extract; age bands including **65–69 and 70–74** supported; HPC access after **wet-ink signatures from Bob and Hogan**. IRB update raised for PI decision. CI (Bishai) directed next step: merge monthly Tmax/Tmin (+ lag) to AMI/stroke admission risk; covariates include age, sex, diuretics, beta blockers, metformin, SGLT2is, BMI; next write-up needs Table 1. Still open: principal diagnosis, meds/BMI field availability, DAE meaning. Lab meeting 17 July 2026.
+Roro confirmed: **ICD-9** (DAE records included — definition TBD); **patient-level complete admissions**; **no ED-to-inpatient** episodes in this extract; age bands including **65–69 and 70–74** supported; HPC access after **wet-ink signatures from Bob and Hogan**. IRB update raised for discussion. Bishai (12 Jul) directed next step: merge monthly Tmax/Tmin (+ lag) to AMI/stroke admission risk; covariates include age, sex, diuretics, beta blockers, metformin, SGLT2is, BMI; next write-up needs Table 1. Still open: principal diagnosis, meds/BMI field availability, DAE meaning, admission-risk denominator. Lab meeting 17 July 2026.
 
 ---
 

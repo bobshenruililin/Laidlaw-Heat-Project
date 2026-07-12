@@ -12,7 +12,7 @@ Tone: prepared Laidlaw student; collaborative; propose defaults; ask seniors to 
 
 > Following Professor Bishai's email, I completed the part that does not require HA access: the monthly HKO exposure file, its validation, and the environmental portion of Table 1. Roro's reply has also clarified the coding system, age-band availability, and access process. I will briefly show what is ready, one schema question that determines the model, and the first output I can produce once access is active.
 
-Point briefly to the status strip: READY exposure file; PENDING HA/HPC access and schema; TODAY confirm analysis unit, lag plan, and next deliverable.
+Point briefly to the one-line status bar: READY exposure file; PENDING HA/HPC access and schema; TODAY analysis unit, lag plan, next deliverable.
 
 Bridge: “Here is what is ready for the first merge.”
 
@@ -32,16 +32,18 @@ Bridge: “Here is what is ready for the first merge.”
 - ED-to-inpatient episodes are not included in this extract
 - HPC onboarding follows wet-ink authorization
 
-Say the note once: “No real temperature–admission association has been estimated yet. The exact row unit — including the full meaning of DAE — still needs confirmation.”
+Say the boundary once: “Current boundary: exposure file and merge pipeline are ready; real HA associations await HPC access and row-definition confirmation.”
 
-Do **not** say that remaining questions are “not a gap in Roro’s reply.” Keep it factual.
+Do **not** stack separate apology caveats. Keep it as project management.
 
 ---
 
 ## Frame 3 — Monthly temperature (~1 min)
 
 Point to the ribbon: Tmin–Tmax range with monthly mean line.  
-State: HKO Headquarters; °C; N = 132 months; ends December 2023; environmental exposure data only.
+State briefly: HKO Headquarters; °C; N = 132 months; ends December 2023.
+
+Footer already says: environmental exposure data only; no admission outcomes shown.
 
 One sentence: “This is the exposure series we will merge once HA access is live.”
 
@@ -51,9 +53,9 @@ One sentence: “This is the exposure series we will merge once HA access is liv
 
 **Panel A:** walk the means/SDs briefly; verified from `climate_monthly_2013_2023.csv`; unit = month; N = 132.
 
-**Panel B:** list requested fields as pending. Say you will include age, sex, diuretics, beta blockers, metformin, SGLT2 inhibitors, and BMI descriptively as Professor Bishai requested.
+**Panel B:** grouped fields — patients/episodes; age/sex; medication fields; BMI. Say you will describe them as Professor Bishai requested.
 
-On-slide sentence is enough: variables can be described as requested; model role depends on at-risk population and pre-event timing.
+On-slide sentence: variables can be described as requested; model role depends on at-risk population and pre-event timing.
 
 In notes only: with admissions-only data, meds/BMI measured at or near admission are often not pre-exposure confounders. You are not rejecting these covariates — you need timing and cohort structure to use them correctly.
 
@@ -61,14 +63,14 @@ In notes only: with admissions-only data, meds/BMI measured at or near admission
 
 ## Frame 5 — One schema question (~2 min)
 
-This is the key design slide. Speak slowly.
+This is the key design slide. Speak slowly; walk the vertical pathway.
 
 Ask: admissions only, or a defined cohort with non-event follow-up?
 
-**Proposed default (left / primary visual):**
-admissions-only → define valid episodes → aggregate month × age × sex × diagnosis → merge HKO + C&SD person-time → monthly admission-rate model.
+**Proposed default (vertical flow):**
+admissions-only → define valid episodes → aggregate month × age × sex × diagnosis → merge HKO + C&SD person-time → monthly admission-rate / count model.
 
-**Alternative (smaller):** only if a defined cohort with non-event follow-up exists → patient-month risk model.
+**Alternative (small callout):** only if non-event follow-up exists → patient-month risk model.
 
 Say: “Until the denominator is confirmed, I will talk about monthly admission counts or rates, not patient-level risk.”
 
@@ -76,39 +78,41 @@ Also say (notes): you will describe the requested covariates and will use them i
 
 ---
 
-## Frame 6 — Temperature variables and first-model sequence (~1.5 min)
+## Frame 6 — Temperature variables and lag plan (~1.5 min)
 
-- Merge will include contemporaneous and lag-1 mean, Tmin, and Tmax.
+- Analysis file can carry same-month and lag-1 mean, Tmin, and Tmax (carrying ≠ putting all in one model).
 - Same-month vs lag-1 Tmax: r ≈ 0.82 (exact 0.822489; 131 pairs).
-- Fit alternative temperature specifications separately rather than placing every correlated measure and lag in one model.
+- Fit temperature specifications separately rather than in one saturated model.
 - Proposed sequence: same-month initial; lag-1 sensitivity; current/previous-month average secondary.
-- Extend processed weather to December 2012 so January 2013 has valid lag-1 (raw Dec 2012 daily data exist).
+- Extend processed weather to December 2012 so January 2013 has valid lag-1.
+
+**Decision for today (say aloud):** primary temperature metric — mean temperature, Tmin/Tmax, or extreme-day counts. Bishai asked to merge monthly max/min and lag; extreme-day counts remain available as secondary / staged options.
 
 Explain briefly: same-month is proposed because historical heat–CVD work often finds short lags, and monthly aggregation already smooths daily timing. This does **not** reproduce a daily distributed-lag model.
 
 ---
 
-## Frame 7 — What I need from today’s discussion (~1.5–2 min)
+## Frame 7 — Decisions that unlock the first HA report (~1.5–2 min)
 
-Group under three headings only:
+Title softens the ask; group under three headings:
 
 1. **Outcome and episode definition** — DAE; row unit; principal vs any-position; transfers/recurrence; admission route/elective status.
-2. **Analysis population** — admissions-only vs defined cohort; medication/BMI dates and non-event follow-up.
+2. **Analysis population** — admissions-only vs defined cohort; medication/BMI dates and non-event follow-up; primary temperature metric.
 3. **Access and governance** — wet-ink/HPC timing; IRB amendment (PI decision); output/disclosure review.
 
 Assign actions verbally (not on slide):
 - **Bob:** wet-ink; Dec 2012 weather extension; HA descriptive scripts; Table 1 Panel B shell
 - **Roro:** data dictionary / masked schema; DAE / episode / denominator / meds-BMI clarification; onboard after signatures
 - **Hogan:** wet-ink; station / pollution timing advice if asked
-- **Professor Bishai:** design default, model sequence, covariate role, IRB path
+- **Professor Bishai:** design default, primary metric, lag sequence, covariate role, IRB path
 
 ---
 
 ## Closing (~30–45 s)
 
-> My proposed first analysis remains the monthly admission-rate design: define valid episodes from the patient-level records, aggregate them by month, age, sex, and diagnosis, and merge them with HKO exposure and C&SD person-time. I will include current and lag-1 temperature in the merge and fit them as separate specifications. Once the row definition, governance path, and access are confirmed, I will return with the validated HA descriptives and completed Table 1 before fitting substantive models.
+> My proposed first analysis remains the monthly admission-rate design: define valid episodes from the patient-level records, aggregate them by month, age, sex, and diagnosis, and merge them with HKO exposure and C&SD person-time. I will include current and lag-1 temperature in the analysis file and fit them as separate specifications. Once the row definition, governance path, and access are confirmed, I will return with the validated HA descriptives and completed Table 1 before fitting substantive models.
 
-End on the deliverable box: validated HA data dictionary and QC report; descriptive counts and age-specific rates; completed Table 1. Regression only after outcome definition and descriptive QC are approved.
+End on the deliverable box: validated HA data dictionary/QC report; descriptive counts and age-specific rates; completed Table 1. Regression only after outcome definition and descriptive QC are approved.
 
 ---
 
@@ -125,8 +129,14 @@ End on the deliverable box: validated HA data dictionary and QC report; descript
 
 ---
 
+## Clarification email timing
+
+Prefer sending `memos/clarification_email_to_roro_final.md` **after** the 17 July meeting so Bishai can reframe items first. If Roro needs advance notice, send only a short schema-item list, not the full memo.
+
+---
+
 ## Phrases to use / avoid
 
-**Use:** “I completed…”, “Roro has confirmed…”, “My proposed default is…”, “I would appreciate confirmation…”, “This determines whether…”, “Regression will begin only after…”
+**Use:** “I completed…”, “Roro has confirmed…”, “My proposed default is…”, “I would appreciate confirmation…”, “Current boundary…”, “Analysis file can carry…”, “Regression will begin only after…”
 
-**Avoid:** interrogating Roro; “blocked” as the dominant narrative; implying synthetic results are findings; inventing a DAE expansion; implying Bob controls IRB/HA governance; reading every bullet.
+**Avoid:** interrogating Roro; “blocked” as the dominant narrative; implying synthetic results are findings; inventing a DAE expansion; implying Bob controls IRB/HA governance; reading every bullet; saying “merge includes” if it sounds like one saturated model.

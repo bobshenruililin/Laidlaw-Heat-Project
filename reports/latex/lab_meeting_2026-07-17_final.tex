@@ -35,25 +35,6 @@
 \setlength{\leftmargini}{1.15em}
 \setlength{\itemsep}{0.32em}
 
-\newcommand{\statusbox}[3]{%
-  \begin{tikzpicture}
-    \node[
-      draw=#1,
-      line width=0.8pt,
-      rounded corners=2pt,
-      fill=LaidlawSoft,
-      align=left,
-      text width=0.29\textwidth,
-      inner xsep=5pt,
-      inner ysep=5pt,
-      font=\footnotesize
-    ] {%
-      {\bfseries\color{#1}#2}\\[0.15em]
-      #3%
-    };
-  \end{tikzpicture}%
-}
-
 \title{Temperature and Cardiovascular Admissions in Hong Kong}
 \subtitle{HKO exposure file complete; preparing the first HA merge}
 \author{Bob Shen}
@@ -65,29 +46,26 @@
 %======================================================================
 % Frame 1 --- Opening
 \begin{frame}[plain]
-  \vspace{0.55cm}
+  \vspace{0.65cm}
   {\color{LaidlawNavy}\LARGE\bfseries Temperature and Cardiovascular Admissions\\[0.15em]
   in Hong Kong\par}
   \vspace{0.45em}
   {\color{LaidlawTeal}\large HKO exposure file complete; preparing the first HA merge\par}
 
-  \vspace{0.85em}
+  \vspace{0.9em}
   {\normalsize Bob Shen\\[0.15em]
   Laidlaw Scholars Programme\\[0.15em]
   17 July 2026\par}
 
-  \vspace{1.05em}
-  \begin{columns}[T]
-    \begin{column}{0.32\textwidth}
-      \statusbox{LaidlawTeal}{READY}{132-month HKO exposure file}
-    \end{column}
-    \begin{column}{0.32\textwidth}
-      \statusbox{LaidlawRust}{PENDING}{HA/HPC access and final schema}
-    \end{column}
-    \begin{column}{0.32\textwidth}
-      \statusbox{LaidlawNavy}{TODAY}{Confirm analysis unit, lag plan, and next deliverable}
-    \end{column}
-  \end{columns}
+  \vspace{1.35em}
+  \begin{center}
+  \scriptsize
+  {\color{LaidlawTeal}\textbf{\footnotesize READY:}} 132-month HKO exposure file
+  \hspace{0.9em}
+  {\color{LaidlawRust}\textbf{\footnotesize PENDING:}} HA/HPC access and final schema
+  \hspace{0.9em}
+  {\color{LaidlawNavy}\textbf{\footnotesize TODAY:}} analysis unit, lag plan, next deliverable
+  \end{center}
 \end{frame}
 
 %----------------------------------------------------------------------
@@ -116,7 +94,7 @@
     \end{column}
   \end{columns}
 
-  \vspace{0.7em}
+  \vspace{0.75em}
   \begin{tikzpicture}
     \node[
       fill=LaidlawSoft,
@@ -128,8 +106,8 @@
       align=left,
       font=\footnotesize
     ] {%
-      No real temperature--admission association has yet been estimated.\\[0.2em]
-      Exact row/episode unit (including the full meaning of DAE) remains to be confirmed.
+      \textbf{Current boundary:} exposure file and merge pipeline are ready;
+      real HA associations await HPC access and row-definition confirmation.
     };
   \end{tikzpicture}
 \end{frame}
@@ -142,7 +120,7 @@
   \end{center}
   \vspace{-0.35em}
   \begin{center}
-  \scriptsize Environmental exposure data only. Mean with Tmin--Tmax ribbon; $N=132$ months; series ends December 2023.
+  \scriptsize Environmental exposure data only; no admission outcomes shown.
   \end{center}
 \end{frame}
 
@@ -176,11 +154,9 @@
       \vspace{0.35em}
       \footnotesize
       \begin{itemize}
-        \item Number of unique patients
-        \item Number of qualifying episodes
-        \item Age; sex
-        \item Diuretics; beta blockers
-        \item Metformin; SGLT2 inhibitors
+        \item Patients and qualifying episodes
+        \item Age and sex
+        \item Medication fields: diuretics, beta blockers, metformin, SGLT2 inhibitors
         \item BMI and BMI missingness
       \end{itemize}
     \end{column}
@@ -199,98 +175,112 @@
   Does the extract contain admissions only, or a defined cohort with non-event
   follow-up?
 
-  \vspace{0.55em}
+  \vspace{0.4em}
   {\color{LaidlawNavy}\textbf{Proposed default for the first analysis}}
-  \vspace{0.25em}
+  \vspace{0.2em}
 
-  \begin{tikzpicture}[
-    node distance=0.22cm,
-    box/.style={
-      draw=LaidlawNavy,
-      line width=0.7pt,
-      rounded corners=2pt,
-      align=left,
-      font=\footnotesize,
-      inner sep=4pt,
-      text width=0.88\textwidth,
-      fill=LaidlawSoft
-    },
-    arr/.style={-{Latex}, thick, LaidlawTeal}
-  ]
-    \node[box] (a) {Admissions-only extract
-      $\rightarrow$ define valid episodes
-      $\rightarrow$ aggregate by month $\times$ age $\times$ sex $\times$ diagnosis
-      $\rightarrow$ merge HKO exposure and C\&SD person-time
-      $\rightarrow$ monthly admission-rate model};
-  \end{tikzpicture}
-
-  \vspace{0.55em}
-  \begin{tikzpicture}
-    \node[
-      draw=LaidlawGray,
-      dashed,
-      rounded corners=2pt,
-      align=left,
-      font=\footnotesize,
-      inner xsep=7pt,
-      inner ysep=4pt,
-      text width=0.88\textwidth,
-      fill=white
-    ] {%
-      {\color{LaidlawTeal}\textbf{If a defined cohort with non-event follow-up exists:}}\\[0.1em]
-      patient-month risk model
-    };
-  \end{tikzpicture}
-\end{frame}
-
-%----------------------------------------------------------------------
-% Frame 6 --- Temperature and lag specification
-\begin{frame}{Temperature variables are ready; proposed first-model sequence}
   \begin{columns}[T]
-    \begin{column}{0.46\textwidth}
-      \begin{center}
-        \includegraphics[width=\textwidth]{../../figures/lab_meeting/tmax_lag1_example_final.pdf}
-      \end{center}
+    \begin{column}{0.58\textwidth}
+      \begin{tikzpicture}[
+        node distance=0.18cm,
+        box/.style={
+          draw=LaidlawNavy,
+          line width=0.7pt,
+          rounded corners=2pt,
+          align=center,
+          font=\footnotesize,
+          inner sep=3.5pt,
+          text width=0.52\textwidth,
+          fill=LaidlawSoft
+        },
+        arr/.style={-{Latex}, thick, LaidlawTeal}
+      ]
+        \node[box] (a) {Admissions-only extract};
+        \node[box, below=of a] (b) {Define valid episodes};
+        \node[box, below=of b] (c) {Aggregate by month $\times$ age $\times$ sex $\times$ diagnosis};
+        \node[box, below=of c] (d) {Merge HKO exposure + C\&SD person-time};
+        \node[box, below=of d] (e) {Monthly admission-rate / count model};
+        \draw[arr] (a) -- (b);
+        \draw[arr] (b) -- (c);
+        \draw[arr] (c) -- (d);
+        \draw[arr] (d) -- (e);
+      \end{tikzpicture}
     \end{column}
-    \begin{column}{0.52\textwidth}
-      \footnotesize
-      \begin{enumerate}
-        \item Merge includes contemporaneous and lag-1 mean, Tmin, and Tmax.
-        \item Same-month and lag-1 Tmax: $r \approx 0.82$ (131 pairs).
-        \item Fit alternative temperature specifications separately.
-        \item Proposed sequence:
-          \begin{itemize}
-            \item same-month exposure (initial)
-            \item lag-1 exposure (sensitivity)
-            \item current/previous-month average (secondary)
-          \end{itemize}
-        \item Extend weather input to December 2012 so January 2013 has valid lag-1.
-      \end{enumerate}
+    \begin{column}{0.40\textwidth}
+      \vspace{1.6cm}
+      \begin{tikzpicture}
+        \node[
+          draw=LaidlawGray,
+          dashed,
+          rounded corners=2pt,
+          align=left,
+          font=\footnotesize,
+          inner xsep=7pt,
+          inner ysep=5pt,
+          text width=0.36\textwidth,
+          fill=white
+        ] {%
+          {\color{LaidlawTeal}\textbf{If non-event follow-up exists:}}\\[0.15em]
+          patient-month risk model
+        };
+      \end{tikzpicture}
     \end{column}
   \end{columns}
 \end{frame}
 
 %----------------------------------------------------------------------
-% Frame 7 --- What needs to be resolved
-\begin{frame}{What I need from today's discussion}
+% Frame 6 --- Temperature and lag specification
+\begin{frame}{Temperature variables are ready; here is the proposed lag plan}
+  \begin{columns}[T]
+    \begin{column}{0.44\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{../../figures/lab_meeting/tmax_lag1_example_final.pdf}
+      \end{center}
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \footnotesize
+      \begin{enumerate}
+        \item Analysis file can carry same-month and lag-1 mean, Tmin, and Tmax.
+        \item Same-month and lag-1 Tmax: $r \approx 0.82$ (131 pairs).
+        \item Fit temperature specifications separately rather than in one saturated model.
+        \item Proposed first sequence:
+          \begin{itemize}
+            \item same-month exposure as initial specification
+            \item lag-1 exposure as sensitivity
+            \item current/previous-month average as secondary
+          \end{itemize}
+        \item Extend weather input to December 2012 so January 2013 has valid lag-1.
+      \end{enumerate}
+
+      \vspace{0.35em}
+      {\color{LaidlawNavy}\textbf{Decision for today:}} primary temperature metric ---
+      mean temperature, Tmin/Tmax, or extreme-day counts.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%----------------------------------------------------------------------
+% Frame 7 --- Confirmations
+\begin{frame}{Decisions that unlock the first HA report}
   \footnotesize
   \begin{enumerate}
     \item \textbf{Outcome and episode definition}\\[0.1em]
       full meaning of DAE; exact row unit; principal versus any-position diagnosis;
       transfers and recurrent admissions; admission route/elective status.
 
-    \vspace{0.35em}
+    \vspace{0.3em}
     \item \textbf{Analysis population}\\[0.1em]
       admissions-only data or defined at-risk cohort;
-      availability of medication dates, BMI dates, and non-event follow-up.
+      availability of medication dates, BMI dates, and non-event follow-up;
+      primary temperature metric for the first model.
 
-    \vspace{0.35em}
+    \vspace{0.3em}
     \item \textbf{Access and governance}\\[0.1em]
       wet-ink/HPC timing; whether the expanded work requires an IRB amendment;
       permitted output and disclosure-review process.
   \end{enumerate}
 
-  \vspace{0.45em}
+  \vspace{0.4em}
   \begin{tikzpicture}
     \node[
       fill=LaidlawSoft,
@@ -304,9 +294,8 @@
       font=\footnotesize
     ] {%
       \textbf{Next deliverable after access:}\\[0.15em]
-      validated HA data dictionary and QC report,
-      descriptive admission counts and age-specific rates,
-      and completed Table~1.\\[0.25em]
+      validated HA data dictionary/QC report, descriptive admission counts,
+      age-specific rates, and completed Table~1.\\[0.25em]
       Regression will begin only after the outcome definition and descriptive QC
       are approved.
     };
@@ -347,7 +336,8 @@
 %----------------------------------------------------------------------
 \begin{frame}{A2. Full HKO validation table (annual extremes)}
   \footnotesize
-  Station: HKO Headquarters. Result: \textbf{33/33 MATCH} vs HKO \textit{The Year's Weather}.
+  Station: HKO Headquarters. Result: all 33 annual extreme-day totals matched
+  HKO \textit{The Year's Weather}.
 
   \vspace{0.35em}
   \footnotesize
@@ -396,7 +386,7 @@
   \begin{tikzpicture}[
     node distance=0.4cm and 0.45cm,
     box/.style={draw=LaidlawNavy, rounded corners=2pt, align=center, font=\footnotesize,
-      inner sep=4pt, text width=2.7cm, fill=LaidlawSoft},
+      inner sep=4pt, text width=2.85cm, fill=LaidlawSoft},
     arr/.style={-{Latex}, thick, LaidlawTeal}
   ]
     \node[box] (hko) {HKO monthly exposures\\(132 mo; real)};
@@ -404,7 +394,10 @@
     \node[box, right=of csd] (ha) {HA admissions\\(pending HPC)};
     \node[box, below=1.05cm of csd] (merge) {Merge panel\\month$\times$age$\times$sex$\times$dx};
     \node[box, below=of merge] (desc) {Descriptive Table~1\\+ age-specific rates};
-    \node[box, below=of desc] (mod) {Count models\\(after definitions locked)};
+    \node[box, below=of desc, text width=4.8cm] (mod) {%
+      \centering
+      \mbox{Admission-rate/count models}\\
+      \mbox{after definitions locked}};
     \draw[arr] (hko) -- (merge);
     \draw[arr] (csd) -- (merge);
     \draw[arr] (ha) -- (merge);
@@ -450,8 +443,8 @@
 \begin{frame}{A6. Deferred pollution, district, and 2024 extensions}
   \footnotesize
   \begin{itemize}
-    \item \textbf{Pollution:} EPD import scripts ready; current file is a placeholder
-      (\texttt{PLACEHOLDER\_NOT\_FOR\_INFERENCE}). Near-term priority remains
+    \item \textbf{Pollution:} EPD import scripts are ready; the current file is a placeholder
+      and will not be used for inference. Near-term priority remains
       temperature $\rightarrow$ AMI/stroke after HA access.
     \item \textbf{District / multi-station weather:} HKO Headquarters is the primary
       station. Multi-station or district extensions are optional sensitivities (Hogan),

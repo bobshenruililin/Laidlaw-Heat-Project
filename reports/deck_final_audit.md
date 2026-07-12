@@ -80,12 +80,28 @@ Every numerical or factual statement in the final main deck and appendix is list
 | Compile ×2 | Success; 14 pages |
 | Missing figures | None |
 | Main-frame count | Exactly 7 before appendix divider |
-| Overfull boxes | 0.6 pt residual on title status strip (invisible) |
+| Overfull boxes | None after staff-polish pass |
 | Figure title collisions | Fixed in `*_final` figures (PR #11 figures preserved) |
 | °C symbols | Correct on Frames 3, 4, 6; added to A5 |
 | Font floor | Substantive text ≥ `\footnotesize`; `\scriptsize` for source/caption only |
 | C&SD label | “MDT mid-year; monthly interpolated” (not “REAL MDT”) |
-| Raster inspection | Slides 1–14 inspected; meeting-ready after figure fix |
+| Page 1 status strip | One-line READY/PENDING/TODAY bar (no hyphenation) |
+| Primary temperature metric ask | Added on Frame 6 + Frame 7 analysis population |
+| Raster inspection | Slides 1–14 re-inspected after staff polish |
+
+## Staff polish applied (post-review)
+
+| Priority | Change |
+|---|---|
+| 1 | Page 1 status boxes → one-line status bar |
+| 2 | Frame 5 pathway → vertical boxes + small alternative callout |
+| 3 | Frame 6: light ask for primary temperature metric |
+| 4 | Frame 6: “analysis file can carry” (not “merge includes”) |
+| 5 | Frame 7 title → “Decisions that unlock the first HA report” |
+| 6 | Frame 3 footer shortened (no repeated N=132) |
+| 7 | Appendix A2/A4/A6 wording smoothed; A4 box de-hyphenated |
+| — | Frame 2 boundary sentence; Frame 4 Panel B grouped |
+| — | Clarification email timed for after the meeting |
 
 ## Rounding policy
 

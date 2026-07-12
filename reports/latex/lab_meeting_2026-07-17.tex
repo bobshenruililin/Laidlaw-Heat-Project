@@ -1,0 +1,133 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usetheme{default}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{title}{fg=black}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{title}{series=\bfseries,size=\Large}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{microtype}
+
+\title{Lab meeting: HA next steps}
+\subtitle{Recalibration after Roro reply and CI note}
+\author{Bob Shen \\ Laidlaw / Bishai lab}
+\date{17 July 2026}
+
+\begin{document}
+
+%----------------------------------------------------------------------
+\begin{frame}
+  \titlepage
+  \vspace{-1.2em}
+  \begin{center}
+  \small Patrick Manson Building, 1/F --- 9:30--11:30
+  \end{center}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Purpose}
+  \begin{itemize}
+    \item Align on the \textbf{next HA analysis} after Roro's confirmation and Prof.\ Bishai's instruction.
+    \item We do \textbf{not} yet have HA results --- access still requires wet-ink signatures and HPC onboarding.
+    \item Ask the room to lock a short list of decisions so merge work can start immediately after access.
+  \end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Recalibration (CI direction)}
+  \textbf{We adjust to the CI note:}
+
+  \begin{enumerate}
+    \item Merge monthly temperature (\textbf{Tmax}, \textbf{Tmin}, and \textbf{lag}) to monthly AMI and stroke admission risk.
+    \item Covariates: age, sex, diuretics, beta blockers, metformin, SGLT2is, BMI.
+    \item Next write-up: \textbf{Table~1} with $N$, means, and SDs for temperature and covariates.
+  \end{enumerate}
+
+  \vspace{0.6em}
+  Official hot nights / cold days remain available as \textbf{secondary} exposures --- not the near-term primary story.
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{What Roro locked (12 July)}
+  \begin{itemize}
+    \item Coding: \textbf{ICD-9} (DAE records included --- define DAE today).
+    \item Grain: \textbf{patient-level} complete admissions.
+    \item ED-to-inpatient: \textbf{not in this extract}.
+    \item Age bands: stratification supported, including \textbf{65--69} and \textbf{70--74}.
+    \item Access: wet-ink signatures from \textbf{Bob} and \textbf{Hogan}, then add members to the \textbf{HPC} server.
+    \item Open: whether an \textbf{IRB protocol update} is needed (PI decision).
+  \end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Ready now (public side)}
+  \begin{itemize}
+    \item Monthly HKO file for 2013--2023 exists ($N=132$ months): mean, Tmin, Tmax, extremes, spells.
+    \item Annual extremes validated 33/33 against HKO \textit{Year's Weather}.
+    \item C\&SD mid-year age$\times$sex denominators are in the repo.
+    \item \textbf{Blocker:} HA patient file not yet available to Bob --- merge starts on HPC after signatures.
+  \end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Table~1 shell (temperature filled; covariates pending)}
+  \footnotesize
+  \begin{tabular}{@{}lrrr@{}}
+    \toprule
+    Variable & $N$ & Mean & SD \\
+    \midrule
+    Mean temperature ($^\circ$C) & 132 & 24.02 & 4.70 \\
+    Mean Tmin ($^\circ$C) & 132 & 22.10 & 4.69 \\
+    Mean Tmax ($^\circ$C) & 132 & 26.66 & 4.82 \\
+    Hot nights (days/month) & 132 & 3.40 & 5.40 \\
+    Cold days (days/month) & 132 & 1.10 & 2.55 \\
+    Very hot days (days/month) & 132 & 3.19 & 5.18 \\
+    \midrule
+    Age, sex & --- & \textit{pending HA} & --- \\
+    Diuretics / beta blockers & --- & \textit{pending HA} & --- \\
+    Metformin / SGLT2is & --- & \textit{pending HA} & --- \\
+    BMI & --- & \textit{pending HA} & --- \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.7em}
+  \scriptsize Source: \texttt{data\_processed/climate\_monthly\_2013\_2023.csv} (HKO Headquarters). HA covariate rows after server access.
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Decisions for the room}
+  \begin{enumerate}
+    \item \textbf{IRB:} update protocol for this HA use? (PI)
+    \item \textbf{DAE:} what does ``DAE records included'' mean?
+    \item \textbf{Principal diagnosis:} available / required?
+    \item \textbf{Clinical fields:} are diuretics, beta blockers, metformin, SGLT2is, BMI on the approved extract?
+    \item \textbf{Lag:} is lag-1 month the default for temperature?
+  \end{enumerate}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{This week's actions}
+  \begin{tabular}{@{}p{0.42\textwidth}p{0.50\textwidth}@{}}
+    \toprule
+    \textbf{Owner} & \textbf{Action} \\
+    \midrule
+    Bob + Hogan & Wet-ink signatures for HA/HPC access \\
+    Roro & Onboard Bob to HPC after signatures \\
+    Bishai & IRB call; confirm covariate set / lag default \\
+    Bob (after access) & Merge Tmax/Tmin (+ lag) to AMI/stroke; draft Table~1 \\
+    Yuchen & Calendar invite (lab meeting logistics) \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{1em}
+  \textbf{Next scientific deliverable:} Table~1 + first temperature--admission associations on HPC.
+\end{frame}
+
+\end{document}

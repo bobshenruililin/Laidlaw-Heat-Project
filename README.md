@@ -17,8 +17,9 @@ This is an ecological monthly time-series design. It does not claim individual-l
 | HKO weather exposures | **Real** | Daily extracts processed; annual extremes validated 33/33 against HKO *Year’s Weather* |
 | C&SD population denominators | **Real (MDT)** | Table 110-01001 mid-year age×sex; monthly linear interpolation |
 | Air pollution | Placeholder | Import scripts ready; replace with EPIC/EPD series before inference |
-| HA cardiovascular outcomes | **Not available** | Dev track uses synthetic panels only |
-| First-stage research note | Available | `reports/First_Stage_Research_Note.pdf` |
+| HA cardiovascular outcomes | **Pending HPC access** | Wet-ink signatures (Bob, Hogan) then Roro onboards; no results yet |
+| Near-term analysis (CI) | Recalibrating | Monthly Tmax/Tmin + lag → AMI/stroke; clinical covariates per Bishai (12 Jul 2026) |
+| Lab meeting | 17 July 2026 | Slides: `reports/Lab_Meeting_2026-07-17.pdf` |
 
 **Do not interpret synthetic model coefficients as empirical findings.**
 

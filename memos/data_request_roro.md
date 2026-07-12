@@ -5,6 +5,12 @@
 **Subject:** Request for aggregate monthly Hospital Authority cardiovascular admissions extract, 2013–2023  
 **Date:** 2026-07-10  
 
+## Status — 12 July 2026
+
+Roro confirmed: **ICD-9** (DAE records included — definition TBD); **patient-level complete admissions**; **no ED-to-inpatient** episodes in this extract; age bands including **65–69 and 70–74** supported; HPC access after **wet-ink signatures from Bob and Hogan**. IRB update raised for PI decision. CI (Bishai) directed next step: merge monthly Tmax/Tmin (+ lag) to AMI/stroke admission risk; covariates include age, sex, diuretics, beta blockers, metformin, SGLT2is, BMI; next write-up needs Table 1. Still open: principal diagnosis, meds/BMI field availability, DAE meaning. Lab meeting 17 July 2026.
+
+---
+
 Dear Roro,
 
 We are preparing a retrospective ecological time-series study of thermal extremes and cardiovascular hospital burden in Hong Kong. We would be grateful for your advice and, if feasible, an aggregate monthly Hospital Authority extract for **January 2013 through December 2023**, with **January–December 2024 as an optional extension** that should not delay the core extract.

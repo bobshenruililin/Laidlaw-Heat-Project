@@ -13,6 +13,9 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.nav
+*.snm
+*.vrb
 
 # Secrets / secure HA extracts (never commit real HA data)
 data_raw/ha_secure_placeholder/*

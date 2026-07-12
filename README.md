@@ -19,7 +19,7 @@ This is an ecological monthly time-series design. It does not claim individual-l
 | Air pollution | Placeholder | Import scripts ready; replace with EPIC/EPD series before inference |
 | HA cardiovascular outcomes | **Pending HPC access** | Wet-ink signatures (Bob, Hogan) then Roro onboards; no results yet |
 | Near-term analysis | Recalibrating | Monthly Tmax/Tmin + lag → AMI/stroke (per Bishai, 12 Jul 2026); clinical covariates TBD on HPC |
-| Lab meeting | 17 July 2026 | Slides: `reports/Lab_Meeting_2026-07-17.pdf` |
+| Lab meeting | 17 July 2026 | Revised slides: `reports/Lab_Meeting_2026-07-17_revised.pdf` (original retained: `reports/Lab_Meeting_2026-07-17.pdf`) |
 
 **Do not interpret synthetic model coefficients as empirical findings.**
 

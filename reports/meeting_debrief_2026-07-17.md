@@ -120,26 +120,30 @@ Scripts already oriented to monthly merge: `08b_merge_real_ha_panel.R`, descript
 
 ---
 
-## 6. Relation to earlier documents
+## 6. Immediate actions
 
-| Document | How this debrief updates it |
+| Action | Status |
 |---|---|
-| Lab meeting briefing / decks | Still valid as pre-meeting preparation; outcome claims about AMI principal-dx must be read as **superseded** for the general HA file |
-| Literature review | Still central: Goggins (daily, subtype), Guo hot nights, Wang/Ren EHWE, Yang cold+flu stroke. Novelty now leans **monthly stroke aggregates × multi-definition thermal metrics** in 2013–2023 |
-| Assumption ledger / decision gates | Updated in parallel with this note |
-| Post-meeting next steps | Filled from this debrief |
+| Ingest stroke / HA aggregates when sent; write QC note | Waiting on files |
+| Merge to monthly HKO climate (+ denominators if strata match) | After QC |
+| Adapt merge scripts for aggregates (not diagnosis panel) | After schema known |
+| Run labelled multi-method panel M1–M10 | After Gate 2 |
+| Extend weather build to Dec 2012 (lag-1 for Jan 2013) | Can do anytime |
+| IRB / governance determination (PI) | Open |
+
+Assumption ledger and decision gates are updated in parallel. Literature map: `reports/Literature_Review_Critical.pdf`.
 
 ---
 
-## 7. Open items that still need confirmation when data arrive
+## 7. Open items when data arrive
 
-1. Exact aggregate grain (territory-month only vs month × age × sex).  
-2. Whether the stroke file distinguishes ischemic vs hemorrhagic (or only pooled stroke).  
-3. Whether “stroke admissions” are inpatient only, and which date defines the month.  
-4. Small-cell suppression rules for release of tables.  
-5. Whether medication / BMI covariates exist for any stroke-related extract (likely limited for aggregates).  
-6. Whether any AMI series exists outside the general HA “no reason” file (do not assume).  
-7. IRB / governance determination for the stroke aggregate use (PI).
+1. Aggregate grain (territory-month vs month × age × sex).  
+2. IS vs HS split, or pooled stroke only.  
+3. Inpatient definition and which date sets the month.  
+4. Small-cell suppression rules.  
+5. Medication / BMI (likely limited for aggregates).  
+6. Any separate AMI series (do not assume).  
+7. IRB / governance for this use (PI).
 
 ---
 

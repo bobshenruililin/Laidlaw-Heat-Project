@@ -1,6 +1,0 @@
-"month_id","year","month","month_date","time_index","age_group","sex","diagnosis_group","care_setting","n_events","n_patients","n_deaths_in_hospital","bed_days","population","days_in_month","suppression_flag","coding_system","data_status","synthetic_seed","notes"
-"2013-01",2013,1,"2013-01-01",1,"35-39","Female","AMI","inpatient",125,118,5,821,330027.945205479,31,0,"PROVISIONAL_ICD9CM_ASSUMED","SYNTHETIC",20250308,"SYNTHETIC outcomes for pipeline testing only; not HA data"
-"2013-01",2013,1,"2013-01-01",1,"35-39","Female","ischemic_stroke","inpatient",274,260,14,1503,330027.945205479,31,0,"PROVISIONAL_ICD9CM_ASSUMED","SYNTHETIC",20250308,"SYNTHETIC outcomes for pipeline testing only; not HA data"
-"2013-01",2013,1,"2013-01-01",1,"35-39","Female","hemorrhagic_stroke","inpatient",99,91,6,555,330027.945205479,31,0,"PROVISIONAL_ICD9CM_ASSUMED","SYNTHETIC",20250308,"SYNTHETIC outcomes for pipeline testing only; not HA data"
-"2013-01",2013,1,"2013-01-01",1,"35-39","Male","AMI","inpatient",158,155,5,870,231773.97260274,31,0,"PROVISIONAL_ICD9CM_ASSUMED","SYNTHETIC",20250308,"SYNTHETIC outcomes for pipeline testing only; not HA data"
-"2013-01",2013,1,"2013-01-01",1,"35-39","Male","ischemic_stroke","inpatient",342,328,8,2665,231773.97260274,31,0,"PROVISIONAL_ICD9CM_ASSUMED","SYNTHETIC",20250308,"SYNTHETIC outcomes for pipeline testing only; not HA data"

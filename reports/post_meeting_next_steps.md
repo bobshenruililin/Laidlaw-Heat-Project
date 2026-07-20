@@ -1,34 +1,36 @@
 # Post-meeting next steps — 17 July 2026 lab meeting
 
-**Purpose:** Capture decisions and actions immediately after the meeting so the project can move without waiting on informal memory.  
-**Status:** Template with placeholders — fill in after the meeting. Do not invent decisions.
+**Purpose:** Capture decisions and actions after the meeting so the project can move without relying on informal memory.  
+**Status:** Filled from meeting debrief (17 Jul 2026). Full narrative: `reports/meeting_debrief_2026-07-17.md`.  
+**Data status:** Outcome / aggregate files **not yet received** (user will send next).
 
 ---
 
-## 1. Decisions made
+## 1. Decisions made (from meeting feedback)
 
-| Topic | Decision | Source (who / when) | Notes |
+| Topic | Decision | Source | Notes |
 |---|---|---|---|
-| Analysis unit / denominator | _[TBD — admissions-only monthly rates vs patient-month cohort]_ | | |
-| Primary exposure / lag sequence | _[TBD — same-month primary with lag-1 sensitivity?]_ | | |
-| Diagnosis position | _[TBD — principal vs any-position]_ | | |
-| Transfer / recurrence rule | _[TBD]_ | | |
-| Medication / BMI role | _[TBD — descriptive only for now?]_ | | |
-| IRB amendment needed? | _[TBD — PI decision]_ | | |
-| Next lab deliverable date | _[TBD]_ | | |
+| General HA admission reasons | **Not available** for this extract — reasons for admission not specified | Meeting 17 Jul | Demotes general-file AMI / principal-dx CVD endpoints |
+| Stroke outcomes | **Stroke admission data exist**; analysis will use **aggregates** | Meeting 17 Jul | Primary near-term outcome family |
+| Exposure resolution for analysis | **Monthly temperature** (and monthly summaries from daily HKO) | Meeting 17 Jul | Do not claim daily admissions DLNM |
+| Analytic strategy | Explore **~10 different methods** for insight breadth | Meeting 17 Jul | Multi-specification panel; see debrief §4 |
+| Heatwave definitions | Align with **Chao Ren**–team defined heatwaves (Wang/Ren EHWE tradition) and lab multi-definition practice | Meeting 17 Jul (“Chao Ran”) | Use spell / 2D3N / official extremes already in climate file |
+| Lab daily-scale context | Prof. Bishai / collaborators have **daily-scale heatwave work through 2023** (mortality / multi-definition) | Meeting 17 Jul | Complementary to this monthly stroke-aggregate project; not a substitute |
 
 ---
 
-## 2. Decisions still open
+## 2. Decisions still open (await data / PI)
 
-| Topic | Why still open | Blocker | Owner | Target date |
+| Topic | Why still open | Blocker | Owner | Target |
 |---|---|---|---|---|
-| Full meaning of DAE | Not expandable from current note | Needs Roro / data dictionary | Roro | _[TBD]_ |
-| Exact row / episode unit | Schema not yet shared | Dictionary or masked mock | Roro | _[TBD]_ |
-| Admission route fields | Not confirmed | Schema | Roro | _[TBD]_ |
-| Meds / BMI field presence and dates | Not confirmed | Schema + governance | Roro / Bishai | _[TBD]_ |
-| HPC access timing | Wet-ink pending | Signatures + onboarding | Bob / Hogan / Roro | _[TBD]_ |
-| Small-cell suppression rules | Needed before releasing tables | Roro / HPC policy | Roro | _[TBD]_ |
+| Exact stroke aggregate grain | Files not yet received | Incoming data + dictionary | Bob / Roro | On data arrival |
+| IS vs HS split in stroke file | Unknown until schema seen | Stroke extract codebook | Roro / Bob | On data arrival |
+| AMI series availability | General HA lacks reasons; separate AMI file not confirmed | Confirmation | Roro / Bishai | After data review |
+| Medication / BMI for aggregates | Aggregates often lack patient covariates | Schema | Roro | On data arrival |
+| IRB / governance for stroke aggregate use | PI determination | Meeting follow-up | **Bishai** | ASAP |
+| Small-cell suppression | Needed before releasing tables | HPC / HA policy | Roro | Before shared tables |
+| Headline method among ~10 | Freeze after QC | Gate 3 | Bishai / Bob | After descriptives |
+| Full meaning of DAE (if still relevant) | May be less central if working only from stroke aggregates | Dictionary | Roro | If patient-level still used |
 
 ---
 
@@ -36,89 +38,63 @@
 
 | Action | Owner | Deadline | Depends on | Done? |
 |---|---|---|---|---|
-| Complete wet-ink signatures | Bob, Hogan | _[TBD]_ | — | |
-| Onboard Bob to HPC | Roro | _[TBD]_ | Wet-ink | |
-| Provide data dictionary or masked/mock schema | Roro | _[TBD]_ | — | |
-| Clarify DAE, row unit, diagnosis position, admission route, transfers | Roro | _[TBD]_ | Dictionary preferred | |
-| Confirm admissions-only vs defined cohort | Roro / Bishai | _[TBD]_ | Schema | |
-| IRB determination | Professor Bishai | _[TBD]_ | Roro’s governance note | |
-| Extend weather build to December 2012 | Bob | _[TBD]_ | — | |
-| Prepare HA QC / descriptive scripts | Bob | _[TBD]_ | Mock schema helpful | |
-| Draft Table 1 Panel B shell | Bob | _[TBD]_ | Agreed denominator | |
-| Update assumption ledger after meeting | Bob | _[TBD]_ | Meeting notes | |
-| Update `decision_gates.md` exit criteria | Bob | _[TBD]_ | Meeting notes | |
+| Receive and securely store stroke / HA aggregate files | Bob | When sent | User transfer | |
+| QC aggregates; write short data receipt note | Bob | Immediately after receipt | Files | |
+| Merge aggregates to monthly HKO climate + denominators (if strata match) | Bob | After QC | Files + climate | |
+| Adapt merge / descriptive scripts for aggregate stroke (not diagnosis panel) | Bob | After schema known | Files | |
+| Run multi-method ladder M1–M10 (labelled; no over-claim) | Bob | After Gate 2 | Merge ready | |
+| Extend weather build to December 2012 (lag-1 Jan 2013) | Bob | Near-term | — | |
+| Update assumption ledger + decision gates from meeting | Bob | This commit | Meeting notes | Yes (this update) |
+| Wet-ink / HPC onboarding if patient-level still needed beyond aggregates | Bob, Hogan, Roro | Parallel | Signatures | |
+| IRB determination for current use | Bishai | ASAP | Governance note | |
 
 ---
 
-## 4. What Bob can do immediately
+## 4. What can proceed before / without full HPC patient-level access
 
-- Finish wet-ink paperwork.
-- Extend processed HKO monthly file to include December 2012 (raw daily data already present).
-- Keep merge / descriptive pipeline ready (`08b_merge_real_ha_panel.R` and related scripts).
-- Draft blank Table 1 Panel B and QC checklist shells.
-- Send concise clarification email requesting dictionary / masked schema (no patient data by ordinary email).
-- Update the assumption ledger and decision gates with meeting outcomes.
-
----
-
-## 5. What waits for HPC access
-
-- Any touch of real HA outcomes.
-- Row counts, uniqueness, missingness, and episode QC on the real extract.
-- Descriptive admission counts, age-specific rates, and completed Table 1 Panel B.
-- Any temperature–admission association estimate.
+- Ingest and analyse **stroke aggregates** once files are sent (if they arrive outside HPC, follow whatever transfer/governance rule the PI sets).
+- Keep HKO monthly climate, extremes, spell / 2D3N metrics ready.
+- Build Table 1 environment panel (already largely done).
+- Draft blank outcome Table 1 / rate figures for stroke aggregates.
+- Do **not** invent AMI or subtype results from general admissions lacking reasons.
 
 ---
 
-## 6. Branching paths after schema confirmation
+## 5. Branching paths after data arrival
 
-### If the file is admissions-only
+### If stroke aggregates are territory-month only
 
-- Proceed with the **monthly admission-rate** default.
-- Define valid episodes → aggregate by month × age × sex × diagnosis.
-- Merge HKO exposures + C&SD person-time (mid-year MDT; monthly interpolated).
-- Offset: `log(population × days_in_month)`.
-- Describe meds/BMI in Table 1; do **not** treat them as automatic pre-exposure confounders until timing is known.
-- Analysis-plan amendment: lock estimand as stratum-specific monthly admission rates (not patient-month risk).
+- Monthly time-series / count models with population offset (or crude counts with care).
+- Multi-method exposure panel still applies; age interactions limited.
 
-### If a defined cohort with non-event follow-up exists
+### If stroke aggregates are month × age (± sex)
 
-- Switch to a **patient-month risk** design (or hybrid, if advised).
-- Confirm at-risk start/stop rules, censoring, and how non-event months are represented.
-- Revisit medication/BMI timing relative to risk intervals.
-- Analysis-plan amendment: replace population-rate offset with individual person-time; revise Table 1 denominator language.
+- Prefer rate models with C&SD person-time aligned to bands.
+- Prioritise older-age contrasts if 65–69 / 70–74 present.
 
----
+### If stroke file includes subtype codes
 
-## 7. Analysis-plan amendments required
+- Reinstate separate IS / HS models as primary within the stroke family.
+- Still do not invent AMI from the general “no reason” HA file.
 
-After the meeting, update:
+### If only undifferentiated hospital aggregates arrive (no stroke)
 
-1. `analysis_plan/assumption_ledger.md` — close or re-open A03–A08, A27, A30, A37–A39 as decided.
-2. `analysis_plan/decision_gates.md` — mark Gate 1 items resolved or blocked.
-3. Methods draft estimand language — “monthly admission rates” vs “patient-month risk.”
-4. Primary exposure / lag freeze note (Gate 3) once Bishai confirms.
-
-Do **not** amend the plan to claim unconfirmed future extensions (pollution, district, 2024) as selected near-term work.
+- Stop endpoint claims; request stroke series clarification before modelling associations.
 
 ---
 
-## 8. Next lab deliverable
+## 6. First deliverables after data arrive
 
-**Target (after access + schema confirmation):**
-
-Validated HA data dictionary and QC report; descriptive admission counts and age-specific rates; completed Table 1.
-
-**Explicitly not the next deliverable:** causal or semi-causal regression results.
-
-Regression begins only after the outcome definition and descriptive QC are approved (Gate 2 → Gate 3 → Gate 4).
+1. Data receipt + QC note.  
+2. Merged monthly panel (climate + stroke aggregates).  
+3. Descriptive figures (stroke over time vs temperature / extremes).  
+4. Multi-method association table (M1–M10), clearly labelled.  
+5. Short methods note stating what was **not** possible (no general admission reasons; monthly not daily).
 
 ---
 
-## 9. Meeting-note capture (fill in live)
+## Related documents
 
-- Date/time: 17 July 2026
-- Attendees: _[TBD]_
-- Key quotes / rulings: _[TBD]_
-- Follow-up email sent?: _[Y/N]_
-- Ledger updated?: _[Y/N]_
+- `reports/meeting_debrief_2026-07-17.md` — full recalibration narrative  
+- `analysis_plan/assumption_ledger.md`  
+- `analysis_plan/decision_gates.md`

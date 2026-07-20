@@ -1,125 +1,115 @@
-# Decision gates — Temperature–CVD project
+# Decision gates — Temperature–CVD / stroke project
 
-Working decision gates for moving from the 17 July 2026 lab meeting to the first validated HA descriptive report and, later, the first inferential models.
+Working decision gates after the **17 July 2026** lab meeting. Full recalibration: `reports/meeting_debrief_2026-07-17.md`.
 
-**Principle:** Do not run analyses that depend on an unconfirmed HA schema. Do not inspect substantive coefficients before Gates 1–3 are closed.
+**Principle:** Do not invent diagnosis-specific endpoints the data cannot support. Do not inspect substantive coefficients before Gates 1–2 are closed for the **files actually received**. Multi-method exploration (~10 specs) is allowed after Gate 2, with Gate 3 locking the **headline** specification before treating any single estimate as primary.
 
-Owners and dates below use placeholders where the meeting has not yet decided.
+Owners and dates use placeholders where still open.
 
 ---
 
-## Gate 1 — Schema and access
+## Gate 1 — Schema and access (revised for aggregates)
 
-**Required before touching real outcomes.**
+**Required before treating outcomes as analysis-ready.**
 
 | Prerequisite | Status | Owner | Stop condition |
 |---|---|---|---|
-| HPC access (wet-ink complete; onboarding done) | Pending | Bob, Hogan, Roro | No real HA files until access is live |
-| Data dictionary or masked/mock schema | Pending | Roro | Do not invent field meanings |
-| Row / episode definition (incl. full meaning of DAE) | Open | Roro | Do not aggregate until row unit is known |
-| Diagnosis position (principal vs any-position) | Open | Roro / Bishai | Do not lock ICD algorithms without this |
-| Admission route / elective–emergency fields | Open | Roro | Do not infer route from ED-to-inpatient absence |
-| Transfer and recurrence handling | Open | Roro | Prevent double-counting before descriptives |
-| Medication / BMI timestamps | Open | Roro | Descriptive Table 1 only until timing known |
-| Ethics / governance determination (IRB amendment?) | Open | **PI (Bishai)** | Bob does not decide IRB scope |
+| Stroke / HA aggregate files received under approved transfer path | Pending (user sending next) | Bob / PI | No invented row counts |
+| Data dictionary or field list for aggregates | Pending | Roro / sender | Do not invent field meanings |
+| Outcome definition (what “stroke admission” means in the file) | Open | Roro / Bob | Do not model until defined |
+| Aggregate grain (month only vs month × age × sex) | Open | On file inspection | Determines denominator strategy |
+| Subtype availability (IS / HS) | Open | On file inspection | Default to pooled stroke if absent |
+| General HA “reasons for admission” | **Confirmed unavailable** (17 Jul) | — | Do not use general HA for AMI/principal-dx CVD |
+| Ethics / governance for current use | Open | **PI (Bishai)** | Follow PI determination |
+| Small-cell / release rules | Open | Roro | Do not release suppressed cells as zero |
+| Medication / BMI (if claimed) | Likely limited for aggregates | Roro | Descriptive only if present |
 
-**Exit criterion:** Written confirmation (email, meeting notes, or data dictionary) covering the items above, plus live HPC access for Bob.
+**Exit criterion:** Files in hand + written understanding of stroke outcome definition and grain + PI-approved use path.
 
 ---
 
 ## Gate 2 — Outcome-data QC
 
-**Required before regression.**
+**Required before regression / multi-method association runs.**
 
 | Check | Purpose | Stop condition |
 |---|---|---|
-| Row counts and uniqueness | Establish extract size and keys | Unexplained duplicates → pause |
-| Missing dates and fields | Bound usable sample | Critical date fields missing → pause |
-| Impossible values | Catch coding / extract errors | Resolve with Roro before modelling |
-| Duplicate episodes | Apply transfer/recurrence rules | Rules not applied → pause |
-| Suppression / output rules | Never treat suppressed cells as zero | Rules unknown → do not release tables |
-| Monthly outcome counts | First exposure–outcome merge readiness | Implausible seasonality unexplained → review |
-| Age / sex distributions | Align with C&SD strata | Missing 65–69 / 70–74 → escalate |
-| Coding discontinuities | Detect ICD or practice shifts | Document before modelling |
-| COVID-era anomalies | Care-seeking / capacity shocks | Flag; do not over-interpret |
-| Comparison against any available HA totals | External plausibility | Large unexplained gaps → pause |
+| Month coverage vs 2013–2023 climate | Align panels | Large gaps unexplained → pause |
+| Missingness / suppression codes | Bound usable sample | Unknown codes → pause |
+| Implausible counts | Catch extract errors | Resolve before modelling |
+| Age / sex completeness (if stratified) | Denominator alignment | Missing bands → escalate or collapse |
+| Seasonality / COVID-era patterns | Care-seeking shocks | Flag; do not over-interpret |
+| External plausibility vs any published HA stroke totals | Sanity | Large unexplained gaps → pause |
 
-**Exit criterion:** Validated HA data dictionary + QC report circulated and acknowledged; descriptive admission counts and age-specific rates reviewed; Table 1 Panel B completed under the agreed denominator.
+**Exit criterion:** Short QC / data-receipt note + merged monthly climate–outcome panel reviewed.
 
 ---
 
-## Gate 3 — Analysis-plan freeze
+## Gate 3 — Analysis-plan freeze (headline among ~10)
 
-**Lock before inspecting substantive coefficients.**
+**Lock the headline specification before treating any coefficient as the primary result.** Multi-method exploration may run after Gate 2, but results are labelled as a **panel** until this gate closes.
 
 | Item | Proposed default (pending confirmation) | Owner |
 |---|---|---|
-| Primary outcome | AMI / ischemic stroke / hemorrhagic stroke as separate endpoints (provisional ICD-9) | Bishai / team |
-| Primary denominator | C&SD age–sex person-time (Table 110-01001; mid-year; monthly interpolated), unless a defined cohort exists | Bishai / Roro |
-| Diagnosis definitions | Principal diagnosis if available; provisional ICD-9 lists in memo | Roro / Bishai |
-| Primary exposure | Same-month Tmax / Tmin (Bishai 12 Jul direction); official extremes secondary | Bishai |
-| Primary lag | Same-month initial; lag-1 as separate sensitivity | Bishai |
-| Seasonality / trend strategy | Prespecify before coefficient inspection | Team / Bishai |
-| Population offset | `log(population × days_in_month)` for admissions-only design | Bob (implement) |
-| COVID sensitivity | Phase indicators as sensitivity / secondary; not required for first descriptives | Team / Bishai |
-| Interaction hierarchy | Prespecify age / period interactions after core model stable | Team |
-| Medication / BMI model role | Descriptive first; model use only if timing and at-risk structure support it | Bishai / Roro |
+| Primary outcome | Stroke admission **aggregates** (pooled unless subtypes available) | Bishai / team |
+| AMI / general CVD principal-dx | **Out of scope** for general HA file | Meeting 17 Jul |
+| Primary denominator | C&SD age–sex person-time if strata exist; else documented population offset / rate construction | Bishai / Bob |
+| Continuous exposures | Same-month Tmax / Tmin (and/or Tmean); lag-1 as paired spec | Bishai |
+| Heatwave / extreme family | Official counts + Ren/Wang spell & 2D3N metrics; optional heatwave-month indicators | Bob / Bishai |
+| Multi-method panel | ~10 labelled methods (see debrief §4); one headline pair frozen here | Team |
+| Seasonality / trend | Prespecify before calling a primary result | Team / Bishai |
+| COVID / humidity / holidays | Sensitivity ladder | Team |
+| Medication / BMI model role | Only if structure supports; else omit from models | Bishai / Roro |
 
-**Exit criterion:** Short written freeze note (ledger update or methods addendum) signed off by Professor Bishai before any coefficient review.
+**Exit criterion:** Short freeze note (ledger update) after descriptives, naming the headline method ID(s).
 
 ---
 
-## Gate 4 — First model run
+## Gate 4 — Multi-method association runs
 
-**Run only after Gates 1–3.**
+**Run only after Gates 1–2.** Headline claim only after Gate 3.
 
-Allowed at this gate:
+Allowed:
 
-- Count regression with population offset under the frozen admissions-only design; **or**
-- Patient-month risk model **only if** Gate 1 confirmed a defined at-risk cohort with non-event follow-up.
+- Count / rate regressions with appropriate offsets under the aggregate design.
+- Labelled M1–M10 panel reporting.
+- Cold-side and heatwave-definition comparisons.
 
-Not allowed before this gate:
+Not allowed before Gate 2 (and for primary claim, Gate 3):
 
-- Interpreting temperature coefficients as findings
-- Comparing “effects” to historical daily DLNM studies as if methods were identical
-- Treating synthetic workflow outputs as results
+- Interpreting temperature coefficients as findings in public write-ups
+- Equating monthly associations with daily DLNM or with excess-death mortality estimates
+- Inventing AMI / subtype results from files that lack those fields
 
-**Stop condition:** Any Gate 1–3 item reopens (e.g. new episode definition, denominator change) → return to the relevant gate before further modelling.
+**Stop condition:** Schema or outcome definition changes → return to Gate 1–2.
 
 ---
 
 ## Gate 5 — Extensions
 
-**Only after the core model is stable.**
+**Only after the core monthly stroke–temperature panel is documented.**
 
-Deferred until Gates 1–4 are complete and the primary temperature–admission association is documented:
-
-- Pollution (current file is placeholder)
+- Pollution (placeholder until real series)
 - Influenza
 - Multi-station weather
 - District analysis
 - 2024 extension
-- Comorbidity / medication–BMI pathway extensions (if timing supports)
-
-These are **not** selected as near-term analyses. They become candidates only after the core 2013–2023 temperature pathway is stable.
+- Patient-level / medication–BMI pathway work **if** a suitable extract later exists
+- Harmonized comparison to daily historical studies (methods must match)
 
 ---
 
-## Immediate work that does **not** wait on HA access
+## Immediate work that does **not** wait on files
 
-Bob can proceed now:
-
-1. Complete wet-ink authorization.
-2. Extend the weather build to include December 2012 for January 2013 lag-1.
-3. Prepare HA descriptive / QC scripts against a masked or mock schema once available.
-4. Draft Table 1 Panel B shell (blank cells; no invented numbers).
-5. Keep the assumption ledger and these decision gates current after the 17 July meeting.
+1. Keep climate monthly file + Ren-style spell / 2D3N metrics ready.  
+2. Extend weather build to December 2012 for lag-1.  
+3. Prepare ingest stubs for aggregate stroke merge.  
+4. Keep ledger / gates / debrief current (this update).  
 
 ---
 
 ## Related documents
 
-- `analysis_plan/assumption_ledger.md`
+- `reports/meeting_debrief_2026-07-17.md`
 - `reports/post_meeting_next_steps.md`
-- `reports/deck_final_audit.md`
-- `memos/clarification_email_to_roro_final.md`
+- `analysis_plan/assumption_ledger.md`

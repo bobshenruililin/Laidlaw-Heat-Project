@@ -1,22 +1,11 @@
-# Hospital Authority secure data placeholder
+# HA secure staging (local only)
 
-Place de-identified aggregate HA extracts here only inside an approved secure environment.
+Place approved HA / stroke aggregate extracts here for local processing.  
+**Never commit real patient-level or restricted extracts.**
 
-**Do not commit real HA data to git.**
+This directory is gitignored except for this README.
 
-Expected filename example:
+Expected near-term inputs (post–17 July 2026): **stroke admission aggregates** (monthly ± age/sex if available). The general HA file available to this project does **not** specify reasons for admission.
 
-```text
-ha_monthly_cvd_admissions_2013_2023.csv
-```
-
-Required minimum columns are documented in `memos/data_request_roro.md` and `data_processed/variable_dictionary.csv`.
-
-Until a real extract arrives, the pipeline uses:
-
-```text
-data_processed/synthetic_ha_outcomes.csv
-data_processed/synthetic_analysis_panel.csv
-```
-
-with `data_status = "SYNTHETIC"`.
+Field contracts for future aggregates: `schemas/ha_monthly_aggregate.schema.json` and `data_processed/variable_dictionary.csv`.  
+Working strategy: `reports/meeting_debrief_2026-07-17.md`.

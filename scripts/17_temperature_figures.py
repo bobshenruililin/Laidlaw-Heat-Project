@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build revised lab-meeting temperature figures from the verified climate file.
+"""Build monthly temperature ribbon and lag-1 illustration figures.
 
-Outputs (does not overwrite the original Tmax/Tmin figure):
-  figures/lab_meeting/monthly_temp_ribbon_2013_2023.{pdf,png}
-  figures/lab_meeting/tmax_lag1_example_revised.{pdf,png}
+Outputs:
+  figures/temperature/monthly_temp_ribbon_2013_2023.{pdf,png}
+  figures/temperature/tmax_lag1_example.{pdf,png}
 """
 
 from __future__ import annotations
@@ -22,7 +22,7 @@ import matplotlib.ticker as mticker
 
 ROOT = Path(__file__).resolve().parents[1]
 CLIMATE = ROOT / "data_processed" / "climate_monthly_2013_2023.csv"
-OUT = ROOT / "figures" / "lab_meeting"
+OUT = ROOT / "figures" / "temperature"
 
 
 def load_climate():
@@ -116,8 +116,8 @@ def main():
     ax2.legend(loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=2, frameon=False, fontsize=8)
     fig2.tight_layout()
     fig2.subplots_adjust(bottom=0.22)
-    fig2.savefig(OUT / "tmax_lag1_example_revised.pdf", bbox_inches="tight")
-    fig2.savefig(OUT / "tmax_lag1_example_revised.png", bbox_inches="tight")
+    fig2.savefig(OUT / "tmax_lag1_example.pdf", bbox_inches="tight")
+    fig2.savefig(OUT / "tmax_lag1_example.png", bbox_inches="tight")
     plt.close(fig2)
 
     print(f"Wrote ribbon + lag figures to {OUT}")

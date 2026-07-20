@@ -1,128 +1,118 @@
-# Thermal Extremes and Cardiovascular Hospital Burden in Hong Kong, 2013–2023
+# Thermal extremes and stroke hospital burden in Hong Kong, 2013–2023
 
-Laidlaw Scholars research project, The University of Hong Kong.  
-Supervisor: Professor David Bishai. Analyst: Bob Shen Ruililin.  
-Collaborators: Hogan (environmental data); Roro (Hospital Authority access).
+Laidlaw Scholars project · The University of Hong Kong  
+**Bob Shen Ruililin** · Supervisor: **Professor David Bishai**
 
-## Research question
+This repository is the working home for a monthly climate–health analysis: how temperature and defined heatwave / cold extremes relate to **stroke admission aggregates** in Hong Kong, 2013–2023. The README is the primary orientation document; code and data sit underneath it.
 
-In Hong Kong from 2013 to 2023, how do officially defined thermal extremes—especially hot nights and cold days—relate to cardiovascular hospital admissions in an aging population, and do contemporary patterns differ from the historically cold-dominant risk profile reported in earlier local studies?
+---
 
-This is an ecological monthly time-series design. It does not claim individual-level causality, and it does not claim to be the first Hong Kong temperature–CVD or hot-night hospitalization study.
+## What this project is (now)
+
+| | |
+|---|---|
+| **Design** | Ecological **monthly** time series (132 months, Jan 2013–Dec 2023) |
+| **Exposures** | HKO Headquarters temperature (mean / Tmax / Tmin, lags) plus official extreme-day counts and Ren/Wang-style heatwave-burden metrics (spells, 2D3N) |
+| **Outcome (near-term)** | **Stroke admission aggregates** (files pending) |
+| **Not available** | General HA extract **does not specify reasons for admission** — no AMI / principal-dx CVD panel from that file |
+| **Strategy** | Explore a labelled panel of ~10 specifications (continuous temperature, lags, extremes, heatwave definitions, cold-side, strata, sensitivities) |
+| **Not claimed** | Individual causality; daily DLNM triggering; excess-death estimates from the lab’s separate heatwave–mortality work |
+
+Full post-meeting recalibration: [`reports/meeting_debrief_2026-07-17.md`](reports/meeting_debrief_2026-07-17.md).
+
+---
 
 ## Current status
 
-| Domain | Status | Notes |
-|---|---|---|
-| HKO weather exposures | **Real** | Daily extracts processed; annual extremes validated 33/33 against HKO *Year’s Weather* |
-| C&SD population denominators | **Real (MDT)** | Table 110-01001 mid-year age×sex; monthly linear interpolation |
-| Air pollution | Placeholder | Import scripts ready; replace with EPIC/EPD series before inference |
-| HA cardiovascular outcomes | **Pending HPC access** | Wet-ink signatures (Bob, Hogan) then Roro onboards; no results yet |
-| Near-term analysis | Recalibrating | Monthly Tmax/Tmin + lag → AMI/stroke (per Bishai, 12 Jul 2026); clinical covariates TBD on HPC |
-| Lab meeting | 17 July 2026 | Revised slides: `reports/Lab_Meeting_2026-07-17_revised.pdf` (original retained: `reports/Lab_Meeting_2026-07-17.pdf`) |
+| Domain | Status |
+|---|---|
+| HKO weather (monthly panel + extremes / spells) | **Ready** — annual extremes validated 33/33 vs HKO *Year’s Weather* |
+| C&SD age–sex denominators | **Ready** (Table 110-01001 MDT) |
+| Air pollution | Placeholder only — not for inference |
+| Stroke / HA aggregates | **Awaiting data transfer** |
+| Association estimates | **None yet** — no coefficients until QC + merge |
 
-**Do not interpret synthetic model coefficients as empirical findings.**
+Do not treat any synthetic practice runs as results.
 
-## How to run
+---
 
-From the repository root:
+## Quick start
 
 ```bash
 Rscript scripts/00_setup.R
-Rscript scripts/run_pipeline_dev.R    # default: synthetic HA dry-run + smoke checks
-# or
-Rscript scripts/run_pipeline.R       # alias for dev
+Rscript scripts/run_pipeline_dev.R   # weather / population / dry-run path
 ```
 
-Real-HA track (fails until an approved aggregate is present):
+Real-outcome track (expects an approved aggregate file):
 
 ```bash
 Rscript scripts/run_pipeline_real.R
 ```
 
-Pipeline toggles live in `config.yml` under `pipeline:` (`mode`, `weather_cache`, `refresh_csd`, `include_2024_extension`).
+Config lives in `config.yml`. Rebuild the validated annual extremes figure with `scripts/14_hko_annual_extremes_figure.R`.
 
-Or run scripts individually in order (`00` through `15`). Script `14` rebuilds the validated annual extremes figure under `figures/`. Script `15` runs smoke checks (HKO 33/33, C&SD import, schemas).
+---
 
-To recompile the research note or literature review:
-
-```bash
-cd reports/latex
-pdflatex -interaction=nonstopmode first_stage_research_note.tex
-pdflatex -interaction=nonstopmode literature_review_critical.tex
-bibtex literature_review_critical
-pdflatex -interaction=nonstopmode literature_review_critical.tex
-pdflatex -interaction=nonstopmode literature_review_critical.tex
-# copy PDFs to reports/ if desired
-```
-
-## Repository layout
+## Repository map
 
 ```text
-.
-├── README.md
-├── config.yml                 # Study window, thresholds, pipeline mode, paths, seeds
-├── schemas/                   # HA / EPD / C&SD input contracts
-├── analysis_plan/             # Assumption ledger and confirmation checklist
-├── scripts/                   # Numbered R pipeline (00–15) + run_pipeline_{dev,real}.R
-├── data_raw/                  # Immutable source files (HKO, EPD, C&SD MDT, HA placeholder)
-├── data_processed/            # Monthly climate, pollution, population, panels
-├── figures/                   # Manuscript-ready validated HKO figure
-├── outputs/
-│   ├── tables/                # Descriptive and (synthetic) model tables
-│   ├── figures/exploratory/   # Pipeline check plots (not manuscript figures)
-│   ├── figures/synthetic_diagnostic_plots/
-│   └── table_shells/          # Empty shells for eventual HA results
-├── literature/                # Evidence matrix, bibliography, comparison tables
-├── memos/                     # Data requests to Roro (HA) and Hogan (environment)
-├── reports/                   # Research note, validation note, literature memo
-└── manuscript/                # Draft Introduction, literature review, Methods
+README.md                 ← start here
+config.yml
+analysis_plan/            assumption ledger + decision gates
+scripts/                  numbered R pipeline
+data_raw/                 HKO, C&SD, EPD placeholder (no real HA microdata)
+data_processed/           monthly climate, population, confounders
+figures/                  validated extremes + exposure/aging figures
+outputs/tables/           descriptive tables from the public pipeline
+literature/               bibliography + evidence matrix
+reports/                  meeting debrief, literature review PDF, validation note
+schemas/                  input contracts for future aggregates
 ```
 
-Correspondence and personal emails are intentionally excluded from this repository.
+Correspondence, emails, and meeting slide drafts are **not** kept in this repo.
+
+---
 
 ## Exposure definitions (HKO Headquarters)
 
-| Metric | Official definition |
+| Metric | Definition |
 |---|---|
-| Hot night | Daily minimum temperature ≥ 28°C |
-| Very hot day | Daily maximum temperature ≥ 33°C |
-| Extremely hot day | Daily maximum temperature ≥ 35°C |
-| Cold day | Daily minimum temperature ≤ 12°C |
+| Hot night | Daily Tmin ≥ 28°C |
+| Very hot day | Daily Tmax ≥ 33°C |
+| Extremely hot day | Daily Tmax ≥ 35°C |
+| Cold day | Daily Tmin ≤ 12°C |
 
-Primary planned heat exposure: monthly count of hot nights. Cold days are retained as a co-primary exposure. Effective exposure sample for the core window: **132 months** (January 2013–December 2023).
+Monthly spell / combined day–night metrics (including 2D3N-style windows) are built in `data_processed/climate_monthly_2013_2023.csv` for the multi-method heatwave family.
 
-## Principal outputs
+---
 
-| Output | Path |
+## Key files
+
+| What | Where |
 |---|---|
-| First-stage research note | `reports/First_Stage_Research_Note.pdf` |
-| Exposure & aging context note | `reports/Exposure_Aging_Context_Note.pdf` |
-| Critical literature review | `reports/Literature_Review_Critical.pdf` |
-| Validated annual extremes figure | `figures/hko_annual_extremes_2013_2023.pdf` |
-| Exposure–aging figures | `figures/exposure_aging/` |
-| Figure validation note | `reports/hko_figure_validation_note.md` |
-| Monthly climate panel | `data_processed/climate_monthly_2013_2023.csv` |
-| C&SD population monthly | `data_processed/population_monthly_age_sex_2013_2023.csv` |
-| Input schemas | `schemas/` |
+| Post-meeting strategy + next actions | `reports/meeting_debrief_2026-07-17.md` |
 | Assumption ledger | `analysis_plan/assumption_ledger.md` |
-| HA data request | `memos/data_request_roro.md` |
-| Environmental data request | `memos/environmental_data_request_hogan.md` |
-| Literature memo / matrix | `reports/literature_review_findings_memo.md`, `literature/` |
-| Methods draft | `manuscript/methods_draft.md` |
+| Decision gates | `analysis_plan/decision_gates.md` |
+| Monthly climate panel | `data_processed/climate_monthly_2013_2023.csv` |
+| Literature review (PDF) | `reports/Literature_Review_Critical.pdf` |
+| HKO extremes figure | `figures/hko_annual_extremes_2013_2023.pdf` |
+| Exposure & aging note | `reports/Exposure_Aging_Context_Note.pdf` |
+| Figure validation | `reports/hko_figure_validation_note.md` |
 
-## Analytical standards
+---
 
-1. Label data provenance explicitly (`REAL`, `PLACEHOLDER_NOT_FOR_INFERENCE`, `SYNTHETIC`, `SYNTHETIC_DENOMINATOR`, `CSD_IMPORTED`).
-2. Never commit real Hospital Authority microdata; use `data_raw/ha_secure_placeholder/` only as a local staging reminder.
-3. Preserve `data_raw/`; processed files are rebuilt by scripts.
-4. Prefer staged pollution models; treat ozone cautiously as a potential pathway variable.
-5. Record unresolved design choices in the assumption ledger with `[TO CONFIRM]` tags in Methods.
-6. Use `run_pipeline_dev.R` until HA arrives; `run_pipeline_real.R` refuses synthetic outcomes.
+## Rules of the road
 
-## Scientific framing notes
+1. Label provenance (`REAL`, `PLACEHOLDER_NOT_FOR_INFERENCE`, `SYNTHETIC`, …).
+2. Never commit Hospital Authority microdata.
+3. Prefer rebuilding processed files from `data_raw/` via scripts.
+4. Monthly associations ≠ daily DLNM coefficients ≠ excess-death mortality counts.
+5. Record open design choices in the assumption ledger; freeze a headline method only after Gate 3.
 
-- Earlier Hong Kong daily studies (e.g. Goggins et al.) found cold-dominant cardiovascular associations; heat remains an open empirical question for this monthly design.
-- Guo et al. (2024) examined hot nights and hospitalization in Hong Kong: official binary hot nights were not associated with excess risk, whereas hot-night *intensity* was. Novelty claims must respect that overlap.
-- The scientific question is whether an emerging heat burden coexists with persistent cold risk in an aging city—not whether heat has simply replaced cold.
-- See `reports/Literature_Review_Critical.pdf` for the Adds / Inspires / Debates / Implementation map.
+---
+
+## Scientific context (short)
+
+Earlier Hong Kong daily studies (e.g. Goggins) reported cold-dominant cardiovascular admission patterns. Guo et al. (2024) found official binary hot nights alone were weak for hospitalization risk relative to nighttime heat *intensity*. Wang/Ren-style EHWE definitions (very hot days, hot nights, combined windows) matter for heatwave specification. A related lab line of work quantifies **daily multi-definition heatwave excess mortality**; this project is complementary: **monthly stroke-aggregate burden**, not a duplicate of that mortality analysis.
+
+See `reports/Literature_Review_Critical.pdf` for the literature map.

@@ -110,6 +110,6 @@ Not allowed before Gate 2 (and for primary claim, Gate 3):
 
 ## Related documents
 
+- `README.md`
 - `reports/meeting_debrief_2026-07-17.md`
-- `reports/post_meeting_next_steps.md`
 - `analysis_plan/assumption_ledger.md`

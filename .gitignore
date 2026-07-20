@@ -38,11 +38,11 @@ __pycache__/
 *.pyc
 .venv/
 
-# Local correspondence (do not commit)
+# Local correspondence and working drafts (do not commit)
 communications/
+memos/
+manuscript/
 *_email*.md
-# Exception: lab-meeting clarification draft requested as a deliverable
-!memos/clarification_email_to_roro.md
 *email_to*
 *email_from*
 *email_reply*

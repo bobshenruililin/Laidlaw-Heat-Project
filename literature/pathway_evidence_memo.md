@@ -64,3 +64,10 @@ A transparent, multi-definition **monthly** assessment of thermal exposures and 
 ## Bibliography keys (repo)
 
 See `literature/references.bib` and `literature/evidence_matrix.csv`. New pathway IDs should cite at least one anchor above when added to `pathway_registry.yml`.
+
+
+---
+
+## 9. Dry-run status (2026-07-21)
+
+Executable panel on SYNTHETIC stroke aggregates with **real** climate, pollution, and CHP flu exposures: pathways P01–P12, P14–P16 returned `ok` (P13 disabled until subtype fields exist). Coefficients are plumbing checks only.

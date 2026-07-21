@@ -1,0 +1,512 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+
+\usetheme{default}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{\textendash}
+
+% Laidlaw palette (Week~1 lab deck language, carried forward)
+\definecolor{LaidlawNavy}{HTML}{1B2A41}
+\definecolor{LaidlawTeal}{HTML}{3D6B6E}
+\definecolor{LaidlawRust}{HTML}{A85A3A}
+\definecolor{LaidlawGray}{HTML}{E8EAED}
+\definecolor{LaidlawText}{HTML}{2C2C2C}
+\definecolor{LaidlawSoft}{HTML}{F4F6F8}
+\definecolor{LaidlawSand}{HTML}{C9B8A8}
+
+\setbeamercolor{normal text}{fg=LaidlawText,bg=white}
+\setbeamercolor{structure}{fg=LaidlawTeal}
+\setbeamercolor{title}{fg=LaidlawNavy}
+\setbeamercolor{frametitle}{fg=LaidlawNavy}
+\setbeamercolor{subtitle}{fg=LaidlawTeal}
+\setbeamercolor{author}{fg=LaidlawText}
+\setbeamercolor{date}{fg=LaidlawText}
+\setbeamercolor{institute}{fg=LaidlawText}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{title}{series=\bfseries,size=\LARGE}
+\setbeamerfont{subtitle}{size=\large}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{tikz}
+\usepackage{array}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,shapes.geometric}
+\setlength{\leftmargini}{1.15em}
+\setlength{\itemsep}{0.28em}
+
+\newcommand{\callout}[1]{%
+  \begin{tikzpicture}
+    \node[
+      fill=LaidlawSoft,
+      draw=LaidlawGray,
+      rounded corners=2pt,
+      inner xsep=8pt,
+      inner ysep=5pt,
+      text width=0.92\textwidth,
+      align=left,
+      font=\footnotesize
+    ] {#1};
+  \end{tikzpicture}%
+}
+
+\title{Week~2 Progress: From Meeting Recalibration\\to a Manuscript-Ready Pathway Panel}
+\subtitle{Stroke aggregates $\cdot$ seventeen labelled methods $\cdot$ real pollution}
+\author{Bob Shen}
+\date{21 July 2026}
+\institute{Laidlaw Scholars Programme $\cdot$ Bishai Lab}
+
+\begin{document}
+
+%======================================================================
+\begin{frame}[plain]
+  \vspace{0.55cm}
+  {\color{LaidlawNavy}\LARGE\bfseries Week~2 Progress\par}
+  \vspace{0.25em}
+  {\color{LaidlawNavy}\Large\bfseries From meeting recalibration to a\\[0.08em]
+  manuscript-ready pathway panel\par}
+  \vspace{0.4em}
+  {\color{LaidlawTeal}\large Stroke aggregates $\cdot$ seventeen labelled methods $\cdot$ real pollution\par}
+
+  \vspace{0.85em}
+  {\normalsize Bob Shen\\[0.12em]
+  Laidlaw Scholars Programme $\cdot$ Bishai Lab\\[0.12em]
+  21 July 2026\par}
+
+  \vspace{1.0em}
+  \begin{center}
+  \scriptsize
+  {\color{LaidlawTeal}\textbf{READY}} exposures $\cdot$ pollution $\cdot$ flu $\cdot$ 17-pathway dry-run
+  \\[0.35em]
+  {\color{LaidlawRust}\textbf{PENDING}} stroke aggregates $\cdot$ Gate~3 headline freeze
+  \\[0.35em]
+  {\color{LaidlawNavy}\textbf{THIS WEEK}} one-command drop-in when files arrive
+  \end{center}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{The story of Week~2 in one sentence}
+  \vspace{0.35em}
+  \begin{center}
+  {\large\color{LaidlawNavy}\bfseries
+  The meeting told us what the data cannot be.\\[0.25em]
+  The week built what the analysis must be.}
+  \end{center}
+
+  \vspace{0.85em}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      {\color{LaidlawTeal}\textbf{17 July --- hearing}}
+      \begin{itemize}
+        \item No admission reasons in the general HA file
+        \item Near-term outcome: \textbf{stroke aggregates}
+        \item Explore $\sim$10 methods, not one hero model
+        \item Stay complementary to daily heatwave--mortality work
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\color{LaidlawTeal}\textbf{This week --- building}}
+      \begin{itemize}
+        \item Real EPD EPIC pollution (NO$_2$, O$_3$, PM$_{2.5}$, PM$_{10}$)
+        \item Pathway registry P01--P18 with SAP
+        \item Dry-run: \textbf{17 pathways OK} (synthetic stroke)
+        \item Drop-in command for real aggregates
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.55em}
+  \callout{\textbf{Honesty line:} synthetic coefficients prove plumbing --- they are not findings.}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{What the lab meeting changed}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabular}{@{}p{0.30\textwidth}p{0.30\textwidth}p{0.32\textwidth}@{}}
+    \toprule
+    \textbf{Before} & \textbf{Meeting} & \textbf{Now} \\
+    \midrule
+    AMI $+$ IS $+$ HS principal-dx panel & Reasons for admission unavailable & Stroke aggregates; AMI out of scope from that file \\[0.45em]
+    One primary heat model & ``Try $\sim$10 methods'' & Labelled pathway panel P01--P18 \\[0.45em]
+    Heatwave metrics of interest & Align with Chao Ren / Wang EHWE & Spells, 2D3N, multi-def HW-month \\[0.45em]
+    Parallel to historical Goggins & Lab daily mortality HW work exists & Complementary estimand, not a duplicate \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.7em}
+  \callout{\textbf{Insight:} when the outcome is aggregate and the heatwave definition is contested,
+  specification diversity is not noise --- it is the scientific design.}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Recalibrated question (Week~2 framing)}
+  \vspace{0.2em}
+  \begin{center}
+  \begin{tikzpicture}
+    \node[
+      fill=LaidlawSoft,
+      draw=LaidlawNavy,
+      line width=0.8pt,
+      rounded corners=3pt,
+      inner xsep=12pt,
+      inner ysep=9pt,
+      text width=0.88\textwidth,
+      align=left,
+      font=\normalsize
+    ] {%
+      Among Hong Kong residents in the eligible aggregate population,
+      how do \textbf{monthly} thermal exposures --- continuous temperature,
+      official extreme-day counts, Ren/Wang spell and 2D3N burden, and
+      multi-definition heatwave-month indicators --- associate with
+      \textbf{stroke admission aggregates} (2013--2023), and how stable
+      are those associations across a pre-labelled panel of specifications?
+    };
+  \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.55em}
+  \footnotesize
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      {\color{LaidlawTeal}\textbf{This estimand}}
+      \begin{itemize}
+        \item Monthly hospital \textit{burden}
+        \item Stroke aggregates
+        \item Panel of labelled pathways
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\color{LaidlawRust}\textbf{Not this estimand}}
+      \begin{itemize}
+        \item Daily DLNM triggering (Goggins)
+        \item Excess-death heatwave counts (Liu/Ren/Bishai)
+        \item AMI from files without reasons
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Climate layer: still the project's ground truth}
+  \begin{center}
+    \includegraphics[width=0.94\textwidth]{../../figures/week2_progress/fig_annual_extremes.pdf}
+  \end{center}
+  \vspace{-0.2em}
+  \begin{center}
+  \scriptsize
+  Early period (2013--2018) averages $\sim$31 hot nights / $\sim$30 VHDs / $\sim$16 cold days per year;
+  late period (2019--2023) $\sim$53 / $\sim$48 / $\sim$10.
+  Peak hot-night year: \textbf{2021 (61)}. Cold days persist --- they do not vanish.
+  \end{center}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{New this week: real pollution, not a placeholder}
+  \begin{center}
+    \includegraphics[width=0.90\textwidth]{../../figures/week2_progress/fig_pollution_annual.pdf}
+  \end{center}
+  \vspace{-0.25em}
+  \footnotesize
+  \begin{columns}[T]
+    \begin{column}{0.56\textwidth}
+      EPD EPIC monthly general-station means, 2013--2023.\\
+      Early (2013--2016) $\to$ late (2021--2023):
+      NO$_2$ $-32\%$, PM$_{2.5}$ $-45\%$, PM$_{10}$ $-38\%$;
+      O$_3$ \textbf{$+32\%$}.
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      {\scriptsize
+      \textbf{Modelling rule:} stage pollution
+      (none $\to$ NO$_2$ $\to$ PM$_{2.5}$ $\to$ O$_3$ $\to$ multi).
+      Enter O$_3$ last --- heat--ozone collinearity.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Why definitions disagree --- and why that is useful}
+  \begin{center}
+    \includegraphics[width=0.88\textwidth]{../../figures/week2_progress/fig_hw_month_defs.pdf}
+  \end{center}
+  \vspace{0.15em}
+  \footnotesize
+  Guo et al.\ (EHP 2017) showed heatwave risk depends on percentile $\times$ duration grids.
+  Wang/Ren (2019) add spell and combined day--night structure.
+  Liu/Ren/Bishai mortality work treats multi-definition as first-class.
+  \textbf{Our monthly collapse inherits that spirit} without claiming daily excess deaths.
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{The pathway panel: seventeen doors, one room}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabular}{@{}ll@{}}
+    \toprule
+    \textbf{Family} & \textbf{Pathways} \\
+    \midrule
+    Continuous temperature / lag & P01 Tmean $\cdot$ P02 Tmax/Tmin (headline) $\cdot$ P03 lag-1 \\
+    Extremes \& heatwaves & P04 official (headline) $\cdot$ P05 spells $\cdot$ P06 2D3N $\cdot$ P07 HW-month \\
+    Cold & P08 cold-primary $\cdot$ P18 cold-month (p05) \\
+    Structure & P09 age $\cdot$ P17 sex \\
+    Confounding ladder & P10 COVID/holidays $\cdot$ P11 pollution $\cdot$ P12 AH $\cdot$ P14 flu \\
+    Sensitivity & P15 temperature variability $\cdot$ P16 pre-COVID \\
+    Optional & P13 IS vs HS --- \textit{enable only if subtype exists} \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.55em}
+  \callout{\textbf{Reporting rule:} one panel, not seventeen discoveries.
+  Gate~3 freezes the headline pair --- proposal \textbf{P02 + P04} --- after real descriptives.}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Architecture: what runs when the file arrives}
+  \vspace{0.15em}
+  \begin{center}
+  \begin{tikzpicture}[
+    node distance=0.22cm and 0.35cm,
+    box/.style={
+      draw=LaidlawNavy,
+      line width=0.7pt,
+      rounded corners=2pt,
+      align=center,
+      font=\scriptsize,
+      inner sep=4pt,
+      text width=2.55cm,
+      fill=LaidlawSoft
+    },
+    wait/.style={
+      draw=LaidlawRust,
+      line width=0.7pt,
+      rounded corners=2pt,
+      align=center,
+      font=\scriptsize,
+      inner sep=4pt,
+      text width=2.55cm,
+      fill=white,
+      dashed
+    },
+    arr/.style={-{Latex}, thick, LaidlawTeal}
+  ]
+    \node[box] (a) {HKO exposures\\lag-1, HW-month, TV};
+    \node[box, right=of a] (b) {EPD pollution\\$+$ CHP flu};
+    \node[wait, right=of b] (c) {Stroke aggregates\\(awaiting)};
+    \node[box, below=1.05cm of b] (d) {QC receipt\\$+$ merge panel};
+    \node[box, below=of d] (e) {Fit P01--P18\\NB / quasi-Poisson};
+    \node[box, left=of e] (f) {Manuscript tables\\diagnostics};
+    \node[box, right=of e] (g) {Forest figure\\pathway summary};
+
+    \draw[arr] (a) -- (d);
+    \draw[arr] (b) -- (d);
+    \draw[arr] (c) -- (d);
+    \draw[arr] (d) -- (e);
+    \draw[arr] (e) -- (f);
+    \draw[arr] (e) -- (g);
+  \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.45em}
+  \footnotesize
+  \texttt{PATHWAY\_MODE=real Rscript scripts/run\_pathway\_pipeline.R}\\[0.2em]
+  Real mode refuses synthetic outcomes. Place approved CSV under
+  \texttt{data\_raw/ha\_secure\_placeholder/} --- never commit microdata.
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Dry-run proof: plumbing works}
+  \begin{columns}[T]
+    \begin{column}{0.50\textwidth}
+      {\color{LaidlawTeal}\textbf{What succeeded}}
+      \begin{itemize}
+        \item \textbf{17 / 17} enabled pathways returned \texttt{ok}
+        \item P13 correctly \texttt{disabled} (no subtype)
+        \item Age$\times$sex synthetic grain exercised P09/P17
+        \item Flu pathway used complete-case (121/132 months)
+        \item Forest $+$ diagnostics $+$ manuscript tables written
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\color{LaidlawRust}\textbf{What it does not mean}}
+      \begin{itemize}
+        \item Coefficients are \textbf{not} findings
+        \item Synthetic stroke is a schema rehearsal
+        \item Gate~1--2 still own real data arrival
+        \item Gate~3 still owns the headline freeze
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.65em}
+  \callout{\textbf{Week~1 parallel:} then, HKO descriptives were real and models were synthetic.
+  Now, \emph{all public layers} are real --- only the outcome remains the missing keystone.}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Readiness: one missing piece}
+  \begin{center}
+    \includegraphics[width=0.92\textwidth]{../../figures/week2_progress/fig_readiness.pdf}
+  \end{center}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Literature that shaped the panel (selected)}
+  \footnotesize
+  \begin{itemize}
+    \item \textbf{Goggins 2012/2013} --- cold-dominant stroke/AMI; subtype and sex matter $\rightarrow$ P08, P13, P17
+    \item \textbf{Guo 2024} --- official hot-night binary often null; intensity matters $\rightarrow$ P04 necessary, P05/P06 essential
+    \item \textbf{Wang/Ren 2019} --- VHD/HN spells and 2D3N $\rightarrow$ P05, P06
+    \item \textbf{Guo/Gasparrini 2017} --- percentile $\times$ duration grids $\rightarrow$ P07 multi-def HW-month
+    \item \textbf{Yang/Chong 2025} --- cold $+$ influenza and stroke ($\sim$1.17M admissions) $\rightarrow$ P14, P18
+    \item \textbf{Tian/Qiu 2023 (JoGH)} --- temperature variability and circulatory admissions $\rightarrow$ P15
+    \item \textbf{Guo 2025} --- pollution amplifies temperature--hospitalisation associations $\rightarrow$ P11 staged
+  \end{itemize}
+  \vspace{0.35em}
+  \scriptsize Full map: \texttt{literature/pathway\_evidence\_memo.md}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Scientist operating system (new documents)}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      {\color{LaidlawTeal}\textbf{Contracts}}
+      \begin{itemize}
+        \item Statistical Analysis Protocol
+        \item Pathway catalogue $+$ YAML registry
+        \item Stroke aggregate JSON schema
+        \item Decision gates (updated for P01--P18)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\color{LaidlawTeal}\textbf{Products}}
+      \begin{itemize}
+        \item Pathway coefficient panel
+        \item Headline residual diagnostics
+        \item Forest figure
+        \item Manuscript table shells
+        \item Scientist runbook (drop-in steps)
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.7em}
+  \callout{\textbf{Design ethic:} every estimate carries a \texttt{pathway\_id}.
+  Amendments after Gate~3 require a new pathway ID --- no silent redefinition of P02/P04.}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Still open --- decisions that unlock inference}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}p{0.34\textwidth}p{0.34\textwidth}p{0.24\textwidth}@{}}
+    \toprule
+    \textbf{Open item} & \textbf{Working default} & \textbf{Owner} \\
+    \midrule
+    Stroke aggregate file $+$ dictionary & Schema: \texttt{month\_id}, \texttt{n\_events} minimum & Roro / Bob \\
+    Grain (territory vs age$\times$sex) & Prefer age$\times$sex if available & On file inspection \\
+    Subtype IS/HS & Enable P13 only if present & On file inspection \\
+    Governance / use path & Follow PI determination & Bishai \\
+    Headline pair (Gate~3) & Proposal: \textbf{P02 $+$ P04} & Team after descriptives \\
+    Official holiday gazette & Deterministic scaffold v2 until then & Bob (optional) \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.55em}
+  \callout{\textbf{Ask:} when aggregates are cleared for transfer, drop the CSV and run real mode.
+  First deliverable within hours: QC receipt $+$ pathway panel $+$ forest --- then Gate~3 freeze.}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}[plain]
+  \vspace{1.1cm}
+  {\color{LaidlawNavy}\LARGE\bfseries Week~2 close\par}
+  \vspace{0.45em}
+  {\large\color{LaidlawTeal}
+  We no longer wait to invent the analysis.\\[0.2em]
+  We wait only for the file.\par}
+
+  \vspace{0.9em}
+  \footnotesize
+  \begin{itemize}
+    \item Public layers: HKO, C\&SD, EPD, CHP flu --- \textbf{real}
+    \item Analysis system: 17 pathways, SAP, diagnostics --- \textbf{ready}
+    \item Outcome: stroke aggregates --- \textbf{pending}
+    \item Claim discipline: monthly burden $\neq$ daily DLNM $\neq$ excess deaths
+  \end{itemize}
+
+  \vspace{0.85em}
+  {\small
+  Repo: \texttt{https://github.com/bobshenruililin/Laidlaw-Heat-Project}\\[0.15em]
+  Companion brief: \texttt{reports/Week2\_Progress\_Brief.pdf}
+  \par}
+\end{frame}
+
+%======================================================================
+% Appendix
+\begin{frame}[plain]
+  \vspace{2.2cm}
+  \begin{center}
+  {\color{LaidlawNavy}\Large\bfseries Appendix\par}
+  \vspace{0.35em}
+  {\color{LaidlawTeal} Numbers, command, and pathway index\par}
+  \end{center}
+\end{frame}
+
+\begin{frame}{A1 --- Verified environmental numbers (Week~2)}
+  \footnotesize
+  \begin{itemize}
+    \item Study months: $N=132$ (Jan 2013--Dec 2023)
+    \item Mean temperature: $24.02^\circ$C (SD from monthly series)
+    \item Lag-1 Tmax complete for all 132 months (Dec 2012 joined)
+    \item Heatwave-month flags: p90 $=14$, p95 $=7$, p97.5 $=5$; 2D3N months $=38$
+    \item Temperature variability: mean daily diurnal range $\approx 4.56^\circ$C
+    \item Flu Express coverage: 121/132 months (early-2013 gap documented)
+    \item Pollution provenance: \texttt{EPD\_GENERAL\_STATIONS} (placeholder removed)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{A2 --- One-command drop-in}
+\begin{verbatim}
+# Dry-run (synthetic stroke; current default)
+Rscript scripts/run_pathway_pipeline.R
+
+# Real aggregates
+# 1. Place approved CSV in data_raw/ha_secure_placeholder/
+# 2. Then:
+PATHWAY_MODE=real Rscript scripts/run_pathway_pipeline.R
+\end{verbatim}
+  \vspace{0.4em}
+  \footnotesize
+  Outputs: \texttt{outputs/reports/pathway\_panel\_summary.md},
+  \texttt{outputs/tables/pathway\_panel\_estimates.csv},
+  \texttt{outputs/figures/pathway/pathway\_panel\_forest.png}.
+\end{frame}
+
+\begin{frame}{A3 --- Pathway index (enabled unless noted)}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.08}
+  \begin{tabular}{@{}llp{0.55\textwidth}@{}}
+    \toprule
+    ID & Status & Title \\
+    \midrule
+    P01 & ok & Continuous same-month mean temperature \\
+    P02 & ok & Continuous same-month Tmax and Tmin \\
+    P03 & ok & Lag-1 month temperature \\
+    P04 & ok & Official extreme-day counts \\
+    P05 & ok & Ren/Wang spell burden \\
+    P06 & ok & Combined day--night 2D3N burden \\
+    P07 & ok & Heatwave-month multi-percentile $+$ spells \\
+    P08 & ok & Cold-side primary \\
+    P09 & ok & Age-stratified (65$+$ vs younger) \\
+    P10 & ok & COVID and holiday sensitivity \\
+    P11 & ok & Pollution-staged on P02 \\
+    P12 & ok & Absolute humidity sensitivity \\
+    P13 & disabled & Subtype IS vs HS (await fields) \\
+    P14--P18 & ok & Flu, TV, pre-COVID, sex, cold-month \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\setlist{itemsep=0.25em, topsep=0.35em}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+\pagestyle{plain}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+
+\title{\vspace{-1.2em}\textbf{Laidlaw Progress Brief --- Week~2}\\[0.35em]
+\large From Meeting Recalibration to a Manuscript-Ready Pathway Panel}
+\author{Bob Shen \quad|\quad Supervisor: Professor David Bishai\\
+\small Second-week update \quad 21 July 2026}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-1.5em}
+
+\begin{center}
+\textit{Purpose: show what Week~2 changed after the 17~July lab meeting,\\
+what is now real versus provisional, and what unlocks inference.\\
+No Hospital Authority outcome coefficients are claimed.}
+\end{center}
+
+\section*{1. Where things stand}
+Week~1 ended with a clear boundary: HKO climate descriptives were real; models were synthetic; HA outcomes were pending. The 17~July meeting then \textbf{recalibrated the scientific target}: the general HA file does not specify reasons for admission, so AMI/principal-dx CVD is out of scope from that extract; near-term work uses \textbf{stroke admission aggregates}; and we should explore a labelled panel of $\sim$10 methods rather than one hero specification.
+
+\textbf{Central point this week:} the public data layers and the analysis system are now ready for that recalibrated question. Real EPD pollution and CHP flu are in; a 17-pathway panel dry-runs cleanly; stroke aggregates remain the single missing keystone.
+
+\section*{2. Scientific framing (updated)}
+\begin{quote}
+\textit{Monthly thermal extremes and stroke admission aggregates in Hong Kong, 2013--2023:\\
+a multi-specification analysis complementary to daily heatwave--mortality work.}
+\end{quote}
+We estimate ecological monthly burden associations --- not daily DLNM triggering, and not excess-death counts from the lab's multi-definition heatwave--mortality line. Cold remains co-primary (Goggins; Yang/Chong 2025). Heatwave definition diversity is intentional (Guo/Gasparrini 2017; Wang/Ren 2019; Liu/Ren/Bishai).
+
+\section*{3. What became real this week}
+\paragraph{Pollution (EPD EPIC).}
+Official monthly general-station means for NO$_2$, O$_3$, PM$_{2.5}$, and PM$_{10}$ (2013--2023). Early (2013--2016) to late (2021--2023): NO$_2$ $-32\%$, PM$_{2.5}$ $-45\%$, PM$_{10}$ $-38\%$; O$_3$ $+32\%$. Staged into pathway P11 (O$_3$ last).
+
+\paragraph{Influenza (CHP Flu Express).}
+Monthly positivity for pathway P14; coverage 121/132 months (early-2013 gap documented; complete-case).
+
+\paragraph{Analysis exposures.}
+Lag-1 temperature (Dec~2012 joined), multi-percentile heatwave-month indicators (p90/p95/p97.5), daily diurnal-range temperature variability, Ren/Wang spell and 2D3N metrics --- all in \texttt{exposures\_monthly\_2013\_2023.csv}.
+
+\paragraph{Climate reminder (unchanged ground truth).}
+Hot nights and very hot days rose sharply after 2018; cold days persist. Peak hot-night year: 2021 (61 nights). These remain \textbf{descriptive climate findings only}.
+
+\section*{4. What I built (workflow, not findings)}
+\begin{itemize}
+  \item Executable pathway registry P01--P18 with Statistical Analysis Protocol, scientist runbook, and stroke-aggregate schema.
+  \item End-to-end orchestrator: \texttt{Rscript scripts/run\_pathway\_pipeline.R} (dev) or \texttt{PATHWAY\_MODE=real} after placing aggregates.
+  \item Dry-run on synthetic stroke with \textbf{real} climate/pollution/flu: \textbf{17 pathways OK}; P13 disabled until subtype exists.
+  \item Manuscript products: coefficient panel, headline diagnostics, forest figure, table shells.
+  \item Headline proposal for Gate~3: \textbf{P02} (Tmax/Tmin) $+$ \textbf{P04} (official extreme-day counts).
+\end{itemize}
+\textbf{Synthetic coefficients are not study results.}
+
+\section*{5. Still missing / recommended defaults}
+\begin{itemize}
+  \item \textbf{Missing:} approved stroke aggregate file $+$ dictionary; PI governance path for use; Gate~3 freeze after real descriptives.
+  \item \textbf{Defaults:} monthly stroke aggregates (pooled unless IS/HS present); age$\times$sex grain if available; negative binomial with $\log(\mathrm{population}\times\mathrm{days})$ offset; panel reporting, not seventeen discoveries; no AMI claims from files without admission reasons.
+\end{itemize}
+
+\section*{6. Ask}
+When aggregates clear transfer, place the CSV under \texttt{data\_raw/ha\_secure\_placeholder/} and run real mode. First deliverable: QC receipt $+$ pathway panel $+$ forest, then a short Gate~3 freeze note naming the headline pair.
+
+\vspace{0.45em}
+\noindent\textit{Deck:} \texttt{reports/Week2\_Progress\_Deck.pdf}
+\quad\textit{Repo:} \url{https://github.com/bobshenruililin/Laidlaw-Heat-Project}
+
+\end{document}

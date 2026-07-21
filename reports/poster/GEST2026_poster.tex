@@ -1,198 +1,202 @@
-% GEST-2026 Poster — Shen Ruililin
-% Single-page A0 landscape with absolute positioning
-\documentclass[10pt]{article}
-\usepackage[margin=0pt,paperwidth=118.9cm,paperheight=84.1cm]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{array}
-\usepackage{xcolor}
-\usepackage{enumitem}
-\usepackage{microtype}
-\usepackage{ragged2e}
-\usepackage[absolute,overlay]{textpos}
-\usepackage{tcolorbox}
-\tcbuselibrary{skins,breakable}
-
-\pagestyle{empty}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0.2em}
-\setlength{\TPHorizModule}{1cm}
-\setlength{\TPVertModule}{1cm}
-\textblockorigin{0cm}{0cm}
-\setlist[itemize]{leftmargin=1.05em,itemsep=0.12em,topsep=0.15em,parsep=0pt}
-\setlist[enumerate]{leftmargin=1.2em,itemsep=0.15em,topsep=0.15em,parsep=0pt}
-
-\definecolor{Ink}{HTML}{1A2332}
-\definecolor{Teal}{HTML}{0B5B6B}
-\definecolor{TealDark}{HTML}{083F4A}
-\definecolor{TealSoft}{HTML}{E6F2F4}
-\definecolor{Muted}{HTML}{5A6570}
-\definecolor{Panel}{HTML}{F7FAFB}
-\definecolor{Warn}{HTML}{8B4513}
-\color{Ink}
-
-\newcommand{\posterbox}[2]{%
-  \begin{tcolorbox}[
-    enhanced,
-    colback=Panel,
-    colframe=Teal,
-    boxrule=1.0pt,
-    arc=2pt,
-    left=9pt,right=9pt,top=7pt,bottom=7pt,
-    coltitle=white,
-    fonttitle=\bfseries\fontsize{15}{18}\selectfont,
-    attach boxed title to top left={yshift=-2mm,xshift=5mm},
-    boxed title style={
-      colback=Teal,colframe=Teal,arc=1.5pt,boxrule=0pt,
-      left=7pt,right=7pt,top=2pt,bottom=2pt
-    },
-    title={{#1}},
-    before skip=0pt,
-    after skip=0.28cm,
-    width=\linewidth
-  ]
-  \RaggedRight\fontsize{11.5}{14.2}\selectfont #2
-  \end{tcolorbox}%
-}
-
-\newcommand{\statchip}[2]{%
-  \begin{tcolorbox}[
-    enhanced,width=\linewidth,
-    colback=TealSoft,colframe=Teal,boxrule=0.7pt,arc=1.5pt,
-    left=5pt,right=5pt,top=3pt,bottom=3pt,
-    before skip=0.08cm, after skip=0.08cm
-  ]
-  {\centering\color{Teal}\bfseries\fontsize{16}{18}\selectfont #1\par}
-  {\centering\color{Muted}\fontsize{9}{11}\selectfont #2\par}
-  \end{tcolorbox}%
-}
-
-\emergencystretch=3em
+\documentclass[11pt]{article}
+\usepackage[paperwidth=1189mm,paperheight=841mm,left=8mm,right=8mm,top=6mm,bottom=6mm]{geometry}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage{lmodern}
+\usepackage{graphicx,booktabs,tabularx,array,xcolor,enumitem,microtype,ragged2e,tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{tcolorbox}\tcbuselibrary{skins,breakable}
+\pagestyle{empty}\setlength{\parindent}{0pt}\setlength{\parskip}{0.08em}
+\setlist[itemize]{leftmargin=0.95em,itemsep=0.04em,topsep=0.05em,parsep=0pt}
+\setlist[enumerate]{leftmargin=1.05em,itemsep=0.05em,topsep=0.05em,parsep=0pt}
+\emergencystretch=2em
+\definecolor{Ink}{HTML}{15202B}\definecolor{Teal}{HTML}{0A4F5C}
+\definecolor{TealDark}{HTML}{06343D}\definecolor{TealSoft}{HTML}{DCEEEF}
+\definecolor{Muted}{HTML}{3E4A54}\definecolor{Panel}{HTML}{D7EBED}
+\definecolor{Warn}{HTML}{7A3E12}\color{Ink}
 \begin{document}
-
-% HEADER
-\begin{textblock*}{115.3cm}(1.8cm,1.2cm)
-\begin{tcolorbox}[
-  enhanced,colback=TealDark,colframe=TealDark,boxrule=0pt,arc=0pt,
-  left=12pt,right=12pt,top=7pt,bottom=6pt,width=\linewidth
-]
-  \textcolor{white}{\bfseries\fontsize{26}{30}\selectfont
-  Rising hot nights, persistent cold days, and an aging population:}\\[1pt]
-  \textcolor{white}{\bfseries\fontsize{15.5}{18}\selectfont
-  thermal extremes and cardiovascular hospital burden in Hong Kong, 2013--2023}\\[3pt]
-  \textcolor{TealSoft}{\fontsize{11.5}{14}\selectfont
-  Shen Ruililin$^{\ast}$
-  \quad\textbar\quad
-  BASc (Global Health and Development), School of Public Health, The University of Hong Kong
-  \quad\textbar\quad GEST-2026 Poster
-  \quad\textbar\quad Environmental Toxicology and Human Health}\\[1pt]
-  \textcolor{TealSoft}{\fontsize{10}{12}\selectfont
-  Email: shenrll@connect.hku.hk
-  \quad$\cdot$\quad Laidlaw Scholars research project
-  \quad$\cdot$\quad Ecological time-series (exposures \& denominators complete; HA outcomes pending)}
+\begin{tcolorbox}[enhanced,colback=TealDark,colframe=TealDark,boxrule=0pt,arc=0pt,left=8pt,right=8pt,top=3.5pt,bottom=3pt,before skip=0pt,after skip=1.8mm,width=\linewidth]
+\textcolor{white}{\bfseries\fontsize{20}{23}\selectfont
+Rising hot nights, persistent cold days, and an aging population:
+thermal extremes and cardiovascular hospital burden in Hong Kong, 2013--2023}\\[1pt]
+\textcolor{TealSoft}{\fontsize{9.8}{11.5}\selectfont
+Shen Ruililin$^{\ast}$
+\quad\textbar\quad BASc (Global Health and Development), School of Public Health, The University of Hong Kong
+\quad\textbar\quad GEST-2026 Poster
+\quad\textbar\quad Environmental Toxicology and Human Health
+\quad\textbar\quad shenrll@connect.hku.hk}\\[0.4pt]
+\textcolor{TealSoft}{\fontsize{8.2}{9.8}\selectfont
+Laidlaw Scholars $\cdot$ Ecological monthly time-series ($N=132$)
+$\cdot$ REAL HKO \& C\&SD $\cdot$ HA outcomes pending HPC
+$\cdot$ No synthetic coefficients as findings
+$\cdot$ ISO A0 (1189\,mm $\times$ 841\,mm)}
 \end{tcolorbox}
-\end{textblock*}
+\noindent\begin{minipage}[t]{0.327\textwidth}
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal!60,boxrule=0.8pt,arc=0pt,left=2.5mm,right=2.5mm,top=2.5mm,bottom=2.5mm,width=\linewidth,height=778mm,valign=top,before skip=0pt,after skip=0pt]
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={1. Why climate extremes matter for human health},before skip=0pt,after skip=1.5mm,width=\linewidth]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
 
-% COLUMN 1
-\begin{textblock*}{36.5cm}(1.8cm,8.0cm)
-\begin{minipage}[t]{36.5cm}
-\posterbox{1. Why this matters for human health}{%
-Climate change is already reshaping thermal exposure in subtropical cities.
-Overnight heat and daytime extremes can impair physiological recovery, while cold snaps
-continue to stress cardiovascular systems via blood pressure, viscosity, and autonomic tone.
-
-Earlier local daily studies (e.g.\ Goggins and colleagues) found a
-\textbf{cold-dominant} cardiovascular hospitalization profile.
-Whether contemporary heat---especially official \textbf{hot nights}
-(Tmin\,$\geq$\,28$^\circ$C)---now coexists with persistent cold risk in an
-\textbf{aging} population is the open human-health question.
+Climate change reshapes thermal exposure in subtropical cities. Overnight heat
+impairs physiological recovery; cold snaps stress blood pressure, viscosity, and
+autonomic tone---raising acute cardiac and cerebrovascular risk among older adults
+in dense housing with limited overnight cooling.
 \begin{itemize}
-  \item Dense, humid urban living $\rightarrow$ limited overnight cooling
-  \item Ages 65--74 nearly doubled (2013--2023) $\rightarrow$ more vulnerable person-time
-  \item Hospital burden, not only mortality, matters for adaptation planning
+  \item Official HKO metrics drive public heat/cold warnings and preparedness
+  \item Ages 65--74 nearly doubled (2013--2023), multiplying vulnerable person-time
+  \item Hospital burden---not only mortality---matters for adaptation planning
 \end{itemize}
-}
 
-\posterbox{2. Research aim}{%
-\textbf{Aim.} Quantify official thermal extremes and population aging (2013--2023)
-as the climate--human exposure base for a planned ecological assessment of HA admissions
-for AMI, ischemic stroke, and hemorrhagic stroke among residents aged 35+.
+\end{tcolorbox}
 
-\textbf{Design.} Monthly ecological time-series ($N=132$ months); population-level associations only.
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={2. Literature synthesis (Hong Kong \& related)},before skip=0pt,after skip=1.5mm,width=\linewidth]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
 
-\textbf{Framing.} Coexistence of emerging heat with persistent cold---not an assumed heat-for-cold shift.
-}
+\textbf{Cold-dominant CVD (daily).}
+\begin{itemize}
+  \item \textbf{Goggins 2013} (AMI 2000--09): below $\sim$24$^\circ$C,
+        $\sim$\textbf{+3.7\% AMI / $^\circ$C} cooling (lags 0--13); \textbf{heat NS}; NO$_2$ key.
+  \item \textbf{Goggins 2012} (stroke, age 35+): HS $\sim$\textbf{+2.7\%/$^\circ$C} (lags 0--4);
+        IS $\sim$\textbf{+1.6\%/$^\circ$C} below $\sim$22$^\circ$C (lags 0--13).
+\end{itemize}
+\textbf{Night heat: intensity $\neq$ binary flag.}
+\begin{itemize}
+  \item \textbf{Guo 2024}: official HN (Tmin\,$\geq$\,28$^\circ$C) \textbf{null} for excess hosp.;
+        hot-night \textbf{intensity} $\sim$\textbf{+3.1\%} (circulatory sensitive).
+  \item \textbf{Wang 2019}: $\geq$5 consecutive HNs and 2D3N combinations raise mortality.
+\end{itemize}
+\textbf{Modifiers \& warm-climate winter excess.}
+\begin{itemize}
+  \item \textbf{Guo 2025}: temp.--hosp.\ risks amplified on polluted days.
+  \item \textbf{Yang/Chong 2025}: cold + influenza $\uparrow$ stroke ($\sim$1.17M; 22y).
+  \item \textbf{Lam 2018}: stronger cold--AMI in diabetes; \textbf{Lorking 2020}: tropical winter stroke excess.
+\end{itemize}
 
-\posterbox{3. Data \& exposure definitions}{%
-\renewcommand{\arraystretch}{1.08}
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={3. Mini evidence table (estimands not interchangeable)},before skip=0pt,after skip=1.5mm,width=\linewidth]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
+
+{\fontsize{8.7}{10.3}\selectfont\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\linewidth}{@{}>{\RaggedRight}p{2.15cm}>{\RaggedRight}X>{\centering\arraybackslash}p{1.4cm}@{}}
+\toprule
+\textbf{Study} & \textbf{Key finding} & \textbf{Scale} \\
+\midrule
+Goggins 2013 & AMI +3.7\%/$^\circ$C ($<$24$^\circ$C); heat NS & Daily \\
+Goggins 2012 & HS +2.7\%; IS +1.6\%/$^\circ$C & Daily \\
+Guo 2024 & Binary HN null; HNe $\sim$+3.1\% & Daily \\
+Wang 2019 & Spell / 2D3N informative & Daily \\
+Yang 2025 & Cold + ILI $\uparrow$ stroke & Weekly \\
+Lam 2018 & Cold--AMI stronger in DM & Daily \\
+\textbf{This project} & RR per 5 extreme days (planned) & \textbf{Monthly} \\
+\bottomrule
+\end{tabularx}}
+\vspace{0.8mm}
+{\color{Warn}\fontsize{8.3}{10}\selectfont
+Prior HK cold--CVD band $\approx$ 1.6--3.7\% per $^\circ$C (daily). Do \textbf{not} compare to planned monthly RR per 5 extremes.\par}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={4. Aim, design \& contribution},before skip=0pt,after skip=1.5mm,width=\linewidth]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
+
+\textbf{Aim.} Monthly associations of official hot nights \& cold days with
+principal-dx AMI, ischemic and hemorrhagic stroke (age 35+; 2013--2023) with age--sex offsets.\\[0.4mm]
+\textbf{Design.} Ecological time-series, $N=132$ months; population-level only.\\[0.4mm]
+\textbf{Contribution.} Monthly policy-metric audit for diagnosis-specific AMI/IS/HS with aging,
+COVID handling, staged pollution---\textbf{coexistence} framing. Not ``first hot-night hosp.\ study'' (Guo 2024).
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={5. Hot-night spell concentration (REAL)},before skip=0pt,after skip=0pt,width=\linewidth,height fill,valign=top]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
+
+\centering
+\includegraphics[width=\linewidth,height=24cm,keepaspectratio]{../../figures/exposure_aging/fig03_hot_night_spell_concentration.png}\\[1pt]
+{\color{Muted}\fontsize{8}{9.5}\selectfont Share of hot nights in multi-night spells rose from $\sim$34\% (2013--18) to $\sim$51\% (2019--23).\par}
+\vspace{1.2mm}
+{\fontsize{8.5}{10.2}\selectfont\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\linewidth}{@{}>{\RaggedRight}p{2.0cm}>{\RaggedRight}X>{\RaggedRight}X@{}}
+\toprule
+ & \textbf{Goggins 2012/13} & \textbf{This project} \\
+\midrule
+Resolution & Daily DL/GAM & Monthly counts \\
+Exposure & Mean $^\circ$C & Official extreme days \\
+Effect & \% per 1$^\circ$C & RR per 5 extremes \\
+Focus & Cold-dominant CVD & Heat + cold coexistence \\
+\bottomrule
+\end{tabularx}}
+\vspace{0.8mm}
+Daily = acute \textbf{triggering}; monthly = hospital \textbf{burden}. Coefficients are not interchangeable.
+
+\end{tcolorbox}
+
+\end{tcolorbox}
+\end{minipage}\hfill\begin{minipage}[t]{0.327\textwidth}
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal!60,boxrule=0.8pt,arc=0pt,left=2.5mm,right=2.5mm,top=2.5mm,bottom=2.5mm,width=\linewidth,height=778mm,valign=top,before skip=0pt,after skip=0pt]
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={6. Data sources \& official exposures},before skip=0pt,after skip=1.5mm,width=\linewidth]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
+
+{\fontsize{9}{10.6}\selectfont\renewcommand{\arraystretch}{1.08}
 \begin{tabularx}{\linewidth}{@{}l>{\RaggedRight\arraybackslash}X@{}}
 \toprule
 \textbf{Domain} & \textbf{Source / status} \\
 \midrule
-Weather & HKO Headquarters daily extracts \textbf{(REAL)} \\
-Population & C\&SD Table 110-01001 mid-year age$\times$sex \textbf{(REAL)} \\
-Pollution & EPD series (import ready; staged) \\
-Outcomes & HA CVD admissions \textbf{(pending HPC access)} \\
+Weather & HKO Headquarters daily \textbf{(REAL; 33/33 validated)} \\
+Population & C\&SD 110-01001 mid-year age$\times$sex \textbf{(REAL)} \\
+Pollution & EPD NO$_2$/O$_3$/PM (import ready; staged) \\
+Outcomes & HA CVD admissions \textbf{(pending HPC)} \\
 \bottomrule
-\end{tabularx}
-\vspace{0.2em}
-\textbf{Official HKO extremes:} hot night Tmin\,$\geq$\,28$^\circ$C;
-very hot day Tmax\,$\geq$\,33$^\circ$C;
-extremely hot day Tmax\,$\geq$\,35$^\circ$C;
-cold day Tmin\,$\leq$\,12$^\circ$C.
-Primary heat = monthly hot nights; co-primary cold = monthly cold days.
-Validation: annual totals \textbf{33/33 MATCH} vs HKO \textit{Year's Weather}.
-}
-\end{minipage}
-\end{textblock*}
+\end{tabularx}}
+\vspace{0.6mm}
+Hot night Tmin\,$\geq$\,28$^\circ$C; VHD Tmax\,$\geq$\,33$^\circ$C; extreme hot Tmax\,$\geq$\,35$^\circ$C;
+cold Tmin\,$\leq$\,12$^\circ$C. Primary: monthly HN; co-primary: cold days; spell-ge5 \& 2D3N alternatives.
 
-% COLUMN 2
-\begin{textblock*}{40.0cm}(39.3cm,8.0cm)
-\begin{minipage}[t]{40.0cm}
-\posterbox{4. Rising heat, persistent cold (REAL)}{%
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={7. Rising heat, persistent cold (REAL)},before skip=0pt,after skip=1.5mm,width=\linewidth]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
+
 \centering
-\includegraphics[width=\linewidth,height=18.5cm,keepaspectratio]{../../figures/exposure_aging/fig01_annual_extremes_coexistence.png}\\[1pt]
-{\color{Muted}\fontsize{9}{10.5}\selectfont Environmental descriptors only---not health-outcome results.\par}
-\begin{flushleft}
-\begin{itemize}
-  \item Hot nights: \textbf{10 (2013)} $\rightarrow$ \textbf{61 (2021)} / \textbf{56 (2023)}
-  \item Period means: \textbf{30.7 $\rightarrow$ 53.0} hot nights/year (2013--18 vs 2019--23)
-  \item Cold days persist: \textbf{13--14} days/year in 2021--2023
-  \item Hot nights in $\geq$5-night spells: 34\% $\rightarrow$ 51\%
-\end{itemize}
-\end{flushleft}
-}
+\includegraphics[width=\linewidth,height=25cm,keepaspectratio]{../../figures/exposure_aging/fig01_annual_extremes_coexistence.png}\\[0.8pt]
+{\color{Muted}\fontsize{7.8}{9.2}\selectfont Environmental descriptors only. Pipeline totals 33/33 MATCH vs HKO \textit{Year's Weather}.\par}
+\begin{flushleft}\begin{itemize}
+  \item HN: \textbf{10 (2013)}$\rightarrow$\textbf{61 (2021)}/\textbf{56 (2023)}; mean 30.7$\rightarrow$53.0/yr
+  \item VHD mean 30.2$\rightarrow$48.0/yr; cold days persist 13--14/yr (2021--23)
+  \item HN in $\geq$5-night spells: 34\%$\rightarrow$51\%; 2D3N months/yr: 2.7$\rightarrow$4.4
+\end{itemize}\end{flushleft}
 
-\posterbox{5. Aging raises the human stakes (REAL)}{%
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={8. Aging multiplies human stakes (REAL)},before skip=0pt,after skip=1.5mm,width=\linewidth]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
+
 \centering
-\includegraphics[width=0.88\linewidth,height=9.2cm,keepaspectratio]{../../figures/exposure_aging/fig04_population_aging_pct_change.png}\\[1pt]
-\begin{flushleft}
-\begin{itemize}
-  \item Ages \textbf{65--69}: +92.6\% \quad|\quad \textbf{70--74}: +99.3\% \quad|\quad 85+: +63.9\%
-  \item More clinically vulnerable person-time under a warming subtropical climate
-\end{itemize}
-\end{flushleft}
-}
-\end{minipage}
-\end{textblock*}
+\includegraphics[width=\linewidth,height=13cm,keepaspectratio]{../../figures/exposure_aging/fig04_population_aging_pct_change.png}\\[0.8pt]
+\begin{flushleft}\begin{itemize}
+  \item \textbf{65--69 +92.6\%} \quad|\quad \textbf{70--74 +99.3\%} \quad|\quad 85+ +63.9\% (C\&SD mid-year)
+  \item Separating 65--69 and 70--74 is clinically and operationally essential for HA planning
+\end{itemize}\end{flushleft}
 
-% COLUMN 3
-\begin{textblock*}{36.5cm}(80.3cm,8.0cm)
-\begin{minipage}[t]{36.5cm}
-\posterbox{6. Seventeen analysis pathways}{%
-Numbered scripts turn public weather/population inputs into validated exposures,
-denominators, and (when HA arrives) admission models. Dev track: synthetic HA dry-runs only.
-Real track refuses synthetic outcomes.
-\vspace{0.1em}
-{\fontsize{9.8}{11.8}\selectfont
-\renewcommand{\arraystretch}{0.98}
-\begin{tabularx}{\linewidth}{@{}c>{\RaggedRight\arraybackslash}X@{\hspace{1pt}}c@{}}
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={9. Continuous monthly temperature context (REAL)},before skip=0pt,after skip=0pt,width=\linewidth,height fill,valign=top]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
+
+\centering
+\includegraphics[width=\linewidth,height=14cm,keepaspectratio]{../../figures/lab_meeting/monthly_temp_ribbon_2013_2023_final.png}\\[0.8pt]
+{\color{Muted}\fontsize{8}{9.5}\selectfont HKO Headquarters monthly mean with Tmin--Tmax ribbon; $N=132$ months. Exposure file ready for HA merge.\par}
+
+\end{tcolorbox}
+
+\end{tcolorbox}
+\end{minipage}\hfill\begin{minipage}[t]{0.327\textwidth}
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal!60,boxrule=0.8pt,arc=0pt,left=2.5mm,right=2.5mm,top=2.5mm,bottom=2.5mm,width=\linewidth,height=778mm,valign=top,before skip=0pt,after skip=0pt]
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={10. Seventeen analysis pathways},before skip=0pt,after skip=1.5mm,width=\linewidth]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
+
+Dev/real tracks: synthetic HA dry-runs only vs refused synthetic outcomes.
+{\fontsize{8.5}{10.1}\selectfont\renewcommand{\arraystretch}{1.02}
+\begin{tabular}{@{}c p{7.8cm} c@{}}
 \toprule
-\textbf{\#} & \textbf{Pathway} & \textbf{Status} \\
+\textbf{\#}&\textbf{Pathway}&\textbf{Status}\\
 \midrule
 00 & Project setup \& session info & Done \\
 01 & Import HKO daily weather & Done \\
@@ -203,87 +207,107 @@ Real track refuses synthetic outcomes.
 06 & Confounders (COVID, holidays) & Done \\
 07 & Synthetic HA dry-run outcomes & Dev only \\
 08 & Merge analysis panel (dev) & Done \\
-08b & Merge approved HA panel & Pending \\
+08b & Merge approved HA panel (real) & Pending \\
 09 & Descriptive tables & Done \\
 10 & Exploratory figures & Done \\
-11 & Fit NB models (syn./real) & Scaffold \\
-12 & Model diagnostics & Scaffold \\
-13 & Report outputs \& status & Done \\
-14 & Validated extremes figure & Done \\
+11 & Fit NB rate models (syn./real) & Scaffold \\
+12 & Model diagnostics (syn./real) & Scaffold \\
+13 & Report outputs \& status note & Done \\
+14 & Validated annual extremes figure & Done \\
 15 & Smoke checks (HKO 33/33) & Done \\
 16 & Exposure--aging deliverable & Done \\
-17 & Lab-meeting temp figures & Done \\
+17 & Lab-meeting temperature figures & Done \\
 \bottomrule
-\end{tabularx}
-}
-\vspace{0.15em}
-{\color{Muted}\fontsize{8.5}{10}\selectfont
-Dev entry: \textsf{run\_pipeline\_dev.R}\\
-Real entry: \textsf{run\_pipeline\_real.R}\\
-Labels: REAL / PLACEHOLDER / SYNTHETIC.\par}
-}
+\end{tabular}}
+{\color{Muted}\fontsize{7.8}{9.2}\selectfont\textsf{run\_pipeline\_dev.R} / \textsf{run\_pipeline\_real.R}. Labels: REAL / PLACEHOLDER / SYNTHETIC.\par}
 
-\posterbox{7. Planned hospital-burden analysis}{%
-Once HA access is live (ICD-9; patient-level admissions;
-ages 65--69 \& 70--74 separable):
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={11. Monthly hot nights vs cold days (REAL)},before skip=0pt,after skip=1.5mm,width=\linewidth]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
+
+\centering
+\includegraphics[width=\linewidth,height=15cm,keepaspectratio]{../../figures/exposure_aging/fig02_monthly_hot_nights_cold_days.png}\\[0.8pt]
+{\color{Muted}\fontsize{8}{9.5}\selectfont Bars = hot nights; line = cold days. Cold exposure persists alongside rising heat.\par}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={12. Older cohorts \& pipeline logic},before skip=0pt,after skip=1.5mm,width=\linewidth]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
+
+\centering
+\includegraphics[width=\linewidth,height=9cm,keepaspectratio]{../../figures/exposure_aging/fig05_older_cohorts_timeseries.png}\\[1.2pt]
+\begin{tikzpicture}[font=\fontsize{8}{9.5}\selectfont,
+  box/.style={draw=Teal,fill=TealSoft,rounded corners=1pt,align=center,inner sep=2.2pt,text width=2.15cm,minimum height=7mm},
+  arr/.style={-{Latex},thick,Teal}]
+\node[box] (w) {HKO weather\\01--02};
+\node[box,right=1.8mm of w] (p) {EPD pollution\\03--04};
+\node[box,right=1.8mm of p] (c) {C\&SD pop.\\05};
+\node[box,below=3mm of p] (m) {Merge 06--08b};
+\node[box,below=3mm of m] (d) {Describe 09--10,14--17};
+\node[box,below=3mm of d] (f) {NB models 11--13};
+\draw[arr] (w)--(m);\draw[arr] (p)--(m);\draw[arr] (c)--(m);
+\draw[arr] (m)--(d);\draw[arr] (d)--(f);
+\end{tikzpicture}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={13. Planned analysis \& caveats},before skip=0pt,after skip=1.5mm,width=\linewidth]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
+
+\textbf{When HA is live} (ICD-9; patient-level; ages 65--69 \& 70--74 separable):
 \begin{itemize}
-  \item Aggregate to month $\times$ age $\times$ sex $\times$ diagnosis
-  \item Negative-binomial rates; $\log$(population $\times$ days) offset
-  \item Hot nights \& cold days (per 5 extreme days); Tmax/Tmin + lag
-  \item Adjust for seasonality, trend, COVID phases; stage pollution
-  \item Outcomes: AMI, ischemic stroke, hemorrhagic stroke
+  \item Month $\times$ age $\times$ sex $\times$ diagnosis aggregates
+  \item NB rates; $\log$(population $\times$ days) offset
+  \item HN \& cold days (per 5); Tmax/Tmin + lag; COVID phases; staged pollution; cautious O$_3$
+  \item Outcomes: AMI, IS, HS (principal diagnosis)
 \end{itemize}
-{\color{Warn}\bfseries\fontsize{10}{12}\selectfont
-No synthetic model coefficients are presented as findings.\par}
-}
-\end{minipage}
-\end{textblock*}
+{\color{Warn}\bfseries\fontsize{8.6}{10.2}\selectfont No synthetic coefficients as findings.\par}
+\vspace{0.8mm}
+\textbf{Caveats.} Null official HN compatible with Guo 2024; monthly = burden not triggering;
+HQ T is a territory proxy; no cold$\rightarrow$heat regime-shift claim without harmonized methods.
 
-% BOTTOM LEFT: takeaways + figures
-\begin{textblock*}{76.5cm}(1.8cm,61.0cm)
-\begin{minipage}[t]{76.5cm}
-\posterbox{8. Take-home messages}{%
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced,colback=Panel,colframe=Teal,boxrule=0.85pt,arc=1.2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,coltitle=white,fonttitle=\bfseries\fontsize{12.5}{14}\selectfont,attach boxed title to top left={yshift=-1.5mm,xshift=3.5mm},boxed title style={colback=Teal,colframe=Teal,arc=1pt,boxrule=0pt,left=4.5pt,right=4.5pt,top=1pt,bottom=1pt},title={14. Key numbers \& take-homes},before skip=0pt,after skip=0pt,width=\linewidth,height fill,valign=top]
+\RaggedRight\fontsize{9.8}{11.6}\selectfont
+
+\noindent\begin{tcolorbox}[enhanced,width=\linewidth,colback=TealSoft,colframe=Teal,boxrule=0.6pt,arc=1pt,left=4pt,right=4pt,top=3pt,bottom=3pt,before skip=0.6mm,after skip=0.6mm]
+{\color{Teal}\bfseries\fontsize{15}{17}\selectfont 10 $\rightarrow$ 61}\hfill{\color{Muted}\fontsize{9}{11}\selectfont Hot nights/year (2013 $\rightarrow$ 2021)}
+\end{tcolorbox}
+\noindent\begin{tcolorbox}[enhanced,width=\linewidth,colback=TealSoft,colframe=Teal,boxrule=0.6pt,arc=1pt,left=4pt,right=4pt,top=3pt,bottom=3pt,before skip=0.6mm,after skip=0.6mm]
+{\color{Teal}\bfseries\fontsize{15}{17}\selectfont 30.7 $\rightarrow$ 53.0}\hfill{\color{Muted}\fontsize{9}{11}\selectfont Mean HN/year (2013--18 vs 2019--23)}
+\end{tcolorbox}
+\noindent\begin{tcolorbox}[enhanced,width=\linewidth,colback=TealSoft,colframe=Teal,boxrule=0.6pt,arc=1pt,left=4pt,right=4pt,top=3pt,bottom=3pt,before skip=0.6mm,after skip=0.6mm]
+{\color{Teal}\bfseries\fontsize{15}{17}\selectfont +92.6\% / +99.3\%}\hfill{\color{Muted}\fontsize{9}{11}\selectfont Pop.\ ages 65--69 / 70--74}
+\end{tcolorbox}
+\noindent\begin{tcolorbox}[enhanced,width=\linewidth,colback=TealSoft,colframe=Teal,boxrule=0.6pt,arc=1pt,left=4pt,right=4pt,top=3pt,bottom=3pt,before skip=0.6mm,after skip=0.6mm]
+{\color{Teal}\bfseries\fontsize{15}{17}\selectfont 33/33}\hfill{\color{Muted}\fontsize{9}{11}\selectfont HKO Year's Weather matches}
+\end{tcolorbox}
+\noindent\begin{tcolorbox}[enhanced,width=\linewidth,colback=TealSoft,colframe=Teal,boxrule=0.6pt,arc=1pt,left=4pt,right=4pt,top=3pt,bottom=3pt,before skip=0.6mm,after skip=0.6mm]
+{\color{Teal}\bfseries\fontsize{15}{17}\selectfont 132 months}\hfill{\color{Muted}\fontsize{9}{11}\selectfont Jan 2013--Dec 2023}
+\end{tcolorbox}
+\vspace{1.2mm}
 \begin{enumerate}
-  \item \textbf{Climate is already changing Hong Kong's thermal environment:}
-        hot nights and very hot days rose sharply after 2018, while cold days did not disappear.
-  \item \textbf{Humans in the pathway:} the near-doubling of ages 65--74 multiplies
-        person-time at cardiovascular risk under heat and cold stress.
-  \item \textbf{A reproducible 17-step analysis platform} is ready to merge official extremes
-        with HA admission counts for transparent hospital-burden estimation.
+  \item Heat rose after 2018; \textbf{cold days did not disappear}.
+  \item Near-doubling of ages 65--74 multiplies CVD person-time at risk.
+  \item A reproducible 17-step platform is ready for HA hospital-burden estimation.
 \end{enumerate}
-\vspace{0.15em}
-\begin{minipage}[t]{0.48\linewidth}
-\centering
-\includegraphics[width=\linewidth,height=7.2cm,keepaspectratio]{../../figures/exposure_aging/fig02_monthly_hot_nights_cold_days.png}\\[1pt]
-{\color{Muted}\fontsize{8.5}{10}\selectfont Monthly hot nights (bars) vs cold days (line).\par}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.48\linewidth}
-\centering
-\includegraphics[width=\linewidth,height=7.2cm,keepaspectratio]{../../figures/lab_meeting/monthly_temp_ribbon_2013_2023_final.png}\\[1pt]
-{\color{Muted}\fontsize{8.5}{10}\selectfont Monthly mean Tmin--Tmax ribbon ($N=132$).\par}
-\end{minipage}
-}
-\end{minipage}
-\end{textblock*}
+\vspace{1mm}
+{\fontsize{8.6}{10.2}\selectfont\textbf{Next:} HPC $\rightarrow$ HA QC \& Table~1 $\rightarrow$ pre-specified NB models.\\
+\textbf{Contact:} shenrll@connect.hku.hk \quad School of Public Health, HKU\par}
 
-% BOTTOM RIGHT: key numbers
-\begin{textblock*}{36.5cm}(80.3cm,61.0cm)
-\begin{minipage}[t]{36.5cm}
-\posterbox{9. Key numbers at a glance}{%
-\statchip{10$\rightarrow$61}{Hot nights/year (2013 $\rightarrow$ 2021)}
-\statchip{30.7$\rightarrow$53.0}{Mean hot nights/year (2013--18 vs 2019--23)}
-\statchip{+93\% / +99\%}{Population ages 65--69 / 70--74}
-\statchip{33/33}{HKO Year's Weather validation matches}
-\statchip{132 months}{Core window: Jan 2013--Dec 2023}
-\vspace{0.15em}
-{\fontsize{10.5}{13}\selectfont
-\textbf{Next step:} HPC onboarding $\rightarrow$ HA QC \& Table~1 $\rightarrow$ pre-specified NB models.\\[0.2em]
-\textbf{Contact:} shenrll@connect.hku.hk\\
-School of Public Health, The University of Hong Kong\\[0.1em]
-{\color{Muted}GEST-2026 $\cdot$ Poster $\cdot$ Environmental Toxicology and Human Health}
-}
-}
-\end{minipage}
-\end{textblock*}
+\end{tcolorbox}
 
+\end{tcolorbox}
+\end{minipage}
+\vspace{1.2mm}
+\begin{tcolorbox}[enhanced,colback=TealSoft,colframe=Teal,boxrule=0.55pt,arc=0pt,left=5pt,right=5pt,top=1.8pt,bottom=1.8pt,before skip=0pt,after skip=0pt,width=\linewidth]
+{\fontsize{7.8}{9.2}\selectfont\color{TealDark}
+GEST-2026 $\cdot$ Poster $\cdot$ Environmental Toxicology and Human Health
+$\cdot$ ISO A0 (1189$\times$841\,mm)
+$\cdot$ Lit.: Goggins 2012/2013; Guo 2024/2025; Wang 2019; Yang/Chong 2025; Lam 2018; Lorking 2020
+$\cdot$ \textsf{scripts/00}--\textsf{17}
+\hfill shenrll@connect.hku.hk}
+\end{tcolorbox}
 \end{document}

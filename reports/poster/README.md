@@ -7,20 +7,21 @@ cd reports/poster
 pdflatex -interaction=nonstopmode GEST2026_poster.tex
 ```
 
-Output: `GEST2026_poster.pdf` (A0 landscape, single page).
+- Output: `GEST2026_poster.pdf` (ISO **A0 landscape**, 1189 × 841 mm, single page)
+- Submission copy: `outputs/GEST-2026_Poster_Shen.pdf`
 
-A submission copy is also at `outputs/GEST-2026_Poster_Shen.pdf`.
+## Layout
 
-## Contents
+Three **equal-width, equal-height** column shells (778 mm) under a full-width header and footer.
+Figures are distributed across all three columns so the page is filled (not a sparse center-heavy layout).
 
-Poster for **Environmental Toxicology and Human Health**, GEST-2026.
+## Content sources
 
-- Author: Shen Ruililin*
-- Affiliation: BASc (Global Health and Development), School of Public Health, The University of Hong Kong
-- Figures referenced from `figures/exposure_aging/` and `figures/lab_meeting/`
+- REAL HKO extremes & C&SD aging (`figures/exposure_aging/`, `figures/lab_meeting/`)
+- Literature synthesis / mini evidence table (Goggins 2012/2013, Guo 2024/2025, Wang 2019, Yang/Chong 2025, Lam 2018, Lorking 2020)
+- Seventeen analysis pathways (`scripts/00`–`17`)
 
-## Notes
+## Author
 
-Uses only REAL HKO exposure and C&SD aging results. No synthetic HA model
-coefficients are presented as findings. The seventeen numbered analysis pathways
-correspond to `scripts/00_*.R` … `scripts/17_*.py` in the repository root.
+Shen Ruililin* — BASc (Global Health and Development), School of Public Health, The University of Hong Kong  
+Section: Environmental Toxicology and Human Health · Poster

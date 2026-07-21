@@ -109,6 +109,7 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 | Pathway catalogue (P01–P16) | `analysis_plan/pathway_catalogue.md` |
 | Pathway registry (machine) | `analysis_plan/pathway_registry.yml` |
 | Readiness gap analysis | `analysis_plan/gap_analysis_readiness.md` |
+| Scientist runbook | `analysis_plan/scientist_runbook.md` |
 | Methods scaffold | `reports/methods_pathway_panel_scaffold.md` |
 | Pathway evidence memo | `literature/pathway_evidence_memo.md` |
 | Dry-run pathway summary | `outputs/reports/pathway_panel_summary.md` |

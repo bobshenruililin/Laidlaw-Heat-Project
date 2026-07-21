@@ -1,0 +1,77 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.65in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setlist{itemsep=0.12em, topsep=0.15em, leftmargin=1.1em}
+\hypersetup{colorlinks=true, urlcolor=blue}
+\pagestyle{empty}
+\setlength{\parskip}{0.25em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+{\large\bfseries Week~2 Decisions \& Drop-in --- One Page}\\[0.2em]
+{\small Bob Shen \quad|\quad Laidlaw / Bishai lab \quad|\quad 21 July 2026}\\[0.15em]
+{\small\textit{No HA outcome results yet. Public layers are real; pathway dry-run is synthetic.}}
+\end{center}
+
+\subsection*{Status snapshot}
+
+{\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{4.8cm}>{\raggedright\arraybackslash}p{3.5cm}@{}}
+\toprule
+\textbf{Layer} & \textbf{Status} & \textbf{Note} \\
+\midrule
+HKO climate (132 mo) & Ready & Extremes, spells, 2D3N \\
+C\&SD denominators & Ready & Age--sex mid-year \\
+EPD pollution & Ready (REAL) & Staged in P11 \\
+CHP flu & Ready (121/132) & P14 complete-case \\
+Pathway panel & Dry-run OK (17) & P13 waits subtype \\
+Stroke aggregates & Pending & Unlock inference \\
+\bottomrule
+\end{tabular}
+}
+
+\vspace{0.4em}
+\subsection*{Gate~3 headline proposal}
+Primary pair: \textbf{P02} (same-month Tmax/Tmin) $+$ \textbf{P04} (official extreme-day counts, per 5 days).
+Freeze only after real descriptives. Report remaining pathways as a labelled panel.
+
+\vspace{0.25em}
+\subsection*{Drop-in command}
+{\footnotesize
+\texttt{PATHWAY\_MODE=real Rscript scripts/run\_pathway\_pipeline.R}\\
+Place approved CSV in \texttt{data\_raw/ha\_secure\_placeholder/}. Never commit microdata.
+}
+
+\vspace{0.35em}
+\subsection*{Still confirm}
+{\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{5.2cm}>{\raggedright\arraybackslash}p{2.8cm}@{}}
+\toprule
+\textbf{Item} & \textbf{Default} & \textbf{Owner} \\
+\midrule
+Outcome definition & Stroke aggregates (pooled) & Roro/Bob \\
+Grain & Age$\times$sex if present & On inspection \\
+Subtype & Enable P13 only if IS/HS & On inspection \\
+Governance & Follow PI path & Bishai \\
+Holidays & Scaffold until gazette & Bob \\
+\bottomrule
+\end{tabular}
+}
+
+\vspace{0.35em}
+\subsection*{Honesty rules}
+Monthly burden $\neq$ daily DLNM $\neq$ excess-death mortality.
+No AMI from files without admission reasons.
+Synthetic coefficients are plumbing only.
+
+\vspace{0.2em}
+\noindent{\small Deck: \texttt{reports/Week2\_Progress\_Deck.pdf}
+\quad Brief: \texttt{reports/Week2\_Progress\_Brief.pdf}}
+
+\end{document}

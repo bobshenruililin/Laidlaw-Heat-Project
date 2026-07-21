@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ha_stroke_aggregate.schema.json",
+  "title": "Hospital Authority stroke admission aggregate (flexible grain)",
+  "description": "Contract for approved de-identified stroke aggregates. Supports territory-month or month×age×sex. Subtype optional. Never commit microdata.",
+  "type": "object",
+  "required": ["month_id", "n_events"],
+  "properties": {
+    "month_id": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"
+    },
+    "year": { "type": "integer", "minimum": 2013, "maximum": 2030 },
+    "month": { "type": "integer", "minimum": 1, "maximum": 12 },
+    "age_group": {
+      "type": ["string", "null"],
+      "enum": [
+        "35-39", "40-44", "45-49", "50-54", "55-59", "60-64",
+        "65-69", "70-74", "75-79", "80-84", "85+",
+        "35-64", "65+", "all", null
+      ]
+    },
+    "sex": {
+      "type": ["string", "null"],
+      "enum": ["Female", "Male", "all", null]
+    },
+    "stroke_type": {
+      "type": ["string", "null"],
+      "enum": ["stroke_all", "ischemic_stroke", "hemorrhagic_stroke", "unspecified", null]
+    },
+    "n_events": { "type": ["integer", "null"], "minimum": 0 },
+    "n_patients": { "type": ["integer", "null"], "minimum": 0 },
+    "suppression_flag": { "type": ["boolean", "null"] },
+    "care_setting": {
+      "type": ["string", "null"],
+      "enum": ["inpatient", "ed", "unknown", null]
+    },
+    "coding_system": { "type": ["string", "null"] },
+    "data_revision_date": { "type": ["string", "null"] },
+    "data_status": {
+      "type": "string",
+      "enum": ["HA_APPROVED_AGGREGATE", "HA_MOCK_SCHEMA", "SYNTHETIC"]
+    },
+    "notes": { "type": ["string", "null"] }
+  },
+  "additionalProperties": true
+}

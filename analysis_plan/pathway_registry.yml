@@ -1,0 +1,165 @@
+# Machine-readable pathway registry
+# Consumed by scripts/20_fit_pathway_panel.R
+
+version: 1
+study_window: ["2013-01", "2023-12"]
+outcome_default: stroke_aggregate
+family_default: negative_binomial
+offset: "log(population * days_in_month)"
+headline_proposal: ["P02", "P04"]
+
+controls_core:
+  - month_f          # calendar month factor (seasonality)
+  - time_spline      # ns(time_index, df = modeling.time_trend_df)
+
+controls_optional:
+  covid_phase: true
+  absolute_humidity: false
+  public_holiday_days: false
+  chinese_new_year_month: false
+
+pathways:
+  P01:
+    title: Continuous same-month mean temperature
+    enabled: true
+    grain: auto  # territory or age_sex if available
+    exposures: [mean_temp]
+    scale: null
+    extras: []
+    literature: [goggins2012stroke, gasparrini2015lancet]
+  P02:
+    title: Continuous same-month Tmax and Tmin
+    enabled: true
+    grain: auto
+    exposures: [mean_tmax, mean_tmin]
+    scale: null
+    extras: []
+    literature: [bishai_email_2026_07_12]
+  P03:
+    title: Lag-1 month temperature
+    enabled: true
+    grain: auto
+    exposures: [lag1_mean_tmax, lag1_mean_tmin]
+    scale: null
+    extras: []
+    literature: []
+  P04:
+    title: Official extreme-day counts
+    enabled: true
+    grain: auto
+    exposures: [hot_nights, cold_days, very_hot_days]
+    scale: 5
+    extras: []
+    literature: [guo2024hotnights]
+  P05:
+    title: Ren/Wang spell burden
+    enabled: true
+    grain: auto
+    exposures: [days_in_hot_night_spell_ge5, days_in_very_hot_spell_ge5]
+    scale: null
+    extras: []
+    literature: [wang2019ehwe]
+  P06:
+    title: Combined day-night 2D3N burden
+    enabled: true
+    grain: auto
+    exposures: [days_in_2d3n_window]
+    scale: null
+    extras: []
+    literature: [wang2019ehwe]
+  P07:
+    title: Heatwave-month indicators (multi-percentile + spells)
+    enabled: true
+    grain: auto
+    exposures: [hw_month_mean_temp_ge_p90, hw_month_mean_temp_ge_p95, hw_month_mean_temp_ge_p975, hw_month_has_vhd_spell_ge3]
+    scale: null
+    extras: []
+    literature: [guo2017ehp_heatwave, liu2026medrxiv_hw_mortality]
+  P08:
+    title: Cold-side primary
+    enabled: true
+    grain: auto
+    exposures: [cold_days, max_cold_spell_touching]
+    scale: null
+    extras: []
+    literature: [goggins2012stroke, wang2025coldfluStroke]
+  P09:
+    title: Age-stratified (65+ vs younger)
+    enabled: true
+    grain: age_sex_required
+    exposures: [mean_tmax, mean_tmin]
+    scale: null
+    extras: [age_band65]
+    literature: []
+  P10:
+    title: COVID and holiday sensitivity on P02
+    enabled: true
+    grain: auto
+    exposures: [mean_tmax, mean_tmin]
+    scale: null
+    extras: [covid_phase, public_holiday_days, chinese_new_year_month]
+    literature: []
+  P11:
+    title: Pollution-staged on P02
+    enabled: true
+    grain: auto
+    exposures: [mean_tmax, mean_tmin]
+    scale: null
+    extras: [pollution_staged]
+    literature: [goggins2013, guo2025tempPollution]
+  P12:
+    title: Absolute humidity sensitivity on P02
+    enabled: true
+    grain: auto
+    exposures: [mean_tmax, mean_tmin]
+    scale: null
+    extras: [absolute_humidity]
+    literature: []
+  P13:
+    title: Subtype split IS vs HS
+    enabled: false  # enable when subtype present
+    grain: auto
+    exposures: [mean_tmax, mean_tmin]
+    scale: null
+    extras: [subtype_strata]
+    literature: [goggins2012stroke]
+  P14:
+    title: Flu co-exposure
+    enabled: true
+    grain: auto
+    exposures: [mean_tmax, cold_days]
+    scale: null
+    extras: [flu_indicator]
+    literature: [wang2025coldfluStroke]
+  P15:
+    title: Temperature variability proxy
+    enabled: true
+    grain: auto
+    exposures: [temp_variability_mean_range]
+    scale: null
+    extras: []
+    literature: [tv_hospitalisation_hk]
+  P16:
+    title: Pre-COVID only (P02)
+    enabled: true
+    grain: auto
+    exposures: [mean_tmax, mean_tmin]
+    scale: null
+    extras: [pre_covid_only]
+    literature: []
+  P17:
+    title: Sex interaction on Tmax (age-sex grain)
+    enabled: true
+    grain: age_sex_required
+    exposures: [mean_tmax, mean_tmin]
+    scale: null
+    extras: [sex_strata]
+    literature: [goggins2012stroke]
+  P18:
+    title: Cold-month indicator (p05 Tmean)
+    enabled: true
+    grain: auto
+    exposures: [cold_month_mean_temp_le_p05, cold_days]
+    scale: null
+    extras: []
+    literature: [wang2025coldfluStroke, goggins2012stroke]

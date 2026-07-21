@@ -1,0 +1,3 @@
+"pathway_id","n","pearson_mean","pearson_sd","pearson_abs_gt2","pearson_abs_gt3","aic","theta","converged","synthetic"
+"P02",2904,1.27950789629954e-06,0.987705176535335,69,0,34210.279915181,26.9674450506051,TRUE,TRUE
+"P04",2904,-5.75461175202928e-06,0.985422198292848,59,0,34182.6773653456,27.2615340393792,TRUE,TRUE

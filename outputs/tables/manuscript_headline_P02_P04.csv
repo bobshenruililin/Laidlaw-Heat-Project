@@ -1,0 +1,8 @@
+"pathway_id","title","term","RR_95CI","p_value","n_months","data_status"
+"P02","Continuous same-month Tmax and Tmin","mean_tmax","1.071 (0.998–1.150)",0.0568378134866014,132,"SYNTHETIC"
+"P02","Continuous same-month Tmax and Tmin","mean_tmin","0.925 (0.856–0.999)",0.0465597099945684,132,"SYNTHETIC"
+"P02","Continuous same-month Tmax and Tmin","sexMale","1.222 (1.222–1.222)",0,132,"SYNTHETIC"
+"P04","Official extreme-day counts","I(hot_nights/5)","0.957 (0.878–1.043)",0.313231119265086,132,"SYNTHETIC"
+"P04","Official extreme-day counts","I(cold_days/5)","1.099 (1.000–1.207)",0.0502666826730632,132,"SYNTHETIC"
+"P04","Official extreme-day counts","I(very_hot_days/5)","1.054 (0.974–1.140)",0.19529270246116,132,"SYNTHETIC"
+"P04","Official extreme-day counts","sexMale","1.222 (1.222–1.222)",0,132,"SYNTHETIC"

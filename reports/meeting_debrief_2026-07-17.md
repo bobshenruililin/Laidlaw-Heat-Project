@@ -108,15 +108,16 @@ Expected near-term files (exact names TBD):
 2. Possibly other HA aggregates without diagnosis reasons — useful for context/QC, **not** for AMI/IS/HS endpoints.  
 3. Any data dictionary / codebook for aggregate fields.
 
-Immediate pipeline after receipt:
+**Executable pipeline (implemented 2026-07-21):**
 
-1. **Ingest + QC** — row counts, month coverage 2013–2023, missingness, suppression codes, age/sex completeness.  
-2. **Merge** to `data_processed/climate_monthly_2013_2023.csv` (+ population denominators if strata match).  
-3. **Descriptives** — stroke counts/rates over time; overlay temperature and extreme-day series; Table 1 environment + outcome panels.  
-4. **Multi-method associations** — run M1–M10 under Gate discipline; label every estimate by method ID.  
-5. **Do not** invent subtype or AMI results from files that lack diagnosis reasons.
+```bash
+# After placing approved CSV in data_raw/ha_secure_placeholder/
+PATHWAY_MODE=real Rscript scripts/run_pathway_pipeline.R
+```
 
-Scripts already oriented to monthly merge: `08b_merge_real_ha_panel.R`, descriptive scripts, real-model stubs. They will need outcome-schema adaptation once aggregates arrive (current stubs still assume diagnosis-stratified counts).
+Steps run automatically: exposure build (lags + HW-month) → QC receipt → merge panel → **15 labelled pathways** → `outputs/reports/pathway_panel_summary.md`.
+
+See `analysis_plan/gap_analysis_readiness.md` and `analysis_plan/pathway_catalogue.md`.
 
 ---
 

@@ -29,8 +29,9 @@ Full post-meeting recalibration: [`reports/meeting_debrief_2026-07-17.md`](repor
 | HKO weather (monthly panel + extremes / spells) | **Ready** — annual extremes validated 33/33 vs HKO *Year’s Weather* |
 | C&SD age–sex denominators | **Ready** (Table 110-01001 MDT) |
 | Air pollution | **Ready (EPD EPIC)** | Monthly NO₂, O₃, PM₂.₅, PM₁₀ — general-station means; roadside archived for sensitivity |
-| Stroke / HA aggregates | **Awaiting data transfer** |
-| Association estimates | **None yet** — no coefficients until QC + merge |
+| Stroke / HA aggregates | **Awaiting data** — ingest/QC/pathway panel ready (`run_pathway_pipeline.R`) |
+| Multi-pathway analysis | **Plumbing ready** — 17 labelled pathways (P13 optional); SAP + dry-run with SYNTHETIC stroke |
+| Association estimates | **None yet on real outcomes** — synthetic dry-run only until files arrive |
 
 Do not treat any synthetic practice runs as results.
 
@@ -40,7 +41,14 @@ Do not treat any synthetic practice runs as results.
 
 ```bash
 Rscript scripts/00_setup.R
-Rscript scripts/run_pipeline_dev.R   # weather / population / dry-run path
+Rscript scripts/run_pipeline_dev.R   # weather / population / legacy dry-run
+```
+
+**Multi-pathway stroke panel** (preferred once aggregates exist or for synthetic dry-run):
+
+```bash
+Rscript scripts/run_pathway_pipeline.R              # PATHWAY_MODE=dev (synthetic stroke)
+PATHWAY_MODE=real Rscript scripts/run_pathway_pipeline.R   # requires real file in data_raw/ha_secure_placeholder/
 ```
 
 Pollution (official EPD EPIC monthly averages):
@@ -65,15 +73,15 @@ Config lives in `config.yml`. Rebuild the validated annual extremes figure with 
 ```text
 README.md                 ← start here
 config.yml
-analysis_plan/            assumption ledger + decision gates
-scripts/                  numbered R pipeline
-data_raw/                 HKO, C&SD, EPD placeholder (no real HA microdata)
-data_processed/           monthly climate, population, confounders
-figures/                  validated extremes + exposure/aging figures
-outputs/tables/           descriptive tables from the public pipeline
-literature/               bibliography + evidence matrix
-reports/                  meeting debrief, literature review PDF, validation note
-schemas/                  input contracts for future aggregates
+analysis_plan/            ledger, gates, pathway catalogue + registry, gap analysis
+scripts/                  numbered pipeline + run_pathway_pipeline.R
+data_raw/                 HKO, C&SD, EPD, HA placeholder (no microdata)
+data_processed/           climate, exposures (with lags), pollution, population, panels
+figures/                  validated extremes, exposure/aging, pollution
+outputs/                  tables + pathway panel reports
+literature/               bibliography, evidence matrix, pathway evidence memo
+reports/                  meeting debrief, literature review PDF
+schemas/                  stroke aggregate + environmental contracts
 ```
 
 Correspondence, emails, and meeting slide drafts are **not** kept in this repo.
@@ -98,11 +106,15 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 | What | Where |
 |---|---|
 | Post-meeting strategy + next actions | `reports/meeting_debrief_2026-07-17.md` |
-| Assumption ledger | `analysis_plan/assumption_ledger.md` |
-| Decision gates | `analysis_plan/decision_gates.md` |
-| Monthly climate panel | `data_processed/climate_monthly_2013_2023.csv` |
-| Monthly pollution panel | `data_processed/pollution_monthly_2013_2023.csv` |
-| Literature review (PDF) | `reports/Literature_Review_Critical.pdf` |
+| Pathway catalogue (P01–P18) | `analysis_plan/pathway_catalogue.md` |
+| Pathway registry (machine) | `analysis_plan/pathway_registry.yml` |
+| Statistical analysis protocol | `analysis_plan/statistical_analysis_protocol.md` |
+| Readiness gap analysis | `analysis_plan/gap_analysis_readiness.md` |
+| Scientist runbook | `analysis_plan/scientist_runbook.md` |
+| Methods scaffold | `reports/methods_pathway_panel_scaffold.md` |
+| Pathway evidence memo | `literature/pathway_evidence_memo.md` |
+| Dry-run pathway summary | `outputs/reports/pathway_panel_summary.md` |
+
 | HKO extremes figure | `figures/hko_annual_extremes_2013_2023.pdf` |
 | Exposure & aging note | `reports/Exposure_Aging_Context_Note.pdf` |
 | Figure validation | `reports/hko_figure_validation_note.md` |

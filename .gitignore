@@ -41,8 +41,8 @@ __pycache__/
 # Local correspondence and working drafts (do not commit)
 communications/
 memos/
-manuscript/
 *_email*.md
 *email_to*
 *email_from*
 *email_reply*
+outputs/session_info_setup.txt

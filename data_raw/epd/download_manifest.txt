@@ -1,0 +1,8 @@
+source: EPD EPIC Air Quality Data Download (monthly average)
+portal: https://cd.epic.epd.gov.hk/EPICDI/air/yearly/?lang=en
+pollutants: NO2, O3, PM2.5 (FSP), PM10 (RSP)
+station_set_primary: general (15 stations)
+window: 2013-01 .. 2023-12
+files: epd_general_monthly_201301_201712.csv; epd_general_monthly_201801_202212.csv; epd_general_monthly_202301_202312.csv; epd_roadside_monthly_201301_201712.csv; epd_roadside_monthly_201801_202212.csv; epd_roadside_monthly_202301_202312.csv
+units: ug/m3 (per EPIC CSV remarks)
+note: Official validated monthly averages from EPIC; replace placeholders.

@@ -21,9 +21,9 @@ Audit-friendly record of working assumptions for the Hong Kong thermal extremes 
 | A15 | Weather spatial sensitivity | Fixed multi-station composite if feasible | Medium | Tests territorial representativeness | Hogan prepares alternative file | Hogan |
 | A16 | Weather completeness | Months with <90% daily completeness flagged; extremes set to NA | Low | Missing days must not count as non-extremes | Review flagged months | Hogan/Bob |
 | A17 | Spell boundary | Report within-month run length and full spell touching month | Medium | Spells may cross month boundaries | Implement both metrics | Hogan/Bob |
-| A18 | Pollution station choice | General stations primary; roadside separate | Medium | Roadside ≠ territory-wide background | Confirm station list with Hogan | Hogan |
-| A19 | Station aggregation | Unweighted mean of valid general stations; balanced-panel sensitivity | Medium | Network composition changed over time | Document openings/closures | Hogan |
-| A20 | O3 metric | Monthly mean + peak-oriented MDA8-style metric if available | Medium | Mean O3 may miss photochemical peaks | Request both from Hogan/EPD | Hogan |
+| A18 | Pollution station choice | **Updated:** general stations primary (EPIC download); roadside downloaded separately for sensitivity | Low | Roadside ≠ territory-wide background | Locked for primary panel | Bob |
+| A19 | Station aggregation | Unweighted mean of general stations; completeness vs year-active network (≥75%) | Medium | Network expanded over 2013–2023 | Documented in `04_build_pollution_monthly.R` | Bob |
+| A20 | O3 metric | Monthly mean O3 from EPIC (MDA8 not yet built from hourly) | Medium | Mean O3 may miss photochemical peaks | Optional hourly/MDA8 later | Bob |
 | A21 | Pollution completeness | Station-month valid if ≥75% expected observations | Medium | Limits biased means | Apply in build script | Hogan/Bob |
 | A22 | COVID phases | pre_covid; early_covid; fifth_wave; late_2022; post_reopening (see config.yml) | Medium | Results may depend on cut-points | Adjust to HK policy dates if needed | Team |
 | A23 | Influenza adjustment | Sensitivity model initially (not primary) | Medium | May confound or mediate cold effects | Bishai decision | Bishai |

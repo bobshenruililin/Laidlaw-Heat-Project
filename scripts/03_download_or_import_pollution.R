@@ -1,10 +1,7 @@
 #!/usr/bin/env Rscript
 # 03_download_or_import_pollution.R
-# EPD EPIC portal is interactive. This script:
-# 1) documents the manual download workflow;
-# 2) imports any CSVs placed in data_raw/epd/;
-# 3) if none are present, builds a clearly labeled PLACEHOLDER trend file
-#    from published annual descriptive patterns for pipeline testing only.
+# Prefer automated EPIC monthly download (script 18). Falls back to documenting
+# the manual portal workflow if Python download has not been run yet.
 
 source(file.path("scripts", "utils.R"))
 root <- project_root()
@@ -15,67 +12,46 @@ ensure_packages(c("yaml", "dplyr", "readr"))
 epd_dir <- file.path(root, cfg$pollution$raw_dir)
 dir.create(epd_dir, recursive = TRUE, showWarnings = FALSE)
 
-write_readme_if_absent(file.path(epd_dir, "README_manual_download.md"), c(
-  "# EPD pollution raw data — manual download instructions",
-  "",
-  "Primary portal: https://cd.epic.epd.gov.hk/EPICDI/air/",
-  "",
-  "## Recommended download steps",
-  "",
-  "1. Open EPIC Air Quality Data Download / Display.",
-  "2. Select pollutants: NO2, O3, RSP/PM10, FSP/PM2.5 (SO2 optional).",
-  "3. Select **general** stations for the primary extract; download roadside separately.",
-  "4. Prefer daily or hourly validated data; monthly aggregates are acceptable if completeness metadata are available.",
-  "5. Because monthly requests are limited (e.g. 120 months), download in chunks covering 2013–2023 (and optional 2024).",
-  "6. Save files into this folder as CSV, e.g.:",
-  "   - `epd_general_daily_2013_2017.csv`",
-  "   - `epd_general_daily_2018_2022.csv`",
-  "   - `epd_general_daily_2023_2024.csv`",
-  "   - `epd_roadside_daily_*.csv`",
-  "7. Keep a station metadata file if possible (`stations_metadata.csv`).",
-  "",
-  "Schema contract: `schemas/epd_monthly.schema.json`",
-  "",
-  "## Completeness rule",
-  "",
-  "Station-month valid if ≥75% of expected observations are present.",
-  "",
-  "## Units",
-  "",
-  "Document units as provided by EPD (typically µg/m³ for these pollutants in recent reports).",
-  "",
-  "Do not overwrite raw files after download; append new versions with dates if revised."
-))
+general_csvs <- list.files(epd_dir, pattern = "^epd_general_monthly_.*\\.csv$", full.names = TRUE)
+roadside_csvs <- list.files(epd_dir, pattern = "^epd_roadside_monthly_.*\\.csv$", full.names = TRUE)
 
-csv_files <- list.files(epd_dir, pattern = "\\.csv$", full.names = TRUE)
-csv_files <- csv_files[!grepl("placeholder|README", basename(csv_files), ignore.case = TRUE)]
+if (!length(general_csvs)) {
+  py <- file.path(root, "scripts", "18_download_epd_epic_monthly.py")
+  message("No EPIC general monthly CSVs found. Attempting: python3 ", py)
+  status <- system2("python3", args = c(py, "--include-roadside"), stdout = TRUE, stderr = TRUE)
+  writeLines(status)
+  general_csvs <- list.files(epd_dir, pattern = "^epd_general_monthly_.*\\.csv$", full.names = TRUE)
+  roadside_csvs <- list.files(epd_dir, pattern = "^epd_roadside_monthly_.*\\.csv$", full.names = TRUE)
+}
 
-if (length(csv_files)) {
-  message("Found EPD CSV files:")
-  print(basename(csv_files))
-  # Lightweight validation only; detailed cleaning in 04_
-  for (f in csv_files) {
-    message("Preview ", basename(f))
-    print(utils::read.csv(f, nrows = 3, stringsAsFactors = FALSE))
+if (length(general_csvs)) {
+  message("Found EPD EPIC general monthly files:")
+  print(basename(general_csvs))
+  if (length(roadside_csvs)) {
+    message("Roadside files (sensitivity only):")
+    print(basename(roadside_csvs))
+  }
+  # Remove obsolete placeholder if real files exist
+  ph <- file.path(epd_dir, "epd_monthly_PLACEHOLDER.csv")
+  if (file.exists(ph)) {
+    file.remove(ph)
+    message("Removed obsolete placeholder: ", basename(ph))
   }
   writeLines(
     c(
       "status: REAL_FILES_PRESENT",
-      paste("n_files:", length(csv_files)),
-      paste("files:", paste(basename(csv_files), collapse = "; ")),
+      paste("n_general_files:", length(general_csvs)),
+      paste("n_roadside_files:", length(roadside_csvs)),
+      paste("general_files:", paste(basename(general_csvs), collapse = "; ")),
       paste("checked_at:", as.character(Sys.time()))
     ),
     file.path(epd_dir, "import_status.txt")
   )
 } else {
-  message("No EPD CSV files found. Writing PLACEHOLDER annual-inspired monthly series for pipeline testing.")
+  message("WARNING: Still no EPIC CSVs. Writing PLACEHOLDER for pipeline testing only.")
   message("THIS IS NOT ANALYTIC-GRADE POLLUTION DATA.")
-
-  # Approximate territory-wide annual levels informed by published EPD trend direction
-  # (declining NO2/PM; rising/high O3). Values are synthetic placeholders for code tests.
   set.seed(cfg$project$seed)
   months <- make_month_grid(cfg$study$start_year, 1, cfg$study$end_year, 12)
-  # Simple seasonal + trend placeholders
   t <- months$time_index
   placeholder <- months |>
     dplyr::mutate(

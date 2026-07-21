@@ -1,27 +1,39 @@
-# EPD pollution raw data — manual download instructions
+# EPD pollution raw data
 
-Primary portal: https://cd.epic.epd.gov.hk/EPICDI/air/
+Official Hong Kong Environmental Protection Department air-quality monitoring data via EPIC.
 
-## Recommended download steps
+Portal: https://cd.epic.epd.gov.hk/EPICDI/air/yearly/
 
-1. Open EPIC Air Quality Data Download / Display.
-2. Select pollutants: NO2, O3, RSP/PM10, FSP/PM2.5 (SO2 optional).
-3. Select **general** stations for the primary extract; download roadside separately.
-4. Prefer daily or hourly validated data; monthly aggregates are acceptable if completeness metadata are available.
-5. Because monthly requests are limited (e.g. 120 months), download in chunks covering 2013–2023 (and optional 2024).
-6. Save files into this folder as CSV, e.g.:
-   - `epd_general_daily_2013_2017.csv`
-   - `epd_general_daily_2018_2022.csv`
-   - `epd_general_daily_2023_2024.csv`
-   - `epd_roadside_daily_*.csv`
-7. Keep a station metadata file if possible (`stations_metadata.csv`).
+## Automated download
 
-## Completeness rule
+From the repository root:
 
-Station-month valid if ≥75% of expected observations are present.
+```bash
+python3 scripts/18_download_epd_epic_monthly.py              # general stations
+python3 scripts/18_download_epd_epic_monthly.py --include-roadside
+Rscript scripts/04_build_pollution_monthly.R
+```
 
-## Units
+This pulls **monthly averages** for NO₂, O₃, PM₂.₅ (FSP), and PM₁₀ (RSP) in chunks of ≤60 months (EPIC limit is 120).
 
-Document units as provided by EPD (typically µg/m³ for these pollutants in recent reports).
+## Files
 
-Do not overwrite raw files after download; append new versions with dates if revised.
+| Pattern | Content |
+|---|---|
+| `epd_general_monthly_YYYYMM_YYYYMM.csv` | General stations (primary) |
+| `epd_roadside_monthly_YYYYMM_YYYYMM.csv` | Roadside stations (sensitivity only) |
+| `download_manifest.txt` | Download provenance |
+| `import_status.txt` | Last build status |
+
+## Aggregation rule (primary series)
+
+- Unweighted mean across **general** stations.
+- Completeness: fraction of that calendar year’s active general stations reporting the month; months below `pollution.completeness_threshold` in `config.yml` (default 0.75) are set to NA.
+- Roadside is **not** mixed into the primary panel.
+- Units: µg/m³ (per EPIC CSV remarks).
+
+## Literature alignment
+
+Goggins (AMI) emphasized NO₂; Guo et al. (2025) use PM₂.₅, NO₂, O₃ with temperature. Ozone is retained but should enter models in a **staged** way (possible pathway / collinearity with heat).
+
+Do not overwrite raw EPIC downloads; re-run the download script to refresh.

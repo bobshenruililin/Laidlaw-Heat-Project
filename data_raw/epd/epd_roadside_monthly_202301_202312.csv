@@ -1,0 +1,18 @@
+﻿Station:  
+Remarks:
+1. All Pollutant unit in μg/m3 except CO which is in 10μg/m3
+2. N.A. = data not available
+
+YEAR,POLLUTANT,STATION,Month 01,Month 02,Month 03,Month 04,Month 05,Month 06,Month 07,Month 08,Month 09,Month 10,Month 11,Month 12
+2023,Fine Suspended Particulates ,CAUSEWAY BAY,27,27,28,25,23,16,16,18,19,25,26,31
+2023,Fine Suspended Particulates ,CENTRAL,24,22,24,22,21,12,13,15,13,19,20,26
+2023,Fine Suspended Particulates ,MONG KOK,24,22,24,22,18,10,10,11,10,17,19,24
+2023,Nitrogen Dioxide,CAUSEWAY BAY,72,70,72,67,67,58,57,60,56,66,75,79
+2023,Nitrogen Dioxide,CENTRAL,67,67,74,67,64,55,54,54,51,61,69,73
+2023,Nitrogen Dioxide,MONG KOK,65,75,85,75,72,64,56,57,59,65,72,74
+2023,Ozone,CAUSEWAY BAY,27,41,49,43,37,23,21,23,30,48,45,32
+2023,Ozone,CENTRAL,29,44,49,45,39,19,19,17,26,49,46,29
+2023,Ozone,MONG KOK,38,49,46,48,41,20,21,21,29,52,57,41
+2023,Respirable Suspended Particulates,CAUSEWAY BAY,44,47,50,43,39,25,26,29,29,39,46,49
+2023,Respirable Suspended Particulates,CENTRAL,34,31,34,34,28,17,18,20,19,29,39,43
+2023,Respirable Suspended Particulates,MONG KOK,37,36,41,36,30,16,16,17,16,26,36,37

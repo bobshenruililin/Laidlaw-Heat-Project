@@ -28,7 +28,7 @@ Full post-meeting recalibration: [`reports/meeting_debrief_2026-07-17.md`](repor
 |---|---|
 | HKO weather (monthly panel + extremes / spells) | **Ready** — annual extremes validated 33/33 vs HKO *Year’s Weather* |
 | C&SD age–sex denominators | **Ready** (Table 110-01001 MDT) |
-| Air pollution | Placeholder only — not for inference |
+| Air pollution | **Ready (EPD EPIC)** | Monthly NO₂, O₃, PM₂.₅, PM₁₀ — general-station means; roadside archived for sensitivity |
 | Stroke / HA aggregates | **Awaiting data transfer** |
 | Association estimates | **None yet** — no coefficients until QC + merge |
 
@@ -41,6 +41,13 @@ Do not treat any synthetic practice runs as results.
 ```bash
 Rscript scripts/00_setup.R
 Rscript scripts/run_pipeline_dev.R   # weather / population / dry-run path
+```
+
+Pollution (official EPD EPIC monthly averages):
+
+```bash
+python3 scripts/18_download_epd_epic_monthly.py --include-roadside
+Rscript scripts/04_build_pollution_monthly.R
 ```
 
 Real-outcome track (expects an approved aggregate file):
@@ -94,6 +101,7 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 | Assumption ledger | `analysis_plan/assumption_ledger.md` |
 | Decision gates | `analysis_plan/decision_gates.md` |
 | Monthly climate panel | `data_processed/climate_monthly_2013_2023.csv` |
+| Monthly pollution panel | `data_processed/pollution_monthly_2013_2023.csv` |
 | Literature review (PDF) | `reports/Literature_Review_Critical.pdf` |
 | HKO extremes figure | `figures/hko_annual_extremes_2013_2023.pdf` |
 | Exposure & aging note | `reports/Exposure_Aging_Context_Note.pdf` |

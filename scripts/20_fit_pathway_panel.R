@@ -83,6 +83,11 @@ build_rhs <- function(exposures, scale = NULL, extras = character(), dat) {
       terms <- c(terms, "age_band65")
     }
   }
+  if ("sex_strata" %in% extras && has_age_sex) {
+    if (length(exposures)) {
+      terms <- c(terms, sprintf("%s:sex", exposures[[1]]))
+    }
+  }
   unique(terms)
 }
 
@@ -103,10 +108,17 @@ fit_one <- function(pathway_id, spec, dat) {
   if ("pollution_staged" %in% extras && !pol_ok) {
     return(list(status = "skipped_no_pollution", estimates = NULL, fit = NULL))
   }
+  if ("sex_strata" %in% extras && !has_age_sex) {
+    return(list(status = "skipped_no_sex_grain", estimates = NULL, fit = NULL))
+  }
 
   d <- dat
   if ("pre_covid_only" %in% extras) {
     d <- d |> dplyr::filter(year < 2020)
+  }
+  # Flu pathway: complete-case on months with flu (early-2013 Flu Express gap)
+  if ("flu_indicator" %in% extras && has_flu) {
+    d <- d |> dplyr::filter(!is.na(flu_indicator))
   }
 
   # Pollution staged: fit nested models; return final multi-pollutant as primary row set + stage tag
@@ -157,7 +169,11 @@ fit_one <- function(pathway_id, spec, dat) {
       error = function(e) NULL
     )
 
-    keep_pat <- paste0("(", paste(c(spec$exposures, stages[[st]], "age_band65"), collapse = "|"), ")")
+    keep_pat <- paste0(
+      "(",
+      paste(c(spec$exposures, stages[[st]], "age_band65", "sex"), collapse = "|"),
+      ")"
+    )
     est <- extract_rr(model, vcov_mat, keep_pattern = keep_pat)
     if (!nrow(est)) next
     est$pathway_id <- pathway_id

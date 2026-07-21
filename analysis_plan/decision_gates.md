@@ -72,8 +72,8 @@ Owners and dates use placeholders where still open.
 Allowed:
 
 - Count / rate regressions with appropriate offsets under the aggregate design.
-- Labelled M1–M10 panel reporting.
-- Cold-side and heatwave-definition comparisons.
+- Labelled **P01–P18** pathway panel (`pathway_registry.yml`); ~10+ core specs plus extensions.
+- Cold-side and heatwave-definition comparisons; staged pollution; flu complete-case.
 
 Not allowed before Gate 2 (and for primary claim, Gate 3):
 
@@ -89,10 +89,10 @@ Not allowed before Gate 2 (and for primary claim, Gate 3):
 
 **Only after the core monthly stroke–temperature panel is documented.**
 
-- Influenza (CHP Flu Express) when monthly series loaded
-- Influenza
-- Multi-station weather
-- District analysis
+- Influenza (CHP Flu Express) — already wired as P14 when series loaded
+- Official holiday gazette (replace scaffold)
+- Roadside pollution sensitivity
+- Multi-station weather / district analysis
 - 2024 extension
 - Patient-level / medication–BMI pathway work **if** a suitable extract later exists
 - Harmonized comparison to daily historical studies (methods must match)
@@ -104,7 +104,7 @@ Not allowed before Gate 2 (and for primary claim, Gate 3):
 1. Keep climate + exposure file with lag-1 and HW-month indicators ready.  
 2. Run pathway dry-run: `Rscript scripts/run_pathway_pipeline.R`.  
 3. Drop real stroke aggregates into `data_raw/ha_secure_placeholder/` then `PATHWAY_MODE=real`.  
-4. Keep ledger / gates / pathway registry current.  
+4. Keep ledger / gates / pathway registry / SAP current.  
 
 ---
 
@@ -115,4 +115,5 @@ Not allowed before Gate 2 (and for primary claim, Gate 3):
 - `analysis_plan/assumption_ledger.md`
 - `analysis_plan/pathway_catalogue.md`
 - `analysis_plan/pathway_registry.yml`
+- `analysis_plan/statistical_analysis_protocol.md`
 - `analysis_plan/gap_analysis_readiness.md`

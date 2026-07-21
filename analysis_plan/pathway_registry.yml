@@ -68,10 +68,10 @@ pathways:
     extras: []
     literature: [wang2019ehwe]
   P07:
-    title: Heatwave-month indicators
+    title: Heatwave-month indicators (multi-percentile + spells)
     enabled: true
     grain: auto
-    exposures: [hw_month_mean_temp_ge_p95, hw_month_has_vhd_spell_ge3]
+    exposures: [hw_month_mean_temp_ge_p90, hw_month_mean_temp_ge_p95, hw_month_mean_temp_ge_p975, hw_month_has_vhd_spell_ge3]
     scale: null
     extras: []
     literature: [guo2017ehp_heatwave, liu2026medrxiv_hw_mortality]
@@ -147,3 +147,19 @@ pathways:
     scale: null
     extras: [pre_covid_only]
     literature: []
+  P17:
+    title: Sex interaction on Tmax (age-sex grain)
+    enabled: true
+    grain: age_sex_required
+    exposures: [mean_tmax, mean_tmin]
+    scale: null
+    extras: [sex_strata]
+    literature: [goggins2012stroke]
+  P18:
+    title: Cold-month indicator (p05 Tmean)
+    enabled: true
+    grain: auto
+    exposures: [cold_month_mean_temp_le_p05, cold_days]
+    scale: null
+    extras: []
+    literature: [wang2025coldfluStroke, goggins2012stroke]

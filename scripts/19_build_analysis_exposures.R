@@ -78,13 +78,18 @@ lag_src <- dplyr::bind_rows(
   dplyr::select(month_id, lag1_mean_temp, lag1_mean_tmin, lag1_mean_tmax)
 
 # Heatwave-month indicators from within-study monthly distribution + spell proxies
+# Multi-percentile grid mirrors Guo/Gasparrini EHP 2017 spirit (monthly collapse).
+p90_tmean <- as.numeric(stats::quantile(base$mean_temp, 0.90, na.rm = TRUE))
 p95_tmean <- as.numeric(stats::quantile(base$mean_temp, 0.95, na.rm = TRUE))
+p975_tmean <- as.numeric(stats::quantile(base$mean_temp, 0.975, na.rm = TRUE))
 p05_tmean <- as.numeric(stats::quantile(base$mean_temp, 0.05, na.rm = TRUE))
 
 exposures <- base |>
   dplyr::left_join(lag_src, by = "month_id") |>
   dplyr::mutate(
+    hw_month_mean_temp_ge_p90 = as.integer(mean_temp >= p90_tmean),
     hw_month_mean_temp_ge_p95 = as.integer(mean_temp >= p95_tmean),
+    hw_month_mean_temp_ge_p975 = as.integer(mean_temp >= p975_tmean),
     cold_month_mean_temp_le_p05 = as.integer(mean_temp <= p05_tmean),
     hw_month_has_vhd_spell_ge3 = as.integer(
       dplyr::coalesce(longest_very_hot_run, 0) >= 3 |
@@ -94,9 +99,11 @@ exposures <- base |>
       dplyr::coalesce(longest_hot_night_run, 0) >= 3 |
         dplyr::coalesce(days_in_hot_night_spell_ge3, 0) >= 3
     ),
+    hw_p90_threshold_c = p90_tmean,
     hw_p95_threshold_c = p95_tmean,
+    hw_p975_threshold_c = p975_tmean,
     cold_p05_threshold_c = p05_tmean,
-    exposure_build_notes = "lag1 from Dec2012+study window; HW-month from study p95/p05 and spell proxies"
+    exposure_build_notes = "lag1 from Dec2012+study window; HW-month p90/p95/p975 + spell proxies; TV from daily extracts when available"
   )
 
 # Attach pollution if real
@@ -128,9 +135,8 @@ if (file.exists(conf_path)) {
     dplyr::left_join(conf[, conf_keep], by = "month_id", suffix = c("", "_conf"))
 }
 
-# Add monthly temperature variability proxy (mean daily range) if daily cache exists
-daily_cache <- file.path(root, "data_processed", ".cache", "weather_daily_hko.rds")
-# Also try climate_daily if present
+# Temperature variability: prefer mean daily diurnal range from HKO daily extracts
+tv_built <- FALSE
 daily_csv <- file.path(root, "data_processed", "climate_daily_hko.csv")
 if (file.exists(daily_csv)) {
   daily <- utils::read.csv(daily_csv, stringsAsFactors = FALSE)
@@ -141,14 +147,43 @@ if (file.exists(daily_csv)) {
       dplyr::group_by(month_id) |>
       dplyr::summarise(
         temp_variability_mean_range = mean(diurnal_range, na.rm = TRUE),
+        temp_variability_sd_tmean = stats::sd(tmean, na.rm = TRUE),
         .groups = "drop"
       )
     exposures <- exposures |> dplyr::left_join(tv, by = "month_id")
+    tv_built <- TRUE
   }
-} else {
-  # Approximate TV from monthly Tmax-Tmin spread (coarser)
+}
+if (!tv_built) {
+  # Build from dailyExtract_YYYY.xml for study years
+  years <- seq(cfg$study$start_year, cfg$study$end_year)
+  daily_rows <- list()
+  for (yy in years) {
+    pth <- file.path(extract_dir, sprintf("dailyExtract_%04d.xml", yy))
+    if (!file.exists(pth)) next
+    daily_rows[[as.character(yy)]] <- parse_year_extract(pth, yy)
+  }
+  if (length(daily_rows)) {
+    daily_all <- dplyr::bind_rows(daily_rows) |>
+      dplyr::mutate(month_id = format(date, "%Y-%m"), diurnal_range = tmax - tmin)
+    tv <- daily_all |>
+      dplyr::group_by(month_id) |>
+      dplyr::summarise(
+        temp_variability_mean_range = mean(diurnal_range, na.rm = TRUE),
+        temp_variability_sd_tmean = stats::sd(tmean, na.rm = TRUE),
+        .groups = "drop"
+      )
+    exposures <- exposures |> dplyr::left_join(tv, by = "month_id")
+    tv_built <- TRUE
+  }
+}
+if (!tv_built) {
+  # Coarser fallback: monthly mean Tmax − mean Tmin
   exposures <- exposures |>
-    dplyr::mutate(temp_variability_mean_range = mean_tmax - mean_tmin)
+    dplyr::mutate(
+      temp_variability_mean_range = mean_tmax - mean_tmin,
+      temp_variability_sd_tmean = NA_real_
+    )
 }
 
 stopifnot(nrow(exposures) == 132)

@@ -30,7 +30,7 @@ Full post-meeting recalibration: [`reports/meeting_debrief_2026-07-17.md`](repor
 | C&SD age–sex denominators | **Ready** (Table 110-01001 MDT) |
 | Air pollution | **Ready (EPD EPIC)** | Monthly NO₂, O₃, PM₂.₅, PM₁₀ — general-station means; roadside archived for sensitivity |
 | Stroke / HA aggregates | **Awaiting data** — ingest/QC/pathway panel ready (`run_pathway_pipeline.R`) |
-| Multi-pathway analysis | **Plumbing ready** — 12+ labelled pathways; dry-run with SYNTHETIC stroke |
+| Multi-pathway analysis | **Plumbing ready** — 17 labelled pathways (P13 optional); SAP + dry-run with SYNTHETIC stroke |
 | Association estimates | **None yet on real outcomes** — synthetic dry-run only until files arrive |
 
 Do not treat any synthetic practice runs as results.
@@ -106,8 +106,9 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 | What | Where |
 |---|---|
 | Post-meeting strategy + next actions | `reports/meeting_debrief_2026-07-17.md` |
-| Pathway catalogue (P01–P16) | `analysis_plan/pathway_catalogue.md` |
+| Pathway catalogue (P01–P18) | `analysis_plan/pathway_catalogue.md` |
 | Pathway registry (machine) | `analysis_plan/pathway_registry.yml` |
+| Statistical analysis protocol | `analysis_plan/statistical_analysis_protocol.md` |
 | Readiness gap analysis | `analysis_plan/gap_analysis_readiness.md` |
 | Scientist runbook | `analysis_plan/scientist_runbook.md` |
 | Methods scaffold | `reports/methods_pathway_panel_scaffold.md` |

@@ -79,17 +79,25 @@ covid_phases:
   late_2022: ["2022-05", "2022-12"]
   post_reopening: ["2023-01", "2023-12"]
 
+outcome:
+  primary: "stroke_aggregate"
+  allow_ami: false
+  allow_subtype_split: "if_present"
+
 modeling:
   default_family: "negative_binomial"
   hot_nights_scale: 5
   very_hot_days_scale: 5
   cold_days_scale: 5
   time_trend_df: 4
-  primary_heat_metric: "hot_nights"
-  alternative_heat_metric: "very_hot_days"
+  primary_heat_metric: "mean_tmax"
+  alternative_heat_metric: "hot_nights"
+  pathway_registry: "analysis_plan/pathway_registry.yml"
+  headline_pathways: ["P02", "P04"]
 
+# Legacy diagnosis groups retained only for optional historical scripts; stroke-first is default.
 diagnosis_groups:
-  - "AMI"
+  - "stroke_all"
   - "ischemic_stroke"
   - "hemorrhagic_stroke"
 

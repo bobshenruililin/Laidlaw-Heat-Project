@@ -89,7 +89,7 @@ Not allowed before Gate 2 (and for primary claim, Gate 3):
 
 **Only after the core monthly stroke–temperature panel is documented.**
 
-- Pollution (placeholder until real series)
+- Influenza (CHP Flu Express) when monthly series loaded
 - Influenza
 - Multi-station weather
 - District analysis
@@ -101,10 +101,10 @@ Not allowed before Gate 2 (and for primary claim, Gate 3):
 
 ## Immediate work that does **not** wait on files
 
-1. Keep climate monthly file + Ren-style spell / 2D3N metrics ready.  
-2. Extend weather build to December 2012 for lag-1.  
-3. Prepare ingest stubs for aggregate stroke merge.  
-4. Keep ledger / gates / debrief current (this update).  
+1. Keep climate + exposure file with lag-1 and HW-month indicators ready.  
+2. Run pathway dry-run: `Rscript scripts/run_pathway_pipeline.R`.  
+3. Drop real stroke aggregates into `data_raw/ha_secure_placeholder/` then `PATHWAY_MODE=real`.  
+4. Keep ledger / gates / pathway registry current.  
 
 ---
 
@@ -113,3 +113,6 @@ Not allowed before Gate 2 (and for primary claim, Gate 3):
 - `README.md`
 - `reports/meeting_debrief_2026-07-17.md`
 - `analysis_plan/assumption_ledger.md`
+- `analysis_plan/pathway_catalogue.md`
+- `analysis_plan/pathway_registry.yml`
+- `analysis_plan/gap_analysis_readiness.md`

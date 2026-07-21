@@ -39,18 +39,33 @@ confounders <- months |>
     notes = "Replace holiday/flu/typhoon fields with official calendars before final models"
   )
 
-# Optional flu import
+# Optional flu import — prefer CHP Flu Express monthly file
 flu_dir <- file.path(root, "data_raw", "chp_flu")
-flu_files <- list.files(flu_dir, pattern = "\\.csv$", full.names = TRUE)
+flu_candidates <- c(
+  file.path(flu_dir, "flu_for_confounders.csv"),
+  file.path(flu_dir, "flu_monthly_2013_2023.csv")
+)
+flu_files <- flu_candidates[file.exists(flu_candidates)]
+if (!length(flu_files)) {
+  flu_files <- list.files(flu_dir, pattern = "\\.csv$", full.names = TRUE)
+  flu_files <- flu_files[!grepl("flux_data", basename(flu_files))]
+}
 if (length(flu_files)) {
   flu <- utils::read.csv(flu_files[1], stringsAsFactors = FALSE)
   names(flu) <- tolower(names(flu))
   if (all(c("month_id", "flu_indicator") %in% names(flu))) {
     confounders$flu_indicator <- NULL
     confounders <- dplyr::left_join(confounders, flu[, c("month_id", "flu_indicator")], by = "month_id")
-    confounders$flu_data_status <- "CHP_IMPORTED"
+    confounders$flu_data_status <- "CHP_FLU_EXPRESS_MONTHLY"
+    confounders$notes <- paste(
+      confounders$notes,
+      "| flu from CHP Flu Express AandB_proportion monthly mean"
+    )
   }
 }
 
 write_csv_safe(confounders, file.path(root, "data_processed", "confounders_monthly_2013_2023.csv"))
-message("Confounders build complete.")
+message(
+  "Confounders build complete. flu_status=",
+  paste(unique(confounders$flu_data_status), collapse = ",")
+)

@@ -26,14 +26,14 @@ Audit-friendly record of working assumptions for the Hong Kong thermal extremes 
 | A20 | O3 metric | Monthly mean O3 from EPIC (MDA8 not yet built from hourly) | Medium | Mean O3 may miss photochemical peaks | Optional hourly/MDA8 later | Bob |
 | A21 | Pollution completeness | Station-month valid if ≥75% expected observations | Medium | Limits biased means | Apply in build script | Hogan/Bob |
 | A22 | COVID phases | pre_covid; early_covid; fifth_wave; late_2022; post_reopening (see config.yml) | Medium | Results may depend on cut-points | Adjust to HK policy dates if needed | Team |
-| A23 | Influenza adjustment | Sensitivity model initially (not primary) | Medium | May confound or mediate cold effects | Bishai decision | Bishai |
-| A24 | Public holidays | Number of holiday days + Chinese New Year indicator | Medium | Affects admissions; CNY shifts by month | Bob constructs calendar | Bob |
+| A23 | Influenza adjustment | **Updated:** CHP Flu Express monthly positivity loaded; pathway P14 enabled | Medium | May confound or mediate cold effects | Coverage check (some months missing) | Bob |
+| A24 | Public holidays | Deterministic monthly holiday-day scaffold + CNY months (v2); not gazette scrape | Medium | Affects admissions; CNY shifts by month | Optional official calendar later | Bob |
 | A25 | Small-cell suppression | Never treat suppressed values as zero | High | Biases younger/rare-diagnosis strata | Confirm threshold and complementary suppression | Roro |
 | A26 | District data | Out of scope for first paper unless readily available | Medium | Adds exposure/denominator complexity | Team decision | Team |
 | A27 | Clinical covariates | **Working direction (Bishai, 12 Jul 2026):** age, sex, diuretics, beta blockers, metformin, SGLT2is, BMI | High (field availability) | Reframes near-term model beyond ecological-only | Confirm fields on HPC extract at meeting | Bishai/Roro |
 | A28 | Unknown sex | Retain for QC; exclude/combine only after review | Medium | Denominator alignment | Review cell counts | Bob/Roro |
 | A29 | Synthetic data labeling | Always `data_status = "SYNTHETIC"` | Low | Prevents accidental substantive reporting | Enforce in scripts | Bob |
-| A30 | Primary heat / temperature model | **Revised 17 Jul:** monthly temperature + multi-method (~10) panel → **stroke aggregates**; Tmax/Tmin/lag remain core continuous specs; extremes / Ren-style heatwave metrics co-equal exploration family | Medium | Meeting strategy + data limits | Freeze headline method after Gate 3 | Bishai/Bob |
+| A30 | Primary heat / temperature model | Multi-pathway panel P01–P16 (headline proposal P02+P04); monthly Tmax/Tmin/lag + extremes/Ren-style metrics | Medium | Meeting multi-method strategy | Gate 3 freeze after real descriptives | Bishai/Bob |
 | A31 | Ozone role | Staged; may confound, modify, or partly mediate heat | High | Mis-adjustment can attenuate heat associations | Report total vs pathway-adjusted effects | Team |
 | A32 | Historical comparison | Qualitative unless methods harmonized with older daily studies | High | Monthly vs daily DLNM coefficients not directly comparable | Avoid “regime shift” claims | Team |
 | A33 | Official hot-night null | Compatible with Guo 2024; does not close nighttime-heat question | Medium | Binary policy metric ≠ intensity biology | Prespecify spell/intensity alternatives | Team |
@@ -48,6 +48,7 @@ Audit-friendly record of working assumptions for the Hong Kong thermal extremes 
 | A42 | Chao Ren heatwave alignment | Prefer Ren/Wang EHWE-style metrics (VHD/HN spells, combined day–night) alongside official HKO counts | Low | Matches meeting guidance and existing climate constructs | Keep climate build; cite Wang et al. 2019 | Bob |
 | A43 | Lab daily heatwave–mortality study | Liu/Ren/Bishai-type daily excess-mortality work (through 2023, multi-definition) is **complementary context**, not this project’s estimand | Low | Avoid duplicating mortality claims or mixing estimands | Cite carefully; keep admissions/aggregate framing | Team |
 | A44 | Analysis temperature grain | Monthly only for association models (daily HKO used to build monthly metrics, not daily admissions models) | Low | Stated meeting constraint | Enforce in analysis scripts | Bob |
+| A45 | Pathway pipeline readiness | Dry-run: 15 pathways OK on SYNTHETIC stroke; real mode waits for aggregates | Low | Defines drop-in workflow | Place HA file → `PATHWAY_MODE=real` | Bob |
 
 ## Human confirmation checklist
 

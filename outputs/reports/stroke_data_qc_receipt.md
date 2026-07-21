@@ -11,6 +11,6 @@
 - **Mean events / month:** 11800.7
 - **Suppressed rows:** 0
 - **Normalized path:** `/workspace/data_processed/stroke_aggregates_normalized.csv`
-- **Checked at:** 2026-07-21 08:48:37.018179
+- **Checked at:** 2026-07-21 08:54:28.334239
 
 **WARNING:** This file is SYNTHETIC — coefficients are not findings.

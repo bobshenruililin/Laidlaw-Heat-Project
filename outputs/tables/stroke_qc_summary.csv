@@ -1,2 +1,2 @@
 "file","n_rows","grain","data_status","stroke_types","n_months","month_min","month_max","missing_months_n","missing_months","extra_months_n","n_events_total","n_events_mean_month","n_suppressed_rows","any_negative","checked_at"
-"/workspace/data_processed/samples/SYNTHETIC_ha_stroke_aggregates.csv",2904,"age_sex","SYNTHETIC","stroke_all",132,"2013-01","2023-12",0,"",0,1557693,11800.7,0,FALSE,"2026-07-21 08:48:37.018179"
+"/workspace/data_processed/samples/SYNTHETIC_ha_stroke_aggregates.csv",2904,"age_sex","SYNTHETIC","stroke_all",132,"2013-01","2023-12",0,"",0,1557693,11800.7,0,FALSE,"2026-07-21 08:54:28.334239"

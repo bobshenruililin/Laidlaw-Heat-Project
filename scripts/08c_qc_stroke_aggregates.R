@@ -9,11 +9,19 @@ cfg <- load_config(root)
 ensure_packages(c("yaml", "dplyr"))
 
 find_stroke_file <- function() {
+  mode <- Sys.getenv("PATHWAY_MODE", unset = "dev")
   # Prefer real approved files in ha_secure_placeholder
   ha_dir <- file.path(root, "data_raw", "ha_secure_placeholder")
   real <- list.files(ha_dir, pattern = "stroke.*\\.(csv|CSV)$|ha_.*stroke.*\\.(csv|CSV)$", full.names = TRUE)
   real <- real[!grepl("SYNTHETIC|PLACEHOLDER|mock", basename(real), ignore.case = TRUE)]
   if (length(real)) return(real[1])
+
+  if (identical(mode, "real")) {
+    stop(
+      "PATHWAY_MODE=real but no non-synthetic stroke CSV in ", ha_dir, "\n",
+      "Place an approved aggregate (e.g. ha_stroke_aggregates_2013_2023.csv) and retry."
+    )
+  }
 
   # Dev synthetic
   syn <- file.path(root, "data_processed", "samples", "SYNTHETIC_ha_stroke_aggregates.csv")

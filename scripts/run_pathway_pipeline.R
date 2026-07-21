@@ -27,8 +27,7 @@ if (identical(mode, "dev")) {
   scripts <- c(
     scripts_common,
     "scripts/08c_qc_stroke_aggregates.R",
-    "scripts/08d_merge_stroke_panel.R",
-    "scripts/20_fit_pathway_panel.R"
+    "scripts/08d_merge_stroke_panel.R"
   )
 } else {
   stop("Unknown PATHWAY_MODE=", mode, " (use dev or real)")
@@ -41,15 +40,25 @@ for (s in scripts) {
   if (rc != 0) stop("Pathway pipeline failed at ", s, " (exit ", rc, ")")
 }
 
-# Real mode: refuse if QC receipt says SYNTHETIC
+# Real mode: refuse SYNTHETIC before fitting
 if (identical(mode, "real")) {
   receipt <- file.path(root, "outputs", "reports", "stroke_data_qc_receipt.md")
+  norm <- file.path(root, "data_processed", "stroke_aggregates_normalized.csv")
+  syn <- FALSE
   if (file.exists(receipt)) {
     txt <- paste(readLines(receipt, warn = FALSE), collapse = "\n")
-    if (grepl("SYNTHETIC", txt)) {
-      stop("PATHWAY_MODE=real but stroke file is SYNTHETIC. Place approved aggregates first.")
-    }
+    if (grepl("SYNTHETIC", txt)) syn <- TRUE
   }
+  if (file.exists(norm)) {
+    st <- unique(utils::read.csv(norm, stringsAsFactors = FALSE)$data_status)
+    if (any(grepl("SYNTHETIC", st))) syn <- TRUE
+  }
+  if (syn) {
+    stop("PATHWAY_MODE=real but stroke file is SYNTHETIC. Place approved aggregates first.")
+  }
+  message("\n========== RUNNING scripts/20_fit_pathway_panel.R ==========\n")
+  rc <- system2("Rscript", "scripts/20_fit_pathway_panel.R")
+  if (rc != 0) stop("Pathway pipeline failed at fit (exit ", rc, ")")
 }
 
 message("\nPathway pipeline completed. See outputs/reports/pathway_panel_summary.md")

@@ -1,0 +1,25 @@
+# Context compound log — insights, detours, dead ends
+
+**Purpose:** Make productive wandering accumulate.  
+**Rule:** Every Explore-mode session adds at least one row. Ship-mode may add rows when something surprising appears.
+
+| Date | Mode | Spur / question | What we tried or noticed | Keep / drop / park | Promoted to? |
+|---|---|---|---|---|---|
+| 2026-07-17 | Decide | General HA reasons for admission? | Confirmed unavailable in meeting | Keep as hard constraint | README + debrief + gates |
+| 2026-07-17 | Decide | One model vs ~10 methods? | Multi-method panel requested | Keep | pathway registry P01–P18 |
+| 2026-07-21 | Explore | Is pollution placeholder still blocking P11? | Replaced with real EPD EPIC crawl | Keep | pollution monthly + P11 |
+| 2026-07-21 | Explore | Flu Express full 2013–2023? | 121/132 months; early-2013 gap | Park (document in P14) | pathway evidence + SAP |
+| 2026-07-21 | Explore | Guo-style HW defs at monthly scale? | p90/p95/p975 month flags + spells | Keep as panel, not headline alone | P07 |
+| 2026-07-22 | Teach | How should Bob + agents compound context? | Collaboration protocol + AGENTS.md | Keep | AGENTS.md + this log |
+
+---
+
+## How to add a row (30–90 seconds)
+
+1. Date + mode (Ship / Explore / Teach / Decide).  
+2. One-line question.  
+3. What happened (even if null).  
+4. Keep / drop / park.  
+5. If Keep: which file now owns it?
+
+Empty curiosity that never becomes a row did not compound.

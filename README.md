@@ -5,6 +5,8 @@ Laidlaw Scholars project · The University of Hong Kong
 
 This repository is the working home for a monthly climate–health analysis: how temperature and defined heatwave / cold extremes relate to **stroke admission aggregates** in Hong Kong, 2013–2023. The README is the primary orientation document; code and data sit underneath it.
 
+**Compounding context:** lab meetings, assumptions, and agent briefs are meant to accumulate in-repo — not only in chat. See [`AGENTS.md`](AGENTS.md) (for agents) and [`analysis_plan/human_agent_collaboration.md`](analysis_plan/human_agent_collaboration.md) (for Bob + future collaborators). Detours and dead ends go in [`analysis_plan/context_compound_log.md`](analysis_plan/context_compound_log.md).
+
 ---
 
 ## What this project is (now)
@@ -111,6 +113,9 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 | Statistical analysis protocol | `analysis_plan/statistical_analysis_protocol.md` |
 | Readiness gap analysis | `analysis_plan/gap_analysis_readiness.md` |
 | Scientist runbook | `analysis_plan/scientist_runbook.md` |
+| Human–agent collaboration | `analysis_plan/human_agent_collaboration.md` |
+| Context compound log | `analysis_plan/context_compound_log.md` |
+| Agent protocol | `AGENTS.md` |
 | Methods scaffold | `reports/methods_pathway_panel_scaffold.md` |
 | Pathway evidence memo | `literature/pathway_evidence_memo.md` |
 | Dry-run pathway summary | `outputs/reports/pathway_panel_summary.md` |

@@ -2,7 +2,7 @@
 
 **Purpose:** Answer Dr Bishai's next-week request to spin out many defensible ways to identify hot and cold months for the Hong Kong monthly thermal exposure × stroke aggregate study, 2013–2023.
 
-**Team roles:** Hogan leads weather and heat framing; Roro leads Hospital Authority stroke outcomes and event timing; Bob leads pollution and analysis plumbing; Dr Bishai set the multi-method and Jasmine-extension questions.
+**Team roles:** Hogan leads weather and heat framing; Roro leads Hospital Authority stroke outcomes and event timing; Dr Bishai set the multi-method and Jasmine-extension questions.
 
 **Status:** Definition catalogue only. No stroke association has been estimated or is claimed here. Synthetic runs, if used later, are plumbing checks rather than findings.
 
@@ -130,6 +130,8 @@ This family credits Hogan's hot-month recipe. Li et al. supply the atmospheric h
 | HM46 | Persistent two-month heat | HM08 is true in both current and previous month | Requires December 2012 only if January can qualify |
 | HM47 | Hot-period onset month | HM08 is true and was false in the previous month | Transition indicator |
 | HM48 | Rapid warming month | Current minus previous monthly mean temperature ≥ p90 of positive month-to-month changes in the frozen reference period | Transition, not absolute heat |
+| HM49 | Very Hot Weather Warning month | HKO Very Hot Weather Warning is active on at least one calendar day in the month | Public-health operational definition; requires warning history |
+| HM50 | Sustained very-hot warning month | HKO Very Hot Weather Warning is active on ≥3 distinct calendar days in the month | Warning-duration sensitivity; not equivalent to realised temperature |
 
 ---
 
@@ -208,7 +210,7 @@ All pathways sit beside, not in place of, the existing P01–P18 panel. The defa
 
 | ID | Pathway | Definition set | Analysis intent |
 |---|---|---|---|
-| H01 | Official absolute hot months | HM01–HM07 | Compare policy-recognisable count thresholds in separate models |
+| H01 | Official absolute hot months | HM01–HM07, HM49–HM50 | Compare policy-recognisable count thresholds and warning-based definitions in separate models |
 | H02 | Monthly percentile heat | HM08–HM13 | Test robustness to relative monthly thresholds |
 | H03 | Day/night spell heat | HM14–HM18 | Separate persistence from isolated days |
 | H04 | Combined day–night heat | HM19–HM20 | Extend Wang/Ren 2D3N coding |

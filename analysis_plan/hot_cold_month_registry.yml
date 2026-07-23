@@ -2,11 +2,19 @@
 # enabled: true means selected for the starter implementation panel; it does
 # not mean that stroke models have been run or that results exist.
 
-version: 1
+version: 2
 study_window:
   start: "2013-01"
   end: "2023-12"
 outcome_status: "stroke aggregates pending; no association findings"
+catalogue_notes:
+  hot_month_definition_count: 50
+  cold_month_definition_count: 48
+  starter_panel_unchanged: true
+  nonstarter_warning_additions:
+    HM49: "HKO Very Hot Weather Warning active on at least one calendar day in the month."
+    HM50: "HKO Very Hot Weather Warning active on at least three distinct calendar days in the month."
+  warning_history_dependency: "Obtain and provenance-check HKO warning activation intervals before implementation; warning flags are operational measures, not substitutes for realised temperature."
 threshold_policy:
   freeze_before_outcomes: true
   reference_period: null

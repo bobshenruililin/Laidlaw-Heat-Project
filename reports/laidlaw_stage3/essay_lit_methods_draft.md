@@ -99,6 +99,18 @@ Negative binomial (or quasi-Poisson) count models with calendar-month factors an
 | P15 | Temperature variability | Tian/Qiu 2023 |
 | P13 | IS vs HS (if available) | Goggins 2012; disabled until subtype exists |
 
+### 4.7 Hot and cold months: plural definitions and a harmonised extension
+
+Professor Bishai recalled a pattern from “Jasmine's paper”: many non-significant (“null”) p-values on the hotter side, but fewer on the colder side. The source has not yet been identified, so this recollection is a research prompt rather than a citable result. Two leads remain explicitly unconfirmed. Wang, Ren and colleagues (2019) studied Hong Kong all-cause mortality during 2006–2015 and operationalised extremely hot weather through very hot days (daily maximum temperature ≥33°C), hot nights (daily minimum temperature ≥28°C), prolonged 5VHD and 5HN events, and combined 2D3N windows. A second meeting-note lead—“Liu et al. 2020, South China cold/hot attributable fraction, 2006–2016, *Sustainable Cities and Society*”—still requires a full citation and DOI. A nearby verifiable study by Sida Liu et al. (2020) examined high- and low-temperature mortality in Hong Kong during 2007–2015, but it should not be assumed to be Jasmine's paper.
+
+This uncertainty reinforces a broader measurement point: a “hot month” or “cold month” is not a natural binary. Candidate hot-month families include absolute Hong Kong Observatory (HKO) hot-night and very-hot-day counts; upper-tail monthly mean, maximum and minimum temperatures; persistent day/night spells; 2D3N events; heat-degree burden; anomalies; compound heat–ozone months; and HKO Very Hot Weather Warning months. Cold-month families mirror these through HKO days with minimum temperature ≤12°C, a hypothesis-motivated ≤10°C sensitivity, lower-tail monthly temperatures, cold spells, cold degree-days, abrupt cooling, influenza co-exposure and HKO Cold Weather Warnings. The catalogue therefore retains fifty hot and forty-eight cold definitions, organised as pathways H01–H12 and C01–C12, rather than presenting each model as an independent discovery. Full IDs live in `analysis_plan/hot_cold_month_catalogue.md`.
+
+Hogan's proposed hot-month recipe forms one named family. Li et al. (*Atmospheric Research*, 2025; DOI `10.1016/j.atmosres.2024.107845`) identify May–September heatwaves when daily maximum temperature exceeds a calendar-day 90th-percentile threshold for at least three consecutive days. For this monthly project, Hogan's adaptation is to count event starts within each month and flag upper-tail event-count months. This construction will sit beside, not replace, the HKO and Wang/Ren definitions. The starter set is HM23 (Hogan p90 event-count month), HM08 (monthly mean temperature ≥p90), HM15 (5VHD), HM17 (5HN), HM19 (2D3N), CM03 (at least five ≤12°C days), CM08 (monthly mean temperature ≤p05) and CM15 (three-day cold spell).
+
+Once Dr Bishai confirms the source, its exposure definition, reference period, lag, outcome, covariates and complete test universe will be transcribed before stroke associations are inspected. Coding will first be checked in the overlap with the published window, then applied unchanged through December 2023. If the source used daily mortality while this study uses Roro's monthly true stroke-event aggregates, the exercise will be described as a **definition-harmonised extension**, not an exact replication. A pooled interaction model and a pre-specified hot-versus-cold contrast will be primary; counts of p-values above or below 0.05 will be secondary because non-significance is not evidence of no effect.
+
+Finally, the suggestion that South China populations may be relatively heat-adapted yet vulnerable around 10°C is a discussion hypothesis only. Monthly ecological data cannot identify genetic effects or causal adaptation. Acclimatisation, housing, air conditioning, behaviour, occupation, health care and population age are competing explanations. The 10°C value is therefore an exposure sensitivity, not a biological threshold. No stroke coefficients are yet available, and synthetic outputs are not findings.
+
 ---
 
 ## 5. Current status (environmental only)
@@ -113,7 +125,7 @@ Laidlaw Stage 3 asks for a 2000–3000 word research essay, an A0 **portrait** p
 
 Lab peers are already modelling the value of writing early. Parallel Hong Kong heat initiatives—community representatives, heat summits, and possible LegCo hearings—also underline why clear, public-facing thermal–health evidence matters. Those efforts are not this study’s results; they are the civic context in which careful measurement earns its keep.
 
-The near-term team asks are small and concrete: Hogan—lock heatwave/hot-month definitions together; Roro—confirm first-GOPC→true-stroke timing and the aggregate transfer path. Going far requires going together.
+The near-term team asks are small and concrete: Dr Bishai—confirm which paper is “Jasmine's” and which table carries the hotter-null / colder-signal pattern; Hogan—lock heatwave / hot-month / cold-month starters together; Roro—confirm first-GOPC→true-stroke timing and the aggregate transfer path. Going far requires going together.
 
 ---
 
@@ -127,5 +139,6 @@ Guo YT et al. (2025). Temperature amid elevated air pollution and emergency hosp
 Li C et al. (2025). Heatwaves in Hong Kong… *Atmos Res* 315:107845. DOI 10.1016/j.atmosres.2024.107845.  
 Tian/Qiu et al. (2023). Temperature variability and hospitalisations in Hong Kong. *J Glob Health*.  
 Wang D, Ren C et al. (2019). Extremely hot weather events and mortality in Hong Kong. *Sci Total Environ*.  
+Liu S, Chan EYY, Goggins WB, Huang Z. (2020). High and low temperature mortality in Hong Kong. *Int J Environ Res Public Health* (adjacent Jasmine lead only).  
 Yang Z, Chong et al. (2025). Cold weather, influenza, and stroke. *Int J Biometeorol*.  
 Marmot M et al. (2010). *Fair Society, Healthy Lives*.

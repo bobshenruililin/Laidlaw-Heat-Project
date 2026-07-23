@@ -2,7 +2,7 @@
 
 ## Goal
 
-Identify hot and cold months several defensible ways across 2013–2023. Deliver the 12 exposure-only flags below, selected-month lists and missingness checks before outcomes. In parallel, Bishai confirms “Jasmine's paper” and its definitions.
+Identify hot and cold months several defensible ways across 2013–2023. Deliver the 12 exposure-only flags below, selected-month lists and missingness checks before outcomes. In parallel, ingest the confirmed Jasmine paper’s full PDF/supplement and lock its exact source definitions.
 
 ## Starter 12
 
@@ -23,14 +23,14 @@ Identify hot and cold months several defensible ways across 2013–2023. Deliver
 
 ## Decisions needed
 
-**Bishai — Jasmine ID:** Please provide PDF, DOI, citation or source slide; explain “Jasmine”; identify the relevant figure/table. Confirm outcome, time unit, hot/cold rules, test universe, and whether we replicate, transport definitions to stroke, or both.
+**Bishai — Jasmine source table:** Jasmine is confirmed as Jingwen Liu et al. (2020), DOI `10.1016/j.scs.2020.102131`. Please provide the full PDF/supplement or source slide and identify the relevant hot/cold figure/table. Confirm the test universe and whether the team wants a same-outcome reproduction, definition transport to stroke, or both.
 
 **Hogan — Li-HW freeze:** Freeze Tmax calendar-day p90; 15-day window; ≥3 consecutive days; May–September; gaps ≤2 days; event-start assignment; monthly-count p90; reference period; percentile/tie method; missing-day tolerance.
 
 ## Do not claim yet
 
 - No stroke association, hot–cold contrast, coefficient or causal compound effect.
-- No confirmed Jasmine identity or p-value pattern; no replication until methods match.
+- Jasmine identity is confirmed; the recalled p-value pattern and exact source specification are not. No replication claim until methods match.
 - 10°C remains a discussion cutoff, not a biological threshold.
 
 ## Working files

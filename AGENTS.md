@@ -49,10 +49,12 @@ Prefer writing into:
 | Meeting substance | `reports/meeting_debrief_YYYY-MM-DD.md` |
 | Lit → method map | `literature/pathway_evidence_memo.md` |
 | How Bob + agents work | **this file** + `analysis_plan/human_agent_collaboration.md` |
-| Open questions / rabbit holes | `analysis_plan/context_compound_log.md` |
+| Open questions / rabbit holes | `analysis_plan/context_compound_log.md` + `knowledge/open_questions_log.md` |
 | Living science + people state | `analysis_plan/PROJECT_STATE.md` |
+| **Permanent knowledge base** | `knowledge/README.md` + `knowledge/INDEX.md` |
 | Jasmine / Roro literature spine | `literature/jasmine_liu2020_confirmed.md`, `roro_manuscript_deep_read.md`, `jasmine_roro_family_map.md`, `exceed_jasmine_and_roro_baseline.md` |
 | Academic prose bar (Hogan) | `analysis_plan/writing_standards_hogan.md` |
+| Hogan Tuesday pack | `reports/hogan_tuesday/README.md` |
 
 If you learned something important in chat and did not write it down, the project did not keep it.
 

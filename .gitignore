@@ -45,4 +45,5 @@ memos/
 *email_to*
 *email_from*
 *email_reply*
+!analysis_plan/hogan_tuesday_email_draft.md
 outputs/session_info_setup.txt

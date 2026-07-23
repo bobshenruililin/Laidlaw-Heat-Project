@@ -1,0 +1,9 @@
+"definition","months_flagged","n_months","prevalence"
+"CM01 any cold day ≤12°C",29,132,0.21969696969697
+"CM03 cold days ≥5",15,132,0.113636363636364
+"CM08 mean T ≤ p05",7,132,0.053030303030303
+"CM15 cold spell ≥3d touch",21,132,0.159090909090909
+"HM08 mean T ≥ p90",14,132,0.106060606060606
+"HM15 VHD spell ≥5d touch",23,132,0.174242424242424
+"HM17 HN spell ≥5d touch",24,132,0.181818181818182
+"HM19 2D3N touch",38,132,0.287878787878788

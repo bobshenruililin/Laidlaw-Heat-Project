@@ -76,12 +76,14 @@ Agents can accelerate craft. Only you can practice judgment.
 
 ---
 
-## 6. Briefing the next agent (copy-paste seed)
+## 7. July 2026 teamwork repair (do not forget)
 
-```text
-Repo: Laidlaw-Heat-Project. Read README.md + AGENTS.md + latest meeting debrief.
-Mode: Ship | Explore | Teach | Decide  (pick one primary)
-Done when: ...
-Must not: invent HA fields/coefficients; claim AMI; equate monthly↔daily DLNM↔excess deaths.
-Prefer writing durable notes into analysis_plan/ and reports/ over chat-only answers.
-```
+If drafting emails or progress decks after mid-July 2026:
+
+- Hogan felt sidelined when Bob built HKO files alone after January silence.
+- Bishai: go far together; listening earns trust.
+- Do not frame progress as a finished solo weather pipeline.
+- Invite Hogan into hot-month / heatwave definitions (Atmos. Res. 2024 suggestion).
+- Spare title slides; sincere short apology emails without repo inventories.
+
+Full specifics: `analysis_plan/PROJECT_STATE.md`.

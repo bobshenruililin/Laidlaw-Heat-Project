@@ -3,6 +3,8 @@
 Laidlaw Scholars project · The University of Hong Kong  
 **Bob Shen Ruililin** · Supervisor: **Professor David Bishai**
 
+**For agents / new chats:** read [`knowledge/CONTEXT_BOOTSTRAP.md`](knowledge/CONTEXT_BOOTSTRAP.md) first, then use its linked playbook for the current gate.
+
 This repository is the working home for a monthly climate–health analysis: how temperature and defined heatwave / cold extremes relate to **stroke admission aggregates** in Hong Kong, 2013–2023. The README is the primary orientation document; code and data sit underneath it.
 
 **Compounding context:** lab meetings, assumptions, and agent briefs are meant to accumulate in-repo — not only in chat. See [`AGENTS.md`](AGENTS.md) (for agents) and [`analysis_plan/human_agent_collaboration.md`](analysis_plan/human_agent_collaboration.md) (for Bob + future collaborators). Detours and dead ends go in [`analysis_plan/context_compound_log.md`](analysis_plan/context_compound_log.md).

@@ -12,7 +12,9 @@
 | 2026-07-21 | Explore | Guo-style HW defs at monthly scale? | p90/p95/p975 month flags + spells | Keep as panel, not headline alone | P07 |
 | 2026-07-22 | Teach | How should Bob + agents compound context? | Collaboration protocol + AGENTS.md | Keep | AGENTS.md + this log |
 | 2026-07-22 | Decide | Hogan felt sidelined after unilateral HKO | Repair emails; reopen weather defs; Bishai teamwork note | Keep | PROJECT_STATE.md; Week2 deck reframe |
-| 2026-07-23 | Ship | Reframe Week2 sharing for team dynamic | Spare title slide; less solo climax; Hogan hot-month invited | Keep | Week2_Progress_Deck.pdf |
+| 2026-07-23 | Ship | Reframe Week2 sharing for team dynamic | Spare title; Hogan hot-month; credit team | Keep | Week2_Progress_Deck.pdf |
+| 2026-07-23 | Decide | Outcome timing via first GOPC mention | Marker→true stroke earlier; ignore 2nd mention | Keep | PROJECT_STATE; essay methods |
+| 2026-07-23 | Ship | Laidlaw lit+methods draft + pathway map | Credit Hogan/Roro/Bishai; no self-credit | Keep | reports/laidlaw_stage3/ |
 
 ---
 

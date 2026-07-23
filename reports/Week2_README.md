@@ -10,3 +10,5 @@
 Title slide: identity only. Credits Hogan, Roro, Dr Bishai. Closing nudge with `:)` .
 
 **New in this revision:** Jasmine signal + hot/cold-month spin-out frames (catalogue: 50 HM / 48 CM; starters + extension protocol). Confirm Jasmine citation with Dr Bishai before calling anything a replication.
+
+| [`Week2_Deck_Speaker_Notes.md`](Week2_Deck_Speaker_Notes.md) | Bob speaking keypoints + jargon glossary |

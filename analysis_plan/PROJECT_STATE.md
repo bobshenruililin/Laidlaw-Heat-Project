@@ -73,7 +73,7 @@ Do frame: meeting recalibrated science; public layers advanced; **weather defini
 
 ## 4. Stylistic preferences (Bob) — also for presentations
 
-- **Title / first slide:** spare. No READY/PENDING/THIS WEEK strips; no dense status clusters on slide 1.
+- **Title / first slide:** only title + Bob’s identity (name, programme, lab, date). No taglines, no READY/PENDING strips, no status clusters.
 - Progress decks after interpersonal events should emphasize **shared judgment**, not solo readiness as triumph.
 - Prefer storytelling + talking points over dashboard clutter.
 - Emails: sincere, short, human; apology without repo inventory; no synthetic “results.”

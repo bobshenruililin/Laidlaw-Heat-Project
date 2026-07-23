@@ -40,3 +40,15 @@ When drafting Laidlaw essays, deck text, or manuscript sections: **err toward sp
 ## Agent rule
 
 Future agents: when rewriting lit/methods, apply this file. Prefer Hogan’s spare academic voice over literary density. Do not invent that Hogan has already edited a specific draft unless a file says so.
+
+---
+
+## Publication register (CNS-calibre)
+
+For Stage 3 / manuscript surfaces (`reports/laidlaw_stage3/essay_lit_methods.*`):
+
+- Write as if submitting to a top journal: spare, precise, one claim per sentence.
+- No draft markers, process gossip, Gate jargon, or Laidlaw admin logistics in the scientific body.
+- Credit collaborators in acknowledgements; in methods, prefer role language (“weather co-investigator”) unless a full legal name is available.
+- Cite Liu et al. (2020) formally; do not lead with internal nicknames.
+- State pending data as planned procedures, not as uncertainty theatre.

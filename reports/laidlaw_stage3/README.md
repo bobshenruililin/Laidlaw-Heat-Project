@@ -4,12 +4,14 @@ Summer 2026 deliverables (HKU Laidlaw):
 
 | Deliverable | Status in repo |
 |---|---|
-| Research essay 2000–3000 words | Draft lit+methods: [`essay_lit_methods_draft.md`](essay_lit_methods_draft.md) / PDF |
+| Research essay 2000–3000 words | Stage 3 essay: [`essay_lit_methods.md`](essay_lit_methods.md) · [`Essay_Lit_Methods.pdf`](Essay_Lit_Methods.pdf) · [LaTeX](../latex/laidlaw_stage3/essay_lit_methods.tex) |
 | Pathway × literature map (multimedia) | [`pathway_literature_map.md`](pathway_literature_map.md) |
 | A0 portrait poster 841×1189 mm | Scaffold next (do not reuse GEST landscape as-is) |
 | HKU report form + supervisor endorsement | Bob / Dr Bishai (outside repo) |
 | Spreadsheet columns Q, R | Bob |
 
-**Credits in writing:** Hogan (weather/heat), Roro (HA outcomes), Dr Bishai (plan/teamwork).
+**Scientific roles:** Hogan (weather exposures), Zhenyuan Liu (Hospital Authority outcomes), and David Makram Bishai (supervision).
 
-**Honesty:** no stroke association results until Roro’s aggregates are analysed.
+Stroke association results will be reported only after the governed aggregates are analysed.
+
+**Publication-register note (23 July 2026):** The Stage 3 essay has been rewritten as a CNS-calibre literature-and-methods paper. It claims no stroke results.

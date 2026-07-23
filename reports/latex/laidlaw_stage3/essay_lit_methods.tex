@@ -1,0 +1,208 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\definecolor{linkblue}{HTML}{174A7E}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=linkblue,
+  pdftitle={Thermal Extremes and Monthly Stroke Burden in Hong Kong},
+  pdfauthor={Bob Shen Ruililin}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist{leftmargin=*,itemsep=0.25em,topsep=0.35em}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.65em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.55em}{}
+\renewcommand{\arraystretch}{1.15}
+
+\title{\vspace{-1.5em}\textbf{Thermal Extremes and Monthly Stroke Burden in Hong Kong}\\
+\large A Definition-Robust Time-Series Framework, 2013--2023}
+\author{Bob Shen Ruililin\textsuperscript{1}\\[0.4em]
+\small \textsuperscript{1}Laidlaw Scholars Programme, The University of Hong Kong, Hong Kong SAR, China}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-1.4em}
+
+\begin{abstract}
+\noindent
+Climate-related stroke research in subtropical cities must accommodate intensifying heat without treating cold as obsolete. We specify an ecological monthly time-series study of thermal exposures and stroke-event aggregates in Hong Kong from January 2013 through December 2023 (132 months). Daily observations from Hong Kong Observatory Headquarters will be converted into continuous temperature, official extreme-day counts, spell, combined day--night, and lagged monthly measures. Air pollutants from Environmental Protection Department general monitoring stations and age--sex population denominators from the Census and Statistics Department will provide staged covariate adjustment and person-time offsets. Governed Hospital Authority aggregates will assign each stroke to its reconstructed event month rather than the date of a later outpatient mention. Negative-binomial or quasi-Poisson models will control seasonality and long-term trend. A pre-specified multi-definition panel will distinguish confirmatory contrasts from sensitivity analyses. Hong Kong mortality studies motivate symmetric evaluation of cold and heat, but their attributable fractions and excess-death estimates are not stroke coefficients. Preliminary exposure series show increasing hot nights and very hot days, persistent cold, declining nitrogen dioxide and particulate matter, and rising ozone. No stroke association is inferred from these environmental patterns.
+\end{abstract}
+
+\section{Introduction}
+
+Stroke is a major cause of death, disability, and sustained health-care need. Acute cerebrovascular events arise from clinical and behavioural determinants, but their timing may also respond to environmental stress. Temperature can alter blood pressure, peripheral vascular tone, fluid balance, and cardiovascular demand. Air pollution can contribute oxidative and inflammatory stress. These mechanisms make both thermal extremes and pollutant mixtures plausible short-term influences on stroke burden.
+
+Hong Kong provides a stringent setting in which to examine these relations. The city combines a humid subtropical climate, high urban density, and rapid population ageing. Hot nights and very hot days have become more frequent, yet cold days continue to occur. Warming therefore changes the balance of thermal hazards rather than replacing one hazard with another. The changing atmospheric mixture adds a further complication because nitrogen dioxide and particulate matter have declined while ozone has risen.
+
+The local evidence base is substantial but temporally and methodologically heterogeneous. Earlier studies largely used daily admissions or mortality and distributed-lag models. The present study instead targets monthly stroke-event aggregates during 2013--2023. This grain sacrifices daily lag resolution but permits analysis of governed outcome aggregates aligned with reproducible public environmental series. Its estimand is the association between monthly thermal burden and monthly stroke events. It is not an estimate of daily triggering, attributable mortality, or modelled excess deaths.
+
+Exposure definition is a central scientific issue. A hot month can represent a high mean temperature, numerous official extreme days, a persistent spell, combined daytime and nighttime heat, or an upper tail of event counts. These constructs need not select the same months. Cold has parallel problems of threshold, persistence, intensity, and seasonal relativity. The analysis therefore treats definition sensitivity as part of the estimand rather than as an opportunity to select the largest coefficient.
+
+\section{Literature}
+
+\subsection{Local stroke evidence and persistent cold}
+
+Goggins et al.\ (2012) analysed daily public-hospital admissions for haemorrhagic and ischaemic stroke in Hong Kong during 1999--2006. Lower temperature was associated with higher haemorrhagic stroke admissions across the observed range. The ischaemic association was weaker and concentrated below approximately 22~\textdegree C. The estimated lag structures also differed by subtype. These findings establish cold as a necessary component of any later Hong Kong stroke analysis, but their daily coefficients are not directly comparable with monthly aggregate models.
+
+The longer weekly analysis by Yang et al.\ (2025) examined cold weather, influenza activity, and stroke admissions in Hong Kong during 1998--2019. It identified cold temperature and influenza activity as stroke-admission risk factors. This result supports a pre-specified influenza sensitivity for cold models. It does not establish that influenza modifies temperature effects in the present data.
+
+Goggins et al.\ (2013) also reported cold-dominant associations for acute myocardial infarction in Hong Kong and highlighted nitrogen dioxide within the pollutant analysis. That study informs environmental confounding and historical comparison. Acute myocardial infarction is nevertheless outside the present outcome scope because the available general Hospital Authority extract does not contain reasons for admission. Stroke analyses will use separately governed aggregate data.
+
+\subsection{Heat metrics, persistence, and definition uncertainty}
+
+Official thresholds are interpretable but incomplete descriptions of heat. Guo et al.\ (2024) compared the Hong Kong hot-night threshold with measures of excess nighttime heat. Nighttime heat intensity was associated with hospitalisation in that analysis, whereas the binary official indicator alone did not show excess risk. The outcome was broad hospitalisation rather than stroke. The methodological implication is to retain official counts while examining intensity and persistence separately.
+
+Wang et al.\ (2019) developed Hong Kong extremely hot weather events from very hot days, hot nights, prolonged runs, and combined daytime--nighttime structures. Their representative forms included five consecutive very hot days, five consecutive hot nights, and a two-day/three-night window. These definitions preserve event morphology that a monthly mean can erase. Monthly translation must specify whether an event is assigned by its start, by any contact with a month, or by the number of event-days within that month.
+
+Definition multiplicity is not unique to Hong Kong. Guo et al.\ (2017) showed in a multicountry study that heatwave--mortality estimates vary across percentile-by-duration definitions. Li et al.\ (2025) defined Hong Kong warm-season heatwaves using daily maximum temperature above a calendar-day 90th percentile for at least three consecutive days. Their atmospheric construction used a moving calendar window and rules for joining nearby events. For the present study, the weather co-investigator proposed counting these events by month and identifying months in the upper tail of that count distribution. This monthly adaptation complements the published event rule; it does not replace absolute thresholds or health-derived spell definitions.
+
+\subsection{Complementary mortality and pollution evidence}
+
+Jingwen Liu et al.\ (2020) estimated cause-specific mortality attributable to non-optimal temperature in Hong Kong during 2006--2016. The study integrated a distributed lag non-linear model with quasi-Poisson regression. It reported a reversed J-shaped temperature--mortality relation. The overall attributable fraction was 4.72\% for cold and 0.16\% for heat. Moderate non-optimum temperatures accounted for 4.25\%, compared with 0.63\% for extremes. These contrasts motivate cold--hot symmetry and attention to common moderate exposures. An attributable fraction quantifies modelled population burden under a specified exposure distribution and reference. It is not a p-value, a stroke effect, or evidence that one side contains more discoveries.
+
+Zhenyuan Liu et al.\ (2026) provide a complementary mortality baseline for 2014--2023. The \emph{medRxiv} study applied local relative risks from Jingwen Liu et al.\ (2020) and Wang et al.\ (2019) to four heatwave scenarios: \emph{HWD-Tavg}, \emph{HWD-Tmax}, \emph{HWD-Tmin}, and \emph{HWD-Tcombined}. It estimated 1,455--3,238 model-based excess deaths across these definitions. The range demonstrates that burden estimates depend materially on exposure construction. Those estimates concern mortality and transported relative risks. The present study instead estimates associations with monthly stroke morbidity.
+
+Pollution can also change thermal associations or their interpretation. Guo et al.\ (2025) reported greater temperature-associated emergency hospitalisation risks under elevated ambient pollution in Hong Kong. Nitrogen dioxide, particulate matter, and ozone are correlated with season and weather in different ways. Simultaneous inclusion of all pollutants can therefore obscure rather than resolve confounding, especially with 132 monthly observations. A staged adjustment sequence is more interpretable.
+
+\section{Aims}
+
+\begin{enumerate}
+  \item Estimate associations between monthly thermal exposures and governed stroke-event aggregates in Hong Kong during 2013--2023.
+  \item Compare continuous temperature, official extreme-day counts, persistent spells, combined day--night events, and lag-one-month exposures within a labelled specification panel.
+  \item Evaluate whether conclusions are robust across pre-specified hot-month and cold-month definitions.
+  \item Characterise sensitivity to population ageing, seasonality, long-term trend, the COVID-19 period, and staged air-pollution adjustment.
+\end{enumerate}
+
+\section{Methods}
+
+\subsection{Design}
+
+The study is an ecological monthly time series covering January 2013 through December 2023. The primary series contains 132 territory-month observations. Age- and sex-stratified panels will be analysed when the governed aggregate release supports those strata. The target quantity is a rate ratio for monthly stroke-event counts associated with a specified monthly exposure contrast, conditional on seasonality, long-term trend, and the stated adjustment set.
+
+Weather specification and outcome construction will be led by the respective co-investigators. The exposure and outcome procedures will be fixed before substantive association estimates are interpreted.
+
+\subsection{Exposures}
+
+Daily observations from Hong Kong Observatory Headquarters will be aggregated to calendar months. Continuous measures will include monthly mean temperature and the monthly means of daily maximum and minimum temperature. Lag-one-month values will be created for the continuous measures. December 2012 observations will therefore be retained to define lagged exposure for January 2013.
+
+Official extreme-day counts will comprise hot nights with daily minimum temperature at least 28~\textdegree C, very hot days with daily maximum temperature at least 33~\textdegree C, and cold days with daily minimum temperature at most 12~\textdegree C. Counts retain the frequency of extremes within a month. Spell measures will retain the longest run, event starts, and days within qualifying runs. Combined daytime--nighttime heat will include the Wang--Ren two-day/three-night construction. Cross-month runs will be identified on the uninterrupted daily series before monthly assignment.
+
+Continuous temperature, threshold counts, spell measures, and event indicators answer different questions. They will not be treated as interchangeable encodings. Same-month maximum and minimum temperature, together with official extreme-day counts, form the proposed primary pair of specifications. The wider exposure panel will remain pre-specified regardless of the primary estimates.
+
+\subsection{Pollution}
+
+Monthly nitrogen dioxide, ozone, fine particulate matter (PM$_{2.5}$), and respirable particulate matter (PM$_{10}$) will be obtained from the Environmental Protection Department EPIC portal. The primary exposure series will use general monitoring stations. Roadside stations represent a distinct near-road environment and will be reserved for sensitivity analysis.
+
+Completeness will be evaluated for each pollutant--station--month against the expected observations. A station-month must contain at least 75\% of expected measurements to contribute. Values below this threshold will be set to missing before aggregation. Missing observations will never be coded as zero. Territory-wide monthly values will be calculated as unweighted means across eligible general stations.
+
+Pollutants will enter models in stages. Nitrogen dioxide and particulate matter will precede ozone. Ozone will enter last because it rises under hot, sunny conditions and may be strongly coupled to the thermal exposure of interest. Single- and multi-pollutant results will be interpreted as alternative adjustment sets rather than as a search for favourable attenuation.
+
+\subsection{Population}
+
+Age- and sex-specific population denominators will come from Census and Statistics Department Table 110-01001. Mid-year estimates will be interpolated to months. Count models will use the offset
+\[
+  \log(\mathrm{population}\times\mathrm{days\ in\ month}).
+\]
+This offset accounts for population at risk and unequal month length. Ages 65--69 and 70--74 will remain separate when the outcome release provides matching strata. Broader age groups will be used only when required by disclosure control or denominator compatibility.
+
+\subsection{Outcome}
+
+The outcome is the monthly count of reconstructed stroke events in the governed Hospital Authority data. The first General Out-patient Clinic mention of stroke is used as a marker for case identification. The underlying stroke event generally precedes that mention. Later mentions are ignored for initial-event identification. Clinical chronology will be used to recover the true event month before aggregation.
+
+This timing rule is the planned outcome definition under co-investigator and institutional governance. It prevents follow-up contacts from being counted as new events and avoids assigning an event to a delayed outpatient record. Only approved aggregates will leave the governed environment. No sample size, subtype availability, or cell count is assumed before release.
+
+Acute myocardial infarction will not be inferred from the general Hospital Authority data. Those records lack admission reasons and cannot support a valid diagnosis-specific acute myocardial infarction endpoint. Stroke subtype analyses will be conducted only if the governed aggregate product explicitly distinguishes ischaemic and haemorrhagic events.
+
+\subsection{Statistical analysis}
+
+Monthly counts will be modelled using negative-binomial regression when variance exceeds the Poisson mean. Quasi-Poisson regression will provide an alternative when its mean--variance formulation is preferable. Each model will include calendar-month indicators for seasonality and a pre-specified smooth function of calendar time for long-term trend. Stratified models will use the population--days offset for the corresponding cell.
+
+The proposed primary specification pair is: (i) same-month monthly mean maximum and minimum temperature; and (ii) official counts of hot nights, very hot days, and cold days. The complete panel will be labelled before outcome analysis:
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}
+                                  >{\raggedright\arraybackslash}X
+                                  >{\raggedright\arraybackslash}p{0.25\textwidth}@{}}
+\toprule
+Panel family & Exposure question & Role \\
+\midrule
+Continuous temperature & Mean temperature; same-month maximum and minimum; lag one month & Proposed primary and supporting models \\
+Official extremes & Counts of hot nights, very hot days, and cold days & Proposed primary \\
+Event structure & Hot-night and very-hot-day spells; two-day/three-night burden & Pre-specified sensitivity \\
+Relative thermal months & Upper- and lower-tail monthly temperature & Pre-specified sensitivity \\
+Environmental context & Staged pollution, influenza, humidity, and temperature variability & Pre-specified adjustment or sensitivity \\
+Population structure & Age and sex strata where available & Effect-heterogeneity analysis \\
+Period sensitivity & Pre-COVID-19 restriction and COVID-era indicators & Utilisation sensitivity \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Effect estimates will be reported with confidence intervals, exposure prevalence, missingness, and model diagnostics. Nested thresholds will be fitted in separate models unless a contrast is explicitly specified. The panel will be interpreted jointly. It will not be presented as a set of independent discoveries. Evidence for heat--cold differences will rely on planned contrasts and consistency across definitions, not counts of nominally significant results.
+
+\subsection{Multi-definition thermal months}
+
+Hot-month and cold-month indicators will be organised into parallel definition families. The hot families comprise absolute official counts, relative monthly percentiles, daytime and nighttime spells, combined day--night events, event-count tails, heat intensity, and compound heat--pollution measures. The cold families comprise official cold-day counts, lower-tail monthly temperature, cold spells, event-count tails, cold intensity, abrupt cooling, and cold--influenza measures.
+
+The initial hot logic includes upper-decile monthly mean temperature, five-day very-hot-day runs, five-night hot-night runs, and the two-day/three-night event. The initial cold logic includes months with at least five cold days, lower-5\% monthly mean temperature, and three-day cold spells. The weather co-investigator's event-count construction adds months in the upper tail of the number of Li et al.\ heatwave starts. Continuous event-day and intensity burdens will accompany binary indicators where feasible.
+
+Before outcomes are examined, each definition will specify its reference period, percentile algorithm, treatment of ties, seasonal denominator, missing-day tolerance, cross-month assignment, and event-overlap rule. For transparency, exposure-only summaries will report the months selected by each definition. This structure prevents a large set of candidate definitions from becoming an unstructured multiplicity exercise.
+
+Definitions reconstructed from Jingwen Liu et al.\ (2020) will retain the source reference and lag logic where the published information permits. Applying such a definition to monthly stroke aggregates is a definition-harmonised extension, not a replication of daily mortality analysis. The four heatwave scenarios in Zhenyuan Liu et al.\ (2026) will remain a named mortality-baseline family. Their published mortality relative risks will not be imported into the stroke models.
+
+\section{Preliminary environmental observations}
+
+The exposure series provide context but no health result. Across 2013--2023, hot nights and very hot days became more frequent in the Hong Kong Observatory series. Cold days continued to occur. General-station nitrogen dioxide, PM$_{2.5}$, and PM$_{10}$ declined, while ozone rose. These patterns support analysis of a changing mixture of thermal and atmospheric conditions. They do not establish a change in stroke risk or a causal transition between cold- and heat-related burden.
+
+\section{Limitations}
+
+The ecological design cannot identify individual exposure, susceptibility, or behaviour. Territory-wide weather and pollution measures conceal spatial variation in urban heat, housing, occupation, cooling access, and near-road exposure. Associations at the monthly level cannot be interpreted as individual causal effects.
+
+Monthly aggregation also removes the daily timing needed to reproduce a distributed lag non-linear model. Same-month and lag-one-month terms summarise broad temporal burden. They cannot locate acute risk windows measured in days. Comparisons with daily admissions, mortality attributable fractions, or excess-death scenarios must therefore remain qualitative and estimand-specific.
+
+The series contains only 132 months. Flexible trend control, correlated exposures, and multiple definitions can consume information quickly. Pre-specification and panel reporting reduce selective interpretation but do not create power. Residual autocorrelation, overdispersion, influential months, and collinearity will require explicit diagnostics.
+
+Stroke timing depends on successful reconstruction of the event month from clinical chronology. Misclassification may remain if the preceding event cannot be located. Aggregate release rules may also limit subtype, age, or sex analyses. The COVID-19 period can alter care seeking, outpatient follow-up, admission practice, and service capacity independently of environmental exposure. Period-restricted models can assess robustness but cannot remove all utilisation bias.
+
+Finally, this ecological monthly study cannot test genetic adaptation or the discussion hypothesis of thermal adaptation around approximately 10~\textdegree C in South China, nor can it distinguish these claims from acclimatisation, housing, air conditioning, behaviour, health care, and population structure.
+
+\section*{Acknowledgements}
+
+I thank Hogan (weather co-investigator) for leadership on weather definitions, Zhenyuan Liu for governance of stroke outcome construction, and David Makram Bishai for scientific supervision. The Laidlaw Scholars Programme at The University of Hong Kong supports this work.
+
+\section*{References}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=1.8em,itemsep=0.45em]
+\small
+\item Goggins, W. B., Woo, J., Ho, S., Chan, E. Y. Y. \& Chau, P. H. Weather, season, and daily stroke admissions in Hong Kong. \emph{International Journal of Biometeorology} \textbf{56}, 865--872 (2012). \url{https://doi.org/10.1007/s00484-011-0491-9}.
+\item Goggins, W. B., Chan, E. Y. Y. \& Yang, C.-Y. Weather, pollution, and acute myocardial infarction in Hong Kong and Taiwan. \emph{International Journal of Cardiology} \textbf{168}, 243--249 (2013). \url{https://doi.org/10.1016/j.ijcard.2012.09.087}.
+\item Gasparrini, A. \emph{et al.} Mortality risk attributable to high and low ambient temperature: a multicountry observational study. \emph{The Lancet} \textbf{386}, 369--375 (2015). \url{https://doi.org/10.1016/S0140-6736(14)62114-0}.
+\item Guo, Y. \emph{et al.} Heat wave and mortality: a multicountry, multicommunity study. \emph{Environmental Health Perspectives} \textbf{125}, 087006 (2017). \url{https://doi.org/10.1289/EHP1026}.
+\item Wang, D. \emph{et al.} The impact of extremely hot weather events on all-cause mortality in a highly urbanized and densely populated subtropical city: a 10-year time-series study (2006--2015). \emph{Science of the Total Environment} \textbf{690}, 923--931 (2019). \url{https://doi.org/10.1016/j.scitotenv.2019.07.039}.
+\item Liu, J. \emph{et al.} Cause-specific mortality attributable to cold and hot ambient temperatures in Hong Kong: a time-series study, 2006--2016. \emph{Sustainable Cities and Society} \textbf{57}, 102131 (2020). \url{https://doi.org/10.1016/j.scs.2020.102131}.
+\item Guo, Y. T., Chan, K. H., Qiu, H., Wong, E. L.-Y. \& Ho, K.-F. The risk of hospitalization associated with hot nights and excess nighttime heat in a subtropical metropolis: a time-series study in Hong Kong, 2000--2019. \emph{The Lancet Regional Health -- Western Pacific} \textbf{51}, 101168 (2024). \url{https://doi.org/10.1016/j.lanwpc.2024.101168}.
+\item Li, C., Wei, W., Chan, P. W. \& Huang, J. Heatwaves in Hong Kong and their influence on pollution and extreme precipitation. \emph{Atmospheric Research} \textbf{315}, 107845 (2025). \url{https://doi.org/10.1016/j.atmosres.2024.107845}.
+\item Yang, Z. \emph{et al.} Association of cold weather and influenza infection with stroke: a 22-year time-series analysis. \emph{International Journal of Biometeorology} \textbf{69}, 963--973 (2025). \url{https://doi.org/10.1007/s00484-025-02870-2}.
+\item Guo, Y. T., Li, Y., Ho, K.-F. \& Chan, K. H. Aggravated risks of emergency hospitalizations associated with temperature amid elevated ambient air pollution: evidence from a 20-year time-series study in Hong Kong. \emph{Environmental Science \& Technology} \textbf{59}, 27107--27117 (2025). \url{https://doi.org/10.1021/acs.est.5c10594}.
+\item Liu, Z., Ren, C., Liu, J., Kawasaki, Y. \& Bishai, D. M. Modelling the excess mortality associated with heat waves in Hong Kong: 2014--2023. \emph{medRxiv} (2026). \url{https://doi.org/10.64898/2026.03.05.26347683}.
+\end{enumerate}
+
+\end{document}

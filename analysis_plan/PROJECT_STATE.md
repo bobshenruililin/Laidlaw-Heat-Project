@@ -61,7 +61,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ## 5. Laidlaw Stage 3
 
-- Essay 2000–3000 words — draft: `reports/laidlaw_stage3/essay_lit_methods_draft.md` + PDF.
+- Essay 2000–3000 words — canonical publication-register literature-and-methods essay: `reports/laidlaw_stage3/essay_lit_methods.md` + `reports/laidlaw_stage3/Essay_Lit_Methods.pdf` (no stroke results claimed).
 - Pathway map: `reports/laidlaw_stage3/pathway_literature_map.md`.
 - Poster: A0 **portrait** 841×1189 mm (GEST landscape is wrong orientation + stale AMI aim).
 - HKU report form + supervisor endorsement; spreadsheet Q/R — Bob.

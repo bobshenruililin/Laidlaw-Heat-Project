@@ -11,10 +11,10 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 | Person | Contribution | Note |
 |---|---|---|
-| **Hogan** | Weather / heat framing; Goggins challenge; 65–69 & 70–74; climate X file; hot-month (heatwave counts → upper-tail months); Atmos Res pointer | Felt sidelined after unilateral HKO work — repair; credit openly |
-| **Roro (Zhenyuan Liu)** | HA stroke aggregates; timing rule; dictionary; transfer | First GOPC stroke mention = marker; true event earlier; ignore later mentions |
-| **Prof. David Bishai** | Dec 2025 plan; multi-method; teamwork (“go far together”); Jasmine null-pattern / extend-to-2023; ~10°C discussion prompt | Jasmine identity resolved; confirm the source table/test universe |
-| **Bob Shen** | Analysis plumbing, pollution assemble, writing | Do not self-credit in shares; redeem via teamwork |
+| **Hogan** | Weather / heat framing; Goggins challenge; 65–69 & 70–74; climate X file; hot-month (heatwave counts → upper-tail months); Atmos Res pointer; **also offered to guide Bob on academic writing** (less flowery, more digestible) | Felt sidelined after unilateral HKO work — repair ongoing; credit openly; accept writing mentorship gratefully |
+| **Roro (Zhenyuan Liu)** | HA stroke aggregates; timing rule; dictionary; transfer; **excess heat-mortality baseline** (medRxiv 2026; uses Jasmine RRs); proposed to guide Bob’s regression work | First GOPC stroke mention = marker; true event earlier; ignore later mentions; revised Mac PDF still pending ingest |
+| **Prof. David Bishai** | Dec 2025 plan; multi-method; teamwork (“go far together”); Jasmine null-pattern / extend-to-2023; ~10°C discussion prompt; concept lead on Roro excess-mortality paper | Jasmine identity resolved (Jingwen Liu 2020 SCS) |
+| **Bob Shen** | Analysis plumbing, pollution assemble, writing | Do not self-credit in shares; redeem via teamwork; welcome Hogan writing edits + Roro regression guidance |
 
 ---
 
@@ -66,3 +66,23 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Credit Hogan/Roro/Bishai; minimise self-credit.
 - Emails: sincere, short, human.
 - Multimedia: cut to pathway map + essay PDF during talk.
+- **Academic prose:** follow `analysis_plan/writing_standards_hogan.md` — less flowery, easier to digest; Hogan mentors writing + climate.
+
+---
+
+## 7. What is done vs still human-gated (as of 23 July 2026)
+
+### Done remotely (do not re-do without new evidence)
+- Pathway panel plumbing + HM/CM catalogue (50/48) + starters
+- Jasmine identity locked; Roro medRxiv v1 deep-read; exceed-baseline + family map + adjacent crawl
+- Week 2 deck / Laidlaw lit-methods draft updated for Jasmine + Roro
+- Pollution monthly layer; flu (121/132); holiday scaffold
+
+### Still needs humans / files (cannot fake)
+1. **HA stroke aggregates** + Roro dictionary / true-event-month lock
+2. **Jasmine full SCS PDF + supplement** (MMT, cutoffs, full test universe)
+3. **Roro `revised manuscript_clean.pdf`** vs medRxiv v1 diff
+4. **In-person weather lock with Hogan** (Tuesday preferred) — hot/cold starters + writing mentorship
+5. Gate 3 headline freeze **with team** after real descriptives
+
+Until (1)–(4) move, further remote spinning does not create findings.

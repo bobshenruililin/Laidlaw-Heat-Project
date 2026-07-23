@@ -16,6 +16,8 @@
 | 2026-07-23 | Decide | Outcome timing via first GOPC mention | Marker→true stroke earlier; ignore 2nd mention | Keep | PROJECT_STATE; essay methods |
 | 2026-07-23 | Ship | Laidlaw lit+methods draft + pathway map | Credit Hogan/Roro/Bishai; no self-credit | Keep | reports/laidlaw_stage3/ |
 | 2026-07-23 | Explore | Bishai: Jasmine more nulls in heat, fewer in cold; extend ~2015→2023; ~10°C gene/adaptation idea | Spun HM01–HM50 / CM01–CM48 + H/C pathways; Jasmine protocol; Wang/Ren + Liu leads unconfirmed | Keep | hot_cold_month_catalogue.md; jasmine_extension_protocol.md; Week2 deck frames |
+| 2026-07-23 | Decide | Jasmine ID = Jingwen Liu SCS 2020; Roro excess-mortality MS as baseline | Locked DOI 10.1016/j.scs.2020.102131; deep-read medRxiv 10.64898/2026.03.05.26347683; Mac revised PDF pending | Keep | jasmine_liu2020_confirmed.md; roro_manuscript_deep_read.md; exceed_*; family map |
+| 2026-07-23 | Decide | Hogan offers climate + writing mentorship; campus Tue/Thu | Bob free Tuesday; accept gratefully; spare academic prose norm | Keep | writing_standards_hogan.md; PROJECT_STATE §6–7 |
 | 2026-07-23 | Explore | Which paper was Jasmine, and how does it connect to Roro? | Gold find: locked Jasmine as Jingwen Liu et al. SCS 2020 and confirmed that Roro medRxiv v1 transports its RRs alongside Wang/Ren; Mac revision still pending | Keep | literature/jasmine_liu2020_confirmed.md; roro_manuscript_deep_read.md; jasmine_adjacent_crawl.md |
 
 ---

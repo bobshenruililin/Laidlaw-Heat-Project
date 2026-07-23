@@ -1,0 +1,160 @@
+\begin{frame}{A signal from Dr Bishai --- still to verify}
+  \begin{center}
+    \begin{tikzpicture}
+      \node[
+        fill=LaidlawSoft,
+        draw=LaidlawNavy,
+        rounded corners=3pt,
+        inner xsep=11pt,
+        inner ysep=8pt,
+        text width=0.86\textwidth,
+        align=left
+      ] {%
+        Dr Bishai recalls \textbf{more non-significant p-values on the hotter side}
+        and \textbf{fewer on the colder side} in ``Jasmine's paper.''
+      };
+    \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.55em}
+  \footnotesize
+  \begin{itemize}
+    \item The source paper and exact test universe are not yet confirmed.
+    \item Treat this as a replication prompt, not a result from our stroke data.
+    \item Aim: preserve the earlier definitions and extend the window through 2023.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{First: identify ``Jasmine's paper''}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.18}
+  \begin{tabular}{@{}p{0.28\textwidth}p{0.43\textwidth}p{0.22\textwidth}@{}}
+    \toprule
+    \textbf{Unconfirmed lead} & \textbf{Why it is plausible} & \textbf{Need} \\
+    \midrule
+    Wang / Ren et al.\ 2019 & Hong Kong EHWE mortality, 2006--2015; 5VHD, 5HN, 2D3N & Exact link to ``Jasmine'' \\
+    Liu et al.\ 2020 meeting-note lead & South China cold/hot attributable burden, 2006--2016 & Full citation, DOI, table \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.55em}
+  \callout{A nearby verified paper is Sida Liu et al.\ (2020), Hong Kong high/low-temperature mortality, 2007--2015.
+  It is an adjacent lead --- not assumed to be Jasmine's.}
+\end{frame}
+
+\begin{frame}{Definition-harmonised extension to 2023}
+  \footnotesize
+  \begin{enumerate}
+    \item Confirm the paper, outcome, time unit, thresholds, lag and model.
+    \item Transcribe the original hot/cold rules before opening stroke associations.
+    \item Check exposure coding in the overlapping years.
+    \item Apply the unchanged definition through December 2023.
+    \item Join to Roro's \textbf{true stroke-event month}.
+    \item Report estimates and intervals; treat null-count patterns as secondary.
+  \end{enumerate}
+
+  \vspace{0.45em}
+  \callout{If the source is daily mortality and ours is monthly stroke,
+  this is definition transport --- not an exact replication of its estimand.}
+\end{frame}
+
+\begin{frame}{Next week: spin out hot and cold months}
+  \footnotesize
+  \begin{columns}[T]
+    \begin{column}{0.47\textwidth}
+      {\color{LaidlawTeal}\textbf{Hot families}}
+      \begin{itemize}
+        \item HKO hot nights / very hot days
+        \item Monthly percentile tails
+        \item VHD, HN and 2D3N spells
+        \item Heatwave counts and event days
+        \item Degree-day intensity
+        \item Anomaly, compound, onset
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      {\color{LaidlawTeal}\textbf{Cold families}}
+      \begin{itemize}
+        \item HKO cold-day counts
+        \item 12\,$^\circ$C and 10\,$^\circ$C rules
+        \item Monthly percentile tails
+        \item Cold spells and event counts
+        \item Cold degree-days
+        \item Flu, anomaly, warning, onset
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.4em}
+  \callout{Catalogue: 48 hot-month definitions, 48 cold-month definitions,
+  and paired pathways H01--H12 / C01--C12.}
+\end{frame}
+
+\begin{frame}{Starter set --- small enough to run first}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabular}{@{}p{0.10\textwidth}p{0.34\textwidth}p{0.10\textwidth}p{0.34\textwidth}@{}}
+    \toprule
+    \textbf{Hot} & \textbf{Rule} & \textbf{Cold} & \textbf{Rule} \\
+    \midrule
+    HM23 & Hogan p90 heatwave-count month & CM03 & $\geq 5$ days with $T_{\min}\leq12^\circ$C \\
+    HM08 & Monthly mean temperature $\geq$p90 & CM08 & Monthly mean temperature $\leq$p05 \\
+    HM15 & Touches a 5-VHD spell & CM15 & Touches a 3-day cold spell \\
+    HM17 & Touches a 5-HN spell & & \\
+    HM19 & Touches a 2D3N event & & \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.55em}
+  \footnotesize
+  First-wave additions: HM27 night heat-degree burden; HM32 hot $+$ O$_3$;
+  CM05 any $T_{\min}\leq10^\circ$C day; CM30 cold $+$ influenza.
+\end{frame}
+
+\begin{frame}{Hogan's atmospheric recipe is one family}
+  \footnotesize
+  \begin{center}
+    \begin{tikzpicture}[
+      node distance=0.55cm,
+      box/.style={
+        fill=LaidlawSoft,
+        draw=LaidlawGray,
+        rounded corners=2pt,
+        text width=0.25\textwidth,
+        align=center,
+        inner sep=6pt
+      }
+    ]
+      \node[box] (event) {Li et al.\\May--September\\$T_{\max}>$ calendar-day p90\\$\geq3$ consecutive days};
+      \node[box, right=of event] (count) {Hogan adaptation\\count event starts\\within each month};
+      \node[box, right=of count] (tail) {Flag upper-tail\\monthly counts\\HM23 / HM24};
+      \draw[-{Latex[length=2mm]},LaidlawTeal] (event) -- (count);
+      \draw[-{Latex[length=2mm]},LaidlawTeal] (count) -- (tail);
+    \end{tikzpicture}
+  \end{center}
+
+  \vspace{0.55em}
+  Li C et al., \emph{Atmospheric Research} 315 (2025) 107845.\\
+  DOI: \texttt{10.1016/j.atmosres.2024.107845}.
+
+  \vspace{0.35em}
+  \callout{Named and credited --- but kept beside HKO counts, Wang/Ren spells,
+  percentiles and cold definitions.}
+\end{frame}
+
+\begin{frame}{Hypothesis, not mechanism}
+  \footnotesize
+  \begin{itemize}
+    \item Discussion idea: South China populations may appear relatively heat-adapted,
+      while around \textasciitilde{}10\,$^\circ$C may still be consequential.
+    \item This study cannot identify genes, ancestry effects or causal adaptation.
+    \item Housing, air conditioning, behaviour, occupation, age, health care and
+      acclimatisation remain alternative explanations.
+    \item The 10\,$^\circ$C rule is a candidate exposure definition, not a biological cutoff.
+    \item No stroke findings yet; synthetic outputs are not findings.
+  \end{itemize}
+
+  \vspace{0.55em}
+  \callout{Small ask for next week: confirm Jasmine's citation with Dr Bishai,
+  and lock the weather definitions with Hogan :)}
+\end{frame}

@@ -5,6 +5,8 @@ It encodes how this project compounds: scientific honesty, durable context, and 
 
 Humans: start at [`README.md`](README.md). Living state (science + people + tone): [`analysis_plan/PROJECT_STATE.md`](analysis_plan/PROJECT_STATE.md). Assumptions: [`analysis_plan/assumption_ledger.md`](analysis_plan/assumption_ledger.md).
 
+**On a new chat:** read [`knowledge/CONTEXT_BOOTSTRAP.md`](knowledge/CONTEXT_BOOTSTRAP.md) first, then follow its pointers to current state and the relevant playbook.
+
 ---
 
 ## 1. What success looks like here
@@ -127,3 +129,25 @@ The highest-leverage human moves are listed in `analysis_plan/human_agent_collab
 - Ten methods as ten press releases.
 - Long memos that duplicate the README.
 - Asking Bob to re-paste context that already lives in `reports/` or `analysis_plan/`.
+
+---
+
+## 9. Re-engageable modes
+
+Bob or an agent may name a mode to restore the intended operating posture:
+
+| Mode | Re-engage when | Required residue |
+|---|---|---|
+| **Ship** | Produce a named, bounded artifact | Artifact plus provenance and limits |
+| **Explore** | Follow a scientific side path without promoting it to a finding | Entry in `analysis_plan/context_compound_log.md` |
+| **Teach** | Explain a method, estimand, or decision for Bob’s growth | Clear explanation with uncertainty intact |
+| **Decide** | Close a fork owned by the team | Ledger, gate, registry, or debrief update |
+| **CNS-Write** | Produce publication-register scholarly prose | Apply [`.cursor/skills/cns-writing/SKILL.md`](.cursor/skills/cns-writing/SKILL.md) and its completion checklist |
+
+Executable workflow index:
+
+1. [`01_hogan_definition_lock.md`](analysis_plan/playbooks/01_hogan_definition_lock.md) — meeting decisions → registry/catalogue/debrief/state.
+2. [`02_ha_data_arrival.md`](analysis_plan/playbooks/02_ha_data_arrival.md) — governed receipt → schema/QC/merge/real mode.
+3. [`03_full_analysis_run.md`](analysis_plan/playbooks/03_full_analysis_run.md) — complete panel → team Gate 3 → manuscript tables.
+4. [`04_final_writeup.md`](analysis_plan/playbooks/04_final_writeup.md) — verified real estimates → CNS Results/Discussion.
+5. [`99_emergencies.md`](analysis_plan/playbooks/99_emergencies.md) — source, scope, governance, or provenance shocks.

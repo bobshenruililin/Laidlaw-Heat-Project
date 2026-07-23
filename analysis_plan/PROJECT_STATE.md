@@ -94,3 +94,14 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 5. Gate 3 headline freeze **with team** after real descriptives
 
 Until (1)–(4) move, further remote spinning does not create findings.
+
+---
+
+## 8. Upcoming workflow
+
+1. **Hogan definition lock:** after Tuesday, transcribe actual decisions; freeze all `HM23` operators; reconcile registry, catalogue, debrief, state, and knowledge. A blank or proposed decision is not a lock. Follow [`playbooks/01_hogan_definition_lock.md`](playbooks/01_hogan_definition_lock.md).
+2. **HA aggregate arrival:** confirm governance and dictionary; inventory without inventing fields; QC schema, timing, suppression, grain, subtype, coverage, and denominator compatibility; merge only after Gate 1. Switch to `PATHWAY_MODE=real` only after Gate 2 closes. Follow [`playbooks/02_ha_data_arrival.md`](playbooks/02_ha_data_arrival.md).
+3. **Full analysis:** run the complete `P01–P18` and registry-driven HM/CM panels; validate diagnostics; freeze the headline specification at Gate 3 **with the team**; export complete manuscript tables without cherry-picking. Follow [`playbooks/03_full_analysis_run.md`](playbooks/03_full_analysis_run.md).
+4. **CNS final write-up:** only verified real estimates enter Results and Discussion. Engage [`.cursor/skills/cns-writing/SKILL.md`](../.cursor/skills/cns-writing/SKILL.md), update the canonical essay without draft tone, and preserve estimand boundaries. Follow [`playbooks/04_final_writeup.md`](playbooks/04_final_writeup.md).
+
+At every transition, refresh [`knowledge/CONTEXT_BOOTSTRAP.md`](../knowledge/CONTEXT_BOOTSTRAP.md). Use [`playbooks/99_emergencies.md`](playbooks/99_emergencies.md) for source, scope, governance, or provenance shocks.

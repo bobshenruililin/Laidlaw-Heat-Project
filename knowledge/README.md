@@ -2,11 +2,17 @@
 
 This directory holds durable, dated project knowledge that should survive a meeting, chat, or analysis run. It complements rather than replaces the living state in [`analysis_plan/PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md).
 
+**New chat or agent:** read [`CONTEXT_BOOTSTRAP.md`](CONTEXT_BOOTSTRAP.md) first. The dated July 2026 handoff is [`THIS_ARC_COMPOUND.md`](THIS_ARC_COMPOUND.md).
+
 ## Structure
 
 - [`INDEX.md`](INDEX.md): front door to the current canon and dated knowledge entries.
+- [`CONTEXT_BOOTSTRAP.md`](CONTEXT_BOOTSTRAP.md): ultra-dense current canon, human gates, and operating sequence.
+- [`THIS_ARC_COMPOUND.md`](THIS_ARC_COMPOUND.md): dated compound of the July 2026 arc.
 - `YYYY-MM-DD_topic.md`: meeting preparation, decision records, literature syntheses, and other dated context worth preserving.
 - Existing methods, registries, and source deep-reads remain in `analysis_plan/` and `literature/`; the index links to them rather than copying them.
+
+Re-engage work through the [`analysis_plan/playbooks/`](../analysis_plan/playbooks/) index: [Hogan lock](../analysis_plan/playbooks/01_hogan_definition_lock.md), [HA arrival](../analysis_plan/playbooks/02_ha_data_arrival.md), [full analysis](../analysis_plan/playbooks/03_full_analysis_run.md), [final write-up](../analysis_plan/playbooks/04_final_writeup.md), and [emergencies](../analysis_plan/playbooks/99_emergencies.md). Publication-register prose uses the [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md).
 
 ## What belongs here
 

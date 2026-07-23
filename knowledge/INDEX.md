@@ -1,5 +1,20 @@
 # Knowledge index
 
+## Start here
+
+- [`CONTEXT_BOOTSTRAP.md`](CONTEXT_BOOTSTRAP.md) — ≤800-word canon for every new chat or agent.
+- [`THIS_ARC_COMPOUND.md`](THIS_ARC_COMPOUND.md) — dated July 2026 compound from meeting recalibration through the CNS-register essay.
+- [`analysis_plan/PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md) — living science, people, tone, and human gates.
+
+## Re-engageable workflows
+
+- [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md) — publication-register scholarly writing mode.
+- [Playbook 01: Hogan definition lock](../analysis_plan/playbooks/01_hogan_definition_lock.md)
+- [Playbook 02: HA data arrival](../analysis_plan/playbooks/02_ha_data_arrival.md)
+- [Playbook 03: full analysis run](../analysis_plan/playbooks/03_full_analysis_run.md)
+- [Playbook 04: final write-up](../analysis_plan/playbooks/04_final_writeup.md)
+- [Playbook 99: emergencies](../analysis_plan/playbooks/99_emergencies.md)
+
 ## Current meeting record
 
 - [`2026-07-28_hogan_tuesday_prep.md`](2026-07-28_hogan_tuesday_prep.md) — Hogan meeting context, Jasmine/Roro spine, HM/CM starters, relationship repair, and decisions to lock.
@@ -47,3 +62,5 @@
 ## Writing canon
 
 - [`2026-07-23_stage3_essay_publication_register.md`](2026-07-23_stage3_essay_publication_register.md) — Stage 3 essay elevated to CNS-calibre publication register.
+- [`analysis_plan/writing_standards_hogan.md`](../analysis_plan/writing_standards_hogan.md) — spare academic voice and collaborator-credit rules.
+- [`.cursor/skills/cns-writing/SKILL.md`](../.cursor/skills/cns-writing/SKILL.md) — re-engageable CNS-writing checklist.

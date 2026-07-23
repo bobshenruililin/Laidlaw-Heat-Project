@@ -50,8 +50,13 @@ Prefer writing into:
 | Lit → method map | `literature/pathway_evidence_memo.md` |
 | How Bob + agents work | **this file** + `analysis_plan/human_agent_collaboration.md` |
 | Open questions / rabbit holes | `analysis_plan/context_compound_log.md` |
+| Living science + people state | `analysis_plan/PROJECT_STATE.md` |
+| Jasmine / Roro literature spine | `literature/jasmine_liu2020_confirmed.md`, `roro_manuscript_deep_read.md`, `jasmine_roro_family_map.md`, `exceed_jasmine_and_roro_baseline.md` |
+| Academic prose bar (Hogan) | `analysis_plan/writing_standards_hogan.md` |
 
 If you learned something important in chat and did not write it down, the project did not keep it.
+
+**Especially:** research digs, subagent catalogues, confirmed citations, interpersonal repairs, and mentorship arrangements belong in the table above — not only in the chat transcript.
 
 ---
 
@@ -108,6 +113,8 @@ The highest-leverage human moves are listed in `analysis_plan/human_agent_collab
 3. When blocked on HA data, improve readiness (QC, schema, lit map, figures) — do not invent outcomes.
 4. When Bob asks for “highest quality” without a done-definition, propose one in the first reply and proceed.
 5. When something surprising appears while exploring, log it; only promote it to a pathway/SAP after a human nod or an explicit Explore-mode brief.
+6. Prefer spare academic English (see `analysis_plan/writing_standards_hogan.md`). Warmth belongs in emails and thank-yous; methods stay plain.
+7. Do not invent findings while waiting on HA data, the Jasmine full PDF, Roro’s revised manuscript, or Hogan’s weather lock.
 
 ---
 

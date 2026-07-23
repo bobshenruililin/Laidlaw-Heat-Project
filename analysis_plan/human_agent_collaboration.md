@@ -32,6 +32,8 @@ Your job as scholar is not only to request outputs. It is to:
 
 You are not an obstacle when you are slow. You are an obstacle only when context dies in your head.
 
+**July 2026 mentorship shape:** Roro guides regression / outcomes; Hogan guides climate definitions **and** academic writing (less flowery). Accept both. See `writing_standards_hogan.md`.
+
 ---
 
 ## 3. Lab meetings as context engines

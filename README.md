@@ -124,7 +124,9 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 | Dry-run pathway summary | `outputs/reports/pathway_panel_summary.md` |
 | Week~2 progress deck | `reports/Week2_Progress_Deck.pdf` |
 | Week~2 progress brief | `reports/Week2_Progress_Brief.pdf` |
-| Living project state (science + people) | `analysis_plan/PROJECT_STATE.md` |
+| Living project state (science + people) | [`analysis_plan/PROJECT_STATE.md`](analysis_plan/PROJECT_STATE.md) |
+| How Bob + agents work | [`AGENTS.md`](AGENTS.md) · [`analysis_plan/human_agent_collaboration.md`](analysis_plan/human_agent_collaboration.md) |
+| Hogan writing / mentorship bar | [`analysis_plan/writing_standards_hogan.md`](analysis_plan/writing_standards_hogan.md) |
 
 | HKO extremes figure | `figures/hko_annual_extremes_2013_2023.pdf` |
 | Exposure & aging note | `reports/Exposure_Aging_Context_Note.pdf` |

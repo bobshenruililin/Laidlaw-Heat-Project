@@ -18,10 +18,7 @@
 \setbeamercolor{structure}{fg=LaidlawTeal}
 \setbeamercolor{title}{fg=LaidlawNavy}
 \setbeamercolor{frametitle}{fg=LaidlawNavy}
-\setbeamercolor{subtitle}{fg=LaidlawTeal}
 \setbeamerfont{frametitle}{series=\bfseries,size=\large}
-\setbeamerfont{title}{series=\bfseries,size=\LARGE}
-\setbeamerfont{subtitle}{size=\large}
 
 \usepackage{booktabs}
 \usepackage{graphicx}
@@ -67,74 +64,68 @@
 \end{frame}
 
 %----------------------------------------------------------------------
-\begin{frame}{What this update is for}
-  \begin{itemize}
-    \item Share how the \textbf{17 July} meeting changed the scientific target
-    \item Show what public data layers are now in place
-    \item Keep weather definitions \textbf{open for team judgment} --- especially Hogan
-    \item Be clear what still depends on Roro's aggregates --- and on working together
-  \end{itemize}
-
-  \vspace{0.85em}
-  \callout{\textbf{Tone:} readiness is not a solo finish line.
-  Listening and give-and-take are part of the work.}
-\end{frame}
-
-%----------------------------------------------------------------------
-\begin{frame}{The story in one sentence}
-  \vspace{0.5em}
-  \begin{center}
-  {\large\color{LaidlawNavy}\bfseries
-  The meeting told us what the data cannot be.\\[0.35em]
-  The week prepared what we can analyse ---\\[0.15em]
-  without closing definitions the team still owns.}
-  \end{center}
-
-  \vspace{1.0em}
-  \footnotesize
+\begin{frame}{This is a team project}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
-      {\color{LaidlawTeal}\textbf{Heard in the meeting}}
+      {\color{LaidlawTeal}\textbf{Hogan}}
       \begin{itemize}
-        \item No admission reasons in the general HA file
-        \item Near-term outcome: stroke aggregates
-        \item Explore many methods, not one hero model
+        \item Weather and heat framing
+        \item Goggins baseline challenge (Jan)
+        \item Ages 65--69 and 70--74
+        \item Climate $X$ file and hot-month definitions
+      \end{itemize}
+      \vspace{0.55em}
+      {\color{LaidlawTeal}\textbf{Roro}}
+      \begin{itemize}
+        \item Hospital Authority stroke aggregates
+        \item Outcome timing and transfer path
       \end{itemize}
     \end{column}
     \begin{column}{0.48\textwidth}
-      {\color{LaidlawTeal}\textbf{Built carefully}}
+      {\color{LaidlawTeal}\textbf{Dr Bishai}}
       \begin{itemize}
-        \item Real pollution and flu layers
-        \item A labelled multi-method panel
-        \item Plumbing tested only on synthetic stroke
+        \item Original multi-method plan
+        \item Teamwork: go far together
+      \end{itemize}
+      \vspace{0.55em}
+      {\color{LaidlawTeal}\textbf{Also in the room this week}}
+      \begin{itemize}
+        \item Writing early (lit $+$ methods) matters
+        \item Equity lens (Marmot): who bears risk
+        \item Peer heat work: summit, district voice, LegCo
       \end{itemize}
     \end{column}
   \end{columns}
+
+  \vspace{0.55em}
+  \callout{This update credits the team's contributions.
+  Judgments on weather and outcomes are still shared.}
 \end{frame}
 
 %----------------------------------------------------------------------
-\begin{frame}{What the lab meeting changed}
+\begin{frame}{What the July meeting changed}
   \footnotesize
-  \renewcommand{\arraystretch}{1.25}
-  \begin{tabular}{@{}p{0.30\textwidth}p{0.30\textwidth}p{0.32\textwidth}@{}}
+  \renewcommand{\arraystretch}{1.22}
+  \begin{tabular}{@{}p{0.30\textwidth}p{0.32\textwidth}p{0.30\textwidth}@{}}
     \toprule
-    \textbf{Before} & \textbf{Meeting} & \textbf{Now} \\
+    \textbf{Earlier plan} & \textbf{Meeting} & \textbf{Working now} \\
     \midrule
-    AMI $+$ IS $+$ HS principal-dx panel & Reasons for admission unavailable & Stroke aggregates; AMI out of scope from that file \\[0.45em]
-    One primary heat model & ``Try $\sim$10 methods'' & Labelled pathway panel \\[0.45em]
-    Heatwave metrics of interest & Align with Chao Ren / Wang EHWE & Spells, 2D3N, multi-def months --- still discussable \\[0.45em]
-    Parallel to historical Goggins & Lab daily mortality HW work exists & Complementary estimand, not a duplicate \\
+    AMI $+$ stroke principal-dx & No admission reasons in general HA file & Stroke aggregates; AMI out of scope from that file \\[0.4em]
+    One primary heat model & Explore many methods & Labelled multi-spec panel \\[0.4em]
+    Heat metrics & Align with Ren/Wang-style spells & Spells, 2D3N, hot-month options with Hogan \\
     \bottomrule
   \end{tabular}
 
-  \vspace{0.65em}
-  \callout{\textbf{Insight:} when outcomes are aggregate and heatwave definitions are contested,
-  specification diversity is the design --- and definitions should be shared, not frozen alone.}
+  \vspace{0.55em}
+  \callout{\textbf{Roro's outcome path (working understanding):}
+  first GOPC mention of stroke is a \emph{marker}.
+  The actual stroke and hospitalisation generally come earlier.
+  We ignore later mentions and work back to the true event month.}
 \end{frame}
 
 %----------------------------------------------------------------------
-\begin{frame}{Recalibrated question}
-  \vspace{0.15em}
+\begin{frame}{The question we are preparing}
+  \vspace{0.2em}
   \begin{center}
   \begin{tikzpicture}
     \node[
@@ -148,39 +139,40 @@
       align=left,
       font=\normalsize
     ] {%
-      Among Hong Kong residents in the eligible aggregate population,
-      how do \textbf{monthly} thermal exposures associate with
-      \textbf{stroke admission aggregates} (2013--2023),
-      and how stable are those associations across a pre-labelled
-      panel of specifications?
+      How do \textbf{monthly} thermal exposures in Hong Kong, 2013--2023,
+      associate with \textbf{stroke event aggregates},
+      and how stable is that picture across a shared panel of
+      heat, cold, spell, and sensitivity specifications?
     };
   \end{tikzpicture}
   \end{center}
 
-  \vspace{0.5em}
+  \vspace{0.55em}
   \footnotesize
-  \begin{columns}[T]
-    \begin{column}{0.48\textwidth}
-      {\color{LaidlawTeal}\textbf{This estimand}}
-      \begin{itemize}
-        \item Monthly hospital burden
-        \item Stroke aggregates
-        \item Panel of labelled pathways
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      {\color{LaidlawRust}\textbf{Not this estimand}}
-      \begin{itemize}
-        \item Daily DLNM triggering (Goggins)
-        \item Excess-death heatwave counts
-        \item AMI from files without reasons
-      \end{itemize}
-    \end{column}
-  \end{columns}
+  Complementary to daily heatwave--mortality work in the lab --- not a duplicate.
+  Not a daily DLNM; not AMI from a file without admission reasons.
 \end{frame}
 
 %----------------------------------------------------------------------
-\begin{frame}{Climate layer: shared ground truth}
+\begin{frame}{From January: Hogan's intellectual lead}
+  \footnotesize
+  \begin{itemize}
+    \item Pulled Goggins MI (2013) and stroke (2012) as the Hong Kong baseline
+    \item Warned that cold associations are already well documented --- novelty must be careful
+    \item Suggested comparing a later period (2013--2023) as an evolutionary question
+    \item Highlighted ages \textbf{65--69} and \textbf{70--74} as actionable older bands
+    \item Offered to prepare the monthly climate $X$ file under Dr Bishai's plan
+    \item Later: define heatwaves, count them by month, flag upper-tail ``hot'' months
+      (Atmos.\ Res.\ heatwave framing; DOI 10.1016/j.atmosres.2024.107845)
+  \end{itemize}
+
+  \vspace{0.4em}
+  \callout{Those contributions still structure the weather side.
+  Definitions should be finished \textbf{with} Hogan, not around him.}
+\end{frame}
+
+%----------------------------------------------------------------------
+\begin{frame}{Climate: shared ground truth (descriptive)}
   \begin{center}
     \includegraphics[width=0.94\textwidth]{../../figures/week2_progress/fig_annual_extremes.pdf}
   \end{center}
@@ -189,201 +181,143 @@
   \scriptsize
   Hot nights and very hot days rose after 2018; cold days persist.
   Peak hot-night year in-window: \textbf{2021 (61)}.
-  These are environmental descriptives only --- not admission findings.
+  Environmental descriptives only --- no stroke findings.
   \end{center}
 \end{frame}
 
 %----------------------------------------------------------------------
-\begin{frame}{Pollution is now real (and staged carefully)}
+\begin{frame}{Pollution layer (EPD EPIC)}
   \begin{center}
     \includegraphics[width=0.90\textwidth]{../../figures/week2_progress/fig_pollution_annual.pdf}
   \end{center}
-  \vspace{-0.2em}
+  \vspace{-0.15em}
   \footnotesize
-  EPD EPIC general-station means, 2013--2023.
-  NO$_2$ and PM declined; O$_3$ rose.
-  Modelling rule: stage pollutants; enter O$_3$ last because of heat--ozone collinearity.
+  Official monthly general-station means: NO$_2$, O$_3$, PM$_{2.5}$, PM$_{10}$.
+  NO$_2$/PM declined; O$_3$ rose --- echoing the January discussion of a changing pollutant mix.
+  Stage pollutants carefully; enter O$_3$ last.
 \end{frame}
 
 %----------------------------------------------------------------------
-\begin{frame}{Why heatwave definitions should stay plural}
+\begin{frame}{Why heatwave definitions stay plural}
   \begin{center}
-    \includegraphics[width=0.88\textwidth]{../../figures/week2_progress/fig_hw_month_defs.pdf}
+    \includegraphics[width=0.86\textwidth]{../../figures/week2_progress/fig_hw_month_defs.pdf}
   \end{center}
   \vspace{0.1em}
   \footnotesize
-  Different definitions flag different months --- by design.
-  Guo/Gasparrini, Wang/Ren, and the lab's multi-definition mortality work all argue against one universal heatwave rule.
-  \textbf{Hogan's hot-month idea} (heatwave counts $\to$ upper-tail months) belongs in this conversation, not outside it.
+  Guo/Gasparrini, Wang/Ren, and the lab's multi-definition mortality work all argue against one universal rule.
+  \textbf{Hogan's hot-month idea} (heatwave counts $\to$ upper-tail months) belongs here as a named option.
 \end{frame}
 
 %----------------------------------------------------------------------
 \begin{frame}{A labelled panel --- not seventeen discoveries}
   \footnotesize
-  \renewcommand{\arraystretch}{1.12}
-  \begin{tabular}{@{}ll@{}}
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabular}{@{}p{0.34\textwidth}p{0.58\textwidth}@{}}
     \toprule
-    \textbf{Family} & \textbf{Examples} \\
+    \textbf{Family} & \textbf{Examples (lit-anchored)} \\
     \midrule
-    Continuous temperature / lag & Tmean; Tmax/Tmin; lag-1 \\
-    Extremes \& heatwaves & Official counts; spells; 2D3N; HW-month indicators \\
-    Cold & Cold-day / cold-month counterparts \\
-    Structure & Age; sex (if grain allows) \\
-    Sensitivities & COVID/holidays; pollution; humidity; flu; pre-COVID window \\
-    Optional & IS vs HS only if subtype exists \\
+    Continuous T / lag & Tmean; Tmax/Tmin; lag-1 \\
+    Official extremes & Hot nights, very hot days, cold days (Hogan / HKO) \\
+    Spells \& 2D3N & Ren/Wang-style burden metrics \\
+    Hot-month defs & Percentile months $+$ Hogan count$\to$tail idea \\
+    Cold \& flu & Cold-primary; influenza co-exposure \\
+    Structure & Age bands Hogan flagged; sex if grain allows \\
+    Sensitivities & Pollution staging; humidity; COVID window \\
     \bottomrule
   \end{tabular}
 
-  \vspace{0.55em}
-  \callout{\textbf{Reporting rule:} one panel.
-  Gate~3 freezes a headline pair \emph{with the team} after real descriptives
-  (working proposal: Tmax/Tmin $+$ official extreme-day counts).}
+  \vspace{0.45em}
+  \callout{Headline proposal for Gate~3 \emph{with the team}:
+  continuous Tmax/Tmin $+$ official extreme-day counts.
+  Full pathway$\times$literature map is in the Laidlaw write-up.}
 \end{frame}
 
 %----------------------------------------------------------------------
-\begin{frame}{What is ready --- and what still needs people}
+\begin{frame}{What each person still unlocks}
   \begin{center}
-    \includegraphics[width=0.90\textwidth]{../../figures/week2_progress/fig_readiness.pdf}
+    \includegraphics[width=0.88\textwidth]{../../figures/week2_progress/fig_readiness.pdf}
   \end{center}
-  \vspace{0.15em}
+  \vspace{0.1em}
   \footnotesize
-  Public layers and analysis plumbing can advance now.
-  \textbf{Stroke aggregates} still need Roro's transfer path.
-  \textbf{Weather / hot-month definitions} still need Hogan's judgment before anything is treated as settled.
+  {\color{LaidlawTeal}\textbf{Hogan:}} final weather / heatwave / hot-month operationalisation.\\
+  {\color{LaidlawTeal}\textbf{Roro:}} stroke aggregates --- first GOPC mention $\to$ true event month; dictionary; transfer.\\
+  Public pollution and population layers can support the merge once outcomes arrive.
 \end{frame}
 
 %----------------------------------------------------------------------
-\begin{frame}{Honesty about the dry-run}
+\begin{frame}{Honesty line}
   \begin{columns}[T]
     \begin{column}{0.50\textwidth}
-      {\color{LaidlawTeal}\textbf{What the dry-run showed}}
+      {\color{LaidlawTeal}\textbf{Ready to discuss}}
       \begin{itemize}
-        \item The multi-method panel runs end-to-end
-        \item Missing subtype correctly disables that pathway
-        \item Flu uses complete-case months where coverage exists
+        \item Environmental descriptives
+        \item Outcome construction logic with Roro
+        \item Weather definitions with Hogan
+        \item Lit $+$ methods writing for Laidlaw
       \end{itemize}
     \end{column}
     \begin{column}{0.48\textwidth}
-      {\color{LaidlawRust}\textbf{What it does not mean}}
+      {\color{LaidlawRust}\textbf{Not ready to claim}}
       \begin{itemize}
-        \item Coefficients are \textbf{not} findings
-        \item Synthetic stroke is only a rehearsal
-        \item Definitions are not frozen without the team
+        \item Stroke coefficients
+        \item ``Heat replaced cold''
+        \item AMI from this HA file
+        \item Synthetic dry-runs as findings
       \end{itemize}
     \end{column}
   \end{columns}
-
-  \vspace{0.7em}
-  \callout{\textbf{Parallel to Week~1:} real environmental descriptives can be shared;
-  association claims wait for real outcomes --- and for shared specification choices.}
 \end{frame}
 
 %----------------------------------------------------------------------
-\begin{frame}{Literature that keeps us honest (selected)}
+\begin{frame}{Literature anchors (selected)}
   \footnotesize
   \begin{itemize}
-    \item \textbf{Goggins 2012/2013} --- cold-dominant patterns; subtype and sex matter
-    \item \textbf{Guo 2024} --- official hot-night binary often weak; intensity / structure matter
-    \item \textbf{Wang/Ren 2019} --- spells and combined day--night windows
-    \item \textbf{Guo/Gasparrini 2017} --- percentile $\times$ duration grids; no single heatwave definition
-    \item \textbf{Yang/Chong 2025} --- cold and influenza with stroke admissions
-    \item \textbf{Guo 2025} --- pollution can amplify temperature--hospitalisation associations
+    \item \textbf{Goggins 2012/2013} --- cold-dominant HK stroke/AMI baselines (Hogan's challenge)
+    \item \textbf{Guo 2024} --- hot-night intensity vs official binary flags
+    \item \textbf{Wang/Ren 2019} --- VHD/HN spells and 2D3N
+    \item \textbf{Guo/Gasparrini 2017} --- multi-definition heatwaves
+    \item \textbf{Yang/Chong 2025} --- cold $+$ influenza and stroke
+    \item \textbf{Guo 2025} --- pollution can amplify temperature--hospitalisation risks
   \end{itemize}
 \end{frame}
 
 %----------------------------------------------------------------------
-\begin{frame}{How we want to work from here}
-  \begin{columns}[T]
-    \begin{column}{0.48\textwidth}
-      {\color{LaidlawTeal}\textbf{Bob}}
-      \begin{itemize}
-        \item Keep the analysis panel transparent and labelled
-        \item Listen before freezing headline specs
-        \item Write meeting and team decisions into the repo
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      {\color{LaidlawTeal}\textbf{Team}}
-      \begin{itemize}
-        \item \textbf{Hogan:} weather / heatwave / hot-month definitions; environmental interpretation
-        \item \textbf{Roro:} stroke aggregates, dictionary, transfer rules
-        \item \textbf{Dr Bishai:} governance, Gate~3 taste, teamwork norms
-      \end{itemize}
-    \end{column}
-  \end{columns}
-
-  \vspace{0.75em}
-  \callout{\textit{If you want to go fast, go alone; if you want to go far, go together.}\\[0.15em]
-  --- guidance we are taking seriously.}
-\end{frame}
-
-%----------------------------------------------------------------------
-\begin{frame}{Still open}
+\begin{frame}{Laidlaw Stage~3 is on the horizon}
   \footnotesize
-  \renewcommand{\arraystretch}{1.2}
-  \begin{tabular}{@{}p{0.36\textwidth}p{0.34\textwidth}p{0.22\textwidth}@{}}
-    \toprule
-    \textbf{Open item} & \textbf{Working default} & \textbf{Owner} \\
-    \midrule
-    Stroke aggregates $+$ dictionary & Minimum: month and counts & Roro / Bob \\
-    Grain (territory vs age$\times$sex) & Prefer age$\times$sex if present & On inspection \\
-    Hot-month / heatwave ops & Include Hogan's count$\to$percentile idea as a named option & Hogan / Bob \\
-    Headline pair (Gate~3) & Proposal: Tmax/Tmin $+$ official extremes & Team \\
-    Governance / use path & Follow PI determination & Dr Bishai \\
-    \bottomrule
-  \end{tabular}
+  \begin{itemize}
+    \item Research essay (2000--3000 words) --- lit $+$ methods drafts are started
+    \item A0 \textbf{portrait} poster (841$\times$1189\,mm) --- research focus; results pending outcomes
+    \item HKU report form $+$ supervisor endorsement
+    \item Showcase: HKU Laidlaw Society (early Nov 2026) and Annual Conference
+  \end{itemize}
+
+  \vspace{0.55em}
+  \callout{Writing early --- as other presenters modelled --- is how we stay honest
+  about what is ready and what still needs the team.}
 \end{frame}
 
 %----------------------------------------------------------------------
 \begin{frame}[plain]
-  \vspace{1.35cm}
-  {\color{LaidlawNavy}\LARGE\bfseries Closing\par}
-  \vspace{0.45em}
+  \vspace{1.1cm}
+  {\color{LaidlawNavy}\LARGE\bfseries Thank you\par}
+  \vspace{0.55em}
   {\large\color{LaidlawTeal}
-  The analysis can be prepared carefully.\\[0.2em]
-  The judgments should still be shared.\par}
+  Next small asks --- whenever you have a moment :)\par}
 
-  \vspace{0.95em}
+  \vspace{0.85em}
   \footnotesize
   \begin{itemize}
-    \item Public layers are real and usable
-    \item The multi-method panel is ready to receive aggregates
-    \item Weather definitions remain a team conversation
-    \item No synthetic coefficients as findings
+    \item \textbf{Hogan:} shall we lock the heatwave / hot-month definitions together
+      (including your count$\to$upper-tail idea)?
+    \item \textbf{Roro:} when you can, a short note on the first-GOPC$\to$true-stroke timing
+      and the aggregate file path would unlock the merge.
   \end{itemize}
 
-  \vspace{0.9em}
-  {\small Repo: \texttt{https://github.com/bobshenruililin/Laidlaw-Heat-Project}\par}
-\end{frame}
-
-%======================================================================
-\begin{frame}[plain]
-  \vspace{2.2cm}
-  \begin{center}
-  {\color{LaidlawNavy}\Large\bfseries Appendix\par}
-  \vspace{0.35em}
-  {\color{LaidlawTeal} Numbers and pathway index\par}
-  \end{center}
-\end{frame}
-
-\begin{frame}{A1 --- Environmental numbers (descriptive)}
-  \footnotesize
-  \begin{itemize}
-    \item Study months: $N=132$ (Jan 2013--Dec 2023)
-    \item Mean temperature $\approx 24.0^\circ$C
-    \item Lag-1 Tmax complete for all 132 months
-    \item Example HW-month flags: p90 $=14$, p95 $=7$, p97.5 $=5$; 2D3N months $=38$
-    \item Flu coverage: 121/132 months (early-2013 gap)
-    \item Pollution: EPD general stations (real series)
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{A2 --- Pathway families (short index)}
-  \scriptsize
-  Continuous T / lag; official extremes; Ren/Wang spells \& 2D3N; multi-def HW-month;
-  cold-side; age/sex structure; COVID/holiday, pollution, humidity, flu sensitivities;
-  temperature variability; pre-COVID window; subtype only if present.\\[0.6em]
-  Full machine registry: \texttt{analysis\_plan/pathway\_registry.yml}.
+  \vspace{1.0em}
+  {\small
+  If you want to go fast, go alone; if you want to go far, go together.\\[0.25em]
+  Grateful for both of you --- and for Dr Bishai's nudge to listen better.
+  \par}
 \end{frame}
 
 \end{document}

@@ -1,0 +1,117 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black}
+\setlist{itemsep=0.2em,topsep=0.3em}
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+
+\title{\vspace{-1em}Thermal Extremes and Stroke in Hong Kong, 2013--2023\\[0.35em]
+\large A Laidlaw research essay draft --- literature and methods}
+\author{Bob Shen \quad|\quad Laidlaw Scholars Programme, HKU\\[0.2em]
+\small With \textbf{Hogan} (weather and heat) and \textbf{Roro / Zhenyuan Liu} (HA outcomes)\\
+\small Supervisor: \textbf{Professor David Bishai}\\[0.3em]
+\small July 2026 \quad$\cdot$\quad No stroke association estimates yet}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-1.2em}
+
+\begin{abstract}
+\noindent This draft prepares Laidlaw Stage~3 writing: literature and methods for a monthly study of thermal extremes and stroke aggregates in Hong Kong, 2013--2023. Weather framing follows Hogan; outcome construction follows Roro; the multi-method plan follows Professor Bishai. No Hospital Authority coefficients are claimed.
+\end{abstract}
+
+\section{Introduction}
+Stroke remains a leading cause of death, disability, and long-term care demand. Temperature and air pollution are plausible short-term contributors through blood pressure, viscosity, dehydration, inflammation, and vascular strain---especially among older adults.
+
+Hong Kong combines a humid subtropical climate, dense urban form, and rapid ageing. Official Observatory metrics show more frequent hot nights and very hot days, while cold days persist. Warming therefore reweights hazards rather than simply replacing cold with heat.
+
+The project takes a modest cue from Michael Marmot's work on health inequalities: environmental hazards are unevenly borne. Aggregate data cannot identify individual socioeconomic effects, but they justify attention to older age bands---an emphasis Hogan strengthened by highlighting actionable 65--69 and 70--74 cohorts.
+
+Professor Bishai framed the collaboration in December 2025 as a team plan: Roro on monthly hospital outcomes; Hogan on monthly climate exposures. After the 17~July 2026 lab meeting, the near-term estimand narrowed to what the available HA path can support: \textbf{monthly stroke event aggregates}, not AMI from a general extract without reasons for admission.
+
+\section{Literature review}
+
+\subsection{Hong Kong baselines and the evolutionary question}
+Goggins et al.\ (2012) analysed daily public-hospital stroke admissions (1999--2006), separating haemorrhagic and ischaemic stroke. Lower temperature associated with higher haemorrhagic stroke across the observed range; ischaemic stroke showed a weaker association below about $22^\circ$C. Goggins et al.\ (2013) reported cold-dominant AMI associations and highlighted NO$_2$.
+
+Hogan brought these papers into the January 2026 exchange as foundation and challenge: cold--CVD associations are already well documented. The discussion framed 2013--2023 as an \emph{evolutionary} comparison against the Goggins-era baseline---later heat extremes, an older population, and a changed pollutant mix---without licensing ``regime shift'' claims before real stroke aggregates are analysed.
+
+\subsection{Hot nights, spells, and contested heatwave definitions}
+Guo et al.\ (2024) showed that official binary hot-night flags can be weak relative to nighttime heat intensity. Wang, Ren and colleagues (2019) defined extremely hot weather events using very hot days, hot nights, spell structure, and combined day--night windows (2D3N). Guo, Gasparrini et al.\ (2017) showed heatwave effects depend on percentile $\times$ duration grids.
+
+Hogan's later guidance fits this tradition: define heatwaves, count them by month, then flag upper-tail months (or use a count threshold), with reference to Hong Kong atmospheric heatwave work (Li et al., \emph{Atmos.\ Res.}, DOI 10.1016/j.atmosres.2024.107845).
+
+\subsection{Cold, influenza, variability, and pollution}
+Yang, Chong et al.\ (2025) linked weekly cold and influenza activity to stroke admissions. Tian/Qiu et al.\ (2023) associated temperature variability with circulatory hospitalisations. Guo et al.\ (2025) found pollution can amplify temperature--hospitalisation associations. These motivate cold co-primary pathways, flu sensitivity, variability metrics, and staged pollution adjustment.
+
+\section{Objectives (post--17 July)}
+\begin{enumerate}
+  \item Construct monthly stroke-event aggregates for 2013--2023 with Roro.
+  \item Quantify monthly thermal exposures with Hogan (continuous T, extremes, spells/2D3N, hot-month definitions).
+  \item Assemble EPD pollution and C\&SD denominators.
+  \item Estimate associations via a labelled multi-specification panel; freeze the headline pair only after team review.
+  \item State clearly what monthly ecological models can and cannot claim.
+\end{enumerate}
+
+\section{Methods}
+
+\subsection{Design}
+Ecological monthly time series, January 2013--December 2023 ($N=132$). Grain: territory-month or month $\times$ age $\times$ sex, depending on Roro's release.
+
+\subsection{Temperature and heat (Hogan's domain)}
+Daily HKO Headquarters observations are aggregated to months. Core measures include monthly mean, maximum and minimum temperature; lag-1 month temperature (December 2012 is required for January 2013); official extreme-day counts---hot nights ($T_{\min}\ge 28^\circ$C), very hot days ($T_{\max}\ge 33^\circ$C), cold days ($T_{\min}\le 12^\circ$C); spell-length and days-in-spell metrics; Ren/Wang-style 2D3N burden; percentile-based heatwave-months; and Hogan's proposal to count heatwaves within months and flag upper-tail months. Absolute HKO thresholds and relative/percentile constructions are kept side by side so the paper can show whether conclusions depend on a single definition.
+
+Hogan offered in January to prepare the monthly climate $X$ file under Professor Bishai's plan. Weather definitions should be finished with him---not around him.
+
+\subsection{Pollution (EPD EPIC)}
+Official monthly averages are taken from the Environmental Protection Department EPIC portal for NO$_2$, O$_3$, PM$_{2.5}$ and PM$_{10}$. The primary series uses \textbf{general} stations; roadside stations are reserved for sensitivity. Downloads are chunked because EPIC limits long monthly requests. Station-months below a completeness threshold (default $\ge 75\%$ expected observations) are set to missing before averaging; missingness is never coerced to zero. The assembled series show declining NO$_2$/PM and a different, generally rising ozone pattern---the pollutant-mix shift discussed in January when comparing a later period to Goggins-era results. In regression, pollutants enter in stages, with ozone last because it co-varies with hot, sunny weather.
+
+\subsection{Population}
+C\&SD Table 110-01001 mid-year age--sex population, interpolated monthly. Offset: $\log(\mathrm{population}\times\mathrm{days})$. Hogan's note on growth in older bands motivates keeping 65--69 and 70--74 visible when aggregates allow.
+
+\subsection{Stroke outcomes (Roro's domain)}
+\textit{Working understanding (confirm with Roro):} first GOPC mention of stroke is a marker---the actual stroke and hospitalisation generally precede it. Later mentions are ignored for initial identification. The task is to recover the true event month before aggregation. Without that chronology, monthly counts risk mixing incident events with follow-up mentions. AMI remains out of scope from files without admission reasons.
+
+\subsection{Pathway panel}
+Negative binomial / quasi-Poisson models with seasonality and trend. Report a labelled panel; proposed Gate~3 headline pair: \textbf{P02} (Tmax/Tmin) and \textbf{P04} (official extreme-day counts). Synthetic dry-runs are not findings.
+
+{\footnotesize
+\begin{tabular}{@{}llp{0.48\textwidth}@{}}
+\toprule
+ID & Focus & Anchor \\
+\midrule
+P01 & Mean temperature & Goggins; Gasparrini \\
+P02 & Tmax/Tmin (headline) & Day/night separation \\
+P03 & Lag-1 & Original plan lag note \\
+P04 & Official extremes (headline) & HKO; Guo 2024 \\
+P05--P06 & Spells / 2D3N & Wang/Ren 2019 \\
+P07 & HW-month multi-def & Guo/Gasparrini; Hogan hot-month \\
+P08,P18 & Cold pathways & Goggins; Yang/Chong \\
+P09,P17 & Age / sex & Hogan age bands; Goggins \\
+P11 & Pollution-staged & Goggins; Guo 2025 \\
+P14 & Flu & Yang/Chong 2025 \\
+P15 & Temperature variability & Tian/Qiu 2023 \\
+P13 & IS vs HS & Goggins; if subtype exists \\
+\bottomrule
+\end{tabular}
+}
+
+\section{Current status}
+Environmental descriptives only: rising hot nights/VHDs; persistent cold; declining NO$_2$/PM and rising O$_3$. \textbf{No stroke coefficients.} Next step: Roro's aggregates with Hogan's climate definitions.
+
+\section{Closing and Stage~3}
+Laidlaw Stage~3 asks for a 2000--3000 word research essay, an A0 portrait poster ($841\times 1189$\,mm), and the HKU report form with supervisor endorsement, ahead of the HKU Laidlaw Society showcase (early November 2026) and the Annual Laidlaw Student Conference. This draft covers literature and methods. Lab peers model the value of writing early; parallel Hong Kong heat initiatives (community representatives, heat summits, possible LegCo hearings) remind us why careful thermal--health evidence matters publicly---without confusing those efforts with our results.
+
+Near-term asks: Hogan---lock heatwave/hot-month definitions together; Roro---confirm first-GOPC$\to$true-stroke timing and transfer path. Going far requires going together.
+
+\section*{Selected references}
+Goggins et al.\ 2012, 2013; Guo et al.\ 2017, 2024, 2025; Li et al.\ \emph{Atmos.\ Res.}\ 2025 (DOI 10.1016/j.atmosres.2024.107845); Tian/Qiu et al.\ 2023; Wang/Ren et al.\ 2019; Yang/Chong et al.\ 2025; Marmot et al.\ 2010.
+
+\end{document}

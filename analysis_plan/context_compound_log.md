@@ -11,6 +11,8 @@
 | 2026-07-21 | Explore | Flu Express full 2013–2023? | 121/132 months; early-2013 gap | Park (document in P14) | pathway evidence + SAP |
 | 2026-07-21 | Explore | Guo-style HW defs at monthly scale? | p90/p95/p975 month flags + spells | Keep as panel, not headline alone | P07 |
 | 2026-07-22 | Teach | How should Bob + agents compound context? | Collaboration protocol + AGENTS.md | Keep | AGENTS.md + this log |
+| 2026-07-22 | Decide | Hogan felt sidelined after unilateral HKO | Repair emails; reopen weather defs; Bishai teamwork note | Keep | PROJECT_STATE.md; Week2 deck reframe |
+| 2026-07-23 | Ship | Reframe Week2 sharing for team dynamic | Spare title slide; less solo climax; Hogan hot-month invited | Keep | Week2_Progress_Deck.pdf |
 
 ---
 

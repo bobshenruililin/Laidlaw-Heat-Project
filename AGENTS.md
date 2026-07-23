@@ -3,7 +3,7 @@
 This file is for **future agents** (and for Bob when briefing them).  
 It encodes how this project compounds: scientific honesty, durable context, and permission to explore without turning exploration into fake findings.
 
-Humans: start at [`README.md`](README.md). Living assumptions: [`analysis_plan/assumption_ledger.md`](analysis_plan/assumption_ledger.md).
+Humans: start at [`README.md`](README.md). Living state (science + people + tone): [`analysis_plan/PROJECT_STATE.md`](analysis_plan/PROJECT_STATE.md). Assumptions: [`analysis_plan/assumption_ledger.md`](analysis_plan/assumption_ledger.md).
 
 ---
 

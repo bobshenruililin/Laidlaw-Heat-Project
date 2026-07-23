@@ -75,3 +75,9 @@ Cluster-robust SEs by `month_id` when strata exist.
 ## YAML machine registry
 
 See `analysis_plan/pathway_registry.yml`.
+
+---
+
+## Hot/cold month expansion
+
+`P07` and `P18` remain the parent heat- and cold-month pathways in this registry. Their expanded, paired monthly-definition families (`HM`, `CM`, `H01`–`H12`, and `C01`–`C12`) are catalogued in [`hot_cold_month_catalogue.md`](hot_cold_month_catalogue.md); these additions extend rather than replace `P01`–`P18`.

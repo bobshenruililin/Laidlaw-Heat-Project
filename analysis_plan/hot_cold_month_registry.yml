@@ -1,0 +1,280 @@
+# Machine-readable starter registry for the hot/cold month catalogue.
+# enabled: true means selected for the starter implementation panel; it does
+# not mean that stroke models have been run or that results exist.
+
+version: 2
+study_window:
+  start: "2013-01"
+  end: "2023-12"
+outcome_status: "stroke aggregates pending; no association findings"
+catalogue_notes:
+  hot_month_definition_count: 50
+  cold_month_definition_count: 48
+  starter_panel_unchanged: true
+  nonstarter_warning_additions:
+    HM49: "HKO Very Hot Weather Warning active on at least one calendar day in the month."
+    HM50: "HKO Very Hot Weather Warning active on at least three distinct calendar days in the month."
+  warning_history_dependency: "Obtain and provenance-check HKO warning activation intervals before implementation; warning flags are operational measures, not substitutes for realised temperature."
+threshold_policy:
+  freeze_before_outcomes: true
+  reference_period: null
+  percentile_method: null
+  cross_month_event_assignment: null
+  missing_day_tolerance: null
+
+data_dependencies:
+  hko_monthly_temperature:
+    provider: "Hong Kong Observatory"
+    frequency: "monthly"
+    required_fields:
+      - month
+      - mean_temperature
+      - mean_tmax
+      - mean_tmin
+  hko_daily_extremes:
+    provider: "Hong Kong Observatory"
+    frequency: "daily"
+    required_fields:
+      - date
+      - tmax
+      - tmin
+    derived_fields:
+      - hot_night_tmin_ge_28
+      - very_hot_day_tmax_ge_33
+      - cold_day_tmin_le_12
+      - severe_cold_day_tmin_le_10
+  epd_monthly_ozone:
+    provider: "Hong Kong Environmental Protection Department"
+    frequency: "monthly"
+    required_fields:
+      - month
+      - ozone
+    optional_for_core: true
+  chp_monthly_influenza:
+    provider: "Centre for Health Protection"
+    frequency: "monthly"
+    required_fields:
+      - month
+      - influenza_activity
+    optional_for_core: true
+
+starter_codes:
+  core:
+    - HM23
+    - HM08
+    - HM15
+    - HM17
+    - HM19
+    - CM03
+    - CM08
+    - CM15
+  first_wave:
+    - HM27
+    - HM32
+    - CM05
+    - CM30
+
+definitions:
+  HM23:
+    enabled: true
+    tier: core
+    side: hot
+    short_name: "Hogan p90 heatwave-event-count month"
+    short_definition: "Monthly Li-HW event-start count is at or above the p90 of May-September monthly counts in the frozen reference period."
+    data_deps:
+      - hko_daily_extremes
+    parameters:
+      event_temperature_field: tmax
+      event_calendar_day_percentile: 90
+      event_comparison: ">"
+      event_calendar_window_days: 15
+      event_min_consecutive_days: 3
+      event_season_months: [5, 6, 7, 8, 9]
+      join_events_if_gap_days_lte: 2
+      monthly_assignment: event_start
+      monthly_count_percentile: 90
+    source: "Li et al., Atmospheric Research 315 (2025) 107845; monthly count-to-tail adaptation credited to Hogan"
+    doi: "10.1016/j.atmosres.2024.107845"
+    implementation_status: "requires threshold reference-period freeze"
+
+  HM08:
+    enabled: true
+    tier: core
+    side: hot
+    short_name: "Upper-decile monthly mean temperature"
+    short_definition: "Monthly mean temperature is at or above p90 of the frozen monthly reference distribution."
+    data_deps:
+      - hko_monthly_temperature
+    parameters:
+      field: mean_temperature
+      percentile: 90
+      comparison: ">="
+    source: "project P07 relative-month family"
+    implementation_status: "requires threshold reference-period freeze"
+
+  HM15:
+    enabled: true
+    tier: core
+    side: hot
+    short_name: "Five-day very-hot-day spell month"
+    short_definition: "The month contains a day in a run of at least five consecutive days with Tmax at or above 33 degrees C."
+    data_deps:
+      - hko_daily_extremes
+    parameters:
+      field: tmax
+      absolute_threshold_c: 33
+      comparison: ">="
+      min_consecutive_days: 5
+      monthly_assignment: event_touch
+    source: "Wang/Ren 2019 EHWE family"
+    implementation_status: "ready after cross-month assignment check"
+
+  HM17:
+    enabled: true
+    tier: core
+    side: hot
+    short_name: "Five-night hot-night spell month"
+    short_definition: "The month contains a day in a run of at least five consecutive nights with Tmin at or above 28 degrees C."
+    data_deps:
+      - hko_daily_extremes
+    parameters:
+      field: tmin
+      absolute_threshold_c: 28
+      comparison: ">="
+      min_consecutive_days: 5
+      monthly_assignment: event_touch
+    source: "Wang/Ren 2019 EHWE family"
+    implementation_status: "ready after cross-month assignment check"
+
+  HM19:
+    enabled: true
+    tier: core
+    side: hot
+    short_name: "Combined 2D3N month"
+    short_definition: "The month touches a Wang/Ren-style window combining two very hot days and three hot nights."
+    data_deps:
+      - hko_daily_extremes
+    parameters:
+      daytime_field: tmax
+      daytime_threshold_c: 33
+      daytime_days: 2
+      nighttime_field: tmin
+      nighttime_threshold_c: 28
+      nighttime_nights: 3
+      monthly_assignment: event_touch
+    source: "Wang/Ren 2019 EHWE family"
+    implementation_status: "requires exact 2D3N overlap algorithm freeze"
+
+  CM03:
+    enabled: true
+    tier: core
+    side: cold
+    short_name: "Frequent cold-day month"
+    short_definition: "At least five days in the month have Tmin at or below 12 degrees C."
+    data_deps:
+      - hko_daily_extremes
+    parameters:
+      field: tmin
+      absolute_threshold_c: 12
+      comparison: "<="
+      monthly_min_days: 5
+    source: "HKO absolute cold-day family"
+    implementation_status: ready
+
+  CM08:
+    enabled: true
+    tier: core
+    side: cold
+    short_name: "Lower-5-percent monthly mean temperature"
+    short_definition: "Monthly mean temperature is at or below p05 of the frozen monthly reference distribution."
+    data_deps:
+      - hko_monthly_temperature
+    parameters:
+      field: mean_temperature
+      percentile: 5
+      comparison: "<="
+    source: "project P18 relative-month family"
+    implementation_status: "requires threshold reference-period freeze"
+
+  CM15:
+    enabled: true
+    tier: core
+    side: cold
+    short_name: "Three-day cold spell month"
+    short_definition: "The month contains a day in a run of at least three consecutive days with Tmin at or below 12 degrees C."
+    data_deps:
+      - hko_daily_extremes
+    parameters:
+      field: tmin
+      absolute_threshold_c: 12
+      comparison: "<="
+      min_consecutive_days: 3
+      monthly_assignment: event_touch
+    source: "HKO-threshold cold spell family"
+    implementation_status: "ready after cross-month assignment check"
+
+  HM27:
+    enabled: true
+    tier: first_wave
+    side: hot
+    short_name: "Night heat-degree month"
+    short_definition: "The sum of positive Tmin minus 28 degrees C is at or above p75 among May-October months in the frozen reference period."
+    data_deps:
+      - hko_daily_extremes
+    parameters:
+      field: tmin
+      base_temperature_c: 28
+      season_months: [5, 6, 7, 8, 9, 10]
+      monthly_degree_sum_percentile: 75
+    source: "nighttime heat-intensity family"
+    implementation_status: "requires threshold reference-period freeze"
+
+  HM32:
+    enabled: true
+    tier: first_wave
+    side: hot
+    short_name: "Hot plus high-ozone month"
+    short_definition: "HM08 is true and warm-season monthly ozone is at or above p75 of its frozen reference distribution."
+    data_deps:
+      - hko_monthly_temperature
+      - epd_monthly_ozone
+    parameters:
+      hot_component: HM08
+      ozone_percentile: 75
+      season_months: [5, 6, 7, 8, 9, 10]
+      include_component_main_effects: true
+    source: "pre-labelled compound sensitivity"
+    implementation_status: "requires threshold reference-period freeze"
+
+  CM05:
+    enabled: true
+    tier: first_wave
+    side: cold
+    short_name: "Any day at or below 10 degrees C"
+    short_definition: "At least one day in the month has Tmin at or below 10 degrees C."
+    data_deps:
+      - hko_daily_extremes
+    parameters:
+      field: tmin
+      absolute_threshold_c: 10
+      comparison: "<="
+      monthly_min_days: 1
+    source: "Bishai discussion threshold; hypothesis sensitivity only"
+    implementation_status: ready
+
+  CM30:
+    enabled: true
+    tier: first_wave
+    side: cold
+    short_name: "Cold plus high-influenza month"
+    short_definition: "CM09 is true and monthly influenza activity is at or above p75 of its available frozen reference distribution."
+    data_deps:
+      - hko_monthly_temperature
+      - chp_monthly_influenza
+    parameters:
+      cold_component: CM09
+      cold_percentile: 10
+      influenza_percentile: 75
+      include_component_main_effects: true
+    source: "cold-influenza compound sensitivity"
+    implementation_status: "requires threshold and missingness freeze"

@@ -15,6 +15,7 @@
 | 2026-07-23 | Ship | Reframe Week2 sharing for team dynamic | Spare title; Hogan hot-month; credit team | Keep | Week2_Progress_Deck.pdf |
 | 2026-07-23 | Decide | Outcome timing via first GOPC mention | Marker→true stroke earlier; ignore 2nd mention | Keep | PROJECT_STATE; essay methods |
 | 2026-07-23 | Ship | Laidlaw lit+methods draft + pathway map | Credit Hogan/Roro/Bishai; no self-credit | Keep | reports/laidlaw_stage3/ |
+| 2026-07-23 | Explore | Bishai: Jasmine more nulls in heat, fewer in cold; extend ~2015→2023; ~10°C gene/adaptation idea | Spun HM01–HM50 / CM01–CM48 + H/C pathways; Jasmine protocol; Wang/Ren + Liu leads unconfirmed | Keep | hot_cold_month_catalogue.md; jasmine_extension_protocol.md; Week2 deck frames |
 
 ---
 

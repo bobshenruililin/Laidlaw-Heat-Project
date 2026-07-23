@@ -110,6 +110,7 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 | Post-meeting strategy + next actions | `reports/meeting_debrief_2026-07-17.md` |
 | Pathway catalogue (P01–P18) | `analysis_plan/pathway_catalogue.md` |
 | Pathway registry (machine) | `analysis_plan/pathway_registry.yml` |
+| Hot/cold month catalogue + Jasmine extension protocol | [`analysis_plan/hot_cold_month_catalogue.md`](analysis_plan/hot_cold_month_catalogue.md) · [`analysis_plan/jasmine_extension_protocol.md`](analysis_plan/jasmine_extension_protocol.md) |
 | Statistical analysis protocol | `analysis_plan/statistical_analysis_protocol.md` |
 | Readiness gap analysis | `analysis_plan/gap_analysis_readiness.md` |
 | Scientist runbook | `analysis_plan/scientist_runbook.md` |

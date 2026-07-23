@@ -74,7 +74,7 @@ Hogan offered in January to prepare the monthly climate $X$ file under Professor
 Official monthly averages are taken from the Environmental Protection Department EPIC portal for NO$_2$, O$_3$, PM$_{2.5}$ and PM$_{10}$. The primary series uses \textbf{general} stations; roadside stations are reserved for sensitivity. Downloads are chunked because EPIC limits long monthly requests. Station-months below a completeness threshold (default $\ge 75\%$ expected observations) are set to missing before averaging; missingness is never coerced to zero. The assembled series show declining NO$_2$/PM and a different, generally rising ozone pattern---the pollutant-mix shift discussed in January when comparing a later period to Goggins-era results. In regression, pollutants enter in stages, with ozone last because it co-varies with hot, sunny weather.
 
 \subsection{Population}
-C\&SD Table 110-01001 mid-year age--sex population, interpolated monthly. Offset: $\log(\mathrm{population}\times\mathrm{days})$. Hogan's note on growth in older bands motivates keeping 65--69 and 70--74 visible when aggregates allow.
+C\&SD Table 110-01001 mid-year age--sex population, interpolated monthly. Models use the log of population times days as an offset. Hogan's note on growth in older bands motivates keeping 65--69 and 70--74 visible when aggregates allow.
 
 \subsection{Stroke outcomes (Roro's domain)}
 \textit{Working understanding (confirm with Roro):} first GOPC mention of stroke is a marker---the actual stroke and hospitalisation generally precede it. Later mentions are ignored for initial identification. The task is to recover the true event month before aggregation. Without that chronology, monthly counts risk mixing incident events with follow-up mentions. AMI remains out of scope from files without admission reasons.
@@ -104,7 +104,11 @@ P13 & IS vs HS & Goggins; if subtype exists \\
 }
 
 \subsection{Hot and cold months (next-week programme)}
-Professor Bishai recalled more non-significant p-values on the hotter side and fewer on the colder side in ``Jasmine's paper.'' The source is not yet confirmed; treat the recollection as a prompt. Unconfirmed leads include Wang/Ren et al.\ (2019; 2006--2015 EHWE mortality) and a meeting-note Liu 2020 SCS string; Sida Liu et al.\ (2020, \emph{IJERPH}) is an adjacent verified lead only. A ``hot'' or ``cold'' month is not a natural binary: the project catalogue holds fifty hot-month and forty-eight cold-month definitions organised as pathways H01--H12 / C01--C12 (see \texttt{analysis\_plan/hot\_cold\_month\_catalogue.md}). Hogan's Atmos.\ Res.\ count$\to$upper-tail recipe is one named hot family (starter HM23), beside HKO counts and Wang/Ren spells. Starters also include HM08/HM15/HM17/HM19 and CM03/CM08/CM15; first-wave additions include CM05 ($\sim$10\,$^\circ$C). Once the source is confirmed, definitions are transcribed, checked in the overlap years, then applied unchanged through December 2023 as a \textbf{definition-harmonised extension} when estimands differ. South China heat resistance / $\sim$10\,$^\circ$C vulnerability is a discussion hypothesis only---not a genetic finding from monthly ecological data. No stroke coefficients yet.
+``Jasmine's paper'' is now locked as Jingwen Liu et al.\ (2020): Hong Kong cause-specific mortality attributable to cold and hot ambient temperatures, 2006--2016 (\emph{Sustainable Cities and Society} 57:102131; DOI \nolinkurl{10.1016/j.scs.2020.102131}). Its daily DLNM/quasi-Poisson analysis reported a reversed J-shaped curve, with cold AF 4.72\% versus heat AF 0.16\%, and moderate non-optimum AF 4.25\% versus extreme AF 0.63\%. Those attributable fractions support cold--hot symmetry, but they are neither p-value counts nor stroke estimates; the exact recalled test pattern still requires the full paper and supplement.
+
+Roro's complementary baseline is the 2014--2023 excess-heat mortality manuscript by Zhenyuan Liu et al.\ (medRxiv v1 DOI \nolinkurl{10.64898/2026.03.05.26347683}). It transports local RRs from Jasmine and Wang/Ren (2019) into modelled excess deaths under four definitions: HWD\_Tavg, HWD\_Tmax, HWD\_Tmin and HWD\_Tcombined / 2D3N. The Mac file \path{revised_manuscript_clean.pdf} has not yet been ingested, so any changes from medRxiv v1 remain pending. Our monthly stroke panel adds a different estimand---later-period morbidity under paired hot and cold definitions---rather than reusing mortality coefficients.
+
+A ``hot'' or ``cold'' month is not a natural binary. The catalogue therefore retains fifty hot and forty-eight cold definitions across H01--H12 / C01--C12 (see \path{analysis_plan/hot_cold_month_catalogue.md}). Starters freeze with Hogan before outcomes and include HKO extremes, Wang/Ren spells, Hogan's Atmos.\ Res.\ count$\to$upper-tail recipe, and Roro's four definitions as named siblings. Jasmine rules will be transcribed and applied unchanged through 2023 only after source verification; across different outcomes and time grains this is \textbf{definition transport}, not exact replication. The $\sim$10\,$^\circ$C adaptation idea remains a hypothesis, not a genetic or stroke finding. No stroke coefficients yet.
 
 \section{Current status}
 Environmental descriptives only: rising hot nights/VHDs; persistent cold; declining NO$_2$/PM and rising O$_3$. \textbf{No stroke coefficients.} Next step: Roro's aggregates with Hogan's climate definitions.
@@ -112,9 +116,13 @@ Environmental descriptives only: rising hot nights/VHDs; persistent cold; declin
 \section{Closing and Stage~3}
 Laidlaw Stage~3 asks for a 2000--3000 word research essay, an A0 portrait poster ($841\times 1189$\,mm), and the HKU report form with supervisor endorsement, ahead of the HKU Laidlaw Society showcase (early November 2026) and the Annual Laidlaw Student Conference. This draft covers literature and methods. Lab peers model the value of writing early; parallel Hong Kong heat initiatives (community representatives, heat summits, possible LegCo hearings) remind us why careful thermal--health evidence matters publicly---without confusing those efforts with our results.
 
-Near-term asks: Dr Bishai---confirm Jasmine's citation and the hotter-null / colder-signal table; Hogan---lock heatwave/hot-month/cold-month starters; Roro---confirm first-GOPC$\to$true-stroke timing and transfer path. Going far requires going together.
+Near-term: thank Professor Bishai for identifying Jasmine; Hogan---lock the heatwave/hot-month/cold-month starters, including Roro's four definitions as named siblings; Roro---confirm first-GOPC$\to$true-stroke timing and transfer, and whether \path{revised_manuscript_clean.pdf} differs from medRxiv v1. Going far requires going together.
 
 \section*{Selected references}
-Goggins et al.\ 2012, 2013; Guo et al.\ 2017, 2024, 2025; Li et al.\ \emph{Atmos.\ Res.}\ 2025 (DOI 10.1016/j.atmosres.2024.107845); Tian/Qiu et al.\ 2023; Wang/Ren et al.\ 2019; Yang/Chong et al.\ 2025; Marmot et al.\ 2010.
+{\small
+Goggins et al.\ 2012, 2013; Guo et al.\ 2017, 2024, 2025; Wang/Ren et al.\ 2019; Yang/Chong et al.\ 2025.\par
+Li et al.\ \emph{Atmos.\ Res.}\ 2025, DOI \nolinkurl{10.1016/j.atmosres.2024.107845}; Jingwen Liu et al.\ 2020, DOI \nolinkurl{10.1016/j.scs.2020.102131}.\par
+Zhenyuan Liu et al.\ 2026 medRxiv v1, DOI \nolinkurl{10.64898/2026.03.05.26347683}.
+}
 
 \end{document}

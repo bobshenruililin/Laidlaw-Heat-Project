@@ -81,3 +81,5 @@ See `analysis_plan/pathway_registry.yml`.
 ## Hot/cold month expansion
 
 `P07` and `P18` remain the parent heat- and cold-month pathways in this registry. Their expanded, paired monthly-definition families (`HM`, `CM`, `H01`–`H12`, and `C01`–`C12`) are catalogued in [`hot_cold_month_catalogue.md`](hot_cold_month_catalogue.md); these additions extend rather than replace `P01`–`P18`.
+
+The source family is now locked: Jingwen Liu et al. (2020) is the confirmed Jasmine daily-mortality paper, and Zhenyuan Liu et al. (2026) medRxiv v1 is the team’s four-definition excess-heat mortality baseline. Source details and estimand boundaries are documented in [`../literature/jasmine_liu2020_confirmed.md`](../literature/jasmine_liu2020_confirmed.md), [`../literature/roro_manuscript_deep_read.md`](../literature/roro_manuscript_deep_read.md), and [`jasmine_extension_protocol.md`](jasmine_extension_protocol.md).

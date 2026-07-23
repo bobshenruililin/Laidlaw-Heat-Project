@@ -119,6 +119,8 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 | Agent protocol | `AGENTS.md` |
 | Methods scaffold | `reports/methods_pathway_panel_scaffold.md` |
 | Pathway evidence memo | `literature/pathway_evidence_memo.md` |
+| Jasmine/Roro literature set | [`jasmine_liu2020_confirmed.md`](literature/jasmine_liu2020_confirmed.md) · [`roro_manuscript_deep_read.md`](literature/roro_manuscript_deep_read.md) · [`exceed_jasmine_and_roro_baseline.md`](literature/exceed_jasmine_and_roro_baseline.md) · [`jasmine_roro_family_map.md`](literature/jasmine_roro_family_map.md) |
+| Jasmine-adjacent DOI crawl | [`jasmine_adjacent_crawl.md`](literature/jasmine_adjacent_crawl.md) |
 | Dry-run pathway summary | `outputs/reports/pathway_panel_summary.md` |
 | Week~2 progress deck | `reports/Week2_Progress_Deck.pdf` |
 | Week~2 progress brief | `reports/Week2_Progress_Brief.pdf` |

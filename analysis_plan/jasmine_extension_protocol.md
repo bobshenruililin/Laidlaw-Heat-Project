@@ -4,49 +4,47 @@
 
 **Project outcome:** Monthly Hong Kong stroke-event aggregates, subject to Roro's timing and governance rules
 
-**Status:** Protocol only. “Jasmine's paper” has not been identified, and no source-paper coefficient or new stroke coefficient is reproduced or claimed.
+**Status:** Protocol only. “Jasmine’s paper” is now confirmed as Jingwen Liu et al. (2020), *Sustainable Cities and Society* 57:102131, DOI `10.1016/j.scs.2020.102131`. Headline findings are locked; the full paper and supplement still need source-definition extraction. No new stroke coefficient is reproduced or claimed.
+
+**Companion reads:** `literature/jasmine_liu2020_confirmed.md`, `literature/roro_manuscript_deep_read.md`, and `literature/exceed_jasmine_and_roro_baseline.md`.
 
 ---
 
 ## 1. Aim and naming rule
 
-The immediate aim is to preserve the earlier paper's thermal definitions and ask whether the pattern Dr Bishai recalls remains visible in a later window ending in 2023. Dr Bishai remembers more non-significant (“null”) p-values on the hotter side and fewer on the colder side.
+The immediate aim is to preserve Liu et al.’s thermal definitions and ask whether a source-matched pattern remains visible in a later window ending in 2023. Dr Bishai remembers more non-significant (“null”) p-values on the hotter side and fewer on the colder side. That recalled test pattern is **not yet verified from the full text**.
+
+What is already confirmed from the 2020 paper is a cold-dominant mortality burden: cold AF 4.72% versus heat AF 0.16%, and moderate-temperature AF 4.25% versus extreme-temperature AF 0.63%. These AF contrasts motivate the symmetric design but are not stroke coefficients or substitutes for reconstructing the source test universe.
 
 Use the word **replication** only if the team has the exact source and can match its outcome, exposure, time unit, population, lag and model closely enough to reproduce its target estimand. If the earlier paper used daily mortality and the present project uses monthly stroke aggregates, call the work a **definition-harmonised extension** or **transport of the exposure definition**, not an exact replication.
 
 ---
 
-## 2. Paper identity: stop/go gate
+## 2. Paper identity: resolved; source extraction remains a gate
 
-### Leads, all explicitly unconfirmed
+### Locked citation
 
-1. **Wang, Ren et al. (2019):** Hong Kong daily all-cause mortality and extremely hot weather events, 2006–2015; DOI `10.1016/j.scitotenv.2019.07.039`. This matches the approximate end year and supplies 5VHD, 5HN and 2D3N definitions. Public metadata reviewed so far do not explain the “Jasmine” label.
-2. **Meeting-note lead:** “Liu et al. 2020, South China cold/hot attributable fraction, 2006–2016, *Sustainable Cities and Society*.” The exact title, authors and DOI have not been verified. Do not cite this string as a confirmed paper.
-3. **Adjacent verified lead, not presumed to be Jasmine's:** Sida Liu et al. (2020), Hong Kong high/low-temperature mortality, 2007–2015, *IJERPH*, DOI `10.3390/ijerph17197326`.
+Jingwen Liu, Alana Hansen, Blesson Varghese, Zhidong Liu, Michael Tong, Hong Qiu, Linwei Tian, Kevin Ka-Lun Lau, Edward Ng, Chao Ren and Peng Bi. “Cause-specific mortality attributable to cold and hot ambient temperatures in Hong Kong: a time-series study, 2006–2016.” *Sustainable Cities and Society*. 2020;57:102131. DOI `10.1016/j.scs.2020.102131`.
 
-### What Bob should confirm with Dr Bishai
+The paper uses Hong Kong daily mortality, a distributed lag non-linear model integrated with quasi-Poisson regression, and reports a reversed J-shaped relationship. At extreme cold, the highest reported RR is for injury mortality: 2.18 (95% CI 1.03–4.62), lag 0–21.
 
-Ask for the PDF, DOI or full citation and then confirm:
+### What the full PDF and supplement must still resolve
 
-- What does “Jasmine” refer to: author, student, analyst, file name or presentation?
 - Which figure/table/supplement contains the recalled hotter-versus-colder null pattern?
-- Does “month” mean calendar-month strata, monthly observations, seasonal groups, or temperature bins?
-- What was the outcome: all-cause mortality, cause-specific mortality, stroke, admissions, excess deaths or attributable fraction?
-- What geography and population were analysed?
-- What were the exact study dates and analysis time unit?
-- Which temperature variable, thresholds, reference period, season and event-gap rule were used?
-- Were heat and cold defined absolutely, by percentile, relative to minimum-mortality temperature, or by a spline?
-- What lag window, model family, seasonality control, long-term trend and covariates were used?
-- What fixed collection of tests generated the p-values Dr Bishai remembers?
-- Does Dr Bishai want same-outcome reproduction, exposure-definition transport to stroke, or both?
+- Does “month” mean calendar-month strata, monthly observations, seasonal groups or temperature bins?
+- What are the exact minimum-mortality reference, moderate/extreme boundaries and percentile algorithms?
+- What are the spline degrees of freedom, knot locations, lag basis, seasonality, trend and covariates?
+- What fixed collection of estimates/tests generated the p-values Dr Bishai remembers?
+- Which exact RRs and lag phases were subsequently extracted for Roro’s `HWD_Tavg` scenario?
+- Does the requested extension include a same-outcome mortality reproduction, definition transport to stroke, or both?
 
-**Stop rule:** do not code a “Jasmine” model or quote a cold/heat contrast until these points are resolved. Generic catalogue definitions may proceed under their own IDs.
+**Stop rule:** generic HM/CM catalogue coding may proceed. Do not label a model “Jasmine-source-matched,” reproduce the recalled p-value pattern, or invent source spline parameters until the full text and supplement are transcribed.
 
 ---
 
 ## 3. Source-definition extraction
 
-Once the paper is confirmed, create a versioned source manifest containing:
+Once the full paper and supplement are ingested, create a versioned source manifest containing:
 
 | Field | Required transcription |
 |---|---|
@@ -74,9 +72,17 @@ Two people should independently check the manifest against the methods and suppl
 3. Preserve daily runs across month/year boundaries. Record how events spanning two months are assigned.
 4. Unit-test known edge cases: threshold equality, one-day gaps, permitted two-day gaps if applicable, missing days, February, and events crossing 31 December.
 5. Produce an exposure-only audit table by month: hot/cold flag, component counts, event starts, event days, intensity and missingness.
-6. Use the project's overlap with the source window—provisionally 2013–2015 for the Wang/Ren lead, or 2013–2016 if the second lead is confirmed—to compare exposure coding with any published or author-supplied event list.
+6. Use the project’s **2013–2016** overlap with Liu et al.’s confirmed 2006–2016 window to compare exposure coding with any published or author-supplied event list.
 
 If source outcomes are unavailable, the overlap step validates **exposure coding only**. It cannot validate or reproduce the paper's health coefficients.
+
+---
+
+## 4.1 Roro bridge: team baseline, not a substitute for Jasmine extraction
+
+Zhenyuan Liu, Chao Ren, Jingwen Liu, Kawasaki Yurika and David Bishai’s 2026 medRxiv v1 paper transports Liu et al. (2020) heat RRs into a 2014–2023 excess-death model. Its `HWD_Tavg` scenario starts a 20-day window at daily mean temperature around the 99th-percentile threshold of 30.60°C and uses RR phases for day 0, days 1–5 and days 6–21. Roro also applies Wang/Ren daily-maximum, daily-minimum and 2D3N definitions.
+
+These four Roro definitions should be extended/collapsed to monthly exposure metrics through 2023 as a **separately labelled team-baseline family**. They do not reveal every parameter of Jasmine’s DLNM, and Roro’s mortality RRs must not be reused as stroke coefficients.
 
 ---
 
@@ -126,14 +132,14 @@ Never select the reported definition because it yields the smallest p-value.
 
 ### 7.1 First resolve what “month-stratified” meant
 
-The source may have used:
+The full source may show:
 
 - twelve calendar-month-specific estimates;
 - broad hot- and cold-season strata;
 - monthly time-series observations grouped by thermal definition; or
 - several temperature bins/definitions that were described informally as months.
 
-Replicate the actual structure once confirmed. The following is a fallback design, not a claim about Jasmine's methods.
+Replicate the actual structure once transcribed. The following is a fallback design, not a claim about Jasmine’s methods.
 
 ### 7.2 Pre-specify a fixed test universe
 

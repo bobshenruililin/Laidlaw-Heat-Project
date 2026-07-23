@@ -1,117 +1,150 @@
-\begin{frame}{A signal from Dr Bishai --- still to verify}
+\begin{frame}{Jasmine is confirmed --- cold $\gg$ heat burden}
+  \footnotesize
+  \textbf{Jingwen Liu et al.\ (2020)}\\
+  \emph{Cause-specific mortality attributable to cold and hot ambient temperatures
+  in Hong Kong: a time-series study, 2006--2016}.\\
+  \textit{Sustainable Cities and Society} 57:102131.\\
+  DOI: \texttt{10.1016/j.scs.2020.102131}.
+
+  \vspace{0.55em}
+  \renewcommand{\arraystretch}{1.18}
+  \begin{tabular}{@{}p{0.34\textwidth}p{0.25\textwidth}p{0.25\textwidth}@{}}
+    \toprule
+    \textbf{Attributable fraction} & \textbf{Cold / moderate} & \textbf{Heat / extreme} \\
+    \midrule
+    Thermal side & \textbf{Cold 4.72\%} & Heat 0.16\% \\
+    Intensity class & \textbf{Moderate 4.25\%} & Extreme 0.63\% \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.5em}
+  \callout{Daily mortality; DLNM $+$ quasi-Poisson; reversed J-shaped curve.
+  Extreme cold had the highest risk: injury RR 2.18 (1.03--4.62), lag 0--21.}
+\end{frame}
+
+\begin{frame}{One team evidence chain}
+  \scriptsize
   \begin{center}
-    \begin{tikzpicture}
-      \node[
+    \begin{tikzpicture}[
+      node distance=0.46cm,
+      box/.style={
         fill=LaidlawSoft,
-        draw=LaidlawNavy,
-        rounded corners=3pt,
-        inner xsep=11pt,
-        inner ysep=8pt,
-        text width=0.86\textwidth,
-        align=left
-      ] {%
-        Dr Bishai recalls \textbf{more non-significant p-values on the hotter side}
-        and \textbf{fewer on the colder side} in ``Jasmine's paper.''
-      };
+        draw=LaidlawGray,
+        rounded corners=2pt,
+        text width=0.26\textwidth,
+        align=center,
+        inner sep=6pt
+      }
+    ]
+      \node[box] (jasmine) {\textbf{Jasmine}\\Liu et al.\ 2020\\daily mortality RR / AF\\2006--2016};
+      \node[box, right=of jasmine] (roro) {\textbf{Roro}\\Liu et al.\ 2026\\excess heat deaths\\2014--2023};
+      \node[box, right=of roro] (stroke) {\textbf{Our extension}\\monthly stroke aggregates\\paired hot / cold\\2013--2023};
+      \draw[-{Latex[length=2mm]},LaidlawTeal] (jasmine) -- node[above,align=center] {local RRs} (roro);
+      \draw[-{Latex[length=2mm]},LaidlawTeal] (roro) -- node[above,align=center] {team baseline} (stroke);
     \end{tikzpicture}
   \end{center}
 
-  \vspace{0.55em}
-  \footnotesize
-  \begin{itemize}
-    \item The source paper and exact test universe are not yet confirmed.
-    \item Treat this as a replication prompt, not a result from our stroke data.
-    \item Aim: preserve the earlier definitions and extend the window through 2023.
-  \end{itemize}
+  \vspace{0.4em}
+  \textbf{Roro paper:} Zhenyuan Liu, Chao Ren, Jingwen Liu,
+  Kawasaki Yurika and David Makram Bishai.\\
+  DOI: \texttt{10.64898/2026.03.05.26347683} (medRxiv v1).
+
+  \vspace{0.4em}
+  \callout{Roro estimates 1,455 (1,098--1,812) to 3,238 (3,234--3,242)
+  excess deaths across four heatwave definitions. Complementarity, not competition.}
 \end{frame}
 
-\begin{frame}{First: identify ``Jasmine's paper''}
-  \footnotesize
-  \renewcommand{\arraystretch}{1.18}
-  \begin{tabular}{@{}p{0.28\textwidth}p{0.43\textwidth}p{0.22\textwidth}@{}}
+\begin{frame}{Roro's four-definition mortality baseline}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular}{@{}p{0.20\textwidth}p{0.50\textwidth}p{0.20\textwidth}@{}}
     \toprule
-    \textbf{Unconfirmed lead} & \textbf{Why it is plausible} & \textbf{Need} \\
+    \textbf{Definition} & \textbf{Event / lag intent} & \textbf{RR source} \\
     \midrule
-    Wang / Ren et al.\ 2019 & Hong Kong EHWE mortality, 2006--2015; 5VHD, 5HN, 2D3N & Exact link to ``Jasmine'' \\
-    Liu et al.\ 2020 meeting-note lead & South China cold/hot attributable burden, 2006--2016 & Full citation, DOI, table \\
+    HWD\_Tavg & Mean T at 99th percentile (30.60\,$^\circ$C);
+      20-day window; lag phases 0, 1--5, 6--21 & Jasmine \\
+    HWD\_Tmax & Consecutive very hot days; $T_{\max}\geq33^\circ$C & Wang / Ren \\
+    HWD\_Tmin & Consecutive hot nights; $T_{\min}\geq28^\circ$C & Wang / Ren \\
+    HWD\_Tcombined & 2 hot days $+$ 3 hot nights (2D3N);
+      event $+$ five later days & Wang / Ren \\
     \bottomrule
   \end{tabular}
 
   \vspace{0.55em}
-  \callout{A nearby verified paper is Sida Liu et al.\ (2020), Hong Kong high/low-temperature mortality, 2007--2015.
-  It is an adjacent lead --- not assumed to be Jasmine's.}
+  \callout{The Mac \texttt{revised manuscript\_clean.pdf} is not yet ingested.
+  This is the medRxiv v1 baseline; exact run operators still need a source manifest.}
 \end{frame}
 
-\begin{frame}{Definition-harmonised extension to 2023}
+\begin{frame}{Definition-harmonised extension through 2023}
   \footnotesize
   \begin{enumerate}
-    \item Confirm the paper, outcome, time unit, thresholds, lag and model.
-    \item Transcribe the original hot/cold rules before opening stroke associations.
-    \item Check exposure coding in the overlapping years.
-    \item Apply the unchanged definition through December 2023.
-    \item Join to Roro's \textbf{true stroke-event month}.
-    \item Report estimates and intervals; treat null-count patterns as secondary.
+    \item Ingest Jasmine's full PDF / supplement; lock reference, knots, lags and test universe.
+    \item Reconstruct daily hot and cold definitions without opening stroke associations.
+    \item Audit coding in the shared 2013--2016 window.
+    \item Apply unchanged definitions through December 2023.
+    \item Collapse daily burden to month; join to Roro's \textbf{true stroke-event month}.
+    \item Report exposed months, estimates and intervals; keep null counts secondary.
   \end{enumerate}
 
   \vspace{0.45em}
-  \callout{If the source is daily mortality and ours is monthly stroke,
-  this is definition transport --- not an exact replication of its estimand.}
+  \callout{Daily mortality AF $\neq$ modelled excess deaths $\neq$ monthly stroke association.
+  This is definition transport, not an exact replication.}
 \end{frame}
 
-\begin{frame}{Next week: spin out hot and cold months}
+\begin{frame}{Next week: symmetric hot and cold months}
   \footnotesize
   \begin{columns}[T]
     \begin{column}{0.47\textwidth}
-      {\color{LaidlawTeal}\textbf{Hot families}}
+      {\color{LaidlawTeal}\textbf{Hot families (HM)}}
       \begin{itemize}
         \item HKO hot nights / very hot days
         \item Monthly percentile tails
         \item VHD, HN and 2D3N spells
-        \item Heatwave counts and event days
+        \item Heatwave starts and event days
         \item Degree-day intensity
         \item Anomaly, compound, onset, warnings
       \end{itemize}
     \end{column}
     \begin{column}{0.47\textwidth}
-      {\color{LaidlawTeal}\textbf{Cold families}}
+      {\color{LaidlawTeal}\textbf{Cold families (CM)}}
       \begin{itemize}
         \item HKO cold-day counts
-        \item 12\,$^\circ$C and 10\,$^\circ$C rules
+        \item 12\,$^\circ$C and 10\,$^\circ$C sensitivities
         \item Monthly percentile tails
         \item Cold spells and event counts
-        \item Cold degree-days
+        \item Cold degree-day intensity
         \item Flu, anomaly, warning, onset
       \end{itemize}
     \end{column}
   \end{columns}
 
   \vspace{0.4em}
-  \callout{Catalogue: 50 hot-month definitions, 48 cold-month definitions,
+  \callout{Catalogue: 50 HM definitions, 48 CM definitions,
   and paired pathways H01--H12 / C01--C12.}
 \end{frame}
 
-\begin{frame}{Starter set --- small enough to run first}
+\begin{frame}{Starter HM / CM set --- run exposure audits first}
   \scriptsize
   \renewcommand{\arraystretch}{1.12}
   \begin{tabular}{@{}p{0.10\textwidth}p{0.34\textwidth}p{0.10\textwidth}p{0.34\textwidth}@{}}
     \toprule
     \textbf{Hot} & \textbf{Rule} & \textbf{Cold} & \textbf{Rule} \\
     \midrule
-    HM23 & Hogan p90 heatwave-count month & CM03 & $\geq 5$ days with $T_{\min}\leq12^\circ$C \\
+    HM23 & Hogan p90 heatwave-count month & CM03 & $\geq5$ days with $T_{\min}\leq12^\circ$C \\
     HM08 & Monthly mean temperature $\geq$p90 & CM08 & Monthly mean temperature $\leq$p05 \\
     HM15 & Touches a 5-VHD spell & CM15 & Touches a 3-day cold spell \\
-    HM17 & Touches a 5-HN spell & & \\
-    HM19 & Touches a 2D3N event & & \\
+    HM17 & Touches a 5-HN spell & CM05 & Any $T_{\min}\leq10^\circ$C day \\
+    HM19 & Touches a 2D3N event & CM30 & Cold $+$ influenza sensitivity \\
     \bottomrule
   \end{tabular}
 
   \vspace{0.55em}
   \footnotesize
-  First-wave additions: HM27 night heat-degree burden; HM32 hot $+$ O$_3$;
-  CM05 any $T_{\min}\leq10^\circ$C day; CM30 cold $+$ influenza.
+  First-wave intensity / compound additions: HM27 night heat-degree burden and
+  HM32 hot $+$ O$_3$. Freeze thresholds, selected months and missingness before outcomes.
 \end{frame}
 
-\begin{frame}{Hogan's atmospheric recipe is one family}
+\begin{frame}{Hogan's atmospheric recipe is one HM family}
   \footnotesize
   \begin{center}
     \begin{tikzpicture}[
@@ -138,23 +171,24 @@
   DOI: \texttt{10.1016/j.atmosres.2024.107845}.
 
   \vspace{0.35em}
-  \callout{Named and credited --- but kept beside HKO counts, Wang/Ren spells,
-  percentiles and cold definitions.}
+  \callout{Named and credited --- beside HKO counts, Jasmine transport,
+  Roro / Wang--Ren definitions, percentiles and cold counterparts.}
 \end{frame}
 
-\begin{frame}{Hypothesis, not mechanism}
+\begin{frame}{Gene / \textasciitilde{}10\,$^\circ$C: hypothesis only}
   \footnotesize
   \begin{itemize}
     \item Discussion idea: South China populations may appear relatively heat-adapted,
-      while around \textasciitilde{}10\,$^\circ$C may still be consequential.
-    \item This study cannot identify genes, ancestry effects or causal adaptation.
-    \item Housing, air conditioning, behaviour, occupation, age, health care and
-      acclimatisation remain alternative explanations.
-    \item The 10\,$^\circ$C rule is a candidate exposure definition, not a biological cutoff.
+      while temperatures around \textasciitilde{}10\,$^\circ$C may remain consequential.
+    \item This ecological monthly study cannot identify genes, ancestry effects
+      or causal adaptation.
+    \item Housing, cooling, behavior, occupation, age, health care and acclimatization
+      remain alternative explanations.
+    \item The 10\,$^\circ$C rule is a candidate CM sensitivity, not a biological cutoff.
     \item No stroke findings yet; synthetic outputs are not findings.
   \end{itemize}
 
   \vspace{0.55em}
-  \callout{Small ask for next week: confirm Jasmine's citation with Dr Bishai,
-  and lock the weather definitions with Hogan :)}
+  \callout{Small asks: source-table lock with Dr Bishai, weather-definition lock with Hogan,
+  and true-event-month lock with Roro :)}
 \end{frame}

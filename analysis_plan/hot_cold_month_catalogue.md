@@ -8,19 +8,19 @@
 
 ---
 
-## 0. Scientific prompt and unresolved paper identity
+## 0. Scientific prompt and confirmed paper family
 
-Dr Bishai's working recollection of “Jasmine's paper” is that hotter months produced many non-significant (“null”) p-values, whereas colder months produced fewer. That recollection motivates a symmetric hot/cold definition panel and a definition-harmonised extension through December 2023. It is not yet a citable result.
+“Jasmine’s paper” is confirmed as Jingwen Liu et al. (2020), “Cause-specific mortality attributable to cold and hot ambient temperatures in Hong Kong: a time-series study, 2006–2016,” *Sustainable Cities and Society* 57:102131, DOI `10.1016/j.scs.2020.102131`.
 
-### Unconfirmed Jasmine leads
+Confirmed source facts motivate a symmetric panel: the study used a DLNM integrated with quasi-Poisson regression, found a reversed J-shaped association, and reported cold AF 4.72% versus heat AF 0.16%, with moderate-temperature AF 4.25% versus extreme-temperature AF 0.63%. Those are mortality AFs, not stroke coefficients.
 
-| Lead | What is presently known | Status |
-|---|---|---|
-| Wang, Ren et al. (2019), Hong Kong extremely hot weather events, 2006–2015 | Published daily all-cause mortality study; defines VHD, HN, 5VHD, 5HN and 2D3N event forms; DOI `10.1016/j.scitotenv.2019.07.039` | **Plausible but unconfirmed**; public author metadata do not establish the “Jasmine” label |
-| “Liu et al. 2020, South China cold/hot attributable fraction, 2006–2016, Sustainable Cities and Society” | Lead supplied from discussion; the cold-greater-than-heat burden framing resembles Dr Bishai's recollection | **Unconfirmed bibliographic lead**; obtain the exact PDF/DOI before citing or coding it |
-| Sida Liu et al. (2020), Hong Kong high/low temperature mortality, 2007–2015, *IJERPH* | Nearby, publicly verifiable paper with a cold-versus-heat comparison; DOI `10.3390/ijerph17197326` | **Adjacent lead, not assumed to be Jasmine's paper** |
+Dr Bishai’s recollection that hotter-side tests were more often non-significant than colder-side tests remains a research prompt until the full Jasmine PDF/supplement identifies the relevant table and complete test universe.
 
-Until Dr Bishai confirms the source, call the work an **extension protocol**, not a replication, and do not quote source-paper coefficients.
+### Related team baseline
+
+Zhenyuan Liu, Chao Ren, Jingwen Liu, Kawasaki Yurika and David Bishai’s 2026 medRxiv v1 paper (DOI `10.64898/2026.03.05.26347683`) uses RRs from Jasmine and Wang/Ren to estimate 2014–2023 excess heat deaths under mean-temperature, maximum-temperature, minimum-temperature and combined day–night definitions. Its definitions should be represented through 2023 as a labelled team-baseline family, but its mortality RRs must not be used as stroke coefficients.
+
+Use **definition-harmonised extension**, not replication, when daily mortality definitions are transported to monthly stroke aggregates. See `literature/jasmine_liu2020_confirmed.md`, `literature/roro_manuscript_deep_read.md` and `analysis_plan/jasmine_extension_protocol.md`.
 
 ---
 
@@ -220,7 +220,7 @@ All pathways sit beside, not in place of, the existing P01–P18 panel. The defa
 | H08 | Heat compound exposures | HM32–HM33 | Estimate compound indicator with component main effects |
 | H09 | Seasonal and anomaly heat | HM34–HM37 | Distinguish climatological anomaly from calendar season |
 | H10 | Persistence and onset | HM46–HM48 | Examine transition/persistence separately from level |
-| H11 | Jasmine-definition heat extension | Exact confirmed paper definition; provisional candidates HM38 and HM08 | Reproduce source coding, then extend unchanged through 2023 |
+| H11 | Jasmine-definition heat extension | Exact Liu et al. (2020) daily-mean-temperature contrast/lag, pending full-PDF manifest; monthly collapse labelled explicitly | Reconstruct source coding, then extend unchanged through 2023 |
 | H12 | Frozen hot co-primary | One team-selected member of H05 or H11 | Gate 3 choice; all alternatives labelled sensitivity |
 
 ### Cold pathways C01–C12
@@ -237,7 +237,7 @@ All pathways sit beside, not in place of, the existing P01–P18 panel. The defa
 | C08 | Cold–influenza compound | CM30–CM31 | Compound sensitivity with transparent missingness |
 | C09 | Cold–humidity/pollution compound | CM32–CM33 | Include component main effects; stage pollution |
 | C10 | Season, anomaly and persistence | CM34–CM42 | Distinguish calendar winter, anomaly and persistence |
-| C11 | Jasmine-definition cold extension | Exact confirmed paper definition; provisional candidates CM08 and CM15 | Reproduce source coding, then extend unchanged through 2023 |
+| C11 | Jasmine-definition cold extension | Exact Liu et al. (2020) daily-mean-temperature contrast/lag, pending full-PDF manifest; monthly collapse labelled explicitly | Reconstruct source coding, then extend unchanged through 2023 |
 | C12 | Frozen cold co-primary | One team-selected member of C01, C03 or C04 | Gate 3 choice; all alternatives labelled sensitivity |
 
 ### Shared reporting discipline
@@ -282,20 +282,22 @@ The companion registry `analysis_plan/hot_cold_month_registry.yml` enables these
 
 The full procedure is in `analysis_plan/jasmine_extension_protocol.md`. In brief:
 
-1. confirm the exact paper, tables/supplement, outcome, geography, time scale, definitions, lag structure and model;
-2. transcribe the source exposure rule into a versioned specification without consulting the new stroke outcome;
-3. verify exposure coding in any available overlap with the published window;
+1. use the locked Liu et al. (2020) citation and ingest the full paper/supplement;
+2. transcribe its exact reference, temperature and lag basis into a versioned specification without consulting the new stroke outcome;
+3. verify exposure coding in the 2013–2016 overlap with the published window;
 4. apply the unchanged definition through December 2023;
 5. distinguish a same-outcome replication from a definition-only extension into monthly stroke aggregates; and
 6. report coefficients only after real data are analysed, with estimates and intervals rather than a significance count alone.
+
+In parallel, preserve Roro’s four 2014–2023 heatwave definitions as a separate team-baseline overlay: `HWD_Tavg` (30.60°C mean-temperature trigger with long lag phases), `HWD_Tmax`, `HWD_Tmin` and `HWD_Tcombined` (2D3N). Exact operators, run lengths and overlap handling must follow the final source manifest; Roro medRxiv v1 contains wording ambiguities that should not be silently resolved.
 
 ---
 
 ## 7. Honesty box
 
 - **No stroke findings exist yet.** This document specifies candidate exposures and analyses only.
-- **“Jasmine's paper” is not identified.** The Wang/Ren and Liu leads remain explicitly unconfirmed.
-- **Cold-greater-than-heat burden in a candidate paper does not prove Dr Bishai's recalled p-value pattern.**
+- **“Jasmine’s paper” is identified as Jingwen Liu et al. (2020).** The full PDF/supplement still needs method extraction.
+- **The confirmed cold-greater-than-heat AF does not prove Dr Bishai’s recalled p-value pattern.**
 - **The ~10°C idea is a hypothesis prompt, not a discovered threshold.**
 - **South China heat resistance, including any genetic/adaptation explanation, is discussion-only.** A monthly ecological Hong Kong study cannot identify genetic effects. Acclimatisation, housing, air conditioning, behaviour, occupation, health care, age structure and selection are alternative explanations; avoid causal or ethnic-essentialist language.
 - Monthly stroke burden, daily mortality, DLNM risk curves and excess-death estimates are different estimands.
@@ -307,5 +309,7 @@ The full procedure is in `analysis_plan/jasmine_extension_protocol.md`. In brief
 ## 8. Selected anchors
 
 - Li C, Wei W, Chan PW, Huang J. “Heatwaves in Hong Kong and their influence on pollution and extreme precipitation.” *Atmospheric Research*. 2025;315:107845. DOI `10.1016/j.atmosres.2024.107845`. **Hogan-recommended weather family.**
+- Liu J, Hansen A, Varghese B, et al. “Cause-specific mortality attributable to cold and hot ambient temperatures in Hong Kong: a time-series study, 2006–2016.” *Sustainable Cities and Society*. 2020;57:102131. DOI `10.1016/j.scs.2020.102131`. **Confirmed Jasmine paper.**
+- Liu Z, Ren C, Liu J, Kawasaki Yurika, Bishai DM. “Modelling the Excess Mortality Associated with Heat Waves in Hong Kong: 2014–2023.” *medRxiv*. 2026. DOI `10.64898/2026.03.05.26347683`. **Team excess-mortality baseline; medRxiv v1.**
 - Wang D, Lau KKL, Ren C, et al. “The impact of extremely hot weather events on all-cause mortality in a highly urbanized and densely populated subtropical city: A 10-year time-series study (2006–2015).” *Science of the Total Environment*. 2019;690:923–931. DOI `10.1016/j.scitotenv.2019.07.039`.
 - Liu S, Chan EYY, Goggins WB, Huang Z. “The Mortality Risk and Socioeconomic Vulnerability Associated with High and Low Temperature in Hong Kong.” *International Journal of Environmental Research and Public Health*. 2020;17:7326. DOI `10.3390/ijerph17197326`. **Adjacent lead only; not presumed to be Jasmine's paper.**

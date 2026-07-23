@@ -58,4 +58,4 @@ These families expand `P07` and `P18`; they do not replace the `P01`–`P18` pan
 | Jasmine extension | Definition-harmonised extension through 2023 | Confirm source first; preserve its definition/reference period; distinguish daily mortality from monthly stroke burden; see [`jasmine_extension_protocol.md`](../../analysis_plan/jasmine_extension_protocol.md) |
 
 **Gate 3 proposal (team freeze):** P02 + P04.  
-**Show with:** `reports/laidlaw_stage3/essay_lit_methods_draft.md`
+**Show with:** `reports/laidlaw_stage3/essay_lit_methods.md`

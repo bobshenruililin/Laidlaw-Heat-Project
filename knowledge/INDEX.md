@@ -4,6 +4,10 @@
 
 - [`2026-07-28_hogan_tuesday_prep.md`](2026-07-28_hogan_tuesday_prep.md) — Hogan meeting context, Jasmine/Roro spine, HM/CM starters, relationship repair, and decisions to lock.
 
+## Current deliverables
+
+- [`2026-07-23_stage3_essay_publication_register.md`](2026-07-23_stage3_essay_publication_register.md) — canonical CNS-calibre Stage 3 literature-and-methods essay; no stroke results claimed.
+
 ## Living project canon
 
 - [`canon_weather_definitions.md`](canon_weather_definitions.md) — HKO, Wang/Ren, Jasmine, Hogan/Li, Roro and project HM/CM definition families, DOIs and lock status.
@@ -39,3 +43,7 @@
 - [`analysis_plan/hogan_tuesday_email_draft.md`](../analysis_plan/hogan_tuesday_email_draft.md)
 - [`literature/hogan_tuesday_literature_handout.md`](../literature/hogan_tuesday_literature_handout.md)
 - [`reports/latex/hogan_tuesday_one_pager.tex`](../reports/latex/hogan_tuesday_one_pager.tex)
+
+## Writing canon
+
+- [`2026-07-23_stage3_essay_publication_register.md`](2026-07-23_stage3_essay_publication_register.md) — Stage 3 essay elevated to CNS-calibre publication register.

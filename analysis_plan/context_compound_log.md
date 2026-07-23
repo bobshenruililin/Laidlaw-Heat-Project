@@ -20,6 +20,7 @@
 | 2026-07-23 | Decide | Hogan offers climate + writing mentorship; campus Tue/Thu | Bob free Tuesday; accept gratefully; spare academic prose norm | Keep | writing_standards_hogan.md; PROJECT_STATE §6–7 |
 | 2026-07-23 | Explore | Which paper was Jasmine, and how does it connect to Roro? | Gold find: locked Jasmine as Jingwen Liu et al. SCS 2020 and confirmed that Roro medRxiv v1 transports its RRs alongside Wang/Ren; Mac revision still pending | Keep | literature/jasmine_liu2020_confirmed.md; roro_manuscript_deep_read.md; jasmine_adjacent_crawl.md |
 | 2026-07-23 | Ship | Prepare Bob for the Tuesday 28 July weather lock with Hogan | Consolidated the Jasmine–Roro spine, HM/CM starters, relationship-repair context, six open weather decisions, listening-first agenda, printable sheet, 9-slide deck, exposure-only figures (prevalence / coexistence / tails); no outcome claims | Keep | reports/hogan_tuesday/; knowledge/; figures/hogan_tuesday/ |
+| 2026-07-23 | Ship | Stage 3 essay below publishable bar | Rewrote lit+methods to CNS register; removed draft/process markers; formal citations | Keep | essay_lit_methods.md / Essay_Lit_Methods.pdf |
 
 ---
 

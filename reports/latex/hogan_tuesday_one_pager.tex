@@ -1,0 +1,134 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,margin=1.25cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+
+\definecolor{LaidlawNavy}{HTML}{1B2A41}
+\definecolor{LaidlawTeal}{HTML}{3D6B6E}
+\definecolor{LaidlawRust}{HTML}{A85A3A}
+\definecolor{LaidlawGray}{HTML}{E8EAED}
+\definecolor{LaidlawSoft}{HTML}{F4F6F8}
+\definecolor{LaidlawText}{HTML}{2C2C2C}
+
+\color{LaidlawText}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.35em,itemsep=0.18em,topsep=0.15em}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\sectionline}[1]{%
+  \vspace{0.45em}{\color{LaidlawTeal}\bfseries #1}\par
+  \vspace{0.15em}\color{LaidlawGray}\hrule\color{LaidlawText}\vspace{0.35em}}
+\newcommand{\decision}[2]{%
+  \(\square\)\ \textbf{#1} #2\par
+  \hspace{1.5em}{\color{LaidlawGray}\rule{0.91\linewidth}{0.35pt}}\vspace{0.28em}\par}
+
+\begin{document}
+
+\begin{minipage}[t]{0.72\textwidth}
+  {\fontsize{17}{19}\selectfont\color{LaidlawNavy}\bfseries
+  Locking the weather definitions with Hogan}\par
+  \vspace{0.2em}
+  {\color{LaidlawTeal}\bfseries Tuesday 28 July 2026 \(\cdot\) 55 minutes}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.25\textwidth}
+  \raggedleft
+  \colorbox{LaidlawSoft}{\parbox{0.88\linewidth}{\centering\footnotesize
+  \textbf{Bishai Lab}\\Laidlaw HK thermal--stroke}}
+\end{minipage}
+
+\vspace{0.45em}
+\colorbox{LaidlawSoft}{%
+  \parbox{\dimexpr\textwidth-2\fboxsep\relax}{\normalsize
+  \textbf{\color{LaidlawNavy}Purpose.}
+  Listen first, then leave with a written exposure specification agreed with
+  Hogan before Gate~3. The graphs are exposure-only checks; there are no stroke
+  findings or coefficients yet.}}
+
+\begin{minipage}[t]{0.60\textwidth}
+  \raggedright
+  \sectionline{Six decisions to write down}
+  \small
+  \decision{Li-HW / HM23.}{Season (May--Sep?); calendar-day
+  \(T_{\max}\) p90 reference and tie rule; 15-day window; \(\geq3\) days;
+  gap rule; cross-month start vs touch/burden.}
+
+  \decision{Gate 3 pair.}{Choose one hot and one cold co-primary.}
+
+  \decision{Roro siblings.}{Name \texttt{HWD\_Tavg},
+  \texttt{HWD\_Tmax}, \texttt{HWD\_Tmin}, and
+  \texttt{HWD\_Tcombined} as monthly exposure siblings? Mortality RRs are
+  not stroke coefficients.}
+
+  \decision{Reference freeze.}{2013--2019, full 2013--2023, or a defensible
+  pre-study/external climatology?}
+
+  \decision{CM05.}{Keep any \(T_{\min}\leq10^\circ\)C day as a
+  severe-cold sensitivity, not biology.}
+
+  \decision{Age visibility.}{Show 65--69 and 70--74 if Roro's approved
+  aggregates and disclosure controls allow.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.375\textwidth}
+  \sectionline{Starter HM / CM set}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabularx}{\linewidth}{@{}>{\bfseries}lY>{\bfseries}lY@{}}
+    \toprule
+    \multicolumn{2}{c}{\color{LaidlawRust}Hot} &
+    \multicolumn{2}{c}{\color{LaidlawTeal}Cold} \\
+    \midrule
+    HM23 & Li-HW count p90 & CM03 & 5 cold days \\
+    HM08 & monthly mean p90 & CM08 & monthly mean p05 \\
+    HM15 & 5 hot-day spell & CM15 & 3 cold-day spell \\
+    HM17 & 5 hot-night spell & CM05 & any \(\leq10^\circ\)C day \\
+    HM19 & 2D3N window & CM30 & cold + influenza \\
+    HM27 & night heat-degree & & \\
+    HM32 & heat + ozone & & \\
+    \bottomrule
+  \end{tabularx}
+
+  \sectionline{55-minute flow}
+  \small
+  \begin{tabularx}{\linewidth}{@{}>{\bfseries\color{LaidlawNavy}}lX@{}}
+    0--10 & Hogan frames the question; Bob listens. \\
+    10--17 & Jasmine + Roro + monthly stroke estimands. \\
+    17--32 & Lock Li-HW \(\rightarrow\) HM23. \\
+    32--42 & Co-primary pair + Roro siblings. \\
+    42--49 & Age bands and handoffs. \\
+    49--55 & Read back written decisions. \\
+  \end{tabularx}
+
+  \sectionline{Meeting rule}
+  \small
+  Put choices on the table; do not ask Hogan to approve a finished answer.
+  Record his wording and circulate it to Hogan and Roro for correction.
+\end{minipage}
+
+\sectionline{Notes / unresolved items}
+{\color{LaidlawGray}
+\rule{\linewidth}{0.35pt}\\[1.45em]
+\rule{\linewidth}{0.35pt}\\[1.45em]
+\rule{\linewidth}{0.35pt}\\[1.45em]
+\rule{\linewidth}{0.35pt}\\[1.45em]
+\rule{\linewidth}{0.35pt}}
+
+\vfill
+\colorbox{LaidlawNavy}{%
+  \parbox{\dimexpr\textwidth-2\fboxsep\relax}{\centering\footnotesize\color{white}
+  \textbf{Credit:} Hogan leads weather framing and the Li-event
+  count-to-upper-tail monthly adaptation; Roro leads governed stroke outcomes
+  and true-event timing; Jingwen Liu et al.\ (2020) and Zhenyuan Liu et al.\
+  (2026) anchor the mortality evidence family.}}
+
+\end{document}

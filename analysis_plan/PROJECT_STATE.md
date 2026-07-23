@@ -49,6 +49,14 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Closing nudge to Hogan + Roro + Bishai (Jasmine source table/full PDF, weather lock and outcome timing) with `:)` .
 - Next week: spin out hot-month / cold-month definitions (catalogue ready; lock with Hogan).
 
+### Tuesday 28 July — Hogan weather lock
+
+- Hogan offered to meet; Bob is free Tuesday. Start by listening to Hogan's current weather framing and the Goggins challenge.
+- Meeting target: written Li-HW / `HM23` parameters; one hot and one cold Gate 3 co-primary; status of Roro's four `HWD_*` definitions; threshold reference period; `CM05` as sensitivity only; and visibility of ages 65–69 / 70–74 if governed aggregates permit.
+- Bring definition options and exposure-only graphs. Do not present them as health findings or ask Hogan to approve a finished weather answer.
+- Credit split: Li et al. supply the atmospheric event definition; Hogan proposed the project-level count-by-month → upper-tail adaptation. Roro retains ownership of outcome timing.
+- Working set: [`reports/hogan_tuesday/README.md`](../reports/hogan_tuesday/README.md) (pack index); briefing / decision sheet / agenda / talking points / email under `analysis_plan/hogan_tuesday_*`; knowledge entry `knowledge/2026-07-28_hogan_tuesday_prep.md`.
+
 ---
 
 ## 5. Laidlaw Stage 3
@@ -82,7 +90,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 1. **HA stroke aggregates** + Roro dictionary / true-event-month lock
 2. **Jasmine full SCS PDF + supplement** (MMT, cutoffs, full test universe)
 3. **Roro `revised manuscript_clean.pdf`** vs medRxiv v1 diff
-4. **In-person weather lock with Hogan** (Tuesday preferred) — hot/cold starters + writing mentorship
+4. **In-person weather lock with Hogan** (Tuesday 28 July offered; prep ready) — hot/cold starters + writing mentorship
 5. Gate 3 headline freeze **with team** after real descriptives
 
 Until (1)–(4) move, further remote spinning does not create findings.

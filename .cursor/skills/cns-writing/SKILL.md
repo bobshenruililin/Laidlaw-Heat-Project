@@ -1,5 +1,6 @@
 ---
 name: cns-writing
+disable-model-invocation: false
 description: Re-engage Cell/Nature/Science-calibre scholarly writing for manuscripts, Stage 3 essays, methods, and abstracts. Use when Bob asks for publishable quality, CNS register, mature prose, or final write-up — or when editing reports/laidlaw_stage3/essay_lit_methods.*
 ---
 

@@ -56,6 +56,7 @@ Prefer writing into:
 | **Permanent knowledge base** | `knowledge/README.md` + `knowledge/INDEX.md` |
 | Jasmine / Roro literature spine | `literature/jasmine_liu2020_confirmed.md`, `roro_manuscript_deep_read.md`, `jasmine_roro_family_map.md`, `exceed_jasmine_and_roro_baseline.md` |
 | Academic prose bar (Hogan) | `analysis_plan/writing_standards_hogan.md` |
+| Laidlaw website blogs (MIT Admissions-style register) | `reports/blog/` + `knowledge/2026-07-26_laidlaw_blog_canon.md` |
 | Hogan Tuesday pack | `reports/hogan_tuesday/README.md` |
 
 If you learned something important in chat and did not write it down, the project did not keep it.

@@ -22,6 +22,7 @@
 | 2026-07-23 | Ship | Prepare Bob for the Tuesday 28 July weather lock with Hogan | Consolidated the Jasmine–Roro spine, HM/CM starters, relationship-repair context, six open weather decisions, listening-first agenda, printable sheet, 9-slide deck, exposure-only figures (prevalence / coexistence / tails); no outcome claims | Keep | reports/hogan_tuesday/; knowledge/; figures/hogan_tuesday/ |
 | 2026-07-23 | Ship | Stage 3 essay below publishable bar | Rewrote lit+methods to CNS register; removed draft/process markers; formal citations | Keep | essay_lit_methods.md / Essay_Lit_Methods.pdf |
 | 2026-07-23 | Teach | How to re-engage CNS mode + prepare for Hogan/HA/analysis shocks | Built cns-writing skill, playbooks 01–04+99, CONTEXT_BOOTSTRAP for chat limits | Keep | .cursor/skills/cns-writing/; analysis_plan/playbooks/; knowledge/CONTEXT_BOOTSTRAP.md |
+| 2026-07-26 | Ship | How should Weeks 1–2 become human Laidlaw website stories without weakening scientific boundaries? | Drafted two MIT Admissions-style first-person posts and separated the warm public register from CNS prose; Bob retains final voice/privacy edit | Keep | reports/blog/; knowledge/2026-07-26_laidlaw_blog_canon.md |
 
 ---
 

@@ -23,6 +23,11 @@
 
 - [`2026-07-23_stage3_essay_publication_register.md`](2026-07-23_stage3_essay_publication_register.md) — canonical CNS-calibre Stage 3 literature-and-methods essay; no stroke results claimed.
 
+## Laidlaw website blogs
+
+- [`2026-07-26_laidlaw_blog_canon.md`](2026-07-26_laidlaw_blog_canon.md) — MIT Admissions-style public-writing canon and the blog/CNS register split.
+- [`reports/blog/`](../reports/blog/) — Week 1 and Week 2 ready-to-edit website drafts; Bob reviews before posting.
+
 ## Living project canon
 
 - [`canon_weather_definitions.md`](canon_weather_definitions.md) — HKO, Wang/Ren, Jasmine, Hogan/Li, Roro and project HM/CM definition families, DOIs and lock status.

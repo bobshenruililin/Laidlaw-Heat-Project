@@ -38,3 +38,5 @@ The definition catalogue contains `HM01–HM50` and `CM01–CM48`. Core starters
 4. **Write-up:** only verified real estimates enter Results/Discussion. Engage the [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md) and [Playbook 04](../analysis_plan/playbooks/04_final_writeup.md).
 
 For shocks, use [Playbook 99](../analysis_plan/playbooks/99_emergencies.md). The prose exemplar is [`essay_lit_methods.md`](../reports/laidlaw_stage3/essay_lit_methods.md); the voice standard is [`writing_standards_hogan.md`](../analysis_plan/writing_standards_hogan.md). Update durable context, not only chat.
+
+For public Laidlaw website writing, use the separate MIT Admissions-style canon in [`2026-07-26_laidlaw_blog_canon.md`](2026-07-26_laidlaw_blog_canon.md) and drafts in [`reports/blog/`](../reports/blog/); Bob edits before posting.

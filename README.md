@@ -130,6 +130,7 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 | How Bob + agents work | [`AGENTS.md`](AGENTS.md) · [`analysis_plan/human_agent_collaboration.md`](analysis_plan/human_agent_collaboration.md) |
 | Hogan writing / mentorship bar | [`analysis_plan/writing_standards_hogan.md`](analysis_plan/writing_standards_hogan.md) |
 | **Permanent knowledge base** | [`knowledge/README.md`](knowledge/README.md) · [`knowledge/INDEX.md`](knowledge/INDEX.md) |
+| **Laidlaw website blogs** (MIT Admissions-style) | [`reports/blog/`](reports/blog/) · [`knowledge/2026-07-26_laidlaw_blog_canon.md`](knowledge/2026-07-26_laidlaw_blog_canon.md) |
 | **Hogan Tuesday pack (28 Jul 2026)** | [`reports/hogan_tuesday/README.md`](reports/hogan_tuesday/README.md) |
 
 | HKO extremes figure | `figures/hko_annual_extremes_2013_2023.pdf` |

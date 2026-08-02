@@ -20,6 +20,8 @@ The same scientific boundaries apply in every register: monthly stroke aggregate
 
 These are ready-to-edit drafts, not automatically published copy. Bob should make a final voice, privacy, length, and site-format pass before posting to the Laidlaw Scholars website. Future weeks should involve Bob earlier in the creative process rather than treating the blog as a retrospective conversion of project notes.
 
+After each progress deck, run `/blog-from-deck` or let the agent offer it. The command reads the deck and available speaker notes, drafts and indexes the week’s post, records the arc in the compound log, and then stops for Bob’s creative pass. It never publishes to the website.
+
 ## Posts
 
 - [`week1_recalibration.md`](week1_recalibration.md)

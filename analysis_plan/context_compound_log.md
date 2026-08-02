@@ -23,6 +23,7 @@
 | 2026-07-23 | Ship | Stage 3 essay below publishable bar | Rewrote lit+methods to CNS register; removed draft/process markers; formal citations | Keep | essay_lit_methods.md / Essay_Lit_Methods.pdf |
 | 2026-07-23 | Teach | How to re-engage CNS mode + prepare for Hogan/HA/analysis shocks | Built cns-writing skill, playbooks 01–04+99, CONTEXT_BOOTSTRAP for chat limits | Keep | .cursor/skills/cns-writing/; analysis_plan/playbooks/; knowledge/CONTEXT_BOOTSTRAP.md |
 | 2026-07-26 | Ship | How should Weeks 1–2 become human Laidlaw website stories without weakening scientific boundaries? | Drafted two MIT Admissions-style first-person posts and separated the warm public register from CNS prose; Bob retains final voice/privacy edit | Keep | reports/blog/; knowledge/2026-07-26_laidlaw_blog_canon.md |
+| 2026-07-26 | Ship | How can canonical playbooks and deck-to-blog handoffs become reliable commands? | Added explicit playbook/blog skills and classic stubs; deck changes may prompt a draft workflow, but Bob retains the creative, privacy, and publication gates | Keep | .cursor/skills/; .cursor/commands/; knowledge/2026-07-26_commands_and_blog_auto.md |
 
 ---
 

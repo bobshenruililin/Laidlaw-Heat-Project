@@ -1,6 +1,6 @@
 # Context bootstrap — read first in every new chat
 
-**Canon date:** 23 July 2026. Read [`PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md) for living detail and update this file whenever a human gate changes.
+**Canon date:** 2 August 2026. Read [`PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md) for living detail and update this file whenever a human gate changes.
 
 ## Scientific contract
 
@@ -10,11 +10,13 @@ No real stroke coefficients exist yet. Synthetic runs test plumbing only. Never 
 
 ## People and ownership
 
-- **Hogan:** weather/climate co-investigator; Goggins framing; Li-HW count-by-month → upper-tail adaptation; age 65–69/70–74 visibility proposal; academic-writing mentorship. Lock weather definitions with him and credit the project adaptation.
-- **Zhenyuan Liu (“Roro”):** governed HA stroke aggregates, dictionary, true-event-month construction, suppression/transfer truth, and regression mentorship.
+- **Hogan:** weather/climate co-investigator; Goggins framing; Li-HW count-by-month → upper-tail adaptation; age 65–69/70–74 visibility proposal; academic-writing mentorship. He wrote the live manuscript’s weather Methods and commented on its Introduction. His live weather section is primary; do not overwrite it with repository prose.
+- **Zhenyuan Liu (“Roro”):** governed HA stroke aggregates, dictionary, true-event-month construction, suppression/transfer truth, regression mentorship, and health-data Methods. Cleaned monthly stroke data and his Methods contribution are due 7 August.
 - **Professor David Bishai:** supervisor, concept/multi-method direction, PI/governance decisions, and team Gate 3.
-- **Bob:** reproducible exposure/analysis preparation, pollution/flu integration, writing, and durable decision records.
+- **Bob:** reproducible exposure/analysis preparation, pollution/flu integration, writing, and durable decision records. His response to Hogan’s Introduction comments and the non-weather Methods are due 5 August.
 - **Jingwen Liu (“Jasmine”):** first author of the confirmed mortality paper; do not confuse her with Roro.
+
+The manuscript now has one authority: the live file shared by Hogan with Bob and Roro. The canonical Stage 3 essay is reusable source material, not a parallel manuscript. See [`2026-08-02_hogan_live_manuscript.md`](2026-08-02_hogan_live_manuscript.md).
 
 ## Evidence spine
 
@@ -32,10 +34,12 @@ The definition catalogue contains `HM01–HM50` and `CM01–CM48`. Core starters
 
 ## Human gates and next sequence
 
-1. **Hogan Tuesday lock:** listen first; record exact `HM23` and starter roles; update registry/catalogue/debrief. Run [Playbook 01](../analysis_plan/playbooks/01_hogan_definition_lock.md).
-2. **HA arrival:** governance → dictionary/schema → QC → merge → real provenance. Run [Playbook 02](../analysis_plan/playbooks/02_ha_data_arrival.md).
-3. **Analysis:** run the complete pathway and HM/CM panels; freeze Gate 3 **with the team** before primary claims; no cherry-picking. Run [Playbook 03](../analysis_plan/playbooks/03_full_analysis_run.md).
-4. **Write-up:** only verified real estimates enter Results/Discussion. Engage the [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md) and [Playbook 04](../analysis_plan/playbooks/04_final_writeup.md).
+1. **Bob by 5 August:** work in the live file; answer Hogan’s actual Introduction comments and add Study design, Pollution, Population denominators, Statistical analysis and thermal-panel discipline. Leave Hogan’s weather Methods intact.
+2. **Roro by 7 August:** provide cleaned monthly stroke data and the health-data Methods. Do not infer schema, counts, strata, subtype or suppression before receipt.
+3. **HA arrival:** governance → dictionary/schema → QC → merge → real provenance. Run [Playbook 02](../analysis_plan/playbooks/02_ha_data_arrival.md).
+4. **Weather reconciliation:** carry only explicit rules from Hogan’s live weather section into the registry/catalogue. Run [Playbook 01](../analysis_plan/playbooks/01_hogan_definition_lock.md) where applicable.
+5. **Analysis:** run the complete pathway and HM/CM panels; freeze Gate 3 **with the team** before primary claims; no cherry-picking. Run [Playbook 03](../analysis_plan/playbooks/03_full_analysis_run.md).
+6. **Write-up:** only verified real estimates enter Results/Discussion. Engage the [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md) and [Playbook 04](../analysis_plan/playbooks/04_final_writeup.md).
 
 Use the explicit slash skills `/playbook-01-hogan-lock`, `/playbook-02-ha-arrival`, `/playbook-03-full-analysis`, `/playbook-04-final-writeup`, or `/playbook-99-emergencies`; `/playbook` asks which one. Each skill reads the canonical playbook and cannot replace human evidence or gate ownership. See the [command contract](2026-07-26_commands_and_blog_auto.md).
 

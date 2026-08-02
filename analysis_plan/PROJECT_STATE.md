@@ -1,6 +1,6 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-07-23  
+**Last updated:** 2026-08-02
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
@@ -11,10 +11,10 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 | Person | Contribution | Note |
 |---|---|---|
-| **Hogan** | Weather / heat framing; Goggins challenge; 65–69 & 70–74; climate X file; hot-month (heatwave counts → upper-tail months); Atmos Res pointer; **also offered to guide Bob on academic writing** (less flowery, more digestible) | Felt sidelined after unilateral HKO work — repair ongoing; credit openly; accept writing mentorship gratefully |
-| **Roro (Zhenyuan Liu)** | HA stroke aggregates; timing rule; dictionary; transfer; **excess heat-mortality baseline** (medRxiv 2026; uses Jasmine RRs); proposed to guide Bob’s regression work | First GOPC stroke mention = marker; true event earlier; ignore later mentions; revised Mac PDF still pending ingest |
+| **Hogan** | Weather / heat framing; Goggins challenge; 65–69 & 70–74; climate X file; hot-month (heatwave counts → upper-tail months); Atmos Res pointer; **author of the live manuscript’s weather Methods and reviewer of its Introduction**; academic-writing guidance | His live weather section is primary; credit openly; do not overwrite it with repository prose |
+| **Roro (Zhenyuan Liu)** | HA stroke aggregates; timing rule; dictionary; transfer; **health-data Methods due 7 Aug**; **excess heat-mortality baseline** (medRxiv 2026; uses Jasmine RRs); proposed to guide Bob’s regression work | Cleaned monthly stroke data due 7 Aug; first GOPC stroke mention = marker; true event earlier; ignore later mentions; revised Mac PDF still pending ingest |
 | **Prof. David Bishai** | Dec 2025 plan; multi-method; teamwork (“go far together”); Jasmine null-pattern / extend-to-2023; ~10°C discussion prompt; concept lead on Roro excess-mortality paper | Jasmine identity resolved (Jingwen Liu 2020 SCS) |
-| **Bob Shen** | Analysis plumbing, pollution assemble, writing | Do not self-credit in shares; redeem via teamwork; welcome Hogan writing edits + Roro regression guidance |
+| **Bob Shen** | Analysis plumbing, pollution assembly, writing; Introduction revisions and non-weather Methods due 5 Aug | Work directly in the live manuscript; preserve Hogan’s weather section and Roro’s health-data ownership |
 
 ---
 
@@ -57,6 +57,15 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Credit split: Li et al. supply the atmospheric event definition; Hogan proposed the project-level count-by-month → upper-tail adaptation. Roro retains ownership of outcome timing.
 - Working set: [`reports/hogan_tuesday/README.md`](../reports/hogan_tuesday/README.md) (pack index); briefing / decision sheet / agenda / talking points / email under `analysis_plan/hogan_tuesday_*`; knowledge entry `knowledge/2026-07-28_hogan_tuesday_prep.md`.
 
+### Sunday 2 August — live manuscript handoff
+
+- Hogan created and shared a live manuscript with Bob and Roro, commented on the Introduction, and wrote the weather component of Methods.
+- The shared file is now the manuscript authority. Work in it directly; stop exchanging parallel manuscript versions.
+- Bob owns the Introduction response and the remainder of Methods by **5 August**. He should adapt the canonical essay for design, pollution, population denominators, statistical analysis and thermal-panel discipline, without replacing Hogan’s weather text.
+- Roro owns cleaned monthly stroke data and the health-data Methods by **7 August**. Bob’s outcome text is only a brief bridge using the already agreed GOPC-marker principle.
+- Hogan will review each contribution after completion. His specific Introduction comments are not in this repository and must not be invented.
+- Working set: [`hogan_live_manuscript_handoff.md`](hogan_live_manuscript_handoff.md), [`methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md), [`introduction_revision_notes.md`](../manuscript/introduction_revision_notes.md), and [`2026-08-02_hogan_live_manuscript.md`](../knowledge/2026-08-02_hogan_live_manuscript.md).
+
 ---
 
 ## 5. Laidlaw Stage 3
@@ -78,30 +87,34 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
-## 7. What is done vs still human-gated (as of 23 July 2026)
+## 7. What is done vs still human-gated (as of 2 August 2026)
 
 ### Done remotely (do not re-do without new evidence)
 - Pathway panel plumbing + HM/CM catalogue (50/48) + starters
 - Jasmine identity locked; Roro medRxiv v1 deep-read; exceed-baseline + family map + adjacent crawl
 - Week 2 deck / Laidlaw lit-methods draft updated for Jasmine + Roro
 - Pollution monthly layer; flu (121/132); holiday scaffold
+- Live-manuscript handoff, non-weather Methods draft, Introduction revision draft and acknowledgement email prepared
 
 ### Still needs humans / files (cannot fake)
-1. **HA stroke aggregates** + Roro dictionary / true-event-month lock
-2. **Jasmine full SCS PDF + supplement** (MMT, cutoffs, full test universe)
-3. **Roro `revised manuscript_clean.pdf`** vs medRxiv v1 diff
-4. **In-person weather lock with Hogan** (Tuesday 28 July offered; prep ready) — hot/cold starters + writing mentorship
-5. Gate 3 headline freeze **with team** after real descriptives
+1. **Bob’s live-file work by 5 Aug:** answer Hogan’s actual Introduction comments and add the non-weather Methods
+2. **Roro’s cleaned monthly stroke data and health-data Methods by 7 Aug:** then confirm dictionary, true-event-month algorithm, grain, suppression and governance
+3. **Hogan’s review** of Bob’s and Roro’s completed sections; weather terminology and cross-references reconciled in the live file
+4. **Jasmine full SCS PDF + supplement** (MMT, cutoffs, full test universe)
+5. **Roro `revised manuscript_clean.pdf`** vs medRxiv v1 diff
+6. Gate 3 headline freeze **with team** after governed-data QC and appropriate descriptives
 
-Until (1)–(4) move, further remote spinning does not create findings.
+Until the governed data arrive and pass QC, further drafting does not create findings.
 
 ---
 
 ## 8. Upcoming workflow
 
-1. **Hogan definition lock:** after Tuesday, transcribe actual decisions; freeze all `HM23` operators; reconcile registry, catalogue, debrief, state, and knowledge. A blank or proposed decision is not a lock. Follow [`playbooks/01_hogan_definition_lock.md`](playbooks/01_hogan_definition_lock.md).
-2. **HA aggregate arrival:** confirm governance and dictionary; inventory without inventing fields; QC schema, timing, suppression, grain, subtype, coverage, and denominator compatibility; merge only after Gate 1. Switch to `PATHWAY_MODE=real` only after Gate 2 closes. Follow [`playbooks/02_ha_data_arrival.md`](playbooks/02_ha_data_arrival.md).
-3. **Full analysis:** run the complete `P01–P18` and registry-driven HM/CM panels; validate diagnostics; freeze the headline specification at Gate 3 **with the team**; export complete manuscript tables without cherry-picking. Follow [`playbooks/03_full_analysis_run.md`](playbooks/03_full_analysis_run.md).
-4. **CNS final write-up:** only verified real estimates enter Results and Discussion. Engage [`.cursor/skills/cns-writing/SKILL.md`](../.cursor/skills/cns-writing/SKILL.md), update the canonical essay without draft tone, and preserve estimand boundaries. Follow [`playbooks/04_final_writeup.md`](playbooks/04_final_writeup.md).
+1. **Bob’s 5 Aug manuscript contribution:** work in the live file; answer the visible Introduction comments; add design, pollution, denominators, statistical analysis and thermal-panel discipline; leave Hogan’s weather Methods intact.
+2. **Roro’s 7 Aug handoff:** receive the cleaned monthly stroke aggregates and health-data Methods without inferring any undisclosed fields or counts.
+3. **HA aggregate arrival:** confirm governance and dictionary; inventory without inventing fields; QC schema, timing, suppression, grain, subtype, coverage, and denominator compatibility; merge only after Gate 1. Switch to `PATHWAY_MODE=real` only after Gate 2 closes. Follow [`playbooks/02_ha_data_arrival.md`](playbooks/02_ha_data_arrival.md).
+4. **Weather reconciliation:** treat Hogan’s live weather section as primary; transcribe only explicit decisions into the registry and catalogue. A written manuscript rule is not automatically the Gate 3 headline choice. Follow [`playbooks/01_hogan_definition_lock.md`](playbooks/01_hogan_definition_lock.md) where applicable.
+5. **Full analysis:** run the complete `P01–P18` and registry-driven HM/CM panels; validate diagnostics; freeze the headline specification at Gate 3 **with the team**; export complete manuscript tables without cherry-picking. Follow [`playbooks/03_full_analysis_run.md`](playbooks/03_full_analysis_run.md).
+6. **CNS final write-up:** only verified real estimates enter Results and Discussion. Engage [`.cursor/skills/cns-writing/SKILL.md`](../.cursor/skills/cns-writing/SKILL.md), revise the live manuscript in spare academic prose, and preserve estimand boundaries. Follow [`playbooks/04_final_writeup.md`](playbooks/04_final_writeup.md).
 
 At every transition, refresh [`knowledge/CONTEXT_BOOTSTRAP.md`](../knowledge/CONTEXT_BOOTSTRAP.md). Use [`playbooks/99_emergencies.md`](playbooks/99_emergencies.md) for source, scope, governance, or provenance shocks.

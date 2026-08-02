@@ -17,10 +17,15 @@
 
 ## Current meeting record
 
+- [`2026-08-02_hogan_live_manuscript.md`](2026-08-02_hogan_live_manuscript.md) — live-file authority, 5/7 August ownership, review sequence, manuscript boundaries and unchanged scientific gates.
 - [`2026-07-28_hogan_tuesday_prep.md`](2026-07-28_hogan_tuesday_prep.md) — Hogan meeting context, Jasmine/Roro spine, HM/CM starters, relationship repair, and decisions to lock.
 
 ## Current deliverables
 
+- [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md) — reusable YES/NO decision table and live-manuscript workflow.
+- [`manuscript/methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md) — Bob’s paste-ready non-weather Methods due 5 August.
+- [`manuscript/introduction_revision_notes.md`](../manuscript/introduction_revision_notes.md) — comment-response process and tightened Introduction draft.
+- [`analysis_plan/hogan_aug2_ack_email.md`](../analysis_plan/hogan_aug2_ack_email.md) — short acknowledgement of the live file and ownership split.
 - [`2026-07-23_stage3_essay_publication_register.md`](2026-07-23_stage3_essay_publication_register.md) — canonical CNS-calibre Stage 3 literature-and-methods essay; no stroke results claimed.
 
 ## Laidlaw website blogs

@@ -9,6 +9,8 @@
 ## Re-engageable workflows
 
 - [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md) — publication-register scholarly writing mode.
+- [Slash-command and blog-drafting contract](2026-07-26_commands_and_blog_auto.md) — command inventory, deck trigger, and human publication gate.
+- [Playbook skill router](../.cursor/skills/playbook/SKILL.md) — explicit `/playbook` selection across `01–04` and `99`.
 - [Playbook 01: Hogan definition lock](../analysis_plan/playbooks/01_hogan_definition_lock.md)
 - [Playbook 02: HA data arrival](../analysis_plan/playbooks/02_ha_data_arrival.md)
 - [Playbook 03: full analysis run](../analysis_plan/playbooks/03_full_analysis_run.md)
@@ -31,6 +33,7 @@
 ## Laidlaw website blogs
 
 - [`2026-07-26_laidlaw_blog_canon.md`](2026-07-26_laidlaw_blog_canon.md) — MIT Admissions-style public-writing canon and the blog/CNS register split.
+- [`2026-07-26_commands_and_blog_auto.md`](2026-07-26_commands_and_blog_auto.md) — what `/blog-from-deck` automates and what Bob must still edit and publish.
 - [`reports/blog/`](../reports/blog/) — Week 1 and Week 2 ready-to-edit website drafts; Bob reviews before posting.
 
 ## Living project canon

@@ -152,3 +152,27 @@ Executable workflow index:
 3. [`03_full_analysis_run.md`](analysis_plan/playbooks/03_full_analysis_run.md) — complete panel → team Gate 3 → manuscript tables.
 4. [`04_final_writeup.md`](analysis_plan/playbooks/04_final_writeup.md) — verified real estimates → CNS Results/Discussion.
 5. [`99_emergencies.md`](analysis_plan/playbooks/99_emergencies.md) — source, scope, governance, or provenance shocks.
+
+---
+
+## 10. Slash commands and skills
+
+Explicit playbook skills live under `.cursor/skills/` and do not self-trigger:
+
+| Command | Workflow |
+|---|---|
+| `/playbook` | Ask which numbered workflow Bob intends. |
+| `/playbook-01-hogan-lock` | Execute Playbook 01 after actual Hogan notes/corrections exist. |
+| `/playbook-02-ha-arrival` | Execute governed HA receipt and QC. |
+| `/playbook-03-full-analysis` | Execute the complete real-data panel after Gates 1–2. |
+| `/playbook-04-final-writeup` | Execute final writing and engage `cns-writing`. |
+| `/playbook-99-emergencies` | Bound and document source, scope, governance, or provenance shocks. |
+
+Writing commands:
+
+- `/laidlaw-blog` explicitly drafts or revises public-facing prose in the MIT Admissions register.
+- `/blog-from-deck` turns a progress deck into a ready-to-edit draft, updates the blog index, and logs the arc.
+- `blog-from-deck` may be offered when a matching deck changes. “Automatic” ends at a draft: Bob must make the creative/privacy pass and publish it himself.
+- `/cns-writing` is the separate scholarly register. Never use it for Laidlaw blogs.
+
+Classic stubs under `.cursor/commands/` provide dual slash-command support. Skills and stubs point back to the canonical playbooks and writing canons; they do not replace them.

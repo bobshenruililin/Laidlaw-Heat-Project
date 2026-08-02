@@ -88,9 +88,11 @@ These short commands re-engage a durable mode without rebuilding the project fro
 | **“Explore: [question].”** | Follow the side path, preserve claim boundaries, and write the insight or dead end to `context_compound_log.md`. |
 | **“Teach me [method/estimand].”** | Explain it plainly, test understanding against this project, and keep uncertainty explicit. |
 | **“Decide: [fork].”** | Assemble the evidence and record the human-owned choice in the ledger, gate, registry, or debrief. |
-| **“CNS register.”** | Engage [`.cursor/skills/cns-writing/SKILL.md`](../.cursor/skills/cns-writing/SKILL.md); use spare publication prose and do not invent completeness. |
-| **“Laidlaw blog / MIT Admissions register.”** | Warm, quirky, first-person public writing in [`reports/blog/`](../reports/blog/); never import CNS voice; never invent biography or findings. See [`knowledge/2026-07-26_laidlaw_blog_canon.md`](../knowledge/2026-07-26_laidlaw_blog_canon.md). |
-| **“Run playbook 02.”** | Open [`playbooks/02_ha_data_arrival.md`](playbooks/02_ha_data_arrival.md), check its trigger and preconditions, then execute it without skipping gates. Substitute `01`, `03`, `04`, or `99` as needed. |
+| **`/cns-writing`** or **“CNS register.”** | Engage [`.cursor/skills/cns-writing/SKILL.md`](../.cursor/skills/cns-writing/SKILL.md); use spare publication prose and do not invent completeness. |
+| **`/laidlaw-blog`** | Draft or revise warm, quirky, first-person public writing in [`reports/blog/`](../reports/blog/); never import CNS voice or invent biography/findings. |
+| **`/blog-from-deck`** | Extract the honest week arc from a progress deck, draft and index the blog, log the arc, then stop for Bob’s creative/privacy pass. |
+| **`/playbook-01-hogan-lock`** | Read and execute [`playbooks/01_hogan_definition_lock.md`](playbooks/01_hogan_definition_lock.md) after actual meeting evidence exists. Use the corresponding `02`, `03`, `04`, or `99` command for later gates or shocks. |
+| **`/playbook`** | Ask which numbered playbook Bob intends; do not infer or bypass an unmet gate. |
 | **“Compound this into knowledge.”** | Write the durable decision or learning to `knowledge/`, refresh `knowledge/INDEX.md`, `PROJECT_STATE.md`, and `CONTEXT_BOOTSTRAP.md`, and link the detailed owner file. |
 
 For any new chat, begin with: **“Read `knowledge/CONTEXT_BOOTSTRAP.md`, then [mode/request].”**

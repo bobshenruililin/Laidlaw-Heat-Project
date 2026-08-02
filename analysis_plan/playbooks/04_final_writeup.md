@@ -10,6 +10,7 @@ Run when verified real estimates, diagnostics, a team-approved Gate 3 freeze, an
 - Gates 1–3 are closed for the claims to be written.
 - The complete pathway panel, HM/CM results, diagnostics, and sample accounting have been checked.
 - The canonical essay is [`reports/laidlaw_stage3/essay_lit_methods.md`](../../reports/laidlaw_stage3/essay_lit_methods.md).
+- **From 2 August 2026:** the live shared manuscript (Hogan / Bob / Roro) is the manuscript authority. Repository essay text is source material; do not overwrite Hogan’s weather Methods or Roro’s health-data Methods when syncing.
 
 ## Steps
 

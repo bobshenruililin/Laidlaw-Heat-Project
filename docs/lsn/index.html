@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Heat, Cold &amp; Stroke · Hong Kong 2013–2023 · Laidlaw</title>
+  <meta name="description" content="Interactive companion to a Laidlaw Scholars research project: monthly thermal exposures in Hong Kong, 2013–2023. Exposure descriptives only — no stroke findings claimed." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14212b;
+      --ink-soft: #3a4a57;
+      --paper: #f7f3ea;
+      --sea: #0b6e7a;
+      --sea-deep: #084e57;
+      --heat: #d45a1f;
+      --heat-soft: #f0a06a;
+      --cold: #2a6f9b;
+      --mist: rgba(255,255,255,0.12);
+      --line: rgba(20,33,43,0.12);
+      --shadow: 0 18px 50px rgba(8, 40, 50, 0.18);
+      --radius: 18px;
+      --font-display: "Literata", Georgia, serif;
+      --font-body: "Sora", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--font-body);
+      background: #061820;
+      line-height: 1.55;
+    }
+    a { color: var(--sea); }
+    .skip {
+      position: absolute; left: -999px; top: 0;
+    }
+    .skip:focus { left: 1rem; top: 1rem; background: #fff; padding: .5rem 1rem; z-index: 9; }
+
+    /* —— Hero —— */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: #f8f4ec;
+      isolation: isolate;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: -2;
+      background:
+        radial-gradient(1200px 700px at 15% 20%, rgba(212,90,31,0.45), transparent 55%),
+        radial-gradient(900px 600px at 85% 30%, rgba(42,111,155,0.5), transparent 50%),
+        linear-gradient(165deg, #0a2a33 0%, #12363f 40%, #1a2420 100%);
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: -1;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 85%);
+      animation: gridShift 22s linear infinite;
+    }
+    @keyframes drift {
+      from { transform: scale(1) translateY(0); }
+      to { transform: scale(1.05) translateY(-1.5%); }
+    }
+    @keyframes gridShift {
+      from { background-position: 0 0; }
+      to { background-position: 48px 48px; }
+    }
+    .hero-inner {
+      width: min(1100px, calc(100% - 2.5rem));
+      margin: 0 auto;
+      padding: 5.5rem 0 3.5rem;
+    }
+    .brand {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 7vw, 4.8rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+      margin: 0 0 1.25rem;
+      max-width: 14ch;
+      animation: rise 0.9s ease both;
+    }
+    .brand em {
+      font-style: italic;
+      color: var(--heat-soft);
+      font-weight: 500;
+    }
+    .lede {
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      max-width: 38rem;
+      color: rgba(248,244,236,0.88);
+      margin: 0 0 1.75rem;
+      animation: rise 0.9s ease 0.12s both;
+    }
+    .cta-row {
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+      animation: rise 0.9s ease 0.22s both;
+    }
+    .btn {
+      appearance: none; border: 0; cursor: pointer;
+      font: inherit; font-weight: 600; font-size: 0.95rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: #f4ebe0; color: var(--ink); }
+    .btn-ghost {
+      background: transparent; color: #f4ebe0;
+      box-shadow: inset 0 0 0 1.5px rgba(244,235,224,0.55);
+    }
+    .provenance-chip {
+      margin-top: 2rem;
+      display: inline-flex;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(244,235,224,0.7);
+      animation: rise 0.9s ease 0.32s both;
+    }
+    .provenance-chip span {
+      width: 0.55rem; height: 0.55rem; border-radius: 50%;
+      background: #7dce8a;
+      box-shadow: 0 0 0 4px rgba(125,206,138,0.2);
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    /* —— Sections —— */
+    main { background: var(--paper); }
+    section {
+      width: min(1100px, calc(100% - 2.5rem));
+      margin: 0 auto;
+      padding: 4.5rem 0;
+    }
+    .section-kicker {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--sea);
+      margin: 0 0 0.65rem;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.1; letter-spacing: -0.02em;
+      margin: 0 0 0.85rem; max-width: 18ch;
+    }
+    .section-lead {
+      max-width: 40rem; color: var(--ink-soft); margin: 0 0 2rem;
+    }
+
+    /* —— Interactive panel —— */
+    .panel {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      padding: 1.25rem 1.25rem 1.5rem;
+      overflow: hidden;
+    }
+    .panel-top {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      justify-content: space-between; align-items: end;
+      margin-bottom: 1rem;
+    }
+    .month-readout {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      margin: 0; letter-spacing: -0.02em;
+    }
+    .month-readout small {
+      display: block; font-family: var(--font-body);
+      font-size: 0.85rem; font-weight: 500; color: var(--ink-soft);
+      letter-spacing: 0; margin-top: 0.2rem;
+    }
+    .mode-toggle {
+      display: inline-flex; padding: 0.25rem;
+      background: #eef2f0; border-radius: 999px; gap: 0.15rem;
+    }
+    .mode-toggle button {
+      border: 0; background: transparent; cursor: pointer;
+      font: inherit; font-size: 0.82rem; font-weight: 600;
+      padding: 0.55rem 0.9rem; border-radius: 999px; color: var(--ink-soft);
+    }
+    .mode-toggle button[aria-pressed="true"] {
+      background: #fff; color: var(--ink);
+      box-shadow: 0 4px 14px rgba(20,33,43,0.1);
+    }
+    .mode-toggle button.heat[aria-pressed="true"] { color: var(--heat); }
+    .mode-toggle button.cold[aria-pressed="true"] { color: var(--cold); }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 1rem 0 1.25rem;
+    }
+    @media (max-width: 720px) {
+      .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    .stat {
+      padding: 0.85rem 0.9rem;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #fbfaf7, #f3f0e8);
+      border: 1px solid var(--line);
+    }
+    .stat .label {
+      font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--ink-soft); margin-bottom: 0.25rem;
+    }
+    .stat .value {
+      font-family: var(--font-display);
+      font-size: 1.55rem; letter-spacing: -0.02em;
+    }
+    .stat .unit { font-size: 0.85rem; color: var(--ink-soft); margin-left: 0.15rem; }
+
+    .chart-wrap { position: relative; }
+    canvas { width: 100%; height: auto; display: block; cursor: crosshair; touch-action: none; }
+    .scrub {
+      width: 100%; margin-top: 0.85rem; accent-color: var(--sea);
+    }
+    .legend {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      font-size: 0.8rem; color: var(--ink-soft); margin-top: 0.75rem;
+    }
+    .legend i {
+      display: inline-block; width: 0.85rem; height: 0.35rem;
+      border-radius: 2px; margin-right: 0.35rem; vertical-align: middle;
+    }
+
+    .note {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      border-left: 3px solid var(--sea);
+      background: rgba(11,110,122,0.06);
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    /* —— Question / design —— */
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .split { grid-template-columns: 1fr; }
+    }
+    .design-list {
+      list-style: none; padding: 0; margin: 0;
+      display: grid; gap: 0.85rem;
+    }
+    .design-list li {
+      padding: 1rem 1.1rem;
+      border-top: 1px solid var(--line);
+    }
+    .design-list strong {
+      display: block; font-family: var(--font-display);
+      font-size: 1.15rem; margin-bottom: 0.2rem;
+    }
+    .design-list span { color: var(--ink-soft); font-size: 0.95rem; }
+
+    /* —— Team —— */
+    .people {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    @media (max-width: 800px) {
+      .people { grid-template-columns: 1fr; }
+    }
+    .person {
+      padding: 1.25rem 0 0;
+      border-top: 2px solid var(--ink);
+    }
+    .person h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem; margin: 0 0 0.35rem;
+    }
+    .person .role {
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--sea); margin-bottom: 0.55rem;
+    }
+    .person p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+    /* —— Status —— */
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+    @media (max-width: 700px) {
+      .status-grid { grid-template-columns: 1fr; }
+    }
+    .status-item {
+      display: flex; gap: 0.85rem; align-items: flex-start;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .pill {
+      flex: 0 0 auto;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.55rem; border-radius: 6px;
+    }
+    .pill.ready { background: #d7efe0; color: #1d5c3a; }
+    .pill.wait { background: #fce8cf; color: #8a4b12; }
+    .pill.none { background: #ece7df; color: #5a5248; }
+
+    footer {
+      background: #061820; color: rgba(247,243,234,0.75);
+      padding: 2.5rem 0 3rem;
+      font-size: 0.88rem;
+    }
+    footer .inner {
+      width: min(1100px, calc(100% - 2.5rem));
+      margin: 0 auto;
+    }
+    footer strong { color: #f7f3ea; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#explore">Skip to climate explorer</a>
+
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="brand">Heat, cold <em>&amp;</em> stroke</p>
+      <p class="lede">
+        A Laidlaw research companion for a Hong Kong study of monthly thermal burden and stroke hospital aggregates, 2013–2023. Explore the weather. Do not invent the result.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#explore">Explore eleven years of climate</a>
+        <a class="btn btn-ghost" href="#question">Read the research question</a>
+      </div>
+      <p class="provenance-chip"><span></span> Exposure descriptives · REAL HKO data · no stroke findings on this page</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="explore">
+      <p class="section-kicker">Interactive · exposure only</p>
+      <h2>Hong Kong’s months, heated and cooled</h2>
+      <p class="section-lead">
+        Drag across the ribbon or scrub the slider. Bars show monthly mean temperature at the Observatory Headquarters. Switch modes to see counts of very hot days, hot nights, or cold days — the raw material of thermal definitions, not a health result.
+      </p>
+
+      <div class="panel">
+        <div class="panel-top">
+          <h3 class="month-readout" id="monthLabel">—<small id="monthSub">Hover or scrub a month</small></h3>
+          <div class="mode-toggle" role="group" aria-label="Exposure mode">
+            <button type="button" class="heat" data-mode="temp" aria-pressed="true">Mean temp</button>
+            <button type="button" class="heat" data-mode="vhd" aria-pressed="false">Very hot days</button>
+            <button type="button" class="heat" data-mode="hn" aria-pressed="false">Hot nights</button>
+            <button type="button" class="cold" data-mode="cd" aria-pressed="false">Cold days</button>
+          </div>
+        </div>
+
+        <div class="stat-row" aria-live="polite">
+          <div class="stat"><div class="label">Mean temp</div><div class="value" id="statT">—<span class="unit">°C</span></div></div>
+          <div class="stat"><div class="label">Very hot days</div><div class="value" id="statVhd">—</div></div>
+          <div class="stat"><div class="label">Hot nights</div><div class="value" id="statHn">—</div></div>
+          <div class="stat"><div class="label">Cold days</div><div class="value" id="statCd">—</div></div>
+        </div>
+
+        <div class="chart-wrap">
+          <canvas id="ribbon" width="1000" height="280" role="img" aria-label="Monthly climate ribbon for Hong Kong, 2013 to 2023"></canvas>
+          <input class="scrub" id="scrub" type="range" min="0" max="131" value="90" aria-label="Select month index" />
+        </div>
+        <div class="legend">
+          <span><i style="background:linear-gradient(90deg,#2a6f9b,#d45a1f)"></i> Temperature colour scale (cooler → warmer)</span>
+          <span><i style="background:#14212b"></i> Active month marker</span>
+        </div>
+        <p class="note">
+          <strong>Provenance:</strong> REAL monthly aggregates from Hong Kong Observatory Headquarters daily series, January 2013–December 2023 (132 months). Official extreme-day definitions as coded in the project weather pipeline. This chart does <em>not</em> contain stroke admissions, rates, or model coefficients.
+        </p>
+      </div>
+    </section>
+
+    <section id="question">
+      <div class="split">
+        <div>
+          <p class="section-kicker">The estimand</p>
+          <h2>One city. One decade. A monthly question.</h2>
+          <p class="section-lead" style="margin-bottom:0">
+            When a month carries more heat — or more cold — does stroke hospital burden move with it? The answer is not yet on this page. The question is.
+          </p>
+        </div>
+        <ul class="design-list">
+          <li>
+            <strong>Design</strong>
+            <span>Ecological monthly time series · Jan 2013–Dec 2023 · rate-ratio framing with population offsets.</span>
+          </li>
+          <li>
+            <strong>Exposures</strong>
+            <span>Mean temperature and extreme-day / spell metrics; air pollution as staged adjustment; population denominators from C&amp;SD.</span>
+          </li>
+          <li>
+            <strong>Outcome (inbound)</strong>
+            <span>Hospital Authority stroke admission aggregates, governed and cleaned by Roro. No coefficients until QC and merge.</span>
+          </li>
+          <li>
+            <strong>Discipline</strong>
+            <span>A labelled multi-method panel — not ten press releases. Heat and cold assessed in parallel.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="team">
+      <p class="section-kicker">Collaboration</p>
+      <h2>Science as a shared kitchen</h2>
+      <p class="section-lead">Recipes travel. Credit is part of the method.</p>
+      <div class="people">
+        <article class="person">
+          <div class="role">Weather &amp; writing</div>
+          <h3>Hogan</h3>
+          <p>Leads thermal definitions and the live manuscript’s weather Methods; mentors spare academic prose.</p>
+        </article>
+        <article class="person">
+          <div class="role">Health data</div>
+          <h3>Roro · Zhenyuan Liu</h3>
+          <p>Owns stroke aggregate construction and timing rules; complementary excess heat-mortality work in the same lab family.</p>
+        </article>
+        <article class="person">
+          <div class="role">Supervision</div>
+          <h3>Prof. David Bishai</h3>
+          <p>Keeps the multi-method panel coherent — go far together, report as one study.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="status">
+      <p class="section-kicker">Honest status · August 2026</p>
+      <h2>What is ready. What is waiting.</h2>
+      <div class="status-grid">
+        <div class="status-item"><span class="pill ready">Ready</span><div><strong>HKO climate &amp; extremes</strong><br />Validated annual extreme-day counts; monthly panel built.</div></div>
+        <div class="status-item"><span class="pill ready">Ready</span><div><strong>Pollution &amp; population</strong><br />EPD EPIC monthly means; C&amp;SD age–sex denominators.</div></div>
+        <div class="status-item"><span class="pill wait">Waiting</span><div><strong>Stroke aggregates</strong><br />Governed file inbound; Methods co-written in a live manuscript.</div></div>
+        <div class="status-item"><span class="pill none">None yet</span><div><strong>Association estimates</strong><br />No real-outcome coefficients. Synthetic dry-runs are not findings.</div></div>
+      </div>
+      <p class="section-lead" style="margin-top:2rem">
+        Local mortality literature reminds us not to delete cold from a warming-era story. That published context is a baseline, not our stroke result.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <p><strong>Laidlaw Scholars · University of Hong Kong</strong> · Bob Shen Ruililin</p>
+      <p>Interactive companion for the Laidlaw Scholar Network. Source repository: Laidlaw-Heat-Project. Weather data shown here are REAL project exposures; health outcomes are intentionally absent.</p>
+    </div>
+  </footer>
+
+  <script>
+window.CLIMATE_PANEL = {"provenance":"REAL HKO Headquarters monthly climate, 2013\u20132023. Exposure descriptives only. No health outcomes.","n_months":132,"months":[{"id":"2013-01","y":2013,"m":1,"t":16.7,"tmax":19.12,"tmin":14.78,"vhd":0,"ehd":0,"hn":0,"cd":3,"d2n3":0},{"id":"2013-02","y":2013,"m":2,"t":19.07,"tmax":22.05,"tmin":17.14,"vhd":0,"ehd":0,"hn":0,"cd":1,"d2n3":0},{"id":"2013-03","y":2013,"m":3,"t":20.55,"tmax":23.5,"tmin":18.47,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2013-04","y":2013,"m":4,"t":21.53,"tmax":23.92,"tmin":19.66,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2013-05","y":2013,"m":5,"t":25.73,"tmax":28.15,"tmin":23.95,"vhd":1,"ehd":0,"hn":1,"cd":0,"d2n3":0},{"id":"2013-06","y":2013,"m":6,"t":28.15,"tmax":30.74,"tmin":26.45,"vhd":5,"ehd":0,"hn":6,"cd":0,"d2n3":0},{"id":"2013-07","y":2013,"m":7,"t":27.96,"tmax":30.94,"tmin":26.1,"vhd":5,"ehd":0,"hn":1,"cd":0,"d2n3":0},{"id":"2013-08","y":2013,"m":8,"t":28.61,"tmax":31.13,"tmin":26.53,"vhd":5,"ehd":0,"hn":1,"cd":0,"d2n3":0},{"id":"2013-09","y":2013,"m":9,"t":27.52,"tmax":30.25,"tmin":25.69,"vhd":1,"ehd":0,"hn":1,"cd":0,"d2n3":0},{"id":"2013-10","y":2013,"m":10,"t":25.65,"tmax":28.6,"tmin":23.68,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2013-11","y":2013,"m":11,"t":21.7,"tmax":23.85,"tmin":19.75,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2013-12","y":2013,"m":12,"t":16.11,"tmax":18.57,"tmin":14.0,"vhd":0,"ehd":0,"hn":0,"cd":10,"d2n3":0},{"id":"2014-01","y":2014,"m":1,"t":16.32,"tmax":19.2,"tmin":14.12,"vhd":0,"ehd":0,"hn":0,"cd":6,"d2n3":0},{"id":"2014-02","y":2014,"m":2,"t":15.47,"tmax":17.89,"tmin":13.51,"vhd":0,"ehd":0,"hn":0,"cd":9,"d2n3":0},{"id":"2014-03","y":2014,"m":3,"t":18.69,"tmax":20.9,"tmin":17.0,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2014-04","y":2014,"m":4,"t":22.58,"tmax":24.87,"tmin":21.03,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2014-05","y":2014,"m":5,"t":26.39,"tmax":28.56,"tmin":24.62,"vhd":0,"ehd":0,"hn":3,"cd":0,"d2n3":0},{"id":"2014-06","y":2014,"m":6,"t":29.01,"tmax":31.48,"tmin":27.03,"vhd":5,"ehd":0,"hn":8,"cd":0,"d2n3":1},{"id":"2014-07","y":2014,"m":7,"t":29.78,"tmax":32.59,"tmin":27.62,"vhd":15,"ehd":0,"hn":13,"cd":0,"d2n3":17},{"id":"2014-08","y":2014,"m":8,"t":29.02,"tmax":31.97,"tmin":26.77,"vhd":6,"ehd":0,"hn":6,"cd":0,"d2n3":5},{"id":"2014-09","y":2014,"m":9,"t":28.99,"tmax":32.0,"tmin":27.03,"vhd":7,"ehd":0,"hn":4,"cd":0,"d2n3":8},{"id":"2014-10","y":2014,"m":10,"t":26.25,"tmax":28.9,"tmin":24.33,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2014-11","y":2014,"m":11,"t":22.64,"tmax":24.56,"tmin":21.17,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2014-12","y":2014,"m":12,"t":16.34,"tmax":18.49,"tmin":14.17,"vhd":0,"ehd":0,"hn":0,"cd":6,"d2n3":0},{"id":"2015-01","y":2015,"m":1,"t":16.45,"tmax":18.93,"tmin":14.52,"vhd":0,"ehd":0,"hn":0,"cd":4,"d2n3":0},{"id":"2015-02","y":2015,"m":2,"t":17.48,"tmax":19.51,"tmin":15.91,"vhd":0,"ehd":0,"hn":0,"cd":1,"d2n3":0},{"id":"2015-03","y":2015,"m":3,"t":19.9,"tmax":21.98,"tmin":18.47,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2015-04","y":2015,"m":4,"t":23.61,"tmax":26.69,"tmin":21.39,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2015-05","y":2015,"m":5,"t":27.45,"tmax":29.88,"tmin":25.53,"vhd":0,"ehd":0,"hn":2,"cd":0,"d2n3":0},{"id":"2015-06","y":2015,"m":6,"t":29.67,"tmax":32.32,"tmin":27.66,"vhd":10,"ehd":0,"hn":13,"cd":0,"d2n3":15},{"id":"2015-07","y":2015,"m":7,"t":29.14,"tmax":31.83,"tmin":27.23,"vhd":6,"ehd":0,"hn":12,"cd":0,"d2n3":12},{"id":"2015-08","y":2015,"m":8,"t":29.3,"tmax":32.1,"tmin":27.17,"vhd":12,"ehd":1,"hn":8,"cd":0,"d2n3":10},{"id":"2015-09","y":2015,"m":9,"t":28.4,"tmax":31.06,"tmin":26.65,"vhd":0,"ehd":0,"hn":2,"cd":0,"d2n3":0},{"id":"2015-10","y":2015,"m":10,"t":26.02,"tmax":28.54,"tmin":24.2,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2015-11","y":2015,"m":11,"t":24.02,"tmax":26.05,"tmin":22.41,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2015-12","y":2015,"m":12,"t":18.57,"tmax":20.25,"tmin":17.07,"vhd":0,"ehd":0,"hn":0,"cd":2,"d2n3":0},{"id":"2016-01","y":2016,"m":1,"t":16.03,"tmax":17.81,"tmin":14.43,"vhd":0,"ehd":0,"hn":0,"cd":7,"d2n3":0},{"id":"2016-02","y":2016,"m":2,"t":15.46,"tmax":18.22,"tmin":13.35,"vhd":0,"ehd":0,"hn":0,"cd":10,"d2n3":0},{"id":"2016-03","y":2016,"m":3,"t":17.52,"tmax":19.99,"tmin":15.65,"vhd":0,"ehd":0,"hn":0,"cd":3,"d2n3":0},{"id":"2016-04","y":2016,"m":4,"t":23.57,"tmax":26.01,"tmin":21.85,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2016-05","y":2016,"m":5,"t":26.73,"tmax":29.1,"tmin":24.92,"vhd":0,"ehd":0,"hn":2,"cd":0,"d2n3":1},{"id":"2016-06","y":2016,"m":6,"t":29.37,"tmax":32.37,"tmin":27.47,"vhd":13,"ehd":4,"hn":15,"cd":0,"d2n3":17},{"id":"2016-07","y":2016,"m":7,"t":29.78,"tmax":32.63,"tmin":27.35,"vhd":15,"ehd":2,"hn":13,"cd":0,"d2n3":19},{"id":"2016-08","y":2016,"m":8,"t":28.37,"tmax":31.05,"tmin":26.51,"vhd":9,"ehd":0,"hn":4,"cd":0,"d2n3":0},{"id":"2016-09","y":2016,"m":9,"t":27.94,"tmax":30.43,"tmin":26.11,"vhd":1,"ehd":0,"hn":2,"cd":0,"d2n3":0},{"id":"2016-10","y":2016,"m":10,"t":26.75,"tmax":29.1,"tmin":25.0,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2016-11","y":2016,"m":11,"t":22.26,"tmax":24.52,"tmin":20.34,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2016-12","y":2016,"m":12,"t":19.63,"tmax":21.75,"tmin":17.65,"vhd":0,"ehd":0,"hn":0,"cd":1,"d2n3":0},{"id":"2017-01","y":2017,"m":1,"t":18.56,"tmax":20.59,"tmin":17.05,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2017-02","y":2017,"m":2,"t":16.97,"tmax":20.0,"tmin":14.87,"vhd":0,"ehd":0,"hn":0,"cd":6,"d2n3":0},{"id":"2017-03","y":2017,"m":3,"t":19.27,"tmax":21.74,"tmin":17.35,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2017-04","y":2017,"m":4,"t":23.32,"tmax":26.21,"tmin":21.22,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2017-05","y":2017,"m":5,"t":25.95,"tmax":28.59,"tmin":24.24,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2017-06","y":2017,"m":6,"t":28.83,"tmax":31.25,"tmin":27.18,"vhd":6,"ehd":0,"hn":13,"cd":0,"d2n3":12},{"id":"2017-07","y":2017,"m":7,"t":28.7,"tmax":31.41,"tmin":26.89,"vhd":7,"ehd":0,"hn":6,"cd":0,"d2n3":7},{"id":"2017-08","y":2017,"m":8,"t":29.35,"tmax":32.07,"tmin":27.29,"vhd":10,"ehd":1,"hn":14,"cd":0,"d2n3":14},{"id":"2017-09","y":2017,"m":9,"t":29.04,"tmax":31.86,"tmin":27.2,"vhd":5,"ehd":0,"hn":4,"cd":0,"d2n3":0},{"id":"2017-10","y":2017,"m":10,"t":26.29,"tmax":29.04,"tmin":24.35,"vhd":1,"ehd":0,"hn":4,"cd":0,"d2n3":0},{"id":"2017-11","y":2017,"m":11,"t":22.19,"tmax":24.36,"tmin":20.46,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2017-12","y":2017,"m":12,"t":17.85,"tmax":20.13,"tmin":15.95,"vhd":0,"ehd":0,"hn":0,"cd":3,"d2n3":0},{"id":"2018-01","y":2018,"m":1,"t":16.06,"tmax":18.49,"tmin":14.12,"vhd":0,"ehd":0,"hn":0,"cd":9,"d2n3":0},{"id":"2018-02","y":2018,"m":2,"t":16.04,"tmax":18.74,"tmin":13.88,"vhd":0,"ehd":0,"hn":0,"cd":9,"d2n3":0},{"id":"2018-03","y":2018,"m":3,"t":20.84,"tmax":24.36,"tmin":18.64,"vhd":0,"ehd":0,"hn":0,"cd":1,"d2n3":0},{"id":"2018-04","y":2018,"m":4,"t":23.65,"tmax":26.92,"tmin":21.67,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2018-05","y":2018,"m":5,"t":28.33,"tmax":31.73,"tmin":26.12,"vhd":16,"ehd":3,"hn":6,"cd":0,"d2n3":6},{"id":"2018-06","y":2018,"m":6,"t":28.62,"tmax":31.32,"tmin":26.76,"vhd":4,"ehd":1,"hn":6,"cd":0,"d2n3":2},{"id":"2018-07","y":2018,"m":7,"t":29.12,"tmax":31.78,"tmin":27.0,"vhd":8,"ehd":0,"hn":7,"cd":0,"d2n3":0},{"id":"2018-08","y":2018,"m":8,"t":28.58,"tmax":31.03,"tmin":26.67,"vhd":5,"ehd":0,"hn":5,"cd":0,"d2n3":9},{"id":"2018-09","y":2018,"m":9,"t":28.01,"tmax":31.0,"tmin":25.99,"vhd":3,"ehd":1,"hn":2,"cd":0,"d2n3":0},{"id":"2018-10","y":2018,"m":10,"t":25.34,"tmax":27.98,"tmin":23.43,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2018-11","y":2018,"m":11,"t":22.9,"tmax":24.8,"tmin":21.44,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2018-12","y":2018,"m":12,"t":19.22,"tmax":21.26,"tmin":17.59,"vhd":0,"ehd":0,"hn":0,"cd":2,"d2n3":0},{"id":"2019-01","y":2019,"m":1,"t":18.14,"tmax":20.35,"tmin":16.4,"vhd":0,"ehd":0,"hn":0,"cd":1,"d2n3":0},{"id":"2019-02","y":2019,"m":2,"t":20.12,"tmax":22.64,"tmin":18.42,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2019-03","y":2019,"m":3,"t":21.03,"tmax":23.3,"tmin":19.35,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2019-04","y":2019,"m":4,"t":24.7,"tmax":27.24,"tmin":22.93,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2019-05","y":2019,"m":5,"t":25.33,"tmax":27.23,"tmin":23.66,"vhd":0,"ehd":0,"hn":3,"cd":0,"d2n3":0},{"id":"2019-06","y":2019,"m":6,"t":29.0,"tmax":31.51,"tmin":26.98,"vhd":5,"ehd":0,"hn":11,"cd":0,"d2n3":12},{"id":"2019-07","y":2019,"m":7,"t":29.51,"tmax":32.05,"tmin":27.7,"vhd":8,"ehd":1,"hn":15,"cd":0,"d2n3":19},{"id":"2019-08","y":2019,"m":8,"t":29.04,"tmax":31.86,"tmin":26.9,"vhd":11,"ehd":1,"hn":9,"cd":0,"d2n3":11},{"id":"2019-09","y":2019,"m":9,"t":28.74,"tmax":31.75,"tmin":26.63,"vhd":8,"ehd":0,"hn":7,"cd":0,"d2n3":11},{"id":"2019-10","y":2019,"m":10,"t":26.6,"tmax":29.48,"tmin":24.6,"vhd":1,"ehd":0,"hn":1,"cd":0,"d2n3":0},{"id":"2019-11","y":2019,"m":11,"t":22.97,"tmax":26.1,"tmin":20.97,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2019-12","y":2019,"m":12,"t":19.07,"tmax":21.89,"tmin":17.0,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2020-01","y":2020,"m":1,"t":18.56,"tmax":21.19,"tmin":16.84,"vhd":0,"ehd":0,"hn":0,"cd":5,"d2n3":0},{"id":"2020-02","y":2020,"m":2,"t":18.47,"tmax":21.45,"tmin":16.56,"vhd":0,"ehd":0,"hn":0,"cd":3,"d2n3":0},{"id":"2020-03","y":2020,"m":3,"t":21.3,"tmax":23.79,"tmin":19.71,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2020-04","y":2020,"m":4,"t":22.02,"tmax":25.14,"tmin":19.97,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2020-05","y":2020,"m":5,"t":27.73,"tmax":30.44,"tmin":25.91,"vhd":1,"ehd":0,"hn":1,"cd":0,"d2n3":0},{"id":"2020-06","y":2020,"m":6,"t":29.65,"tmax":32.25,"tmin":27.8,"vhd":6,"ehd":1,"hn":18,"cd":0,"d2n3":12},{"id":"2020-07","y":2020,"m":7,"t":30.24,"tmax":33.31,"tmin":28.26,"vhd":20,"ehd":2,"hn":21,"cd":0,"d2n3":30},{"id":"2020-08","y":2020,"m":8,"t":29.02,"tmax":32.16,"tmin":26.88,"vhd":16,"ehd":0,"hn":6,"cd":0,"d2n3":10},{"id":"2020-09","y":2020,"m":9,"t":28.41,"tmax":31.2,"tmin":26.59,"vhd":4,"ehd":0,"hn":4,"cd":0,"d2n3":6},{"id":"2020-10","y":2020,"m":10,"t":25.59,"tmax":28.5,"tmin":23.72,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2020-11","y":2020,"m":11,"t":23.51,"tmax":26.38,"tmin":21.66,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2020-12","y":2020,"m":12,"t":18.11,"tmax":20.75,"tmin":15.89,"vhd":0,"ehd":0,"hn":0,"cd":3,"d2n3":0},{"id":"2021-01","y":2021,"m":1,"t":16.21,"tmax":19.32,"tmin":13.84,"vhd":0,"ehd":0,"hn":0,"cd":11,"d2n3":0},{"id":"2021-02","y":2021,"m":2,"t":19.75,"tmax":23.46,"tmin":17.49,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2021-03","y":2021,"m":3,"t":21.99,"tmax":24.82,"tmin":20.23,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2021-04","y":2021,"m":4,"t":24.14,"tmax":27.0,"tmin":22.38,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2021-05","y":2021,"m":5,"t":28.99,"tmax":32.13,"tmin":27.03,"vhd":12,"ehd":1,"hn":14,"cd":0,"d2n3":21},{"id":"2021-06","y":2021,"m":6,"t":28.76,"tmax":31.18,"tmin":26.86,"vhd":4,"ehd":0,"hn":8,"cd":0,"d2n3":7},{"id":"2021-07","y":2021,"m":7,"t":29.7,"tmax":32.63,"tmin":27.7,"vhd":17,"ehd":3,"hn":18,"cd":0,"d2n3":26},{"id":"2021-08","y":2021,"m":8,"t":28.76,"tmax":31.39,"tmin":26.84,"vhd":5,"ehd":0,"hn":6,"cd":0,"d2n3":8},{"id":"2021-09","y":2021,"m":9,"t":29.75,"tmax":32.79,"tmin":27.83,"vhd":15,"ehd":0,"hn":11,"cd":0,"d2n3":13},{"id":"2021-10","y":2021,"m":10,"t":26.02,"tmax":28.52,"tmin":24.06,"vhd":1,"ehd":0,"hn":4,"cd":0,"d2n3":0},{"id":"2021-11","y":2021,"m":11,"t":22.4,"tmax":25.43,"tmin":20.33,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2021-12","y":2021,"m":12,"t":18.88,"tmax":21.36,"tmin":16.8,"vhd":0,"ehd":0,"hn":0,"cd":2,"d2n3":0},{"id":"2022-01","y":2022,"m":1,"t":18.01,"tmax":20.17,"tmin":16.47,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2022-02","y":2022,"m":2,"t":15.24,"tmax":17.68,"tmin":13.43,"vhd":0,"ehd":0,"hn":0,"cd":8,"d2n3":0},{"id":"2022-03","y":2022,"m":3,"t":21.49,"tmax":25.04,"tmin":19.18,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2022-04","y":2022,"m":4,"t":23.71,"tmax":27.14,"tmin":21.51,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2022-05","y":2022,"m":5,"t":25.03,"tmax":27.69,"tmin":23.29,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2022-06","y":2022,"m":6,"t":28.65,"tmax":31.01,"tmin":26.84,"vhd":6,"ehd":0,"hn":10,"cd":0,"d2n3":0},{"id":"2022-07","y":2022,"m":7,"t":30.27,"tmax":33.32,"tmin":28.35,"vhd":21,"ehd":10,"hn":25,"cd":0,"d2n3":27},{"id":"2022-08","y":2022,"m":8,"t":28.84,"tmax":31.95,"tmin":26.76,"vhd":10,"ehd":2,"hn":8,"cd":0,"d2n3":9},{"id":"2022-09","y":2022,"m":9,"t":29.55,"tmax":32.66,"tmin":27.31,"vhd":13,"ehd":3,"hn":9,"cd":0,"d2n3":11},{"id":"2022-10","y":2022,"m":10,"t":26.19,"tmax":29.51,"tmin":23.89,"vhd":2,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2022-11","y":2022,"m":11,"t":23.4,"tmax":25.35,"tmin":21.95,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2022-12","y":2022,"m":12,"t":16.61,"tmax":19.01,"tmin":14.42,"vhd":0,"ehd":0,"hn":0,"cd":5,"d2n3":0},{"id":"2023-01","y":2023,"m":1,"t":17.03,"tmax":19.43,"tmin":14.87,"vhd":0,"ehd":0,"hn":0,"cd":8,"d2n3":0},{"id":"2023-02","y":2023,"m":2,"t":18.85,"tmax":22.03,"tmin":16.77,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2023-03","y":2023,"m":3,"t":21.27,"tmax":24.19,"tmin":19.43,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2023-04","y":2023,"m":4,"t":23.61,"tmax":25.95,"tmin":21.74,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2023-05","y":2023,"m":5,"t":26.63,"tmax":29.2,"tmin":24.85,"vhd":3,"ehd":0,"hn":5,"cd":0,"d2n3":3},{"id":"2023-06","y":2023,"m":6,"t":29.19,"tmax":31.92,"tmin":27.09,"vhd":7,"ehd":1,"hn":8,"cd":0,"d2n3":4},{"id":"2023-07","y":2023,"m":7,"t":30.12,"tmax":33.04,"tmin":27.97,"vhd":19,"ehd":2,"hn":18,"cd":0,"d2n3":26},{"id":"2023-08","y":2023,"m":8,"t":29.65,"tmax":32.35,"tmin":27.78,"vhd":10,"ehd":1,"hn":15,"cd":0,"d2n3":17},{"id":"2023-09","y":2023,"m":9,"t":28.54,"tmax":31.23,"tmin":26.85,"vhd":12,"ehd":0,"hn":7,"cd":0,"d2n3":11},{"id":"2023-10","y":2023,"m":10,"t":26.45,"tmax":29.07,"tmin":24.83,"vhd":3,"ehd":0,"hn":3,"cd":0,"d2n3":5},{"id":"2023-11","y":2023,"m":11,"t":23.51,"tmax":26.12,"tmin":21.58,"vhd":0,"ehd":0,"hn":0,"cd":0,"d2n3":0},{"id":"2023-12","y":2023,"m":12,"t":19.15,"tmax":21.61,"tmin":17.08,"vhd":0,"ehd":0,"hn":0,"cd":6,"d2n3":0}],"annual":[{"y":2013,"vhd":17,"cd":14,"hn":10,"tmean":23.27},{"y":2014,"vhd":33,"cd":21,"hn":34,"tmean":23.46},{"y":2015,"vhd":28,"cd":7,"hn":37,"tmean":24.17},{"y":2016,"vhd":38,"cd":21,"hn":36,"tmean":23.62},{"y":2017,"vhd":29,"cd":9,"hn":41,"tmean":23.86},{"y":2018,"vhd":36,"cd":21,"hn":26,"tmean":23.89},{"y":2019,"vhd":33,"cd":1,"hn":46,"tmean":24.52},{"y":2020,"vhd":47,"cd":11,"hn":50,"tmean":24.38},{"y":2021,"vhd":54,"cd":13,"hn":61,"tmean":24.61},{"y":2022,"vhd":52,"cd":13,"hn":52,"tmean":23.92},{"y":2023,"vhd":54,"cd":14,"hn":56,"tmean":24.5}]};
+  </script>
+  <script>
+    (function () {
+      const data = window.CLIMATE_PANEL;
+      if (!data || !data.months) {
+        document.getElementById("monthSub").textContent = "Climate data failed to load.";
+        return;
+      }
+      const months = data.months;
+      const canvas = document.getElementById("ribbon");
+      const ctx = canvas.getContext("2d");
+      const scrub = document.getElementById("scrub");
+      const buttons = [...document.querySelectorAll(".mode-toggle button")];
+
+      let mode = "temp";
+      let idx = 90; // mid-series default: ~2020-07
+
+      const MONTH_NAMES = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+      function tempColor(t, tMin, tMax) {
+        const u = Math.max(0, Math.min(1, (t - tMin) / (tMax - tMin || 1)));
+        // cool teal → warm amber (no purple)
+        const r = Math.round(42 + u * (212 - 42));
+        const g = Math.round(111 + u * (90 - 111));
+        const b = Math.round(155 + u * (31 - 155));
+        return `rgb(${r},${g},${b})`;
+      }
+
+      function metric(m) {
+        if (mode === "vhd") return m.vhd;
+        if (mode === "hn") return m.hn;
+        if (mode === "cd") return m.cd;
+        return m.t;
+      }
+
+      function draw() {
+        const dpr = window.devicePixelRatio || 1;
+        const cssW = canvas.clientWidth || 1000;
+        const cssH = 280;
+        canvas.width = Math.floor(cssW * dpr);
+        canvas.height = Math.floor(cssH * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, cssW, cssH);
+
+        const pad = { l: 8, r: 8, t: 18, b: 28 };
+        const w = cssW - pad.l - pad.r;
+        const h = cssH - pad.t - pad.b;
+        const n = months.length;
+        const gap = 1;
+        const barW = Math.max(1, (w - gap * (n - 1)) / n);
+
+        const temps = months.map((m) => m.t);
+        const tMin = Math.min(...temps);
+        const tMax = Math.max(...temps);
+        const vals = months.map(metric);
+        const vMax = Math.max(...vals, 1);
+
+        // year ticks
+        ctx.fillStyle = "rgba(20,33,43,0.45)";
+        ctx.font = "600 11px Sora, sans-serif";
+        let lastY = null;
+        months.forEach((m, i) => {
+          if (m.m === 1 && m.y !== lastY) {
+            const x = pad.l + i * (barW + gap);
+            ctx.fillText(String(m.y), x, cssH - 8);
+            lastY = m.y;
+          }
+        });
+
+        months.forEach((m, i) => {
+          const x = pad.l + i * (barW + gap);
+          let barH, y, fill;
+          if (mode === "temp") {
+            barH = ((m.t - tMin) / (tMax - tMin || 1)) * h * 0.92 + h * 0.08;
+            y = pad.t + (h - barH);
+            fill = tempColor(m.t, tMin, tMax);
+          } else {
+            barH = (vals[i] / vMax) * h * 0.92;
+            y = pad.t + (h - barH);
+            fill = mode === "cd" ? "#2a6f9b" : "#d45a1f";
+            if (mode === "hn") fill = "#c7782a";
+          }
+          ctx.globalAlpha = i === idx ? 1 : 0.72;
+          ctx.fillStyle = fill;
+          ctx.fillRect(x, y, barW, Math.max(barH, 1));
+        });
+        ctx.globalAlpha = 1;
+
+        // active marker
+        const ax = pad.l + idx * (barW + gap) + barW / 2;
+        ctx.strokeStyle = "#14212b";
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(ax, pad.t - 6);
+        ctx.lineTo(ax, pad.t + h + 4);
+        ctx.stroke();
+      }
+
+      function updateReadout() {
+        const m = months[idx];
+        document.getElementById("monthLabel").firstChild.textContent =
+          MONTH_NAMES[m.m - 1] + " " + m.y + " ";
+        // rebuild small without wiping structure
+        document.getElementById("monthSub").textContent =
+          "Month " + (idx + 1) + " of " + months.length + " · HKO Headquarters";
+        document.getElementById("statT").innerHTML = m.t.toFixed(1) + '<span class="unit">°C</span>';
+        document.getElementById("statVhd").textContent = m.vhd;
+        document.getElementById("statHn").textContent = m.hn;
+        document.getElementById("statCd").textContent = m.cd;
+        scrub.value = String(idx);
+        draw();
+      }
+
+      function setMode(next) {
+        mode = next;
+        buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === mode)));
+        draw();
+      }
+
+      buttons.forEach((b) => b.addEventListener("click", () => setMode(b.dataset.mode)));
+      scrub.addEventListener("input", () => {
+        idx = Number(scrub.value);
+        updateReadout();
+      });
+
+      function pickFromEvent(e) {
+        const rect = canvas.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        idx = Math.max(0, Math.min(months.length - 1, Math.floor(x * months.length)));
+        updateReadout();
+      }
+      canvas.addEventListener("pointerdown", (e) => {
+        canvas.setPointerCapture(e.pointerId);
+        pickFromEvent(e);
+      });
+      canvas.addEventListener("pointermove", (e) => {
+        if (e.buttons === 1) pickFromEvent(e);
+      });
+
+      window.addEventListener("resize", draw);
+      updateReadout();
+    })();
+  </script>
+</body>
+</html>

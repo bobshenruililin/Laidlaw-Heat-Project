@@ -34,12 +34,12 @@ The definition catalogue contains `HM01–HM50` and `CM01–CM48`. Core starters
 
 ## Human gates and next sequence
 
-1. **Bob by 5 August:** work in the live file; answer Hogan’s actual Introduction comments and add Study design, Pollution, Population denominators, Statistical analysis and thermal-panel discipline. Leave Hogan’s weather Methods intact.
-2. **Roro by 7 August:** provide cleaned monthly stroke data and the health-data Methods. Do not infer schema, counts, strata, subtype or suppression before receipt.
-3. **HA arrival:** governance → dictionary/schema → QC → merge → real provenance. Run [Playbook 02](../analysis_plan/playbooks/02_ha_data_arrival.md).
-4. **Weather reconciliation:** carry only explicit rules from Hogan’s live weather section into the registry/catalogue. Run [Playbook 01](../analysis_plan/playbooks/01_hogan_definition_lock.md) where applicable.
-5. **Analysis:** run the complete pathway and HM/CM panels; freeze Gate 3 **with the team** before primary claims; no cherry-picking. Run [Playbook 03](../analysis_plan/playbooks/03_full_analysis_run.md).
-6. **Write-up:** only verified real estimates enter Results/Discussion. Engage the [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md) and [Playbook 04](../analysis_plan/playbooks/04_final_writeup.md).
+1. **HA CHD/HF (7 Aug 2026):** Gate 1 conditional + Gate 2 closed. Full real pathway/HM-CM panel complete. See [`data_receipt_2026-08-07.md`](../reports/data_receipt_2026-08-07.md), [`gate3_decision_packet_2026-08-07.md`](../reports/gate3_decision_packet_2026-08-07.md), [`results_panel_chd_hf_2026-08-07.md`](../reports/laidlaw_stage3/results_panel_chd_hf_2026-08-07.md).
+2. **Stroke file still missing** — re-request from Roro; do not invent stroke rows.
+3. **Gate 3:** freeze headline with team only; agent must not self-freeze.
+4. **Hogan weather lock:** provisional HM/CM reference period is study-window only. Run [Playbook 01](../analysis_plan/playbooks/01_hogan_definition_lock.md) when locked.
+5. **Live manuscript:** sync CHD/HF estimand into Hogan’s shared file; do not overwrite weather Methods. [Playbook 04](../analysis_plan/playbooks/04_final_writeup.md).
+6. Temperature share for Roro: [`outputs/share_for_roro/`](../outputs/share_for_roro/).
 
 Use the explicit slash skills `/playbook-01-hogan-lock`, `/playbook-02-ha-arrival`, `/playbook-03-full-analysis`, `/playbook-04-final-writeup`, or `/playbook-99-emergencies`; `/playbook` asks which one. Each skill reads the canonical playbook and cannot replace human evidence or gate ownership. See the [command contract](2026-07-26_commands_and_blog_auto.md).
 

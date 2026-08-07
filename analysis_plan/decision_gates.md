@@ -14,17 +14,19 @@ Owners and dates use placeholders where still open.
 
 | Prerequisite | Status | Owner | Stop condition |
 |---|---|---|---|
-| Stroke / HA aggregate files received under approved transfer path | Pending (user sending next) | Bob / PI | No invented row counts |
-| Data dictionary or field list for aggregates | Pending | Roro / sender | Do not invent field meanings |
-| Outcome definition (what “stroke admission” means in the file) | Open | Roro / Bob | Do not model until defined |
-| Aggregate grain (month only vs month × age × sex) | Open | On file inspection | Determines denominator strategy |
-| Subtype availability (IS / HS) | Open | On file inspection | Default to pooled stroke if absent |
-| General HA “reasons for admission” | **Confirmed unavailable** (17 Jul) | — | Do not use general HA for AMI/principal-dx CVD |
+| Stroke / HA aggregate files received under approved transfer path | **Partial — CHD+HF received 7 Aug 2026; stroke file not attached** | Bob / Roro | No invented row counts |
+| Data dictionary or field list for aggregates | **Partial — email definition recorded; ICD lists still to confirm** | Roro / sender | Do not invent field meanings |
+| Outcome definition (what “stroke admission” means in the file) | **CHD/HF defined:** first inpatient hosp. after first CVD dx in T2D/HTN cohort; stroke pending | Roro / Bob | Do not model until defined |
+| Aggregate grain (month only vs month × age × sex) | **Territory-month (CHD, HF)** | On file inspection | Determines denominator strategy |
+| Subtype availability (IS / HS) | Absent in CHD/HF release | On file inspection | Default to pooled stroke if absent |
+| General HA “reasons for admission” | **Confirmed unavailable** (17 Jul); Roro construction substitutes first-post-diagnosis hospitalisation | — | Do not claim principal-dx from general HA |
 | Ethics / governance for current use | Open | **PI (Bishai)** | Follow PI determination |
-| Small-cell / release rules | Open | Roro | Do not release suppressed cells as zero |
-| Medication / BMI (if claimed) | Likely limited for aggregates | Roro | Descriptive only if present |
+| Small-cell / release rules | No suppression flags in territory-month files | Roro | Do not release suppressed cells as zero |
+| Medication / BMI (if claimed) | Not in monthly files | Roro | Descriptive only if present |
 
 **Exit criterion:** Files in hand + written understanding of stroke outcome definition and grain + PI-approved use path.
+
+**7 Aug 2026:** Gate 1 **conditionally closed for CHD and HF**; remains **open for stroke** until the file arrives. Receipt: `reports/data_receipt_2026-08-07.md`.
 
 ---
 
@@ -43,6 +45,8 @@ Owners and dates use placeholders where still open.
 
 **Exit criterion:** Short QC / data-receipt note + merged monthly climate–outcome panel reviewed.
 
+**7 Aug 2026:** Gate 2 **closed for CHD and HF** (`reports/gate2_qc_close_2026-08-07.md`). Gate 2 **open for stroke**.
+
 ---
 
 ## Gate 3 — Analysis-plan freeze (headline among ~10)
@@ -51,17 +55,19 @@ Owners and dates use placeholders where still open.
 
 | Item | Proposed default (pending confirmation) | Owner |
 |---|---|---|
-| Primary outcome | Stroke admission **aggregates** (pooled unless subtypes available) | Bishai / team |
-| AMI / general CVD principal-dx | **Out of scope** for general HA file | Meeting 17 Jul |
-| Primary denominator | C&SD age–sex person-time if strata exist; else documented population offset / rate construction | Bishai / Bob |
+| Primary outcome | **Team decision needed:** CHD and/or HF first hospitalisations (T2D/HTN cohort) now runnable; stroke pending file | Bishai / team |
+| AMI / general CVD principal-dx | General HA still lacks admission reasons; Roro’s CHD/HF files are **first-event** constructions, not principal-dx from general HA | Meeting 17 Jul + 7 Aug receipt |
+| Primary denominator | C&SD 35+ ecological offset **with cohort mismatch caveat** until T2D/HTN denominators exist | Bishai / Bob |
 | Continuous exposures | Same-month Tmax / Tmin (and/or Tmean); lag-1 as paired spec | Bishai |
-| Heatwave / extreme family | Official counts + Ren/Wang spell & 2D3N metrics; optional heatwave-month indicators | Bob / Bishai |
-| Multi-method panel | ~10 labelled methods (see debrief §4); one headline pair frozen here | Team |
-| Seasonality / trend | Prespecify before calling a primary result | Team / Bishai |
-| COVID / humidity / holidays | Sensitivity ladder | Team |
-| Medication / BMI model role | Only if structure supports; else omit from models | Bishai / Roro |
+| Heatwave / extreme family | Official counts + Ren/Wang spell & 2D3N metrics; provisional HM/CM until Hogan lock | Bob / Bishai |
+| Multi-method panel | P01–P18 + provisional HM/CM **completed for CHD/HF**; packet in `reports/gate3_decision_packet_2026-08-07.md` | Team |
+| Seasonality / trend | Month factors + ns(time, 4) used in panel | Team / Bishai |
+| COVID / humidity / holidays | Sensitivity ladder run (P10–P12, P14, P16) | Team |
+| Medication / BMI model role | Not available | Bishai / Roro |
 
 **Exit criterion:** Short freeze note (ledger update) after descriptives, naming the headline method ID(s).
+
+**7 Aug 2026:** Gate 3 **OPEN**. Complete panel + decision packet ready; freeze requires Hogan / Roro / Bishai / Bob.
 
 ---
 

@@ -33,11 +33,11 @@ Full post-meeting recalibration: [`reports/meeting_debrief_2026-07-17.md`](repor
 | HKO weather (monthly panel + extremes / spells) | **Ready** — annual extremes validated 33/33 vs HKO *Year’s Weather* |
 | C&SD age–sex denominators | **Ready** (Table 110-01001 MDT) |
 | Air pollution | **Ready (EPD EPIC)** | Monthly NO₂, O₃, PM₂.₅, PM₁₀ — general-station means; roadside archived for sensitivity |
-| Stroke / HA aggregates | **Awaiting data** — ingest/QC/pathway panel ready (`run_pathway_pipeline.R`) |
-| Multi-pathway analysis | **Plumbing ready** — 17 labelled pathways (P13 optional); SAP + dry-run with SYNTHETIC stroke |
-| Association estimates | **None yet on real outcomes** — synthetic dry-run only until files arrive |
+| HA outcomes | **CHD + HF received 7 Aug 2026** (T2D/HTN cohort; first hosp. after first CVD dx). **Stroke file not attached.** |
+| Multi-pathway analysis | **REAL panel complete for CHD & HF** (`run_cvd_full_analysis.R`); Gate 3 open |
+| Association estimates | **Panel estimates exist for CHD/HF** — not a team-frozen headline; stroke none |
 
-Do not treat any synthetic practice runs as results.
+Do not treat synthetic practice runs as results. Do not treat open-Gate-3 panel coefficients as the primary manuscript claim.
 
 ---
 

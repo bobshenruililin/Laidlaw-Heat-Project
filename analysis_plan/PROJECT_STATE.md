@@ -1,6 +1,6 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-02
+**Last updated:** 2026-08-07
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
@@ -57,6 +57,15 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Credit split: Li et al. supply the atmospheric event definition; Hogan proposed the project-level count-by-month → upper-tail adaptation. Roro retains ownership of outcome timing.
 - Working set: [`reports/hogan_tuesday/README.md`](../reports/hogan_tuesday/README.md) (pack index); briefing / decision sheet / agenda / talking points / email under `analysis_plan/hogan_tuesday_*`; knowledge entry `knowledge/2026-07-28_hogan_tuesday_prep.md`.
 
+### Friday 7 August — HA CHD/HF arrival and full panel
+
+- Roro delivered monthly CHD and HF first-hospitalisation counts (T2D/HTN cohort; first hosp after first CVD diagnosis; Dr Zhou assisted). Stroke mentioned in email but **not attached**.
+- Playbooks 02–03 executed for CHD+HF: QC, merge, P01–P18, provisional HM/CM, descriptives, offset/period sensitivities, forests.
+- Gate 1 conditional / Gate 2 closed for CHD+HF; Gate 3 packet ready but **open**.
+- Temperature share for Roro: `outputs/share_for_roro/`.
+- Results write-up: `reports/laidlaw_stage3/results_panel_chd_hf_2026-08-07.md` (panel report; not a solo headline claim).
+- HA month-level counts remain gitignored under `data_raw/ha_secure_placeholder/` and `data_processed/*_aggregates_normalized.csv` / `*_analysis_panel.csv`.
+
 ### Sunday 2 August — live manuscript handoff
 
 - Hogan created and shared a live manuscript with Bob and Roro, commented on the Introduction, and wrote the weather component of Methods.
@@ -97,14 +106,23 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Live-manuscript handoff, non-weather Methods draft, Introduction revision draft and acknowledgement email prepared
 
 ### Still needs humans / files (cannot fake)
-1. **Bob’s live-file work by 5 Aug:** answer Hogan’s actual Introduction comments and add the non-weather Methods
-2. **Roro’s cleaned monthly stroke data and health-data Methods by 7 Aug:** then confirm dictionary, true-event-month algorithm, grain, suppression and governance
-3. **Hogan’s review** of Bob’s and Roro’s completed sections; weather terminology and cross-references reconciled in the live file
-4. **Jasmine full SCS PDF + supplement** (MMT, cutoffs, full test universe)
-5. **Roro `revised manuscript_clean.pdf`** vs medRxiv v1 diff
-6. Gate 3 headline freeze **with team** after governed-data QC and appropriate descriptives
+1. **Stroke monthly file** from Roro (referenced but not attached on 7 Aug)
+2. **Team Gate 3 freeze** using `reports/gate3_decision_packet_2026-08-07.md`
+3. **Hogan weather lock** for HM23 reference period (provisional flags only today)
+4. Confirm ICD/inpatient inclusion lists; ideally T2D/HTN cohort denominators
+5. **Bob live-file sync:** fold CHD/HF estimand + Methods into Hogan’s live manuscript without overwriting weather Methods
+6. Jasmine full PDF; Roro revised mortality manuscript diff
+7. PI governance confirmation for current aggregate use
 
-Until the governed data arrive and pass QC, further drafting does not create findings.
+### Done remotely (do not re-do without new evidence)
+- Pathway panel plumbing + HM/CM catalogue (50/48) + starters
+- Jasmine identity locked; Roro medRxiv v1 deep-read; exceed-baseline + family map + adjacent crawl
+- Week 2 deck / Laidlaw lit-methods draft updated for Jasmine + Roro
+- Pollution monthly layer; flu (121/132); holiday scaffold
+- Live-manuscript handoff, non-weather Methods draft, Introduction revision draft and acknowledgement email prepared
+- **REAL CHD/HF full pathway + provisional HM/CM panels, descriptives, sensitivities, Gate 2 close, Gate 3 packet, CNS panel Results report**
+
+Until the team freezes Gate 3, panel coefficients are complete analyses but not primary manuscript claims. Stroke remains unanalysed.
 
 ---
 

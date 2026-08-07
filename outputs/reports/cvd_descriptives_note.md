@@ -1,6 +1,6 @@
 # CVD descriptives note (CHD / HF)
 
-- Run at: 2026-08-07 09:04:37.233847
+- Run at: 2026-08-07 09:52:47.756491
 - Provenance: **HA_APPROVED_AGGREGATE**
 - Stroke file: not delivered (excluded).
 - Denominator caveat: C&SD population 35+ is ecological person-time, **not** T2D/HTN cohort at-risk.

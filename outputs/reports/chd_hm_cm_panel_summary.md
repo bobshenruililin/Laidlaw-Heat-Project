@@ -1,6 +1,6 @@
 # HM/CM panel summary — CHD
 
-- Run at: 2026-08-07 09:00:07.582204
+- Run at: 2026-08-07 09:52:38.558724
 - Definitions OK: 11 / 12
 - **All estimates are provisional** until Hogan locks reference-period thresholds.
 

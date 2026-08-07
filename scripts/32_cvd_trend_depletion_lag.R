@@ -18,7 +18,8 @@ specs <- list(
 )
 
 term_for <- function(exposure, scale) {
-  if (scale == 1) exposure else sprintf("I(%s / %s)", exposure, scale)
+  # Coefficient names from glm omit spaces inside I().
+  if (scale == 1) exposure else sprintf("I(%s/%s)", exposure, scale)
 }
 
 fit_nb_nw <- function(dat, term, controls, offset = "offset(offset_log_days)") {

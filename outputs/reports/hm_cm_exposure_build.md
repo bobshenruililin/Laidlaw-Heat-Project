@@ -1,6 +1,6 @@
 # Hot/cold month exposure build
 
-- Built at: 2026-08-07 09:00:05.614219
+- Built at: 2026-08-07 09:52:36.579219
 - **Reference period:** PROVISIONAL study window 2013-2023; registry reference_period still null
 - Hogan-locked: FALSE
 - Daily file: /workspace/data_processed/climate_daily_hko.csv

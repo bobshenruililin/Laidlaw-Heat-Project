@@ -1,6 +1,6 @@
 # HM/CM panel summary — HF
 
-- Run at: 2026-08-07 09:00:11.235961
+- Run at: 2026-08-07 09:52:43.173246
 - Definitions OK: 11 / 12
 - **All estimates are provisional** until Hogan locks reference-period thresholds.
 

@@ -58,7 +58,7 @@ main <- core |>
     outcome_label = unname(outcome_labels[outcome]),
     exposure_label = unname(labels[pathway_id]),
     contrast = exposure_label,
-    count_ratio_95CI = sprintf("%.3f (%.3f–%.3f)", rr, rr_low, rr_high),
+    count_ratio_95CI = sprintf("%.3f (%.3f-%.3f)", rr, rr_low, rr_high),
     analysis_status = "Exploratory robustness amendment; team freeze pending"
   ) |>
   dplyr::select(
@@ -66,6 +66,7 @@ main <- core |>
     outcome_label,
     pathway_id,
     exposure,
+    exposure_label,
     contrast,
     rr,
     rr_low,
@@ -85,7 +86,7 @@ if (nrow(main) != 12L) stop("Expected 12 core outcome-exposure rows; found ", nr
 table1 <- descriptive |>
   dplyr::mutate(
     outcome_label = unname(outcome_labels[outcome]),
-    period = paste0(year_start, "–", year_end),
+    period = paste0(year_start, "-", year_end),
     monthly_mean_rounded = round(mean_monthly, 1)
   ) |>
   dplyr::select(
@@ -145,7 +146,7 @@ claim_ledger <- main |>
     claim_id = sprintf("CVD-%02d", dplyr::row_number()),
     claim_text = paste0(
       outcome_label, ": ", contrast, "; count ratio ",
-      sprintf("%.3f", rr), " (95% CI ", sprintf("%.3f", rr_low), "–",
+      sprintf("%.3f", rr), " (95% CI ", sprintf("%.3f", rr_low), "-",
       sprintf("%.3f", rr_high), ")."
     ),
     provenance = "HA_APPROVED_AGGREGATE",
@@ -237,8 +238,13 @@ save_plot <- function(plot, stem, width, height) {
 # Figure 1 — indexed first-hospitalisation series (no monthly raw count labels).
 panel_list <- lapply(c("chd", "hf"), function(outcome) {
   path <- file.path(root, "data_processed", paste0(outcome, "_analysis_panel.csv"))
-  d <- utils::read.csv(path, stringsAsFactors = FALSE) |>
-    dplyr::arrange(time_index)
+  d <- utils::read.csv(path, stringsAsFactors = FALSE)
+  d <- dplyr::arrange(d, time_index)
+  if (!"month_date" %in% names(d)) {
+    d$month_date <- as.Date(paste0(d$month_id, "-01"))
+  } else {
+    d$month_date <- as.Date(d$month_date)
+  }
   reference <- mean(d$n_events[d$year == 2013], na.rm = TRUE)
   d$index_2013_mean_100 <- 100 * d$n_events / reference
   d$rolling_12_month <- as.numeric(
@@ -313,7 +319,7 @@ p3 <- ggplot2::ggplot(
   ggplot2::scale_colour_manual(values = c("Coronary heart disease" = "#bd5a32", "Heart failure" = "#276b79")) +
   ggplot2::labs(
     title = "Core single-exposure monthly models",
-    subtitle = "Negative-binomial count ratios; days-in-month offset; Newey–West lag-6 95% CI",
+    subtitle = "Negative-binomial count ratios; days-in-month offset; Newey-West lag-6 95% CI",
     x = "Count ratio (log scale)",
     y = NULL,
     colour = NULL
@@ -349,7 +355,7 @@ p4 <- ggplot2::ggplot(
   ggplot2::facet_grid(outcome_label ~ exposure_label, scales = "free_x") +
   ggplot2::labs(
     title = "Core estimates across trend and first-event sensitivities",
-    subtitle = "Newey–West lag-6 intervals; all models use a days-in-month offset",
+    subtitle = "Newey-West lag-6 intervals; all models use a days-in-month offset",
     x = "Count ratio",
     y = NULL
   ) +
@@ -423,7 +429,7 @@ writeLines(
     "",
     "- Outcomes: first hospitalisation after a CHD or HF diagnosis record among people with T2D and/or HTN.",
     "- Main model: separate exposure, negative binomial, month factor, natural spline of time (4 df), days-in-month offset.",
-    "- Inference: Newey–West lag-6 confidence intervals.",
+    "- Inference: Newey-West lag-6 confidence intervals.",
     "- All health inputs used for this package carry `HA_APPROVED_AGGREGATE`.",
     "- No source monthly HA count file or merged health panel is included.",
     "- External submission still requires team dissemination confirmation."

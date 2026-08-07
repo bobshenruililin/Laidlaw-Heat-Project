@@ -1,0 +1,7 @@
+"pathway_id","title","term","RR_95CI","p_value","n_months","data_status"
+"P01A","Continuous same-month mean temperature (days-only offset)","mean_temp","0.993 (0.974–1.012)",0.470038914181732,132,"HA_APPROVED_AGGREGATE"
+"P02A","Continuous same-month Tmax alone","mean_tmax","0.993 (0.976–1.010)",0.408177713802675,132,"HA_APPROVED_AGGREGATE"
+"P02B","Continuous same-month Tmin alone","mean_tmin","0.994 (0.976–1.012)",0.528057447425994,132,"HA_APPROVED_AGGREGATE"
+"P04A","Hot-night count alone","I(hot_nights/5)","1.022 (0.997–1.047)",0.0810091473729088,132,"HA_APPROVED_AGGREGATE"
+"P04B","Cold-day count alone","I(cold_days/5)","0.995 (0.956–1.035)",0.792426037689447,132,"HA_APPROVED_AGGREGATE"
+"P04C","Very-hot-day count alone","I(very_hot_days/5)","0.999 (0.975–1.025)",0.961919418873297,132,"HA_APPROVED_AGGREGATE"

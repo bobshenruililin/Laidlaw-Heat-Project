@@ -57,14 +57,17 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Credit split: Li et al. supply the atmospheric event definition; Hogan proposed the project-level count-by-month → upper-tail adaptation. Roro retains ownership of outcome timing.
 - Working set: [`reports/hogan_tuesday/README.md`](../reports/hogan_tuesday/README.md) (pack index); briefing / decision sheet / agenda / talking points / email under `analysis_plan/hogan_tuesday_*`; knowledge entry `knowledge/2026-07-28_hogan_tuesday_prep.md`.
 
-### Friday 7 August — HA CHD/HF arrival and full panel
+### Friday 7 August — HA CHD/HF arrival and amended reanalysis
 
 - Roro delivered monthly CHD and HF first-hospitalisation counts (T2D/HTN cohort; first hosp after first CVD diagnosis; Dr Zhou assisted). Stroke mentioned in email but **not attached**.
-- Playbooks 02–03 executed for CHD+HF: QC, merge, P01–P18, provisional HM/CM, descriptives, offset/period sensitivities, forests.
+- Playbooks 02–03 executed for CHD+HF: QC, merge, full pathway panel, provisional HM/CM, descriptives, offset/period sensitivities, forests.
+- **Amendment A1:** real-only diagnostics; separate single-exposure core (days-only offset; Newey–West lag-6); joint P02/P04 retained as collinearity diagnostics only; scripts 31–34 + `outputs/release_chd_hf/` (9/9 validation PASS).
+- Amended exploratory pattern (Gate 3 open; all core q > 0.19): CHD hot nights /5 → 1.022 (1.002–1.042); HF cold days /5 → 1.073 (1.006–1.144).
+- Separate CHD/HF manuscript draft: `manuscript/chd_hf_thermal_associations_2013_2023.md` (does not overwrite Hogan’s live stroke-oriented weather Methods).
 - Gate 1 conditional / Gate 2 closed for CHD+HF; Gate 3 packet ready but **open**.
 - Temperature share for Roro: `outputs/share_for_roro/`.
-- Results write-up: `reports/laidlaw_stage3/results_panel_chd_hf_2026-08-07.md` (panel report; not a solo headline claim).
 - HA month-level counts remain gitignored under `data_raw/ha_secure_placeholder/` and `data_processed/*_aggregates_normalized.csv` / `*_analysis_panel.csv`.
+- Dissemination: aggregates OK for internal draft; Roro/Bishai confirmation still required before external submission.
 
 ### Sunday 2 August — live manuscript handoff
 

@@ -1,79 +1,63 @@
-# Gate 3 decision packet — CHD / HF thermal panel (team freeze pending)
+# Gate 3 decision packet — CHD / HF thermal panel (amended; team freeze pending)
 
-**Date:** 7 August 2026  
+**Date:** 7 August 2026 (amended reanalysis)  
 **Playbook:** 03  
 **Status:** Packet ready — **Gate 3 not closed by agent alone**
 
-## What was run (complete panel)
+## What changed since the morning packet
 
-For each of CHD and HF (`OUTCOME=chd|hf`, `PATHWAY_MODE=real`):
+| Before | After |
+|---|---|
+| Joint P02/P04 treated as headline candidates | Joint P02/P04 retained as exploratory collinearity diagnostics |
+| Diagnostics contaminated by synthetic stroke panel | Outcome-specific real diagnostics only (`n=132`, `synthetic=FALSE`) |
+| Population × days as default interpretation | Amended core uses **days-only** offset (count ratios); pop×days retained as sensitivity |
+| Model / HC1 SEs for narrative | Amended core inference: **Newey–West lag-6** |
+| Abstract-ready joint IRRs | Claim ledger CVD-01…12 from separate exposures; **no primary freeze** |
 
-- Pathway registry P01–P18 (17 enabled): 15 OK; P09/P17 skipped (no age×sex); P13 disabled.
-- Provisional HM/CM starter flags from `hot_cold_month_registry.yml` via `19b`/`20b` (study-window reference; **not** Hogan-locked).
-- Descriptives, offset sensitivity, pre-COVID P02 split, cross-outcome forest.
+SAP Amendment A1 documents the non-pre-outcome timing of these corrections.
 
-Orchestrator: `scripts/run_cvd_full_analysis.R`.
+## What was run
 
-## Candidate headline set (proposal only)
+`PATHWAY_MODE=real OUTCOMES=chd,hf Rscript scripts/run_cvd_full_analysis.R`
 
-| Role | Proposal | Rationale |
-|---|---|---|
-| Co-primary continuous | P02 (`mean_tmax`, `mean_tmin`) | Pre-registered headline proposal; interpretable |
-| Co-primary extremes | P04 (hot nights, very hot days, cold days per 5 days) | Official extreme-day family |
-| Cold sensitivity | P08 / P18 | Cold-side symmetry |
-| Heat-month sensitivity | Provisional HM19 / HM08 | Night and mean tails; HM23 provisional only |
-| Cold-month sensitivity | Provisional CM03 / CM08 | Mean and tmin tails |
-| Adjustment ladder | P10, P11, P12, P14 | COVID/holidays, pollution stages, humidity, flu |
-| Period | Full 132 mo + P16 pre-COVID | First-event secular decline |
+Complete pathway panel (P01–P18 family + amended A IDs), HM/CM starter panel, descriptives, offset/period sensitivities, amended single-exposure robustness (scripts 31–32), disclosure-minimised release package (33), and fatal provenance checks (34; 9/9 PASS).
 
-**Do not freeze** from this packet without Hogan / Roro / Bishai / Bob.
+## Amended core reading (exploratory; not frozen)
 
-## Panel reading (not a primary claim)
+Negative binomial; month factor; ns(time, 4); days-in-month offset; Newey–West lag-6.
 
-All RR from negative-binomial / quasi-Poisson models with month factors and a 4-df time spline; HC1 SEs; ecological C&SD 35+ offset.
+| Outcome | Spec | Contrast | Count ratio (95% CI) | p | BH q |
+|---|---|---|---|---|---|
+| CHD | P04A | Hot nights / 5 days | 1.022 (1.002–1.042) | 0.032 | 0.192 |
+| CHD | P01A / P02A / P02B | Continuous temperatures | ~0.993–0.994 | >0.32 | >0.64 |
+| CHD | P04B / P04C | Cold / very hot days | ~0.995–0.999 | >0.82 | >0.89 |
+| HF | P04B | Cold days / 5 days | 1.073 (1.006–1.144) | 0.031 | 0.192 |
+| HF | P02B | mean_tmin / °C | 0.973 (0.947–1.000) | 0.050 | 0.202 |
+| HF | P04A / P04C | Hot / very hot days | ~1.003 / 0.995 | >0.76 | >0.89 |
 
-### CHD (first hospitalisation after first CHD diagnosis; T2D/HTN cohort)
+Qualitative panel pattern: **CHD more hot-night associated; HF more cold associated**. All twelve core q-values > 0.19.
 
-| Spec | Contrast | RR (95% CI) |
-|---|---|---|
-| P04 | Hot nights / 5 days | 1.044 (1.012–1.077) |
-| P04 | Very hot days / 5 days | 0.971 (0.943–0.999) |
-| P04 | Cold days / 5 days | 0.994 (0.955–1.035) |
-| P02 | mean_tmax / °C | 0.990 (0.960–1.021) |
-| P02 | mean_tmin / °C | 1.003 (0.970–1.038) |
-| P05 | Hot-night spell days (≥5) | 1.005 (1.001–1.009) |
-| P07 | Heat month mean_temp ≥ p95 | 1.126 (1.054–1.203) |
-| P07 | Heat month mean_temp ≥ p97.5 | 0.832 (0.774–0.896) |
+## Why joint P04 is not the headline
 
-Discordance between P07 p95 and p97.5 warns against selecting a single heat-month percentile after seeing results.
+Under the same amended offset and NW lag-6, joint CHD hot nights rose to **1.045 (1.015–1.075)** versus separate **1.022**. Residualised VIF for Tmax/Tmin ≈ 4.66. Joint models stay diagnostic.
 
-### HF (first hospitalisation after first HF diagnosis; T2D/HTN cohort)
+## Residual dependence
 
-| Spec | Contrast | RR (95% CI) |
-|---|---|---|
-| P04 | Cold days / 5 days | 1.073 (1.011–1.138) |
-| P04 | Hot nights / 5 days | 1.012 (0.973–1.052) |
-| P02 | mean_tmin / °C | 0.958 (0.919–0.998) |
-| P02 | mean_tmax / °C | 1.016 (0.975–1.059) |
-| P08 | cold_days (per day) | 1.020 (1.003–1.038) |
-| P16 | mean_tmin (pre-COVID) | 0.923 (0.882–0.967) |
-| CM03 (provisional) | Cold month mean_temp ≤ p10 | 1.122 (1.023–1.230) |
-| CM08 (provisional) | Cold month mean_tmin ≤ p05 | 1.173 (1.049–1.312) |
-
-Qualitative pattern: **CHD more heat-night associated; HF more cold associated** in this panel. That pattern is a panel observation under an open Gate 3, not a frozen finding.
+CHD baseline Pearson residual ACF(1) ≈ 0.51 (Ljung–Box rejects white noise). HF ACF(1) ≈ 0.15. NW lag-6 and INGARCH sensitivities are required context, not optional polish.
 
 ## Required human decisions before headline freeze
 
-1. Confirm inpatient-only ICD inclusion lists for CHD and HF with Roro.
-2. Decide whether C&SD ecological rates remain acceptable or whether cohort denominators can be supplied.
-3. Hogan: freeze reference period / HM23 operators (Playbook 01).
-4. Stroke file arrival and whether stroke remains co-primary.
-5. Whether CHD, HF, or a composite is the Laidlaw Stage 3 primary outcome given the stroke delay.
-6. How to treat discordant P07 percentile indicators (pre-specify which heat-month definition is confirmatory).
+1. Confirm inpatient ICD inclusion lists for CHD and HF with Roro.
+2. Accept days-only count-ratio interpretation, or supply cohort-at-risk denominators.
+3. Hogan: freeze weather / HM–CM reference rules (Playbook 01).
+4. Decide whether any single contrast is confirmatory given q > 0.19 for the exploratory family.
+5. Stroke file arrival and role relative to this CHD/HF paper.
+6. Roro/Bishai confirmation before external submission (aggregates reduce disclosure risk; they do not grant publication authority).
 
 ## Outputs index
 
-- Estimates: `outputs/tables/{chd,hf}_pathway_panel_estimates.csv`, `*_hm_cm_panel_estimates.csv`, `combined_pathway_panel_estimates.csv`
-- Forests: `outputs/figures/pathway/{chd,hf}_pathway_panel_forest.png`, `cvd_cross_outcome_forest_*.png`
-- Sensitivities: `cvd_offset_sensitivity.csv`, `cvd_period_split_P02.csv`
+- Release package: `outputs/release_chd_hf/` (tables, figures, supplement, claim ledger, validation)
+- Manuscript draft: `manuscript/chd_hf_thermal_associations_2013_2023.md`
+- Supplement: `manuscript/chd_hf_supplement.md`
+- Validation note: `outputs/reports/cvd_real_release_validation.md`
 - Receipt: `reports/data_receipt_2026-08-07.md`

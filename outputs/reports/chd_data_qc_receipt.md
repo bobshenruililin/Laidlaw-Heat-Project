@@ -15,7 +15,7 @@
 - **Annual totals 2013 → 2023:** 23830 → 12323
 - **Suppressed rows:** 0
 - **Normalized path:** `/workspace/data_processed/chd_aggregates_normalized.csv`
-- **Checked at:** 2026-08-07 09:00:05.988071
+- **Checked at:** 2026-08-07 09:52:36.948996
 
 ## Denominator caveat
 

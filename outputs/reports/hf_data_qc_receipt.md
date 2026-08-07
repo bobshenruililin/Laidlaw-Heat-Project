@@ -15,7 +15,7 @@
 - **Annual totals 2013 → 2023:** 4336 → 2296
 - **Suppressed rows:** 0
 - **Normalized path:** `/workspace/data_processed/hf_aggregates_normalized.csv`
-- **Checked at:** 2026-08-07 09:00:09.589776
+- **Checked at:** 2026-08-07 09:52:41.559874
 
 ## Denominator caveat
 

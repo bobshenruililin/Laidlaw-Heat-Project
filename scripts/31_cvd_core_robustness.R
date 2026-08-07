@@ -72,12 +72,17 @@ build_formula <- function(terms, offset_rhs = NULL, trend_df = 4L) {
   stats::as.formula(paste("n_events ~", paste(rhs[!is.na(rhs) & nzchar(rhs)], collapse = " + ")))
 }
 
+scalar_or_na <- function(x, default = NA_real_) {
+  if (is.null(x) || length(x) == 0 || all(is.na(x))) return(default)
+  x[[1]]
+}
+
 residual_metrics <- function(model) {
   res <- stats::residuals(model, type = "pearson")
   acf1 <- if (length(res) > 1) as.numeric(stats::acf(res, plot = FALSE, lag.max = 1)$acf[2]) else NA_real_
   data.frame(
-    aic = tryCatch(stats::AIC(model), error = function(e) NA_real_),
-    theta = tryCatch(model$theta, error = function(e) NA_real_),
+    aic = scalar_or_na(tryCatch(stats::AIC(model), error = function(e) NA_real_)),
+    theta = scalar_or_na(tryCatch(model$theta, error = function(e) NA_real_)),
     dispersion = sum(res^2, na.rm = TRUE) / max(stats::df.residual(model), 1),
     residual_acf1 = acf1,
     ljung_box_p_lag6 = if (length(res) > 6) {
@@ -85,7 +90,10 @@ residual_metrics <- function(model) {
     } else {
       NA_real_
     },
-    converged = tryCatch(model$converged, error = function(e) NA),
+    converged = scalar_or_na(
+      tryCatch(model$converged, error = function(e) NA),
+      default = NA
+    ),
     stringsAsFactors = FALSE
   )
 }
@@ -109,10 +117,11 @@ for (outcome in outcomes) {
 
   for (pid in names(core_specs)) {
     spec <- core_specs[[pid]]
+    # Coefficient names from glm omit spaces inside I().
     term <- if (spec$scale == 1) {
       spec$exposure
     } else {
-      sprintf("I(%s / %s)", spec$exposure, spec$scale)
+      sprintf("I(%s/%s)", spec$exposure, spec$scale)
     }
 
     for (offset_name in names(offsets)) {
@@ -160,7 +169,7 @@ for (outcome in outcomes) {
   # Original joint structures, retained for collinearity comparison only.
   joint_specs <- list(
     P02 = c("mean_tmax", "mean_tmin"),
-    P04 = c("I(hot_nights / 5)", "I(cold_days / 5)", "I(very_hot_days / 5)")
+    P04 = c("I(hot_nights/5)", "I(cold_days/5)", "I(very_hot_days/5)")
   )
   for (pid in names(joint_specs)) {
     fml <- build_formula(joint_specs[[pid]], offsets$days_only)
@@ -173,7 +182,7 @@ for (outcome in outcomes) {
           pathway_id = pid,
           exposure = term,
           exposure_label = term,
-          scale = if (grepl("/ 5", term, fixed = TRUE)) 5 else 1,
+          scale = if (grepl("/5", term, fixed = TRUE)) 5 else 1,
           model_structure = "joint_exploratory",
           family = "negative_binomial",
           offset_policy = "days_only",

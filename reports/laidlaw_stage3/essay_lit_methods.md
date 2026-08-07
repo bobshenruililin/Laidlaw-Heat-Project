@@ -1,5 +1,7 @@
 # Thermal Extremes and Monthly Stroke Burden in Hong Kong: A Definition-Robust Time-Series Framework, 2013–2023
 
+> **7 August 2026 update.** Governed monthly **CHD** and **HF** first-hospitalisation aggregates (T2D/HTN cohort) have been analysed as a complete multi-specification panel. Stroke aggregates were not in that upload. See [`results_panel_chd_hf_2026-08-07.md`](results_panel_chd_hf_2026-08-07.md) and [`../gate3_decision_packet_2026-08-07.md`](../gate3_decision_packet_2026-08-07.md). The live shared manuscript remains the collaborative writing authority; this essay is source material until the team freezes Gate 3 and syncs Results.
+
 ## Authors and affiliations
 
 **Bob Shen Ruililin**^1^  

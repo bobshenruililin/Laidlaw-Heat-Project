@@ -1,0 +1,20 @@
+# HM/CM panel summary — CHD
+
+- Run at: 2026-08-07 09:52:38.558724
+- Definitions OK: 11 / 12
+- **All estimates are provisional** until Hogan locks reference-period thresholds.
+
+| ID | Status |
+|---|---|
+| HM08 | ok |
+| HM15 | ok |
+| HM17 | ok |
+| HM19 | ok |
+| HM27 | ok |
+| HM32 | ok |
+| CM03 | ok |
+| CM08 | ok |
+| CM15 | ok |
+| CM05 | skipped_no_variation |
+| CM30 | ok |
+| HM23 | ok |

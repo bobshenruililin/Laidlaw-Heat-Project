@@ -1,0 +1,11 @@
+"outcome","exposure_group","exposure","vif_after_month_and_trend"
+"chd","P02_joint","mean_tmax",4.65848414464964
+"chd","P02_joint","mean_tmin",4.65848414464964
+"chd","P04_joint","hot_nights",1.95805144538948
+"chd","P04_joint","cold_days",1.00013182336444
+"chd","P04_joint","very_hot_days",1.95793046660304
+"hf","P02_joint","mean_tmax",4.65848414464964
+"hf","P02_joint","mean_tmin",4.65848414464964
+"hf","P04_joint","hot_nights",1.95805144538948
+"hf","P04_joint","cold_days",1.00013182336444
+"hf","P04_joint","very_hot_days",1.95793046660304

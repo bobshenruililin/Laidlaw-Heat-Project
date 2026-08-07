@@ -47,3 +47,8 @@ memos/
 *email_reply*
 !analysis_plan/hogan_tuesday_email_draft.md
 outputs/session_info_setup.txt
+
+# HA approved monthly aggregates and merged panels (never commit event counts)
+data_processed/*_aggregates_normalized.csv
+data_processed/*_analysis_panel.csv
+!data_processed/samples/

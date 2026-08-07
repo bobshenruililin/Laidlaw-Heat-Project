@@ -17,11 +17,26 @@ trend_df <- cfg$modeling$time_trend_df %||% 4L
 
 # Headline continuous exposures as-is; extreme-day counts per 5 days (P04 scale)
 exposure_specs <- list(
-  list(name = "mean_tmax", rhs = "mean_tmax", keep = "mean_tmax"),
-  list(name = "mean_tmin", rhs = "mean_tmin", keep = "mean_tmin"),
-  list(name = "hot_nights", rhs = "I(hot_nights/5)", keep = "hot_nights"),
-  list(name = "cold_days", rhs = "I(cold_days/5)", keep = "cold_days"),
-  list(name = "very_hot_days", rhs = "I(very_hot_days/5)", keep = "very_hot_days")
+  list(id = "P01A", name = "mean_temp", rhs = "mean_temp", keep = "mean_temp"),
+  list(id = "P02A", name = "mean_tmax", rhs = "mean_tmax", keep = "mean_tmax"),
+  list(id = "P02B", name = "mean_tmin", rhs = "mean_tmin", keep = "mean_tmin"),
+  list(id = "P04A", name = "hot_nights", rhs = "I(hot_nights/5)", keep = "hot_nights"),
+  list(id = "P04B", name = "cold_days", rhs = "I(cold_days/5)", keep = "cold_days"),
+  list(id = "P04C", name = "very_hot_days", rhs = "I(very_hot_days/5)", keep = "very_hot_days")
+)
+joint_specs <- list(
+  list(
+    id = "P02",
+    name = "joint_tmax_tmin",
+    rhs = "mean_tmax + mean_tmin",
+    keep = "mean_tmax|mean_tmin"
+  ),
+  list(
+    id = "P04",
+    name = "joint_extreme_days",
+    rhs = "I(hot_nights/5) + I(cold_days/5) + I(very_hot_days/5)",
+    keep = "hot_nights|cold_days|very_hot_days"
+  )
 )
 
 offset_specs <- list(
@@ -68,7 +83,10 @@ fit_one <- function(dat, exposure_rhs, keep_pattern, offset_term) {
       stats::glm(fml, data = dat, family = stats::quasipoisson())
     }
   )
-  vcov_mat <- tryCatch(sandwich::vcovHC(model, type = "HC1"), error = function(e) NULL)
+  vcov_mat <- tryCatch(
+    sandwich::NeweyWest(model, lag = 6, prewhite = FALSE, adjust = TRUE),
+    error = function(e) NULL
+  )
   list(model = model, est = extract_rr(model, vcov_mat, keep_pattern))
 }
 
@@ -78,10 +96,13 @@ for (outcome in outcomes) {
   if (!file.exists(path)) stop("Missing ", path)
   panel <- utils::read.csv(path, stringsAsFactors = FALSE)
   stop_if_synthetic(panel)
+  if (!identical(unique(as.character(panel$data_status)), "HA_APPROVED_AGGREGATE")) {
+    stop("Offset sensitivity requires HA_APPROVED_AGGREGATE only")
+  }
   panel <- panel |>
     dplyr::mutate(month_f = factor(month))
 
-  for (ex in exposure_specs) {
+  for (ex in c(exposure_specs, joint_specs)) {
     for (off in offset_specs) {
       message("Fitting ", outcome, " / ", ex$name, " / ", off$id)
       res <- fit_one(panel, ex$rhs, ex$keep, off$offset_term)
@@ -91,13 +112,16 @@ for (outcome in outcomes) {
       }
       est <- res$est
       est$outcome <- outcome
+      est$pathway_id <- ex$id
       est$exposure <- ex$name
+      est$model_structure <- if (grepl("^joint_", ex$name)) "joint_exploratory" else "single_exposure"
       est$exposure_rhs <- ex$rhs
       est$offset_type <- off$id
       est$offset_label <- off$label
       est$n_months <- length(unique(panel$month_id))
       est$data_status <- paste(unique(panel$data_status), collapse = ";")
       est$family <- paste(class(res$model), collapse = "/")
+      est$se_method <- "NeweyWest_lag6"
       est$aic <- tryCatch(AIC(res$model), error = function(e) NA_real_)
       rows[[paste(outcome, ex$name, off$id)]] <- est
     }
@@ -107,9 +131,9 @@ for (outcome in outcomes) {
 out <- dplyr::bind_rows(rows)
 out <- out |>
   dplyr::select(
-    outcome, exposure, exposure_rhs, offset_type, offset_label, term,
+    outcome, pathway_id, exposure, model_structure, exposure_rhs, offset_type, offset_label, term,
     estimate, std_error, statistic, p_value, rr, rr_low, rr_high,
-    n_months, data_status, family, aic
+    n_months, data_status, family, se_method, aic
   ) |>
   dplyr::arrange(outcome, exposure, offset_type)
 
@@ -119,17 +143,21 @@ write_csv_safe(out, out_path)
 # Wide RR comparison for quick reading
 wide <- out |>
   dplyr::mutate(rr_ci = sprintf("%.3f (%.3f-%.3f)", rr, rr_low, rr_high)) |>
-  dplyr::select(outcome, exposure, offset_type, rr_ci, p_value)
+  dplyr::select(outcome, pathway_id, exposure, model_structure, term, offset_type, rr_ci, p_value)
 
 wide_rr <- tidyr::pivot_wider(
-  wide |> dplyr::select(outcome, exposure, offset_type, rr_ci),
+  wide |> dplyr::select(outcome, pathway_id, exposure, model_structure, term, offset_type, rr_ci),
   names_from = offset_type, values_from = rr_ci
 )
 wide_p <- tidyr::pivot_wider(
-  wide |> dplyr::select(outcome, exposure, offset_type, p_value),
+  wide |> dplyr::select(outcome, pathway_id, exposure, model_structure, term, offset_type, p_value),
   names_from = offset_type, values_from = p_value, names_prefix = "p_"
 )
-wide_out <- dplyr::left_join(wide_rr, wide_p, by = c("outcome", "exposure"))
+wide_out <- dplyr::left_join(
+  wide_rr,
+  wide_p,
+  by = c("outcome", "pathway_id", "exposure", "model_structure", "term")
+)
 write_csv_safe(wide_out, file.path(root, "outputs", "tables", "cvd_offset_sensitivity_wide.csv"))
 
 message("Offset sensitivity complete: ", nrow(out), " rows -> ", out_path)

@@ -10,6 +10,7 @@ cfg <- load_config(root)
 ensure_packages(c("yaml", "dplyr", "MASS", "splines", "sandwich", "lmtest"))
 
 outcome <- tolower(Sys.getenv("OUTCOME", unset = "chd"))
+mode <- tolower(Sys.getenv("PATHWAY_MODE", unset = "real"))
 panel_path <- file.path(root, "data_processed", paste0(outcome, "_analysis_panel.csv"))
 hm_path <- file.path(root, "data_processed", "hm_cm_month_flags_2013_2023.csv")
 if (!file.exists(panel_path)) stop("Missing panel: ", panel_path)
@@ -17,6 +18,13 @@ if (!file.exists(hm_path)) stop("Run 19b_build_hm_cm_exposures.R first")
 
 panel <- utils::read.csv(panel_path, stringsAsFactors = FALSE)
 hm <- utils::read.csv(hm_path, stringsAsFactors = FALSE)
+if (identical(mode, "real")) {
+  statuses <- unique(as.character(panel$data_status))
+  if (any(grepl("SYNTHETIC", statuses, ignore.case = TRUE)) ||
+      !identical(statuses, "HA_APPROVED_AGGREGATE")) {
+    stop("Real HM/CM fit requires HA_APPROVED_AGGREGATE only")
+  }
+}
 panel <- panel |> dplyr::left_join(hm, by = "month_id")
 panel$month_f <- factor(panel$month)
 

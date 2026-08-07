@@ -10,6 +10,7 @@ cfg <- load_config(root)
 ensure_packages(c("yaml", "dplyr"))
 
 outcome <- tolower(Sys.getenv("OUTCOME", unset = "chd"))
+mode <- tolower(Sys.getenv("PATHWAY_MODE", unset = "dev"))
 if (!outcome %in% c("chd", "hf", "stroke")) {
   stop("OUTCOME must be one of chd, hf, stroke; got: ", outcome)
 }
@@ -56,7 +57,21 @@ df <- utils::read.csv(path, stringsAsFactors = FALSE)
 validate_required_columns(df, c("month_id", "n_events"), paste(outcome, "aggregate"))
 assert_month_id(df$month_id)
 
-if (!"data_status" %in% names(df)) df$data_status <- "HA_APPROVED_AGGREGATE"
+if (!"data_status" %in% names(df)) {
+  if (identical(mode, "real")) {
+    stop("Real aggregate file must carry an explicit data_status field")
+  }
+  df$data_status <- "SYNTHETIC"
+}
+if (identical(mode, "real")) {
+  statuses <- unique(as.character(df$data_status))
+  if (!identical(statuses, "HA_APPROVED_AGGREGATE")) {
+    stop(
+      "Real aggregate file requires data_status=HA_APPROVED_AGGREGATE only; found: ",
+      paste(statuses, collapse = ", ")
+    )
+  }
+}
 if (!"outcome" %in% names(df)) df$outcome <- outcome
 # Retain stroke_type column name for pathway compatibility; map outcome
 if (!"stroke_type" %in% names(df)) {
@@ -66,6 +81,20 @@ if (!"age_group" %in% names(df)) df$age_group <- "all"
 if (!"sex" %in% names(df)) df$sex <- "all"
 if (!"cohort" %in% names(df)) df$cohort <- NA_character_
 if (!"event_definition" %in% names(df)) df$event_definition <- NA_character_
+if (identical(mode, "real")) {
+  validate_required_columns(
+    df,
+    c("outcome", "cohort", "event_definition"),
+    paste(outcome, "real aggregate")
+  )
+  if (!all(df$outcome == outcome)) {
+    stop("Outcome column does not match OUTCOME=", outcome)
+  }
+  if (any(is.na(df$cohort) | !nzchar(df$cohort)) ||
+      any(is.na(df$event_definition) | !nzchar(df$event_definition))) {
+    stop("Real aggregate requires non-missing cohort and event_definition")
+  }
+}
 
 has_age <- !all(is.na(df$age_group) | df$age_group %in% c("all", ""))
 has_sex <- !all(is.na(df$sex) | df$sex %in% c("all", ""))

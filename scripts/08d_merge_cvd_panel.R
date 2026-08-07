@@ -10,6 +10,7 @@ cfg <- load_config(root)
 ensure_packages(c("yaml", "dplyr"))
 
 outcome <- tolower(Sys.getenv("OUTCOME", unset = "chd"))
+mode <- tolower(Sys.getenv("PATHWAY_MODE", unset = "real"))
 agg_path <- file.path(root, "data_processed", paste0(outcome, "_aggregates_normalized.csv"))
 exp_path <- file.path(root, "data_processed", "exposures_monthly_2013_2023.csv")
 pop_path <- file.path(root, "data_processed", "population_monthly_age_sex_2013_2023.csv")
@@ -20,6 +21,14 @@ if (!file.exists(exp_path)) stop("Run 19_build_analysis_exposures.R first")
 agg <- utils::read.csv(agg_path, stringsAsFactors = FALSE)
 exposures <- utils::read.csv(exp_path, stringsAsFactors = FALSE)
 pop <- utils::read.csv(pop_path, stringsAsFactors = FALSE)
+if (identical(mode, "real")) {
+  statuses <- unique(as.character(agg$data_status))
+  if (!identical(statuses, "HA_APPROVED_AGGREGATE")) {
+    stop("Real merge requires HA_APPROVED_AGGREGATE only")
+  }
+}
+if (anyDuplicated(agg$month_id)) stop("Duplicate outcome months at territory-month grain")
+if (anyDuplicated(exposures$month_id)) stop("Duplicate exposure months")
 
 has_age <- !all(agg$age_group %in% c("all", "", NA))
 has_sex <- !all(agg$sex %in% c("all", "", NA))
@@ -83,8 +92,12 @@ panel <- panel |>
     month_id <= sprintf("%04d-%02d", cfg$study$end_year, cfg$study$end_month)
   )
 
-if (anyNA(panel$offset_log)) {
-  warning("Some offsets are NA (population/days missing). Check age/sex labels vs C&SD.")
+if (anyNA(panel$offset_log) || anyNA(panel$offset_log_days)) {
+  stop("Offsets contain NA; check population/days alignment")
+}
+if (identical(mode, "real") && !has_age && !has_sex &&
+    (!identical(nrow(panel), 132L) || anyDuplicated(panel$month_id))) {
+  stop("Real territory-month panel must contain exactly 132 unique months")
 }
 
 out <- file.path(root, "data_processed", paste0(outcome, "_analysis_panel.csv"))

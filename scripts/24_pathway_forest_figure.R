@@ -6,13 +6,17 @@ source(file.path("scripts", "utils.R"))
 root <- project_root()
 setwd(root)
 outcome <- tolower(Sys.getenv("OUTCOME", unset = "stroke"))
+mode <- tolower(Sys.getenv("PATHWAY_MODE", unset = "dev"))
 ensure_packages(c("dplyr", "ggplot2"))
 
-est_path <- (function(){f<-file.path(root,"outputs","tables",paste0(outcome,"_pathway_panel_estimates.csv")); if(file.exists(f)) f else file.path(root,"outputs","tables","pathway_panel_estimates.csv")})()
+est_path <- file.path(root, "outputs", "tables", paste0(outcome, "_pathway_panel_estimates.csv"))
 if (!file.exists(est_path)) stop("Missing ", est_path)
 
 est <- utils::read.csv(est_path, stringsAsFactors = FALSE)
 is_synthetic <- any(grepl("SYNTHETIC", est$data_status %||% ""))
+if (identical(mode, "real") && is_synthetic) {
+  stop("Real pathway forest refused SYNTHETIC rows for ", outcome)
+}
 
 # Prefer pollution_stage none when staged
 est <- est |>
@@ -45,8 +49,8 @@ p <- ggplot2::ggplot(est, ggplot2::aes(x = rr, y = label, xmin = rr_low, xmax = 
     } else {
       paste0("Pathway panel IRRs - ", toupper(outcome), " aggregates x thermal exposures")
     },
-    subtitle = "Negative binomial / quasi-Poisson monthly models; 95% CI",
-    x = "Incidence rate ratio (log scale)",
+    subtitle = "Negative-binomial / quasi-Poisson monthly models; 95% CI",
+    x = "Exponentiated count/rate ratio (log scale)",
     y = NULL
   ) +
   ggplot2::theme_minimal(base_size = 10) +
@@ -55,15 +59,11 @@ p <- ggplot2::ggplot(est, ggplot2::aes(x = rr, y = label, xmin = rr_low, xmax = 
     plot.title = ggplot2::element_text(face = "bold")
   )
 
-png_path <- file.path(out_dir, "pathway_panel_forest.png")
-pdf_path <- file.path(out_dir, "pathway_panel_forest.pdf")
 out_png <- file.path(out_dir, paste0(outcome, "_pathway_panel_forest.png"))
 out_pdf <- file.path(out_dir, paste0(outcome, "_pathway_panel_forest.pdf"))
 h <- max(6, 0.28 * nrow(est))
-ggplot2::ggsave(png_path, p, width = 10, height = h, dpi = 150)
-ggplot2::ggsave(pdf_path, p, width = 10, height = h)
-ggplot2::ggsave(out_png, p, width = 10, height = h, dpi = 150)
+ggplot2::ggsave(out_png, p, width = 10, height = h, dpi = 300)
 ggplot2::ggsave(out_pdf, p, width = 10, height = h)
 
-message("Forest figure written: ", png_path, " and ", out_png)
+message("Forest figure written: ", out_png)
 if (is_synthetic) message("WARNING: SYNTHETIC forest — formatting check only.")

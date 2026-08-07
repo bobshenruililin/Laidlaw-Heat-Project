@@ -51,7 +51,11 @@ C&SD population aged 35+ × days-in-month is used as an **ecological offset**. I
 ## Governance / git
 
 - Original xlsx and derived monthly CSVs remain under `data_raw/ha_secure_placeholder/` (**gitignored**).
-- This receipt, QC notes, and model outputs may be committed; microdata and month-level HA counts must not.
+- Microdata and month-level HA count files must not be committed.
+- Disclosure-minimised aggregate summaries and model outputs may be used for
+  the internal manuscript draft. Aggregation reduces re-identification risk
+  but does not itself grant external-publication authority; Roro/Bishai
+  confirmation remains required before submission or public promotion.
 
 ## Gate status after receipt
 

@@ -5,8 +5,9 @@
 source(file.path("scripts", "utils.R"))
 root <- project_root()
 setwd(root)
+outcome <- tolower(Sys.getenv("OUTCOME", unset = "stroke"))
 
-est_path <- file.path(root, "outputs", "tables", "pathway_panel_estimates.csv")
+est_path <- (function(){f<-file.path(root,"outputs","tables",paste0(outcome,"_pathway_panel_estimates.csv")); if(file.exists(f)) f else file.path(root,"outputs","tables","pathway_panel_estimates.csv")})()
 if (!file.exists(est_path)) stop("Run pathway fit first: ", est_path)
 est <- utils::read.csv(est_path, stringsAsFactors = FALSE)
 
@@ -20,13 +21,13 @@ est2 <- est[est$pollution_stage %in% c("none", "", NA) | is.na(est$pollution_sta
 tab <- est2[, c("pathway_id", "pathway_title", "term", "rr_ci", "p_value", "n_months", "data_status")]
 names(tab) <- c("pathway_id", "title", "term", "RR_95CI", "p_value", "n_months", "data_status")
 
-out <- file.path(root, "outputs", "tables", "manuscript_pathway_panel_table.csv")
+out <- file.path(root, "outputs", "tables", paste0(outcome, "_manuscript_pathway_panel_table.csv"))
 write_csv_safe(tab, out)
 
 # Headline subset
 headline <- intersect(c("P02", "P04"), unique(tab$pathway_id))
 tab_h <- tab[tab$pathway_id %in% headline, ]
-write_csv_safe(tab_h, file.path(root, "outputs", "tables", "manuscript_headline_P02_P04.csv"))
+write_csv_safe(tab_h, file.path(root, "outputs", "tables", paste0(outcome, "_manuscript_headline_P02_P04.csv")))
 
 note <- file.path(root, "outputs", "reports", "manuscript_tables_note.md")
 writeLines(

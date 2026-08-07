@@ -1,7 +1,7 @@
-# Pathway panel summary — HF
+# Pathway panel summary — CHD
 
-- **Outcome:** hf
-- **Run at:** 2026-08-07 09:00:10.671026
+- **Outcome:** chd
+- **Run at:** 2026-08-07 09:00:07.036372
 - **Panel rows:** 132
 - **Synthetic:** FALSE
 - **Age×sex grain:** FALSE

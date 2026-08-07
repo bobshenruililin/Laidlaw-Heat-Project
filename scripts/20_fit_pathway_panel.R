@@ -8,8 +8,12 @@ setwd(root)
 cfg <- load_config(root)
 ensure_packages(c("yaml", "dplyr", "MASS", "splines", "sandwich", "lmtest"))
 
-panel_path <- file.path(root, "data_processed", "stroke_analysis_panel.csv")
-if (!file.exists(panel_path)) stop("Missing ", panel_path, " — run 08d_merge_stroke_panel.R first")
+outcome <- tolower(Sys.getenv("OUTCOME", unset = "stroke"))
+panel_path <- file.path(root, "data_processed", paste0(outcome, "_analysis_panel.csv"))
+if (!file.exists(panel_path) && identical(outcome, "stroke")) {
+  panel_path <- file.path(root, "data_processed", "stroke_analysis_panel.csv")
+}
+if (!file.exists(panel_path)) stop("Missing ", panel_path, " — run 08d_merge_cvd_panel.R first")
 
 panel <- utils::read.csv(panel_path, stringsAsFactors = FALSE)
 reg <- yaml::read_yaml(file.path(root, "analysis_plan", "pathway_registry.yml"))
@@ -180,6 +184,7 @@ fit_one <- function(pathway_id, spec, dat) {
     est$pathway_title <- spec$title
     est$pollution_stage <- st
     est$data_status <- paste(unique(d$data_status), collapse = ";")
+    est$outcome <- outcome
     est$n_rows <- nrow(d)
     est$n_months <- length(unique(d$month_id))
     out_est[[st]] <- est
@@ -225,22 +230,31 @@ stat_df <- dplyr::bind_rows(status_rows)
 
 out_tab <- file.path(root, "outputs", "tables")
 dir.create(out_tab, recursive = TRUE, showWarnings = FALSE)
-write_csv_safe(est_df, file.path(out_tab, "pathway_panel_estimates.csv"))
-write_csv_safe(fit_df, file.path(out_tab, "pathway_panel_fit_stats.csv"))
-write_csv_safe(stat_df, file.path(out_tab, "pathway_panel_status.csv"))
+write_csv_safe(est_df, file.path(out_tab, paste0(outcome, "_pathway_panel_estimates.csv")))
+write_csv_safe(fit_df, file.path(out_tab, paste0(outcome, "_pathway_panel_fit_stats.csv")))
+write_csv_safe(stat_df, file.path(out_tab, paste0(outcome, "_pathway_panel_status.csv")))
+# Compatibility aliases for post scripts when OUTCOME=stroke
+if (identical(outcome, "stroke") || identical(outcome, Sys.getenv("WRITE_LEGACY_ALIAS", unset = "1"))) {
+  write_csv_safe(est_df, file.path(out_tab, "pathway_panel_estimates.csv"))
+  write_csv_safe(fit_df, file.path(out_tab, "pathway_panel_fit_stats.csv"))
+  write_csv_safe(stat_df, file.path(out_tab, "pathway_panel_status.csv"))
+}
 
 # Human summary
 out_rep <- file.path(root, "outputs", "reports")
 dir.create(out_rep, recursive = TRUE, showWarnings = FALSE)
 headline <- paste(reg$headline_proposal %||% c("P02", "P04"), collapse = ", ")
 lines <- c(
-  "# Pathway panel summary",
+  paste0("# Pathway panel summary — ", toupper(outcome)),
   "",
+  paste0("- **Outcome:** ", outcome),
   paste0("- **Run at:** ", as.character(Sys.time())),
   paste0("- **Panel rows:** ", nrow(panel)),
   paste0("- **Synthetic:** ", is_synthetic),
   paste0("- **Age×sex grain:** ", has_age_sex),
   paste0("- **Headline proposal:** ", headline),
+  paste0("- **Cohort:** ", paste(unique(as.character(panel$cohort %||% NA)), collapse=";")),
+  paste0("- **Event definition:** ", paste(unique(as.character(panel$event_definition %||% NA)), collapse=";")),
   "",
   "## Pathway status",
   "",
@@ -258,6 +272,7 @@ lines <- c(
   "",
   "Full estimates: `outputs/tables/pathway_panel_estimates.csv`"
 )
+writeLines(lines, file.path(out_rep, paste0(outcome, "_pathway_panel_summary.md")))
 writeLines(lines, file.path(out_rep, "pathway_panel_summary.md"))
 
 message(

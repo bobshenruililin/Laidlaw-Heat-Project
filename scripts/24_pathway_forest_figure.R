@@ -5,9 +5,10 @@
 source(file.path("scripts", "utils.R"))
 root <- project_root()
 setwd(root)
+outcome <- tolower(Sys.getenv("OUTCOME", unset = "stroke"))
 ensure_packages(c("dplyr", "ggplot2"))
 
-est_path <- file.path(root, "outputs", "tables", "pathway_panel_estimates.csv")
+est_path <- (function(){f<-file.path(root,"outputs","tables",paste0(outcome,"_pathway_panel_estimates.csv")); if(file.exists(f)) f else file.path(root,"outputs","tables","pathway_panel_estimates.csv")})()
 if (!file.exists(est_path)) stop("Missing ", est_path)
 
 est <- utils::read.csv(est_path, stringsAsFactors = FALSE)
@@ -42,7 +43,7 @@ p <- ggplot2::ggplot(est, ggplot2::aes(x = rr, y = label, xmin = rr_low, xmax = 
     title = if (is_synthetic) {
       "Pathway panel IRRs (SYNTHETIC dry-run - not findings)"
     } else {
-      "Pathway panel IRRs - stroke aggregates x thermal exposures"
+      paste0("Pathway panel IRRs - ", toupper(outcome), " aggregates x thermal exposures")
     },
     subtitle = "Negative binomial / quasi-Poisson monthly models; 95% CI",
     x = "Incidence rate ratio (log scale)",
@@ -56,8 +57,13 @@ p <- ggplot2::ggplot(est, ggplot2::aes(x = rr, y = label, xmin = rr_low, xmax = 
 
 png_path <- file.path(out_dir, "pathway_panel_forest.png")
 pdf_path <- file.path(out_dir, "pathway_panel_forest.pdf")
-ggplot2::ggsave(png_path, p, width = 10, height = max(6, 0.28 * nrow(est)), dpi = 150)
-ggplot2::ggsave(pdf_path, p, width = 10, height = max(6, 0.28 * nrow(est)))
+out_png <- file.path(out_dir, paste0(outcome, "_pathway_panel_forest.png"))
+out_pdf <- file.path(out_dir, paste0(outcome, "_pathway_panel_forest.pdf"))
+h <- max(6, 0.28 * nrow(est))
+ggplot2::ggsave(png_path, p, width = 10, height = h, dpi = 150)
+ggplot2::ggsave(pdf_path, p, width = 10, height = h)
+ggplot2::ggsave(out_png, p, width = 10, height = h, dpi = 150)
+ggplot2::ggsave(out_pdf, p, width = 10, height = h)
 
-message("Forest figure written: ", png_path)
+message("Forest figure written: ", png_path, " and ", out_png)
 if (is_synthetic) message("WARNING: SYNTHETIC forest — formatting check only.")

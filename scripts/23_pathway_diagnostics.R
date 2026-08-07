@@ -6,11 +6,12 @@
 source(file.path("scripts", "utils.R"))
 root <- project_root()
 setwd(root)
+outcome <- tolower(Sys.getenv("OUTCOME", unset = "stroke"))
 ensure_packages(c("yaml", "dplyr", "MASS", "splines"))
 
 panel_path <- file.path(root, "data_processed", "stroke_analysis_panel.csv")
-est_path <- file.path(root, "outputs", "tables", "pathway_panel_estimates.csv")
-fit_path <- file.path(root, "outputs", "tables", "pathway_panel_fit_stats.csv")
+est_path <- (function(){f<-file.path(root,"outputs","tables",paste0(outcome,"_pathway_panel_estimates.csv")); if(file.exists(f)) f else file.path(root,"outputs","tables","pathway_panel_estimates.csv")})()
+fit_path <- (function(){f<-file.path(root,"outputs","tables",paste0(outcome,"_pathway_panel_fit_stats.csv")); if(file.exists(f)) f else file.path(root,"outputs","tables","pathway_panel_fit_stats.csv")})()
 reg <- yaml::read_yaml(file.path(root, "analysis_plan", "pathway_registry.yml"))
 
 if (!file.exists(panel_path) || !file.exists(fit_path)) {
@@ -75,7 +76,7 @@ for (pid in targets) {
 diag_df <- dplyr::bind_rows(diag_rows)
 out_tab <- file.path(root, "outputs", "tables")
 dir.create(out_tab, recursive = TRUE, showWarnings = FALSE)
-write_csv_safe(diag_df, file.path(out_tab, "pathway_headline_diagnostics.csv"))
+write_csv_safe(diag_df, file.path(out_tab, paste0(outcome, "_pathway_headline_diagnostics.csv")))
 
 # Fit-stat overview for all pathways
 fit_note <- fit |>
@@ -87,7 +88,7 @@ fit_note <- fit |>
     .groups = "drop"
   )
 
-write_csv_safe(fit_note, file.path(out_tab, "pathway_fit_overview.csv"))
+write_csv_safe(fit_note, file.path(out_tab, paste0(outcome, "_pathway_fit_overview.csv")))
 
 rep <- file.path(root, "outputs", "reports", "pathway_diagnostics_note.md")
 lines <- c(

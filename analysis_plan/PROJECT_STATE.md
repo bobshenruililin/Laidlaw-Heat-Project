@@ -1,6 +1,6 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-02
+**Last updated:** 2026-08-05
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
@@ -56,6 +56,12 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Bring definition options and exposure-only graphs. Do not present them as health findings or ask Hogan to approve a finished weather answer.
 - Credit split: Li et al. supply the atmospheric event definition; Hogan proposed the project-level count-by-month → upper-tail adaptation. Roro retains ownership of outcome timing.
 - Working set: [`reports/hogan_tuesday/README.md`](../reports/hogan_tuesday/README.md) (pack index); briefing / decision sheet / agenda / talking points / email under `analysis_plan/hogan_tuesday_*`; knowledge entry `knowledge/2026-07-28_hogan_tuesday_prep.md`.
+
+### Wednesday 5 August — LSN research summary
+
+- Paste-ready Laidlaw Scholar Network research-project summary: [`reports/lsn/research_project_summary.md`](../reports/lsn/research_project_summary.md).
+- Interactive exposure-only companion: [`docs/lsn/`](../docs/lsn/) (REAL HKO monthly climate; no stroke findings). Bob edits before posting to LSN.
+- Knowledge note: [`knowledge/2026-08-05_lsn_research_summary.md`](../knowledge/2026-08-05_lsn_research_summary.md).
 
 ### Sunday 2 August — live manuscript handoff
 

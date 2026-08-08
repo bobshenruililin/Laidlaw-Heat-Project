@@ -25,6 +25,7 @@
 | 2026-07-26 | Ship | How should Weeks 1–2 become human Laidlaw website stories without weakening scientific boundaries? | Drafted two MIT Admissions-style first-person posts and separated the warm public register from CNS prose; Bob retains final voice/privacy edit | Keep | reports/blog/; knowledge/2026-07-26_laidlaw_blog_canon.md |
 | 2026-07-26 | Ship | How can canonical playbooks and deck-to-blog handoffs become reliable commands? | Added explicit playbook/blog skills and classic stubs; deck changes may prompt a draft workflow, but Bob retains the creative, privacy, and publication gates | Keep | .cursor/skills/; .cursor/commands/; knowledge/2026-07-26_commands_and_blog_auto.md |
 | 2026-08-02 | Decide | Can Bob reuse the canonical essay after Hogan creates a live manuscript? | Set live file + comments as sovereign; retained essay Introduction as substrate and non-weather Methods as adaptable; made Hogan’s weather section primary and reserved health-data detail for Roro; recorded 5/7 Aug handoffs and team Gate 3 | Keep | hogan_live_manuscript_handoff.md; manuscript/; knowledge/2026-08-02_hogan_live_manuscript.md |
+| 2026-08-05 | Ship | What should Bob post on the Laidlaw Scholar Network about the research project? | Drafted paste-ready LSN summary plus an interactive exposure-only microsite (REAL HKO monthly climate; no stroke findings); Bob retains final voice/privacy edit before posting | Keep | reports/lsn/; docs/lsn/; knowledge/2026-08-05_lsn_research_summary.md |
 
 ---
 

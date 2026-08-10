@@ -191,19 +191,18 @@ if (has_sandwich) {
     chd, hf,
     result_class = "SYNTHETIC_TEST"
   )
-  expect_true(isTRUE(stacked$ok) || identical(stacked$status$status, "FAILED"),
-              "stacked returns ok or failed status")
-  if (isTRUE(stacked$ok)) {
-    expect_true("estimate" %in% names(stacked$contrast), "stacked delta present")
-    expect_equal(
-      stacked$contrast$data_status, SYNTHETIC_PROVENANCE,
-      "stacked synthetic provenance"
-    )
-    expect_true(
-      !identical(stacked$contrast$data_status, REAL_PROVENANCE),
-      "stacked never labelled HA_APPROVED_AGGREGATE on synthetic"
-    )
-  }
+  expect_true(isTRUE(stacked$ok), paste0(
+    "stacked contrast fits fixture: ", stacked$status$message
+  ))
+  expect_true("estimate" %in% names(stacked$contrast), "stacked delta present")
+  expect_equal(
+    stacked$contrast$data_status, SYNTHETIC_PROVENANCE,
+    "stacked synthetic provenance"
+  )
+  expect_true(
+    !identical(stacked$contrast$data_status, REAL_PROVENANCE),
+    "stacked never labelled HA_APPROVED_AGGREGATE on synthetic"
+  )
 } else {
   message("SKIP stacked contrast assertions: sandwich not installed")
 }
@@ -217,11 +216,10 @@ loyo <- score_loyo_nb(
 )
 expect_true(!is.null(loyo$status), "loyo status present")
 expect_true(nrow(loyo$status) >= 1L, "loyo status rows")
-if (!is.null(loyo$scores)) {
-  expect_true(all(c("log_score_diff", "deviance_baseline", "mae_exposure") %in% names(loyo$scores)),
-              "loyo score columns")
-  expect_true(all(loyo$scores$data_status == SYNTHETIC_PROVENANCE), "loyo provenance")
-}
+expect_true(!is.null(loyo$scores) && nrow(loyo$scores) == 11L, "all LOYO folds score")
+expect_true(all(c("log_score_diff", "deviance_baseline", "mae_exposure") %in% names(loyo$scores)),
+            "loyo score columns")
+expect_true(all(loyo$scores$data_status == SYNTHETIC_PROVENANCE), "loyo provenance")
 
 roll <- score_rolling_origin_nb(
   chd, term, controls, "days_only",
@@ -229,6 +227,7 @@ roll <- score_rolling_origin_nb(
   metadata = list(outcome = "chd", pathway_id = "P04A", data_status = SYNTHETIC_PROVENANCE)
 )
 expect_true(!is.null(roll$status), "rolling status present")
+expect_true(!is.null(roll$scores) && nrow(roll$scores) > 10L, "rolling folds score")
 
 # ---- Serial-null generation --------------------------------------------------
 base <- fit_baseline_nb_mu_theta(chd, controls, "days_only")

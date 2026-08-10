@@ -708,13 +708,18 @@ fit_glarma_negbin_candidate <- function(dat, exposure_term, controls,
     ))
   }
 
-  cf <- tryCatch(stats::coef(fit), error = function(e) NULL)
-  if (is.null(cf)) cf <- tryCatch(fit$delta, error = function(e) NULL)
-  # glarma stores regression coefs in $delta typically
-  beta <- tryCatch(as.numeric(fit$delta), error = function(e) NA_real_)
-  bnames <- tryCatch(names(fit$delta), error = function(e) names(cf))
-  if (is.null(bnames) && length(beta) == ncol(mm$X)) bnames <- colnames(mm$X)
-  names(beta) <- bnames
+  coef_parts <- tryCatch(stats::coef(fit), error = function(e) NULL)
+  beta <- if (!is.null(coef_parts) && !is.null(coef_parts$beta)) {
+    coef_parts$beta
+  } else {
+    # Package fallback: first ncol(X) entries of delta are regression terms.
+    raw_delta <- tryCatch(as.numeric(fit$delta), error = function(e) numeric())
+    if (length(raw_delta) >= ncol(mm$X)) {
+      setNames(raw_delta[seq_len(ncol(mm$X))], colnames(mm$X))
+    } else {
+      numeric()
+    }
+  }
 
   term <- exposure_term
   # model.matrix may alter I() names slightly; match flexibly
@@ -723,13 +728,13 @@ fit_glarma_negbin_candidate <- function(dat, exposure_term, controls,
     if (length(hit) == 1L) term <- names(beta)[hit]
   }
 
-  aic <- tryCatch(stats::AIC(fit), error = function(e) {
-    tryCatch(as.numeric(fit$aic), error = function(e2) NA_real_)
-  })
+  aic <- tryCatch(as.numeric(fit$aic)[1], error = function(e) NA_real_)
+  if (!length(aic) || !is.finite(aic)) aic <- NA_real_
   mu <- tryCatch(as.numeric(fitted(fit)), error = function(e) rep(NA_real_, length(y)))
-  theta <- tryCatch({
-    if (!is.null(fit$alpha) && is.finite(fit$alpha)) unname(fit$alpha) else NA_real_
-  }, error = function(e) NA_real_)
+  theta <- tryCatch(
+    as.numeric(coef_parts$NB[["alpha"]]),
+    error = function(e) NA_real_
+  )
   if (!is.finite(theta)) {
     theta <- tryCatch(unname(MASS::glm.nb(
       build_count_formula(exposure_term, controls, offset_policy), data = dat
@@ -748,7 +753,7 @@ fit_glarma_negbin_candidate <- function(dat, exposure_term, controls,
     # Prefer model-based SE from glarma summary when available; never select by p.
     se <- tryCatch({
       s <- summary(fit)
-      cm <- s$coefficients
+      cm <- s$coefficients1
       if (is.null(cm) || !term %in% rownames(cm)) {
         NA_real_
       } else {

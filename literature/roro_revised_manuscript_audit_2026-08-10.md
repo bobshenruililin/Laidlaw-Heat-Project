@@ -6,7 +6,10 @@ Kong: 2014–2023*
 **Authors:** Zhenyuan Liu, Chao Ren, Jingwen Liu, Kawasaki Yurika, David Makram
 Bishai  
 **Source status:** Unpublished/revised team manuscript supplied privately by
-Bob; do not redistribute.
+Bob; do not redistribute. **Public citation for the final report/manuscript is
+the medRxiv preprint** (`liu2026roro`, DOI
+`10.64898/2026.03.05.26347683`), not this private PDF. Raw emails are
+provenance only. See `literature/final_methods_evidence_map.md`.
 
 The two supplied PDFs were byte-identical
 (`sha256 c4817d0fe81bfbc807a3d2082c02c4268d289e313b7b35bc6513ee17a5f73e56`).

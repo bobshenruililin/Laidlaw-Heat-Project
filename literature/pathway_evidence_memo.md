@@ -3,7 +3,7 @@
 **Purpose:** Tie each pathway to published evidence so the multi-method panel is scientifically motivated, not ad hoc.  
 **Scope:** Hong Kong and closely related subtropical / methodological work.  
 **Honesty:** Daily DLNM coefficients and monthly burden coefficients are **not interchangeable**.  
-**Updated:** 2026-07-21 (second pass — TV, cold+flu, TLOS, Guo HW grid).
+**Updated:** 2026-08-10 (final methods spine + claim-class firewall; see `final_methods_evidence_map.md`).
 
 ---
 
@@ -67,10 +67,30 @@ A transparent, multi-definition **monthly** assessment of thermal exposures and 
 
 ## Bibliography keys (repo)
 
-See `literature/references.bib` and `literature/evidence_matrix.csv`. New pathway IDs should cite at least one anchor above when added to `pathway_registry.yml`.
+See `literature/references.bib`, `literature/evidence_matrix.csv`, and especially **`literature/final_methods_evidence_map.md`** (source → verified claim → exact manuscript use → misuse warning). New pathway IDs should cite at least one anchor above when added to `pathway_registry.yml`.
+
+Canonical key notes (2026-08-10):
+
+- Prefer `yang2025coldflu` over the older `wang2025coldflu` alias (alias kept only for legacy cite keys).
+- Prefer `wang2019ehwe` (do not revive `wang2014hotspell`).
+- Roro public cite = `liu2026roro` (medRxiv preprint), never the private revised PDF.
+- Methods spine keys: `basagana2024md`, `basagana2026md`, `gasparrini2010`, `dunsmuir2015glarma`, `zhu2011nbingarch`, `lazarus2018har`, `politis1994bootstrap`, `simonsohn2020speccurve`, `tashman2000rolling`, `greenland1989ecological`, `li2025heatwaves`.
 
 ---
 
-## 9. Dry-run status
+## 9. Claim-class firewall (final report)
 
-Executable panel on SYNTHETIC stroke aggregates with **real** climate, pollution, and CHP flu exposures: **17 pathways OK** (P01–P12, P14–P18); P13 disabled until subtype. TV from daily diurnal range; P07 uses p90/p95/p975 heatwave-month grid. Coefficients are plumbing checks only. Forest + diagnostics written under `outputs/`.
+Keep these estimands separate in prose and tables:
+
+1. **Daily mortality AFs** — Jasmine 2020; Gasparrini 2015 framing.
+2. **Modeled excess deaths** — Roro medRxiv 2026 (RR-transport scenarios).
+3. **Monthly morbidity count ratios** — this project’s CHD/HF (and any future stroke) NB/GLARMA panel.
+4. **M|D method-validation** — Basagaña–Ballester aggregated likelihood under synthetic calibration gates only.
+
+Emails and private PDFs are provenance, not references.
+
+---
+
+## 10. Dry-run / real-panel status
+
+Synthetic plumbing checks and any real CHD/HF panel outputs live under `outputs/`. Coefficients remain labelled by provenance (`SYNTHETIC`, `HA_APPROVED_AGGREGATE`, etc.). See the living state file rather than treating this memo as a results ledger.

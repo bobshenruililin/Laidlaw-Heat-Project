@@ -61,12 +61,16 @@ Jingwen Liu is a coauthor of the Roro manuscript and is credited there with data
 
 **Jingwen Liu et al. 2020 daily mortality RRs/AFs → Zhenyuan Liu et al. 2026 multi-definition heatwave excess deaths.**
 
-## Rule for the stroke extension
+## Citation rule for the final manuscript
 
-Our 2013–2023 monthly stroke analysis may transport clearly specified temperature definitions, but it is not an exact replication:
+Cite this paper as Jingwen Liu et al. (2020), *Sustainable Cities and Society* 57:102131, DOI `10.1016/j.scs.2020.102131` (`liu2020jasmine` in `literature/references.bib`). Map exact manuscript uses and misuse warnings in `literature/final_methods_evidence_map.md`. Headline AFs above are **daily mortality AFs**, not monthly morbidity count ratios.
+
+## Rule for the morbidity extension
+
+Our monthly CHD/HF (and any future stroke) analysis may transport clearly specified temperature definitions, but it is not an exact replication:
 
 - Jasmine: daily mortality, DLNM/quasi-Poisson, distributed-lag RRs and AFs.
 - Roro: RR-transported model-based excess heat deaths.
-- Our project: monthly stroke-event aggregate associations under paired hot/cold definitions.
+- Our project: monthly first-hospitalisation aggregate associations under paired hot/cold definitions.
 
 Report those estimands separately. The proposed gene/adaptation interpretation and the approximately 10°C idea remain hypotheses only.

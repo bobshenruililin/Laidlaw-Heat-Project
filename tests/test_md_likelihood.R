@@ -167,7 +167,10 @@ expect_equal(sum(k21), 1, "mass preserved lag0-21", tolerance = 1e-12)
 Xd <- md_build_daily_design(dh, xh, include_covid = TRUE)
 expect_true(ncol(Xd) <= MD_MAX_PARAMETERS, "design p<=20")
 expect_true("exposure" %in% colnames(Xd), "exposure column present")
-expect_true("harm_sin" %in% colnames(Xd) && "harm_cos" %in% colnames(Xd), "harmonics present")
+expect_true(
+  all(paste0("month_", sprintf("%02d", 2:12)) %in% colnames(Xd)),
+  "calendar-month indicators present"
+)
 
 # ---------------------------------------------------------------------------
 # DGP provenance + margins parser smoke (disclosure summaries only)
@@ -319,6 +322,11 @@ expect_equal(
   basename(md_checkpoint_path("/tmp", "CORE_01", "pilot", 100)),
   "CORE_01__mode-pilot__reps-100.csv",
   "checkpoint naming helper"
+)
+expect_true(
+  md_checkpoint_path("/tmp", "CORE_01", "core", 500, "F1.0") !=
+    md_checkpoint_path("/tmp", "CORE_01", "core", 500, "F1.1"),
+  "calibration design versions use distinct checkpoints"
 )
 
 # COVID reference level

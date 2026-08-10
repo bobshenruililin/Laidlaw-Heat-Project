@@ -446,10 +446,26 @@ md_scenario_params <- function(scenario_row, core_fit_path = NULL) {
 }
 
 #' Checkpoint path unique by scenario, run mode, and repetition count.
-md_checkpoint_path <- function(ckpt_dir, scenario_id, run_mode, n_reps) {
+md_checkpoint_path <- function(
+    ckpt_dir,
+    scenario_id,
+    run_mode,
+    n_reps,
+    design_version = NULL) {
+  version_tag <- if (is.null(design_version) || !nzchar(design_version)) {
+    ""
+  } else {
+    paste0("__design-", gsub("[^A-Za-z0-9_.-]", "_", design_version))
+  }
   file.path(
     ckpt_dir,
-    sprintf("%s__mode-%s__reps-%d.csv", scenario_id, run_mode, as.integer(n_reps))
+    sprintf(
+      "%s%s__mode-%s__reps-%d.csv",
+      scenario_id,
+      version_tag,
+      run_mode,
+      as.integer(n_reps)
+    )
   )
 }
 

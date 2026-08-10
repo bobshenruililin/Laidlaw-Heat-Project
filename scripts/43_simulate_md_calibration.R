@@ -30,6 +30,7 @@ BOUNDARY_REPS <- as.integer(Sys.getenv("MD_BOUNDARY_REPS", unset = "1000"))
 N_WORKERS <- as.integer(Sys.getenv("MD_WORKERS", unset = "1"))
 RUN_MODE <- Sys.getenv("MD_RUN_MODE", unset = "pilot")
 MASTER_SEED <- MD_MASTER_SEED
+DESIGN_VERSION <- "F1.1"
 
 if (!is.finite(PILOT_REPS) || PILOT_REPS < 1L) PILOT_REPS <- 100L
 if (!is.finite(CORE_REPS) || CORE_REPS < 1L) CORE_REPS <- 500L
@@ -53,6 +54,16 @@ raw_path <- file.path(out_dir, "md_calibration_raw_metrics.csv")
 summary_path <- file.path(out_dir, "md_calibration_summary.csv")
 gate_path <- file.path(out_dir, "md_calibration_gate_summary.csv")
 scenario_path <- file.path(out_dir, "md_calibration_scenarios.csv")
+run_tag <- paste0(RUN_MODE, "_", n_reps)
+summary_mode_path <- file.path(
+  out_dir, paste0("md_calibration_summary_", run_tag, ".csv")
+)
+gate_mode_path <- file.path(
+  out_dir, paste0("md_calibration_gate_summary_", run_tag, ".csv")
+)
+scenario_mode_path <- file.path(
+  out_dir, paste0("md_calibration_scenarios_", run_tag, ".csv")
+)
 
 append_run_status <- function(status, message, ...) {
   row <- data.frame(
@@ -63,6 +74,7 @@ append_run_status <- function(status, message, ...) {
     n_reps = n_reps,
     n_workers = N_WORKERS,
     master_seed = MASTER_SEED,
+    design_version = DESIGN_VERSION,
     data_status = MD_PROVENANCE_SYNTHETIC,
     stringsAsFactors = FALSE
   )
@@ -111,7 +123,9 @@ core_fit_path <- file.path(root, "outputs", "tables", "cvd_core_model_fit.csv")
 
 scenarios <- md_build_scenarios(include_edge = TRUE)
 scenarios$n_reps_planned <- n_reps
+scenarios$design_version <- DESIGN_VERSION
 write_csv_safe(scenarios, scenario_path)
+write_csv_safe(scenarios, scenario_mode_path)
 
 registry <- if (exists("load_final_model_registry", mode = "function")) {
   load_final_model_registry(root = root)
@@ -238,7 +252,13 @@ all_summary <- list()
 for (i in seq_len(nrow(scenarios))) {
   sc <- scenarios[i, , drop = FALSE]
   sc_params <- md_scenario_params(sc, core_fit_path = core_fit_path)
-  ckpt <- md_checkpoint_path(ckpt_dir, sc$scenario_id[[1]], RUN_MODE, n_reps)
+  ckpt <- md_checkpoint_path(
+    ckpt_dir,
+    sc$scenario_id[[1]],
+    RUN_MODE,
+    n_reps,
+    design_version = DESIGN_VERSION
+  )
   message(
     sprintf(
       "[%d/%d] %s (%s) reps=%d ckpt=%s",
@@ -344,10 +364,12 @@ write_csv_safe(raw_all, raw_path)
 summary_all <- do.call(rbind, all_summary)
 summary_all$data_status <- MD_PROVENANCE_SYNTHETIC
 write_csv_safe(summary_all, summary_path)
+write_csv_safe(summary_all, summary_mode_path)
 
 gates <- md_evaluate_gates(summary_all, registry = registry, root = root)
 gates$data_status <- MD_PROVENANCE_SYNTHETIC
 write_csv_safe(gates, gate_path)
+write_csv_safe(gates, gate_mode_path)
 
 admission <- unique(as.character(gates$admission_decision))
 append_run_status(

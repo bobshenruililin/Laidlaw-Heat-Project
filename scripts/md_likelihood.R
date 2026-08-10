@@ -122,8 +122,8 @@ md_kernel_weight_sum <- function(kernel = c("same_day", "cumulative_0_5", "cumul
 
 #' Build a constrained daily design matrix for M|D feasibility fits.
 #'
-#' Columns: intercept, 2 annual harmonics (doy), ns(time, 3), optional COVID
-#' phase indicators (dropping reference), and one frozen exposure column.
+#' Columns: intercept, 11 calendar-month indicators, ns(time, 3), optional
+#' COVID phase indicators (dropping pre-COVID), and one frozen exposure column.
 #' Total parameters must remain <= MD_MAX_PARAMETERS.
 md_build_daily_design <- function(dates,
                                   exposure,
@@ -139,10 +139,12 @@ md_build_daily_design <- function(dates,
     stop("exposure contains non-finite values; impute or drop before design build")
   }
 
-  doy <- as.integer(format(dates, "%j"))
-  # Thin source-documented season: two annual Fourier harmonics on day-of-year.
-  harm_sin <- sin(2 * pi * doy / 365.25)
-  harm_cos <- cos(2 * pi * doy / 365.25)
+  month_f <- factor(
+    format(dates, "%m"),
+    levels = sprintf("%02d", 1:12)
+  )
+  month_mat <- stats::model.matrix(~ month_f)[, -1L, drop = FALSE]
+  colnames(month_mat) <- paste0("month_", sprintf("%02d", 2:12))
 
   time_index <- as.numeric(dates - min(dates)) + 1
   if (!requireNamespace("splines", quietly = TRUE)) {
@@ -153,8 +155,7 @@ md_build_daily_design <- function(dates,
 
   X <- cbind(
     intercept = 1,
-    harm_sin = harm_sin,
-    harm_cos = harm_cos,
+    month_mat,
     ns_mat
   )
 

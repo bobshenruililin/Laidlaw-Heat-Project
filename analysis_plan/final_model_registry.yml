@@ -214,6 +214,14 @@ md_feasibility:
       serial_dependence: [none, outcome_matched]
       depletion: [none, outcome_matched]
       covid_shock: [none, observed_pattern]
+  admission_gate_policy:
+    aggregation_rule: all_cells_must_pass
+    type1_summary: [minimum_null_cell, maximum_null_cell]
+    coverage_summary: minimum_core_cell
+    relative_bias_summary: maximum_nonnull_cell
+    false_sign_summary: maximum_moderate_cell
+    stress_coverage_summary: minimum_stress_cell
+    amendment: "F1.2: worst-cell gates replace cross-cell means after independent synthetic-only audit"
   admission_gates:
     convergence_min: 0.95
     type1_min: 0.03

@@ -298,6 +298,30 @@ parameters and remains within the frozen cap. This correction responds only to
 synthetic null calibration, not to a preferred real coefficient. The failed
 pilot remains an auditable artifact.
 
+### Calibration amendment F1.2 — gate aggregation (10 August 2026)
+
+After the 500-replicate F1.1 run completed, an independent code/mathematical
+audit identified that the gate summary averaged Type-I error, coverage, bias,
+and false-sign rates across outcomes and kernels. Averaging could allow a
+well-calibrated CHD-like cell to hide a failed HF-like cell. The raw simulation
+rows and fitted estimates are unchanged.
+
+Gate decisions are therefore recomputed using binding worst-cell rules:
+
+- every null cell must have Type-I error within 0.03–0.08;
+- every core cell must have coverage at least 0.90;
+- every non-null cell must have absolute relative bias no greater than 0.20;
+- every moderate-effect cell must have false-sign rate no greater than 0.10;
+- every core cell must meet convergence, Hessian, and divergence limits; and
+- the minimum coverage among AR/depletion/COVID stress cells must be at least
+  0.85.
+
+Comparator models whose coefficients target a different monthly quantity are
+not scored against the daily M|D beta. Their convergence and predictive
+metrics remain reportable. The original effect sizes and thresholds are not
+relaxed. This amendment was made without fitting or inspecting any new real
+health model and cannot turn a failed calibration into a pass.
+
 ## 8. Admission gates for the daily-exposure method
 
 All criteria must pass before a real daily-exposure estimate enters the

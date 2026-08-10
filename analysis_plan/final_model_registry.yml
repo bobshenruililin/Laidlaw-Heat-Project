@@ -1,0 +1,226 @@
+version: 1
+frozen_at: "2026-08-10"
+status: "post_outcome_exploratory"
+protocol: "analysis_plan/final_reanalysis_protocol_2026-08-10.md"
+study_window: ["2013-01", "2023-12"]
+outcomes: [chd, hf]
+
+provenance:
+  real: HA_APPROVED_AGGREGATE
+  calibration: SYNTHETIC_CALIBRATION
+  forbid_mixed_unlabelled_results: true
+
+estimand:
+  primary_class: monthly_count_ratio
+  primary_offset: days_only
+  sensitivity_offsets: [none, population_x_days]
+  forbidden_labels:
+    - incidence_rate_ratio
+    - principal_diagnosis_admission
+    - daily_trigger
+    - attributable_fraction
+    - excess_deaths
+
+core_exposures:
+  P01A:
+    variable: mean_temp
+    contrast: 1
+    unit: C
+    pole: continuous
+  P02A:
+    variable: mean_tmax
+    contrast: 1
+    unit: C
+    pole: continuous
+  P02B:
+    variable: mean_tmin
+    contrast: 1
+    unit: C
+    pole: continuous
+  P04A:
+    variable: hot_nights
+    contrast: 5
+    unit: days
+    pole: heat
+  P04B:
+    variable: cold_days
+    contrast: 5
+    unit: days
+    pole: cold
+  P04C:
+    variable: very_hot_days
+    contrast: 5
+    unit: days
+    pole: heat
+
+analysis_of_record:
+  model_id: M01_NB_MONTH_NW6
+  family: negative_binomial
+  exposure_structure: separate
+  seasonality: calendar_month_factor
+  trend: ns_time_df4
+  offset: days_only
+  inference:
+    displayed_methods: [model, HC1, NeweyWest_lag3, NeweyWest_lag6]
+    continuity_method: NeweyWest_lag6
+    selection_rule: never_by_p_value
+  multiplicity_family: twelve_core_outcome_exposure_contrasts
+
+serial_models:
+  - model_id: M02_GLARMA_AR1
+    family: negative_binomial
+    ar_lags: [1]
+    ma_lags: []
+    offset: days_only
+  - model_id: M03_GLARMA_MA1
+    family: negative_binomial
+    ar_lags: []
+    ma_lags: [1]
+    offset: days_only
+  - model_id: M04_GLARMA_ARMA11
+    family: negative_binomial
+    ar_lags: [1]
+    ma_lags: [1]
+    offset: days_only
+  - model_id: M05_QUASIPOISSON_NW6
+    family: quasipoisson
+    offset: days_only
+
+serial_order_selection:
+  allowed_models: [M02_GLARMA_AR1, M03_GLARMA_MA1, M04_GLARMA_ARMA11]
+  rank_by: [aic, pit_uniformity, residual_acf1_absolute]
+  exposure_p_value_allowed: false
+
+robustness_scenarios:
+  - scenario_id: R01_baseline_ns4
+    controls: [calendar_month_factor, ns_time_df4]
+  - scenario_id: R02_trend_ns3
+    controls: [calendar_month_factor, ns_time_df3]
+  - scenario_id: R03_trend_ns6
+    controls: [calendar_month_factor, ns_time_df6]
+  - scenario_id: R04_year_fixed_effects
+    controls: [calendar_month_factor, year_factor]
+  - scenario_id: R05_calendar_month_anomaly
+    controls: [calendar_month_factor, ns_time_df4]
+    transform: calendar_month_anomaly
+  - scenario_id: R06_season_restricted
+    controls: [ns_time_df3]
+    restriction:
+      heat: [5, 6, 7, 8, 9, 10]
+      cold: [11, 12, 1, 2, 3, 4]
+  - scenario_id: R07_covid_phase
+    controls: [calendar_month_factor, ns_time_df4, covid_phase]
+  - scenario_id: R08_pre_covid
+    controls: [calendar_month_factor, ns_time_df4]
+    restriction: "year < 2020"
+  - scenario_id: R09_absolute_humidity
+    controls: [calendar_month_factor, ns_time_df4, absolute_humidity]
+  - scenario_id: R10_NO2
+    controls: [calendar_month_factor, ns_time_df4, NO2]
+  - scenario_id: R11_PM25
+    controls: [calendar_month_factor, ns_time_df4, PM25]
+  - scenario_id: R12_influenza_cold
+    controls: [calendar_month_factor, ns_time_df4, flu_indicator]
+    applies_to: [P04B]
+    missing_rule: complete_case
+  - scenario_id: R13_ozone_last
+    controls: [calendar_month_factor, ns_time_df4, O3]
+  - scenario_id: R14_exclude_max_cooks
+    controls: [calendar_month_factor, ns_time_df4]
+  - scenario_id: R15_lead_1_placebo
+    controls: [calendar_month_factor, ns_time_df4]
+    transform: lead_1
+  - scenario_id: R16_lead_2_placebo
+    controls: [calendar_month_factor, ns_time_df4]
+    transform: lead_2
+
+cross_outcome:
+  model_id: M06_STACKED_HEAT_COLD_INTERACTION
+  heat_variable: hot_nights
+  cold_variable: cold_days
+  contrast_days: 5
+  outcome_specific_seasonality: true
+  outcome_specific_trend: true
+  inference: month_clustered_or_block_bootstrap
+  primary_test: "(heat_CHD-cold_CHD)-(heat_HF-cold_HF)=0"
+
+prediction:
+  models:
+    baseline: [calendar_month_factor, ns_time_df4]
+    exposure: [calendar_month_factor, ns_time_df4, frozen_exposure]
+  schemes:
+    - leave_one_year_out
+    - rolling_origin_12_month
+  scores: [log_score, deviance, mae]
+  frozen_pairs:
+    chd: P04A
+    hf: P04B
+
+specification_curve:
+  outcomes: [chd, hf]
+  exposures: [P01A, P02A, P02B, P04A, P04B, P04C]
+  scenarios:
+    - R01_baseline_ns4
+    - R02_trend_ns3
+    - R03_trend_ns6
+    - R04_year_fixed_effects
+    - R05_calendar_month_anomaly
+    - R07_covid_phase
+    - R08_pre_covid
+  offsets: [days_only, none, population_x_days]
+  inference: parametric_or_stationary_block_max_statistic
+  report: [median, iqr, sign_stability, simultaneous_interval]
+  forbidden_report: nominal_significance_count
+
+daily_exposure_morphology:
+  result_class: exposure_audit
+  variants:
+    - onset_count
+    - overlap_count
+    - event_days
+    - affected_days_0
+    - affected_days_1_5
+    - affected_days_6_21
+  phase_exclusive_within_definition: true
+  association_fit_default: false
+
+md_feasibility:
+  status: gated
+  method_id: M07_MONTHLY_OUTCOME_DAILY_EXPOSURE
+  implementation: clean_room_published_likelihood
+  max_parameters: 20
+  allowed_exposure_models:
+    - daily_hot_night_same_day
+    - daily_cold_day_same_day
+    - constrained_hot_night_lag_0_5
+    - constrained_cold_day_lag_0_21
+  forbidden_model: full_8df_per_year_21day_nonlinear_dlnm
+  simulation:
+    pilot_repetitions: 100
+    core_repetitions: 500
+    boundary_repetitions: 1000
+    scenarios:
+      effects: [null, small, moderate]
+      kernels: [same_day, cumulative_0_5, cumulative_0_21]
+      scales: [chd_like, hf_like]
+      serial_dependence: [none, outcome_matched]
+      depletion: [none, outcome_matched]
+      covid_shock: [none, observed_pattern]
+  admission_gates:
+    convergence_min: 0.95
+    type1_min: 0.03
+    type1_max: 0.08
+    coverage_min: 0.90
+    relative_bias_max: 0.20
+    false_sign_max: 0.10
+    hessian_condition_max: 1.0e8
+    divergent_fit_max: 0.05
+    stress_coverage_min: 0.85
+  if_fail: methods_feasibility_failure_only
+  if_pass: exploratory_real_sensitivity_only
+
+claim_policy:
+  gate3_open: true
+  promote_primary_without_human_freeze: false
+  publish_external_without_roro_bishai: false
+  report_nulls_and_failed_models: true

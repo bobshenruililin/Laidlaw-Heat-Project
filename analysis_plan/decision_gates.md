@@ -69,6 +69,10 @@ Owners and dates use placeholders where still open.
 
 **7 Aug 2026:** Gate 3 **OPEN**. Complete panel + decision packet ready; freeze requires Hogan / Roro / Bishai / Bob.
 
+**10 Aug 2026:** Final exploratory protocol F1.0 freezes the post-outcome model
+universe, simulation gates, and claim tiers. This improves transparency but
+does **not** close Gate 3 or convert A1 into a confirmatory analysis.
+
 ---
 
 ## Gate 4 — Multi-method association runs
@@ -80,6 +84,9 @@ Allowed:
 - Count / rate regressions with appropriate offsets under the aggregate design.
 - Labelled **P01–P18** pathway panel (`pathway_registry.yml`); ~10+ core specs plus extensions.
 - Cold-side and heatwave-definition comparisons; staged pollution; flu complete-case.
+- F1.0 exploratory ensemble: structural count time series, prediction,
+  dependence-preserving multiverse calibration, and a simulation-gated
+  monthly-outcome/daily-exposure feasibility method.
 
 Not allowed before Gate 2 (and for primary claim, Gate 3):
 
@@ -88,6 +95,11 @@ Not allowed before Gate 2 (and for primary claim, Gate 3):
 - Inventing AMI / subtype results from files that lack those fields
 
 **Stop condition:** Schema or outcome definition changes → return to Gate 1–2.
+
+**Execution condition (10 Aug):** The governed CHD/HF spreadsheets and merged
+panels are not present in this checkout. Code and synthetic calibration may
+proceed, but no new real-data estimate may be released until files matching the
+documented receipt hashes are restored and Gates 1–2 checks pass again.
 
 ---
 

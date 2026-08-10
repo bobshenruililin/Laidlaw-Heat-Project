@@ -1,0 +1,97 @@
+version: 1
+frozen_at: "2026-08-10"
+purpose: "Machine-readable claim discipline for integrated and journal reports"
+
+tiers:
+  established:
+    definition: "Verified data, provenance, design, and diagnostic facts"
+    manuscript_allowed: true
+    requires:
+      - direct_source_or_release_artifact
+      - exact_provenance
+    examples:
+      - "132 territory-months from 2013-01 through 2023-12"
+      - "CHD/HF first hospitalisation after first diagnosis record"
+      - "Admission cause not recorded"
+      - "Stroke file not delivered"
+      - "Gate 3 remains open"
+
+  supported:
+    definition: "Complete real-data estimates and robustness patterns, without confirmatory status"
+    manuscript_allowed: true
+    requires:
+      - HA_APPROVED_AGGREGATE
+      - claim_ledger_row
+      - uncertainty_and_model_id
+    examples:
+      - "All twelve amended core estimates"
+      - "Joint-versus-separate coefficient differences"
+      - "Residual autocorrelation and VIF diagnostics"
+
+  exploratory:
+    definition: "Post-outcome signals, model extensions, interactions, or predictive patterns"
+    manuscript_allowed: true
+    required_qualifier: exploratory
+    requires:
+      - HA_APPROVED_AGGREGATE
+      - multiplicity_context
+      - sensitivity_context
+    examples:
+      - "CHD hot-night association"
+      - "HF cold-day association"
+      - "Cross-outcome heat-versus-cold interaction"
+      - "M|D real-data sensitivity if calibration passes"
+
+  hypothesis:
+    definition: "Biological, care-pathway, behavioural, or mechanistic interpretation not identified by this design"
+    manuscript_allowed: discussion_only
+    required_qualifier: hypothesis
+    examples:
+      - "Nocturnal heat impairs cardiovascular recovery"
+      - "Cold precipitates HF decompensation"
+      - "Secular decline reflects depletion of susceptible patients"
+
+  future:
+    definition: "Requires new governed data or a human decision"
+    manuscript_allowed: limitations_or_future_work_only
+    examples:
+      - "Stroke results"
+      - "Cohort incidence"
+      - "Age-sex or medication effect modification"
+      - "Principal-diagnosis CHD/HF admissions"
+      - "Daily outcome DLNM"
+
+forbidden_promotions:
+  - from: calibration
+    to: real_finding
+  - from: exploratory
+    to: primary
+    unless: human_gate3_freeze
+  - from: mortality_attributable_fraction
+    to: monthly_morbidity_effect
+  - from: modelled_excess_death
+    to: observed_hospitalisation_burden
+  - from: general_population_offset
+    to: cohort_incidence_rate
+
+documents:
+  integrated_report:
+    may_use: [established, supported, exploratory, hypothesis, future]
+    may_name_internal_gates: true
+    raw_email_quotes: short_redacted_internal_only
+  journal_manuscript:
+    may_use: [established, supported, exploratory, hypothesis]
+    may_name_internal_gates: false
+    raw_email_quotes: false
+    future_material: limitations_only
+
+human_owned:
+  - gate3_headline
+  - diagnosis_code_lists
+  - inpatient_semantics
+  - cohort_risk_set
+  - stroke_delivery
+  - weather_definition_lock
+  - ethics_and_governance
+  - external_dissemination
+  - authorship_order

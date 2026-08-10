@@ -280,6 +280,24 @@ Comparators are:
 - negative-binomial GLARMA with offset; and
 - simplified spillover-burden model.
 
+### Calibration amendment F1.1 — nuisance seasonality (10 August 2026)
+
+The first 100-replicate `SYNTHETIC_CALIBRATION` pilot used one annual
+sine/cosine pair in the latent daily model. No new real health model was run.
+The pilot produced acceptable CHD-like null calibration but severe HF-like
+null bias: type-I error ranged from 0.62 to 0.75 across kernels and coverage
+from 0.25 to 0.38. The smooth harmonic did not reproduce the disclosed HF
+calendar-month profile, and the residual cold-season structure was absorbed by
+the cold exposure.
+
+Before the 500-replicate core run, the daily nuisance design is therefore
+amended to use a calendar-month factor, matching the monthly analysis of
+record. With an intercept, 11 calendar-month indicators, `ns(time,3)`, four
+COVID-phase indicators, and one exposure, the full design contains exactly 20
+parameters and remains within the frozen cap. This correction responds only to
+synthetic null calibration, not to a preferred real coefficient. The failed
+pilot remains an auditable artifact.
+
 ## 8. Admission gates for the daily-exposure method
 
 All criteria must pass before a real daily-exposure estimate enters the

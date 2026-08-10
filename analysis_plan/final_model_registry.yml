@@ -189,6 +189,14 @@ md_feasibility:
   method_id: M07_MONTHLY_OUTCOME_DAILY_EXPOSURE
   implementation: clean_room_published_likelihood
   max_parameters: 20
+  nuisance_design:
+    seasonality: calendar_month_factor
+    calendar_month_parameters: 11
+    trend: ns_time_df3
+    covid_phase_parameters_max: 4
+    exposure_parameters: 1
+    total_parameters_max: 20
+    amendment: "F1.1 after synthetic pilot only; one-harmonic seasonality failed HF null calibration"
   allowed_exposure_models:
     - daily_hot_night_same_day
     - daily_cold_day_same_day

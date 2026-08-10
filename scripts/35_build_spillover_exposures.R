@@ -102,7 +102,7 @@ li_hw <- detect_li_heatwaves(
   probability = defs$li_hw$percentile,
   half_window = defs$li_hw$calendar_window_half_width_days,
   min_length = defs$li_hw$minimum_consecutive_days,
-  merge_gap_days = defs$li_hw$merge_if_gap_days_lte
+  merge_gap_days = defs$li_hw$max_intervening_non_hot_days
 )
 
 wang_validation_period <- daily$date >= as.Date("2006-01-01") &
@@ -222,7 +222,7 @@ source_lock <- data.frame(
       defs$wang_hn5$minimum_consecutive_days, " consecutive HNs"
     ),
     "NDNDN: VHD[i:i+1] and HN[i:i+2]; overlapping/touching windows merged; post-event days 1-5",
-    "May-Sep Tmax > calendar-day p90; 15-day moving window; 1980-2023 reference; >=3 days; merge gaps <=2 days"
+    "May-Sep Tmax > calendar-day p90; 15-day moving window; 1980-2023 reference; >=3 days; merge event interval <=2 days (<=1 intervening non-hot day)"
   ),
   lock_status = c(
     defs$wang_vhd5$source_status,

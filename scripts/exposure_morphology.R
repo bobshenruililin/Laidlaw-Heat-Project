@@ -281,7 +281,7 @@ detect_li_heatwaves <- function(
     probability = 0.90,
     half_window = 7L,
     min_length = 3L,
-    merge_gap_days = 2L) {
+    merge_gap_days = 1L) {
   date <- as_daily_dates(date)
   threshold <- li_calendar_day_threshold(
     date,

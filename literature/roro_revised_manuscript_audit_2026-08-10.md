@@ -93,7 +93,8 @@ publicly criticise the companion team paper.
 1. **Li et al. (2025), DOI 10.1016/j.atmosres.2024.107845:** May–September,
    daily Tmax above a calendar-day 90th percentile from a 15-day moving
    window over 1980–2023, at least three consecutive days, and merging events
-   separated by two or fewer days.
+   whose date interval is two or fewer days (at most one intervening non-hot
+   day). This interpretation exactly reproduces the source's 57 events.
 2. **Wang et al. (2019), DOI 10.1016/j.scitotenv.2019.07.039:** VHD
    `Tmax >= 33 C`; HN `Tmin >= 28 C`; five or more consecutive VHDs/HNs;
    exact 2D3N `NDNDN`; five-day lag evidence.

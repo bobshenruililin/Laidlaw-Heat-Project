@@ -107,7 +107,7 @@ cal <- no_leap_calendar_day(li_dates)
 li_tmax <- 24 + 6 * sin(2 * pi * (cal - 172) / 365)
 target_hot <- li_dates %in% c(
   seq(as.Date("2023-07-01"), as.Date("2023-07-03"), by = "day"),
-  seq(as.Date("2023-07-06"), as.Date("2023-07-08"), by = "day")
+  seq(as.Date("2023-07-05"), as.Date("2023-07-07"), by = "day")
 )
 li_tmax[target_hot] <- li_tmax[target_hot] + 12
 li <- detect_li_heatwaves(li_dates, li_tmax)
@@ -116,9 +116,9 @@ li_2023 <- li$events[
   ,
   drop = FALSE
 ]
-expect_equal(nrow(li_2023), 1L, "Li events separated by two days merged")
+expect_equal(nrow(li_2023), 1L, "Li events with interval of two days merged")
 expect_equal(li_2023$start_date, as.Date("2023-07-01"), "Li merged start")
-expect_equal(li_2023$end_date, as.Date("2023-07-08"), "Li merged end")
+expect_equal(li_2023$end_date, as.Date("2023-07-07"), "Li merged end")
 
 # Leap-day normalization does not shift March and later calendar days.
 expect_equal(

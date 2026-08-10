@@ -173,7 +173,8 @@ Before association fitting:
 
 - Li et al. (2025): confirm warm-season bounds, Tmax percentile operator,
   15-day moving reference window, study reference period, minimum duration,
-  and event-merging gap.
+  and event-merging interval. The source's interval of at most two days is
+  implemented as at most one intervening non-hot day.
 - Wang et al. (2019): confirm `>=5` VHD/HN spells, exact `NDNDN` 2D3N
   alignment, and five-day post-event interval.
 - Jingwen Liu et al. (2020): independently confirm the 30.60 C threshold and

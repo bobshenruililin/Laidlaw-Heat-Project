@@ -15,7 +15,8 @@ definitions:
     reference_end: "2023-12-31"
     warm_months: [5, 6, 7, 8, 9]
     minimum_consecutive_days: 3
-    merge_if_gap_days_lte: 2
+    source_interval_days_lte: 2
+    max_intervening_non_hot_days: 1
     hogan_monthly_count_tail_locked: false
 
   wang_vhd5:

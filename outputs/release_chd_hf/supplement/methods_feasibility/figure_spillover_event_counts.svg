@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='540.00pt' height='345.60pt' viewBox='0 0 540.00 345.60'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1NDAuMDB8MC4wMHwzNDUuNjA='>
+    <rect x='0.00' y='0.00' width='540.00' height='345.60' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1NDAuMDB8MC4wMHwzNDUuNjA=)'>
+<rect x='0.00' y='0.000000000000057' width='540.00' height='345.60' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpMzIuODB8NTM0LjUyfDM3LjA1fDMyNy4zMQ=='>
+    <rect x='32.80' y='37.05' width='501.72' height='290.25' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMzIuODB8NTM0LjUyfDM3LjA1fDMyNy4zMQ==)'>
+<polyline points='32.80,314.11 534.52,314.11 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='32.80,244.67 534.52,244.67 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='32.80,175.23 534.52,175.23 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='32.80,105.80 534.52,105.80 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='104.47,327.31 104.47,37.05 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='223.93,327.31 223.93,37.05 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='343.39,327.31 343.39,37.05 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='462.85,327.31 462.85,37.05 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<rect x='421.04' y='50.25' width='83.62' height='263.87' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6A3D;' />
+<rect x='301.58' y='84.96' width='83.62' height='229.15' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #5B8C5A;' />
+<rect x='182.12' y='126.63' width='83.62' height='187.48' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #276B79;' />
+<rect x='62.66' y='140.52' width='83.62' height='173.60' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #BD5A32;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1NDAuMDB8MC4wMHwzNDUuNjA=)'>
+<text x='27.86' y='317.14' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arimo";' textLength='4.89px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='27.86' y='247.70' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arimo";' textLength='9.78px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='27.86' y='178.26' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arimo";' textLength='9.78px' lengthAdjust='spacingAndGlyphs'>20</text>
+<text x='27.86' y='108.82' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arimo";' textLength='9.78px' lengthAdjust='spacingAndGlyphs'>30</text>
+<text x='104.47' y='338.29' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arimo";' textLength='45.00px' lengthAdjust='spacingAndGlyphs'>wang_vhd5</text>
+<text x='223.93' y='338.29' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arimo";' textLength='40.59px' lengthAdjust='spacingAndGlyphs'>wang_hn5</text>
+<text x='343.39' y='338.29' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arimo";' textLength='45.48px' lengthAdjust='spacingAndGlyphs'>wang_2d3n</text>
+<text x='462.85' y='338.29' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arimo";' textLength='20.05px' lengthAdjust='spacingAndGlyphs'>li_hw</text>
+<text transform='translate(13.05,182.18) rotate(-90)' text-anchor='middle' style='font-size: 11.00px; font-family: "Arimo";' textLength='33.66px' lengthAdjust='spacingAndGlyphs'>Events</text>
+<text x='32.80' y='29.28' style='font-size: 11.00px;fill: #4D4D4D; font-family: "Arimo";' textLength='246.59px' lengthAdjust='spacingAndGlyphs'>Public HKO morphology audit; no health outcomes</text>
+<text x='32.80' y='13.74' style='font-size: 12.00px; font-weight: bold; font-family: "Arimo";' textLength='252.70px' lengthAdjust='spacingAndGlyphs'>Source-locked heat-event counts, 2013-2023</text>
+</g>
+</g>
+</svg>

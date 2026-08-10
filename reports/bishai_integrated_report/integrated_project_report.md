@@ -102,9 +102,9 @@ The path is planned AMI/stroke → no admission cause → delivered CHD/HF first
 | Age/sex strata | Not delivered (capability ≠ delivery) |
 | Grain | Territory × calendar month |
 | Provenance label | `HA_APPROVED_AGGREGATE` |
-| Analysis-of-record offset | \(\log(\text{days in month})\) |
+| Analysis-of-record offset | `log(days in month)` |
 | Population × days offset | Ecological sensitivity only |
-| Target parameter | \(\exp(\beta)\): monthly **count ratio** |
+| Target parameter | `exp(beta)`: monthly **count ratio** |
 | Not the target | Cohort IRR; principal-diagnosis RR; AMI; daily DLNM RR; mortality AF |
 
 Totals (`outputs/release_chd_hf/tables/table1_outcome_summary.csv`): CHD 156,156 events (mean 1,183.0/month); HF 29,681 (mean 224.9/month).
@@ -217,7 +217,7 @@ The final exploratory protocol freezes a finite model universe after outcomes we
 - The twelve amended-core contrasts form one multiplicity family.
 - Spillover morphology variants are an exposure audit family; they cannot rescue a core claim.
 - Warm-season heat and cold-season cold cut-points are not searched after fitting.
-- Cross-outcome hot-versus-cold contrast \(\Delta\) requires a stacked model; separate coefficients do not establish \(\Delta \ne 0\). That stacked contrast was part of the frozen ensemble design and is blocked in this checkout by missing governed panel runtime, so it is not reported as completed.
+- Cross-outcome hot-versus-cold contrast Δ requires a stacked model; separate coefficients do not establish Δ ≠ 0. That stacked contrast was part of the frozen ensemble design and is blocked in this checkout by missing governed panel runtime, so it is not reported as completed.
 - Predictive log-score gains, if later obtained, would not be causal evidence.
 
 SAP Amendment A1 already corrected an earlier tendency to treat joint P02/P04 as headline candidates and to interpret population × days as a true risk-set offset (`reports/gate3_decision_packet_2026-08-07.md`). The present report inherits those corrections.
@@ -269,7 +269,7 @@ The failure also clarifies next designs. If daily or weekly governed outcomes be
 
 ### 7.2 Comparator noncomparability (F1.2)
 
-F1.2 also records that comparator models whose coefficients target a different monthly quantity are not scored against the daily M|D \(\beta\). Their convergence and predictive metrics remain reportable, but they cannot be used to invent a pass for the daily method. This prevents a second subtle misuse: treating a well-behaved monthly negative-binomial comparator as evidence that the daily coefficient was recovered.
+F1.2 also records that comparator models whose coefficients target a different monthly quantity are not scored against the daily M|D β. Their convergence and predictive metrics remain reportable, but they cannot be used to invent a pass for the daily method. This prevents a second subtle misuse: treating a well-behaved monthly negative-binomial comparator as evidence that the daily coefficient was recovered.
 
 ---
 

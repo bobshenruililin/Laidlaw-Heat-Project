@@ -6,6 +6,9 @@ link-citations: true
 geometry: margin=1in
 fontsize: 10pt
 colorlinks: true
+mainfont: DejaVu Serif
+sansfont: DejaVu Sans
+monofont: DejaVu Sans Mono
 ---
 
 Companion to [`chd_hf_thermal_associations_2013_2023.md`](chd_hf_thermal_associations_2013_2023.md).

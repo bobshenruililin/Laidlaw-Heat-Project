@@ -8,6 +8,9 @@ link-citations: true
 geometry: margin=0.85in
 fontsize: 10pt
 colorlinks: true
+mainfont: DejaVu Serif
+sansfont: DejaVu Sans
+monofont: DejaVu Sans Mono
 ---
 
 **Audience:** Professor David Bishai (supervisor), with shared scientific use by Roro, Hogan, and Bob.

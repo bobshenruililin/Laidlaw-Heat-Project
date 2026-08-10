@@ -10,6 +10,9 @@ link-citations: true
 geometry: margin=1in
 fontsize: 11pt
 colorlinks: true
+mainfont: DejaVu Serif
+sansfont: DejaVu Sans
+monofont: DejaVu Sans Mono
 ---
 
 <!--

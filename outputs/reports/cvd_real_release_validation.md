@@ -1,8 +1,8 @@
 # CHD/HF real-release validation
 
-- Checked: 2026-08-10 11:28:00.723556
+- Checked: 2026-08-10 11:55:27.972994
 - Release directory: `/workspace/outputs/release_chd_hf`
-- Passed: 27 / 27
+- Passed: 28 / 28
 
 | Check | Status | Detail |
 |---|---|---|
@@ -19,6 +19,7 @@
 | table2_claim_ledger_identity | PASS | 12 rows; rr/CI/p/q/se/provenance identical |
 | claim_text_rounding | PASS | claim_text matches 3-dp rounding |
 | bh_q_recompute | PASS | BH q values match p.adjust(..., method='BH') |
+| manuscript_claim_ledger_identity | PASS | 12 manuscript claim markers match ledger RR/CI/q rounding |
 | claim_ledger_ha_not_real | PASS | HA_APPROVED_AGGREGATE |
 | claim_ledger_v2_columns | PASS | tier/post-outcome/multiplicity/SE present |
 | claim_ledger_v2_no_extra_real_claims | PASS | v1=12 v2=12 |

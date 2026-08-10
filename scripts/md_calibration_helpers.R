@@ -839,11 +839,15 @@ md_fit_glarma_ar1 <- function(sim) {
   )
 }
 
-#' Simplified spillover-burden monthly model: month sum of kernel exposure.
+#' Simplified spillover-burden monthly model: month-sum kernel exposure.
+#'
+#' Predictor is the month sum of the daily kernel exposure (not the daily mean).
+#' That coefficient is a different estimand from monthly_nb (mean exposure) and
+#' from M|D daily beta; do not compare coefficients as identical.
 md_fit_spillover_burden <- function(sim) {
   target_map <- paste0(
-    "spillover_burden_coef_on_month_sum_exposure_NOT_identical_to_md_beta; ",
-    "scalar comparable only after /days_in_month scaling"
+    "spillover_burden_coef_on_month_SUM_kernel_exposure_",
+    "NOT_identical_to_md_daily_beta_or_monthly_nb_mean; different estimand"
   )
   um <- names(sim$S)
   xsum <- vapply(um, function(m) sum(sim$exposure[sim$month_id == m]), numeric(1))
@@ -851,8 +855,14 @@ md_fit_spillover_burden <- function(sim) {
   y <- as.numeric(sim$S[um])
   time_index <- seq_along(um)
   month_f <- factor(as.integer(substr(um, 6, 7)))
-  dat <- data.frame(y = y, x = xsum / days, time_index = time_index,
-                    month_f = month_f, days = days)
+  # Distinct from monthly_nb: month-sum exposure, not mean (xsum/days).
+  dat <- data.frame(
+    y = y,
+    x = xsum,
+    time_index = time_index,
+    month_f = month_f,
+    days = days
+  )
   if (!requireNamespace("MASS", quietly = TRUE)) {
     return(.md_estimator_fail("spillover_burden", "MASS not available", target_map))
   }
@@ -933,8 +943,56 @@ md_run_estimators <- function(sim, estimators = c(
 }
 
 # ---------------------------------------------------------------------------
-# Metrics
+# Metrics (F1.2: admissible M|D, comparable targets, worst-cell gates)
 # ---------------------------------------------------------------------------
+
+MD_COMPARABLE_ESTIMATORS <- c("oracle_daily", "md")
+
+#' Row-wise M|D admissibility from raw metric columns (vectorized).
+md_raw_rows_admissible <- function(converged,
+                                   hessian_pd,
+                                   hessian_condition,
+                                   hessian_condition_max = MD_HESSIAN_CONDITION_MAX) {
+  conv <- as.logical(converged)
+  pd <- as.logical(hessian_pd)
+  cond <- as.numeric(hessian_condition)
+  conv[is.na(conv)] <- FALSE
+  pd[is.na(pd)] <- FALSE
+  conv & pd & is.finite(cond) & (cond < hessian_condition_max)
+}
+
+#' Whether an estimator's coefficient is comparable to the DGP daily beta.
+md_estimator_target_comparable <- function(estimator) {
+  as.character(estimator) %in% MD_COMPARABLE_ESTIMATORS
+}
+
+#' Explicit stress cells for coverage gate (F1.2).
+#' AR-on core cells plus edge IDs involving depletion/covid/stress.
+#' Does not treat all core cells as stress merely because depletion/COVID are on.
+md_stress_metric_rows <- function(metric_rows) {
+  if (!nrow(metric_rows)) return(metric_rows[FALSE, , drop = FALSE])
+  ar_core <- !is.na(metric_rows$cell_class) &
+    metric_rows$cell_class == "core" &
+    !is.na(metric_rows$serial_dependence) &
+    metric_rows$serial_dependence == "outcome_matched"
+  edge_stress <- grepl(
+    "EDGE_depletion|EDGE_covid|EDGE_stress",
+    as.character(metric_rows$scenario_id %||% ""),
+    ignore.case = TRUE
+  )
+  metric_rows[ar_core | edge_stress, , drop = FALSE]
+}
+
+.md_failing_ids <- function(ids, max_n = 12L) {
+  ids <- unique(as.character(ids))
+  ids <- ids[nzchar(ids) & !is.na(ids)]
+  if (!length(ids)) return("none")
+  if (length(ids) > max_n) {
+    paste0(paste(ids[seq_len(max_n)], collapse = ","), ",...(+", length(ids) - max_n, ")")
+  } else {
+    paste(ids, collapse = ",")
+  }
+}
 
 md_metrics_from_replicates <- function(estimates,
                                        se,
@@ -946,61 +1004,96 @@ md_metrics_from_replicates <- function(estimates,
                                        hessian_pd = NULL,
                                        hessian_condition = NULL,
                                        loglik = NULL,
-                                       loglik_sat = NULL) {
-  ok <- isTRUE(converged) | converged %in% TRUE
-  # Allow vectorized
-  conv <- as.logical(converged)
+                                       loglik_sat = NULL,
+                                       estimator = NULL,
+                                       target_comparable = NULL,
+                                       hessian_condition_max = MD_HESSIAN_CONDITION_MAX) {
+  if (is.null(target_comparable)) {
+    target_comparable <- md_estimator_target_comparable(estimator %||% "")
+  }
+  target_comparable <- isTRUE(target_comparable)
+
+  conv_flag <- as.logical(converged)
+  conv_flag[is.na(conv_flag)] <- FALSE
   est <- as.numeric(estimates)
   s <- as.numeric(se)
   lo <- as.numeric(conf_low)
   hi <- as.numeric(conf_high)
   n <- length(est)
-  conv[is.na(conv)] <- FALSE
 
-  bias <- mean(est[conv] - beta_true, na.rm = TRUE)
-  rmse <- sqrt(mean((est[conv] - beta_true)^2, na.rm = TRUE))
-  cover <- mean(lo[conv] <= beta_true & hi[conv] >= beta_true, na.rm = TRUE)
-  # Type I: reject H0 at 5% when true null
-  reject <- (lo > 0) | (hi < 0)
-  type1 <- if (identical(effect_name, "null") || isTRUE(all.equal(beta_true, 0))) {
-    mean(reject[conv], na.rm = TRUE)
+  # M|D: admissible only if md_real_fit_admissible criteria hold.
+  if (identical(as.character(estimator), "md")) {
+    if (is.null(hessian_pd) || is.null(hessian_condition)) {
+      admissible <- rep(FALSE, n)
+    } else {
+      admissible <- md_raw_rows_admissible(
+        conv_flag, hessian_pd, hessian_condition, hessian_condition_max
+      )
+    }
+    use <- admissible
+    divergent_rate <- mean(!admissible, na.rm = TRUE)
+    conv_rate <- mean(admissible, na.rm = TRUE)
+    n_converged <- sum(admissible, na.rm = TRUE)
   } else {
-    NA_real_
+    use <- conv_flag
+    if (!is.null(hessian_pd)) {
+      divergent_rate <- mean(
+        !conv_flag | !as.logical(hessian_pd),
+        na.rm = TRUE
+      )
+    } else {
+      divergent_rate <- mean(!conv_flag, na.rm = TRUE)
+    }
+    conv_rate <- mean(conv_flag, na.rm = TRUE)
+    n_converged <- sum(conv_flag, na.rm = TRUE)
   }
-  # False sign for non-null: estimate opposite sign of truth among converged
-  false_sign <- if (!identical(effect_name, "null") && beta_true != 0) {
-    mean(sign(est[conv]) != sign(beta_true) & is.finite(est[conv]), na.rm = TRUE)
-  } else {
-    NA_real_
-  }
-  conv_rate <- mean(conv, na.rm = TRUE)
-  se_mean <- mean(s[conv], na.rm = TRUE)
-  sd_est <- stats::sd(est[conv], na.rm = TRUE)
+
+  se_mean <- mean(s[use], na.rm = TRUE)
+  sd_est <- stats::sd(est[use], na.rm = TRUE)
   se_sd_ratio <- if (is.finite(sd_est) && sd_est > 0) se_mean / sd_est else NA_real_
-
-  rel_bias <- if (is.finite(beta_true) && abs(beta_true) > 1e-12) {
-    abs(bias / beta_true)
-  } else {
-    NA_real_
-  }
+  pred_log_score <- if (!is.null(loglik)) {
+    mean(as.numeric(loglik)[use], na.rm = TRUE)
+  } else NA_real_
 
   pd_rate <- if (!is.null(hessian_pd)) {
-    mean(as.logical(hessian_pd)[conv], na.rm = TRUE)
+    mean(as.logical(hessian_pd)[use], na.rm = TRUE)
   } else NA_real_
   cond_med <- if (!is.null(hessian_condition)) {
-    stats::median(as.numeric(hessian_condition)[conv], na.rm = TRUE)
+    stats::median(as.numeric(hessian_condition)[use], na.rm = TRUE)
   } else NA_real_
-  divergent_rate <- mean(!conv | (!is.null(hessian_pd) & !as.logical(hessian_pd)),
-                         na.rm = TRUE)
 
-  # Predictive log score where feasible: mean held-in loglik (higher better)
-  pred_log_score <- if (!is.null(loglik)) {
-    mean(as.numeric(loglik)[conv], na.rm = TRUE)
-  } else NA_real_
+  if (isTRUE(target_comparable)) {
+    bias <- mean(est[use] - beta_true, na.rm = TRUE)
+    rmse <- sqrt(mean((est[use] - beta_true)^2, na.rm = TRUE))
+    cover <- mean(lo[use] <= beta_true & hi[use] >= beta_true, na.rm = TRUE)
+    reject <- (lo > 0) | (hi < 0)
+    type1 <- if (identical(effect_name, "null") || isTRUE(all.equal(beta_true, 0))) {
+      mean(reject[use], na.rm = TRUE)
+    } else {
+      NA_real_
+    }
+    false_sign <- if (!identical(effect_name, "null") && beta_true != 0) {
+      mean(sign(est[use]) != sign(beta_true) & is.finite(est[use]), na.rm = TRUE)
+    } else {
+      NA_real_
+    }
+    rel_bias <- if (is.finite(beta_true) && abs(beta_true) > 1e-12) {
+      abs(bias / beta_true)
+    } else {
+      NA_real_
+    }
+  } else {
+    bias <- NA_real_
+    rmse <- NA_real_
+    cover <- NA_real_
+    type1 <- NA_real_
+    false_sign <- NA_real_
+    rel_bias <- NA_real_
+  }
 
   data.frame(
     n_reps = n,
-    n_converged = sum(conv, na.rm = TRUE),
+    n_converged = n_converged,
     convergence_rate = conv_rate,
     bias = bias,
     relative_bias_abs = rel_bias,
@@ -1017,12 +1110,72 @@ md_metrics_from_replicates <- function(estimates,
     predictive_log_score = pred_log_score,
     beta_true = beta_true,
     effect_name = effect_name,
+    target_comparable = target_comparable,
     data_status = MD_PROVENANCE_SYNTHETIC,
     stringsAsFactors = FALSE
   )
 }
 
-#' Evaluate admission gates exactly from registry thresholds (no gaming).
+#' Summarise one scenario's raw replicate rows into per-estimator metrics.
+md_summarise_scenario_raw <- function(raw_sc,
+                                      hessian_condition_max = MD_HESSIAN_CONDITION_MAX) {
+  if (!nrow(raw_sc)) return(NULL)
+  ests <- unique(as.character(raw_sc$estimator))
+  out <- lapply(ests, function(est) {
+    sub <- raw_sc[as.character(raw_sc$estimator) == est, , drop = FALSE]
+    comparable <- md_estimator_target_comparable(est)
+    met <- md_metrics_from_replicates(
+      estimates = sub$estimate,
+      se = sub$se,
+      conf_low = sub$conf_low,
+      conf_high = sub$conf_high,
+      beta_true = sub$beta_true[[1]],
+      effect_name = sub$effect[[1]],
+      converged = sub$converged,
+      hessian_pd = sub$hessian_pd,
+      hessian_condition = sub$hessian_condition,
+      loglik = sub$loglik,
+      estimator = est,
+      target_comparable = comparable,
+      hessian_condition_max = hessian_condition_max
+    )
+    cbind(
+      scenario_id = sub$scenario_id[[1]],
+      cell_class = sub$cell_class[[1]],
+      scale = sub$scale[[1]],
+      outcome = sub$outcome[[1]],
+      effect = sub$effect[[1]],
+      kernel = sub$kernel[[1]],
+      serial_dependence = sub$serial_dependence[[1]],
+      depletion = sub$depletion[[1]],
+      covid_shock = sub$covid_shock[[1]],
+      overdispersion = sub$overdispersion[[1]],
+      estimator = est,
+      target_mapping = sub$target_mapping[[1]],
+      met,
+      stringsAsFactors = FALSE
+    )
+  })
+  do.call(rbind, out)
+}
+
+#' Summarise all scenarios in a raw metrics table.
+md_summarise_raw_metrics <- function(raw_all,
+                                     hessian_condition_max = MD_HESSIAN_CONDITION_MAX) {
+  if (!nrow(raw_all)) return(raw_all)
+  parts <- lapply(split(raw_all, raw_all$scenario_id), function(raw_sc) {
+    md_summarise_scenario_raw(raw_sc, hessian_condition_max = hessian_condition_max)
+  })
+  out <- do.call(rbind, parts)
+  rownames(out) <- NULL
+  out$data_status <- MD_PROVENANCE_SYNTHETIC
+  out
+}
+
+#' Evaluate admission gates with worst-cell / all-cell rules (F1.2).
+#'
+#' Averages are not used for pass/fail. Failing scenario IDs are reported in
+#' detail. Decision remains FAIL unless every criterion passes.
 md_evaluate_gates <- function(metric_rows, registry = NULL, root = NULL) {
   if (is.null(registry)) {
     if (exists("load_final_model_registry", mode = "function")) {
@@ -1037,51 +1190,97 @@ md_evaluate_gates <- function(metric_rows, registry = NULL, root = NULL) {
   }
   g <- registry$md_feasibility$admission_gates
   g <- lapply(g, function(x) as.numeric(x))
-  # Restrict to M|D estimator rows
-  md <- metric_rows[metric_rows$estimator == "md", , drop = FALSE]
+
+  md <- metric_rows[as.character(metric_rows$estimator) == "md", , drop = FALSE]
   if (!nrow(md)) {
     return(data.frame(
       gate_id = "all",
+      value = NA_real_,
+      threshold = NA_real_,
       passed = FALSE,
       detail = "no md metric rows",
+      failing_scenario_ids = NA_character_,
+      all_passed = FALSE,
+      admission_decision = "FAIL_METHODS_FEASIBILITY_ONLY",
       data_status = MD_PROVENANCE_SYNTHETIC,
       stringsAsFactors = FALSE
     ))
   }
 
-  # Aggregate across core cells for primary gates; stress cells checked separately.
   core <- md[is.na(md$cell_class) | md$cell_class == "core", , drop = FALSE]
   if (!nrow(core)) core <- md
 
-  conv <- mean(core$convergence_rate, na.rm = TRUE)
-  # Type I from null effect cells only
-  null_rows <- core[core$effect_name == "null" | core$effect == "null", , drop = FALSE]
-  type1 <- if (nrow(null_rows)) mean(null_rows$type1, na.rm = TRUE) else NA_real_
-  cover <- mean(core$coverage, na.rm = TRUE)
-  # Relative bias on non-null
-  nonnull <- core[!(core$effect_name == "null" | core$effect == "null"), , drop = FALSE]
-  relb <- if (nrow(nonnull)) mean(nonnull$relative_bias_abs, na.rm = TRUE) else NA_real_
-  # False sign on moderate
-  mod <- core[core$effect_name == "moderate" | core$effect == "moderate", , drop = FALSE]
-  fsign <- if (nrow(mod)) mean(mod$false_sign, na.rm = TRUE) else NA_real_
-  cond_ok <- mean(core$hessian_condition_median < g$hessian_condition_max, na.rm = TRUE)
-  # Require median condition among cells to pass; also track PD
-  cond_med <- stats::median(core$hessian_condition_median, na.rm = TRUE)
-  div <- mean(core$divergent_or_boundary_rate, na.rm = TRUE)
+  # 1) Minimum convergence across core cells
+  conv_min <- min(core$convergence_rate, na.rm = TRUE)
+  conv_fail <- core$scenario_id[
+    !is.finite(core$convergence_rate) |
+      core$convergence_rate < g$convergence_min
+  ]
 
-  # Stress scenarios: AR / depletion / COVID edge or core with those on
-  stress <- md
-  if ("serial_dependence" %in% names(md)) {
-    stress <- md[
-      md$serial_dependence == "outcome_matched" |
-        md$depletion == "outcome_matched" |
-        md$covid_shock == "observed_pattern" |
-        grepl("EDGE_stress|EDGE_depletion|EDGE_covid", md$scenario_id %||% ""),
-      ,
-      drop = FALSE
+  # 2) Every null core cell Type I in [type1_min, type1_max]
+  null_rows <- core[core$effect_name == "null" | core$effect == "null", , drop = FALSE]
+  type1_min_obs <- if (nrow(null_rows)) min(null_rows$type1, na.rm = TRUE) else NA_real_
+  type1_max_obs <- if (nrow(null_rows)) max(null_rows$type1, na.rm = TRUE) else NA_real_
+  type1_fail <- if (nrow(null_rows)) {
+    null_rows$scenario_id[
+      !is.finite(null_rows$type1) |
+        null_rows$type1 < g$type1_min |
+        null_rows$type1 > g$type1_max
     ]
+  } else {
+    character(0)
   }
-  stress_cover <- if (nrow(stress)) mean(stress$coverage, na.rm = TRUE) else NA_real_
+  type1_pass <- length(type1_fail) == 0L && nrow(null_rows) > 0L &&
+    is.finite(type1_min_obs) && is.finite(type1_max_obs)
+
+  # 3) Minimum core coverage
+  cover_min <- min(core$coverage, na.rm = TRUE)
+  cover_fail <- core$scenario_id[
+    !is.finite(core$coverage) |
+      core$coverage < g$coverage_min
+  ]
+
+  # 4) Maximum non-null relative bias
+  nonnull <- core[!(core$effect_name == "null" | core$effect == "null"), , drop = FALSE]
+  relb_max <- if (nrow(nonnull)) max(nonnull$relative_bias_abs, na.rm = TRUE) else NA_real_
+  relb_fail <- if (nrow(nonnull)) {
+    nonnull$scenario_id[
+      !is.finite(nonnull$relative_bias_abs) |
+        nonnull$relative_bias_abs > g$relative_bias_max
+    ]
+  } else character(0)
+
+  # 5) Maximum moderate false-sign
+  mod <- core[core$effect_name == "moderate" | core$effect == "moderate", , drop = FALSE]
+  fsign_max <- if (nrow(mod)) max(mod$false_sign, na.rm = TRUE) else NA_real_
+  fsign_fail <- if (nrow(mod)) {
+    mod$scenario_id[
+      !is.finite(mod$false_sign) | mod$false_sign > g$false_sign_max
+    ]
+  } else character(0)
+
+  # 6) Maximum core median Hessian condition
+  cond_max <- max(core$hessian_condition_median, na.rm = TRUE)
+  cond_fail <- core$scenario_id[
+    !is.finite(core$hessian_condition_median) |
+      core$hessian_condition_median >= g$hessian_condition_max
+  ]
+
+  # 7) Maximum core divergence
+  div_max <- max(core$divergent_or_boundary_rate, na.rm = TRUE)
+  div_fail <- core$scenario_id[
+    !is.finite(core$divergent_or_boundary_rate) |
+      core$divergent_or_boundary_rate >= g$divergent_fit_max
+  ]
+
+  # 8) Minimum coverage among explicit stress cells
+  stress <- md_stress_metric_rows(md)
+  stress_cover_min <- if (nrow(stress)) min(stress$coverage, na.rm = TRUE) else NA_real_
+  stress_fail <- if (nrow(stress)) {
+    stress$scenario_id[
+      !is.finite(stress$coverage) | stress$coverage < g$stress_coverage_min
+    ]
+  } else character(0)
 
   checks <- data.frame(
     gate_id = c(
@@ -1094,7 +1293,10 @@ md_evaluate_gates <- function(metric_rows, registry = NULL, root = NULL) {
       "divergent_fit_max",
       "stress_coverage_min"
     ),
-    value = c(conv, type1, cover, relb, fsign, cond_med, div, stress_cover),
+    value = c(
+      conv_min, type1_max_obs, cover_min, relb_max, fsign_max,
+      cond_max, div_max, stress_cover_min
+    ),
     threshold = c(
       g$convergence_min,
       NA_real_,
@@ -1106,24 +1308,67 @@ md_evaluate_gates <- function(metric_rows, registry = NULL, root = NULL) {
       g$stress_coverage_min
     ),
     passed = c(
-      is.finite(conv) && conv >= g$convergence_min,
-      is.finite(type1) && type1 >= g$type1_min && type1 <= g$type1_max,
-      is.finite(cover) && cover >= g$coverage_min,
-      is.finite(relb) && relb <= g$relative_bias_max,
-      is.finite(fsign) && fsign <= g$false_sign_max,
-      is.finite(cond_med) && cond_med < g$hessian_condition_max,
-      is.finite(div) && div < g$divergent_fit_max,
-      is.finite(stress_cover) && stress_cover >= g$stress_coverage_min
+      is.finite(conv_min) && conv_min >= g$convergence_min &&
+        length(conv_fail) == 0L,
+      type1_pass,
+      is.finite(cover_min) && cover_min >= g$coverage_min &&
+        length(cover_fail) == 0L,
+      is.finite(relb_max) && relb_max <= g$relative_bias_max &&
+        length(relb_fail) == 0L,
+      is.finite(fsign_max) && fsign_max <= g$false_sign_max &&
+        length(fsign_fail) == 0L,
+      is.finite(cond_max) && cond_max < g$hessian_condition_max &&
+        length(cond_fail) == 0L,
+      is.finite(div_max) && div_max < g$divergent_fit_max &&
+        length(div_fail) == 0L,
+      is.finite(stress_cover_min) &&
+        stress_cover_min >= g$stress_coverage_min &&
+        length(stress_fail) == 0L
     ),
     detail = c(
-      sprintf("convergence_rate=%.4f (min %.2f)", conv, g$convergence_min),
-      sprintf("type1=%.4f (allowed [%.2f, %.2f])", type1, g$type1_min, g$type1_max),
-      sprintf("coverage=%.4f (min %.2f)", cover, g$coverage_min),
-      sprintf("abs_rel_bias=%.4f (max %.2f)", relb, g$relative_bias_max),
-      sprintf("false_sign=%.4f (max %.2f)", fsign, g$false_sign_max),
-      sprintf("hessian_cond_median=%.3g (max %.3g)", cond_med, g$hessian_condition_max),
-      sprintf("divergent_rate=%.4f (max %.2f)", div, g$divergent_fit_max),
-      sprintf("stress_coverage=%.4f (min %.2f)", stress_cover, g$stress_coverage_min)
+      sprintf(
+        "min_core_convergence=%.4f (need >=%.2f); failing=%s",
+        conv_min, g$convergence_min, .md_failing_ids(conv_fail)
+      ),
+      sprintf(
+        "null_type1 min=%.4f max=%.4f (need [%.2f, %.2f]); failing=%s",
+        type1_min_obs, type1_max_obs, g$type1_min, g$type1_max,
+        .md_failing_ids(type1_fail)
+      ),
+      sprintf(
+        "min_core_coverage=%.4f (need >=%.2f); failing=%s",
+        cover_min, g$coverage_min, .md_failing_ids(cover_fail)
+      ),
+      sprintf(
+        "max_nonnull_abs_rel_bias=%.4f (need <=%.2f); failing=%s",
+        relb_max, g$relative_bias_max, .md_failing_ids(relb_fail)
+      ),
+      sprintf(
+        "max_moderate_false_sign=%.4f (need <=%.2f); failing=%s",
+        fsign_max, g$false_sign_max, .md_failing_ids(fsign_fail)
+      ),
+      sprintf(
+        "max_core_hessian_cond_median=%.3g (need <%.3g); failing=%s",
+        cond_max, g$hessian_condition_max, .md_failing_ids(cond_fail)
+      ),
+      sprintf(
+        "max_core_divergent_rate=%.4f (need <%.2f); failing=%s",
+        div_max, g$divergent_fit_max, .md_failing_ids(div_fail)
+      ),
+      sprintf(
+        "min_stress_coverage=%.4f (need >=%.2f; stress=AR-on core + EDGE_depletion/covid/stress); failing=%s",
+        stress_cover_min, g$stress_coverage_min, .md_failing_ids(stress_fail)
+      )
+    ),
+    failing_scenario_ids = c(
+      .md_failing_ids(conv_fail),
+      .md_failing_ids(type1_fail),
+      .md_failing_ids(cover_fail),
+      .md_failing_ids(relb_fail),
+      .md_failing_ids(fsign_fail),
+      .md_failing_ids(cond_fail),
+      .md_failing_ids(div_fail),
+      .md_failing_ids(stress_fail)
     ),
     data_status = MD_PROVENANCE_SYNTHETIC,
     stringsAsFactors = FALSE
@@ -1134,7 +1379,100 @@ md_evaluate_gates <- function(metric_rows, registry = NULL, root = NULL) {
   } else {
     "FAIL_METHODS_FEASIBILITY_ONLY"
   }
+  # Extra diagnostic columns for reports (not used for gaming)
+  checks$type1_min_obs <- type1_min_obs
+  checks$type1_max_obs <- type1_max_obs
   checks
+}
+
+#' Build a concise F1.1 raw / F1.2 decision report from summary + gates.
+md_format_f12_decision_report <- function(summary_df,
+                                          gates_df,
+                                          raw_note = "F1.1 500-rep raw metrics (untouched)") {
+  md <- summary_df[as.character(summary_df$estimator) == "md", , drop = FALSE]
+  core <- md[md$cell_class == "core", , drop = FALSE]
+  null_rows <- core[core$effect == "null" | core$effect_name == "null", , drop = FALSE]
+  decision <- unique(as.character(gates_df$admission_decision))
+  lines <- c(
+    "# M|D calibration F1.2 decision report",
+    "",
+    paste0("- Raw source: ", raw_note),
+    paste0("- Protocol amendment: F1.2 (worst-cell gates; admissible M|D; comparator noncomparability)"),
+    paste0("- Admission decision: ", paste(decision, collapse = ", ")),
+    paste0("- All gates passed: ", all(gates_df$passed)),
+    paste0("- Provenance: ", MD_PROVENANCE_SYNTHETIC),
+    "",
+    "## Gate table",
+    "",
+    paste0(
+      "| ", paste(c("gate_id", "passed", "value", "detail"), collapse = " | "), " |"
+    ),
+    paste0("| ", paste(rep("---", 4), collapse = " | "), " |")
+  )
+  for (i in seq_len(nrow(gates_df))) {
+    lines <- c(lines, sprintf(
+      "| %s | %s | %s | %s |",
+      gates_df$gate_id[[i]],
+      gates_df$passed[[i]],
+      format(gates_df$value[[i]], digits = 4),
+      gsub("\\|", "/", gates_df$detail[[i]])
+    ))
+  }
+  lines <- c(lines, "", "## Per-cell null Type I and coverage (M|D core)", "")
+  if (nrow(null_rows)) {
+    lines <- c(
+      lines,
+      "| scenario_id | outcome | kernel | AR | type1 | coverage |",
+      "| --- | --- | --- | --- | --- | --- |"
+    )
+    for (i in seq_len(nrow(null_rows))) {
+      lines <- c(lines, sprintf(
+        "| %s | %s | %s | %s | %.4f | %.4f |",
+        null_rows$scenario_id[[i]],
+        null_rows$outcome[[i]],
+        null_rows$kernel[[i]],
+        null_rows$serial_dependence[[i]],
+        null_rows$type1[[i]],
+        null_rows$coverage[[i]]
+      ))
+    }
+    lines <- c(
+      lines,
+      "",
+      sprintf(
+        "Null Type I range: CHD/HF pooled min=%.4f max=%.4f",
+        min(null_rows$type1, na.rm = TRUE),
+        max(null_rows$type1, na.rm = TRUE)
+      ),
+      sprintf(
+        "Null coverage range: min=%.4f max=%.4f",
+        min(null_rows$coverage, na.rm = TRUE),
+        max(null_rows$coverage, na.rm = TRUE)
+      )
+    )
+  } else {
+    lines <- c(lines, "_No null core M|D rows in summary._")
+  }
+  nonnull <- core[!(core$effect == "null" | core$effect_name == "null"), , drop = FALSE]
+  mod <- core[core$effect == "moderate" | core$effect_name == "moderate", , drop = FALSE]
+  lines <- c(
+    lines,
+    "",
+    "## Binding non-null diagnostics (core M|D)",
+    "",
+    sprintf(
+      "- Max abs relative bias (non-null): %.4f",
+      if (nrow(nonnull)) max(nonnull$relative_bias_abs, na.rm = TRUE) else NA_real_
+    ),
+    sprintf(
+      "- Max false-sign (moderate): %.4f",
+      if (nrow(mod)) max(mod$false_sign, na.rm = TRUE) else NA_real_
+    ),
+    "",
+    "Final decision must remain methods-feasibility only unless every F1.2 gate passes.",
+    ""
+  )
+  lines
 }
 
 md_estimator_result_to_row <- function(res, scenario_row, rep_id, beta_true) {

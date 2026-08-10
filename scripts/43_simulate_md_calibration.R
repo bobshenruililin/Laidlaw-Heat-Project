@@ -208,43 +208,7 @@ run_one_rep <- function(scenario_row, scenario_params, scenario_index, rep_id,
 # Use PSOCK; each worker re-sources clean-room scripts (no shared RNG).
 safe_parallel <- isTRUE(N_WORKERS > 1L) && requireNamespace("parallel", quietly = TRUE)
 
-summarise_scenario_raw <- function(raw_sc) {
-  if (!nrow(raw_sc)) return(NULL)
-  ests <- unique(raw_sc$estimator)
-  out <- lapply(ests, function(est) {
-    sub <- raw_sc[raw_sc$estimator == est, , drop = FALSE]
-    met <- md_metrics_from_replicates(
-      estimates = sub$estimate,
-      se = sub$se,
-      conf_low = sub$conf_low,
-      conf_high = sub$conf_high,
-      beta_true = sub$beta_true[[1]],
-      effect_name = sub$effect[[1]],
-      converged = sub$converged,
-      hessian_pd = sub$hessian_pd,
-      hessian_condition = sub$hessian_condition,
-      loglik = sub$loglik
-    )
-    cbind(
-      scenario_id = sub$scenario_id[[1]],
-      cell_class = sub$cell_class[[1]],
-      scale = sub$scale[[1]],
-      outcome = sub$outcome[[1]],
-      effect = sub$effect[[1]],
-      effect_name = sub$effect[[1]],
-      kernel = sub$kernel[[1]],
-      serial_dependence = sub$serial_dependence[[1]],
-      depletion = sub$depletion[[1]],
-      covid_shock = sub$covid_shock[[1]],
-      overdispersion = sub$overdispersion[[1]],
-      estimator = est,
-      target_mapping = sub$target_mapping[[1]],
-      met,
-      stringsAsFactors = FALSE
-    )
-  })
-  do.call(rbind, out)
-}
+# summarise_scenario_raw lives in md_calibration_helpers.R as md_summarise_scenario_raw
 
 all_raw <- list()
 all_summary <- list()
@@ -347,7 +311,7 @@ for (i in seq_len(nrow(scenarios))) {
   }
 
   all_raw[[i]] <- raw_sc
-  summ <- summarise_scenario_raw(raw_sc)
+  summ <- md_summarise_scenario_raw(raw_sc)
   if (!is.null(summ)) all_summary[[i]] <- summ
   append_run_status(
     "scenario_complete",

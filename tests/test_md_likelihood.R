@@ -452,32 +452,164 @@ forced <- .md_estimator_fail("md", "unit-test forced failure")
 expect_false(forced$ok, "forced failure ok=FALSE")
 expect_false(forced$converged, "forced failure converged=FALSE")
 
-# Gate evaluator returns explicit PASS/FAIL without gaming
-fake_metrics <- data.frame(
+# Gate evaluator: worst-cell F1.2 rules (averages must not rescue a bad cell)
+fake_goodish <- data.frame(
   estimator = "md",
   cell_class = "core",
+  effect = c("null", "null", "small", "moderate"),
+  effect_name = c("null", "null", "small", "moderate"),
+  serial_dependence = c("none", "outcome_matched", "none", "none"),
+  depletion = "outcome_matched",
+  covid_shock = "observed_pattern",
+  scenario_id = c("CORE_A", "CORE_B", "CORE_C", "CORE_D"),
+  convergence_rate = c(0.99, 0.99, 0.99, 0.99),
+  type1 = c(0.05, 0.20, NA_real_, NA_real_),  # CORE_B fails Type I
+  coverage = c(0.95, 0.95, 0.94, 0.93),
+  relative_bias_abs = c(NA_real_, NA_real_, 0.05, 0.05),
+  false_sign = c(NA_real_, NA_real_, NA_real_, 0.02),
+  hessian_condition_median = c(10, 10, 10, 10),
+  divergent_or_boundary_rate = c(0.01, 0.01, 0.01, 0.01),
+  data_status = MD_PROVENANCE_SYNTHETIC,
+  stringsAsFactors = FALSE
+)
+# Add explicit stress edge with low coverage
+fake_stress <- data.frame(
+  estimator = "md",
+  cell_class = "edge",
   effect = "null",
   effect_name = "null",
   serial_dependence = "none",
   depletion = "none",
   covid_shock = "none",
-  scenario_id = "CORE_01",
-  convergence_rate = 0.5,
-  type1 = 0.20,
-  coverage = 0.50,
-  relative_bias_abs = 0.50,
+  scenario_id = "EDGE_covid_off",
+  convergence_rate = 0.99,
+  type1 = 0.05,
+  coverage = 0.70,  # fails stress coverage if selected
+  relative_bias_abs = NA_real_,
   false_sign = NA_real_,
-  hessian_condition_median = 1e12,
-  divergent_or_boundary_rate = 0.5,
+  hessian_condition_median = 10,
+  divergent_or_boundary_rate = 0.01,
   data_status = MD_PROVENANCE_SYNTHETIC,
   stringsAsFactors = FALSE
 )
+fake_metrics <- rbind(fake_goodish, fake_stress)
 if (file.exists(file.path(project_root(), "analysis_plan", "final_model_registry.yml"))) {
   gates <- md_evaluate_gates(fake_metrics, root = project_root())
   expect_true(all(gates$data_status == MD_PROVENANCE_SYNTHETIC), "gate provenance")
   expect_true(any(grepl("^FAIL", gates$admission_decision)), "failed calibration is valid FAIL")
   expect_false(isTRUE(all(gates$passed)), "gates not gamed on bad metrics")
+  type1_row <- gates[gates$gate_id == "type1_range", , drop = FALSE]
+  expect_true(nrow(type1_row) == 1L && isFALSE(type1_row$passed[[1]]), "Type I fails on worst null cell")
+  expect_true(
+    grepl("CORE_B", type1_row$failing_scenario_ids[[1]]),
+    "Type I detail lists failing scenario ID"
+  )
+  # Average Type I would be (0.05+0.20)/2=0.125 still fail, but ensure worst-cell
+  # also catches when only one cell is out of band while mean might look ok:
+  fake_mean_ok <- fake_metrics
+  fake_mean_ok$type1[fake_mean_ok$scenario_id == "CORE_A"] <- 0.04
+  fake_mean_ok$type1[fake_mean_ok$scenario_id == "CORE_B"] <- 0.09
+  fake_mean_ok$coverage[fake_mean_ok$scenario_id == "EDGE_covid_off"] <- 0.90
+  fake_mean_ok$relative_bias_abs[fake_mean_ok$effect != "null"] <- 0.05
+  fake_mean_ok$false_sign[fake_mean_ok$effect == "moderate"] <- 0.02
+  g2 <- md_evaluate_gates(fake_mean_ok, root = project_root())
+  expect_false(
+    g2$passed[g2$gate_id == "type1_range"][[1]],
+    "Type I fails when any null cell is outside [0.03,0.08] even if others are fine"
+  )
+  stress <- md_stress_metric_rows(fake_metrics)
+  expect_true(
+    all(c("CORE_B", "EDGE_covid_off") %in% stress$scenario_id) &&
+      !"CORE_A" %in% stress$scenario_id,
+    "stress set is AR-on core + EDGE depletion/covid/stress only"
+  )
+  rep_lines <- md_format_f12_decision_report(fake_metrics, gates)
+  expect_true(any(grepl("FAIL_METHODS_FEASIBILITY_ONLY", rep_lines)), "report shows FAIL")
+  expect_true(any(grepl("Per-cell null Type I", rep_lines)), "report has null Type I section")
 }
+
+# Nonadmissible M|D (non-PD / ill-conditioned) counts as divergent, excluded from Type I
+adm_met <- md_metrics_from_replicates(
+  estimates = c(0.01, -0.02, 0.00, 0.03),
+  se = c(0.01, 0.01, 0.01, 0.01),
+  conf_low = c(-0.01, -0.04, -0.02, 0.01),
+  conf_high = c(0.03, 0.00, 0.02, 0.05),
+  beta_true = 0,
+  effect_name = "null",
+  converged = c(TRUE, TRUE, TRUE, TRUE),
+  hessian_pd = c(TRUE, TRUE, FALSE, TRUE),
+  hessian_condition = c(10, 10, 10, 1e12),
+  estimator = "md",
+  target_comparable = TRUE,
+  hessian_condition_max = 1e8
+)
+expect_equal(adm_met$n_converged, 2L, "only PD+condition-ok M|D rows admissible")
+expect_true(adm_met$divergent_or_boundary_rate == 0.5, "nonadmissible counted as divergent")
+# Among admissible (rows 1-2): reject only if CI excludes 0 -> row1 no, row2 no => type1 0
+# row2: conf_high=0 so (lo>0)|(hi<0) is FALSE; type1 uses admissible only
+expect_true(is.finite(adm_met$type1), "Type I computed on admissible subset")
+expect_true(isTRUE(adm_met$target_comparable), "M|D target comparable")
+
+# Comparator noncomparability
+nb_met <- md_metrics_from_replicates(
+  estimates = c(0.1, 0.2),
+  se = c(0.05, 0.05),
+  conf_low = c(0, 0.1),
+  conf_high = c(0.2, 0.3),
+  beta_true = 0,
+  effect_name = "null",
+  converged = c(TRUE, TRUE),
+  estimator = "monthly_nb",
+  target_comparable = FALSE
+)
+expect_false(isTRUE(nb_met$target_comparable[[1]]), "monthly_nb not target-comparable")
+expect_true(is.na(nb_met$bias) && is.na(nb_met$coverage) && is.na(nb_met$type1),
+            "noncomparable beta metrics are NA")
+expect_true(is.finite(nb_met$convergence_rate) && is.finite(nb_met$se_mean),
+            "noncomparable still reports convergence/SE")
+expect_false(md_estimator_target_comparable("spillover_burden"), "spillover noncomparable")
+expect_false(md_estimator_target_comparable("glarma_ar1"), "glarma noncomparable")
+expect_true(md_estimator_target_comparable("oracle_daily"), "oracle comparable")
+
+# summarise helper factors out of script 43
+tiny_raw <- data.frame(
+  scenario_id = "CORE_01",
+  cell_class = "core",
+  scale = "chd_like",
+  outcome = "chd",
+  effect = "null",
+  effect_name = "null",
+  kernel = "same_day",
+  serial_dependence = "none",
+  depletion = "outcome_matched",
+  covid_shock = "observed_pattern",
+  overdispersion = "outcome_matched",
+  exposure_col = "hot_night",
+  rep_id = 1:2,
+  estimator = c("md", "monthly_nb"),
+  ok = TRUE,
+  message = "ok",
+  estimate = c(0.01, 0.5),
+  se = c(0.02, 0.1),
+  conf_low = c(-0.03, 0.3),
+  conf_high = c(0.05, 0.7),
+  converged = TRUE,
+  hessian_pd = TRUE,
+  hessian_condition = 5,
+  dispersion = 1,
+  loglik = c(-10, -12),
+  beta_true = 0,
+  target_mapping = c("md", "monthly"),
+  data_status = MD_PROVENANCE_SYNTHETIC,
+  stringsAsFactors = FALSE
+)
+summ_tiny <- md_summarise_scenario_raw(tiny_raw)
+expect_true(nrow(summ_tiny) == 2L, "summarise returns one row per estimator")
+expect_true(
+  isTRUE(summ_tiny$target_comparable[summ_tiny$estimator == "md"]) &&
+    !isTRUE(summ_tiny$target_comparable[summ_tiny$estimator == "monthly_nb"]),
+  "summarise sets target_comparable by estimator"
+)
 
 # ---------------------------------------------------------------------------
 # No release pollution

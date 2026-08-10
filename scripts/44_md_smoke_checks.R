@@ -68,7 +68,7 @@ names(S) <- groups$month_id
 ll <- md_loglik(beta, S, X, groups, include_factorial = TRUE)
 ll_manual <- dpois(62, 62, log = TRUE) + dpois(56, 56, log = TRUE)
 expect_true(
-  isTRUE(all.equal(ll, ll_manual, tolerance = 1e-8)),
+  isTRUE(all.equal(ll, ll_manual, tolerance = 1e-8, check.attributes = FALSE)),
   "manual likelihood identity at true beta"
 )
 
@@ -316,7 +316,14 @@ expect_true(
 )
 
 # COVID design reference is pre_covid (not alphabetical first)
-Xd_cov <- md_build_daily_design(dates3, xexp, include_covid = TRUE)
+covid_fixture <- rep("pre_covid", length(dates3))
+covid_fixture[seq.int(floor(length(dates3) / 2), length(dates3))] <- "early_covid"
+Xd_cov <- md_build_daily_design(
+  dates3,
+  xexp,
+  covid_phase = covid_fixture,
+  include_covid = TRUE
+)
 cov_cols <- grep("^covid_", colnames(Xd_cov), value = TRUE)
 expect_true(
   !"covid_pre_covid" %in% cov_cols,
@@ -330,8 +337,6 @@ expect_true(
 # ---------------------------------------------------------------------------
 # Design p<=20
 # ---------------------------------------------------------------------------
-covid_fixture <- rep("pre_covid", length(dates3))
-covid_fixture[seq.int(floor(length(dates3) / 2), length(dates3))] <- "early_covid"
 Xd <- md_build_daily_design(
   dates3,
   xexp,

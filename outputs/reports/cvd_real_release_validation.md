@@ -1,8 +1,8 @@
 # CHD/HF real-release validation
 
-- Checked: 2026-08-10 12:12:54.81102
+- Checked: 2026-08-10 12:19:29.057725
 - Release directory: `/workspace/outputs/release_chd_hf`
-- Passed: 28 / 28
+- Passed: 29 / 29
 
 | Check | Status | Detail |
 |---|---|---|
@@ -15,6 +15,7 @@
 | no_ambiguous_generic_outputs | PASS | none |
 | governed_inputs_gitignored | PASS | source aggregates and merged panels |
 | governed_inputs_not_tracked | PASS | no governed inputs tracked |
+| no_tracked_monthly_count_or_synthetic_panels | PASS | no governed inputs tracked |
 | release_directory_populated | PASS | /workspace/outputs/release_chd_hf |
 | table2_claim_ledger_identity | PASS | 12 rows; rr/CI/p/q/se/provenance identical |
 | claim_text_rounding | PASS | claim_text matches 3-dp rounding |

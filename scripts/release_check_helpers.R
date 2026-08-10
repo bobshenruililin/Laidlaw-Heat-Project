@@ -38,7 +38,7 @@ OUTCOME_LABELS_RELEASE <- c(
 )
 
 CALIBRATION_WATERMARK <-
-  "SYNTHETIC CALIBRATION — METHOD VALIDATION, NOT HEALTH FINDINGS."
+  "SYNTHETIC CALIBRATION - METHOD VALIDATION, NOT HEALTH FINDINGS."
 
 METHODS_FEASIBILITY_RELDIR <- "supplement/methods_feasibility"
 
@@ -55,7 +55,7 @@ claim_text_from_row <- function(outcome_label, contrast, rr, rr_low, rr_high,
   paste0(
     outcome_label, ": ", contrast, "; count ratio ",
     sprintf(paste0("%.", digits, "f"), rr), " (95% CI ",
-    sprintf(paste0("%.", digits, "f"), rr_low), "–",
+    sprintf(paste0("%.", digits, "f"), rr_low), "-",
     sprintf(paste0("%.", digits, "f"), rr_high), ")."
   )
 }

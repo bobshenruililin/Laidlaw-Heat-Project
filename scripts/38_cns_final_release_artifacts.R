@@ -505,8 +505,9 @@ p5 <- ggplot2::ggplot(
   )
 ) +
   ggplot2::geom_vline(xintercept = 1, linetype = "dashed", colour = "grey45") +
-  ggplot2::geom_errorbarh(
-    height = 0.18,
+  ggplot2::geom_errorbar(
+    orientation = "y",
+    width = 0.18,
     position = ggplot2::position_dodge(width = 0.7)
   ) +
   ggplot2::geom_point(
@@ -553,7 +554,7 @@ if (file.exists(events_path)) {
       guide = "none"
     ) +
     ggplot2::labs(
-      title = "Source-locked heat-event counts, 2013–2023",
+      title = "Source-locked heat-event counts, 2013-2023",
       subtitle = "Public HKO morphology audit; no health outcomes",
       x = NULL,
       y = "Events"

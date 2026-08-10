@@ -266,6 +266,7 @@ for (spec in availability_sources) {
 cal_summary_path <- file.path(cal_dir, "md_calibration_summary.csv")
 cal_gate_path <- file.path(cal_dir, "md_calibration_gate_summary.csv")
 cal_fail_note <- file.path(cal_dir, "md_pilot_f1_0_failure_note.md")
+cal_f12_report <- file.path(cal_dir, "md_calibration_f1_2_decision_report.md")
 cal_available <- file.exists(cal_summary_path) && file.exists(cal_gate_path)
 avail_rows[["calibration_md"]] <- normalise_availability_row(
   "43_simulate_md_calibration",
@@ -460,6 +461,14 @@ if (file.exists(cal_fail_note)) {
     "md_pilot_f1_0_failure_note.md",
     RELEASE_SYNTHETIC_CALIBRATION, "METHODS_FEASIBILITY",
     "F1.0 pilot nuisance-seasonality failure note"
+  )
+}
+if (file.exists(cal_f12_report)) {
+  record_mf(
+    cal_f12_report,
+    "md_calibration_f1_2_decision_report.md",
+    RELEASE_SYNTHETIC_CALIBRATION, "METHODS_FEASIBILITY",
+    "Strict worst-cell F1.2 gate decision; no real coefficient admitted"
   )
 }
 # Optional pilot gate echo (still synthetic / methods only)
@@ -746,7 +755,7 @@ writeLines(
     "not CHD/HF health findings.",
     "",
     "- Weather source-lock, validation, and spillover morphology: `REAL_PUBLIC_HKO`.",
-    "- Calibration summary, gates, and F1.0 failure note: `SYNTHETIC_CALIBRATION`.",
+    "- Calibration summary, strict F1.2 gates/decision, and F1.0 failure note: `SYNTHETIC_CALIBRATION`.",
     "- Ensemble / prediction / M|D blockers may be mirrored here as availability facts.",
     "",
     "Do not promote calibration coefficients or gate outcomes into main Tables 1–4",

@@ -168,6 +168,79 @@ bh_q_identity <- function(p_values, q_values, tol = 1e-10) {
   )
 }
 
+manuscript_claim_ledger_identity <- function(manuscript_path, ledger) {
+  if (!file.exists(manuscript_path)) {
+    return(list(ok = FALSE, detail = paste0("manuscript absent: ", manuscript_path)))
+  }
+  required <- c(
+    "claim_id", "rr", "rr_low", "rr_high", "q_value_core_bh"
+  )
+  missing <- setdiff(required, names(ledger))
+  if (length(missing)) {
+    return(list(
+      ok = FALSE,
+      detail = paste0("ledger missing columns: ", paste(missing, collapse = ","))
+    ))
+  }
+
+  lines <- readLines(manuscript_path, warn = FALSE, encoding = "UTF-8")
+  marker_pattern <- "^\\s*<!--\\s*claim:(CVD-[0-9]{2})\\s*-->\\s*$"
+  marker_idx <- grep(marker_pattern, lines)
+  marker_ids <- sub(marker_pattern, "\\1", lines[marker_idx])
+  expected_ids <- as.character(ledger$claim_id)
+
+  if (length(marker_idx) != nrow(ledger) ||
+      anyDuplicated(marker_ids) ||
+      !setequal(marker_ids, expected_ids)) {
+    return(list(
+      ok = FALSE,
+      detail = paste0(
+        "claim markers mismatch; found=", paste(marker_ids, collapse = ","),
+        "; expected=", paste(expected_ids, collapse = ",")
+      )
+    ))
+  }
+
+  failures <- character()
+  for (i in seq_along(marker_idx)) {
+    id <- marker_ids[[i]]
+    row <- ledger[ledger$claim_id == id, , drop = FALSE]
+    next_idx <- marker_idx[[i]] + 1L
+    while (next_idx <= length(lines) && !nzchar(trimws(lines[[next_idx]]))) {
+      next_idx <- next_idx + 1L
+    }
+    if (next_idx > length(lines)) {
+      failures <- c(failures, paste0(id, ": no claim line"))
+      next
+    }
+    claim_line <- lines[[next_idx]]
+    required_tokens <- c(
+      sprintf("%.3f", row$rr[[1]]),
+      sprintf("%.3f", row$rr_low[[1]]),
+      sprintf("%.3f", row$rr_high[[1]]),
+      paste0("q = ", sprintf("%.3f", row$q_value_core_bh[[1]]))
+    )
+    missing_tokens <- required_tokens[
+      !vapply(required_tokens, grepl, logical(1), x = claim_line, fixed = TRUE)
+    ]
+    if (length(missing_tokens)) {
+      failures <- c(
+        failures,
+        paste0(id, ": missing ", paste(missing_tokens, collapse = "|"))
+      )
+    }
+  }
+
+  list(
+    ok = !length(failures),
+    detail = if (!length(failures)) {
+      "12 manuscript claim markers match ledger RR/CI/q rounding"
+    } else {
+      paste(failures, collapse = "; ")
+    }
+  )
+}
+
 # ---------------------------------------------------------------------------
 # Uncertainty ladder (Table 4)
 # ---------------------------------------------------------------------------

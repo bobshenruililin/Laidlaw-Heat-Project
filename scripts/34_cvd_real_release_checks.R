@@ -164,6 +164,21 @@ if (!file.exists(table2_path) || !file.exists(ledger_path)) {
   bh_chk <- bh_q_identity(ledger$p_value, ledger$q_value_core_bh)
   add_pass_fail("bh_q_recompute", bh_chk$ok, bh_chk$detail)
 
+  manuscript_path <- file.path(
+    root,
+    "manuscript",
+    "chd_hf_thermal_associations_2013_2023.md"
+  )
+  manuscript_chk <- manuscript_claim_ledger_identity(
+    manuscript_path,
+    ledger
+  )
+  add_pass_fail(
+    "manuscript_claim_ledger_identity",
+    manuscript_chk$ok,
+    manuscript_chk$detail
+  )
+
   # Never rename HA → REAL on claim surfaces
   if ("provenance" %in% names(ledger)) {
     add_pass_fail(

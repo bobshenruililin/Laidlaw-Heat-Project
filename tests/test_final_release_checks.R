@@ -85,6 +85,30 @@ ledger_round_bad$claim_text[[1]] <- sub("0\\.", "0,", ledger_round_bad$claim_tex
 round_bad <- claim_text_rounding_ok(ledger_round_bad)
 expect_false(round_bad$ok, "claim_text rounding detects mismatch")
 
+# Manuscript claim markers map one-to-one to ledger RR/CI/q values.
+claim_fixture <- tempfile(fileext = ".md")
+claim_lines <- unlist(lapply(seq_len(nrow(ledger)), function(i) {
+  c(
+    paste0("<!-- claim:", ledger$claim_id[[i]], " -->"),
+    paste0(
+      "Estimate ", sprintf("%.3f", ledger$rr[[i]]),
+      " (", sprintf("%.3f", ledger$rr_low[[i]]), "–",
+      sprintf("%.3f", ledger$rr_high[[i]]), "); q = ",
+      sprintf("%.3f", ledger$q_value_core_bh[[i]]), ".",
+      ""
+    )
+  )
+}))
+writeLines(claim_lines, claim_fixture, useBytes = TRUE)
+ms_ok <- manuscript_claim_ledger_identity(claim_fixture, ledger)
+expect_true(ms_ok$ok, "manuscript claim markers match ledger")
+claim_bad <- readLines(claim_fixture, warn = FALSE)
+claim_bad[claim_bad == claim_lines[[2]]] <- "Estimate 9.999; q = 0.999."
+writeLines(claim_bad, claim_fixture, useBytes = TRUE)
+ms_bad <- manuscript_claim_ledger_identity(claim_fixture, ledger)
+expect_false(ms_bad$ok, "manuscript claim checker detects numeric drift")
+unlink(claim_fixture)
+
 # ---- Uncertainty ladder builder / validator ---------------------------------
 core_rows <- list()
 for (outcome in CORE_OUTCOMES) {

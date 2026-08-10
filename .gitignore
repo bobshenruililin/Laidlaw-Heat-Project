@@ -48,6 +48,10 @@ memos/
 !analysis_plan/hogan_tuesday_email_draft.md
 outputs/session_info_setup.txt
 
+# Rebuildable synthetic calibration internals (summaries/gates remain tracked)
+outputs/calibration_md/checkpoints/
+outputs/calibration_md/md_calibration_raw_metrics.csv
+
 # HA approved monthly aggregates and merged panels (never commit event counts)
 data_processed/*_aggregates_normalized.csv
 data_processed/*_analysis_panel.csv

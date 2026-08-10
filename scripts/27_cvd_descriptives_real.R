@@ -128,18 +128,6 @@ write_csv_safe(snapshot, file.path(tab_dir, "cvd_descriptive_snapshot.csv"))
 # --- Figures ---
 theme_set(ggplot2::theme_bw(base_size = 11))
 
-# Monthly time series (figure OK; not a markdown dump of counts)
-p_ts <- ggplot2::ggplot(all_df, ggplot2::aes(x = month_date, y = n_events, colour = outcome)) +
-  ggplot2::geom_line(linewidth = 0.7) +
-  ggplot2::facet_wrap(~ outcome, ncol = 1, scales = "free_y") +
-  ggplot2::scale_colour_manual(values = c(chd = "#0b3d4a", hf = "#8b3a3a"), guide = "none") +
-  ggplot2::labs(
-    title = "Monthly first-hospitalisation counts (HA_APPROVED_AGGREGATE)",
-    subtitle = "CHD and HF among T2D/HTN cohort; ecological C&SD 35+ denominator (not cohort at-risk)",
-    x = NULL, y = "Monthly events"
-  )
-ggplot2::ggsave(file.path(fig_dir, "cvd_monthly_timeseries.png"), p_ts, width = 10, height = 6, dpi = 150)
-
 # Seasonality
 p_season <- ggplot2::ggplot(season, ggplot2::aes(x = month, y = mean_events, colour = outcome)) +
   ggplot2::geom_line(linewidth = 0.8) +
@@ -164,18 +152,10 @@ p_ann <- ggplot2::ggplot(annual, ggplot2::aes(x = year, y = total_events, fill =
   )
 ggplot2::ggsave(file.path(fig_dir, "cvd_annual_totals.png"), p_ann, width = 9, height = 4.5, dpi = 150)
 
-# Event vs mean temperature scatter
-p_sc <- ggplot2::ggplot(all_df, ggplot2::aes(x = mean_temp, y = n_events, colour = outcome)) +
-  ggplot2::geom_point(alpha = 0.55, size = 1.6) +
-  ggplot2::geom_smooth(method = "lm", se = TRUE, linewidth = 0.7) +
-  ggplot2::facet_wrap(~ outcome, scales = "free_y") +
-  ggplot2::scale_colour_manual(values = c(chd = "#0b3d4a", hf = "#8b3a3a"), guide = "none") +
-  ggplot2::labs(
-    title = "Monthly events vs mean temperature",
-    subtitle = "HA_APPROVED_AGGREGATE; descriptive only (not model IRRs)",
-    x = "Mean temperature (C)", y = "Monthly events"
-  )
-ggplot2::ggsave(file.path(fig_dir, "cvd_events_vs_mean_temp.png"), p_sc, width = 9, height = 5, dpi = 150)
+# Raw month-grain event time series and event-vs-temperature scatter plots are
+# deliberately not written to the tracked outputs tree. The manuscript release
+# uses indexed Figure 1 from script 33, which does not expose absolute monthly
+# counts.
 
 # Short note (summaries only — no month-by-month HA counts)
 note_path <- file.path(root, "outputs", "reports", "cvd_descriptives_note.md")
@@ -214,7 +194,9 @@ lines <- c(
   "## Outputs",
   "",
   "- `outputs/tables/cvd_descriptive_*.csv`",
-  "- `outputs/figures/descriptives/cvd_*.png`",
+  "- `outputs/figures/descriptives/cvd_annual_totals.png`",
+  "- `outputs/figures/descriptives/cvd_seasonality_by_month.png`",
+  "- Indexed month series: `outputs/release_chd_hf/figures/figure1_indexed_outcome_series.png`",
   "",
   "Gate 3 remains open; descriptives are not primary manuscript claims."
 )

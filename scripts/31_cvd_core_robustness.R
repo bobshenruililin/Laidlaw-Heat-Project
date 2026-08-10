@@ -100,6 +100,7 @@ residual_metrics <- function(model) {
 
 estimate_rows <- list()
 fit_rows <- list()
+se_status_rows <- list()
 joint_rows <- list()
 cor_rows <- list()
 vif_rows <- list()
@@ -153,13 +154,62 @@ for (outcome in outcomes) {
           dplyr::bind_cols(fit_meta, residual_metrics(model))
 
         for (se_method in se_methods) {
-          vm <- tryCatch(vcov_for(model, se_method), error = function(e) NULL)
-          if (is.null(vm)) next
+          se_key <- paste(
+            outcome, pid, offset_name, family_name, se_method,
+            sep = "_"
+          )
+          vm_result <- tryCatch(
+            list(ok = TRUE, value = vcov_for(model, se_method), message = ""),
+            error = function(e) {
+              list(ok = FALSE, value = NULL, message = conditionMessage(e))
+            }
+          )
+          if (!isTRUE(vm_result$ok)) {
+            se_status_rows[[se_key]] <- data.frame(
+              outcome = outcome,
+              pathway_id = pid,
+              exposure = spec$exposure,
+              offset_policy = offset_name,
+              family = family_name,
+              se_method = se_method,
+              status = "FAILED",
+              message = vm_result$message,
+              data_status = "HA_APPROVED_AGGREGATE",
+              stringsAsFactors = FALSE
+            )
+            next
+          }
+          vm <- vm_result$value
           meta <- fit_meta
           meta$se_method <- se_method
           row <- extract_term(model, term, vm, meta)
           if (!is.null(row)) {
-            estimate_rows[[paste(outcome, pid, offset_name, family_name, se_method, sep = "_")]] <- row
+            estimate_rows[[se_key]] <- row
+            se_status_rows[[se_key]] <- data.frame(
+              outcome = outcome,
+              pathway_id = pid,
+              exposure = spec$exposure,
+              offset_policy = offset_name,
+              family = family_name,
+              se_method = se_method,
+              status = "OK",
+              message = "",
+              data_status = "HA_APPROVED_AGGREGATE",
+              stringsAsFactors = FALSE
+            )
+          } else {
+            se_status_rows[[se_key]] <- data.frame(
+              outcome = outcome,
+              pathway_id = pid,
+              exposure = spec$exposure,
+              offset_policy = offset_name,
+              family = family_name,
+              se_method = se_method,
+              status = "FAILED",
+              message = paste0("Coefficient term not found: ", term),
+              data_status = "HA_APPROVED_AGGREGATE",
+              stringsAsFactors = FALSE
+            )
           }
         }
       }
@@ -248,6 +298,7 @@ for (outcome in outcomes) {
 est_df <- dplyr::bind_rows(estimate_rows)
 joint_df <- dplyr::bind_rows(joint_rows)
 fit_df <- dplyr::bind_rows(fit_rows)
+se_status_df <- dplyr::bind_rows(se_status_rows)
 cor_df <- dplyr::bind_rows(cor_rows)
 vif_df <- dplyr::bind_rows(vif_rows)
 
@@ -264,6 +315,7 @@ dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 write_csv_safe(est_df, file.path(out_dir, "cvd_core_robust_estimates.csv"))
 write_csv_safe(joint_df, file.path(out_dir, "cvd_single_vs_joint_estimates.csv"))
 write_csv_safe(fit_df, file.path(out_dir, "cvd_core_model_fit.csv"))
+write_csv_safe(se_status_df, file.path(out_dir, "cvd_core_se_fit_status.csv"))
 write_csv_safe(cor_df, file.path(out_dir, "cvd_exposure_correlations.csv"))
 write_csv_safe(vif_df, file.path(out_dir, "cvd_exposure_vif.csv"))
 

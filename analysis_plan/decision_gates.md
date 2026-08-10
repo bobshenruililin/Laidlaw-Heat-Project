@@ -57,7 +57,7 @@ Owners and dates use placeholders where still open.
 |---|---|---|
 | Primary outcome | **Team decision needed:** CHD and/or HF first hospitalisations (T2D/HTN cohort) now runnable; stroke pending file | Bishai / team |
 | AMI / general CVD principal-dx | General HA still lacks admission reasons; Roro’s CHD/HF files are **first-event** constructions, not principal-dx from general HA | Meeting 17 Jul + 7 Aug receipt |
-| Primary denominator | C&SD 35+ ecological offset **with cohort mismatch caveat** until T2D/HTN denominators exist | Bishai / Bob |
+| Primary denominator | Amended continuity analysis uses days-in-month and reports count ratios; C&SD 35+ × days is an ecological sensitivity. Team may instead request the T2D/HTN cohort still at risk | Bishai / Roro / Bob |
 | Continuous exposures | Same-month Tmax / Tmin (and/or Tmean); lag-1 as paired spec | Bishai |
 | Heatwave / extreme family | Official counts + Ren/Wang spell & 2D3N metrics; provisional HM/CM until Hogan lock | Bob / Bishai |
 | Multi-method panel | P01–P18 + provisional HM/CM **completed for CHD/HF**; packet in `reports/gate3_decision_packet_2026-08-07.md` | Team |

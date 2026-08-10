@@ -54,6 +54,10 @@ outputs/calibration_md/md_calibration_raw_metrics.csv
 outputs/calibration_md/md_calibration_*_pilot_10.csv
 outputs/calibration_md/md_calibration_*_core_500.csv
 
+# Month-grain HA count visualisations stay local; release uses indexed series.
+outputs/figures/descriptives/cvd_monthly_timeseries.png
+outputs/figures/descriptives/cvd_events_vs_mean_temp.png
+
 # HA approved monthly aggregates and merged panels (never commit event counts)
 data_processed/*_aggregates_normalized.csv
 data_processed/*_analysis_panel.csv

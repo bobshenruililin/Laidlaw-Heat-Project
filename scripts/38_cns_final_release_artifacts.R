@@ -297,6 +297,11 @@ avail_rows[["calibration_md"]] <- normalise_availability_row(
 )
 
 availability <- dplyr::bind_rows(avail_rows)
+availability$artifact_path <- sub(
+  paste0("^", normalizePath(root, winslash = "/"), "/?"),
+  "",
+  gsub("\\\\", "/", availability$artifact_path)
+)
 write_csv_safe(
   availability,
   file.path(release_tables, "analysis_availability.csv")

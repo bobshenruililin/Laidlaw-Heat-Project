@@ -22,7 +22,7 @@ if (file.exists(file.path("scripts", "final_model_helpers.R"))) {
 }
 root <- project_root()
 setwd(root)
-ensure_packages(c("yaml", "MASS", "glarma"))
+ensure_packages(c("yaml", "MASS", "glarma", "digest"))
 
 PILOT_REPS <- as.integer(Sys.getenv("MD_PILOT_REPS", unset = "100"))
 CORE_REPS <- as.integer(Sys.getenv("MD_CORE_REPS", unset = "500"))
@@ -31,6 +31,7 @@ N_WORKERS <- as.integer(Sys.getenv("MD_WORKERS", unset = "1"))
 RUN_MODE <- Sys.getenv("MD_RUN_MODE", unset = "pilot")
 MASTER_SEED <- MD_MASTER_SEED
 DESIGN_VERSION <- "F1.1"
+INPUT_HASH <- NA_character_
 
 if (!is.finite(PILOT_REPS) || PILOT_REPS < 1L) PILOT_REPS <- 100L
 if (!is.finite(CORE_REPS) || CORE_REPS < 1L) CORE_REPS <- 500L
@@ -75,6 +76,7 @@ append_run_status <- function(status, message, ...) {
     n_workers = N_WORKERS,
     master_seed = MASTER_SEED,
     design_version = DESIGN_VERSION,
+    input_hash = INPUT_HASH,
     data_status = MD_PROVENANCE_SYNTHETIC,
     stringsAsFactors = FALSE
   )
@@ -120,10 +122,25 @@ if (!all(weather$data_status == MD_PROVENANCE_PUBLIC_HKO)) {
 margins_chd <- md_parse_expected_monthly_margins("chd", root = root)
 margins_hf <- md_parse_expected_monthly_margins("hf", root = root)
 core_fit_path <- file.path(root, "outputs", "tables", "cvd_core_model_fit.csv")
+estimators <- c(
+  "oracle_daily", "md", "monthly_nb", "glarma_ar1",
+  "spillover_burden"
+)
 
 scenarios <- md_build_scenarios(include_edge = TRUE)
 scenarios$n_reps_planned <- n_reps
 scenarios$design_version <- DESIGN_VERSION
+INPUT_HASH <- digest::digest(
+  list(
+    weather = weather[, c("date", "hot_night", "cold_day"), drop = FALSE],
+    margins_chd = margins_chd,
+    margins_hf = margins_hf,
+    scenarios = scenarios,
+    estimators = estimators
+  ),
+  algo = "sha256"
+)
+scenarios$input_hash <- INPUT_HASH
 write_csv_safe(scenarios, scenario_path)
 write_csv_safe(scenarios, scenario_mode_path)
 
@@ -135,7 +152,10 @@ registry <- if (exists("load_final_model_registry", mode = "function")) {
   stop("yaml required to load admission gates")
 }
 
-estimators <- c("oracle_daily", "md", "monthly_nb", "glarma_ar1", "spillover_burden")
+append_run_status(
+  "design_ready",
+  paste0("Calibration design hash=", INPUT_HASH)
+)
 
 # Deterministic seed stream: master + scenario index + rep
 scenario_seed <- function(scenario_index, rep_id) {
@@ -221,7 +241,9 @@ for (i in seq_len(nrow(scenarios))) {
     sc$scenario_id[[1]],
     RUN_MODE,
     n_reps,
-    design_version = DESIGN_VERSION
+    design_version = paste0(
+      DESIGN_VERSION, "-", substr(INPUT_HASH, 1L, 12L)
+    )
   )
   message(
     sprintf(

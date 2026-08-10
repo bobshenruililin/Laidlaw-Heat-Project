@@ -77,7 +77,8 @@ report_lines <- md_format_f12_decision_report(
   summary_all,
   gates,
   raw_note = paste0(
-    "F1.1 500-rep raw metrics at ", raw_path,
+    "F1.1 500-rep raw metrics at ",
+    "outputs/calibration_md/md_calibration_raw_metrics.csv",
     " (untouched; n_rows=", nrow(raw), ")"
   )
 )

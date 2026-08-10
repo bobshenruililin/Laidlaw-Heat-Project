@@ -11,23 +11,59 @@ pdflatex -interaction=nonstopmode Laidlaw_Stage3_A0_portrait.tex
 - Output: `Laidlaw_Stage3_A0_portrait.pdf` (ISO **A0 portrait**, 841 × 1189 mm, single page)
 - Submission copy: `outputs/Laidlaw_Stage3_Poster_Shen.pdf`
 
-### Layout
+### Layout (readability redesign v2, Aug 2026)
 
-Full-width header (title, author, exploratory-panel badges), then two equal
-portrait column shells filling the page, then a collaborator/provenance footer.
-Left column: motivation and scope boundaries; data/cohort/estimand; three
-figures (annual extremes, monthly extremes, seasonal pattern); literature map.
-Right column: 12-contrast methods panel; key exploratory results with the two
-validated signals; 12-contrast core table; forest plot; SE-method ladder;
-M|D feasibility note (negative methods result); limitations; pointers; take-home.
+Ground-up redesign after the dense two-column/15-box draft was rejected as
+unreadable at 1–2 m; v2 moves to a **band architecture** so the sheet is filled
+(~91% of usable height) without stretching whitespace mechanically:
 
-### Content sources and provenance
+1. Full-width header band (title, subtitle, author/affiliation).
+2. Compact top band: INTRODUCTION + annual-extremes context figure (left,
+   40%) | OBJECTIVE + METHODS with a horizontal data-flow chain (right, 58%).
+3. Dominant full-width RESULTS band (~55% of content area): lead line, two
+   key-number callout boxes, panel bullets, then the 12-contrast forest drawn
+   as two side-by-side outcome panels (CHD | HF) with the focused
+   SE-uncertainty plot beside it.
+4. Bottom band: INTERPRETATION / LIMITATIONS | CONCLUSION (+ next-data note).
+5. Footer bottom-anchored with `\vfill`; band gutters are fixed (14/30/30 mm)
+   so spacing is deliberate, not stretched.
 
-- REAL HKO extremes (`figures/exposure_aging/fig01`, `fig02`) — environmental descriptors only
-- `HA_APPROVED_AGGREGATE` seasonal pattern + panel results (`outputs/release_chd_hf/figures/figure2`, `figure3`, `figure5`)
-- Validated numbers only from `reports/laidlaw_stage3/results_panel_chd_hf_2026-08-07.md`
-- Gate 3 is OPEN: every health association on the poster is labelled exploratory;
-  no confirmatory headline; no stroke; no principal-diagnosis AMI.
+Type scale (actual printed sizes): title 66 pt, subtitle/author 30 pt, section
+headings 34 pt (uppercase), results sub-heading 26 pt, body 26 pt, callout
+numbers 50 pt, figure labels ≈21–25 pt, captions and notes 18.5 pt, footer
+17.5 pt. Roughly 590 poster words excluding labels, captions and footer.
+
+Palette: deep ink/navy + teal on white; warm accent (#B84A2E) for heat, cool
+blue (#2F6C9C) for cold. Typographic identity only — no logo assets exist, so
+none are faked.
+
+### Figures (poster-specific, reproducible)
+
+```bash
+Rscript scripts/46_build_laidlaw_poster_figures.R
+```
+
+Draws three figures into `reports/poster/figures/`, sized for the band layout
+so labels print at ≈21–25 pt:
+
+- `fig_poster_weather.*` (12.5 × 7.0 in) — annual HKO hot nights vs cold days,
+  2013–2023; prints ~317 mm wide in the top band
+  (source: `outputs/tables/exposure_aging/annual_extremes_and_spell_burden.csv`)
+- `fig_poster_forest12.*` (18 × 12.3 in) — the 12 core count ratios (NW6) as two
+  side-by-side outcome panels with an estimate column each; prints ~496 mm wide
+  (source: `outputs/release_chd_hf/tables/table2_core_models.csv`)
+- `fig_poster_uncertainty.*` (10 × 11.0 in) — the two leading contrasts × 4 SE
+  methods; prints ~274 mm wide beside the forest
+  (source: `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv`)
+
+### Content rules honoured
+
+Validated numbers only (CHD × hot nights 1.022 [1.002–1.042], p = 0.032,
+q = 0.192; HF × cold days 1.073 [1.006–1.144], p = 0.031, q = 0.192; all 12
+q > 0.19; 132 months; 156,156 CHD / 29,681 HF first hospitalisations).
+Exploratory framing throughout; no Gate 3 language, no provenance strings, no
+file paths, no stroke result, no principal-diagnosis claim, no raw monthly
+counts. Technical provenance is compressed into captions/notes and the footer.
 
 ## GEST-2026 poster (legacy — landscape, not the Stage 3 submission)
 

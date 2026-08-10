@@ -57,7 +57,8 @@ if (dir.exists(release_dir)) {
 dates <- c(seq(as.Date("2013-01-01"), as.Date("2013-01-31"), by = "day"),
            seq(as.Date("2013-02-01"), as.Date("2013-02-28"), by = "day"))
 month_id <- format(dates, "%Y-%m")
-X <- cbind(intercept = 1)
+X <- matrix(1, nrow = length(dates), ncol = 1L)
+colnames(X) <- "intercept"
 beta <- log(2)
 offset <- rep(1, length(dates))
 groups <- md_prepare_groups(month_id, offset)
@@ -329,7 +330,14 @@ expect_true(
 # ---------------------------------------------------------------------------
 # Design p<=20
 # ---------------------------------------------------------------------------
-Xd <- md_build_daily_design(dates3, xexp, include_covid = TRUE)
+covid_fixture <- rep("pre_covid", length(dates3))
+covid_fixture[seq.int(floor(length(dates3) / 2), length(dates3))] <- "early_covid"
+Xd <- md_build_daily_design(
+  dates3,
+  xexp,
+  covid_phase = covid_fixture,
+  include_covid = TRUE
+)
 expect_true(ncol(Xd) <= MD_MAX_PARAMETERS, "daily design p<=20")
 
 if (length(failures)) {

@@ -49,7 +49,8 @@ dates <- c(
   seq(as.Date("2015-02-01"), as.Date("2015-02-28"), by = "day")
 )
 month_id <- format(dates, "%Y-%m")
-X <- cbind(intercept = 1)
+X <- matrix(1, nrow = length(dates), ncol = 1L)
+colnames(X) <- "intercept"
 beta <- log(3)
 groups <- md_prepare_groups(month_id, rep(1, length(dates)))
 S <- c(`2015-01` = 93, `2015-02` = 84)  # 31*3, 28*3

@@ -209,6 +209,9 @@ md_build_daily_design <- function(dates,
 md_prepare_groups <- function(month_id, offset = NULL, n_days = NULL) {
   month_id <- as.character(month_id)
   if (is.null(n_days)) n_days <- length(month_id)
+  if (length(month_id) != n_days) {
+    stop("month_id length must equal n_days")
+  }
   if (is.null(offset)) offset <- rep(1, n_days)
   offset <- as.numeric(offset)
   if (length(offset) != n_days) stop("offset length must match daily rows")
@@ -239,6 +242,8 @@ MD_ETA_CLAMP <- 50
 md_month_means <- function(beta, X, groups) {
   beta <- as.numeric(beta)
   if (any(!is.finite(beta))) stop("non_finite_beta")
+  if (nrow(X) != groups$n_days) stop("X rows must equal grouped daily rows")
+  if (ncol(X) != length(beta)) stop("X columns must equal beta length")
   eta_raw <- as.numeric(X %*% beta)
   if (any(!is.finite(eta_raw))) stop("non_finite_linear_predictor")
   eta <- .md_clamp_eta(eta_raw)

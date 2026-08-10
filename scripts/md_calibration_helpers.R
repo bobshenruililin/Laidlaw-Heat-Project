@@ -898,6 +898,7 @@ md_evaluate_gates <- function(metric_rows, registry = NULL, root = NULL) {
     }
   }
   g <- registry$md_feasibility$admission_gates
+  g <- lapply(g, function(x) as.numeric(x))
   # Restrict to M|D estimator rows
   md <- metric_rows[metric_rows$estimator == "md", , drop = FALSE]
   if (!nrow(md)) {

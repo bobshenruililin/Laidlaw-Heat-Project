@@ -15,6 +15,12 @@ ensure_packages(c("yaml", "dplyr"))
 reg <- yaml::read_yaml(file.path(root, "analysis_plan", "hot_cold_month_registry.yml"))
 clim <- utils::read.csv(file.path(root, "data_processed", "climate_monthly_2013_2023.csv"), stringsAsFactors = FALSE)
 exp <- utils::read.csv(file.path(root, "data_processed", "exposures_monthly_2013_2023.csv"), stringsAsFactors = FALSE)
+spill_path <- file.path(root, "data_processed", "exposures_spillover_monthly_2013_2023.csv")
+spill <- if (file.exists(spill_path)) {
+  utils::read.csv(spill_path, stringsAsFactors = FALSE)
+} else {
+  NULL
+}
 
 # Prefer daily extract if present for event-based definitions
 daily_candidates <- c(
@@ -123,7 +129,27 @@ if ("CM30" %in% starters && "max_cold_spell_touching" %in% names(clim)) {
 
 # HM23: Li-HW style — requires daily; provisional from warm-season monthly VHD spell starts if daily absent
 if ("HM23" %in% starters) {
-  if (has_daily && all(c("date", "tmax") %in% names(daily))) {
+  if (!is.null(spill) && all(c("month_id", "li_hw_onset_count") %in% names(spill))) {
+    counts <- spill$li_hw_onset_count[match(clim$month_id, spill$month_id)]
+    counts[is.na(counts)] <- 0L
+    warm_idx <- clim$month %in% 5:9
+    thr_m <- qtile(counts[warm_idx], 90)
+    # Zero-heavy monthly event counts make a quantile threshold of zero select
+    # every warm month. Until Hogan locks ties, require at least one event.
+    out$HM23 <- as.integer(
+      warm_idx & if (thr_m <= 0) counts > 0 else counts >= thr_m
+    )
+    out$HM23_event_starts <- as.integer(counts)
+    audit$HM23 <- list(
+      threshold_monthly_p90 = thr_m,
+      n_selected = sum(out$HM23),
+      status = if (thr_m <= 0) {
+        "source_locked_Li_events_zero_tie_guard_Hogan_monthly_tail_NOT_locked"
+      } else {
+        "source_locked_Li_daily_events_Hogan_monthly_tail_NOT_locked"
+      }
+    )
+  } else if (has_daily && all(c("date", "tmax") %in% names(daily))) {
     # Simplified provisional HM23: count days tmax > calendar-day p90 within warm season runs >=3
     # Full Li-HW calendar-day percentile with 15-day window is deferred to Hogan lock.
     d <- daily

@@ -6,7 +6,7 @@ Summer 2026 deliverables (HKU Laidlaw):
 |---|---|
 | Research essay 2000–3000 words | Stage 3 essay: [`essay_lit_methods.md`](essay_lit_methods.md) · [`Essay_Lit_Methods.pdf`](Essay_Lit_Methods.pdf) · [LaTeX](../latex/laidlaw_stage3/essay_lit_methods.tex) |
 | Pathway × literature map (multimedia) | [`pathway_literature_map.md`](pathway_literature_map.md) |
-| A0 portrait poster 841×1189 mm | Scaffold next (do not reuse GEST landscape as-is) |
+| A0 portrait poster 841×1189 mm | Built: [`../poster/Laidlaw_Stage3_A0_portrait.pdf`](../poster/Laidlaw_Stage3_A0_portrait.pdf) · [TeX](../poster/Laidlaw_Stage3_A0_portrait.tex) · submission copy [`../../outputs/Laidlaw_Stage3_Poster_Shen.pdf`](../../outputs/Laidlaw_Stage3_Poster_Shen.pdf) (GEST landscape kept as legacy only) |
 | HKU report form + supervisor endorsement | Bob / Dr Bishai (outside repo) |
 | Spreadsheet columns Q, R | Bob |
 

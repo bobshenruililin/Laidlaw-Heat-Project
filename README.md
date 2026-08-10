@@ -1,11 +1,15 @@
-# Thermal extremes and stroke hospital burden in Hong Kong, 2013–2023
+# Thermal extremes and cardiovascular first-hospitalisation burden in Hong Kong, 2013–2023
 
 Laidlaw Scholars project · The University of Hong Kong  
 **Bob Shen Ruililin** · Supervisor: **Professor David Bishai**
 
 **For agents / new chats:** read [`knowledge/CONTEXT_BOOTSTRAP.md`](knowledge/CONTEXT_BOOTSTRAP.md) first, then use its linked playbook for the current gate.
 
-This repository is the working home for a monthly climate–health analysis: how temperature and defined heatwave / cold extremes relate to **stroke admission aggregates** in Hong Kong, 2013–2023. The README is the primary orientation document; code and data sit underneath it.
+This repository is the working home for a monthly climate–health analysis.
+The current governed paper examines **CHD and HF first-hospitalisation
+aggregates among people with T2D and/or HTN**; stroke was named but not
+delivered and remains a future track. The README is the primary orientation
+document; code and data sit underneath it.
 
 **Compounding context:** lab meetings, assumptions, and agent briefs are meant to accumulate in-repo — not only in chat. See [`AGENTS.md`](AGENTS.md) (for agents) and [`analysis_plan/human_agent_collaboration.md`](analysis_plan/human_agent_collaboration.md) (for Bob + future collaborators). Detours and dead ends go in [`analysis_plan/context_compound_log.md`](analysis_plan/context_compound_log.md).
 
@@ -17,7 +21,8 @@ This repository is the working home for a monthly climate–health analysis: how
 |---|---|
 | **Design** | Ecological **monthly** time series (132 months, Jan 2013–Dec 2023) |
 | **Exposures** | HKO Headquarters temperature (mean / Tmax / Tmin, lags) plus official extreme-day counts and Ren/Wang-style heatwave-burden metrics (spells, 2D3N) |
-| **Outcome (near-term)** | **Stroke admission aggregates** (files pending) |
+| **Outcome (current)** | **CHD and HF first recorded hospitalisations after first diagnosis** among a T2D/HTN cohort |
+| **Outcome (pending)** | Stroke file not delivered; no stroke coefficients |
 | **Not available** | General HA extract **does not specify reasons for admission** — no AMI / principal-dx CVD panel from that file |
 | **Strategy** | Explore a labelled panel of ~10 specifications (continuous temperature, lags, extremes, heatwave definitions, cold-side, strata, sensitivities) |
 | **Not claimed** | Individual causality; daily DLNM triggering; excess-death estimates from the lab’s separate heatwave–mortality work |
@@ -36,12 +41,32 @@ Full post-meeting recalibration: [`reports/meeting_debrief_2026-07-17.md`](repor
 | HA outcomes | **CHD + HF received 7 Aug 2026** (T2D/HTN cohort; first hosp. after first CVD dx). **Stroke file not attached.** |
 | Multi-pathway analysis | **REAL panel complete for CHD & HF** (`run_cvd_full_analysis.R`); Gate 3 open |
 | Association estimates | **Panel estimates exist for CHD/HF** — not a team-frozen headline; stroke none |
+| Final publication package | **Ready for team decision** — integrated report + manuscript + supplement PDFs; release checks 29/29 |
+| Daily-effect recovery | **Rejected for this dataset** — 500-replicate M\|D calibration failed strict gates; no real daily coefficient |
 
 Do not treat synthetic practice runs as results. Do not treat open-Gate-3 panel coefficients as the primary manuscript claim.
 
 ---
 
 ## Quick start
+
+Final packet (no governed source files required to read):
+
+- `reports/bishai_integrated_report/integrated_project_report.pdf`
+- `manuscript/chd_hf_thermal_associations_2013_2023.pdf`
+- `manuscript/chd_hf_supplement.pdf`
+- `outputs/release_chd_hf/` (29/29 validation checks)
+
+Re-run public exposure and release checks:
+
+```bash
+Rscript scripts/35_build_spillover_exposures.R
+Rscript scripts/38_cns_final_release_artifacts.R
+Rscript scripts/34_cvd_real_release_checks.R
+```
+
+The complete real-outcome rerun additionally requires governed local CHD/HF
+files matching the receipt hashes.
 
 ```bash
 Rscript scripts/00_setup.R
@@ -88,7 +113,9 @@ reports/                  meeting debrief, literature review PDF
 schemas/                  stroke aggregate + environmental contracts
 ```
 
-Correspondence, emails, and meeting slide drafts are **not** kept in this repo.
+Raw correspondence and private manuscript PDFs are **not** kept in this repo.
+Scientific decisions extracted from them are stored in redacted knowledge
+records.
 
 ---
 
@@ -109,6 +136,10 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 
 | What | Where |
 |---|---|
+| Final integrated report | `reports/bishai_integrated_report/integrated_project_report.{md,pdf}` |
+| Journal manuscript + supplement | `manuscript/chd_hf_thermal_associations_2013_2023.{md,pdf}` · `manuscript/chd_hf_supplement.{md,pdf}` |
+| Validated disclosure-minimised release | `outputs/release_chd_hf/` |
+| Final reanalysis handoff | `knowledge/2026-08-10_cns_final_reanalysis.md` |
 | Post-meeting strategy + next actions | `reports/meeting_debrief_2026-07-17.md` |
 | Pathway catalogue (P01–P18) | `analysis_plan/pathway_catalogue.md` |
 | Pathway registry (machine) | `analysis_plan/pathway_registry.yml` |

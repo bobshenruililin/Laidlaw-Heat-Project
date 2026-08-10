@@ -1,9 +1,32 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-07
+**Last updated:** 2026-08-10
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
+
+---
+
+## 0. Canonical update — final integrated reanalysis (10 August)
+
+- Current runnable outcomes: CHD and HF first recorded hospitalisation after
+  first diagnosis among a T2D/HTN cohort, 132 territory-months. Admission cause
+  is absent; stroke was not delivered.
+- Analysis of record: separate negative-binomial exposures, calendar-month +
+  `ns(time,4)`, days offset, full Model/HC1/NW3/NW6 ladder.
+- All twelve core q-values exceed 0.19. HF cold days are SE-concordant but
+  q-unprotected; CHD hot nights are SE-sensitive. No protected differential
+  thermal claim.
+- Exact Wang/Li weather engine passes five source-count reproductions.
+- Clean-room M|D daily-recovery method failed 500-replicate F1.2 gates; no
+  real daily coefficient is admitted.
+- Final packet:
+  `reports/bishai_integrated_report/integrated_project_report.pdf`,
+  `manuscript/chd_hf_thermal_associations_2013_2023.pdf`,
+  `manuscript/chd_hf_supplement.pdf`, and `outputs/release_chd_hf/` (29/29).
+- Lead scientific recommendation: Gate 3 Option A — explicit no confirmatory
+  primary; methods-focused exploratory paper. Human approval remains open.
+- Durable handoff: `knowledge/2026-08-10_cns_final_reanalysis.md`.
 
 ---
 
@@ -12,7 +35,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 | Person | Contribution | Note |
 |---|---|---|
 | **Hogan** | Weather / heat framing; Goggins challenge; 65–69 & 70–74; climate X file; hot-month (heatwave counts → upper-tail months); Atmos Res pointer; **author of the live manuscript’s weather Methods and reviewer of its Introduction**; academic-writing guidance | His live weather section is primary; credit openly; do not overwrite it with repository prose |
-| **Roro (Zhenyuan Liu)** | HA stroke aggregates; timing rule; dictionary; transfer; **health-data Methods due 7 Aug**; **excess heat-mortality baseline** (medRxiv 2026; uses Jasmine RRs); proposed to guide Bob’s regression work | Cleaned monthly stroke data due 7 Aug; first GOPC stroke mention = marker; true event earlier; ignore later mentions; revised Mac PDF still pending ingest |
+| **Roro (Zhenyuan Liu)** | Governed HA outcome construction/transfer; regression mentorship; health-data Methods; excess heat-mortality baseline (medRxiv 2026) | Delivered CHD/HF first-event aggregates 6–7 Aug; stroke still missing; revised mortality PDF audited 10 Aug |
 | **Prof. David Bishai** | Dec 2025 plan; multi-method; teamwork (“go far together”); Jasmine null-pattern / extend-to-2023; ~10°C discussion prompt; concept lead on Roro excess-mortality paper | Jasmine identity resolved (Jingwen Liu 2020 SCS) |
 | **Bob Shen** | Analysis plumbing, pollution assembly, writing; Introduction revisions and non-weather Methods due 5 Aug | Work directly in the live manuscript; preserve Hogan’s weather section and Roro’s health-data ownership |
 
@@ -28,15 +51,18 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ## 3. Scientific state
 
-- Estimand: monthly thermal exposures × stroke aggregates, 2013–2023.
+- Current estimand: monthly thermal exposures × CHD/HF first-hospitalisation
+  counts under a days offset; monthly count ratios, not incidence. Future
+  stroke estimand remains blocked by the missing file.
 - Public layers ready: HKO climate/extremes/spells, EPD pollution, C&SD denominators, CHP flu (121/132).
 - Pathway panel P01–P18 (P13 off until subtype); headline proposal P02+P04 after Gate 3 **with team**.
 - **Hot/cold month catalogue:** HM01–HM50 / CM01–CM48 + pathways H01–H12 / C01–C12 (`analysis_plan/hot_cold_month_catalogue.md`; starters in `hot_cold_month_registry.yml`; next-week sheet `hot_cold_next_week_runsheet.md`).
 - **Jasmine is confirmed:** Jingwen Liu et al. (2020), *Sustainable Cities and Society* 57:102131, DOI `10.1016/j.scs.2020.102131`; Hong Kong daily mortality 2006–2016; DLNM + quasi-Poisson; reversed J; cold AF 4.72% vs heat AF 0.16%; moderate AF 4.25% vs extreme AF 0.63%. Full PDF/supplement extraction remains pending (`literature/jasmine_liu2020_confirmed.md`; protocol in `jasmine_extension_protocol.md`).
-- **Roro medRxiv baseline:** Zhenyuan Liu, Chao Ren, Jingwen Liu, Kawasaki Yurika and David Bishai, DOI `10.64898/2026.03.05.26347683`; model-based multi-definition heatwave excess mortality, 2014–2023. It uses RRs from Jasmine and Wang/Ren. MedRxiv v1 deep-read is in `literature/roro_manuscript_deep_read.md`; the Mac `revised manuscript_clean.pdf` has not yet been ingested.
+- **Roro medRxiv baseline:** Zhenyuan Liu, Chao Ren, Jingwen Liu, Kawasaki Yurika and David Bishai, DOI `10.64898/2026.03.05.26347683`; model-based multi-definition heatwave excess mortality, 2014–2023. It uses RRs from Jasmine and Wang/Ren. MedRxiv v1 deep-read is in `literature/roro_manuscript_deep_read.md`; the private revised PDF was audited in `literature/roro_revised_manuscript_audit_2026-08-10.md` and is not the public citation.
 - **Family science baseline:** Jasmine daily mortality AF/RR → Roro absolute heat excess-death scenarios → our monthly stroke morbidity panel. These are complementary estimands (`literature/jasmine_roro_family_map.md`; `literature/exceed_jasmine_and_roro_baseline.md`).
 - **Gene/~10°C:** discussion hypothesis only, not a biological threshold or result.
-- **No stroke coefficients.** Synthetic ≠ findings.
+- **No stroke coefficients.** CHD/HF coefficients are exploratory; all core
+  q-values exceed 0.19. Synthetic calibration ≠ health findings.
 
 ---
 

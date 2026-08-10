@@ -4,6 +4,10 @@ This directory holds durable, dated project knowledge that should survive a meet
 
 **New chat or agent:** read [`CONTEXT_BOOTSTRAP.md`](CONTEXT_BOOTSTRAP.md) first. The dated July 2026 handoff is [`THIS_ARC_COMPOUND.md`](THIS_ARC_COMPOUND.md).
 
+**Latest completed arc:** [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md)
+owns the final CHD/HF reanalysis, manuscript/report package, negative M|D
+feasibility result, and open human decisions.
+
 ## Structure
 
 - [`INDEX.md`](INDEX.md): front door to the current canon and dated knowledge entries.

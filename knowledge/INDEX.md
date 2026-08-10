@@ -19,12 +19,19 @@
 
 ## Current meeting record
 
+- [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md) —
+  final integrated reanalysis, source-locked weather audit, failed M|D gate,
+  validated release, manuscript packet, and remaining human decisions.
 - [`2026-08-02_hogan_live_manuscript.md`](2026-08-02_hogan_live_manuscript.md) — live-file authority, 5/7 August ownership, review sequence, manuscript boundaries and unchanged scientific gates.
 - [`2026-08-07_ha_chd_hf_analysis.md`](2026-08-07_ha_chd_hf_analysis.md) — REAL CHD/HF panel after Roro delivery; stroke missing; Gate 3 open.
 - [`2026-07-28_hogan_tuesday_prep.md`](2026-07-28_hogan_tuesday_prep.md) — Hogan meeting context, Jasmine/Roro spine, HM/CM starters, relationship repair, and decisions to lock.
 
 ## Current deliverables
 
+- [`reports/bishai_integrated_report/integrated_project_report.pdf`](../reports/bishai_integrated_report/integrated_project_report.pdf) — supervisor decision packet.
+- [`manuscript/chd_hf_thermal_associations_2013_2023.pdf`](../manuscript/chd_hf_thermal_associations_2013_2023.pdf) — journal-facing exploratory manuscript.
+- [`manuscript/chd_hf_supplement.pdf`](../manuscript/chd_hf_supplement.pdf) — complete supplement and methods-feasibility audit.
+- [`outputs/release_chd_hf/`](../outputs/release_chd_hf/) — disclosure-minimised 29-check release.
 - [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md) — reusable YES/NO decision table and live-manuscript workflow.
 - [`manuscript/methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md) — Bob’s paste-ready non-weather Methods due 5 August.
 - [`manuscript/introduction_revision_notes.md`](../manuscript/introduction_revision_notes.md) — comment-response process and tightened Introduction draft.

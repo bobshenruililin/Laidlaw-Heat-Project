@@ -74,7 +74,7 @@ full_grid <- data.frame(
   stringsAsFactors = FALSE
 )
 daily <- merge(full_grid, daily, by = "date", all.x = TRUE, sort = TRUE)
-as_daily_dates(daily$date)
+invisible(as_daily_dates(daily$date))
 
 daily$hot_night <- is.finite(daily$tmin) &
   daily$tmin >= defs$wang_hn5$threshold_c
@@ -104,6 +104,47 @@ li_hw <- detect_li_heatwaves(
   min_length = defs$li_hw$minimum_consecutive_days,
   merge_gap_days = defs$li_hw$merge_if_gap_days_lte
 )
+
+wang_validation_period <- daily$date >= as.Date("2006-01-01") &
+  daily$date <= as.Date("2015-12-31")
+li_reference_events <- li_hw$events$start_date >= as.Date(defs$li_hw$reference_start) &
+  li_hw$events$start_date <= as.Date(defs$li_hw$reference_end)
+source_validation <- data.frame(
+  validation_id = c(
+    "li_events_1980_2023",
+    "wang_vhd_days_2006_2015",
+    "wang_hn_days_2006_2015",
+    "wang_vhd_ge5_event_days_2006_2015",
+    "wang_hn_ge5_event_days_2006_2015"
+  ),
+  expected = c(57L, 204L, 230L, 48L, 56L),
+  observed = c(
+    sum(li_reference_events),
+    sum(daily$very_hot_day[wang_validation_period], na.rm = TRUE),
+    sum(daily$hot_night[wang_validation_period], na.rm = TRUE),
+    sum(vhd5$daily$event_day[wang_validation_period], na.rm = TRUE),
+    sum(hn5$daily$event_day[wang_validation_period], na.rm = TRUE)
+  ),
+  source_doi = c(
+    defs$li_hw$source_doi,
+    rep(defs$wang_vhd5$source_doi, 4)
+  ),
+  data_status = "REAL_PUBLIC_HKO",
+  stringsAsFactors = FALSE
+)
+source_validation$pass <- source_validation$observed == source_validation$expected
+if (any(!source_validation$pass)) {
+  stop(
+    "Primary-source weather reproduction failed: ",
+    paste(
+      source_validation$validation_id[!source_validation$pass],
+      source_validation$observed[!source_validation$pass],
+      "!=",
+      source_validation$expected[!source_validation$pass],
+      collapse = "; "
+    )
+  )
+}
 
 monthly <- Reduce(
   function(x, y) merge(x, y, by = "month_id", all = TRUE, sort = TRUE),
@@ -205,6 +246,10 @@ write_csv_safe(
   source_lock,
   file.path(root, "outputs", "tables", "weather_definition_source_lock.csv")
 )
+write_csv_safe(
+  source_validation,
+  file.path(root, "outputs", "tables", "weather_definition_source_validation.csv")
+)
 
 report_path <- file.path(root, "outputs", "reports", "weather_spillover_exposure_build.md")
 writeLines(
@@ -215,6 +260,7 @@ writeLines(
     "- Result class: `EXPOSURE_AUDIT`.",
     "- Health outcomes were not read.",
     "- Li monthly upper-tail classification remains Hogan-unlocked.",
+    "- Primary-source reproduction checks: 5 / 5 passed.",
     "",
     "## Definitions",
     "",

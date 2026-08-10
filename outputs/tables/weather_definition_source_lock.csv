@@ -1,0 +1,5 @@
+"definition_id","source_doi","implementation","lock_status","data_status"
+"wang_vhd5","10.1016/j.scitotenv.2019.07.039","Tmax >= 33 C; >= 5 consecutive VHDs","PRIMARY_SOURCE_LOCKED","REAL_PUBLIC_HKO"
+"wang_hn5","10.1016/j.scitotenv.2019.07.039","Tmin >= 28 C; >= 5 consecutive HNs","PRIMARY_SOURCE_LOCKED","REAL_PUBLIC_HKO"
+"wang_2d3n","10.1016/j.scitotenv.2019.07.039","NDNDN: VHD[i:i+1] and HN[i:i+2]; overlapping/touching windows merged; post-event days 1-5","PRIMARY_SOURCE_LOCKED_DAILY_DATE_ALIGNMENT_DOCUMENTED","REAL_PUBLIC_HKO"
+"li_hw","10.1016/j.atmosres.2024.107845","May-Sep Tmax > calendar-day p90; 15-day moving window; 1980-2023 reference; >=3 days; merge event interval <=2 days (<=1 intervening non-hot day)","PRIMARY_SOURCE_LOCKED_HOGAN_MONTHLY_TAIL_NOT_LOCKED","REAL_PUBLIC_HKO"

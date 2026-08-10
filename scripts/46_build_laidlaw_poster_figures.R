@@ -163,7 +163,7 @@ p_forest <- ggplot(core, aes(x = rr, y = y, colour = eclass)) +
     panel.spacing.x = unit(16, "mm")
   )
 
-save_pair(p_forest, "fig_poster_forest12", width = 18, height = 12.3)
+save_pair(p_forest, "fig_poster_forest12", width = 18, height = 11.6)
 
 # ============================================================================
 # Figure 2: uncertainty ladder for the two leading contrasts (8 rows)
@@ -192,6 +192,16 @@ for (ld in leads) {
   sub$eclass <- ld$eclass
   sub$method_label <- unname(method_labels[sub$se_method])
   sub$est_txt <- fmt_est(sub$rr, sub$rr_low, sub$rr_high)
+  # CHD hot-night NW3 rounds to 1.000 at 3 dp; show 4 dp so readers can see
+  # why it narrowly excludes 1 before rounding (raw: 1.000253-1.043860).
+  is_chd_nw3 <- ld$outcome == "chd" & ld$exposure == "hot_nights" &
+    sub$se_method == "NeweyWest_lag3"
+  if (any(is_chd_nw3)) {
+    sub$est_txt[is_chd_nw3] <- sprintf(
+      "%.3f (%.4f\u2013%.4f)", sub$rr[is_chd_nw3],
+      sub$rr_low[is_chd_nw3], sub$rr_high[is_chd_nw3]
+    )
+  }
   rows[[length(rows) + 1]] <- sub
   y_next <- y_next - 5
 }
@@ -227,7 +237,7 @@ p_ladder <- ggplot(lad, aes(x = rr, y = y, colour = eclass)) +
   coord_cartesian(clip = "off") +
   theme_poster()
 
-save_pair(p_ladder, "fig_poster_uncertainty", width = 10, height = 11.0)
+save_pair(p_ladder, "fig_poster_uncertainty", width = 10, height = 10.8)
 
 # ============================================================================
 # Figure 3: weather context - hot nights climb, cold days persist

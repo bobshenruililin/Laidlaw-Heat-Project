@@ -114,10 +114,19 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ## 5. Laidlaw Stage 3
 
-- Essay 2000–3000 words — canonical publication-register literature-and-methods essay: `reports/laidlaw_stage3/essay_lit_methods.md` + `reports/laidlaw_stage3/Essay_Lit_Methods.pdf` (no stroke results claimed).
+- Research report — current submission copy:
+  `reports/laidlaw_stage3/laidlaw_research_report_2026.md` +
+  `reports/laidlaw_stage3/Laidlaw_Research_Report_2026.pdf`
+  (≈3,200 main-text words; accessible CHD/HF report with figures, references,
+  and appendices). The July stroke-framed literature-and-methods essay remains
+  source material, not the submission copy.
 - Pathway map: `reports/laidlaw_stage3/pathway_literature_map.md`.
-- Poster: A0 **portrait** 841×1189 mm (GEST landscape is wrong orientation + stale AMI aim).
-- HKU report form + supervisor endorsement; spreadsheet Q/R — Bob.
+- Poster: readable A0 **portrait** 841×1189 mm at
+  `reports/poster/Laidlaw_Stage3_A0_portrait.pdf`; six required sections,
+  26-point body type, reproducible poster-specific figures. The GEST landscape
+  poster is legacy only.
+- HKU report form: pending an accessible copy of the official template plus
+  supervisor endorsement; spreadsheet Q/R — Bob.
 
 ---
 

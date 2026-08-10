@@ -10,6 +10,7 @@ link-citations: true
 toc: true
 toc-depth: 2
 geometry: margin=24mm
+papersize: a4
 fontsize: 11pt
 linestretch: 1.08
 colorlinks: true
@@ -19,6 +20,8 @@ monofont: DejaVu Sans Mono
 header-includes:
   - \usepackage{booktabs}
   - \usepackage{longtable}
+  - \usepackage{float}
+  - \floatplacement{figure}{H}
   - \usepackage{caption}
   - \captionsetup{font=small,labelfont=bf}
 ---
@@ -167,7 +170,7 @@ heatwave definitions were developed and source-checked elsewhere in the
 project [@wang2019ehwe; @li2025heatwaves], but the six-measure panel provides
 the clearest common comparison for this report.
 
-![Official hot nights, very hot days and cold days at Hong Kong Observatory Headquarters, 2013–2023. These are environmental descriptors, not health findings.](../../figures/exposure_aging/fig01_annual_extremes_coexistence.png){width=92%}
+![Official hot nights, very hot days and cold days at Hong Kong Observatory Headquarters, 2013–2023. These are environmental descriptors, not health findings.](figures/exposure_aging/fig01_annual_extremes_coexistence.png){width=92%}
 
 ## 2.3 Statistical analysis
 
@@ -242,6 +245,8 @@ effect of weather.
 
 ## 3.2 The twelve-comparison panel
 
+![Count ratios and 95% confidence intervals for the twelve core monthly models. The dashed line at 1 indicates no estimated difference. All twelve Benjamini–Hochberg *q*-values exceeded 0.19.](outputs/release_chd_hf/figures/figure3_core_forest.png){width=100%}
+
 Most core estimates were close to a count ratio of 1. For CHD, monthly mean,
 maximum and minimum temperatures produced count ratios of approximately
 0.993–0.994 per 1 °C. Cold days and very hot days were also near 1. The
@@ -259,13 +264,13 @@ more HF first-hospitalisation events per five additional cold days. These
 descriptions concern modelled monthly counts, not an individual's probability
 of hospitalisation.
 
-![Count ratios and 95% confidence intervals for the twelve core monthly models. The dashed line at 1 indicates no estimated difference. All twelve Benjamini–Hochberg *q*-values exceeded 0.19.](../../outputs/release_chd_hf/figures/figure3_core_forest.png){width=100%}
-
 After correction across all twelve comparisons, the two leading estimates each
 had *q* = 0.192. Every core *q*-value exceeded 0.19. The complete panel
 therefore provides no multiplicity-protected confirmatory association.
 
 ## 3.3 What the uncertainty comparison changed
+
+![The two leading exploratory estimates under four approaches to standard errors. The CHD hot-night interval crosses 1 under two methods; the HF cold-day interval does not.](reports/poster/figures/fig_poster_uncertainty.png){width=72%}
 
 The CHD hot-night point estimate was 1.022 under all four standard-error
 methods because the fitted model did not change. Its interval did change:
@@ -279,8 +284,6 @@ The HF cold-day point estimate was 1.073. Its four intervals were
 1.023–1.125, 1.011–1.138, 1.007–1.143, and 1.006–1.144. All excluded 1, so
 this association was more stable across uncertainty methods. That stability
 does not overcome the multiple-testing result: its *q*-value remained 0.192.
-
-![The two leading exploratory estimates under four approaches to standard errors. The CHD hot-night interval crosses 1 under two methods; the HF cold-day interval does not.](../poster/figures/fig_poster_uncertainty.png){width=72%}
 
 ## 3.4 Robustness and calibration
 

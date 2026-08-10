@@ -1,12 +1,14 @@
 # Machine-readable pathway registry
 # Consumed by scripts/20_fit_pathway_panel.R
 
-version: 1
+version: 2
 study_window: ["2013-01", "2023-12"]
-outcome_default: stroke_aggregate
+outcome_default: cvd_first_hospitalisation_proxy
 family_default: negative_binomial
 offset: "log(population * days_in_month)"
 headline_proposal: ["P02", "P04"]
+amended_core_candidates: ["P01A", "P02A", "P02B", "P04A", "P04B", "P04C"]
+amendment_note: "A1 (7 Aug 2026): separate single-exposure models added after diagnostics/collinearity audit; exploratory until team Gate 3."
 
 controls_core:
   - month_f          # calendar month factor (seasonality)
@@ -27,6 +29,16 @@ pathways:
     scale: null
     extras: []
     literature: [goggins2012stroke, gasparrini2015lancet]
+  P01A:
+    title: Continuous same-month mean temperature (days-only offset)
+    enabled: true
+    grain: auto
+    exposures: [mean_temp]
+    scale: null
+    extras: []
+    role: amended_single_exposure
+    offset: days_only
+    literature: [goggins2012stroke, gasparrini2015lancet]
   P02:
     title: Continuous same-month Tmax and Tmin
     enabled: true
@@ -34,6 +46,28 @@ pathways:
     exposures: [mean_tmax, mean_tmin]
     scale: null
     extras: []
+    role: exploratory_joint
+    offset: population_x_days
+    literature: [bishai_email_2026_07_12]
+  P02A:
+    title: Continuous same-month Tmax alone
+    enabled: true
+    grain: auto
+    exposures: [mean_tmax]
+    scale: null
+    extras: []
+    role: amended_single_exposure
+    offset: days_only
+    literature: [bishai_email_2026_07_12]
+  P02B:
+    title: Continuous same-month Tmin alone
+    enabled: true
+    grain: auto
+    exposures: [mean_tmin]
+    scale: null
+    extras: []
+    role: amended_single_exposure
+    offset: days_only
     literature: [bishai_email_2026_07_12]
   P03:
     title: Lag-1 month temperature
@@ -50,6 +84,38 @@ pathways:
     exposures: [hot_nights, cold_days, very_hot_days]
     scale: 5
     extras: []
+    role: exploratory_joint
+    offset: population_x_days
+    literature: [guo2024hotnights]
+  P04A:
+    title: Hot-night count alone
+    enabled: true
+    grain: auto
+    exposures: [hot_nights]
+    scale: 5
+    extras: []
+    role: amended_single_exposure
+    offset: days_only
+    literature: [guo2024hotnights]
+  P04B:
+    title: Cold-day count alone
+    enabled: true
+    grain: auto
+    exposures: [cold_days]
+    scale: 5
+    extras: []
+    role: amended_single_exposure
+    offset: days_only
+    literature: [goggins2012stroke, wang2025coldfluStroke]
+  P04C:
+    title: Very-hot-day count alone
+    enabled: true
+    grain: auto
+    exposures: [very_hot_days]
+    scale: 5
+    extras: []
+    role: amended_single_exposure
+    offset: days_only
     literature: [guo2024hotnights]
   P05:
     title: Ren/Wang spell burden
@@ -74,6 +140,48 @@ pathways:
     exposures: [hw_month_mean_temp_ge_p90, hw_month_mean_temp_ge_p95, hw_month_mean_temp_ge_p975, hw_month_has_vhd_spell_ge3]
     scale: null
     extras: []
+    role: exploratory_nested_joint
+    offset: population_x_days
+    literature: [guo2017ehp_heatwave, liu2026medrxiv_hw_mortality]
+  P07A:
+    title: Mean-temperature p90 heat month alone
+    enabled: true
+    grain: auto
+    exposures: [hw_month_mean_temp_ge_p90]
+    scale: null
+    extras: []
+    role: amended_separate_definition
+    offset: days_only
+    literature: [guo2017ehp_heatwave, liu2026medrxiv_hw_mortality]
+  P07B:
+    title: Mean-temperature p95 heat month alone
+    enabled: true
+    grain: auto
+    exposures: [hw_month_mean_temp_ge_p95]
+    scale: null
+    extras: []
+    role: amended_separate_definition
+    offset: days_only
+    literature: [guo2017ehp_heatwave, liu2026medrxiv_hw_mortality]
+  P07C:
+    title: Mean-temperature p97.5 heat month alone
+    enabled: true
+    grain: auto
+    exposures: [hw_month_mean_temp_ge_p975]
+    scale: null
+    extras: []
+    role: amended_separate_definition
+    offset: days_only
+    literature: [guo2017ehp_heatwave, liu2026medrxiv_hw_mortality]
+  P07D:
+    title: Very-hot-day spell heat month alone
+    enabled: true
+    grain: auto
+    exposures: [hw_month_has_vhd_spell_ge3]
+    scale: null
+    extras: []
+    role: amended_separate_definition
+    offset: days_only
     literature: [guo2017ehp_heatwave, liu2026medrxiv_hw_mortality]
   P08:
     title: Cold-side primary

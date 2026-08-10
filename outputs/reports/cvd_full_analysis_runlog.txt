@@ -1,0 +1,213 @@
+===== CVD FULL ANALYSIS mode=real outcomes=chd,hf =====
+
+========== RUNNING scripts/00_setup.R ==========
+
+Setup complete. Session info: /workspace/outputs/session_info_setup.txt
+
+========== RUNNING scripts/06_build_confounders.R ==========
+
+Wrote /workspace/data_processed/confounders_monthly_2013_2023.csv (132 rows)
+Confounders build complete. flu_status=CHP_FLU_EXPRESS_MONTHLY
+
+========== RUNNING scripts/06b_build_hk_holidays.R ==========
+
+Wrote /workspace/data_processed/confounders_monthly_2013_2023.csv (132 rows)
+Updated holiday scaffold (deterministic). CNY months=11
+
+========== RUNNING scripts/19_build_analysis_exposures.R ==========
+
+Wrote /workspace/data_processed/exposures_monthly_2013_2023.csv (132 rows)
+Exposures ready. lag1 Jan2013 Tmax=19.72 | HW p95 Tmean=29.68 | HW months=7 | flu nonmiss=121
+
+========== RUNNING scripts/19b_build_hm_cm_exposures.R ==========
+
+Daily HKO file: /workspace/data_processed/climate_daily_hko.csv
+Wrote /workspace/data_processed/hm_cm_month_flags_2013_2023.csv (132 rows)
+Wrote /workspace/outputs/tables/hm_cm_selected_months_audit.csv (12 rows)
+Wrote /workspace/outputs/tables/hm_cm_build_snapshot.csv (1 rows)
+HM/CM flags written: /workspace/data_processed/hm_cm_month_flags_2013_2023.csv (13 definition columns)
+
+##### OUTCOME=chd #####
+
+
+========== RUNNING scripts/08c_qc_cvd_aggregates.R ==========
+
+Wrote /workspace/data_processed/chd_aggregates_normalized.csv (132 rows)
+Wrote /workspace/outputs/tables/chd_qc_summary.csv (1 rows)
+QC OK for chd: 132 months; total events=156156
+Receipt: /workspace/outputs/reports/chd_data_qc_receipt.md
+
+========== RUNNING scripts/08d_merge_cvd_panel.R ==========
+
+Wrote /workspace/data_processed/chd_analysis_panel.csv (132 rows)
+Merged chd analysis panel: 132 rows; grain age=FALSE sex=FALSE; status=HA_APPROVED_AGGREGATE; events=156156
+
+========== RUNNING scripts/20_fit_pathway_panel.R ==========
+
+Fitting P01 — Continuous same-month mean temperature
+Fitting P02 — Continuous same-month Tmax and Tmin
+Fitting P03 — Lag-1 month temperature
+Fitting P04 — Official extreme-day counts
+Fitting P05 — Ren/Wang spell burden
+Fitting P06 — Combined day-night 2D3N burden
+Fitting P07 — Heatwave-month indicators (multi-percentile + spells)
+Fitting P08 — Cold-side primary
+Fitting P09 — Age-stratified (65+ vs younger)
+Fitting P10 — COVID and holiday sensitivity on P02
+Fitting P11 — Pollution-staged on P02
+Fitting P12 — Absolute humidity sensitivity on P02
+Fitting P14 — Flu co-exposure
+Fitting P15 — Temperature variability proxy
+Fitting P16 — Pre-COVID only (P02)
+Fitting P17 — Sex interaction on Tmax (age-sex grain)
+Fitting P18 — Cold-month indicator (p05 Tmean)
+Wrote /workspace/outputs/tables/chd_pathway_panel_estimates.csv (44 rows)
+Wrote /workspace/outputs/tables/chd_pathway_panel_fit_stats.csv (19 rows)
+Wrote /workspace/outputs/tables/chd_pathway_panel_status.csv (18 rows)
+Pathway panel complete. OK=15 / enabled attempts; estimates rows=44
+
+========== RUNNING scripts/20b_fit_hm_cm_panel.R ==========
+
+Fitting HM/CM HM08 on chd
+Fitting HM/CM HM15 on chd
+Fitting HM/CM HM17 on chd
+Fitting HM/CM HM19 on chd
+Fitting HM/CM HM27 on chd
+Fitting HM/CM HM32 on chd
+Fitting HM/CM CM03 on chd
+Fitting HM/CM CM08 on chd
+Fitting HM/CM CM15 on chd
+Fitting HM/CM CM30 on chd
+Fitting HM/CM HM23 on chd
+Wrote /workspace/outputs/tables/chd_hm_cm_panel_estimates.csv (11 rows)
+Wrote /workspace/outputs/tables/chd_hm_cm_panel_status.csv (12 rows)
+HM/CM panel complete for chd; OK=11
+
+========== RUNNING scripts/22_make_pathway_manuscript_tables.R ==========
+
+Wrote /workspace/outputs/tables/chd_manuscript_pathway_panel_table.csv (30 rows)
+Wrote /workspace/outputs/tables/chd_manuscript_headline_P02_P04.csv (5 rows)
+Manuscript tables written. Synthetic=FALSE
+
+========== RUNNING scripts/23_pathway_diagnostics.R ==========
+
+Wrote /workspace/outputs/tables/chd_pathway_headline_diagnostics.csv (2 rows)
+Wrote /workspace/outputs/tables/chd_pathway_fit_overview.csv (15 rows)
+Diagnostics written for 2 headline pathway(s).
+
+========== RUNNING scripts/24_pathway_forest_figure.R ==========
+
+Warning messages:
+1: In grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — CHD aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <e2>
+2: In grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — CHD aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <80>
+3: In grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — CHD aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <94>
+4: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — CHD aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <e2>
+5: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — CHD aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <80>
+6: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — CHD aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <94>
+7: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — CHD aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <e2>
+8: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — CHD aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <80>
+9: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — CHD aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <94>
+Forest figure written: /workspace/outputs/figures/pathway/pathway_panel_forest.png
+
+##### OUTCOME=hf #####
+
+
+========== RUNNING scripts/08c_qc_cvd_aggregates.R ==========
+
+Wrote /workspace/data_processed/hf_aggregates_normalized.csv (132 rows)
+Wrote /workspace/outputs/tables/hf_qc_summary.csv (1 rows)
+QC OK for hf: 132 months; total events=29681
+Receipt: /workspace/outputs/reports/hf_data_qc_receipt.md
+
+========== RUNNING scripts/08d_merge_cvd_panel.R ==========
+
+Wrote /workspace/data_processed/hf_analysis_panel.csv (132 rows)
+Merged hf analysis panel: 132 rows; grain age=FALSE sex=FALSE; status=HA_APPROVED_AGGREGATE; events=29681
+
+========== RUNNING scripts/20_fit_pathway_panel.R ==========
+
+Fitting P01 — Continuous same-month mean temperature
+Fitting P02 — Continuous same-month Tmax and Tmin
+Fitting P03 — Lag-1 month temperature
+Fitting P04 — Official extreme-day counts
+Fitting P05 — Ren/Wang spell burden
+Fitting P06 — Combined day-night 2D3N burden
+Fitting P07 — Heatwave-month indicators (multi-percentile + spells)
+Fitting P08 — Cold-side primary
+Fitting P09 — Age-stratified (65+ vs younger)
+Fitting P10 — COVID and holiday sensitivity on P02
+Fitting P11 — Pollution-staged on P02
+Fitting P12 — Absolute humidity sensitivity on P02
+Fitting P14 — Flu co-exposure
+Fitting P15 — Temperature variability proxy
+Fitting P16 — Pre-COVID only (P02)
+Fitting P17 — Sex interaction on Tmax (age-sex grain)
+Fitting P18 — Cold-month indicator (p05 Tmean)
+Wrote /workspace/outputs/tables/hf_pathway_panel_estimates.csv (44 rows)
+Wrote /workspace/outputs/tables/hf_pathway_panel_fit_stats.csv (19 rows)
+Wrote /workspace/outputs/tables/hf_pathway_panel_status.csv (18 rows)
+Pathway panel complete. OK=15 / enabled attempts; estimates rows=44
+
+========== RUNNING scripts/20b_fit_hm_cm_panel.R ==========
+
+Fitting HM/CM HM08 on hf
+Fitting HM/CM HM15 on hf
+Fitting HM/CM HM17 on hf
+Fitting HM/CM HM19 on hf
+Fitting HM/CM HM27 on hf
+Fitting HM/CM HM32 on hf
+Fitting HM/CM CM03 on hf
+Fitting HM/CM CM08 on hf
+Fitting HM/CM CM15 on hf
+Fitting HM/CM CM30 on hf
+Fitting HM/CM HM23 on hf
+Wrote /workspace/outputs/tables/hf_hm_cm_panel_estimates.csv (11 rows)
+Wrote /workspace/outputs/tables/hf_hm_cm_panel_status.csv (12 rows)
+HM/CM panel complete for hf; OK=11
+
+========== RUNNING scripts/22_make_pathway_manuscript_tables.R ==========
+
+Wrote /workspace/outputs/tables/hf_manuscript_pathway_panel_table.csv (30 rows)
+Wrote /workspace/outputs/tables/hf_manuscript_headline_P02_P04.csv (5 rows)
+Manuscript tables written. Synthetic=FALSE
+
+========== RUNNING scripts/23_pathway_diagnostics.R ==========
+
+Wrote /workspace/outputs/tables/hf_pathway_headline_diagnostics.csv (2 rows)
+Wrote /workspace/outputs/tables/hf_pathway_fit_overview.csv (15 rows)
+Diagnostics written for 2 headline pathway(s).
+
+========== RUNNING scripts/24_pathway_forest_figure.R ==========
+
+Warning messages:
+1: In grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — HF aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <e2>
+2: In grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — HF aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <80>
+3: In grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — HF aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <94>
+4: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — HF aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <e2>
+5: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — HF aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <80>
+6: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — HF aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <94>
+7: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — HF aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <e2>
+8: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — HF aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <80>
+9: In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y,  :
+  conversion failure on 'Pathway panel IRRs — HF aggregates × thermal exposures' in 'mbcsToSbcs': dot substituted for <94>
+Forest figure written: /workspace/outputs/figures/pathway/pathway_panel_forest.png
+
+CVD full analysis completed for: chd, hf
+See outputs/reports/*_pathway_panel_summary.md and outputs/tables/

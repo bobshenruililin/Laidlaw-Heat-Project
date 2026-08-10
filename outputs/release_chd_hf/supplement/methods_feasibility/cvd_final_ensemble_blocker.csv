@@ -1,0 +1,3 @@
+"script_id","outcome","panel_path","panel_present","status","message","result_class","data_status"
+"36_cvd_final_model_ensemble","chd","/workspace/data_processed/chd_analysis_panel.csv",FALSE,"NOT_RUN_MISSING_GOVERNED_PANEL","Governed analysis panel absent in this checkout; real ensemble not run","EXPLORATORY_POST_OUTCOME",
+"36_cvd_final_model_ensemble","hf","/workspace/data_processed/hf_analysis_panel.csv",FALSE,"NOT_RUN_MISSING_GOVERNED_PANEL","Governed analysis panel absent in this checkout; real ensemble not run","EXPLORATORY_POST_OUTCOME",

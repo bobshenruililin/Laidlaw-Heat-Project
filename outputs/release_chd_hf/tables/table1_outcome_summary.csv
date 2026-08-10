@@ -1,0 +1,3 @@
+"outcome","outcome_label","period","n_months","total_events","monthly_mean_rounded","cohort","event_definition","data_status"
+"chd","Coronary heart disease","2013-2023",132,156156,1183,"T2D_and_or_HTN_2013_2023","first_hospitalization_after_first_cvd_diagnosis_record","HA_APPROVED_AGGREGATE"
+"hf","Heart failure","2013-2023",132,29681,224.9,"T2D_and_or_HTN_2013_2023","first_hospitalization_after_first_cvd_diagnosis_record","HA_APPROVED_AGGREGATE"

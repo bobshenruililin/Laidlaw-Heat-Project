@@ -1,0 +1,259 @@
+% ============================================================================
+% Laidlaw Stage 3 poster -- ISO A0 portrait (841 mm x 1189 mm), single page.
+% Readability redesign v2 (Aug 2026): band architecture --
+%   full-width header;
+%   top band: INTRODUCTION | OBJECTIVE + METHODS;
+%   dominant full-width RESULTS band (callouts + wide 2-panel forest + ladder);
+%   bottom band: INTERPRETATION / LIMITATIONS | CONCLUSION; footer.
+% Figures are poster-specific: scripts/46_build_laidlaw_poster_figures.R.
+% Build:  pdflatex -interaction=nonstopmode Laidlaw_Stage3_A0_portrait.tex
+% ============================================================================
+\documentclass[12pt]{article}
+\usepackage[paperwidth=841mm,paperheight=1189mm,left=24mm,right=24mm,top=0mm,bottom=12mm]{geometry}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage{textcomp}
+\usepackage[scaled=1.02]{helvet}\renewcommand{\familydefault}{\sfdefault}
+\usepackage{graphicx,xcolor,enumitem,microtype,ragged2e}
+\usepackage{tikz}\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage{tcolorbox}\tcbuselibrary{skins}
+\pagestyle{empty}\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.3em,itemsep=0.55em,topsep=0.2em,parsep=0pt}
+\emergencystretch=2em
+% ---- restrained HKU-compatible palette: ink / navy / teal + warm-cool accents
+\definecolor{Ink}{HTML}{1B2A33}
+\definecolor{Navy}{HTML}{0E3A53}
+\definecolor{Teal}{HTML}{0B5563}
+\definecolor{Heat}{HTML}{B84A2E}
+\definecolor{Cold}{HTML}{2F6C9C}
+\definecolor{Slate}{HTML}{52646E}
+\definecolor{Mist}{HTML}{EFF5F6}
+\definecolor{HeatTint}{HTML}{FBF1EC}
+\definecolor{ColdTint}{HTML}{EDF3F8}
+\definecolor{PaleTeal}{HTML}{BFD8DC}
+\color{Ink}
+% ---- type scale (actual sizes on A0 print) ----------------------------------
+\newcommand{\TitleFont}{\bfseries\fontsize{74}{84}\selectfont}
+\newcommand{\SubtitleFont}{\fontsize{30}{37}\selectfont}
+\newcommand{\AuthorFont}{\fontsize{30}{37}\selectfont}
+\newcommand{\sechead}[1]{%
+  {\color{Navy}\bfseries\fontsize{34}{40}\selectfont #1\par}%
+  \vspace{1.4mm}{\color{Teal}\rule{\linewidth}{2.6pt}\par}\vspace{7mm}}
+\newcommand{\subhead}[1]{%
+  {\color{Navy}\bfseries\fontsize{26}{31}\selectfont #1\par}%
+  \vspace{1.4mm}{\color{Teal}\rule{\linewidth}{2.6pt}\par}\vspace{6mm}}
+\newcommand{\body}{\fontsize{26}{33}\selectfont}
+\newcommand{\captext}[1]{{\color{Slate}\fontsize{18.5}{23.5}\selectfont #1\par}}
+\newcommand{\notetext}[1]{{\color{Slate}\fontsize{18.5}{24}\selectfont #1\par}}
+% ---- emphasis panels ---------------------------------------------------------
+\newtcolorbox{questionbox}{enhanced,colback=Mist,colframe=Mist,boxrule=0pt,arc=2mm,
+  borderline west={4mm}{0mm}{Teal},left=9mm,right=9mm,top=8mm,bottom=8mm,
+  before skip=0pt,after skip=0pt,width=\linewidth}
+\newtcolorbox{takeawaybox}{enhanced,colback=Mist,colframe=Mist,boxrule=0pt,arc=2mm,
+  borderline west={4mm}{0mm}{Teal},left=9mm,right=9mm,top=9mm,bottom=9mm,
+  before skip=0pt,after skip=0pt,width=\linewidth}
+\newtcolorbox{callout}[1]{enhanced,colback=#1,colframe=#1!55!black,boxrule=1.4pt,
+  arc=2.5mm,left=8mm,right=8mm,top=7mm,bottom=7mm,width=\linewidth,valign=center}
+% ---- methods flow nodes ------------------------------------------------------
+\tikzset{flownode/.style={draw=Teal,line width=1.5pt,rounded corners=3mm,
+  fill=white,align=center,inner sep=5mm,text=Ink,
+  font=\fontsize{18.5}{23}\selectfont},
+  flowarrow/.style={-{Stealth[length=7mm,width=6mm]},line width=2.4pt,draw=Navy}}
+\begin{document}
+% ==================== HEADER (band aligned with columns) =====================
+\begin{tcolorbox}[enhanced,colback=Navy,colframe=Navy,boxrule=0pt,arc=0pt,
+  width=\linewidth,left=10mm,right=10mm,top=11mm,bottom=11mm,
+  borderline south={3mm}{0mm}{Teal},before skip=0pt,after skip=0mm]
+\textcolor{white}{\TitleFont Heat, cold and first hospitalisation\\[2mm]after cardiovascular diagnosis in Hong Kong}\\[6mm]
+\textcolor{PaleTeal}{\SubtitleFont An exploratory monthly study, 2013--2023}\\[8mm]
+\textcolor{white}{\AuthorFont \textbf{Bob Shen Ruililin}\quad\textbar\quad Laidlaw Scholars Programme\quad\textbar\quad School of Public Health, The University of Hong Kong}
+\end{tcolorbox}
+\vspace{14mm}
+% ================= TOP BAND: INTRODUCTION | OBJECTIVE + METHODS ==============
+\noindent\begin{minipage}[t]{0.40\textwidth}
+\sechead{INTRODUCTION}
+\body
+Hong Kong's hot nights became more frequent over the past decade: at the Hong
+Kong Observatory they rose from 10 days in 2013 to a peak of 61 in 2021, while
+winter cold days have not disappeared. For the growing number of people living
+with type 2 diabetes or hypertension --- a group at high cardiovascular risk ---
+hospital burden complements the better-studied mortality burden. This study
+examines the monthly association between temperature, extreme-day burdens and
+first hospitalisation after cardiovascular diagnosis in that group.
+
+\vspace{6mm}
+\centering
+\includegraphics[width=\linewidth]{figures/fig_poster_weather.pdf}\par
+\vspace{2.5mm}
+\begin{flushleft}
+\captext{Official Hong Kong Observatory extremes at Headquarters. Hot nights
+rose about fivefold over the decade; cold days recurred every winter --- the
+exposure setting for this study.}
+\end{flushleft}
+\end{minipage}\hfill\begin{minipage}[t]{0.58\textwidth}
+\sechead{OBJECTIVE}
+\begin{questionbox}
+\fontsize{28}{35.5}\selectfont\color{Navy}
+Are monthly temperature and extreme-day burdens associated with
+\textbf{first hospitalisation after a recorded coronary heart disease (CHD) or
+heart failure (HF) diagnosis} in a high-risk Hong Kong cohort?\par
+\end{questionbox}
+
+\vspace{8mm}
+\sechead{METHODS}
+\centering
+\begin{tikzpicture}
+\node[flownode,text width=0.20\linewidth] (wx) at (0,0)
+  {HKO daily weather\\official extreme days};
+\node[flownode,text width=0.20\linewidth] (ha) at (0,-36mm)
+  {Hospital Authority\\monthly counts};
+\node[flownode,text width=0.20\linewidth] (panel) at (0.25\linewidth,-18mm)
+  {\textbf{Monthly panel}\\132 months,\\2013--2023};
+\node[flownode,text width=0.20\linewidth] (models) at (0.50\linewidth,-18mm)
+  {12 negative-binomial\\models:\\2 outcomes \texttimes{} 6 exposures};
+\node[flownode,text width=0.215\linewidth] (checks) at (0.765\linewidth,-18mm)
+  {Season + trend control;\\4 standard-error methods;\\Benjamini--Hochberg \textit{q}};
+\draw[flowarrow] (wx.east) -- (panel.west |- wx.east);
+\draw[flowarrow] (ha.east) -- (panel.west |- ha.east);
+\draw[flowarrow] (panel.east) -- (models.west);
+\draw[flowarrow] (models.east) -- (checks.west);
+\end{tikzpicture}\par
+\vspace{6mm}
+\begin{flushleft}
+\body
+\begin{itemize}
+  \item \textbf{Window and weather:} 132 territory-months, Jan 2013 -- Dec 2023;
+        daily records and official extreme-day definitions from the Hong Kong
+        Observatory.
+  \item \textbf{Outcomes:} privacy-protected Hospital Authority monthly
+        aggregate counts of \emph{first hospitalisation after a first recorded
+        CHD or HF diagnosis} in people with type 2 diabetes and/or hypertension
+        --- 156{,}156 CHD and 29{,}681 HF events. Delivered columns are labelled
+        inpatient; admission cause is not recorded, and final event semantics
+        require data-provider confirmation.
+  \item \textbf{Models:} 2 outcomes \texttimes{} 6 exposures = 12
+        negative-binomial regressions with calendar-month indicators, a trend
+        spline, and a days-in-month offset; the panel was specified after the
+        outcome series was available.
+  \item \textbf{Uncertainty:} four standard-error methods per contrast;
+        Benjamini--Hochberg \textit{q} across all 12 comparisons.
+\end{itemize}
+\end{flushleft}
+\vspace{2mm}
+{\color{Ink}\fontsize{20}{25}\selectfont\textbf{Definitions.} Hot night:
+minimum 28\,\textdegree C or higher; very hot day: maximum 33\,\textdegree C or
+higher; cold day: minimum 12\,\textdegree C or lower (HKO definitions).
+Estimates are count ratios per 5 extreme days or per 1\,\textdegree C.\par}
+\end{minipage}
+\vspace{32mm}
+% ================= RESULTS BAND (full width) ================================
+
+\sechead{RESULTS}
+\body
+An exploratory panel of twelve models, specified after the outcome series was
+available --- two contrasts stand out.
+
+\vspace{5mm}
+\noindent\begin{minipage}[t]{0.485\linewidth}
+\begin{callout}{HeatTint}
+\begin{minipage}[c]{0.30\linewidth}\centering
+{\color{Heat}\bfseries\fontsize{50}{56}\selectfont 1.022\par}
+\end{minipage}\hfill\begin{minipage}[c]{0.66\linewidth}
+{\fontsize{21}{26}\selectfont\textbf{CHD series \texttimes{} hot nights,} per 5 days\par}
+\vspace{1.5mm}
+{\fontsize{19}{24}\selectfont\color{Slate}95\% CI 1.002--1.042\quad \textit{p} = 0.032\quad \textit{q} = 0.192\par}
+\end{minipage}
+\end{callout}
+\end{minipage}\hfill\begin{minipage}[t]{0.485\linewidth}
+\begin{callout}{ColdTint}
+\begin{minipage}[c]{0.30\linewidth}\centering
+{\color{Cold}\bfseries\fontsize{50}{56}\selectfont 1.073\par}
+\end{minipage}\hfill\begin{minipage}[c]{0.66\linewidth}
+{\fontsize{21}{26}\selectfont\textbf{HF series \texttimes{} cold days,} per 5 days\par}
+\vspace{1.5mm}
+{\fontsize{19}{24}\selectfont\color{Slate}95\% CI 1.006--1.144\quad \textit{p} = 0.031\quad \textit{q} = 0.192\par}
+\end{minipage}
+\end{callout}
+\end{minipage}
+
+\vspace{4mm}
+\body
+\begin{itemize}
+  \item \textbf{CHD series \texttimes{} hot nights:} about \textbf{2.2\% higher}
+        monthly first-hospitalisation count per five additional hot nights ---
+        but the interval \emph{includes 1} under two of four standard-error
+        methods, so the signal is uncertainty-sensitive.
+  \item \textbf{HF series \texttimes{} cold days:} about \textbf{7.3\% higher}
+        monthly first-hospitalisation count per five additional cold days ---
+        the interval excludes 1 under all four methods.
+  \item The other ten contrasts sit near 1. \textbf{All 12 Benjamini--Hochberg
+        \textit{q}-values exceed 0.19}: after correction for 12 comparisons,
+        both signals remain exploratory.
+\end{itemize}
+
+\vspace{6mm}
+\noindent\begin{minipage}[t]{0.625\linewidth}
+\centering
+\raisebox{-\height}{\includegraphics[width=\linewidth]{figures/fig_poster_forest12.pdf}}\par
+\vspace{2.5mm}
+\begin{flushleft}
+\captext{The twelve-model exploratory panel: count ratios from single-exposure
+negative-binomial models (days-in-month offset); 95\% intervals with
+Newey--West lag-6 standard errors. Values right of 1 mean more first
+hospitalisations following recorded diagnosis in months with higher exposure.
+All 12 Benjamini--Hochberg \textit{q} > 0.19.}
+\end{flushleft}
+\end{minipage}\hfill\begin{minipage}[t]{0.345\linewidth}
+\subhead{How robust are the two signals?}
+\centering
+\includegraphics[width=\linewidth]{figures/fig_poster_uncertainty.pdf}\par
+\vspace{2.5mm}
+\begin{flushleft}
+\captext{The two leading contrasts under four standard-error methods. For CHD
+\ \texttimes\ hot nights: Model and HC1 intervals include 1; NW3 excludes it
+only on the unrounded scale (1.0003--1.0439); NW6 excludes it. The HF
+cold-day interval excludes 1 under all four. The main display uses NW6;
+methods were not chosen by interval position.}
+\end{flushleft}
+\end{minipage}
+\vspace{28mm}
+% ================= BOTTOM BAND ===============================================
+\noindent\begin{minipage}[t]{0.485\linewidth}
+\sechead{INTERPRETATION / LIMITATIONS}
+\body
+\begin{itemize}
+  \item All 12 \textit{q}-values exceed 0.19 --- these are \textbf{exploratory
+        signals}, not confirmed effects.
+  \item The CHD hot-night estimate is \textbf{sensitive to how uncertainty is
+        computed}; the HF cold-day estimate is stable across methods.
+  \item Monthly, territory-level data with no recorded admission cause support
+        \textbf{no causal or principal-diagnosis claim}.
+\end{itemize}
+\end{minipage}\hfill\begin{minipage}[t]{0.485\linewidth}
+\sechead{CONCLUSION}
+\begin{takeawaybox}
+\fontsize{27}{34.5}\selectfont
+Monthly data suggest \textbf{different thermal patterns} in the CHD and HF
+series --- hot nights for CHD, cold days for HF --- but the evidence is
+\textbf{exploratory, not confirmatory}: no contrast survived correction for
+twelve comparisons. The project leaves a \textbf{reproducible monthly
+framework} and a clear next requirement: \textbf{daily or cohort data with
+recorded admission cause}.\par
+\end{takeawaybox}
+
+\vspace{5mm}
+\notetext{\textbf{What would strengthen this:} linked daily weather and
+admission records with cause of admission, so the monthly burden patterns seen
+here can be tested at the resolution at which heat and cold act.}
+\end{minipage}
+\vfill
+% ============================ FOOTER =========================================
+{\color{Teal}\rule{\linewidth}{1.8pt}\par}\vspace{3mm}
+{\fontsize{17.5}{22}\selectfont\color{Slate}
+\textbf{Laidlaw Stage 3 Research Poster} \textperiodcentered{} ISO A0 portrait
+\textperiodcentered{} Weather: Hong Kong Observatory daily records (public)
+\textperiodcentered{} Outcomes: privacy-protected Hospital Authority monthly
+aggregate counts\\[1mm]
+Collaborators: Hogan (weather definitions) \textperiodcentered{} Zhenyuan Liu /
+Roro (Hospital Authority aggregates) \textperiodcentered{} Supervisor: Prof.\
+David Bishai \textperiodcentered{} Reproducible, machine-validated analysis and
+release package \hfill \textbf{shenrll@connect.hku.hk}\par}
+\end{document}

@@ -100,3 +100,69 @@ R (≥4.x): `MASS`, `splines`, `sandwich`, `lmtest`, `dplyr`, `yaml`. Orchestrat
 ## 8. Amendments
 
 Amendments after Gate 3 require a dated ledger entry and a new pathway ID (do not silently redefine P02/P04).
+
+### Amendment A1 — CHD/HF first-hospitalisation release (7 August 2026)
+
+**Timing:** Added after CHD/HF outcome descriptives and initial pathway estimates were visible.  
+**Status:** Exploratory robustness amendment; it is not a pre-outcome specification.
+
+Roro delivered territory-month counts for two outcomes among people diagnosed
+with type 2 diabetes and/or hypertension during 2013–2023:
+
+1. first hospitalisation after the first coronary heart disease diagnosis
+   record; and
+2. first hospitalisation after the first heart failure diagnosis record.
+
+The underlying extract does not record the cause of each admission. These
+outcomes are therefore not principal-diagnosis CHD or heart-failure
+admissions. The stroke series mentioned in the covering email was not attached
+and remains outside this analysis.
+
+The first real run revealed three methodological problems that require
+correction before manuscript inference:
+
+- `scripts/23_pathway_diagnostics.R` read the synthetic stroke panel while
+  writing CHD/HF-labelled diagnostics;
+- the joint P02 and P04 models contained strongly correlated temperature
+  measures; and
+- P07 estimated nested percentile indicators together, so its coefficients
+  were incremental contrasts rather than separate heat-month effects.
+
+The following analyses are added under new, non-overwriting pathway IDs:
+
+- P01A: same-month mean temperature alone with the amended days-only offset;
+- P02A: same-month Tmax alone;
+- P02B: same-month Tmin alone;
+- P04A: hot nights alone, per five days;
+- P04B: cold days alone, per five days;
+- P04C: very hot days alone, per five days;
+- P07A–P07D: each heat-month indicator in a separate model.
+
+P02, P04 and P07 remain in the complete panel as joint exploratory models.
+They are not eligible for a headline coefficient without an explicit team
+decision.
+
+Because the release does not provide the T2D/HTN cohort still at risk of a
+first event, the amended main analysis uses `log(days_in_month)` as its offset
+and interprets coefficients as monthly count ratios. The original C&SD
+population × days offset and a no-offset count model are retained as
+sensitivities. This change corrects the denominator interpretation; it does
+not create cohort incidence rates.
+
+Inference for the amended core models will include model-based, HC1 and
+Newey–West standard errors (lags 3 and 6), real-panel residual diagnostics,
+trend and first-event-depletion sensitivities, lag-0/1/2 models, influential
+month checks and multiplicity-adjusted q-values for the exploratory family.
+HM/CM and HM23 results remain supplementary until the weather reference rules
+are locked.
+
+All outputs used in the CHD/HF manuscript release must carry
+`HA_APPROVED_AGGREGATE`. Any `SYNTHETIC` status, synthetic-sized diagnostic
+panel or unprefixed fallback output is a fatal release error.
+
+### Dissemination boundary
+
+Monthly source counts and merged HA panels remain gitignored. Aggregate
+analysis reduces disclosure risk but does not itself grant publication
+authority. Roro/Bishai confirmation remains required before external
+submission or public promotion of the health results.

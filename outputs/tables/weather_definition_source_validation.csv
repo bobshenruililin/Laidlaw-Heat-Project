@@ -1,0 +1,6 @@
+"validation_id","expected","observed","source_doi","data_status","pass"
+"li_events_1980_2023",57,57,"10.1016/j.atmosres.2024.107845","REAL_PUBLIC_HKO",TRUE
+"wang_vhd_days_2006_2015",204,204,"10.1016/j.scitotenv.2019.07.039","REAL_PUBLIC_HKO",TRUE
+"wang_hn_days_2006_2015",230,230,"10.1016/j.scitotenv.2019.07.039","REAL_PUBLIC_HKO",TRUE
+"wang_vhd_ge5_event_days_2006_2015",48,48,"10.1016/j.scitotenv.2019.07.039","REAL_PUBLIC_HKO",TRUE
+"wang_hn_ge5_event_days_2006_2015",56,56,"10.1016/j.scitotenv.2019.07.039","REAL_PUBLIC_HKO",TRUE

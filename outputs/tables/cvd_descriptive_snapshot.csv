@@ -1,0 +1,3 @@
+"outcome","data_status","cohort","event_definition","denominator_note","n_months","year_start","year_end","total_events","mean_monthly","min_monthly","max_monthly"
+"chd","HA_APPROVED_AGGREGATE","T2D_and_or_HTN_2013_2023","first_hospitalization_after_first_cvd_diagnosis_record","CSD_population_35plus_ecological_not_T2D_HTN_cohort",132,2013,2023,156156,1183,618,2852
+"hf","HA_APPROVED_AGGREGATE","T2D_and_or_HTN_2013_2023","first_hospitalization_after_first_cvd_diagnosis_record","CSD_population_35plus_ecological_not_T2D_HTN_cohort",132,2013,2023,29681,224.856060606061,133,483

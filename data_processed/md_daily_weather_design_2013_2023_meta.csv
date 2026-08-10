@@ -1,0 +1,2 @@
+"artifact","n_days","start_date","end_date","n_missing_temp","cold_threshold_c","data_status"
+"md_daily_weather_design_2013_2023.csv",4017,"2013-01-01","2023-12-31",0,12,"REAL_PUBLIC_HKO"

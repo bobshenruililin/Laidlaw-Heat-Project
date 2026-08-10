@@ -8,13 +8,27 @@ setwd(root)
 cfg <- load_config(root)
 ensure_packages(c("yaml", "dplyr", "MASS", "splines", "sandwich", "lmtest"))
 
-panel_path <- file.path(root, "data_processed", "stroke_analysis_panel.csv")
-if (!file.exists(panel_path)) stop("Missing ", panel_path, " — run 08d_merge_stroke_panel.R first")
+outcome <- tolower(Sys.getenv("OUTCOME", unset = "stroke"))
+mode <- tolower(Sys.getenv("PATHWAY_MODE", unset = "dev"))
+panel_path <- file.path(root, "data_processed", paste0(outcome, "_analysis_panel.csv"))
+if (!file.exists(panel_path) && identical(outcome, "stroke")) {
+  panel_path <- file.path(root, "data_processed", "stroke_analysis_panel.csv")
+}
+if (!file.exists(panel_path)) stop("Missing ", panel_path, " — run 08d_merge_cvd_panel.R first")
 
 panel <- utils::read.csv(panel_path, stringsAsFactors = FALSE)
 reg <- yaml::read_yaml(file.path(root, "analysis_plan", "pathway_registry.yml"))
 
 is_synthetic <- any(grepl("SYNTHETIC", panel$data_status %||% ""))
+if (identical(mode, "real")) {
+  statuses <- unique(as.character(panel$data_status))
+  if (is_synthetic || !identical(statuses, "HA_APPROVED_AGGREGATE")) {
+    stop(
+      "PATHWAY_MODE=real requires HA_APPROVED_AGGREGATE only; found: ",
+      paste(statuses, collapse = ", ")
+    )
+  }
+}
 has_age_sex <- !all(panel$age_group %in% c("all", "", NA)) && !all(panel$sex %in% c("all", "", NA))
 has_subtype <- length(unique(na.omit(panel$stroke_type))) > 1 &&
   !all(panel$stroke_type %in% c("stroke_all", "unspecified", NA))
@@ -91,6 +105,17 @@ build_rhs <- function(exposures, scale = NULL, extras = character(), dat) {
   unique(terms)
 }
 
+offset_term <- function(spec, dat) {
+  policy <- spec$offset %||% "population_x_days"
+  if (identical(policy, "days_only")) {
+    if (!"offset_log_days" %in% names(dat)) stop("offset_log_days missing from analysis panel")
+    return("offset(offset_log_days)")
+  }
+  if (identical(policy, "none")) return(NULL)
+  if (!"offset_log" %in% names(dat)) stop("offset_log missing from analysis panel")
+  "offset(offset_log)"
+}
+
 fit_one <- function(pathway_id, spec, dat) {
   extras <- spec$extras %||% list()
   if (is.null(extras)) extras <- list()
@@ -149,7 +174,14 @@ fit_one <- function(pathway_id, spec, dat) {
       return(list(status = "skipped_missing_exposure", estimates = NULL, fit = NULL))
     }
 
-    fml <- as.formula(paste("n_events ~", paste(rhs_terms, collapse = " + "), "+ offset(offset_log)"))
+    off <- offset_term(spec, d)
+    fml <- as.formula(
+      paste(
+        "n_events ~",
+        paste(rhs_terms, collapse = " + "),
+        if (is.null(off)) "" else paste("+", off)
+      )
+    )
     model <- tryCatch(
       MASS::glm.nb(fml, data = d),
       error = function(e) {
@@ -171,20 +203,39 @@ fit_one <- function(pathway_id, spec, dat) {
 
     keep_pat <- paste0(
       "(",
-      paste(c(spec$exposures, stages[[st]], "age_band65", "sex"), collapse = "|"),
+      paste(
+        c(
+          spec$exposures,
+          stages[[st]],
+          extras,
+          "age_band65",
+          "sex",
+          "absolute_humidity",
+          "flu_indicator",
+          "covid_phase",
+          "public_holiday_days",
+          "chinese_new_year_month"
+        ),
+        collapse = "|"
+      ),
       ")"
     )
     est <- extract_rr(model, vcov_mat, keep_pattern = keep_pat)
     if (!nrow(est)) next
     est$pathway_id <- pathway_id
     est$pathway_title <- spec$title
+    est$pathway_role <- spec$role %||% "original_panel"
+    est$offset_policy <- spec$offset %||% "population_x_days"
     est$pollution_stage <- st
     est$data_status <- paste(unique(d$data_status), collapse = ";")
+    est$outcome <- outcome
     est$n_rows <- nrow(d)
     est$n_months <- length(unique(d$month_id))
     out_est[[st]] <- est
     out_fit[[st]] <- data.frame(
       pathway_id = pathway_id,
+      pathway_role = spec$role %||% "original_panel",
+      offset_policy = spec$offset %||% "population_x_days",
       pollution_stage = st,
       aic = tryCatch(AIC(model), error = function(e) NA_real_),
       theta = tryCatch(model$theta, error = function(e) NA_real_),
@@ -225,22 +276,26 @@ stat_df <- dplyr::bind_rows(status_rows)
 
 out_tab <- file.path(root, "outputs", "tables")
 dir.create(out_tab, recursive = TRUE, showWarnings = FALSE)
-write_csv_safe(est_df, file.path(out_tab, "pathway_panel_estimates.csv"))
-write_csv_safe(fit_df, file.path(out_tab, "pathway_panel_fit_stats.csv"))
-write_csv_safe(stat_df, file.path(out_tab, "pathway_panel_status.csv"))
+write_csv_safe(est_df, file.path(out_tab, paste0(outcome, "_pathway_panel_estimates.csv")))
+write_csv_safe(fit_df, file.path(out_tab, paste0(outcome, "_pathway_panel_fit_stats.csv")))
+write_csv_safe(stat_df, file.path(out_tab, paste0(outcome, "_pathway_panel_status.csv")))
 
 # Human summary
 out_rep <- file.path(root, "outputs", "reports")
 dir.create(out_rep, recursive = TRUE, showWarnings = FALSE)
 headline <- paste(reg$headline_proposal %||% c("P02", "P04"), collapse = ", ")
 lines <- c(
-  "# Pathway panel summary",
+  paste0("# Pathway panel summary — ", toupper(outcome)),
   "",
+  paste0("- **Outcome:** ", outcome),
   paste0("- **Run at:** ", as.character(Sys.time())),
   paste0("- **Panel rows:** ", nrow(panel)),
   paste0("- **Synthetic:** ", is_synthetic),
   paste0("- **Age×sex grain:** ", has_age_sex),
-  paste0("- **Headline proposal:** ", headline),
+  paste0("- **Legacy Gate 3 proposal:** ", headline),
+  paste0("- **Amended core candidates:** ", paste(reg$amended_core_candidates %||% character(), collapse = ", ")),
+  paste0("- **Cohort:** ", paste(unique(as.character(panel$cohort %||% NA)), collapse=";")),
+  paste0("- **Event definition:** ", paste(unique(as.character(panel$event_definition %||% NA)), collapse=";")),
   "",
   "## Pathway status",
   "",
@@ -256,9 +311,9 @@ lines <- c(
     "Real aggregate run. Apply Gate 3 before treating any single pathway as primary."
   },
   "",
-  "Full estimates: `outputs/tables/pathway_panel_estimates.csv`"
+  paste0("Full estimates: `outputs/tables/", outcome, "_pathway_panel_estimates.csv`")
 )
-writeLines(lines, file.path(out_rep, "pathway_panel_summary.md"))
+writeLines(lines, file.path(out_rep, paste0(outcome, "_pathway_panel_summary.md")))
 
 message(
   "Pathway panel complete. OK=", sum(stat_df$status == "ok"),

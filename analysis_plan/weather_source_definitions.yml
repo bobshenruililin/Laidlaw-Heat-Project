@@ -1,0 +1,64 @@
+version: 1
+reviewed_at: "2026-08-10"
+purpose: "Executable primary-source weather operators; not Gate 3 headline choices"
+
+definitions:
+  li_hw:
+    title: "Li et al. warm-season Tmax percentile heatwave"
+    source_doi: "10.1016/j.atmosres.2024.107845"
+    source_status: PRIMARY_SOURCE_LOCKED
+    temperature_variable: tmax
+    comparison: ">"
+    percentile: 0.90
+    calendar_window_half_width_days: 7
+    reference_start: "1980-01-01"
+    reference_end: "2023-12-31"
+    warm_months: [5, 6, 7, 8, 9]
+    minimum_consecutive_days: 3
+    source_interval_days_lte: 2
+    max_intervening_non_hot_days: 1
+    hogan_monthly_count_tail_locked: false
+
+  wang_vhd5:
+    title: "Wang et al. prolonged very-hot-day event"
+    source_doi: "10.1016/j.scitotenv.2019.07.039"
+    source_status: PRIMARY_SOURCE_LOCKED
+    temperature_variable: tmax
+    comparison: ">="
+    threshold_c: 33
+    minimum_consecutive_days: 5
+    post_event_lag_supported: false
+
+  wang_hn5:
+    title: "Wang et al. prolonged hot-night event"
+    source_doi: "10.1016/j.scitotenv.2019.07.039"
+    source_status: PRIMARY_SOURCE_LOCKED
+    temperature_variable: tmin
+    comparison: ">="
+    threshold_c: 28
+    minimum_consecutive_days: 5
+    post_event_lag_supported: false
+
+  wang_2d3n:
+    title: "Wang et al. compound two-day/three-night event"
+    source_doi: "10.1016/j.scitotenv.2019.07.039"
+    source_status: PRIMARY_SOURCE_LOCKED_DAILY_DATE_ALIGNMENT_DOCUMENTED
+    pattern: NDNDN
+    very_hot_day_threshold_c: 33
+    hot_night_threshold_c: 28
+    vhd_comparison: ">="
+    hn_comparison: ">="
+    night_alignment: "HN[i:i+2] around VHD[i:i+1]"
+    merge_overlapping_or_touching_windows: true
+    post_event_lag_days: 5
+
+  liu_tavg:
+    title: "Jingwen Liu et al. high-mean-temperature lag phases"
+    source_doi: "10.1016/j.scs.2020.102131"
+    source_status: SOURCE_LOCK_PENDING_FULL_PRIMARY_SUPPLEMENT
+    implementation_enabled: false
+    reported_threshold_c: 30.60
+    unresolved:
+      - "reference period and percentile derivation"
+      - "20-day event versus lag 0-21 arithmetic"
+      - "event independence rule"

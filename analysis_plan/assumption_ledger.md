@@ -49,18 +49,33 @@ Audit-friendly record of working assumptions for the Hong Kong thermal extremes 
 | A43 | Lab daily heatwave–mortality study | Liu/Ren/Bishai-type daily excess-mortality work (through 2023, multi-definition) is **complementary context**, not this project’s estimand | Low | Avoid duplicating mortality claims or mixing estimands | Cite carefully; keep admissions/aggregate framing | Team |
 | A44 | Analysis temperature grain | Monthly only for association models (daily HKO used to build monthly metrics, not daily admissions models) | Low | Stated meeting constraint | Enforce in analysis scripts | Bob |
 | A45 | Pathway pipeline readiness | Dry-run: **17 pathways OK** on SYNTHETIC stroke (SAP + forest + diagnostics); real mode waits for aggregates | Low | Defines drop-in workflow | Place HA file → `PATHWAY_MODE=real` | Bob |
+| A46 | CHD/HF outcome universe | **Received 7 Aug:** territory-month first hospitalisation after first CHD or HF diagnosis record among people with T2D and/or HTN, 2013–2023 | Medium (exact diagnosis-code and inpatient semantics still need Roro confirmation) | Defines the estimand; these are not principal-diagnosis admission causes | Roro confirms codes and construction text | Roro/Bob |
+| A47 | Stroke delivery | Stroke was named in the covering email but was **not attached** | Low | Prevents invented stroke rows or a stroke manuscript claim | Roro resends separately | Roro |
+| A48 | CHD/HF denominator | **Amended main analysis:** days-in-month offset; C&SD population×days and no offset are sensitivities | High (cohort risk set unavailable) | General population is not T2D/HTN cohort person-time; avoid false incidence-rate language | Request monthly cohort-at-risk denominator | Roro/Bishai |
+| A49 | Real-data diagnostics | Initial CHD/HF-labelled diagnostics mistakenly read the synthetic stroke panel; all such outputs are invalid | Low (bug confirmed) | Prevents synthetic diagnostics entering manuscript inference | Outcome-specific real-only rerun with fatal provenance guard | Bob |
+| A50 | Collinear joint models | P02/P04 joint coefficients and nested joint P07 coefficients remain exploratory; separate models receive new IDs under SAP A1 | Medium | Avoids interpreting unstable partial contrasts as marginal exposure effects | Real-only reanalysis + VIF/correlation audit | Bob/Team |
+| A51 | Public dissemination | Monthly source counts stay gitignored. Derived aggregate results may be drafted, but Roro/Bishai confirmation remains required before external submission or promotion | Medium | Aggregation reduces privacy risk but does not establish publication authority | Written team confirmation | Roro/Bishai/Bob |
+| A52 | Correspondence scientific authority | Supplied 21 Apr–6 Aug correspondence confirms T2D/HTN scope, absent admission cause, CHD/HF delivery, stroke omission, and collaborator roles; raw correspondence remains private | Low for quoted facts | Replaces second-hand reconstruction with direct correspondence while protecting personal data | Redacted contract in `knowledge/2026-08-10_correspondence_scientific_contract.md` | Bob |
+| A53 | Final reanalysis status | Protocol F1.0 was frozen 10 Aug **after** A1 outcomes were seen; every added model is exploratory | Low | Prevents retrospective work being presented as preregistered confirmation | `analysis_plan/final_reanalysis_protocol_2026-08-10.md` | Bob/Team |
+| A54 | Core uncertainty display | Model, HC1, NW3 and NW6 intervals will be displayed together; no SE method may be selected because its CI excludes 1 | Low | CHD hot-night inference changes across SE methods | Final release table + claim ledger | Bob |
+| A55 | Deferred/cross-month exposure | Daily heat events may be converted into onset, overlap, event-day and 0/1–5/6–21 affected-day burdens; phases cross calendar months by affected date | Medium (source operators) | Preserves daily morphology without falsely fitting an ordinary monthly DLNM | Primary-source lock + unit tests | Hogan/Bob |
+| A56 | Monthly-outcome/daily-exposure method | Basagaña–Ballester M\|D is methods-feasibility only unless prespecified synthetic calibration gates pass; full rich DLNM prohibited at n=132 | Medium | Directly tests whether daily exposure information is recoverable from monthly health sums | Simulation protocol and gates | Bob/Team |
+| A57 | External method code | Public `xbasagana/aggregated` repository has no licence; implement the published likelihood clean-room and cite it, without copying code | Low | Avoids unlicensed vendoring and makes equations auditable | Source-code audit | Bob |
+| A58 | Cross-outcome thermal pattern | “CHD heat / HF cold” is a narrative hypothesis until a single stacked outcome-by-exposure interaction tests the difference | Low | Separate nominal p-values do not establish heterogeneous effects | Frozen model M06 | Bob |
+| A59 | Companion mortality manuscript | Revised Roro/Bishai PDF is useful for exposure morphology and policy context but contains operator/table/uncertainty ambiguities; mortality RRs and excess deaths are not transported | Medium pending author code | Protects estimand and source fidelity | `literature/roro_revised_manuscript_audit_2026-08-10.md` | Team |
+| A60 | Governed rerun availability | The final branch contains the validated disclosure-minimised release but not the gitignored CHD/HF source spreadsheets or merged panels | Low (filesystem checked 10 Aug) | New real-data models cannot be executed or claimed until governed inputs are restored | Re-upload files matching receipt hashes; rerun real checks | Bob/Roro |
+| A61 | M\|D nuisance seasonality | F1.1 replaces one annual harmonic pair with calendar-month indicators after the **synthetic-only** 100-replicate pilot showed HF-like null type-I error 0.62–0.75; no new real model was inspected | Low (pilot evidence direct) | Prevents known residual cold-season confounding before the 500-replicate core gate; keeps p=20 | Preserve failed pilot; rerun core calibration | Bob |
+| A62 | M\|D gate aggregation | F1.2 replaces cross-cell mean gates with worst-cell/all-cell rules after an independent **synthetic-only** audit; raw 500-replicate fits remain unchanged | Low | Prevents well-calibrated CHD cells from hiding failed HF/kernel cells; cannot rescue a failed method | Recompute summaries from raw calibration rows | Bob |
 
 ## Human confirmation checklist
 
-**Updated 17 July 2026 after lab meeting. Open items:**
+**Updated 7 August 2026 after CHD/HF aggregate receipt. Open items:**
 
-1. IRB / governance determination for stroke-aggregate (and any remaining HA) use? (PI)
-2. Exact stroke aggregate grain (territory-month vs month × age × sex)?
-3. Does the stroke file distinguish ischemic vs hemorrhagic stroke?
-4. Is any AMI series available outside the general “no reason” HA file?
-5. Which method is the headline among the ~10 after QC (Gate 3)?
-6. Medication / BMI availability given aggregate outcomes?
-7. Small-cell suppression rules before releasing tables?
-8. Should the core period remain January 2013–December 2023?
-9. Should 2024 be requested as an optional extension?
-10. Confirm that formal historical-effect comparisons remain qualitative unless methods are harmonized?
+1. Confirm the diagnosis-code lists and exact meaning of `*_inpatient` for CHD/HF.
+2. Can Roro provide a monthly T2D/HTN cohort-at-risk denominator?
+3. Resend the stroke aggregate file and document its event construction.
+4. IRB / governance and external-dissemination determination for the aggregates? (PI/Roro)
+5. Which corrected, single-exposure method is the headline after the real-only rerun (Gate 3)?
+6. Small-cell / disclosure rules for manuscript tables and figures?
+7. Should 2024 be requested as an optional extension?
+8. Confirm that formal historical-effect comparisons remain qualitative unless methods are harmonized.

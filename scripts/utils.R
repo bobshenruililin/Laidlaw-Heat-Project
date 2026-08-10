@@ -85,21 +85,31 @@ absolute_humidity_gm3 <- function(temp_c, rh_pct) {
   216.7 * e / (temp_c + 273.15)
 }
 
-# Flag days belonging to a simple 2D3N-type window: within a 5-day window,
-# at least 2 very-hot days and 3 hot nights (Wang et al. 2019-inspired).
+# Flag days belonging to an exact Wang et al. (2019) NDNDN event:
+# two consecutive very-hot days and their three corresponding hot nights.
+# HKO daily minima are indexed by calendar date, so candidate i uses
+# VHD[i:i+1] and HN[i:i+2]. The historical `window` argument is retained only
+# for API compatibility and must equal 5.
 flag_2d3n_window <- function(very_hot_day, hot_night, window = 5L) {
+  if (!identical(as.integer(window), 5L)) {
+    stop("Exact 2D3N implementation requires window=5")
+  }
   vhd <- as.logical(very_hot_day)
   hn <- as.logical(hot_night)
   vhd[is.na(vhd)] <- FALSE
   hn[is.na(hn)] <- FALSE
   n <- length(vhd)
   out <- rep(FALSE, n)
-  if (n < window) return(out)
-  for (i in seq_len(n - window + 1L)) {
-    idx <- i:(i + window - 1L)
-    if (sum(vhd[idx]) >= 2L && sum(hn[idx]) >= 3L) {
-      out[idx] <- TRUE
-    }
+  if (n < 3L) return(out)
+  starts <- which(
+    vhd[seq_len(n - 2L)] &
+      vhd[seq.int(2L, n - 1L)] &
+      hn[seq_len(n - 2L)] &
+      hn[seq.int(2L, n - 1L)] &
+      hn[seq.int(3L, n)]
+  )
+  for (i in starts) {
+    out[i:(i + 2L)] <- TRUE
   }
   out
 }

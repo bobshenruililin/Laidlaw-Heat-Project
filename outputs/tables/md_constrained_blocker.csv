@@ -1,0 +1,3 @@
+"script_id","outcome","panel_path","panel_present","weather_design_present","calibration_gate_path","calibration_gate_present","status","message","result_class","data_status"
+"41_fit_md_constrained","chd","/workspace/data_processed/chd_analysis_panel.csv",FALSE,TRUE,"/workspace/outputs/calibration_md/md_calibration_gate_summary.csv",FALSE,"NOT_RUN_MISSING_GOVERNED_PANEL","Governed analysis panel absent; real M|D not run","METHODS_FEASIBILITY",
+"41_fit_md_constrained","hf","/workspace/data_processed/hf_analysis_panel.csv",FALSE,TRUE,"/workspace/outputs/calibration_md/md_calibration_gate_summary.csv",FALSE,"NOT_RUN_MISSING_GOVERNED_PANEL","Governed analysis panel absent; real M|D not run","METHODS_FEASIBILITY",

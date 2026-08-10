@@ -2,7 +2,6 @@
 title: "Aggregation-Aware Inference for Monthly Thermal Associations with First Hospitalisation after CHD or HF Diagnosis in Hong Kong, 2013–2023"
 author:
   - Bob Shen Ruililin
-subtitle: "Laidlaw Scholars Programme, The University of Hong Kong, Hong Kong SAR, China"
 affiliation:
   - "Laidlaw Scholars Programme, The University of Hong Kong, Hong Kong SAR, China"
 bibliography: literature/references.bib
@@ -27,6 +26,8 @@ construction was assisted by a clinical collaborator. Full co-author names,
 order, and any co-first designation will be finalised before external
 submission. No final author order is asserted here.
 -->
+
+*Laidlaw Scholars Programme, The University of Hong Kong, Hong Kong SAR, China*
 
 Collaborative contributions are credited in the Acknowledgements. Author order
 is recorded separately and is not finalised in this repository version.

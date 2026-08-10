@@ -54,7 +54,7 @@ were shown, and the twelve comparisons were corrected for multiple testing.
 
 Two associations stood out before that correction. Five additional hot nights
 in a month corresponded to a CHD count ratio of 1.022 (95% confidence interval
-1.002–1.042 using the continuity uncertainty method). Five additional cold
+1.002–1.042 using Newey–West lag 6). Five additional cold
 days corresponded to an HF count ratio of 1.073 (1.006–1.144). These are
 approximately 2.2% and 7.3% higher monthly counts, respectively. However, both
 multiple-testing-adjusted *q*-values were 0.192, and all twelve *q*-values
@@ -170,6 +170,10 @@ heatwave definitions were developed and source-checked elsewhere in the
 project [@wang2019ehwe; @li2025heatwaves], but the six-measure panel provides
 the clearest common comparison for this report.
 
+Cold-day identification used between-year variation within the same calendar
+month and was concentrated in December–February. A winter-only restriction is
+a future sensitivity analysis, not a cure for identification.
+
 ![Official hot nights, very hot days and cold days at Hong Kong Observatory Headquarters, 2013–2023. These are environmental descriptors, not health findings.](figures/exposure_aging/fig01_annual_extremes_coexistence.png){width=92%}
 
 ## 2.3 Statistical analysis
@@ -178,9 +182,10 @@ Separate negative-binomial regression models were fitted for each outcome and
 each exposure: two outcomes multiplied by six exposures produced twelve core
 comparisons. Negative-binomial models allow monthly counts to vary more than a
 simple Poisson model would permit. Each model controlled for calendar month,
-which captures recurring seasonal patterns, and a smooth long-term trend. The
-number of days in the month was included as an offset so that February was not
-treated as providing the same observation time as a 31-day month.
+which captures recurring seasonal patterns, and a natural spline of time with
+four degrees of freedom (`ns(time, 4)`). The number of days in the month was
+included as an offset so that February was not treated as providing the same
+observation time as a 31-day month.
 
 The reported effect measure is a **count ratio**. A ratio of 1 means that the
 model estimates no difference in the monthly count for the stated exposure
@@ -195,6 +200,9 @@ reported four ways: model-based, heteroskedasticity-consistent (HC1), and
 Newey–West methods with lags of three and six months. The continuity analysis
 used the six-month Newey–West interval, but all four were displayed. No method
 was chosen because it made a confidence interval exclude 1.
+
+In the leading models, Pearson residual autocorrelation at lag 1 was 0.508 for
+CHD hot nights and 0.146 for HF cold days.
 
 Twelve comparisons also create more opportunities for a small *p*-value to
 occur by chance. Benjamini–Hochberg *q*-values were therefore calculated
@@ -214,11 +222,12 @@ what happens when correlated heat measures compete in the same equation.
 The project also evaluated a constrained method that combines monthly outcomes
 with daily exposures [@basagana2024md]. Before it could be used on real health
 outcomes, it had to recover known effects in simulations designed around Hong
-Kong weather and the observed monthly setting. The method failed the
-predefined error, coverage, bias and sign-recovery requirements. No daily
-health coefficient was therefore produced. This negative result is important:
-greater mathematical complexity does not create temporal information that the
-data cannot reliably supply.
+Kong weather and the observed monthly setting. The F1.1 500-replicate run
+failed its admission criteria. After that run, F1.2 re-summarised the existing
+fits against unchanged numerical thresholds using worst-cell rules; admission
+remained fail. No daily health coefficient was therefore produced. This
+project-specific result does not show that the Basagaña–Ballester method fails
+generally.
 
 # 3. Results
 
@@ -273,12 +282,11 @@ therefore provides no multiplicity-protected confirmatory association.
 ![The two leading exploratory estimates under four approaches to standard errors. The CHD hot-night interval crosses 1 under two methods; the HF cold-day interval does not.](reports/poster/figures/fig_poster_uncertainty.png){width=72%}
 
 The CHD hot-night point estimate was 1.022 under all four standard-error
-methods because the fitted model did not change. Its interval did change:
-0.995–1.049 using model-based uncertainty, 0.997–1.047 using HC1,
-1.000–1.044 using Newey–West lag 3, and 1.002–1.042 using Newey–West lag 6.
-The first two intervals include 1, while the latter two narrowly exclude it.
-The interpretation therefore depends on how serial and unequal uncertainty is
-handled.
+methods. The intervals were 0.995–1.049 using model-based uncertainty,
+0.997–1.047 using HC1, 1.0003–1.0439 using Newey–West lag 3, and 1.002–1.042
+using Newey–West lag 6. Model-based and HC1 intervals included 1; NW3 excluded
+1 only on the unrounded scale, and NW6 excluded 1. No method was selected
+because its interval excluded the null.
 
 The HF cold-day point estimate was 1.073. Its four intervals were
 1.023–1.125, 1.011–1.138, 1.007–1.143, and 1.006–1.144. All excluded 1, so
@@ -297,9 +305,9 @@ not establish a daily lag sequence.
 
 The attempted monthly-outcome/daily-exposure estimator passed its numerical
 convergence checks but failed its substantive calibration requirements.
-Across the most difficult simulation cells, false-positive rates reached
-0.150, confidence-interval coverage fell to 0.840, and sign recovery was poor
-for moderate effects. The method was not applied to produce a real daily
+In the post-run F1.2 worst-cell re-summary, false-positive rates reached 0.150,
+confidence-interval coverage fell to 0.840, and sign recovery was poor for
+moderate effects. The method was not applied to produce a real daily
 coefficient.
 
 # 4. Interpretation

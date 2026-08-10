@@ -22,6 +22,9 @@
 - [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md) —
   final integrated reanalysis, source-locked weather audit, failed M|D gate,
   validated release, manuscript packet, and remaining human decisions.
+- [`2026-08-10_external_review_reconciliation.md`](2026-08-10_external_review_reconciliation.md) —
+  evidence-checked external-review decisions, numerical audit corrections, and
+  rejected overclaims.
 - [`2026-08-02_hogan_live_manuscript.md`](2026-08-02_hogan_live_manuscript.md) — live-file authority, 5/7 August ownership, review sequence, manuscript boundaries and unchanged scientific gates.
 - [`2026-08-07_ha_chd_hf_analysis.md`](2026-08-07_ha_chd_hf_analysis.md) — REAL CHD/HF panel after Roro delivery; stroke missing; Gate 3 open.
 - [`2026-08-05_lsn_research_summary.md`](2026-08-05_lsn_research_summary.md) — Laidlaw Scholar Network research-project summary + interactive exposure microsite.

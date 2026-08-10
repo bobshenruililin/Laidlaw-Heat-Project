@@ -103,6 +103,10 @@ Joint extreme-day and nested heat-month structures remain exploratory. Separate 
 
 Legacy pollution, humidity, and influenza pathway fits in the broader archive are not adjusted versions of these separate continuity models.
 
+Continuity models used the NB2 parameterisation
+$\mathrm{Var}(Y\mid X)=\mu+\mu^2/\theta$; larger $\theta$ indicates less
+negative-binomial overdispersion.
+
 ### S2.2 Supplementary Table S1 — complete standard-error ladder
 
 **Supplementary Table S1.** Negative-binomial count ratios under the
@@ -243,6 +247,13 @@ Negative-binomial INGARCH(1,1) models were fitted **without an offset**. They re
 
 ## S6. Residual diagnostics
 
+Verified diagnostics for the leading days-offset negative-binomial models were:
+
+| Outcome × exposure | n | theta | Pearson dispersion | ACF1 | Ljung–Box lag-6 p |
+|---|---:|---:|---:|---:|---:|
+| CHD × hot nights | 132 | 163.0 | 1.116 | 0.508 | 1.17e-8 |
+| HF × cold days | 132 | 188.0 | 1.149 | 0.146 | 0.356 |
+
 | Outcome | Continuity residual ACF1 (approx.) | Range across six continuity exposures | Ljung–Box lag 6 |
 |---|---|---|---|
 | CHD | 0.51 | 0.508–0.534 | Rejects white noise |
@@ -255,11 +266,12 @@ Tables: `outputs/release_chd_hf/supplement/chd_pathway_residual_acf.csv`, `outpu
 
 **Provenance:** `SYNTHETIC_CALIBRATION` only.
 Quarantine folder: `outputs/release_chd_hf/supplement/methods_feasibility/`.
-These materials validate methods. They are not CHD/HF health findings.
+These materials evaluate one clean-room implementation under one synthetic
+design. They are not CHD/HF health findings.
 
 ### S7.1 Rationale
 
-Monthly sums erase within-month timing. The Basagaña–Ballester aggregated likelihood provides a constrained route from daily exposure to monthly counts [@basagana2024md; @basagana2026md]. Admission of real daily coefficients requires synthetic calibration gates to pass under the frozen protocol (`analysis_plan/final_reanalysis_protocol_2026-08-10.md`, Section 8).
+Monthly sums erase within-month timing. The Basagaña–Ballester aggregated likelihood provides a constrained route from daily exposure to monthly counts [@basagana2024md; @basagana2026md]. Admission of real daily coefficients requires the numerical synthetic-calibration thresholds to pass (`analysis_plan/final_reanalysis_protocol_2026-08-10.md`, Section 8).
 
 ### S7.2 F1.0 pilot failure
 
@@ -271,13 +283,16 @@ Interpretation: model-design failure from inadequate nuisance seasonality, not e
 
 ### S7.3 F1.1 correction
 
-Amendment: replace the harmonic with calendar-month indicators, matching the analysis-of-record seasonality, while remaining inside the 20-parameter cap. The failed F1.0 pilot remains auditable. No new real health model was fitted to choose the correction.
+Amendment: replace the harmonic with calendar-month indicators, matching the analysis-of-record seasonality, while remaining inside the 20-parameter cap. The failed F1.0 pilot remains auditable. F1.1 then ran 500 replicates. No new real health model was fitted to choose the correction.
 
-### S7.4 F1.2 worst-cell decision (500 replicates)
+### S7.4 F1.2 post-run worst-cell decision
 
 Artifact: `outputs/release_chd_hf/supplement/methods_feasibility/md_calibration_f1_2_decision_report.md`.
 Decision: `FAIL_METHODS_FEASIBILITY_ONLY`.
 All gates passed: FALSE.
+F1.2 re-summarised the existing F1.1 500-replicate fits after the run, using
+worst-cell rules and unchanged numerical thresholds. It did not refit the
+simulations; admission remained fail.
 
 | Gate | Passed | Value | Requirement |
 |---|---|---:|---|
@@ -290,13 +305,13 @@ All gates passed: FALSE.
 | Divergent fits | Yes | 0 | <0.05 |
 | Stress coverage min | No | 0.842 | ≥0.85 |
 
-Method-validation figures (not health findings):
+Methods-feasibility figures (not health findings):
 
-![Methods validation only — synthetic M|D null Type I by outcome and kernel. Not a CHD/HF health result.](../outputs/release_chd_hf/supplement/methods_feasibility/figure_calibration_type1_by_outcome_kernel.png){width=100%}
+![Methods feasibility only — synthetic M|D null Type I by outcome and kernel. Not a CHD/HF health result.](../outputs/release_chd_hf/supplement/methods_feasibility/figure_calibration_type1_by_outcome_kernel.png){width=100%}
 
-![Methods validation only — synthetic M|D coverage by outcome and kernel. Not a CHD/HF health result.](../outputs/release_chd_hf/supplement/methods_feasibility/figure_calibration_coverage_by_outcome_kernel.png){width=100%}
+![Methods feasibility only — synthetic M|D coverage by outcome and kernel. Not a CHD/HF health result.](../outputs/release_chd_hf/supplement/methods_feasibility/figure_calibration_coverage_by_outcome_kernel.png){width=100%}
 
-![Methods validation only — F1.2 gate pass/fail summary. Not a CHD/HF health result.](../outputs/release_chd_hf/supplement/methods_feasibility/figure_calibration_gate_passfail.png){width=100%}
+![Methods feasibility only — F1.2 gate pass/fail summary. Not a CHD/HF health result.](../outputs/release_chd_hf/supplement/methods_feasibility/figure_calibration_gate_passfail.png){width=100%}
 
 Paths:
 
@@ -306,7 +321,7 @@ Paths:
 
 ### S7.5 Real M|D admission rule
 
-Because F1.2 calibration failed, no real daily-exposure coefficient is eligible for manuscript Results. Real constrained M|D fitting additionally requires governed analysis panels that are not redistributed in the public repository.
+Because the F1.2 post-run re-summary failed, no real daily-exposure coefficient is eligible for manuscript Results. Real constrained M|D fitting additionally requires governed analysis panels that are not redistributed in the public repository.
 
 ## S8. Provenance firewall
 

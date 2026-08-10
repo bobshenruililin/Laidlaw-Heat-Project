@@ -35,7 +35,11 @@ if (has_daily) {
   message("Daily HKO file: ", daily_path)
 } else {
   daily <- NULL
-  message("No daily HKO file found — event-start HM23 will use monthly proxies where possible.")
+  if (is.null(spill)) {
+    message("No daily or spillover HKO file found — event-start HM23 will use monthly proxies where possible.")
+  } else {
+    message("Source-locked spillover HKO file found: ", spill_path)
+  }
 }
 
 starters <- unique(c(reg$starter_codes$core %||% character(), reg$starter_codes$first_wave %||% character()))
@@ -237,6 +241,7 @@ snap <- data.frame(
   reference_period_policy = "PROVISIONAL study window 2013-2023; registry reference_period still null",
   hogan_locked = FALSE,
   daily_file = if (has_daily) daily_path else NA_character_,
+  spillover_file = if (!is.null(spill)) spill_path else NA_character_,
   n_definitions_built = ncol(out) - 1L,
   stringsAsFactors = FALSE
 )
@@ -250,6 +255,7 @@ lines <- c(
   paste0("- **Reference period:** ", snap$reference_period_policy),
   paste0("- Hogan-locked: ", snap$hogan_locked),
   paste0("- Daily file: ", snap$daily_file),
+  paste0("- Source-locked spillover file: ", snap$spillover_file),
   paste0("- Output: `", hmcm_path, "`"),
   "",
   "## Selected-month counts",

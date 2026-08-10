@@ -13,12 +13,12 @@ sansfont: DejaVu Sans
 monofont: DejaVu Sans Mono
 ---
 
-**Audience:** Professor David Bishai (supervisor), with shared scientific use by Roro, Hogan, and Bob.
-**Date:** 10 August 2026
-**Mode:** Supervisor-facing scientific report (internal). Gate language and collaborator roles are permitted here.
-**Provenance rule:** Health estimates are `HA_APPROVED_AGGREGATE`. Calibration materials are `SYNTHETIC_CALIBRATION`. Weather reproduction checks are `REAL_PUBLIC_HKO`.
-**Companion artifacts:** `outputs/release_chd_hf/`; `manuscript/chd_hf_thermal_associations_2013_2023.md`; `manuscript/chd_hf_supplement.md`; `knowledge/2026-08-10_correspondence_scientific_contract.md`; `reports/data_receipt_2026-08-07.md`.
-**Not done in this document:** invent missing human decisions; freeze Gate 3; commit HA microdata; promote synthetic coefficients as findings.
+- **Audience:** Professor David Bishai (supervisor), with shared scientific use by Roro, Hogan, and Bob.
+- **Date:** 10 August 2026.
+- **Mode:** Supervisor-facing scientific report (internal). Gate language and collaborator roles are permitted here.
+- **Provenance:** Health estimates are `HA_APPROVED_AGGREGATE`; calibration is `SYNTHETIC_CALIBRATION`; weather reproduction checks are `REAL_PUBLIC_HKO`.
+- **Companion artifacts:** `outputs/release_chd_hf/`; `manuscript/chd_hf_thermal_associations_2013_2023.md`; `manuscript/chd_hf_supplement.md`; `knowledge/2026-08-10_correspondence_scientific_contract.md`; `reports/data_receipt_2026-08-07.md`.
+- **Scientific refusals:** no invented human decisions, agent Gate 3 freeze, committed HA microdata, or synthetic coefficients presented as findings.
 
 ---
 

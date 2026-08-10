@@ -2,6 +2,7 @@
 title: "Aggregation-Aware Inference for Monthly Thermal Associations with First Hospitalisation after CHD or HF Diagnosis in Hong Kong, 2013–2023"
 author:
   - Bob Shen Ruililin
+subtitle: "Laidlaw Scholars Programme, The University of Hong Kong, Hong Kong SAR, China"
 affiliation:
   - "Laidlaw Scholars Programme, The University of Hong Kong, Hong Kong SAR, China"
 bibliography: literature/references.bib
@@ -109,7 +110,7 @@ Source monthly count files and merged health panels were retained outside versio
 
 CHD contributed 156,156 first recorded hospitalisations over 132 months (mean 1,183.0 per month). HF contributed 29,681 (mean 224.9 per month) (Table 1). Both series declined over calendar time on an indexed scale (Figure 1). Seasonal profiles differed by outcome (Figure 2).
 
-![Indexed monthly first-hospitalisation series for CHD and HF, January 2013–December 2023. Series are indexed to the study-period mean; absolute monthly counts are not shown.](../outputs/release_chd_hf/figures/figure1_indexed_outcome_series.png){width=100%}
+![Indexed monthly first-hospitalisation series for CHD and HF, January 2013–December 2023. Each outcome's 2013 monthly mean equals 100; absolute monthly counts are not shown.](../outputs/release_chd_hf/figures/figure1_indexed_outcome_series.png){width=100%}
 
 ![Calendar-month seasonal profiles of indexed CHD and HF first-hospitalisation counts.](../outputs/release_chd_hf/figures/figure2_seasonal_pattern.png){width=100%}
 

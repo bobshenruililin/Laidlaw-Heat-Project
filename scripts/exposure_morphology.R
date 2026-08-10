@@ -67,15 +67,17 @@ merge_event_windows <- function(events, max_gap_days = 0L) {
   group <- 1L
   groups[1] <- group
   current_end <- events$end_idx[1]
-  for (i in 2:nrow(events)) {
-    gap <- events$start_idx[i] - current_end - 1L
-    if (gap <= max_gap_days) {
-      groups[i] <- group
-      current_end <- max(current_end, events$end_idx[i])
-    } else {
-      group <- group + 1L
-      groups[i] <- group
-      current_end <- events$end_idx[i]
+  if (nrow(events) > 1L) {
+    for (i in 2:nrow(events)) {
+      gap <- events$start_idx[i] - current_end - 1L
+      if (gap <= max_gap_days) {
+        groups[i] <- group
+        current_end <- max(current_end, events$end_idx[i])
+      } else {
+        group <- group + 1L
+        groups[i] <- group
+        current_end <- events$end_idx[i]
+      }
     }
   }
 

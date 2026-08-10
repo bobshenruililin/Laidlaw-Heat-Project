@@ -39,7 +39,8 @@ read_hko_open_daily <- function(path, value_name) {
   ]
   out$date <- as.Date(sprintf("%04d-%02d-%02d", out$year, out$month, out$day))
   names(out)[names(out) == "value"] <- value_name
-  out[, c("date", value_name, "completeness")]
+  out <- out[!is.na(out$date), , drop = FALSE]
+  out[, c("date", value_name)]
 }
 
 tmax <- read_hko_open_daily(
@@ -66,9 +67,10 @@ daily <- daily[daily$date >= as.Date("1980-01-01") &
 # The open-data files can have distinct source completeness columns. They are
 # retained in raw HKO files; only temperatures enter this public exposure audit.
 daily <- daily[, c("date", "tmax", "tmin", "tmean")]
+daily <- daily[!is.na(daily$date), , drop = FALSE]
 if (anyDuplicated(daily$date)) stop("Duplicate dates after HKO open-data merge")
 full_grid <- data.frame(
-  date = seq(min(daily$date), max(daily$date), by = "day"),
+  date = seq(min(daily$date, na.rm = TRUE), max(daily$date, na.rm = TRUE), by = "day"),
   stringsAsFactors = FALSE
 )
 daily <- merge(full_grid, daily, by = "date", all.x = TRUE, sort = TRUE)

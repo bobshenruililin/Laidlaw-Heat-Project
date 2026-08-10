@@ -27,3 +27,7 @@ After each progress deck, run `/blog-from-deck` or let the agent offer it. The c
 - [`week1_recalibration.md`](week1_recalibration.md)
 - [`week2_definitions_and_waiting.md`](week2_definitions_and_waiting.md)
 - [`STYLE_NOTES.md`](STYLE_NOTES.md)
+
+## Related: Laidlaw Scholar Network (LSN)
+
+Peer-network research-project summary (different register from this website blog): [`../lsn/research_project_summary.md`](../lsn/research_project_summary.md) and interactive companion [`../../docs/lsn/`](../../docs/lsn/).

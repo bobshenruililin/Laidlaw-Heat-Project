@@ -95,6 +95,12 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - HA month-level counts remain gitignored under `data_raw/ha_secure_placeholder/` and `data_processed/*_aggregates_normalized.csv` / `*_analysis_panel.csv`.
 - Dissemination: aggregates OK for internal draft; Roro/Bishai confirmation still required before external submission.
 
+### Wednesday 5 August — LSN research summary
+
+- Paste-ready Laidlaw Scholar Network research-project summary: [`reports/lsn/research_project_summary.md`](../reports/lsn/research_project_summary.md).
+- Interactive exposure-only companion: [`docs/lsn/`](../docs/lsn/) (REAL HKO monthly climate; no stroke findings). Bob edits before posting to LSN.
+- Knowledge note: [`knowledge/2026-08-05_lsn_research_summary.md`](../knowledge/2026-08-05_lsn_research_summary.md).
+
 ### Sunday 2 August — live manuscript handoff
 
 - Hogan created and shared a live manuscript with Bob and Roro, commented on the Introduction, and wrote the weather component of Methods.

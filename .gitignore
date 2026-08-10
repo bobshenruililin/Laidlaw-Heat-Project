@@ -51,6 +51,8 @@ outputs/session_info_setup.txt
 # Rebuildable synthetic calibration internals (summaries/gates remain tracked)
 outputs/calibration_md/checkpoints/
 outputs/calibration_md/md_calibration_raw_metrics.csv
+outputs/calibration_md/md_calibration_*_pilot_10.csv
+outputs/calibration_md/md_calibration_*_core_500.csv
 
 # HA approved monthly aggregates and merged panels (never commit event counts)
 data_processed/*_aggregates_normalized.csv

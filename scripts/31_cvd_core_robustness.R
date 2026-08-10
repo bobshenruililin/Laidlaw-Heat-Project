@@ -223,10 +223,60 @@ for (outcome in outcomes) {
   )
   for (pid in names(joint_specs)) {
     fml <- build_formula(joint_specs[[pid]], offsets$days_only)
-    model <- MASS::glm.nb(fml, data = dat)
+    model_result <- tryCatch(
+      list(ok = TRUE, value = MASS::glm.nb(fml, data = dat), message = ""),
+      error = function(e) {
+        list(ok = FALSE, value = NULL, message = conditionMessage(e))
+      }
+    )
+    if (!isTRUE(model_result$ok)) {
+      for (se_method in c("HC1", "NeweyWest_lag6")) {
+        for (term in joint_specs[[pid]]) {
+          key <- paste("joint", outcome, pid, term, se_method, sep = "_")
+          se_status_rows[[key]] <- data.frame(
+            outcome = outcome,
+            pathway_id = pid,
+            exposure = term,
+            offset_policy = "days_only",
+            family = "negative_binomial",
+            se_method = se_method,
+            model_structure = "joint_exploratory",
+            status = "FAILED",
+            message = paste0("Joint model failed: ", model_result$message),
+            data_status = "HA_APPROVED_AGGREGATE",
+            stringsAsFactors = FALSE
+          )
+        }
+      }
+      next
+    }
+    model <- model_result$value
     for (se_method in c("HC1", "NeweyWest_lag6")) {
-      vm <- vcov_for(model, se_method)
+      vm_result <- tryCatch(
+        list(ok = TRUE, value = vcov_for(model, se_method), message = ""),
+        error = function(e) {
+          list(ok = FALSE, value = NULL, message = conditionMessage(e))
+        }
+      )
+      vm <- vm_result$value
       for (term in joint_specs[[pid]]) {
+        key <- paste("joint", outcome, pid, term, se_method, sep = "_")
+        if (!isTRUE(vm_result$ok)) {
+          se_status_rows[[key]] <- data.frame(
+            outcome = outcome,
+            pathway_id = pid,
+            exposure = term,
+            offset_policy = "days_only",
+            family = "negative_binomial",
+            se_method = se_method,
+            model_structure = "joint_exploratory",
+            status = "FAILED",
+            message = vm_result$message,
+            data_status = "HA_APPROVED_AGGREGATE",
+            stringsAsFactors = FALSE
+          )
+          next
+        }
         meta <- data.frame(
           outcome = outcome,
           pathway_id = pid,
@@ -244,6 +294,33 @@ for (outcome in outcomes) {
         row <- extract_term(model, term, vm, meta)
         if (!is.null(row)) {
           joint_rows[[paste(outcome, pid, term, se_method, sep = "_")]] <- row
+          se_status_rows[[key]] <- data.frame(
+            outcome = outcome,
+            pathway_id = pid,
+            exposure = term,
+            offset_policy = "days_only",
+            family = "negative_binomial",
+            se_method = se_method,
+            model_structure = "joint_exploratory",
+            status = "OK",
+            message = "",
+            data_status = "HA_APPROVED_AGGREGATE",
+            stringsAsFactors = FALSE
+          )
+        } else {
+          se_status_rows[[key]] <- data.frame(
+            outcome = outcome,
+            pathway_id = pid,
+            exposure = term,
+            offset_policy = "days_only",
+            family = "negative_binomial",
+            se_method = se_method,
+            model_structure = "joint_exploratory",
+            status = "FAILED",
+            message = paste0("Coefficient term not found: ", term),
+            data_status = "HA_APPROVED_AGGREGATE",
+            stringsAsFactors = FALSE
+          )
         }
       }
     }

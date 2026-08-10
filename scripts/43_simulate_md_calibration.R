@@ -136,7 +136,12 @@ INPUT_HASH <- digest::digest(
     margins_chd = margins_chd,
     margins_hf = margins_hf,
     scenarios = scenarios,
-    estimators = estimators
+    estimators = estimators,
+    core_fit_sha256 = if (file.exists(core_fit_path)) {
+      digest::digest(file = core_fit_path, algo = "sha256")
+    } else {
+      NA_character_
+    }
   ),
   algo = "sha256"
 )

@@ -488,6 +488,11 @@ if (file.exists(pilot_gate)) {
 }
 
 mf_manifest <- dplyr::bind_rows(mf_copies)
+mf_manifest$source_path <- sub(
+  paste0("^", normalizePath(root, winslash = "/"), "/?"),
+  "",
+  gsub("\\\\", "/", mf_manifest$source_path)
+)
 write_csv_safe(mf_manifest, file.path(mf_dir, "methods_feasibility_manifest.csv"))
 
 # =============================================================================

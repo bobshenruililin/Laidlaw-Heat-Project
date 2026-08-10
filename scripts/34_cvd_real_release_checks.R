@@ -126,6 +126,19 @@ add_check(
 tracked_chk <- check_governed_not_tracked(governed_paths)
 add_pass_fail("governed_inputs_not_tracked", tracked_chk$ok, tracked_chk$detail)
 
+legacy_sensitive_paths <- c(
+  file.path(root, "data_processed", "stroke_aggregates_normalized.csv"),
+  file.path(root, "data_processed", "stroke_analysis_panel.csv"),
+  file.path(root, "outputs", "figures", "descriptives", "cvd_monthly_timeseries.png"),
+  file.path(root, "outputs", "figures", "descriptives", "cvd_events_vs_mean_temp.png")
+)
+legacy_chk <- check_governed_not_tracked(legacy_sensitive_paths)
+add_pass_fail(
+  "no_tracked_monthly_count_or_synthetic_panels",
+  legacy_chk$ok,
+  legacy_chk$detail
+)
+
 # ---------------------------------------------------------------------------
 # Release populated
 # ---------------------------------------------------------------------------

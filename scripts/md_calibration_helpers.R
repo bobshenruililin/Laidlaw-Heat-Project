@@ -476,6 +476,45 @@ md_checkpoint_path <- function(ckpt_dir, scenario_id, run_mode, n_reps) {
   )
 }
 
+#' Capture and muffle warnings from an expression; return value + warning texts.
+#'
+#' Errors are returned as the value (inherits "error") rather than thrown, so
+#' callers can attach captured warnings to an explicit failure message.
+.md_with_captured_warnings <- function(expr) {
+  warns <- character(0)
+  val <- withCallingHandlers(
+    tryCatch(force(expr), error = function(e) e),
+    warning = function(w) {
+      warns <<- c(warns, conditionMessage(w))
+      tryInvokeRestart("muffleWarning")
+    }
+  )
+  list(value = val, warnings = unique(as.character(warns)))
+}
+
+#' Classify fit warnings that must fail the estimator (not silently accepted).
+.md_serious_fit_warning <- function(msgs) {
+  if (!length(msgs)) return(FALSE)
+  pat <- paste(
+    "theta\\.ml",
+    "iteration limit",
+    "alternation limit",
+    "did not converge",
+    "failed to converge",
+    "algorithm did not converge",
+    "non[- ]?convergence",
+    "fitted probabilities numerically 0 or 1",
+    sep = "|"
+  )
+  any(grepl(pat, msgs, ignore.case = TRUE, perl = TRUE))
+}
+
+.md_message_with_warnings <- function(base, warns) {
+  base <- as.character(base %||% "ok")
+  if (!length(warns)) return(base)
+  paste0(base, " | warnings: ", paste(warns, collapse = " || "))
+}
+
 #' Oracle daily Poisson / quasi-Poisson (simulation only; uses latent y_daily).
 md_fit_oracle_daily <- function(sim, include_covid = TRUE, quasi = TRUE) {
   target_map <- "oracle_daily_beta_per_unit_exposure_identical_to_DGP"
@@ -497,29 +536,52 @@ md_fit_oracle_daily <- function(sim, include_covid = TRUE, quasi = TRUE) {
   off <- rep(1, length(sim$y_daily))
   dat <- data.frame(y = sim$y_daily, X, check.names = FALSE)
   form <- stats::as.formula(paste("y ~ 0 +", paste(colnames(X), collapse = " + ")))
-  fit <- tryCatch(
-    stats::glm(form, family = if (quasi) stats::quasipoisson() else stats::poisson(),
-               data = dat, offset = log(off)),
-    error = function(e) e
+  captured <- .md_with_captured_warnings(
+    stats::glm(
+      form,
+      family = if (quasi) stats::quasipoisson() else stats::poisson(),
+      data = dat,
+      offset = log(off)
+    )
   )
+  fit <- captured$value
+  warns <- captured$warnings
   if (inherits(fit, "error")) {
-    return(.md_estimator_fail("oracle_daily", conditionMessage(fit), target_map))
+    return(.md_estimator_fail(
+      "oracle_daily",
+      .md_message_with_warnings(conditionMessage(fit), warns),
+      target_map
+    ))
+  }
+  if (.md_serious_fit_warning(warns) || !isTRUE(fit$converged)) {
+    return(.md_estimator_fail(
+      "oracle_daily",
+      .md_message_with_warnings(
+        if (!isTRUE(fit$converged)) "glm_not_converged" else "serious_fit_warning",
+        warns
+      ),
+      target_map
+    ))
   }
   cf <- summary(fit)$coefficients
   if (!"exposure" %in% rownames(cf)) {
-    return(.md_estimator_fail("oracle_daily", "exposure coef missing", target_map))
+    return(.md_estimator_fail(
+      "oracle_daily",
+      .md_message_with_warnings("exposure coef missing", warns),
+      target_map
+    ))
   }
   est <- cf["exposure", "Estimate"]
   se <- cf["exposure", "Std. Error"]
   list(
     ok = TRUE,
     estimator = "oracle_daily",
-    message = "ok",
+    message = .md_message_with_warnings("ok", warns),
     estimate = unname(est),
     se = unname(se),
     conf_low = unname(est - 1.96 * se),
     conf_high = unname(est + 1.96 * se),
-    converged = isTRUE(fit$converged),
+    converged = TRUE,
     hessian_pd = TRUE,
     hessian_condition = NA_real_,
     dispersion = if (quasi) summary(fit)$dispersion else 1,
@@ -609,26 +671,42 @@ md_fit_monthly_nb <- function(sim) {
   if (!requireNamespace("splines", quietly = TRUE)) {
     return(.md_estimator_fail("monthly_nb", "splines not available", target_map))
   }
-  fit <- tryCatch(
+  captured <- .md_with_captured_warnings(
     MASS::glm.nb(
       y ~ month_f + splines::ns(time_index, df = 4) + x + offset(log(days)),
       data = dat
-    ),
-    error = function(e) e
+    )
   )
+  fit <- captured$value
+  warns <- captured$warnings
   if (inherits(fit, "error")) {
-    return(.md_estimator_fail("monthly_nb", conditionMessage(fit), target_map))
+    return(.md_estimator_fail(
+      "monthly_nb",
+      .md_message_with_warnings(conditionMessage(fit), warns),
+      target_map
+    ))
+  }
+  if (.md_serious_fit_warning(warns)) {
+    return(.md_estimator_fail(
+      "monthly_nb",
+      .md_message_with_warnings("serious_nb_fit_warning", warns),
+      target_map
+    ))
   }
   cf <- summary(fit)$coefficients
   if (!"x" %in% rownames(cf)) {
-    return(.md_estimator_fail("monthly_nb", "exposure coef missing", target_map))
+    return(.md_estimator_fail(
+      "monthly_nb",
+      .md_message_with_warnings("exposure coef missing", warns),
+      target_map
+    ))
   }
   est <- cf["x", "Estimate"]
   se <- cf["x", "Std. Error"]
   list(
     ok = TRUE,
     estimator = "monthly_nb",
-    message = "ok",
+    message = .md_message_with_warnings("ok", warns),
     estimate = unname(est),
     se = unname(se),
     conf_low = unname(est - 1.96 * se),
@@ -665,17 +743,29 @@ md_fit_glarma_ar1 <- function(sim) {
   Xmm <- stats::model.matrix(
     ~ month_f + splines::ns(time_index, df = 4) + xbar
   )
-  fit0 <- tryCatch(
-    MASS::glm.nb(y ~ month_f + splines::ns(time_index, df = 4) + xbar +
-                   offset(log(days))),
-    error = function(e) e
+  seed_cap <- .md_with_captured_warnings(
+    MASS::glm.nb(
+      y ~ month_f + splines::ns(time_index, df = 4) + xbar + offset(log(days))
+    )
   )
+  fit0 <- seed_cap$value
+  warns <- seed_cap$warnings
   if (inherits(fit0, "error")) {
-    return(.md_estimator_fail("glarma_ar1", paste("nb seed failed:", conditionMessage(fit0)),
-                              target_map))
+    return(.md_estimator_fail(
+      "glarma_ar1",
+      .md_message_with_warnings(paste("nb seed failed:", conditionMessage(fit0)), warns),
+      target_map
+    ))
+  }
+  if (.md_serious_fit_warning(warns)) {
+    return(.md_estimator_fail(
+      "glarma_ar1",
+      .md_message_with_warnings("serious_nb_seed_warning", warns),
+      target_map
+    ))
   }
   alpha <- unname(fit0$theta)
-  fit <- tryCatch(
+  final_cap <- .md_with_captured_warnings(
     glarma::glarma(
       y = y,
       X = Xmm,
@@ -684,25 +774,41 @@ md_fit_glarma_ar1 <- function(sim) {
       alpha = alpha,
       phiLags = 1L,
       method = "FS"
-    ),
-    error = function(e) e
+    )
   )
+  fit <- final_cap$value
+  warns <- c(warns, final_cap$warnings)
   if (inherits(fit, "error")) {
-    return(.md_estimator_fail("glarma_ar1", conditionMessage(fit), target_map))
+    return(.md_estimator_fail(
+      "glarma_ar1",
+      .md_message_with_warnings(conditionMessage(fit), warns),
+      target_map
+    ))
+  }
+  if (.md_serious_fit_warning(final_cap$warnings)) {
+    return(.md_estimator_fail(
+      "glarma_ar1",
+      .md_message_with_warnings("serious_glarma_fit_warning", warns),
+      target_map
+    ))
   }
   cf <- tryCatch(summary(fit)$coefficients1, error = function(e) NULL)
   if (is.null(cf)) cf <- tryCatch(summary(fit)$coefficients, error = function(e) NULL)
   rn <- rownames(cf)
   hit <- grep("xbar", rn)[1]
   if (!length(hit) || is.na(hit)) {
-    return(.md_estimator_fail("glarma_ar1", "exposure coef missing in glarma", target_map))
+    return(.md_estimator_fail(
+      "glarma_ar1",
+      .md_message_with_warnings("exposure coef missing in glarma", warns),
+      target_map
+    ))
   }
   est <- cf[hit, 1]
   se <- cf[hit, 2]
   list(
     ok = TRUE,
     estimator = "glarma_ar1",
-    message = "ok",
+    message = .md_message_with_warnings("ok", warns),
     estimate = unname(est),
     se = unname(se),
     conf_low = unname(est - 1.96 * se),
@@ -734,26 +840,42 @@ md_fit_spillover_burden <- function(sim) {
   if (!requireNamespace("MASS", quietly = TRUE)) {
     return(.md_estimator_fail("spillover_burden", "MASS not available", target_map))
   }
-  fit <- tryCatch(
+  captured <- .md_with_captured_warnings(
     MASS::glm.nb(
       y ~ month_f + splines::ns(time_index, df = 4) + x + offset(log(days)),
       data = dat
-    ),
-    error = function(e) e
+    )
   )
+  fit <- captured$value
+  warns <- captured$warnings
   if (inherits(fit, "error")) {
-    return(.md_estimator_fail("spillover_burden", conditionMessage(fit), target_map))
+    return(.md_estimator_fail(
+      "spillover_burden",
+      .md_message_with_warnings(conditionMessage(fit), warns),
+      target_map
+    ))
+  }
+  if (.md_serious_fit_warning(warns)) {
+    return(.md_estimator_fail(
+      "spillover_burden",
+      .md_message_with_warnings("serious_nb_fit_warning", warns),
+      target_map
+    ))
   }
   cf <- summary(fit)$coefficients
   if (!"x" %in% rownames(cf)) {
-    return(.md_estimator_fail("spillover_burden", "coef missing", target_map))
+    return(.md_estimator_fail(
+      "spillover_burden",
+      .md_message_with_warnings("coef missing", warns),
+      target_map
+    ))
   }
   est <- cf["x", "Estimate"]
   se <- cf["x", "Std. Error"]
   list(
     ok = TRUE,
     estimator = "spillover_burden",
-    message = "ok",
+    message = .md_message_with_warnings("ok", warns),
     estimate = unname(est),
     se = unname(se),
     conf_low = unname(est - 1.96 * se),

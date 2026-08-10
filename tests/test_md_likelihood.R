@@ -362,9 +362,46 @@ ll_clamped <- tryCatch(
 expect_true(is.finite(ll_clamped), "clamped large eta remains finite")
 
 # ---------------------------------------------------------------------------
-# 2-rep calibration smoke + explicit failures
+# Warning capture for estimator wrappers
+# ---------------------------------------------------------------------------
+cap <- .md_with_captured_warnings({
+  warning("theta.ml: iteration limit reached")
+  "done"
+})
+expect_equal(cap$value, "done", "warning capture returns expression value")
+expect_true(
+  any(grepl("theta\\.ml|iteration limit", cap$warnings, ignore.case = TRUE)),
+  "captured warning text retained"
+)
+expect_true(
+  .md_serious_fit_warning(c("theta.ml: iteration limit reached")),
+  "theta.ml iteration limit classified serious"
+)
+expect_true(
+  .md_serious_fit_warning(c("alternation limit reached")),
+  "alternation limit classified serious"
+)
+expect_false(
+  .md_serious_fit_warning(c("harmless calibration note")),
+  "ordinary non-convergence note not classified serious"
+)
+# Deliberate: non-serious warning stays successful but annotated
+cap_ok <- .md_with_captured_warnings({
+  warning("harmless calibration note")
+  42
+})
+expect_equal(cap_ok$value, 42, "non-serious warning still returns value")
+expect_equal(
+  .md_message_with_warnings("ok", cap_ok$warnings),
+  "ok | warnings: harmless calibration note",
+  "non-serious warning annotated into message"
+)
+
+# ---------------------------------------------------------------------------
+# 2-rep calibration smoke + explicit failures (no console warning flood)
 # ---------------------------------------------------------------------------
 rows <- list()
+leaked <- character(0)
 for (r in 1:2) {
   s <- md_simulate_dgp(
     weather_daily = w,
@@ -377,16 +414,30 @@ for (r in 1:2) {
     covid_on = FALSE,
     overdispersion_phi = 0
   )
-  est <- md_run_estimators(s, estimators = c("oracle_daily", "md", "monthly_nb"))
+  est <- withCallingHandlers(
+    md_run_estimators(s, estimators = c("oracle_daily", "md", "monthly_nb")),
+    warning = function(w) {
+      leaked <<- c(leaked, conditionMessage(w))
+      tryInvokeRestart("muffleWarning")
+    }
+  )
   for (nm in names(est)) {
     rows[[length(rows) + 1L]] <- md_estimator_result_to_row(
       est[[nm]], core[1, ], r, s$beta_true
     )
+    # Serious NB warnings must fail explicitly, not masquerade as ok
+    if (grepl("theta\\.ml|alternation limit|iteration limit",
+              est[[nm]]$message %||% "", ignore.case = TRUE)) {
+      expect_false(isTRUE(est[[nm]]$ok), paste(nm, "serious warning => ok=FALSE"))
+      expect_false(isTRUE(est[[nm]]$converged), paste(nm, "serious warning => not converged"))
+    }
   }
 }
+expect_equal(length(leaked), 0L, "estimator wrappers emit no console warning flood")
 raw <- do.call(rbind, rows)
 expect_true(all(raw$data_status == MD_PROVENANCE_SYNTHETIC), "raw metrics provenance")
 expect_true(all(c("converged", "message", "estimator") %in% names(raw)), "status fields present")
+expect_true(all(nzchar(as.character(raw$message))), "every estimator row has message")
 
 # Forced failure must remain visible
 forced <- .md_estimator_fail("md", "unit-test forced failure")

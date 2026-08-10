@@ -103,7 +103,10 @@ A constrained aggregated-outcome likelihood with daily exposure (M|D) was evalua
 
 ### Provenance and disclosure
 
-Source monthly count files and merged health panels were retained outside version control. Manuscript tables and figures report disclosure-minimised model summaries and indexed series. Quantitative claims CVD-01 to CVD-12 map one-to-one to the release claim ledger.
+Source monthly count files and merged health panels were retained outside
+version control. Manuscript tables and figures report disclosure-minimised
+model summaries and indexed series. Quantitative statements were checked
+against machine-readable release tables.
 
 ## Results
 
@@ -257,7 +260,10 @@ Pollution, influenza, and humidity associations are scientifically motivated in 
 
 ## Strengths and limitations
 
-Strengths include a complete twelve-contrast panel with claim-ledger identity, an explicit standard-error ladder, source-validated weather morphology, disclosure-minimised release validation, and a predeclared refusal to admit uncalibrated daily-exposure estimates.
+Strengths include a complete twelve-contrast panel with machine-checked
+numerical identity, an explicit standard-error ladder, source-validated weather
+morphology, disclosure-minimised release validation, and a predeclared refusal
+to admit uncalibrated daily-exposure estimates.
 
 Limitations:
 
@@ -281,7 +287,11 @@ Analyses used governed Hospital Authority monthly aggregates supplied under exis
 
 ## Data and code availability
 
-Disclosure-minimised tables, claim ledger, and figures are archived under `outputs/release_chd_hf/`. Source monthly health counts and merged panels are governed and not redistributed through the public repository. Analysis code is available in the project scripts directory. Exact table and figure paths are listed below. External submission requires team confirmation.
+The repository contains a disclosure-minimised release with tables, figures,
+machine-readable checks, and a hash manifest. Source monthly health counts and
+merged panels are governed and are not redistributed through the public
+repository. Analysis code accompanies the release. External submission
+requires team confirmation.
 
 ## Acknowledgements
 

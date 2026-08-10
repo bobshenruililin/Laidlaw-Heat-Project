@@ -334,7 +334,7 @@ Identity checks already recorded:
 
 1. Every Table 2 row matches `outputs/release_chd_hf/tables/claim_ledger_v2.csv` for RR, CI, p, q, SE method, and provenance.
 2. BH q-values recomputed with `p.adjust(..., method="BH")` across the twelve NW6 p-values.
-3. Release validation: `outputs/reports/cvd_real_release_validation.md` — 28/28 checks passed on 10 August 2026.
+3. Release validation: `outputs/reports/cvd_real_release_validation.md` — 29/29 checks passed on 10 August 2026.
 4. Manifest hashes: `outputs/release_chd_hf/release_manifest.csv`.
 5. Index: `outputs/release_chd_hf/RELEASE_INDEX.md`.
 

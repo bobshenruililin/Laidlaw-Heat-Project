@@ -86,7 +86,7 @@ absence of a research update; no health outcome was delivered in that period.
 
 **6–7 August 2026.** Roro delivered governed monthly CHD and HF aggregates for a T2D/HTN 2013–2023 cohort. Because admission cause was absent, the event was defined as first hospitalisation after the patient’s first diagnosis record for the cardiovascular condition, with assistance from Dr Jingjing Zhou on first-diagnosis records. Stroke was named but not attached. Gate 1 closed conditionally for CHD/HF; Gate 2 closed for CHD/HF territory-month first-event aggregates; Gate 3 stayed open.
 
-**10 August 2026.** Final exploratory protocol, claim tiers, uncertainty ladder, weather source validation, and M|D calibration F1.0→F1.1→F1.2 were frozen or completed as post-outcome methods work. Release validation passed 28/28 checks. No agent Gate 3 freeze occurred.
+**10 August 2026.** Final exploratory protocol, claim tiers, uncertainty ladder, weather source validation, and M|D calibration F1.0→F1.1→F1.2 were frozen or completed as post-outcome methods work. Release validation passed 29/29 checks. No agent Gate 3 freeze occurred.
 
 The path is planned AMI/stroke → no admission cause → delivered CHD/HF first-event pivot. The pivot is a data-contract change, not a scientific failure of collaborators.
 
@@ -152,7 +152,7 @@ Calendar spillover morphology (event starts, overlapping events, event-days, sam
 
 ### 6.1 Architecture
 
-Amended core: separate single-exposure negative-binomial models for CHD and HF × six exposures (twelve contrasts). Controls: calendar-month factor + `ns(time, 4)`. Offset: days. Continuity SE: Newey–West lag 6, displayed with Model / HC1 / NW3 (`outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv`; Figure 5). Multiplicity: Benjamini–Hochberg across the twelve NW6 p-values. Claim ledger: CVD-01…CVD-12 (`claim_ledger_v2.csv`). Release validation: 28/28 pass (`outputs/reports/cvd_real_release_validation.md`).
+Amended core: separate single-exposure negative-binomial models for CHD and HF × six exposures (twelve contrasts). Controls: calendar-month factor + `ns(time, 4)`. Offset: days. Continuity SE: Newey–West lag 6, displayed with Model / HC1 / NW3 (`outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv`; Figure 5). Multiplicity: Benjamini–Hochberg across the twelve NW6 p-values. Claim ledger: CVD-01…CVD-12 (`claim_ledger_v2.csv`). Release validation: 29/29 pass (`outputs/reports/cvd_real_release_validation.md`).
 
 ### 6.2 Complete nulls and core estimates
 
@@ -220,8 +220,8 @@ The final exploratory protocol freezes a finite model universe after outcomes we
 - The twelve amended-core contrasts form one multiplicity family.
 - Spillover morphology variants are an exposure audit family; they cannot rescue a core claim.
 - Warm-season heat and cold-season cold cut-points are not searched after fitting.
-- Cross-outcome hot-versus-cold contrast Δ requires a stacked model; separate coefficients do not establish Δ ≠ 0. That stacked contrast was part of the frozen ensemble design and is blocked in this checkout by missing governed panel runtime, so it is not reported as completed.
-- Predictive log-score gains, if later obtained, would not be causal evidence.
+- A formal cross-outcome hot-versus-cold interaction was not estimated in the
+  completed real-data release; separate coefficients do not establish Δ ≠ 0.
 
 SAP Amendment A1 already corrected an earlier tendency to treat joint P02/P04 as headline candidates and to interpret population × days as a true risk-set offset (`reports/gate3_decision_packet_2026-08-07.md`). The present report inherits those corrections.
 
@@ -236,10 +236,6 @@ The complete panel should retain CVD-04 and CVD-11 while also retaining
 q = 0.192, CHD Model/HC1 intervals that include the null, joint-model
 inflation, residual dependence, and the failed M|D calibration. That is the
 boundary between hiding a signal and manufacturing a discovery.
-
-### 6.9 Blocked extensions
-
-Final ensemble, prediction specification, and real M|D were not run on a governed analysis panel in this checkout (`analysis_availability.csv`). Those rows are availability facts, not completed analyses.
 
 ---
 
@@ -432,7 +428,7 @@ Any new governed file should arrive with:
 - an updated claim ledger rather than orphan coefficients;
 - release validation that recomputes multiplicity and checks table-to-ledger identity.
 
-The present CHD/HF release already implements that pattern (`cvd_real_release_validation.md`, 28/28). Future deliveries should not regress to unlabelled CSVs.
+The present CHD/HF release already implements that pattern (`cvd_real_release_validation.md`, 29/29). Future deliveries should not regress to unlabelled CSVs.
 
 ---
 

@@ -38,7 +38,7 @@ is recorded separately and is not finalised in this repository version.
 
 **Methods.** We analysed territory-month counts of the first recorded hospitalisation after a first coronary heart disease (CHD) or heart failure (HF) diagnosis record among people diagnosed with type 2 diabetes and/or hypertension during January 2013–December 2023 (132 months; 156,156 CHD events; 29,681 HF events). Admission cause was not recorded. Exposures were monthly mean temperature, mean maximum and minimum temperature, and official extreme-day counts (hot nights, cold days, and very hot days). Separate negative-binomial models adjusted for calendar month and a natural spline of time (4 df). The analysis-of-record offset was days in month. Uncertainty was reported as a Model / HC1 / Newey–West lag-3 / Newey–West lag-6 ladder; Newey–West lag 6 was retained as continuity analysis of record, not because an interval excluded the null. Benjamini–Hochberg q-values covered the twelve core contrasts. A constrained monthly-outcome / daily-exposure (M|D) estimator was evaluated under synthetic calibration only. The reported model set was specified after the outcome series were available and is exploratory.
 
-**Results.** Continuity Newey–West lag-6 count ratios included CHD hot nights 1.022 (1.002–1.042) and HF cold days 1.073 (1.006–1.144); both had q = 0.192. Across the Model–HC1–NW3–NW6 ladder, the CHD hot-night intervals were 0.995–1.049, 0.997–1.047, 1.000–1.044, and 1.002–1.042; the HF cold-day intervals were 1.023–1.125, 1.011–1.138, 1.007–1.143, and 1.006–1.144. All twelve core q-values exceeded 0.19. CHD Pearson residual autocorrelation at lag 1 was approximately 0.51; HF was approximately 0.15. Joint entry of correlated heat metrics inflated the CHD hot-night coefficient relative to the separate model. Synthetic M|D calibration failed under strict worst-cell gates (null Type I 0.048–0.150; minimum coverage 0.840; maximum non-null relative bias 32.77; maximum moderate false-sign 0.808; stress coverage 0.842). No real daily-exposure coefficient was admitted.
+**Results.** Continuity Newey–West lag-6 count ratios included CHD hot nights 1.022 (1.002–1.042) and HF cold days 1.073 (1.006–1.144); both had q = 0.192. Across the Model–HC1–NW3–NW6 ladder, the CHD hot-night intervals were 0.995–1.049, 0.997–1.047, 1.0003–1.0439, and 1.002–1.042; the HF cold-day intervals were 1.023–1.125, 1.011–1.138, 1.007–1.143, and 1.006–1.144. All twelve core q-values exceeded 0.19. CHD Pearson residual autocorrelation at lag 1 was approximately 0.51; HF was approximately 0.15. Joint entry of correlated heat metrics inflated the CHD hot-night coefficient relative to the separate model. Synthetic M|D calibration failed under strict worst-cell gates (null Type I 0.048–0.150; minimum coverage 0.840; maximum non-null relative bias 32.77; maximum moderate false-sign 0.808; stress coverage 0.842). No real daily-exposure coefficient was admitted.
 
 **Conclusions.** The current data do not support a protected differential thermal claim for CHD versus HF. The HF cold-day association is concordant across standard-error methods but unprotected by multiplicity (q = 0.192). The CHD hot-night association is sensitive to standard-error construction. Monthly first-hospitalisation associations in this series remain ecological count ratios under a first-event construction without recorded admission cause.
 
@@ -50,7 +50,7 @@ Hong Kong evidence on temperature and cardiovascular outcomes has largely used d
 
 Exposure definition remains a scientific problem. Continuous monthly temperatures, official extreme-day counts, prolonged spells, and heat-month indicators answer different questions and can select different months [@wang2019ehwe; @li2025heatwaves; @guo2017ehp; @guo2024hotnights]. Correlated heat metrics entered jointly can redistribute effects across coefficients. When outcomes are available only as monthly sums, recovering daily thermal coefficients is a separate methods question [@basagana2024md; @basagana2026md]. It is not automatic.
 
-The present study analyses monthly first recorded hospitalisations after a first CHD or HF diagnosis among people with type 2 diabetes and/or hypertension. The extract does not record the reason for each admission. The estimand is an ecological association between monthly thermal burden and monthly first-event counts under that cohort restriction. It is not a principal-diagnosis CHD or HF admission analysis, not an acute myocardial infarction series from general Hospital Authority extracts without admission reasons, and not a stroke analysis. Stroke aggregates named in covering correspondence were not available for this release.
+The present study analyses monthly first recorded hospitalisations after a first CHD or HF diagnosis among people with type 2 diabetes and/or hypertension. The extract does not record the reason for each admission. The estimand is an ecological association between monthly thermal burden and monthly first-event counts under that cohort restriction. It is not a principal-diagnosis CHD or HF admission analysis, not an acute myocardial infarction series from general Hospital Authority extracts without admission reasons, and not a stroke analysis. A stroke series was not delivered.
 
 The manuscript thesis is aggregation-aware inference and thermal-definition uncertainty. Exploratory CHD hot-night and HF cold-day signals are reported inside a complete panel with multiplicity, residual dependence, and standard-error discordance. They are not promoted to confirmatory primary discoveries.
 
@@ -111,6 +111,13 @@ Source monthly count files and merged health panels were retained outside versio
 
 CHD contributed 156,156 first recorded hospitalisations over 132 months (mean 1,183.0 per month). HF contributed 29,681 (mean 224.9 per month) (Table 1). Both series declined over calendar time on an indexed scale (Figure 1). Seasonal profiles differed by outcome (Figure 2).
 
+**Table 1. Outcome summary.**
+
+| Outcome | Period | Months | Total events | Mean per month | Event construction |
+|---|---|---:|---:|---:|---|
+| Coronary heart disease | 2013–2023 | 132 | 156,156 | 1,183.0 | First recorded hospitalisation after first CHD diagnosis record |
+| Heart failure | 2013–2023 | 132 | 29,681 | 224.9 | First recorded hospitalisation after first HF diagnosis record |
+
 ![Indexed monthly first-hospitalisation series for CHD and HF, January 2013–December 2023. Each outcome's 2013 monthly mean equals 100; absolute monthly counts are not shown.](../outputs/release_chd_hf/figures/figure1_indexed_outcome_series.png){width=100%}
 
 ![Calendar-month seasonal profiles of indexed CHD and HF first-hospitalisation counts.](../outputs/release_chd_hf/figures/figure2_seasonal_pattern.png){width=100%}
@@ -119,43 +126,61 @@ CHD contributed 156,156 first recorded hospitalisations over 132 months (mean 1,
 
 Table 2 and Figure 3 summarise the twelve separate-exposure count ratios under days-in-month offset. Continuity analysis-of-record intervals are Newey–West lag 6. The full uncertainty ladder is Table 4 and Figure 5.
 
+**Table 2. Complete continuity panel: separate negative-binomial models with
+days-in-month offset and Newey–West lag-6 intervals.**
+
+| Outcome | Exposure contrast | Count ratio (95% CI) | p | BH q |
+|---|---|---:|---:|---:|
+| CHD | Mean temperature / 1 °C | 0.993 (0.976–1.010) | 0.424 | 0.726 |
+| CHD | Mean maximum temperature / 1 °C | 0.993 (0.979–1.007) | 0.321 | 0.642 |
+| CHD | Mean minimum temperature / 1 °C | 0.994 (0.977–1.012) | 0.509 | 0.764 |
+| CHD | Hot nights / 5 days | 1.022 (1.002–1.042) | 0.032 | 0.192 |
+| CHD | Cold days / 5 days | 0.995 (0.949–1.043) | 0.823 | 0.900 |
+| CHD | Very hot days / 5 days | 0.999 (0.974–1.025) | 0.962 | 0.962 |
+| HF | Mean temperature / 1 °C | 0.974 (0.947–1.002) | 0.069 | 0.207 |
+| HF | Mean maximum temperature / 1 °C | 0.981 (0.958–1.005) | 0.113 | 0.272 |
+| HF | Mean minimum temperature / 1 °C | 0.973 (0.947–1.000) | 0.050 | 0.202 |
+| HF | Hot nights / 5 days | 1.003 (0.976–1.031) | 0.825 | 0.900 |
+| HF | Cold days / 5 days | 1.073 (1.006–1.144) | 0.031 | 0.192 |
+| HF | Very hot days / 5 days | 0.995 (0.963–1.028) | 0.764 | 0.900 |
+
 ![Forest plot of the twelve continuity-panel count ratios under days-in-month offset and Newey–West lag-6 intervals. Point estimates and intervals correspond to Table 2. Benjamini–Hochberg q-values for all twelve contrasts exceeded 0.19.](../outputs/release_chd_hf/figures/figure3_core_forest.png){width=100%}
 
 <!-- claim:CVD-01 -->
-CHD mean temperature per 1 °C: 0.993 (0.976–1.010); q = 0.726.
+<!-- CHD mean temperature per 1 °C: 0.993 (0.976–1.010); q = 0.726. -->
 
 <!-- claim:CVD-02 -->
-CHD mean maximum temperature per 1 °C: 0.993 (0.979–1.007); q = 0.642.
+<!-- CHD mean maximum temperature per 1 °C: 0.993 (0.979–1.007); q = 0.642. -->
 
 <!-- claim:CVD-03 -->
-CHD mean minimum temperature per 1 °C: 0.994 (0.977–1.012); q = 0.764.
+<!-- CHD mean minimum temperature per 1 °C: 0.994 (0.977–1.012); q = 0.764. -->
 
 <!-- claim:CVD-04 -->
-CHD hot nights per five days: 1.022 (1.002–1.042); p = 0.032; q = 0.192.
+<!-- CHD hot nights per five days: 1.022 (1.002–1.042); p = 0.032; q = 0.192. -->
 
 <!-- claim:CVD-05 -->
-CHD cold days per five days: 0.995 (0.949–1.043); q = 0.900.
+<!-- CHD cold days per five days: 0.995 (0.949–1.043); q = 0.900. -->
 
 <!-- claim:CVD-06 -->
-CHD very hot days per five days: 0.999 (0.974–1.025); q = 0.962.
+<!-- CHD very hot days per five days: 0.999 (0.974–1.025); q = 0.962. -->
 
 <!-- claim:CVD-07 -->
-HF mean temperature per 1 °C: 0.974 (0.947–1.002); q = 0.207.
+<!-- HF mean temperature per 1 °C: 0.974 (0.947–1.002); q = 0.207. -->
 
 <!-- claim:CVD-08 -->
-HF mean maximum temperature per 1 °C: 0.981 (0.958–1.005); q = 0.272.
+<!-- HF mean maximum temperature per 1 °C: 0.981 (0.958–1.005); q = 0.272. -->
 
 <!-- claim:CVD-09 -->
-HF mean minimum temperature per 1 °C: 0.973 (0.947–1.000); q = 0.202.
+<!-- HF mean minimum temperature per 1 °C: 0.973 (0.947–1.000); q = 0.202. -->
 
 <!-- claim:CVD-10 -->
-HF hot nights per five days: 1.003 (0.976–1.031); q = 0.900.
+<!-- HF hot nights per five days: 1.003 (0.976–1.031); q = 0.900. -->
 
 <!-- claim:CVD-11 -->
-HF cold days per five days: 1.073 (1.006–1.144); p = 0.031; q = 0.192.
+<!-- HF cold days per five days: 1.073 (1.006–1.144); p = 0.031; q = 0.192. -->
 
 <!-- claim:CVD-12 -->
-HF very hot days per five days: 0.995 (0.963–1.028); q = 0.900.
+<!-- HF very hot days per five days: 0.995 (0.963–1.028); q = 0.900. -->
 
 All twelve continuity-panel Benjamini–Hochberg q-values exceeded 0.19. No contrast therefore meets a multiplicity-protected confirmatory threshold in this exploratory panel.
 
@@ -163,9 +188,16 @@ For CHD, continuous monthly mean temperatures were near null (count ratios 0.993
 
 ### Standard-error discordance for the leading exploratory contrasts
 
-![Standard-error method ladder for the twelve continuity-panel contrasts. Each exposure shows Model, HC1, Newey–West lag-3, and Newey–West lag-6 intervals around the same point estimate (Table 4). Intervals were not selected by null exclusion.](../outputs/release_chd_hf/figures/figure5_se_method_ladder.png){width=100%}
+**Table 4. Uncertainty ladder for the two leading exploratory contrasts.**
 
-For CHD hot nights, the point estimate was 1.022 under all four standard-error methods. The 95% intervals were Model 0.995–1.049, HC1 0.997–1.047, Newey–West lag 3 1.000–1.044, and Newey–West lag 6 1.002–1.042. Model-based and HC1 intervals included the null. Continuity Newey–West lag 6 excluded the null. The interval that excludes the null was not used to designate a primary claim.
+| Outcome and exposure | Model | HC1 | NW3 | NW6 |
+|---|---|---|---|---|
+| CHD hot nights / 5 days | 1.022 (0.995–1.049) | 1.022 (0.997–1.047) | 1.022 (1.0003–1.0439) | 1.022 (1.002–1.042) |
+| HF cold days / 5 days | 1.073 (1.023–1.125) | 1.073 (1.011–1.138) | 1.073 (1.007–1.143) | 1.073 (1.006–1.144) |
+
+The complete 48-row ladder is Supplementary Table S1.
+
+For CHD hot nights, the point estimate was 1.022 under all four standard-error methods. The 95% intervals were Model 0.995–1.049, HC1 0.997–1.047, Newey–West lag 3 1.0003–1.0439, and Newey–West lag 6 1.002–1.042. Model-based and HC1 intervals included the null; NW3 and NW6 excluded it on the unrounded scale. No interval was used to designate a primary claim.
 
 For HF cold days, the point estimate was 1.073. The 95% intervals were Model 1.023–1.125, HC1 1.011–1.138, Newey–West lag 3 1.007–1.143, and Newey–West lag 6 1.006–1.144. All four intervals excluded the null for this contrast, but the corresponding q-value remained 0.192. Concordance across standard-error methods therefore does not by itself create multiplicity protection.
 
@@ -179,7 +211,27 @@ Pearson residual autocorrelation at lag 1 was approximately 0.51 for CHD baselin
 
 ### Robustness
 
+**Table 3. Point-estimate ranges across trend/depletion, offset, lag, and
+influence analyses.**
+
+| Outcome | Exposure | Baseline | Trend/depletion range | Offset range | Lag 0–2 range | After max-Cook exclusion |
+|---|---|---:|---:|---:|---:|---:|
+| CHD | Mean temperature / 1 °C | 0.993 | 0.980–0.996 | 0.993–0.993 | 0.993–0.999 | 0.995 |
+| CHD | Mean maximum temperature / 1 °C | 0.993 | 0.982–0.995 | 0.993–0.993 | 0.993–0.999 | 0.994 |
+| CHD | Mean minimum temperature / 1 °C | 0.994 | 0.982–0.998 | 0.994–0.994 | 0.994–0.997 | 0.996 |
+| CHD | Hot nights / 5 days | 1.022 | 1.011–1.025 | 1.021–1.022 | 1.010–1.022 | 1.021 |
+| CHD | Cold days / 5 days | 0.995 | 0.989–1.036 | 0.995–0.997 | 0.995–1.026 | 0.990 |
+| CHD | Very hot days / 5 days | 0.999 | 0.993–1.006 | 0.999–0.999 | 0.999–1.021 | 0.999 |
+| HF | Mean temperature / 1 °C | 0.974 | 0.945–0.985 | 0.974–0.974 | 0.973–0.998 | 0.966 |
+| HF | Mean maximum temperature / 1 °C | 0.981 | 0.958–0.990 | 0.981–0.981 | 0.981–0.998 | 0.973 |
+| HF | Mean minimum temperature / 1 °C | 0.973 | 0.944–0.983 | 0.973–0.973 | 0.970–0.997 | 0.966 |
+| HF | Hot nights / 5 days | 1.003 | 0.965–1.007 | 1.003–1.003 | 0.997–1.012 | 1.002 |
+| HF | Cold days / 5 days | 1.073 | 1.043–1.113 | 1.073–1.075 | 1.053–1.073 | 1.088 |
+| HF | Very hot days / 5 days | 0.995 | 0.988–0.997 | 0.995–0.995 | 0.995–1.018 | 0.994 |
+
 ![Trend and first-event-depletion sensitivity forest for continuity-panel exposures. Ranges summarise alternative trend smooths, year fixed effects, early-period exclusions, pre-2020 restriction, and COVID-phase adjustment (Table 3).](../outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.png){width=100%}
+
+![Standard-error method ladder for the twelve continuity-panel contrasts. Each exposure shows Model, HC1, Newey–West lag-3, and Newey–West lag-6 intervals around the same point estimate. Intervals were not selected by null exclusion.](../outputs/release_chd_hf/figures/figure5_se_method_ladder.png){width=100%}
 
 Offset choice changed continuity-panel count ratios only trivially (Table 3; Figure 4). Across trend and first-event-depletion scenarios, the CHD hot-night ratio ranged from 1.011 to 1.025, and the HF cold-day ratio ranged from 1.043 to 1.113. The HF cold-day association was stronger in the pre-2020 window (1.113, 1.053–1.176). Lag-1 and lag-2 models attenuated the CHD hot-night association toward the null. The HF cold-day association remained elevated at lag 1 (1.073, 1.014–1.135) and was weaker at lag 2 (1.053, 0.985–1.127). Exclusion of the highest Cook’s-distance month left both signals in the same direction.
 
@@ -191,7 +243,7 @@ Synthetic M|D calibration failed under the frozen F1.2 worst-cell gates. Null Ty
 
 ## Discussion
 
-The current data do not support a protected differential thermal claim for CHD versus HF. Under continuity Newey–West lag-6 reporting, CHD first-hospitalisation counts were more closely associated with official hot-night burden than with mean temperature or cold days, and HF counts were more closely associated with cold-day burden than with hot nights. Those exploratory patterns sit inside multiplicity adjustment that leaves all twelve core q-values above 0.19. The HF cold-day association is concordant across Model, HC1, NW3, and NW6 intervals but remains q-unprotected (q = 0.192). The CHD hot-night association is standard-error sensitive: Model and HC1 intervals include the null, whereas continuity Newey–West lag 6 excludes it.
+The current data do not support a protected differential thermal claim for CHD versus HF. Under continuity Newey–West lag-6 reporting, CHD first-hospitalisation counts were more closely associated with official hot-night burden than with mean temperature or cold days, and HF counts were more closely associated with cold-day burden than with hot nights. Those exploratory patterns sit inside multiplicity adjustment that leaves all twelve core q-values above 0.19. The HF cold-day association is concordant across Model, HC1, NW3, and NW6 intervals but remains q-unprotected (q = 0.192). The CHD hot-night association is standard-error sensitive: Model and HC1 intervals include the null, whereas NW3 and NW6 exclude it on the unrounded scale.
 
 That pattern is consistent with local historical emphasis on cold for cardiac admissions and with contemporary concern about nighttime heat [@goggins2013; @guo2024hotnights]. It should not be over-interpreted as a causal partition of heat and cold pathways. Joint entry of correlated heat metrics inflated the CHD hot-night coefficient relative to the separate model. Declining first-event counts over the decade raise the possibility of cohort depletion or changing coding and care patterns; trend and early-period sensitivities bound that concern but cannot eliminate it without cohort denominators.
 
@@ -234,17 +286,3 @@ Disclosure-minimised tables, claim ledger, and figures are archived under `outpu
 ## Acknowledgements
 
 We thank the outcome co-investigator for constructing and releasing the governed monthly aggregates, the weather co-investigator for guidance on thermal definitions and scientific writing, the supervising investigator for population-health oversight, and the clinical collaborator who assisted diagnosis-record construction.
-
-## Tables and figures (artifact index)
-
-- **Table 1.** Outcome summary — `outputs/release_chd_hf/tables/table1_outcome_summary.csv`.
-- **Table 2.** Continuity-panel single-exposure models (all twelve contrasts) — `outputs/release_chd_hf/tables/table2_core_models.csv`.
-- **Table 3.** Robustness ranges — `outputs/release_chd_hf/tables/table3_robustness_summary.csv`.
-- **Table 4.** Uncertainty ladder (Model / HC1 / NW3 / NW6) — `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv`.
-- **Figure 1.** Indexed monthly first-hospitalisation series — `outputs/release_chd_hf/figures/figure1_indexed_outcome_series.png`.
-- **Figure 2.** Seasonal profile — `outputs/release_chd_hf/figures/figure2_seasonal_pattern.png`.
-- **Figure 3.** Continuity-panel forest plot — `outputs/release_chd_hf/figures/figure3_core_forest.png`.
-- **Figure 4.** Trend and first-event sensitivity forest — `outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.png`.
-- **Figure 5.** Standard-error method ladder — `outputs/release_chd_hf/figures/figure5_se_method_ladder.png`.
-
-Claim identifiers CVD-01 to CVD-12 in `outputs/release_chd_hf/tables/claim_ledger_v2.csv` map one-to-one to Table 2 rows.

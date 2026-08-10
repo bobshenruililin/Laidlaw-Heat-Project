@@ -33,7 +33,7 @@ Provenance for CHD/HF association rows is `HA_APPROVED_AGGREGATE`.
 | Provenance firewall | S8 |
 | Reproducibility commands | S9 |
 | Scope exclusions | S10 |
-| Authorship / Gate 3 / ICD / stroke open items | [`authorship_and_governance_decisions.md`](authorship_and_governance_decisions.md) |
+| Authorship / ICD / stroke governance items | [`authorship_and_governance_decisions.md`](authorship_and_governance_decisions.md) |
 
 ## S1. Outcome and exposure definitions
 
@@ -102,6 +102,63 @@ Population aged 35+ × days is an ecological sensitivity only. It is not person-
 Joint extreme-day and nested heat-month structures remain exploratory. Separate continuity IDs P01A, P02A/B, and P04A–C map to the manuscript continuity panel.
 
 Legacy pollution, humidity, and influenza pathway fits in the broader archive are not adjusted versions of these separate continuity models.
+
+### S2.2 Supplementary Table S1 — complete standard-error ladder
+
+**Supplementary Table S1.** Negative-binomial count ratios under the
+days-in-month offset. The point estimate is fixed within each outcome-exposure
+model; only the covariance estimator changes.
+
+| Outcome | Exposure | SE method | Count ratio (95% CI) | p |
+|---|---|---|---:|---:|
+| CHD | Mean temperature / 1 °C | Model | 0.993 (0.977–1.009) | 0.397 |
+| CHD | Mean temperature / 1 °C | HC1 | 0.993 (0.974–1.012) | 0.470 |
+| CHD | Mean temperature / 1 °C | NW3 | 0.993 (0.976–1.011) | 0.433 |
+| CHD | Mean temperature / 1 °C | NW6 | 0.993 (0.976–1.010) | 0.424 |
+| CHD | Mean maximum temperature / 1 °C | Model | 0.993 (0.979–1.007) | 0.334 |
+| CHD | Mean maximum temperature / 1 °C | HC1 | 0.993 (0.976–1.010) | 0.408 |
+| CHD | Mean maximum temperature / 1 °C | NW3 | 0.993 (0.978–1.008) | 0.345 |
+| CHD | Mean maximum temperature / 1 °C | NW6 | 0.993 (0.979–1.007) | 0.321 |
+| CHD | Mean minimum temperature / 1 °C | Model | 0.994 (0.979–1.010) | 0.463 |
+| CHD | Mean minimum temperature / 1 °C | HC1 | 0.994 (0.976–1.012) | 0.528 |
+| CHD | Mean minimum temperature / 1 °C | NW3 | 0.994 (0.977–1.012) | 0.517 |
+| CHD | Mean minimum temperature / 1 °C | NW6 | 0.994 (0.977–1.012) | 0.509 |
+| CHD | Hot nights / 5 days | Model | 1.022 (0.995–1.049) | 0.112 |
+| CHD | Hot nights / 5 days | HC1 | 1.022 (0.997–1.047) | 0.081 |
+| CHD | Hot nights / 5 days | NW3 | 1.022 (1.0003–1.0439) | 0.047 |
+| CHD | Hot nights / 5 days | NW6 | 1.022 (1.002–1.042) | 0.032 |
+| CHD | Cold days / 5 days | Model | 0.995 (0.954–1.037) | 0.801 |
+| CHD | Cold days / 5 days | HC1 | 0.995 (0.956–1.035) | 0.792 |
+| CHD | Cold days / 5 days | NW3 | 0.995 (0.949–1.042) | 0.820 |
+| CHD | Cold days / 5 days | NW6 | 0.995 (0.949–1.043) | 0.823 |
+| CHD | Very hot days / 5 days | Model | 0.999 (0.974–1.025) | 0.963 |
+| CHD | Very hot days / 5 days | HC1 | 0.999 (0.975–1.025) | 0.962 |
+| CHD | Very hot days / 5 days | NW3 | 0.999 (0.973–1.026) | 0.964 |
+| CHD | Very hot days / 5 days | NW6 | 0.999 (0.974–1.025) | 0.962 |
+| HF | Mean temperature / 1 °C | Model | 0.974 (0.956–0.993) | 0.007 |
+| HF | Mean temperature / 1 °C | HC1 | 0.974 (0.949–1.000) | 0.049 |
+| HF | Mean temperature / 1 °C | NW3 | 0.974 (0.949–1.001) | 0.055 |
+| HF | Mean temperature / 1 °C | NW6 | 0.974 (0.947–1.002) | 0.069 |
+| HF | Mean maximum temperature / 1 °C | Model | 0.981 (0.964–0.998) | 0.029 |
+| HF | Mean maximum temperature / 1 °C | HC1 | 0.981 (0.958–1.004) | 0.111 |
+| HF | Mean maximum temperature / 1 °C | NW3 | 0.981 (0.959–1.004) | 0.098 |
+| HF | Mean maximum temperature / 1 °C | NW6 | 0.981 (0.958–1.005) | 0.113 |
+| HF | Mean minimum temperature / 1 °C | Model | 0.973 (0.956–0.991) | 0.003 |
+| HF | Mean minimum temperature / 1 °C | HC1 | 0.973 (0.950–0.997) | 0.026 |
+| HF | Mean minimum temperature / 1 °C | NW3 | 0.973 (0.948–0.999) | 0.038 |
+| HF | Mean minimum temperature / 1 °C | NW6 | 0.973 (0.947–1.000) | 0.050 |
+| HF | Hot nights / 5 days | Model | 1.003 (0.970–1.037) | 0.855 |
+| HF | Hot nights / 5 days | HC1 | 1.003 (0.971–1.037) | 0.853 |
+| HF | Hot nights / 5 days | NW3 | 1.003 (0.974–1.033) | 0.837 |
+| HF | Hot nights / 5 days | NW6 | 1.003 (0.976–1.031) | 0.825 |
+| HF | Cold days / 5 days | Model | 1.073 (1.023–1.125) | 0.004 |
+| HF | Cold days / 5 days | HC1 | 1.073 (1.011–1.138) | 0.020 |
+| HF | Cold days / 5 days | NW3 | 1.073 (1.007–1.143) | 0.031 |
+| HF | Cold days / 5 days | NW6 | 1.073 (1.006–1.144) | 0.031 |
+| HF | Very hot days / 5 days | Model | 0.995 (0.964–1.027) | 0.759 |
+| HF | Very hot days / 5 days | HC1 | 0.995 (0.963–1.028) | 0.765 |
+| HF | Very hot days / 5 days | NW3 | 0.995 (0.964–1.027) | 0.759 |
+| HF | Very hot days / 5 days | NW6 | 0.995 (0.963–1.028) | 0.764 |
 
 ## S3. Joint versus separate exposures and collinearity
 
@@ -332,4 +389,4 @@ Cloud-runtime availability of governed panels is an internal operations fact and
 - Merged health–environment panels with event counts
 - Synthetic coefficients presented as health findings
 - Private email text or raw addresses
-- Final author order or Gate 3 freeze
+- Final author order or unrecorded headline approval

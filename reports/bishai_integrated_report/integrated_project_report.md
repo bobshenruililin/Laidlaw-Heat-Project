@@ -45,7 +45,7 @@ The first-principles question is not “which p-value is smallest.” It is:
 That question forces five distinctions:
 
 1. **Outcome construction** versus disease label in ordinary language. A first hospitalisation after a first CHD diagnosis record is not an admission *for* CHD in the principal-diagnosis sense.
-2. **Monthly count ratio** versus cohort incidence-rate ratio. Without the T2D/HTN risk set still eligible for a first event, a population offset remains ecological.
+2. **Monthly count ratio** versus cohort incidence-rate ratio. The analysis uses a days-in-month offset. A general-population offset remains an ecological sensitivity because the T2D/HTN risk set still eligible for a first event is unavailable.
 3. **Thermal definition** versus a single temperature number. Mean temperature, hot nights, cold days, spells, and heat-month tails select different months [@wang2019ehwe; @li2025heatwaves; @guo2017ehp].
 4. **Daily mortality attributable fraction / modelled excess deaths** versus monthly morbidity associations [@liu2020jasmine; @liu2026roro].
 5. **Methods feasibility** versus health finding. An M|D estimator that fails calibration does not become a daily result [@basagana2024md].
@@ -74,6 +74,9 @@ These boundaries are scientific, not administrative. Crossing them would create 
 ## 3. Concise chronology from correspondence (internal evidence)
 
 This chronology summarises the scientific path from the nine-page Outlook thread (21 April–6 August 2026) and the 7 August data receipt. It is internal provenance, not a References list. Email addresses and private PDF quotations are omitted.
+
+**21 April–9 July 2026.** Correspondence concerned programme logistics and the
+absence of a research update; no health outcome was delivered in that period.
 
 **10–12 July 2026.** Bob reported a validated Hong Kong Observatory pipeline and stated that synthetic health outcomes had tested code only. He asked for diagnosis coding, principal-diagnosis availability, episode rules, age bands, suppression, and output vetting. Professor Bishai proposed merging monthly temperature with monthly AMI and stroke admission risk and requested a descriptive Table 1 plus patient-level adjustment ambition (age, sex, medications, BMI). Roro confirmed ICD-9 coding, DAE inclusion, complete admission outcomes at patient level in that extract, no ED-to-inpatient episodes in that extract, age 65–69 / 70–74 distinguishability, and controlled HPC access. Roro asked whether additional HA work required an IRB update; no PI answer appears in the supplied thread.
 
@@ -182,7 +185,7 @@ CHD hot nights, RR = 1.022:
 |---|---|
 | Model | 0.995–1.049 |
 | HC1 | 0.997–1.047 |
-| NW3 | 1.000–1.044 |
+| NW3 | 1.0003–1.0439 |
 | NW6 | 1.002–1.042 |
 
 HF cold days, RR = 1.073:
@@ -194,7 +197,7 @@ HF cold days, RR = 1.073:
 | NW3 | 1.007–1.143 |
 | NW6 | 1.006–1.144 |
 
-NW6 is continuity analysis of record with the full ladder shown. It is not designated primary because an interval excludes the null [@lazarus2018har]. For CHD hot nights, Model and HC1 include the null; NW6 does not. That discordance is a result.
+NW6 is continuity analysis of record with the full ladder shown. It is not designated primary because an interval excludes the null [@lazarus2018har]. For CHD hot nights, Model and HC1 include the null; NW3 and NW6 exclude it on the unrounded scale. That discordance is a result.
 
 ### 6.4 Multiplicity and residual dependence
 
@@ -224,24 +227,15 @@ SAP Amendment A1 already corrected an earlier tendency to treat joint P02/P04 as
 
 ### 6.8 Reading the exploratory CHD hot-night / HF cold-day pattern without over-claiming
 
-A qualitative panel pattern is visible: CHD first-hospitalisation counts track official hot-night burden more closely than mean temperature or cold days; HF counts track cold-day burden more closely than hot nights. That pattern is scientifically discussable as exploratory. It is consistent with historical Hong Kong emphasis on cold for cardiac admissions and with contemporary concern about nighttime heat [@goggins2013; @guo2024hotnights]. It is also consistent with definition sensitivity: continuous monthly means are near null for CHD while an official extreme-night count is not.
-
-Over-claiming would look like this:
-
-- calling the pattern confirmatory despite q = 0.192;
-- ignoring that CHD hot-night Model/HC1 intervals include the null;
-- treating joint-model 1.045 as the preferred CHD estimate;
-- translating monthly count ratios into daily nocturnal physiology;
-- importing Jasmine’s mortality AFs or Roro’s excess deaths as if they were these morbidity coefficients.
-
-Under-claiming would look like this:
-
-- hiding CVD-04 and CVD-11;
-- reporting only multiplicity-adjusted silence without the complete panel;
-- omitting residual dependence and SE discordance;
-- pretending the M|D exercise never happened.
-
-The durable middle is the panel as written: complete estimates, explicit uncertainty, explicit refusals.
+A qualitative panel pattern is visible: CHD first-hospitalisation counts track
+official hot-night burden more closely than mean temperature or cold days; HF
+counts track cold-day burden more closely than hot nights. It is consistent
+with historical Hong Kong cold evidence and contemporary concern about
+nighttime heat [@goggins2013; @guo2024hotnights], but it is not confirmatory.
+The complete panel should retain CVD-04 and CVD-11 while also retaining
+q = 0.192, CHD Model/HC1 intervals that include the null, joint-model
+inflation, residual dependence, and the failed M|D calibration. That is the
+boundary between hiding a signal and manufacturing a discovery.
 
 ### 6.9 Blocked extensions
 
@@ -344,6 +338,18 @@ Forbidden promotions remain binding: calibration ↛ real finding; exploratory �
 
 ## 10. Ranked decisions for humans
 
+### Decision face for the supervision meeting
+
+| Decision | Lead recommendation | Human owner / response |
+|---|---|---|
+| Gate 3 posture | **Option A:** no confirmatory primary; methods-focused exploratory paper | Team: A / B / C |
+| External dissemination | Hold until written aggregate-release approval | Bishai + Roro: approve / hold |
+| IRB/protocol amendment | Record a PI determination before submission | Bishai: required / not required / seek advice |
+| Stroke | Deliver under a documented first-event contract or declare out of this paper | Roro + team |
+| Cohort denominator | Request monthly T2D/HTN members still eligible for a first event | Roro + Bishai |
+| Weather HM/CM | Keep supplementary until the reference rule is locked | Hogan + team |
+| Authorship | Resolve order, corresponding author, co-first wording, and Zhou role in writing | All proposed authors |
+
 ### For Professor Bishai
 
 1. Decide Gate 3 posture: freeze no confirmatory primary; or freeze a carefully worded exploratory panel summary; or request additional governed data before any headline.
@@ -391,10 +397,17 @@ The freeze itself is not executed here.
 
 A credible next programme is incremental and governance-first:
 
-1. **Stroke delivery** under the same first-event contract, or an explicit written decision that stroke is out of scope for this paper.
-2. **Dictionary lock:** ICD lists; inpatient semantics; suppression rules; any ED inclusion.
-3. **Risk-set denominator:** monthly counts of T2D/HTN cohort members still at risk of a first CHD or HF hospitalisation, enabling incidence-rate language.
-4. **Optional strata:** age bands (including 65–69 / 70–74 if available) and sex as predeclared modifiers, not fishing.
+1. **Stroke delivery:** territory-month counts for January 2013–December 2023
+   under the same first-event contract, with SHA-256, schema, suppression rule,
+   and event-construction text; otherwise an explicit decision that stroke is
+   outside this paper.
+2. **Dictionary lock:** exact ICD lists, the meaning of `*_inpatient`,
+   transfer/readmission handling, suppression rules, and any ED inclusion.
+3. **Risk-set denominator:** one row per month with the number of T2D/HTN
+   cohort members still eligible for a first CHD or HF hospitalisation,
+   including cohort entry, censoring, and suppression rules.
+4. **Optional strata:** the same monthly outcome and risk-set grain by sex and
+   predeclared age bands, including 65–69 and 70–74 if governed release permits.
 5. **Weather lock:** Hogan-approved HM/CM reference rules before those indicators leave the supplement.
 6. **Only then** re-open daily designs if daily or weekly governed outcomes exist; do not retry rich DLNM at n = 132 months after M|D failure.
 7. **Prediction / ensemble** only after the governed analysis panel is present in the runtime environment and Gate 3 posture is set.
@@ -468,28 +481,9 @@ See also [`README.md`](README.md) in this folder for compile notes.
 
 ## Appendix B — Deliberately excluded claims
 
-The following claims were available as temptations and were excluded on purpose:
-
-1. A confirmatory “CHD hot / HF cold” primary discovery.
-2. Any real M|D daily thermal coefficient.
-3. Stroke results.
-4. Admissions *for* CHD/HF, AMI, principal diagnosis, or incidence-rate language.
-5. Mortality attributable fractions or modelled excess deaths presented as these morbidity effects.
-6. NW6 designated primary because it excludes the null for CHD hot nights.
-7. Final author order or co-first status.
-8. Gate 3 freeze by agent.
-9. Ensemble or prediction results marked completed despite availability blockers.
-10. Private email quotations or raw addresses.
-
-These exclusions are scientific refusals, not omissions of unfinished prose. The integrated report is complete when humans can decide Gate 3 and the next data request from these artifacts alone.
-
-## Appendix C — Cloud / checkout availability (internal)
-
-The public or cloud checkout used for drafting may lack governed analysis panels. In that setting:
-
-- disclosure-minimised release tables under `outputs/release_chd_hf/` remain the analysis-of-record artifact set;
-- ensemble, prediction, and real M|D scripts record blockers in `outputs/release_chd_hf/tables/analysis_availability.csv`;
-- a governed full rerun requires local files: `PATHWAY_MODE=real OUTCOMES=chd,hf Rscript scripts/run_cvd_full_analysis.R`.
-
-These are operations facts for supervisors. They are not journal Results.
+The report excludes five claim classes on purpose: a confirmatory CHD-hot /
+HF-cold discovery; any real daily M|D coefficient; stroke or
+principal-diagnosis results; cohort incidence without the risk set; and
+mortality attributable fractions or modelled deaths presented as morbidity
+effects. These are scientific refusals, not unfinished prose.
 

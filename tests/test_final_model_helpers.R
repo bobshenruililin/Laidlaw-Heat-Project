@@ -271,6 +271,11 @@ if (has_glarma) {
   expect_true(!is.null(gfit$status), "glarma status present")
   expect_true(!is.null(gfit$diagnostics), "glarma diagnostics present")
   expect_true(
+    isTRUE(gfit$ok),
+    paste0("at least one GLARMA candidate fits fixture: ", gfit$status$message)
+  )
+  expect_true(!is.null(gfit$estimates), "selected GLARMA estimate present")
+  expect_true(
     all(gfit$diagnostics$model_id %in% c(
       "M02_GLARMA_AR1", "M03_GLARMA_MA1", "M04_GLARMA_ARMA11"
     )),

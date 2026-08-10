@@ -1,6 +1,6 @@
 # CHD/HF real-release validation
 
-- Checked: 2026-08-10 11:55:27.972994
+- Checked: 2026-08-10 12:12:54.81102
 - Release directory: `/workspace/outputs/release_chd_hf`
 - Passed: 28 / 28
 

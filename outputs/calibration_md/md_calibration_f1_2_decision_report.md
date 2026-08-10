@@ -1,6 +1,6 @@
 # M|D calibration F1.2 decision report
 
-- Raw source: F1.1 500-rep raw metrics at /workspace/outputs/calibration_md/md_calibration_raw_metrics.csv (untouched; n_rows=105000)
+- Raw source: F1.1 500-rep raw metrics at outputs/calibration_md/md_calibration_raw_metrics.csv (untouched; n_rows=105000)
 - Protocol amendment: F1.2 (worst-cell gates; admissible M|D; comparator noncomparability)
 - Admission decision: FAIL_METHODS_FEASIBILITY_ONLY
 - All gates passed: FALSE

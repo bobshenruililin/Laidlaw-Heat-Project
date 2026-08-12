@@ -1,6 +1,6 @@
 # Laidlaw artefact map
 
-**Updated:** 13 August 2026  
+**Updated:** 13 August 2026
 **Purpose:** Route edits to the correct audience without changing locked files.
 
 | Surface | Audience | Status | Route |

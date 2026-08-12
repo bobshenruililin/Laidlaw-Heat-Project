@@ -1,7 +1,7 @@
 # Laidlaw deliverable system after the live-paper handoff
 
-**Date:** 13 August 2026  
-**Owner:** Bob Shen Ruililin  
+**Date:** 13 August 2026
+**Owner:** Bob Shen Ruililin
 **Purpose:** Keep programme outputs, public communication, and the journal collaboration separate.
 
 ## Decision

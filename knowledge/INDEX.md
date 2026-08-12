@@ -19,6 +19,8 @@
 
 ## Current meeting record
 
+- [`2026-08-12_existing_data_insights.md`](2026-08-12_existing_data_insights.md) — unused structure already in `outputs/tables/` (depletion, lags, influence, HM/CM, flu/NO₂); not new models.
+- [`2026-08-12_sol_carefulness_and_build_better.md`](2026-08-12_sol_carefulness_and_build_better.md) — keep Sol for claim language; read paid tables; split email vs meeting cards.
 - [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md) —
   final integrated reanalysis, source-locked weather audit, failed M|D gate,
   validated release, manuscript packet, and remaining human decisions.

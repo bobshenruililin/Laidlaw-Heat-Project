@@ -101,6 +101,13 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Interactive exposure-only companion: [`docs/lsn/`](../docs/lsn/) (REAL HKO monthly climate; no stroke findings). Bob edits before posting to LSN.
 - Knowledge note: [`knowledge/2026-08-05_lsn_research_summary.md`](../knowledge/2026-08-05_lsn_research_summary.md).
 
+### Wednesday 12 August — Hogan tonight + Bishai Stage 3
+
+- Hogan meeting: listen first; lock weather reference period / `CM05` / live-file paste permission; do not dump coefficients. Sheet: [`hogan_tonight_2026-08-12.md`](hogan_tonight_2026-08-12.md).
+- Bishai: Stage 3 report + three decisions (dissemination, stroke wait, person-time/age-band request). Draft: [`bishai_stage3_status_report.md`](bishai_stage3_status_report.md).
+- Roro ranked monthly asks: [`roro_missing_data_asks.md`](roro_missing_data_asks.md).
+- Unused existing-data read (no new models): [`2026-08-12_existing_data_insights.md`](../knowledge/2026-08-12_existing_data_insights.md).
+
 ### Sunday 2 August — live manuscript handoff
 
 - Hogan created and shared a live manuscript with Bob and Roro, commented on the Introduction, and wrote the weather component of Methods.

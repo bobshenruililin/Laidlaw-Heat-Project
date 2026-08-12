@@ -55,6 +55,7 @@ If Hogan has already edited weather, paste from `methods_remainder_paste.md` aro
 | Provisional HM/CM (`CM08`, `HM23`, `CM05`) | Unlocked definition family; Explore memo only |
 | Archive flu 1.673 as an adjusted thermal estimate | Kept in Discussion as why confounding is unresolved |
 | 2019 as a health “experiment” | One-cold-day year is exposure natural history only |
+| 2024 HKO extremes (50 hot nights, 52 very hot days, 11 cold days) as a health year | After the 132-month window. Optional one-sentence Discussion context only, if Hogan wants post-sample climate. PI-checked: `knowledge/2026-08-13_pi_hko_yearbook_check.md` |
 
 ## After paste
 

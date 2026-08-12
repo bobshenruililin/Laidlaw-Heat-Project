@@ -12,6 +12,8 @@ Summer 2026 deliverables (HKU Laidlaw):
 
 Submission sequence and scientific checks:
 [`submission_checklist.md`](submission_checklist.md).
+Routing index (which file to edit, which is locked):
+[`ARTEFACT_MAP.md`](ARTEFACT_MAP.md).
 
 **Scientific roles:** Hogan (weather exposures), Zhenyuan Liu (Hospital Authority outcomes), and David Makram Bishai (supervision).
 

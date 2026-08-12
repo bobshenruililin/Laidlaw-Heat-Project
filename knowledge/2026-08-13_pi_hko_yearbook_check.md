@@ -21,3 +21,15 @@ HKO Year’s Weather 2024 (https://www.hko.gov.hk/en/wxinfo/pastwx/2024/ywx2024.
 ## 2019 wording trap
 
 The 2019 yearbook called 46 hot nights the highest on record and 1 cold day the fewest since 1884. 2021 later recorded 61 hot nights. The live paper already uses 2013 vs 2021 vs 2023, which is the right selected-year comparison. Do not freeze 2019 as the heat peak.
+
+## EPD general-station means (independent public check)
+
+Hong Kong Government GIA annex “2011 to 2023 Annual Average Concentrations of Major Air Pollutants” (7 Feb 2024; 2023 marked preliminary): https://gia.info.gov.hk/general/202402/07/P2024020600615_448215_1_1707296293714.pdf
+
+| Pollutant (general stations) | GIA 2013 → 2023 | Our table (1 d.p. as in live Intro) |
+|---|---|---|
+| NO₂ | 54 → 32 | 53.7 → 32.1 |
+| PM2.5 | 31 → 15 | 30.8 → 14.6 |
+| O₃ | 43 → 58 | 42.6 → 58.3 |
+
+Direction and rounded magnitude match. Keep our one-decimal station-month means in the live paper; they are not in conflict with the GIA integers. Roadside means are higher for NO₂ and must not be substituted.

@@ -78,7 +78,7 @@ assert_month_id(climate$month_id)
 stopifnot(
   nrow(climate) == 132L,
   !anyDuplicated(climate$month_id),
-  identical(sort(unique(climate$year)), 2013:2023),
+  identical(as.integer(sort(unique(climate$year))), 2013:2023),
   all(climate$month %in% 1:12),
   all(climate$station == "HKO"),
   all(!is.na(climate$cold_days)),

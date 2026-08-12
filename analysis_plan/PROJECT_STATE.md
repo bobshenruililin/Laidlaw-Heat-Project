@@ -114,19 +114,21 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ## 5. Laidlaw Stage 3
 
+- **Publish pattern (Sol):** [`knowledge/2026-08-12_laidlaw_publish_pattern.md`](../knowledge/2026-08-12_laidlaw_publish_pattern.md) — submit the existing packet; do not reopen science.
 - Research report — current submission copy:
-  `reports/laidlaw_stage3/laidlaw_research_report_2026.md` +
+  `outputs/Laidlaw_Stage3_Research_Report_Shen.pdf` /
   `reports/laidlaw_stage3/Laidlaw_Research_Report_2026.pdf`
-  (≈3,200 main-text words; accessible CHD/HF report with figures, references,
-  and appendices). The July stroke-framed literature-and-methods essay remains
-  source material, not the submission copy.
-- Pathway map: `reports/laidlaw_stage3/pathway_literature_map.md`.
+  (≈2,975 main-text words after compliance trim; accessible CHD/HF report).
+  The July stroke-framed literature-and-methods essay remains source material,
+  not the submission copy.
+- Pathway map: internal only (`pathway_literature_map.md`); not a submission file.
 - Poster: readable A0 **portrait** 841×1189 mm at
-  `reports/poster/Laidlaw_Stage3_A0_portrait.pdf`; six required sections,
-  26-point body type, reproducible poster-specific figures. The GEST landscape
-  poster is legacy only.
-- HKU report form: pending an accessible copy of the official template plus
-  supervisor endorsement; spreadsheet Q/R — Bob.
+  `outputs/Laidlaw_Stage3_Poster_Shen.pdf` (GEST landscape is legacy only).
+- HKU report form: pending official template + supervisor endorsement;
+  spreadsheet Q/R — Bob.
+- Bishai review draft: [`bishai_stage3_endorsement_request.md`](bishai_stage3_endorsement_request.md)
+  (attach report only).
+- Checklist: [`reports/laidlaw_stage3/submission_checklist.md`](../reports/laidlaw_stage3/submission_checklist.md).
 
 ---
 

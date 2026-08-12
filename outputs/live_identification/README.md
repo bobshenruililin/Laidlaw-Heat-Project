@@ -28,3 +28,13 @@
 - `outputs/live_identification/cold_days_by_month_year.csv`
 
 Figure captions distinguish public environmental/demographic data from approved health aggregates.
+
+## Mapping to the live manuscript (13 August)
+
+| Paper figure | File | Role in Results |
+|---|---|---|
+| Figure 1 | `figure_B_first_event_depletion.png` | Outcome series: first-event counts vs C&SD 35+ |
+| Figure 2 | `figure_A_cold_day_identification.png` | Exposure identification: DJF concentration of official cold days |
+| Figure 3 | `figure_C_residual_acf.png` | Why Newey–West is shown for CHD |
+
+Do not paste provisional HM/CM or archive flu/NO₂ coefficients into the paper body.

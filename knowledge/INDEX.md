@@ -19,7 +19,9 @@
 
 ## Current meeting record
 
-- [`2026-08-12_sol_stage3_outputs_lock.md`](2026-08-12_sol_stage3_outputs_lock.md) — Sol Stage 3 report + A0 poster byte-locked; later draft PRs that rewrote the report are not taken.
+- [`2026-08-13_live_doc_night_explore.md`](2026-08-13_live_doc_night_explore.md) — overnight Keep/Park/Drop for the Hogan live paste pack; identification figures; Guo and Goggins 2017 upgrades.
+- [`2026-08-13_live_intro_discussion_say_map.md`](2026-08-13_live_intro_discussion_say_map.md) — what the live Introduction/Discussion may say vs must not say.
+- [`2026-08-13_three_manuscript_surfaces.md`](2026-08-13_three_manuscript_surfaces.md) — Laidlaw report vs repo journal draft vs Hogan live paste pack; do not mix.
 - [`2026-08-12_laidlaw_publish_pattern.md`](2026-08-12_laidlaw_publish_pattern.md) — Stage 3 submit sequence; trim draft not applied.
 - [`correspondence_working_culture.md`](correspondence_working_culture.md) — how Hogan / Roro / Bishai / Shen Ruililin actually write on the Outlook thread. Principle: send what each of them would want to receive.
 - [`correspondence_ledger.yml`](correspondence_ledger.yml) — dated message record of that thread (no addresses).

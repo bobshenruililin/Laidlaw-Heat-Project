@@ -1,6 +1,6 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-12
+**Last updated:** 2026-08-13
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
@@ -108,6 +108,13 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - One reply-all on Hogan’s 12 August thread: [`send_pack_2026-08-12/reply_on_thread.md`](send_pack_2026-08-12/reply_on_thread.md). Attach the temperature CSV and `HKO_temperature_panel_2013_2023.pdf`. Do not attach markdown, a parallel manuscript, or a programme report. Paste list for the live file (Shen Ruililin edits it himself): [`LIVE_DOC_EDITS.md`](../manuscript/live_collaborative/LIVE_DOC_EDITS.md). How the thread works: [`correspondence_working_culture.md`](../knowledge/correspondence_working_culture.md).
 - **Sol Stage 3 freeze:** report + A0 poster PDFs are byte-identical to Bob’s uploaded Sol copies. This branch does not rewrite them. See [`2026-08-12_sol_stage3_outputs_lock.md`](../knowledge/2026-08-12_sol_stage3_outputs_lock.md).
 
+### Wednesday–Thursday 12–13 August — end-game live paste pack
+
+- Overnight job finished the Hogan live file as a paste pack, not a third paper. Title, Abstract, Introduction, remaining Methods, Results (Tables 1–3 + Figures 1–3), Discussion, and references 9–21 are written to the CHD/HF first-event contract. Weather paragraph still verbatim. Health data still Roro’s to expand.
+- Literature upgrades: Goggins and Chan (2017) as daily HF history; Guo et al. (2024) for official hot-night flag versus hourly excess heat. Identification figures: DJF cold days, first-event depletion vs C&SD 35+, residual ACF.
+- Working set: [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) (`LIVE_DOC_EDITS.md`, `Heat_CVD_Manuscript_20260813_collab_draft.docx`). Night memo: [`2026-08-13_live_doc_night_explore.md`](../knowledge/2026-08-13_live_doc_night_explore.md). Three surfaces: [`2026-08-13_three_manuscript_surfaces.md`](../knowledge/2026-08-13_three_manuscript_surfaces.md).
+- Do not email the Word copy. Paste into Hogan’s shared file. Laidlaw Stage 3 PDF and A0 poster remain byte-locked.
+
 ### Wednesday 12 August — Hogan tonight + Bishai Stage 3
 
 - Hogan meeting: listen first; lock weather reference period / `CM05` / live-file paste permission; do not dump coefficients. Sheet: [`hogan_tonight_2026-08-12.md`](hogan_tonight_2026-08-12.md).
@@ -168,7 +175,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 2. **Team Gate 3 freeze** using `reports/gate3_decision_packet_2026-08-07.md`
 3. **Hogan weather lock** for HM23 reference period (provisional flags only today)
 4. Confirm ICD/inpatient inclusion lists; ideally T2D/HTN cohort denominators
-5. **Bob live-file paste:** paste list in `manuscript/live_collaborative/LIVE_DOC_EDITS.md`; paste into Hogan’s shared file only with his permission; do not overwrite weather Methods. Send pack: `send_pack_2026-08-12/`
+5. **Bob live-file paste:** 13 August end-game pack in `manuscript/live_collaborative/LIVE_DOC_EDITS.md`; paste into Hogan’s shared file only; do not overwrite weather Methods; do not email a parallel Word copy. Send pack: `send_pack_2026-08-12/`
 6. Jasmine full PDF; Roro revised mortality manuscript diff
 7. PI governance confirmation for current aggregate use
 

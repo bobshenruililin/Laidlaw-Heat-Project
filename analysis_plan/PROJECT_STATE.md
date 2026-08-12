@@ -120,6 +120,8 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Charter: [`knowledge/2026-08-13_research_team_charter.md`](../knowledge/2026-08-13_research_team_charter.md).
 - Sol (programme): keep Stage 3 PDF and A0 poster frozen. Living routing index: [`reports/laidlaw_stage3/ARTEFACT_MAP.md`](../reports/laidlaw_stage3/ARTEFACT_MAP.md). Memo: [`2026-08-13_sol_laidlaw_deliverable_system.md`](../knowledge/2026-08-13_sol_laidlaw_deliverable_system.md). LSN 5 August stroke frame is stale; do not post unchanged.
 - PI public-data check: HKO Year’s Weather 2013/2019/2021/2023 match the extremes table; EPD GIA general-station NO₂/PM2.5/O₃ match in rounded magnitude. 2024 (50 hot nights, 52 very hot days, 11 cold days) is post-sample only. [`2026-08-13_pi_hko_yearbook_check.md`](../knowledge/2026-08-13_pi_hko_yearbook_check.md).
+- Kimi harvest: yearbooks, EPD endpoints, and Guo/Goggins/Liu numbers re-verified at source; no live-paper numeral change. [`2026-08-13_kimi_web_weather_lit_harvest.md`](../knowledge/2026-08-13_kimi_web_weather_lit_harvest.md).
+- Fable critique merged: Newey–West CHD hot-night intervals are *narrower* than Model (Discussion now says so); CHD pre-2020 1.011 (0.991–1.032) reported beside the HF pre-2020 interval; “continuity” → “core panel.” [`2026-08-13_fable_live_doc_critique.md`](../knowledge/2026-08-13_fable_live_doc_critique.md). Synthesis: [`2026-08-13_research_team_synthesis.md`](../knowledge/2026-08-13_research_team_synthesis.md).
 
 ### Wednesday 12 August — Hogan tonight + Bishai Stage 3
 

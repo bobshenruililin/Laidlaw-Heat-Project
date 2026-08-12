@@ -1,6 +1,6 @@
 # Hogan-register replacement pass — Abstract, Introduction, Discussion, Conclusion, Limitations
 
-**Date:** 13 August 2026. **Scope:** drop-in replacement prose for five sections of `Heat_CVD_Manuscript_live_update.md`. **Status:** proposal for the parent session to merge; this file does not modify the live draft.
+**Date:** 13 August 2026. **Scope:** drop-in replacement prose for five sections of `Heat_CVD_Manuscript_live_update.md`. **Status:** merged, then partly superseded the same day by the Fable honesty pass (core vocabulary; Newey–West ladder direction; CHD pre-2020/COVID-phase intervals; Conclusion comparative wording; Guo null interval; single-station limitation). Do not paste this file over the live markdown.
 
 **Rules observed.** The scientific contract is unchanged: monthly ecological count ratios for the first recorded hospitalisation after a first CHD or HF diagnosis in a type 2 diabetes and/or hypertension cohort, 132 months, January 2013–December 2023, admission cause not recorded, stroke not attached. Every quantitative statement below already appears in `claim_ledger.md` or in a paper named in `2026-08-13_live_intro_discussion_say_map.md`. No number is new. No citation is added; reference numbering stays 1–21. The weather Methods paragraph is not touched and does not appear in this file. Section headings match the live file so that each block can be pasted over its counterpart.
 

@@ -13,6 +13,17 @@ Bob asked for a multi-model research team on the live paper, the science, and ho
 
 Parent (this session) synthesises. Accepted sentences go into the live paste pack. Insights that are not ready stay in the compound log.
 
+## Wave outcome (13 August)
+
+| Model | Residue | Parent action |
+|---|---|---|
+| **Kimi K3** | `knowledge/2026-08-13_kimi_web_weather_lit_harvest.md` | No live-paper number changes. 2013-below-normal and 2021 in-window record already in Results. Chau/EcoEnv/Tian parked. |
+| **Fable 5** | `knowledge/2026-08-13_fable_live_doc_critique.md` | Mandatory honesty sentences merged into the live paste pack. Figure 3 demotion left as Hogan’s call; `figure4_trend_depletion_sensitivity.png` listed as preferred extra. |
+| **Opus 5** | `manuscript/live_collaborative/opus_hogan_register_pass.md` | Merged earlier; Fable then corrected the Newey–West rationale and “continuity” vocabulary. |
+| **GPT-5.6 Sol** | `knowledge/2026-08-13_sol_laidlaw_deliverable_system.md` | Stage 3 PDF/poster stay frozen. |
+
+Synthesis: [`2026-08-13_research_team_synthesis.md`](2026-08-13_research_team_synthesis.md).
+
 ## Hard rails (all models)
 
 - Estimand: monthly ecological count ratios for first hospitalisation after first CHD or HF diagnosis in a T2D/HTN cohort, 132 months, 2013–2023. Admission cause absent. Stroke named, not attached.

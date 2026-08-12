@@ -13,7 +13,7 @@ Three surfaces are locked in [`2026-08-13_three_manuscript_surfaces.md`](2026-08
 | Guo et al. 2024: official `HNday28` null after mean-temperature adjustment; hourly `HNe` associated (+3.1% at extreme excess) | Introduction + Discussion [17] | Stops the paper from treating monthly official hot-night counts as intensity, or as a replication of Guo. |
 | 141/145 official cold days in DJF; 2019 had one cold day | Methods processing, Results, Figure 2 | Identification: remaining variation after month FE is between-year winter. |
 | First-event counts halved while C&SD 35+ rose 17% | Results, Figure 1 | Bishai’s Table 1 instinct assumed a stable risk set. Not incidence. |
-| CHD residual ACF1 0.508 vs HF 0.146 | Results, Figure 3, Abstract | Why Newey–West is shown; why CHD is SE-fragile. |
+| CHD residual ACF1 0.508 vs HF 0.146 | Results, Figure 3, Abstract | Serial dependence is part of the inferential problem. Fable: do not claim model-based intervals are too narrow; the CHD hot-night Newey–West ladder is narrower than Model. |
 | All twelve core *q* > 0.19; HF cold SE-concordant; CHD hot nights SE-sensitive | Abstract, Tables 2–3, Discussion | No confirmatory freeze. |
 | Archive flu 1.673 on 121 months | Discussion only | Why confounding is unresolved. Not an adjusted Table 2. |
 | 500-rep daily-recovery failure, then worst-cell re-summary | Methods + Results | Project-specific. Not a general indictment of Basagaña–Ballester. |
@@ -37,7 +37,7 @@ Three surfaces are locked in [`2026-08-13_three_manuscript_surfaces.md`](2026-08
 ## Sharper open questions (human-owned)
 
 1. **Still-at-risk person-time.** Can the outcome co-investigator release monthly counts of T2D/HTN cohort members still eligible for a first CHD or HF hospitalisation? Without that, Figure 1 cannot become incidence, and the days-in-month offset remains the honest estimand. (Existing D08, now sharper because Figure 1 makes the mismatch visible.)
-2. **Official hot-night counts versus intensity.** Guo et al. found the official `HNday28` flag null for daily emergency hospitalisation after mean-temperature adjustment, while hourly excess heat was associated. The live paper’s night-heat exposure is still the official monthly count. Whether that remains the weather co-investigator’s preferred encoding is a Hogan lock, not an analyst substitution of `HNe`.
+2. **Official hot-night counts versus intensity.** Guo et al. found the official `HNday28` flag null for daily emergency hospitalisation after mean-temperature adjustment, while hourly excess heat was associated. The live paper’s night-heat exposure is still the official monthly count. Under that encoding the CHD association is compatible with 1 in the pre-2020 window (1.011, 0.991–1.032) and under COVID-phase adjustment (1.013, 0.994–1.033). Whether official monthly counts remain the weather co-investigator’s preferred encoding is a Hogan lock, not an analyst substitution of `HNe`.
 3. **Health-data paragraph.** ICD lists, timing rule, and inpatient versus DAE still belong to Roro. The bridge paragraph is waiting for him.
 
 ## Dead ends marked so nobody re-walks them

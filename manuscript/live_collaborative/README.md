@@ -3,7 +3,7 @@
 This folder is the **journal-track** paste pack for Hogan’s live shared file. It is **not** the Laidlaw Stage 3 report. The Stage 3 report and A0 poster stay byte-locked (`knowledge/2026-08-12_sol_stage3_outputs_lock.md`). Do not paste Laidlaw-essay voice, Gate 3 jargon, or F1.1/F1.2 labels into Hogan’s document.
 
 **Source file:** `Heat_CVD_Manuscript_20260728.docx` (Hogan skeleton, 28 July 2026).  
-**This update:** 13 August 2026 end-game collaborative draft for the shared file. It does **not** replace Hogan’s weather paragraph. Health-data Methods remain Roro’s to expand. Author order remains a Bishai/team decision. Identification Figures 1–3 are in `figures/live_identification/`.
+**This update:** 13 August 2026 collaborative draft for the shared file, after the Opus Hogan-register pass and the Fable honesty pass. It does **not** replace Hogan’s weather paragraph. Health-data Methods remain Roro’s to expand. Author order remains a Bishai/team decision. Identification Figures 1–3 are in `figures/live_identification/`.
 
 **Tonight:** reply-all from [`analysis_plan/send_pack_2026-08-12/reply_on_thread.md`](../../analysis_plan/send_pack_2026-08-12/reply_on_thread.md). Attach the temperature CSV and `HKO_temperature_panel_2013_2023.pdf`. Do **not** email markdown or a Word copy of this folder. Paste into Hogan’s shared file yourself using [`LIVE_DOC_EDITS.md`](LIVE_DOC_EDITS.md).
 

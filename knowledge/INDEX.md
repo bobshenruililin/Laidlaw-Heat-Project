@@ -19,6 +19,9 @@
 
 ## Current meeting record
 
+- [`2026-08-13_research_team_synthesis.md`](2026-08-13_research_team_synthesis.md) — Kimi/Fable/Opus/Sol wave: live-paper numbers verified; Fable honesty pass merged; Stage 3 PDFs stay frozen.
+- [`2026-08-13_fable_live_doc_critique.md`](2026-08-13_fable_live_doc_critique.md) — senior critique: Newey–West rationale was backwards for CHD hot nights; CHD pre-2020 interval was hidden.
+- [`2026-08-13_kimi_web_weather_lit_harvest.md`](2026-08-13_kimi_web_weather_lit_harvest.md) — public HKO/EPD/literature harvest; no live-paper number changes.
 - [`2026-08-13_sol_laidlaw_deliverable_system.md`](2026-08-13_sol_laidlaw_deliverable_system.md) — keep Stage 3 PDF/poster frozen; live Hogan file is journal authority; LSN/blogs are drafts.
 - [`../reports/laidlaw_stage3/ARTEFACT_MAP.md`](../reports/laidlaw_stage3/ARTEFACT_MAP.md) — pre-edit routing checklist for programme vs journal vs public surfaces.
 - [`2026-08-13_pi_hko_yearbook_check.md`](2026-08-13_pi_hko_yearbook_check.md) — HKO Year’s Weather 2013/2019/2021/2023 match our extremes table; 2024 is post-sample exposure only.

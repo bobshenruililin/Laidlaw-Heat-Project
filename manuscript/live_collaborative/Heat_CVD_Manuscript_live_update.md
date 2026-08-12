@@ -105,7 +105,7 @@ CHD contributed 156,156 first recorded hospitalisations over 132 months (mean 1,
 
 ### Exposure context
 
-At HKO Headquarters, hot nights rose from 10 in 2013 to 61 in 2021 and 56 in 2023. Very hot days rose from 17 to 54 over the same 2013–2021 comparison and were 54 in 2023. Cold days were 14 in 2013 and 14 in 2023 (1 in 2019; 13 in 2021). These are exposure counts, not health effects. Figure 2 shows official cold days by year and month. Of 145 cold days in 2013–2023, 141 fell in December–February (December 40, January 54, February 47) and 4 fell in March. The year 2019 contributed a single cold day. After calendar-month indicators, remaining cold-day variation is between-year winter, not a summer-versus-winter contrast.
+At HKO Headquarters, hot nights rose from 10 in 2013 to 61 in 2021 and 56 in 2023. The 2021 total was the highest annual number of hot nights in the Observatory record through the study window. Very hot days rose from 17 to 54 over the same 2013–2021 comparison and were 54 in 2023. Cold days were 14 in 2013 and 14 in 2023 (1 in 2019; 13 in 2021). These are exposure counts, not health effects. Figure 2 shows official cold days by year and month. Of 145 cold days in 2013–2023, 141 fell in December–February (December 40, January 54, February 47) and 4 fell in March. The year 2019 contributed a single cold day. After calendar-month indicators, remaining cold-day variation is between-year winter, not a summer-versus-winter contrast.
 
 **Figure 2. Official cold days by year and month, Hong Kong Observatory Headquarters, 2013–2023.** Provenance: REAL HKO official flags (Tmin ≤ 12 °C) rolled to calendar months.
 

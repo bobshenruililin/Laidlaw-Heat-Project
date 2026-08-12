@@ -69,7 +69,7 @@ The definition catalogue contains `HM01–HM50` and `CM01–CM48`. Core starters
 3. **Gate 3:** lead recommendation is explicit no confirmatory primary
    (Option A); freeze with the team only.
 4. **Hogan weather lock:** provisional HM/CM reference period is study-window only. Run [Playbook 01](../analysis_plan/playbooks/01_hogan_definition_lock.md) when locked.
-5. **Live manuscript:** CHD/HF Methods remainder, Introduction comment replies, and first Results/Discussion are in [`manuscript/live_collaborative/`](../manuscript/live_collaborative/). Paste into Hogan’s shared file without overwriting weather Methods. Roro still owns health-data expansion. Tonight sheet: [`hogan_tonight_2026-08-12.md`](../analysis_plan/hogan_tonight_2026-08-12.md). [Playbook 04](../analysis_plan/playbooks/04_final_writeup.md).
+5. **Live manuscript (journal track, not the Laidlaw report):** CHD/HF Methods remainder, Introduction comment replies, and first Results/Discussion are in [`manuscript/live_collaborative/`](../manuscript/live_collaborative/). Paste from [`LIVE_DOC_EDITS.md`](../manuscript/live_collaborative/LIVE_DOC_EDITS.md) without overwriting weather Methods. Send pack: [`send_pack_2026-08-12/`](../analysis_plan/send_pack_2026-08-12/). Roro still owns health-data expansion. [Playbook 04](../analysis_plan/playbooks/04_final_writeup.md).
 6. **Submission gates:** written dissemination authority, PI IRB decision,
    ICD/inpatient semantics, authorship/order, and cohort risk-set decision.
 7. **Final packet:** integrated report in

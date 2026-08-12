@@ -1,12 +1,17 @@
 # Cover note — paste into the shared live manuscript
 
+This folder is the **journal-track** paste pack for Hogan’s live shared file. It is **not** the Laidlaw Stage 3 report. The Stage 3 report and A0 poster stay byte-locked (`knowledge/2026-08-12_sol_stage3_outputs_lock.md`). Do not paste Laidlaw-essay voice, Gate 3 jargon, or F1.1/F1.2 labels into Hogan’s document.
+
 **Source file:** `Heat_CVD_Manuscript_20260728.docx` (Hogan skeleton, 28 July 2026).  
 **This update:** 12 August 2026 collaborative draft for the shared file. It does **not** replace Hogan’s weather paragraph. Health-data Methods remain Roro’s to expand. Author order remains a Bishai/team decision.
+
+**Tonight:** paste from [`LIVE_DOC_EDITS.md`](LIVE_DOC_EDITS.md). Send the three messages in [`analysis_plan/send_pack_2026-08-12/`](../../analysis_plan/send_pack_2026-08-12/). Attach the live Word draft to Hogan, the climate CSVs to Roro, and the Sol Stage 3 PDF to Bishai.
 
 **Files**
 
 | File | Use |
 |---|---|
+| `LIVE_DOC_EDITS.md` | Paste order and what not to touch |
 | `Heat_CVD_Manuscript_live_update.md` | Full draft (Markdown) |
 | `Heat_CVD_Manuscript_20260812_collab_draft.docx` | Word copy for paste |
 | `methods_remainder_paste.md` | Methods only, with Hogan’s weather paragraph left as a hole |

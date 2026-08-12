@@ -13,7 +13,7 @@ The shared live file remains manuscript authority. Repository draft:
 - `manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md`
 - `manuscript/live_collaborative/Heat_CVD_Manuscript_20260812_collab_draft.docx`
 
-The Stage 3 progress report is a Laidlaw submission surface, not a substitute for this collaboration.
+The Stage 3 progress report is a Laidlaw programme essay, not a substitute for this collaboration. Honesty edits that later drafts proposed for the Laidlaw report were taken **here** instead (`LIVE_DOC_EDITS.md`). Send pack: `analysis_plan/send_pack_2026-08-12/`.
 
 ## Comment map (do not invent others)
 
@@ -21,4 +21,4 @@ Hogan’s threads in the uploaded file: title amend after results (0); authors w
 
 ## What was not done
 
-No new models. No Gate 3 freeze. No stroke coefficients. No overwrite of Hogan weather. No filling of Author 2–4. Emails to Hogan and Roro are drafted for Bob to send (`analysis_plan/hogan_live_ms_review_request.md`, `analysis_plan/roro_health_methods_request.md`).
+No new models. No Gate 3 freeze. No stroke coefficients. No overwrite of Hogan weather. No filling of Author 2–4. Send-ready messages: `analysis_plan/send_pack_2026-08-12/` (older drafts in `hogan_live_ms_review_request.md` / `roro_health_methods_request.md` / `bishai_stage3_endorsement_request.md` are superseded).

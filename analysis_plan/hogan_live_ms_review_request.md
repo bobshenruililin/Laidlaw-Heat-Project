@@ -1,5 +1,7 @@
 # Draft to Hogan — live-manuscript Methods and Introduction
 
+**Superseded for sending.** Use [`send_pack_2026-08-12/to_hogan.md`](send_pack_2026-08-12/to_hogan.md) and attach the live Word draft, not the Laidlaw report.
+
 **Send from Bob. Short. Do not paste coefficients into the email.**  
 The Word draft is `manuscript/live_collaborative/Heat_CVD_Manuscript_20260812_collab_draft.docx`.
 

@@ -1,5 +1,7 @@
 # Draft to Roro — health-data Methods and remaining monthly asks
 
+**Superseded for sending.** Use [`send_pack_2026-08-12/to_roro.md`](send_pack_2026-08-12/to_roro.md) and attach `send_pack_2026-08-12/attach_for_roro/`.
+
 **Send from Bob. One short message. No daily-data ask. Do not dump the twelve-contrast table.**
 
 **Subject:** Health-data Methods + two monthly questions

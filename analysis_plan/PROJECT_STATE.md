@@ -105,7 +105,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 - Hogan’s 28 July live file is now the paste target: Methods remainder finished; Introduction comments answered; first Results/Discussion written to the delivered CHD/HF first-hospitalisation contract. Weather paragraph copied verbatim. Health data remains Roro’s to expand. Author 2–4 still placeholders.
 - Working set: [`manuscript/live_collaborative/`](../manuscript/live_collaborative/). Knowledge: [`2026-08-12_live_manuscript_collab.md`](../knowledge/2026-08-12_live_manuscript_collab.md).
-- Drafts for Bob to send (no coefficients in the Hogan note): [`hogan_live_ms_review_request.md`](hogan_live_ms_review_request.md), [`roro_health_methods_request.md`](roro_health_methods_request.md).
+- Drafts for Bob to send: [`send_pack_2026-08-12/`](send_pack_2026-08-12/) (Hogan live Word draft; Roro climate attachable; Bishai Sol Stage 3 report). Paste list: [`LIVE_DOC_EDITS.md`](../manuscript/live_collaborative/LIVE_DOC_EDITS.md).
 - **Sol Stage 3 freeze:** report + A0 poster PDFs are byte-identical to Bob’s uploaded Sol copies. This branch does not rewrite them. See [`2026-08-12_sol_stage3_outputs_lock.md`](../knowledge/2026-08-12_sol_stage3_outputs_lock.md).
 
 ### Wednesday 12 August — Hogan tonight + Bishai Stage 3
@@ -168,7 +168,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 2. **Team Gate 3 freeze** using `reports/gate3_decision_packet_2026-08-07.md`
 3. **Hogan weather lock** for HM23 reference period (provisional flags only today)
 4. Confirm ICD/inpatient inclusion lists; ideally T2D/HTN cohort denominators
-5. **Bob live-file paste:** collaborative draft is ready in `manuscript/live_collaborative/`; paste into Hogan’s shared file only with his permission; do not overwrite weather Methods
+5. **Bob live-file paste:** paste list in `manuscript/live_collaborative/LIVE_DOC_EDITS.md`; paste into Hogan’s shared file only with his permission; do not overwrite weather Methods. Send pack: `send_pack_2026-08-12/`
 6. Jasmine full PDF; Roro revised mortality manuscript diff
 7. PI governance confirmation for current aggregate use
 

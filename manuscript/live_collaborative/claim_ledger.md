@@ -11,6 +11,7 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | 2020 trough | CHD 10,237; HF 1,964 | same |
 | Seasonal means | CHD Jan 1,386 / Sep 1,097; HF Jan 287 / Sep 196 | `outputs/tables/cvd_descriptive_seasonality_by_month.csv` (rounded) |
 | Hot nights / VHD / cold days | 10/17/14 (2013); 61/54/13 (2021); 56/54/14 (2023); cold days 1 in 2019 | `outputs/tables/hko_annual_extremes_2013_2023.csv` |
+| Cold days in DJF | 141 of 145 (Dec 40, Jan 54, Feb 47; Mar 4) | `outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv` |
 | EPD general-station means | NO₂ 53.7→32.1; PM2.5 30.8→14.6; O₃ 42.6→58.3 | `outputs/tables/pollution_annual_means_general_2013_2023.csv` |
 | Table 2 twelve contrasts | as displayed | `outputs/release_chd_hf/tables/table2_core_models.csv` |
 | HF Tmin NW6 upper bound includes 1 | 1.00004966 | table2 `rr_high` |
@@ -20,8 +21,8 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | Joint HF cold days | 1.073 | same |
 | VIF Tmax/Tmin | 4.66 | `cvd_exposure_vif.csv` (4.658) |
 | VIF hot nights / VHD | ~1.96 | same (1.958) |
-| CHD ACF1 | 0.51–0.53 | `chd_pathway_residual_acf.csv` lag 1, P01A–P04C |
-| HF ACF1 | 0.13–0.18 | `hf_pathway_residual_acf.csv` |
+| CHD ACF1 | 0.51–0.53 panel; 0.508 for hot nights | `chd_pathway_residual_acf.csv` lag 1, P01A–P04C / P04A |
+| HF ACF1 | 0.13–0.18 panel; 0.146 for cold days | `hf_pathway_residual_acf.csv` |
 | Ljung–Box lag 6 | CHD *p* < 10⁻⁸; HF *p* > 0.3 | `*_pathway_core_diagnostics.csv` |
 | Trend range CHD hot nights | 1.011–1.025 | `table3_robustness_summary.csv` |
 | Trend range HF cold days | 1.043–1.113 | same |

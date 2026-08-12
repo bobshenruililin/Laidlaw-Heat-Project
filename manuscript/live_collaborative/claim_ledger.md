@@ -40,7 +40,7 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | Goggins and Chan 2017 HF | cumulative RR 2.63 (2.43–2.84) for 11 °C vs 25 °C, lags to 23 days; daily public-hospital HF admissions 2002–2011 | Goggins and Chan *Int J Cardiol* 2017;228:537–542 [21] |
 | Guo 2024 official HNday28 | no overall association lag 0–4 after mean-temperature adjustment | Guo et al. *Lancet Reg Health West Pac* 2024;51:101168 [17] |
 | Guo 2024 extreme HNe | +3.1% (1.5–4.8%) NCNE hospitalisation, 99th pct 28.9 °C·h vs 0 | same [17] |
-| Liu 2020 mortality AF | cold 4.72% vs heat 0.16%; moderate 4.25% vs extreme 0.63% | Liu et al. *Sustain Cities Soc* 2020;57:102131 [12] |
+| Liu 2026 excess deaths | 1,455–3,238 across four heatwave definitions | Liu et al. medRxiv 2026 [13]; complementary mortality, not our ratios |
 | Figure 1 | depletion vs 35+ population | `figures/live_identification/figure_B_first_event_depletion.png` from annual totals |
 | Figure 2 | cold-day year×month heatmap | `figures/live_identification/figure_A_cold_day_identification.png` from temperature panel |
 | Figure 3 | residual ACF | `figures/live_identification/figure_C_residual_acf.png` from pathway ACF tables |

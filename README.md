@@ -138,6 +138,7 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 |---|---|
 | Final integrated report | `reports/bishai_integrated_report/integrated_project_report.{md,pdf}` |
 | Journal manuscript + supplement | `manuscript/chd_hf_thermal_associations_2013_2023.{md,pdf}` · `manuscript/chd_hf_supplement.{md,pdf}` |
+| Live shared-file draft (Hogan/Roro/Bishai) | `manuscript/live_collaborative/` — paste into Hogan’s file; do not overwrite his weather Methods |
 | Validated disclosure-minimised release | `outputs/release_chd_hf/` |
 | Final reanalysis handoff | `knowledge/2026-08-10_cns_final_reanalysis.md` |
 | Post-meeting strategy + next actions | `reports/meeting_debrief_2026-07-17.md` |

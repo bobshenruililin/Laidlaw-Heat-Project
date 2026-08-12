@@ -1,6 +1,6 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-10
+**Last updated:** 2026-08-12
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
@@ -101,6 +101,12 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Interactive exposure-only companion: [`docs/lsn/`](../docs/lsn/) (REAL HKO monthly climate; no stroke findings). Bob edits before posting to LSN.
 - Knowledge note: [`knowledge/2026-08-05_lsn_research_summary.md`](../knowledge/2026-08-05_lsn_research_summary.md).
 
+### Wednesday 12 August — live manuscript (Hogan skeleton → CHD/HF draft)
+
+- Hogan’s 28 July live file is now the paste target: Methods remainder finished; Introduction comments answered; first Results/Discussion written to the delivered CHD/HF first-hospitalisation contract. Weather paragraph copied verbatim. Health data remains Roro’s to expand. Author 2–4 still placeholders.
+- Working set: [`manuscript/live_collaborative/`](../manuscript/live_collaborative/). Knowledge: [`2026-08-12_live_manuscript_collab.md`](../knowledge/2026-08-12_live_manuscript_collab.md).
+- Drafts for Bob to send (no coefficients in the Hogan note): [`hogan_live_ms_review_request.md`](hogan_live_ms_review_request.md), [`roro_health_methods_request.md`](roro_health_methods_request.md).
+
 ### Wednesday 12 August — Hogan tonight + Bishai Stage 3
 
 - Hogan meeting: listen first; lock weather reference period / `CM05` / live-file paste permission; do not dump coefficients. Sheet: [`hogan_tonight_2026-08-12.md`](hogan_tonight_2026-08-12.md).
@@ -114,7 +120,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - The shared file is now the manuscript authority. Work in it directly; stop exchanging parallel manuscript versions.
 - Bob owns the Introduction response and the remainder of Methods by **5 August**. He should adapt the canonical essay for design, pollution, population denominators, statistical analysis and thermal-panel discipline, without replacing Hogan’s weather text.
 - Roro owns cleaned monthly stroke data and the health-data Methods by **7 August**. Bob’s outcome text is only a brief bridge using the already agreed GOPC-marker principle.
-- Hogan will review each contribution after completion. His specific Introduction comments are not in this repository and must not be invented.
+- Hogan will review each contribution after completion. His 28 July Introduction comments are now recorded from the uploaded live file in [`manuscript/live_collaborative/hogan_comment_responses.md`](../manuscript/live_collaborative/hogan_comment_responses.md); do not invent further threads.
 - Working set: [`hogan_live_manuscript_handoff.md`](hogan_live_manuscript_handoff.md), [`methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md), [`introduction_revision_notes.md`](../manuscript/introduction_revision_notes.md), and [`2026-08-02_hogan_live_manuscript.md`](../knowledge/2026-08-02_hogan_live_manuscript.md).
 
 ---
@@ -161,7 +167,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 2. **Team Gate 3 freeze** using `reports/gate3_decision_packet_2026-08-07.md`
 3. **Hogan weather lock** for HM23 reference period (provisional flags only today)
 4. Confirm ICD/inpatient inclusion lists; ideally T2D/HTN cohort denominators
-5. **Bob live-file sync:** fold CHD/HF estimand + Methods into Hogan’s live manuscript without overwriting weather Methods
+5. **Bob live-file paste:** collaborative draft is ready in `manuscript/live_collaborative/`; paste into Hogan’s shared file only with his permission; do not overwrite weather Methods
 6. Jasmine full PDF; Roro revised mortality manuscript diff
 7. PI governance confirmation for current aggregate use
 

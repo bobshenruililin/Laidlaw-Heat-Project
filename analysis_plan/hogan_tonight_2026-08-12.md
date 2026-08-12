@@ -4,7 +4,7 @@
 
 **Tone:** Listen first. Spare academic English. Credit his weather Methods. Do not overwrite them.
 
-**Bring (paper or laptop):** this sheet; `outputs/share_for_roro/README.md`; live-file Methods remainder `manuscript/methods_remainder_bob_aug5.md` with the CHD/HF estimand sentence substituted for stroke.
+**Bring (paper or laptop):** this sheet; `outputs/share_for_roro/README.md`; live-file pack `manuscript/live_collaborative/` (Methods remainder + Introduction replies). The 5 August stroke-framed remainder is superseded.
 
 **Do not bring unless he asks:** Gate 3 packet, release CSVs, Stage 3 report coefficients, CNS discussion.
 

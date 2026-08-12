@@ -2,7 +2,7 @@
 
 ## Process in the live manuscript
 
-Hogan’s comments are not present in this repository, so they must be answered in the shared file rather than inferred here.
+Hogan’s 28 July comments are now recorded in [`live_collaborative/hogan_comment_responses.md`](live_collaborative/hogan_comment_responses.md). The CHD/HF Introduction that answers them is in [`live_collaborative/Heat_CVD_Manuscript_live_update.md`](live_collaborative/Heat_CVD_Manuscript_live_update.md). Do not invent further threads.
 
 1. **Read the complete comment set first.** Identify whether each thread concerns the scientific claim, evidence, scope, structure or wording.
 2. **Revise the claim before polishing the sentence.** For example, a comment about Goggins may require a narrower novelty claim, not merely another citation.

@@ -5,6 +5,8 @@
 **Scientific boundary:** no stroke coefficients; weather figures are exposure context only  
 **Date:** 5 August 2026
 
+**Do not post this pack unchanged (13 August 2026).** The runnable project is now CHD/HF first hospitalisation after first diagnosis in a T2D/HTN cohort, not stroke. Stroke was named and not attached. The htmlpreview link points at a feature branch, not a stable public URL. Bob still makes the voice, privacy, and posting pass. Routing: [`ARTEFACT_MAP.md`](../laidlaw_stage3/ARTEFACT_MAP.md).
+
 Bob should make a final voice and privacy pass before posting.
 
 ---

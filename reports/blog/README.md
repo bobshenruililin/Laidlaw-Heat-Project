@@ -14,7 +14,7 @@ Use short paragraphs, concrete moments, and plain explanations. Credit collabora
 - `reports/laidlaw_stage3/essay_lit_methods.md`: publication-register scientific argument.
 - Manuscript and methods surfaces: the spare academic register in `analysis_plan/writing_standards_hogan.md`.
 
-The same scientific boundaries apply in every register: monthly stroke aggregates are not daily mortality, the general HA file cannot support admission-reason claims, and synthetic output is not a result.
+The same scientific boundaries apply in every register: monthly CHD/HF first-event counts are not daily mortality; stroke was not delivered; the general HA file cannot support admission-reason claims; synthetic output is not a result. Which file to edit: [`../laidlaw_stage3/ARTEFACT_MAP.md`](../laidlaw_stage3/ARTEFACT_MAP.md).
 
 ## Posting
 

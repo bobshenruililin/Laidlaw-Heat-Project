@@ -2,7 +2,7 @@
 
 This is the **journal-track** shared file, not the Laidlaw Stage 3 report. Do not paste Laidlaw-essay language into it. Do not overwrite Hogan’s weather paragraph.
 
-**Paste source (13 August end-game):** `Heat_CVD_Manuscript_20260813_collab_draft.docx`  
+**Paste source (13 August end-game, Opus Hogan-register pass merged):** `Heat_CVD_Manuscript_20260813_collab_draft.docx`  
 Markdown: `Heat_CVD_Manuscript_live_update.md`  
 If Hogan has already edited weather, paste from `methods_remainder_paste.md` around his paragraph instead.
 

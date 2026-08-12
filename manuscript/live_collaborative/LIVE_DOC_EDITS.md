@@ -45,6 +45,6 @@ These were proposed for the Laidlaw report. They belong here instead.
 
 ## After paste
 
-Ask Hogan: may this sit under his weather section this week?  
-Ask Roro: replace Health data.  
-Do not freeze a confirmatory headline in the live file.
+This list is for you to edit in Hogan’s shared file. Do not email him a parallel Word copy; he asked the group to work in the live file.
+
+The 12 August Outlook reply only tells him you are editing now. It does not replace this paste.

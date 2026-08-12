@@ -1,6 +1,6 @@
 # Draft — Laidlaw Stage 3 report review and endorsement path
 
-**Superseded for sending.** Use [`send_pack_2026-08-12/to_bishai.md`](send_pack_2026-08-12/to_bishai.md). Attach only the Sol Stage 3 report PDF.
+**Superseded for sending.** Use the short Bishai paragraph in [`send_pack_2026-08-12/reply_on_thread.md`](send_pack_2026-08-12/reply_on_thread.md). Do not attach a programme report on that thread.
 
 **To:** Professor David Bishai  
 **Subject:** Laidlaw Stage 3 research report for review  

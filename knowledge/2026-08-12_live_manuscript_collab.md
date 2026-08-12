@@ -21,4 +21,4 @@ Hogan’s threads in the uploaded file: title amend after results (0); authors w
 
 ## What was not done
 
-No new models. No Gate 3 freeze. No stroke coefficients. No overwrite of Hogan weather. No filling of Author 2–4. Send-ready messages: `analysis_plan/send_pack_2026-08-12/` (older drafts in `hogan_live_ms_review_request.md` / `roro_health_methods_request.md` / `bishai_stage3_endorsement_request.md` are superseded).
+No new models. No Gate 3 freeze. No stroke coefficients. No overwrite of Hogan weather. No filling of Author 2–4. Send-ready messages: `analysis_plan/send_pack_2026-08-12/reply_on_thread.md` (one reply-all). Do not email a parallel Word copy.

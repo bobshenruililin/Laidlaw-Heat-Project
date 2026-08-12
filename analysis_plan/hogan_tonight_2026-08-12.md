@@ -1,6 +1,6 @@
 # Hogan tonight — 12 August 2026
 
-**Purpose:** Meet Hogan’s request. Show work without dumping the full results deck. Leave with weather-lock decisions or a dated next step.
+**If the 12 August email has gone:** this sheet is only for an in-person follow-up. Do not re-ask the temperature-panel question. Do not walk in with a coefficient dump. Listen for weather-lock comments on the live file.
 
 **Tone:** Listen first. Spare academic English. Credit his weather Methods. Do not overwrite them.
 

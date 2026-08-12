@@ -105,7 +105,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 - Hogan’s 28 July live file is now the paste target: Methods remainder finished; Introduction comments answered; first Results/Discussion written to the delivered CHD/HF first-hospitalisation contract. Weather paragraph copied verbatim. Health data remains Roro’s to expand. Author 2–4 still placeholders.
 - Working set: [`manuscript/live_collaborative/`](../manuscript/live_collaborative/). Knowledge: [`2026-08-12_live_manuscript_collab.md`](../knowledge/2026-08-12_live_manuscript_collab.md).
-- Drafts for Bob to send: [`send_pack_2026-08-12/`](send_pack_2026-08-12/) (Hogan live Word draft; Roro climate attachable; Bishai Sol Stage 3 report). Paste list: [`LIVE_DOC_EDITS.md`](../manuscript/live_collaborative/LIVE_DOC_EDITS.md).
+- One reply-all on Hogan’s 12 August thread: [`send_pack_2026-08-12/reply_on_thread.md`](send_pack_2026-08-12/reply_on_thread.md). Attach the temperature CSV and `NOTE.md`; optional HKO extremes figure. Do not attach a parallel manuscript or a programme report. Paste list for the live file (Bob edits it himself): [`LIVE_DOC_EDITS.md`](../manuscript/live_collaborative/LIVE_DOC_EDITS.md). How the thread works: [`correspondence_working_culture.md`](../knowledge/correspondence_working_culture.md).
 - **Sol Stage 3 freeze:** report + A0 poster PDFs are byte-identical to Bob’s uploaded Sol copies. This branch does not rewrite them. See [`2026-08-12_sol_stage3_outputs_lock.md`](../knowledge/2026-08-12_sol_stage3_outputs_lock.md).
 
 ### Wednesday 12 August — Hogan tonight + Bishai Stage 3

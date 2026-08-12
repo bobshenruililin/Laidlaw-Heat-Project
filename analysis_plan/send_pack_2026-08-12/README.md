@@ -1,13 +1,13 @@
-# Send pack — 12 August 2026
+# Send pack — 12 August 2026 (thread reply)
 
-Three separate messages. The live Hogan manuscript is the journal-track document. The Laidlaw Stage 3 report is the programme essay. Do not mix them.
+Hogan asked two things, by today: where Methods writing stands, and whether Bob will send Roro the temperature panel (or Hogan will send it). Answer both in **one reply-all** on the existing Outlook thread.
 
-| Person | File | Attach |
-|---|---|---|
-| Hogan | `to_hogan.md` | `manuscript/live_collaborative/Heat_CVD_Manuscript_20260812_collab_draft.docx` |
-| Roro | `to_roro.md` | everything in `attach_for_roro/` (climate only; no HA) |
-| Professor Bishai | `to_bishai.md` | `outputs/Laidlaw_Stage3_Research_Report_Shen.pdf` |
+| File | Use |
+|---|---|
+| `reply_on_thread.md` | The message to send |
+| `WHAT_TO_ATTACH.md` | Attach / optional figure / do not attach |
+| `attach_for_roro/` | Temperature CSV + `NOTE.md` |
 
-Paste order in the shared live file: `manuscript/live_collaborative/LIVE_DOC_EDITS.md`.
+How this team writes: `knowledge/correspondence_working_culture.md`. Thread facts: `knowledge/correspondence_ledger.yml`.
 
-Do not attach HA source files, release CSVs, or the twelve-contrast table to any of these messages.
+The earlier three-message drafts (`to_hogan.md`, `to_roro.md`, `to_bishai.md`) tried to do too much in one round. Do not send them.

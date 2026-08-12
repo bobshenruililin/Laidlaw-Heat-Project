@@ -5,7 +5,7 @@ This folder is the **journal-track** paste pack for Hogan’s live shared file. 
 **Source file:** `Heat_CVD_Manuscript_20260728.docx` (Hogan skeleton, 28 July 2026).  
 **This update:** 12 August 2026 collaborative draft for the shared file. It does **not** replace Hogan’s weather paragraph. Health-data Methods remain Roro’s to expand. Author order remains a Bishai/team decision.
 
-**Tonight:** paste from [`LIVE_DOC_EDITS.md`](LIVE_DOC_EDITS.md). Send the three messages in [`analysis_plan/send_pack_2026-08-12/`](../../analysis_plan/send_pack_2026-08-12/). Attach the live Word draft to Hogan, the climate CSVs to Roro, and the Sol Stage 3 PDF to Bishai.
+**Tonight:** reply-all from [`analysis_plan/send_pack_2026-08-12/reply_on_thread.md`](../../analysis_plan/send_pack_2026-08-12/reply_on_thread.md). Attach the temperature CSV and `NOTE.md` for Roro; optionally the HKO extremes figure. Do **not** email a Word copy of this folder. Paste into Hogan’s shared file yourself using [`LIVE_DOC_EDITS.md`](LIVE_DOC_EDITS.md).
 
 **Files**
 

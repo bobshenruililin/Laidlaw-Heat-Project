@@ -19,6 +19,8 @@
 
 ## Current meeting record
 
+- [`2026-08-13_research_team_charter.md`](2026-08-13_research_team_charter.md) — Kimi/Fable/Opus/Sol roles and write-targets for the 13 August research-team wave.
+- [`2026-08-13_pi_hko_yearbook_check.md`](2026-08-13_pi_hko_yearbook_check.md) — HKO Year’s Weather 2013/2019/2021/2023 match our extremes table; 2024 is post-sample exposure only.
 - [`2026-08-13_live_doc_night_explore.md`](2026-08-13_live_doc_night_explore.md) — overnight Keep/Park/Drop for the Hogan live paste pack; identification figures; Guo and Goggins 2017 upgrades.
 - [`2026-08-13_live_intro_discussion_say_map.md`](2026-08-13_live_intro_discussion_say_map.md) — what the live Introduction/Discussion may say vs must not say.
 - [`2026-08-13_three_manuscript_surfaces.md`](2026-08-13_three_manuscript_surfaces.md) — Laidlaw report vs repo journal draft vs Hogan live paste pack; do not mix.

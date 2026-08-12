@@ -205,20 +205,12 @@ together.
 
 ## 2.4 Robustness and the attempted daily-exposure extension
 
-Additional analyses varied the long-term trend, removed early years, restricted
-the series to the pre-2020 period, examined exposure lags, and excluded the
-most influential month. These checks ask whether a result depends on a narrow
-modelling choice or one observation. Joint models were used only to diagnose
-what happens when correlated heat measures compete in the same equation.
-
-The project also evaluated a constrained method that combines monthly outcomes
-with daily exposures [@basagana2024md]. Before it could be used on real health
-outcomes, it had to recover known effects in simulations designed around Hong
-Kong weather and the observed monthly setting. The method failed the
-predefined error, coverage, bias and sign-recovery requirements. No daily
-health coefficient was therefore produced. This negative result is important:
-greater mathematical complexity does not create temporal information that the
-data cannot reliably supply.
+Robustness checks varied the long-term trend, study period, exposure lags and
+influential months; joint models were diagnostic only. A proposed method
+combining monthly outcomes with daily exposures was tested in simulation
+[@basagana2024md]. It failed predefined requirements for error, coverage, bias
+and sign recovery, so it was not used to produce a real daily health
+coefficient.
 
 # 3. Results
 
@@ -287,20 +279,12 @@ does not overcome the multiple-testing result: its *q*-value remained 0.192.
 
 ## 3.4 Robustness and calibration
 
-Across alternative trend and early-period specifications, the CHD hot-night
-count ratio ranged from 1.011 to 1.025, and the HF cold-day ratio ranged from
-1.043 to 1.113. Removing the most influential month preserved both directions.
-Later monthly lags weakened the CHD hot-night estimate. HF cold days remained
-elevated at a one-month lag and weakened at two months. These checks reduce
-concern that one coding choice or observation created the pattern, but they do
-not establish a daily lag sequence.
-
-The attempted monthly-outcome/daily-exposure estimator passed its numerical
-convergence checks but failed its substantive calibration requirements.
-Across the most difficult simulation cells, false-positive rates reached
-0.150, confidence-interval coverage fell to 0.840, and sign recovery was poor
-for moderate effects. The method was not applied to produce a real daily
-coefficient.
+Across trend and period checks, the CHD hot-night count ratio ranged from 1.011
+to 1.025 and the HF cold-day ratio from 1.043 to 1.113; excluding the most
+influential month preserved both directions. Later lags weakened the CHD
+estimate. The monthly-outcome/daily-exposure method failed substantive
+calibration, including false-positive rates up to 0.150 and coverage as low as
+0.840, and produced no real daily coefficient.
 
 # 4. Interpretation
 
@@ -378,28 +362,18 @@ The limitations determine how the results should be read:
 
 # 5. Implications and next study
 
-The next analysis should not simply add more monthly definitions. Its highest
-value would come from improving the outcome data contract. A stronger design
-would include the dated admission, recorded reason for admission, cohort entry
-and follow-up, and the number of people still at risk of a first event. Daily
-or weekly outcome resolution would make lag analysis possible. Age, sex,
-diagnostic subtype and location would allow assessment of vulnerability and
-exposure misclassification. Pollution, humidity and influenza could then be
-incorporated in a clearly staged confounding plan.
+A stronger next study would prioritise the outcome data contract rather than
+add monthly definitions. Dated, cause-recorded admissions, cohort follow-up and
+numbers still at risk would permit clearer incidence and lag analyses. Age,
+sex, subtype and location would support vulnerability assessment; pollution,
+humidity and influenza could enter a staged confounding plan.
 
-The two exploratory patterns provide specific hypotheses for that design:
-whether repeated hot nights precede CHD-related admissions, and whether cold
-days precede HF-related admissions among people with diabetes or hypertension.
-Those hypotheses should be declared before fitting the next outcome series.
-The analysis should retain both heat and cold measures, use a limited primary
-contrast set, and preserve the full uncertainty display.
+The current patterns define two pre-declarable hypotheses: repeated hot nights
+preceding CHD-related admissions and cold days preceding HF-related admissions.
 
-For public-health practice, the immediate message is deliberately broader.
-Hong Kong's changing climate includes more nighttime heat without the
-elimination of cold. Cardiovascular adaptation should therefore avoid a
-heat-only narrative. This report does not quantify preventable admissions, but
-it identifies the evidence needed before burden estimates or disease-specific
-recommendations can be defended.
+For practice, the message is broader: Hong Kong faces rising nighttime heat
+while cold persists. This report neither quantifies preventable admissions nor
+justifies disease-specific thresholds.
 
 # 6. Conclusion
 
@@ -445,10 +419,3 @@ offset and Newey–West lag-6 confidence intervals.**
 | HF | Cold days / 5 days | 1.073 (1.006–1.144) | 0.192 |
 | HF | Very hot days / 5 days | 0.995 (0.963–1.028) | 0.900 |
 
-# Appendix B. Submission interpretation
-
-This report is an accessible research essay for the Laidlaw Stage 3
-submission. It presents current CHD/HF results and supersedes the earlier
-literature-and-methods essay as the submission-facing research report. The
-journal manuscript and technical supplement contain fuller diagnostics. The
-separate HKU report form requires supervisor completion and endorsement.

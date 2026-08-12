@@ -29,6 +29,7 @@
 
 ## Current deliverables
 
+- [`2026-08-12_laidlaw_publish_pattern.md`](2026-08-12_laidlaw_publish_pattern.md) — Stage 3 submission sequence, exact file boundary, refusal list and Bob-only gates.
 - [`reports/bishai_integrated_report/integrated_project_report.pdf`](../reports/bishai_integrated_report/integrated_project_report.pdf) — supervisor decision packet.
 - [`manuscript/chd_hf_thermal_associations_2013_2023.pdf`](../manuscript/chd_hf_thermal_associations_2013_2023.pdf) — journal-facing exploratory manuscript.
 - [`manuscript/chd_hf_supplement.pdf`](../manuscript/chd_hf_supplement.pdf) — complete supplement and methods-feasibility audit.
@@ -37,7 +38,7 @@
 - [`manuscript/methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md) — Bob’s paste-ready non-weather Methods due 5 August.
 - [`manuscript/introduction_revision_notes.md`](../manuscript/introduction_revision_notes.md) — comment-response process and tightened Introduction draft.
 - [`analysis_plan/hogan_aug2_ack_email.md`](../analysis_plan/hogan_aug2_ack_email.md) — short acknowledgement of the live file and ownership split.
-- [`2026-07-23_stage3_essay_publication_register.md`](2026-07-23_stage3_essay_publication_register.md) — canonical CNS-calibre Stage 3 literature-and-methods essay; no stroke results claimed.
+- [`2026-07-23_stage3_essay_publication_register.md`](2026-07-23_stage3_essay_publication_register.md) — historical July literature-and-methods source; superseded by the current CHD/HF Stage 3 report and not for submission.
 
 ## Laidlaw website blogs
 
@@ -83,6 +84,6 @@
 
 ## Writing canon
 
-- [`2026-07-23_stage3_essay_publication_register.md`](2026-07-23_stage3_essay_publication_register.md) — Stage 3 essay elevated to CNS-calibre publication register.
+- [`2026-07-23_stage3_essay_publication_register.md`](2026-07-23_stage3_essay_publication_register.md) — historical July literature-and-methods source; superseded by the current CHD/HF Stage 3 report and not for submission.
 - [`analysis_plan/writing_standards_hogan.md`](../analysis_plan/writing_standards_hogan.md) — spare academic voice and collaborator-credit rules.
 - [`.cursor/skills/cns-writing/SKILL.md`](../.cursor/skills/cns-writing/SKILL.md) — re-engageable CNS-writing checklist.

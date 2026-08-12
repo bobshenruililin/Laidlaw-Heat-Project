@@ -103,6 +103,12 @@ only two attachments were present:
 Stroke was not delivered and cannot be analysed or described as a result.
 Roro asked Bob to share the completed temperature panel.
 
+### 12 August: Hogan’s two asks
+
+Hogan thanked Roro and asked Bob, by 12 August, where Methods writing stood, and whether Bob would send Roro the temperature panel or Hogan should send it. That is the round to answer. A later programme-report note to Professor Bishai is a different message.
+
+Working culture of the thread: [`correspondence_working_culture.md`](correspondence_working_culture.md). Message ledger: [`correspondence_ledger.yml`](correspondence_ledger.yml).
+
 ## Binding scientific rules
 
 1. Current CHD/HF outcomes are first hospitalisations after first diagnosis

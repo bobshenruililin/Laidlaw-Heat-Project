@@ -4,6 +4,14 @@
 **Purpose:** keep the administrative sequence separate from the scientific
 manuscript workflow.
 
+**Output freeze (12 August 2026):** the submission report and A0 poster PDFs
+are the GPT-5.6 Sol copies. They match
+`Laidlaw_Research_Report_2026.pdf` and `Laidlaw_Stage3_A0_portrait.pdf` as
+uploaded by Bob (SHA-256 prefixes `6136e85a654502a0` and `4f7c1e408ae2d31f`).
+Do not trim, rebuild, or rewrite them for word-count optics or later honesty
+edits. Honesty wording belongs in the live collaborative manuscript, not in
+these two files.
+
 ## Required outputs
 
 | Requirement | Current artifact | Status |

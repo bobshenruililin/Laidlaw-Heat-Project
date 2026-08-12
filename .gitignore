@@ -46,6 +46,7 @@ memos/
 *email_from*
 *email_reply*
 !analysis_plan/hogan_tuesday_email_draft.md
+!analysis_plan/send_pack_2026-08-12/
 outputs/session_info_setup.txt
 
 # Rebuildable synthetic calibration internals (summaries/gates remain tracked)

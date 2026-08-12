@@ -1,5 +1,7 @@
 # Methods remainder for Bob — 5 August draft
 
+**Superseded for paste (12 August 2026).** The CHD/HF remainder that matches the delivered outcomes is [`manuscript/live_collaborative/methods_remainder_paste.md`](live_collaborative/methods_remainder_paste.md). This file is the earlier stroke-framed draft and should not be pasted literally.
+
 **Scope:** Paste these sections into the live manuscript and conform the headings to its structure. They deliberately exclude weather-data processing and operational heatwave rules, which remain in Hogan’s weather Methods. The Outcome paragraph is only a bridge to Roro’s health-data Methods.
 
 ## Study design

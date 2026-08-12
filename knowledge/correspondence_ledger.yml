@@ -1,0 +1,96 @@
+# Structured record of the team Outlook thread.
+# Privacy: no addresses, phones, or student identifiers.
+# Scientific contract: knowledge/2026-08-10_correspondence_scientific_contract.md
+# Working culture: knowledge/correspondence_working_culture.md
+
+thread_subject: "Signature required: Laidlaw Scholars Commitment Form (Due Friday, April 24)"
+scholar_name: Shen Ruililin
+thread_name_in_use: Bob
+live_file_rule: "Work in Hogan's shared manuscript; do not send versions back and forth (28 Jul 2026)."
+
+messages:
+  - date: 2026-04-21
+    from: Bob
+    to: [Bishai]
+    gist: Asked supervisor to complete the commitment-form section.
+
+  - date: 2026-07-09
+    from: Bishai
+    to: [Bob]
+    gist: Asked whether the summer research was still happening.
+
+  - date: 2026-07-10
+    from: Bob
+    to: [Bishai]
+    cc: [Roro, Hogan]
+    gist: Back in Hong Kong. Validated HKO 2013–2023 pipeline. Synthetic outcomes only to test code. Asked HA dictionary questions. Attached a first-stage research note.
+
+  - date: 2026-07-12
+    from: Bishai
+    to: [Bob]
+    cc: [Roro, Hogan, Yuchen]
+    gist: Merge monthly max/min/lag temperature to monthly AMI and stroke risk. Next write-up should have Table 1 of N, means, SDs for temperature and covariates. Get Bob onto the server. Lab-meeting invite.
+
+  - date: 2026-07-12
+    from: Roro
+    to: [Bishai]
+    cc: [Bob, Hogan]
+    gist: ICD-9; DAE included; complete admission outcomes; no ED-to-inpatient; age 65–69 and 70–74 possible; wet-ink HPC signatures; asked whether IRB needs update.
+
+  - date: 2026-07-21
+    from: Bob
+    to: [Roro]
+    cc: [Bishai, Hogan]
+    gist: Asked whether stroke admissions would be ready to merge for that week's lab meeting.
+
+  - date: 2026-07-22
+    from: Roro
+    to: [Bob]
+    cc: [Bishai, Hogan]
+    gist: Contribution plan. Monthly stroke/MI under heatwave scenarios. Bob on heatwave scenarios and regressions with Roro oversight. Flagging a hot month. Proposed Bob/Roro co-first. Asked whether Hogan still wanted a role.
+
+  - date: 2026-07-22
+    from: Hogan
+    to: [Roro]
+    cc: [Bob, Bishai]
+    gist: Noted Bob had prepared HKO files without discussion and had held back. Offered to stay as co-author. Heatwave definition via Atmos Res; count events by month; upper-tail or threshold for a hot month.
+
+  - date: 2026-07-22
+    from: Bob
+    to: [Hogan, Roro]
+    cc: [Bishai]
+    gist: Apologised for going quiet and building HKO files alone. Asked Hogan to remain co-author on weather methods.
+
+  - date: 2026-07-23
+    from: Hogan
+    to: [Bob, Roro]
+    cc: [Bishai]
+    gist: Offered to guide writing as well as climate (less flowery). Asked Bob about Tuesday/Thursday campus time.
+
+  - date: 2026-07-28
+    from: Hogan
+    to: [Bob, Roro]
+    cc: [Bishai]
+    gist: After meeting Bob — created live manuscript, commented on Introduction, wrote weather Methods. Bob to address comments and finish remaining Methods by 5 Aug. Roro to send cleaned monthly stroke data by 7 Aug and write health-data Methods. Work off the live file.
+
+  - date: 2026-07-28
+    from: Roro
+    to: [Hogan, Bob]
+    cc: [Bishai]
+    gist: Will aim for monthly stroke data by that date. No admission cause; must combine diagnosis records with inpatient data. Will draft health-data Methods.
+
+  - date: 2026-08-06
+    from: Roro
+    to: [Hogan, Bob]
+    cc: [Zhou, Bishai]
+    gist: Sent monthly counts described as AMI-related admissions including CHD, HF, and stroke. T2D/HTN cohort 2013–2023. No admission cause; first hospitalisation after first diagnosis. Thanks Dr Zhou. Asked Bob for the temperature panel. Noted other projects and split attention.
+    received_files: [CHD workbook, HF workbook]
+    not_received: [stroke workbook]
+
+  - date: 2026-08-12
+    from: Hogan
+    to: [Bob]
+    gist: Thanks Roro. Asked Bob where Methods writing stands. Asked Bob to share the temperature panel, or said Hogan could send it to Roro instead. Deadline 12 Aug so Hogan can plan.
+    open_asks:
+      - methods_status
+      - temperature_panel_by_2026-08-12

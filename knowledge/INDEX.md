@@ -19,6 +19,13 @@
 
 ## Current meeting record
 
+- [`2026-08-12_sol_stage3_outputs_lock.md`](2026-08-12_sol_stage3_outputs_lock.md) — Sol Stage 3 report + A0 poster byte-locked; later draft PRs that rewrote the report are not taken.
+- [`2026-08-12_laidlaw_publish_pattern.md`](2026-08-12_laidlaw_publish_pattern.md) — Stage 3 submit sequence; trim draft not applied.
+- [`correspondence_working_culture.md`](correspondence_working_culture.md) — how Hogan / Roro / Bishai / Shen Ruililin actually write on the Outlook thread. Principle: send what each of them would want to receive.
+- [`correspondence_ledger.yml`](correspondence_ledger.yml) — dated message record of that thread (no addresses).
+- [`2026-08-12_live_manuscript_collab.md`](2026-08-12_live_manuscript_collab.md) — Hogan 28 July skeleton → CHD/HF Methods/Intro/Results draft; weather paragraph verbatim; Roro still owns health data.
+- [`2026-08-12_existing_data_insights.md`](2026-08-12_existing_data_insights.md) — unused structure already in `outputs/tables/` (depletion, lags, influence, HM/CM, flu/NO₂); not new models.
+- [`2026-08-12_sol_carefulness_and_build_better.md`](2026-08-12_sol_carefulness_and_build_better.md) — keep Sol for claim language; read paid tables; split email vs meeting cards.
 - [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md) —
   final integrated reanalysis, source-locked weather audit, failed M|D gate,
   validated release, manuscript packet, and remaining human decisions.
@@ -34,9 +41,11 @@
 - [`manuscript/chd_hf_supplement.pdf`](../manuscript/chd_hf_supplement.pdf) — complete supplement and methods-feasibility audit.
 - [`outputs/release_chd_hf/`](../outputs/release_chd_hf/) — disclosure-minimised 29-check release.
 - [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md) — reusable YES/NO decision table and live-manuscript workflow.
-- [`manuscript/methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md) — Bob’s paste-ready non-weather Methods due 5 August.
+- [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Start at `LIVE_DOC_EDITS.md`.
+- [`analysis_plan/send_pack_2026-08-12/`](../analysis_plan/send_pack_2026-08-12/) — one reply-all on Hogan’s 12 August thread; temperature panel for Roro.
+- [`manuscript/methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md) — earlier stroke-framed remainder; superseded for paste by the live_collaborative pack.
 - [`manuscript/introduction_revision_notes.md`](../manuscript/introduction_revision_notes.md) — comment-response process and tightened Introduction draft.
-- [`analysis_plan/hogan_aug2_ack_email.md`](../analysis_plan/hogan_aug2_ack_email.md) — short acknowledgement of the live file and ownership split.
+- [`analysis_plan/hogan_aug2_ack_to_hogan.md`](../analysis_plan/hogan_aug2_ack_to_hogan.md) — short acknowledgement of the live file and ownership split.
 - [`2026-07-23_stage3_essay_publication_register.md`](2026-07-23_stage3_essay_publication_register.md) — canonical CNS-calibre Stage 3 literature-and-methods essay; no stroke results claimed.
 
 ## Laidlaw website blogs

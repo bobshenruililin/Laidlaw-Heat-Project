@@ -37,7 +37,7 @@ The canonical Stage 3 essay remains a source document, but it is not a second ma
 - Strategic YES/NO handoff: [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md)
 - Bob’s paste-ready non-weather Methods: [`manuscript/methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md)
 - Introduction process and tightened draft: [`manuscript/introduction_revision_notes.md`](../manuscript/introduction_revision_notes.md)
-- Short acknowledgement email: [`analysis_plan/hogan_aug2_ack_email.md`](../analysis_plan/hogan_aug2_ack_email.md)
+- Short acknowledgement: [`analysis_plan/hogan_aug2_ack_to_hogan.md`](../analysis_plan/hogan_aug2_ack_to_hogan.md)
 
 ## Next sequence
 

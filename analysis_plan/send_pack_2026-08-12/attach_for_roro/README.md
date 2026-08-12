@@ -12,7 +12,7 @@ Prepared 7 August 2026; dictionary expanded 12 August 2026.
 | `temperature_monthly_panel_2013_2023.csv` | Canonical HKO Headquarters monthly means and official extreme-day counts |
 | `analysis_exposures_monthly_2013_2023.csv` | Analysis-ready companion: lags, pollution, flu, COVID phase |
 
-Bob provides this pack directly so Hogan need not forward it.
+The sendable human file is `HKO_temperature_panel_2013_2023.pdf` (rebuild from `reports/latex/hko_temperature_panel_note.tex`). Do not email this README or `NOTE.md`.
 
 ---
 

@@ -4,6 +4,6 @@ Hogan may want one sentence after the 2013–2023 exposure paragraph. Do not add
 
 **Paste-ready (Discussion, after the 2013–2023 hot-night increase):**
 
-After the study window, 2024 remained a high heat-night year (50 hot nights, 52 very hot days) and still recorded 11 cold days.
+After the study window, 2024 was the warmest year on record by annual mean temperature (24.8 °C) but recorded 50 hot nights — fewer than 2021 (61) or 2023 (56) — and still 11 cold days.
 
-**Must not say:** that 2024 health counts were analysed; that heat replaced cold; that 2024 was the warmest year *in the cohort*.
+**Must not say:** that 2024 health counts were analysed; that heat replaced cold; that 2024 was the hottest year by hot-night count. Mean warmth and extreme-day counts are not interchangeable.

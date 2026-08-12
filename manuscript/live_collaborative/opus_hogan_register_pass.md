@@ -1,6 +1,6 @@
 # Hogan-register replacement pass — Abstract, Introduction, Discussion, Conclusion, Limitations
 
-**Date:** 13 August 2026. **Scope:** drop-in replacement prose for four sections of `Heat_CVD_Manuscript_live_update.md`. **Status:** proposal for the parent session to merge; this file does not modify the live draft.
+**Date:** 13 August 2026. **Scope:** drop-in replacement prose for five sections of `Heat_CVD_Manuscript_live_update.md`. **Status:** proposal for the parent session to merge; this file does not modify the live draft.
 
 **Rules observed.** The scientific contract is unchanged: monthly ecological count ratios for the first recorded hospitalisation after a first CHD or HF diagnosis in a type 2 diabetes and/or hypertension cohort, 132 months, January 2013–December 2023, admission cause not recorded, stroke not attached. Every quantitative statement below already appears in `claim_ledger.md` or in a paper named in `2026-08-13_live_intro_discussion_say_map.md`. No number is new. No citation is added; reference numbering stays 1–21. The weather Methods paragraph is not touched and does not appear in this file. Section headings match the live file so that each block can be pasted over its counterpart.
 
@@ -86,7 +86,7 @@ This study estimates the association between specified monthly thermal-exposure 
 
 ### Replacement text
 
-The current data do not support a protected differential thermal claim for CHD relative to HF. Under continuity Newey–West lag-6 reporting, CHD first-hospitalisation counts were more closely associated with official hot-night burden than with mean temperature or cold days, and HF counts were more closely associated with cold-day burden than with hot nights. Both patterns sit inside a twelve-contrast family in which every *q*-value exceeds 0.19. The panel is therefore reported complete, and no contrast is promoted to a primary result.
+The current data do not support a protected differential thermal claim for CHD relative to HF. Under continuity Newey–West lag-6 reporting, CHD first-hospitalisation counts were more closely associated with official hot-night burden than with mean temperature or cold days, and HF counts were more closely associated with cold-day burden than with hot nights. Both patterns sit inside a twelve-contrast family in which every *q*-value exceeds 0.19. The complete panel is therefore reported, and no contrast is promoted to a primary result.
 
 The HF cold-day association is the more coherent of the two residual signals. It is concordant across all four standard-error constructions. It survives exclusion of the most influential pandemic month. It is not produced by entering correlated heat metrics jointly. It nevertheless remains unprotected by its *q*-value. Because official cold days fall almost entirely in December–February, the association is identified from differences between winters rather than from a summer-versus-winter contrast.
 
@@ -117,7 +117,7 @@ A protected primary claim would have required a predeclared confirmatory contras
 - [x] Mortality attributable fractions and modelled excess deaths are named as non-rescalable in the same paragraph that cites them.
 - [x] No mechanism is asserted. Sleep, blood pressure, and personal exposure are named once, as unmeasured.
 - [x] The archive influenza coefficient is reported with an explicit statement that it does not adjust Table 2.
-- [x] Numbers traced: 0.19, 141/145 (stated as a concentration, not renumbered here), 1.000253–1.043860, 0.508, 121 months, 1.673 (1.249–2.243).
+- [x] Numbers traced: 0.19, the December–February concentration (stated here without the 141/145 count, which sits in Results and the Abstract), 1.000253–1.043860, 0.508, 121 months, 1.673 (1.249–2.243).
 - [x] No draft markers, no gate language, no nicknames, no "it is important to note," no "remarkably."
 - [x] Null and discordant results are stated in the first and third paragraphs rather than deferred to limitations.
 - [x] No causal verb: "associated," "consistent with," and "identified from" carry the interpretation.
@@ -142,7 +142,7 @@ Between 2013 and 2023, hot nights in Hong Kong increased while cold days persist
 - [x] Every claim in the conclusion appears earlier in Results or Discussion.
 - [x] No new number, no new citation.
 - [x] No causal language and no proof language in either direction.
-- [x] The estimand qualifier ("first hospitalisations," "count ratios" by implication of the preceding text) is preserved.
+- [x] The outcome is named as first hospitalisations, and no sentence upgrades the association to an effect on cause-coded admission.
 - [x] No self-congratulation, no ceremony, no forward-looking programme statement beyond the data requirement.
 
 ---
@@ -151,9 +151,9 @@ Between 2013 and 2023, hot nights in Hong Kong increased while cold days persist
 
 ### Replacement text
 
-**Strengths.** The twelve-contrast panel is reported in full rather than filtered to its largest estimates. Uncertainty is shown as an explicit four-construction ladder rather than as a single interval. Extreme-day exposures use published official thresholds. Identification displays show where cold-day variation and first-event decline come from. The daily-recovery analysis is reported as a refusal rather than as a coefficient.
+**Strengths.** The twelve-contrast panel is reported in full rather than filtered to its largest estimates. Uncertainty is shown as an explicit four-construction ladder rather than as a single interval. Extreme-day exposures use published official thresholds. Identification displays show the sources of cold-day variation and of the first-event decline. The daily-recovery analysis is reported as a refusal rather than as a coefficient.
 
-**Limitations.** Admission cause was not recorded, so an event is a first hospitalisation after a first diagnosis and not a cardiac-caused admission. Inpatient-only semantics are inferred from the delivered column labels and are not yet confirmed. Monthly counts of cohort members still at risk of a first event were unavailable, so the estimates are count ratios rather than incidence-rate ratios [14]. The design is ecological and monthly, so individual-level and daily-triggering interpretations are not identified [14]. Age, sex, and disease-subtype strata were not delivered. Residual serial correlation remains material for CHD, with lag-1 Pearson autocorrelation of 0.508 in the hot-night model. Official cold days are concentrated in December–February, so the HF cold-day estimate rests on differences between winters. Official hot-night counts are not hourly nighttime excess heat [17]. Reference rules for monthly hot-tail and cold-tail indicators are not yet fixed, and no such indicator was used as a confirmatory exposure. Pollution, humidity, and influenza confounding is unresolved in the continuity panel. A stroke series was named in correspondence but was not delivered, and no stroke result is reported. External dissemination of the governed aggregates requires confirmation from the outcome and supervising investigators.
+**Limitations.** Admission cause was not recorded, so an event is a first hospitalisation after a first diagnosis and not a cardiac-caused admission. Inpatient-only semantics are inferred from the delivered column labels and are not yet confirmed. Monthly counts of cohort members still at risk of a first event were unavailable, so the estimates are count ratios rather than incidence-rate ratios [14]. The design is ecological and monthly, so individual-level and daily-triggering interpretations are not identified [14]. Age, sex, and disease-subtype strata were not delivered. Residual serial correlation remains material for CHD, with lag-1 Pearson autocorrelation of 0.508 in the hot-night model. Official cold days are concentrated in December–February, so the HF cold-day estimate rests on differences between winters. Official hot-night counts are not hourly nighttime excess heat [17]. Reference rules for monthly hot-tail and cold-tail indicators are not yet fixed, and no such indicator was used as a confirmatory exposure. Confounding by pollution, humidity, and influenza is unresolved in the continuity panel. A stroke series was named in correspondence but was not delivered, and no stroke result is reported. External dissemination of the governed aggregates requires confirmation from the outcome and supervising investigators.
 
 ### What changed and why
 
@@ -179,5 +179,5 @@ Between 2013 and 2023, hot nights in Hong Kong increased while cold days persist
 
 - These five blocks replace the Abstract, Introduction, Discussion, Conclusion, and Strengths and limitations sections of `Heat_CVD_Manuscript_live_update.md`. Results, Methods, Tables 1–3, Figures 1–3, and the weather paragraph are unchanged and are not reproduced here.
 - Reference numbering is unchanged. No citation is added, so `LIVE_DOC_EDITS.md` step 10 does not change.
-- Three cross-section consistency points to preserve if the blocks are merged selectively: the NW3 unrounded bounds appear in Results and in Discussion paragraph 3; the 141/145 concentration appears in Results, Abstract, Discussion paragraph 2, and Limitations; and 0.508 appears in Results, Abstract, Discussion paragraph 3, and Limitations. Each is a deliberate repetition of an identification fact, not redundancy.
+- Three cross-section consistency points to preserve if the blocks are merged selectively. The NW3 unrounded bounds appear in Results and in Discussion paragraph 3. The December–February cold-day concentration is counted (141 of 145) in Results and the Abstract and is stated without the count in Discussion paragraph 2 and Limitations. The value 0.508 appears in Results, the Abstract, Discussion paragraph 3, and Limitations. Each repetition carries an identification fact to the section that needs it.
 - If the parent prefers Hogan's comment 9 read strictly as a single closing statement, delete the final sentence of the Introduction. The objective sentence stands alone without it.

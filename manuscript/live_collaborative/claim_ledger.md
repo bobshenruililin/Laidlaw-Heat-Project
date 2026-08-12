@@ -11,7 +11,7 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | 2020 trough | CHD 10,237; HF 1,964 | same |
 | C&SD 35+ rise 2013→2023 | 17% (5,188,660 / 4,430,186) | same `mean_population` on CHD rows |
 | Seasonal means | CHD Jan 1,386 / Sep 1,097; HF Jan 287 / Sep 196 | `outputs/tables/cvd_descriptive_seasonality_by_month.csv` (rounded) |
-| 2021 hot nights highest in-window | 61; HKO Year’s Weather 2021 record table | REAL yearbook https://www.hko.gov.hk/en/wxinfo/pastwx/2021/ywx2021.htm |
+| 2013 hot nights vs 1981–2010 normal | 10; about seven days below normal | REAL HKO Year’s Weather 2013 |
 | Cold days in DJF | 141 of 145 (Dec 40, Jan 54, Feb 47; Mar 4) | `outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv` |
 | EPD general-station means | NO₂ 53.7→32.1; PM2.5 30.8→14.6; O₃ 42.6→58.3 | `outputs/tables/pollution_annual_means_general_2013_2023.csv` |
 | Table 2 twelve contrasts | as displayed | `outputs/release_chd_hf/tables/table2_core_models.csv` |

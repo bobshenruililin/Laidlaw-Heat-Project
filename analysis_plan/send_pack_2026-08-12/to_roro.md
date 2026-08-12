@@ -1,3 +1,3 @@
 # Superseded — do not send
 
-Use [`reply_on_thread.md`](reply_on_thread.md). Send Roro the temperature CSV and `attach_for_roro/NOTE.md` on that same message. Do not add person-time, age-band, or stroke-extract asks in this round.
+Use [`reply_on_thread.md`](reply_on_thread.md). Send the temperature CSV and `HKO_temperature_panel_2013_2023.pdf` on that same message.

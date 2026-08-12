@@ -21,7 +21,7 @@
 
 - [`2026-08-12_sol_stage3_outputs_lock.md`](2026-08-12_sol_stage3_outputs_lock.md) — Sol Stage 3 report + A0 poster byte-locked; later draft PRs that rewrote the report are not taken.
 - [`2026-08-12_laidlaw_publish_pattern.md`](2026-08-12_laidlaw_publish_pattern.md) — Stage 3 submit sequence; trim draft not applied.
-- [`correspondence_working_culture.md`](correspondence_working_culture.md) — how Hogan / Roro / Bishai / Shen Ruililin actually write on the Outlook thread.
+- [`correspondence_working_culture.md`](correspondence_working_culture.md) — how Hogan / Roro / Bishai / Shen Ruililin actually write on the Outlook thread. Principle: send what each of them would want to receive.
 - [`correspondence_ledger.yml`](correspondence_ledger.yml) — dated message record of that thread (no addresses).
 - [`2026-08-12_live_manuscript_collab.md`](2026-08-12_live_manuscript_collab.md) — Hogan 28 July skeleton → CHD/HF Methods/Intro/Results draft; weather paragraph verbatim; Roro still owns health data.
 - [`2026-08-12_existing_data_insights.md`](2026-08-12_existing_data_insights.md) — unused structure already in `outputs/tables/` (depletion, lags, influence, HM/CM, flu/NO₂); not new models.

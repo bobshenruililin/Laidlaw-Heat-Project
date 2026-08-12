@@ -33,4 +33,4 @@ Thresholds follow HKO climatological conventions. Monthly counts are the project
 
 Of 145 official cold days, 141 fell in December–February (December 40, January 54, February 47; March 4).
 
-Please do not append health counts to this file if you circulate it.
+The sendable form of this note is `HKO_temperature_panel_2013_2023.pdf`. Do not email the markdown.

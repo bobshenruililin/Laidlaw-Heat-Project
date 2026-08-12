@@ -1,6 +1,6 @@
 # Draft to Roro — health-data Methods and remaining monthly asks
 
-**Superseded for sending.** Use [`send_pack_2026-08-12/reply_on_thread.md`](send_pack_2026-08-12/reply_on_thread.md) and attach `send_pack_2026-08-12/attach_for_roro/` (CSV + `NOTE.md` only).
+**Superseded for sending.** Use [`send_pack_2026-08-12/reply_on_thread.md`](send_pack_2026-08-12/reply_on_thread.md) and attach the temperature CSV plus `HKO_temperature_panel_2013_2023.pdf`.
 
 **Send from Bob. One short message. No daily-data ask. Do not dump the twelve-contrast table.**
 

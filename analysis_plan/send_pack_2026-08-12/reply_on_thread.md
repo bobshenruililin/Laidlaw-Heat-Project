@@ -17,7 +17,7 @@ When you have a moment, I would be grateful if you would look at the Methods rem
 
 Dear Roro,
 
-Thank you again for the monthly CHD and HF files, and to Dr Zhou for the first-diagnosis work. The temperature panel is attached — HKO Headquarters monthly means and official extreme-day counts, with a short note on the columns. Please do not add HA columns if you pass the file on.
+Thank you again for the monthly CHD and HF files, and to Dr Zhou for the first-diagnosis work. The temperature panel is attached as a CSV, with a short PDF note on the columns and a Table 1 of the climate series. Please do not add HA columns if you pass the file on.
 
 I could open the CHD and HF workbooks. Stroke was named in your 6 August note; I do not yet have that series, so the live file is written to CHD and HF for now. Whenever you have a draft of the health-data Methods, I will fit it in.
 

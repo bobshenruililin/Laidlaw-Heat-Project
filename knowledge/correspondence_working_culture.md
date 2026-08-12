@@ -30,4 +30,8 @@ Do not attach a parallel Word draft of the live file. Do not put programme-repor
 
 ## What “show work” means here
 
-Show the thing they asked for, and say what is already in the live file. A public HKO figure is fair. A coefficient table is not, until someone asks.
+Show the thing they asked for, in a form they can open. A public HKO PDF is fair. A markdown file is not. A coefficient table is not, until someone asks.
+
+## Principle
+
+Do something each person on the thread would actually want to receive. Roro wants a clean joinable climate file and a note he does not have to reverse-engineer. Hogan wants the panel off his plate and Methods in the live file, not a parallel manuscript. Professor Bishai wants to see that the work is moving, including a Table 1 of temperature. Dr Zhou wants the first-diagnosis work acknowledged. Nobody wants a decision list, a programme-admin ask, or a `.md` attachment.

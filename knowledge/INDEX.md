@@ -24,6 +24,7 @@
   validated release, manuscript packet, and remaining human decisions.
 - [`2026-08-02_hogan_live_manuscript.md`](2026-08-02_hogan_live_manuscript.md) — live-file authority, 5/7 August ownership, review sequence, manuscript boundaries and unchanged scientific gates.
 - [`2026-08-07_ha_chd_hf_analysis.md`](2026-08-07_ha_chd_hf_analysis.md) — REAL CHD/HF panel after Roro delivery; stroke missing; Gate 3 open.
+- [`2026-08-12_hogan_roro_handoff.md`](2026-08-12_hogan_roro_handoff.md) — Hogan Methods status reply + Roro temperature share (Sol-vetted; cards limited).
 - [`2026-08-05_lsn_research_summary.md`](2026-08-05_lsn_research_summary.md) — Laidlaw Scholar Network research-project summary + interactive exposure microsite.
 - [`2026-07-28_hogan_tuesday_prep.md`](2026-07-28_hogan_tuesday_prep.md) — Hogan meeting context, Jasmine/Roro spine, HM/CM starters, relationship repair, and decisions to lock.
 

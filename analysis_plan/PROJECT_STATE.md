@@ -154,9 +154,10 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 2. **Team Gate 3 freeze** using `reports/gate3_decision_packet_2026-08-07.md`
 3. **Hogan weather lock** for HM23 reference period (provisional flags only today)
 4. Confirm ICD/inpatient inclusion lists; ideally T2D/HTN cohort denominators
-5. **Bob live-file sync:** fold CHD/HF estimand + Methods into Hogan’s live manuscript without overwriting weather Methods
+5. **Bob live-file sync:** fold CHD/HF estimand + Methods into Hogan’s live manuscript without overwriting weather Methods — paste pack ready in `manuscript/methods_live_paste_chd_hf_aug12.md`; send-ready Hogan+Roro email in `analysis_plan/hogan_aug12_methods_and_temp_email.md`
 6. Jasmine full PDF; Roro revised mortality manuscript diff
 7. PI governance confirmation for current aggregate use
+8. **Temperature panel for Roro:** documented share at `outputs/share_for_roro/` (Bob provides; Hogan need not forward)
 
 ### Done remotely (do not re-do without new evidence)
 - Pathway panel plumbing + HM/CM catalogue (50/48) + starters

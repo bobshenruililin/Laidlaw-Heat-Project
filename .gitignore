@@ -46,6 +46,8 @@ memos/
 *email_from*
 *email_reply*
 !analysis_plan/hogan_tuesday_email_draft.md
+!analysis_plan/hogan_aug12_methods_and_temp_email.md
+!analysis_plan/roro_aug7_ack_to_roro.md
 outputs/session_info_setup.txt
 
 # Rebuildable synthetic calibration internals (summaries/gates remain tracked)

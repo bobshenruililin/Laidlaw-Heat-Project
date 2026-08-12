@@ -169,12 +169,12 @@ summary_path <- file.path(
   root, "outputs", "release_chd_hf", "tables", "table1_outcome_summary.csv"
 )
 population_path <- file.path(
-  root, "outputs", "tables", "population_midyear_by_age_group.csv"
+  root, "data_processed", "population_monthly_age_sex_2013_2023.csv"
 )
 
 annual <- readr::read_csv(annual_path, show_col_types = FALSE)
 outcome_summary <- readr::read_csv(summary_path, show_col_types = FALSE)
-population_age <- readr::read_csv(population_path, show_col_types = FALSE)
+population_monthly <- readr::read_csv(population_path, show_col_types = FALSE)
 
 validate_required_columns(
   annual,
@@ -187,16 +187,18 @@ validate_required_columns(
   "outcome summary"
 )
 validate_required_columns(
-  population_age,
-  c("year", "age_group", "population"),
-  "population by age group"
+  population_monthly,
+  c("month_id", "year", "population", "data_status"),
+  "monthly population by age and sex"
 )
 stopifnot(
   nrow(annual) == 22L,
   all(annual$data_status == "HA_APPROVED_AGGREGATE"),
   all(annual$n_months == 12L),
   all(outcome_summary$data_status == "HA_APPROVED_AGGREGATE"),
-  all(outcome_summary$n_months == 132L)
+  all(outcome_summary$n_months == 132L),
+  all(population_monthly$data_status == "CSD_IMPORTED"),
+  dplyr::n_distinct(population_monthly$month_id) == 132L
 )
 
 annual_sum_check <- annual |>
@@ -209,9 +211,11 @@ annual_sum_check <- annual |>
   )
 stopifnot(all(annual_sum_check$total_events == annual_sum_check$released_total_events))
 
-population_annual <- population_age |>
+population_annual <- population_monthly |>
+  dplyr::group_by(year, month_id) |>
+  dplyr::summarise(monthly_population = sum(population), .groups = "drop") |>
   dplyr::group_by(year) |>
-  dplyr::summarise(value = sum(population), .groups = "drop")
+  dplyr::summarise(value = mean(monthly_population), .groups = "drop")
 population_check <- annual |>
   dplyr::select(year, mean_population) |>
   dplyr::distinct() |>
@@ -488,7 +492,7 @@ readme_lines <- c(
     "- **What it shows:** CHD annual first-hospitalisation totals changed from 23,830 to 12,323 (%.0f%%), and HF from 4,336 to 2,296 (%.0f%%), while the public population aged 35+ rose by %.0f%%.",
     chd_change, hf_change, pop_change
   ),
-  "- **Sources:** `outputs/tables/cvd_descriptive_annual_totals.csv` and `outputs/release_chd_hf/tables/table1_outcome_summary.csv` (`HA_APPROVED_AGGREGATE`); `outputs/tables/population_midyear_by_age_group.csv` (`REAL`, public C&SD).",
+  "- **Sources:** `outputs/tables/cvd_descriptive_annual_totals.csv` and `outputs/release_chd_hf/tables/table1_outcome_summary.csv` (`HA_APPROVED_AGGREGATE`); `data_processed/population_monthly_age_sex_2013_2023.csv` (`REAL`, public C&SD-derived monthly denominators).",
   "- **Do not claim:** incidence, a stable T2D/HTN risk set, or that depletion and pandemic care-seeking uniquely explain the decline. Incidence requires still-at-risk cohort person-time.",
   "",
   "## Figure C — residual autocorrelation",

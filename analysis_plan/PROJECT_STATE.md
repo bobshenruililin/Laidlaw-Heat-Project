@@ -115,6 +115,12 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Working set: [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) (`LIVE_DOC_EDITS.md`, `Heat_CVD_Manuscript_20260813_collab_draft.docx`). Night memo: [`2026-08-13_live_doc_night_explore.md`](../knowledge/2026-08-13_live_doc_night_explore.md). Three surfaces: [`2026-08-13_three_manuscript_surfaces.md`](../knowledge/2026-08-13_three_manuscript_surfaces.md).
 - Do not email the Word copy. Paste into Hogan’s shared file. Laidlaw Stage 3 PDF and A0 poster remain byte-locked.
 
+### Thursday 13 August — research team (Kimi / Fable / Opus / Sol)
+
+- Charter: [`knowledge/2026-08-13_research_team_charter.md`](../knowledge/2026-08-13_research_team_charter.md).
+- Sol (programme): keep Stage 3 PDF and A0 poster frozen. Living routing index: [`reports/laidlaw_stage3/ARTEFACT_MAP.md`](../reports/laidlaw_stage3/ARTEFACT_MAP.md). Memo: [`2026-08-13_sol_laidlaw_deliverable_system.md`](../knowledge/2026-08-13_sol_laidlaw_deliverable_system.md). LSN 5 August stroke frame is stale; do not post unchanged.
+- PI public-data check: HKO Year’s Weather 2013/2019/2021/2023 match the extremes table; EPD GIA general-station NO₂/PM2.5/O₃ match in rounded magnitude. 2024 (50 hot nights, 52 very hot days, 11 cold days) is post-sample only. [`2026-08-13_pi_hko_yearbook_check.md`](../knowledge/2026-08-13_pi_hko_yearbook_check.md).
+
 ### Wednesday 12 August — Hogan tonight + Bishai Stage 3
 
 - Hogan meeting: listen first; lock weather reference period / `CM05` / live-file paste permission; do not dump coefficients. Sheet: [`hogan_tonight_2026-08-12.md`](hogan_tonight_2026-08-12.md).

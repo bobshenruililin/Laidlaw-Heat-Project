@@ -69,7 +69,7 @@ The definition catalogue contains `HM01–HM50` and `CM01–CM48`. Core starters
 3. **Gate 3:** lead recommendation is explicit no confirmatory primary
    (Option A); freeze with the team only.
 4. **Hogan weather lock:** provisional HM/CM reference period is study-window only. Run [Playbook 01](../analysis_plan/playbooks/01_hogan_definition_lock.md) when locked.
-5. **Live manuscript:** CHD/HF Methods remainder, Introduction comment replies, and first Results/Discussion are in [`manuscript/live_collaborative/`](../manuscript/live_collaborative/). Shen Ruililin pastes from [`LIVE_DOC_EDITS.md`](../manuscript/live_collaborative/LIVE_DOC_EDITS.md) into Hogan’s shared file (do not email a parallel Word copy). 12 August thread reply: [`send_pack_2026-08-12/reply_on_thread.md`](../analysis_plan/send_pack_2026-08-12/reply_on_thread.md). Roro still owns health-data expansion. [Playbook 04](../analysis_plan/playbooks/04_final_writeup.md).
+5. **Live manuscript:** 13 August end-game paste pack is in [`manuscript/live_collaborative/`](../manuscript/live_collaborative/). Shen Ruililin pastes from [`LIVE_DOC_EDITS.md`](../manuscript/live_collaborative/LIVE_DOC_EDITS.md) into Hogan’s shared file (do not email a parallel Word copy). Weather paragraph remains Hogan’s. Roro still owns health-data expansion. Three surfaces: [`2026-08-13_three_manuscript_surfaces.md`](2026-08-13_three_manuscript_surfaces.md). 12 August thread reply: [`send_pack_2026-08-12/reply_on_thread.md`](../analysis_plan/send_pack_2026-08-12/reply_on_thread.md). [Playbook 04](../analysis_plan/playbooks/04_final_writeup.md).
 6. **Submission gates:** written dissemination authority, PI IRB decision,
    ICD/inpatient semantics, authorship/order, and cohort risk-set decision.
 7. **Final packet:** integrated report in
@@ -83,4 +83,4 @@ For shocks, use [Playbook 99](../analysis_plan/playbooks/99_emergencies.md). The
 
 For public Laidlaw website writing, use `/laidlaw-blog` or `/blog-from-deck`, the separate MIT Admissions-style canon in [`2026-07-26_laidlaw_blog_canon.md`](2026-07-26_laidlaw_blog_canon.md), and drafts in [`reports/blog/`](../reports/blog/). A deck can trigger a draft offer; Bob edits and publishes.
 
-For the **Laidlaw Scholar Network (LSN)** research-project summary and interactive companion, use [`reports/lsn/research_project_summary.md`](../reports/lsn/research_project_summary.md) and [`docs/lsn/`](../docs/lsn/). Exposure-only; Bob edits before posting.
+For the **Laidlaw Scholar Network (LSN)** research-project summary and interactive companion, use [`reports/lsn/research_project_summary.md`](../reports/lsn/research_project_summary.md) and [`docs/lsn/`](../docs/lsn/). Exposure-only public page; CHD/HF first-event framing as of 13 August; Bob edits before posting.

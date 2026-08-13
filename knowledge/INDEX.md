@@ -19,7 +19,20 @@
 
 ## Current meeting record
 
-- [`2026-08-12_sol_stage3_outputs_lock.md`](2026-08-12_sol_stage3_outputs_lock.md) — Sol Stage 3 report + A0 poster byte-locked; later draft PRs that rewrote the report are not taken.
+- [`../analysis_plan/next_three_weeks_prospect_2026-08-13.md`](../analysis_plan/next_three_weeks_prospect_2026-08-13.md) — compute vs human gates after the CHD/HF arrival; blog/LSN/deck tracks; idle-week rules.
+- [`2026-08-13_research_team_synthesis.md`](2026-08-13_research_team_synthesis.md) — Kimi/Fable/Opus/Sol wave: live-paper numbers verified; Fable honesty pass merged; Stage 3 PDFs stay frozen.
+- [`../reports/pathway_execution_audit_2026-08-13.md`](../reports/pathway_execution_audit_2026-08-13.md) — P01–P18 and first-wave HM/CM: what ran, what the file cannot run, diminishing returns.
+- [`../reports/hogan_identification_one_pager_2026-08-13.md`](../reports/hogan_identification_one_pager_2026-08-13.md) — meeting card: DJF identification, pre-2020 CHD null, NW ladder direction.
+- [`../reports/blog/week_of_data_the_file_that_arrived.md`](../reports/blog/week_of_data_the_file_that_arrived.md) — Laidlaw blog draft; Bob’s privacy pass pending.
+- [`../reports/researcher_cycle_2026-08-13.md`](../reports/researcher_cycle_2026-08-13.md) — cycle 1 evaluate: sustainable if the hole is in the record, not in unrun encodings.
+- [`2026-08-13_fable_live_doc_critique.md`](2026-08-13_fable_live_doc_critique.md) — senior critique: Newey–West rationale was backwards for CHD hot nights; CHD pre-2020 interval was hidden.
+- [`2026-08-13_kimi_web_weather_lit_harvest.md`](2026-08-13_kimi_web_weather_lit_harvest.md) — public HKO/EPD/literature harvest; no live-paper number changes.
+- [`2026-08-13_sol_laidlaw_deliverable_system.md`](2026-08-13_sol_laidlaw_deliverable_system.md) — keep Stage 3 PDF/poster frozen; live Hogan file is journal authority; LSN/blogs are drafts.
+- [`../reports/laidlaw_stage3/ARTEFACT_MAP.md`](../reports/laidlaw_stage3/ARTEFACT_MAP.md) — pre-edit routing checklist for programme vs journal vs public surfaces.
+- [`2026-08-13_pi_hko_yearbook_check.md`](2026-08-13_pi_hko_yearbook_check.md) — HKO Year’s Weather 2013/2019/2021/2023 match our extremes table; 2024 is post-sample exposure only.
+- [`2026-08-13_live_doc_night_explore.md`](2026-08-13_live_doc_night_explore.md) — overnight Keep/Park/Drop for the Hogan live paste pack; identification figures; Guo and Goggins 2017 upgrades.
+- [`2026-08-13_live_intro_discussion_say_map.md`](2026-08-13_live_intro_discussion_say_map.md) — what the live Introduction/Discussion may say vs must not say.
+- [`2026-08-13_three_manuscript_surfaces.md`](2026-08-13_three_manuscript_surfaces.md) — Laidlaw report vs repo journal draft vs Hogan live paste pack; do not mix.
 - [`2026-08-12_laidlaw_publish_pattern.md`](2026-08-12_laidlaw_publish_pattern.md) — Stage 3 submit sequence; trim draft not applied.
 - [`correspondence_working_culture.md`](correspondence_working_culture.md) — how Hogan / Roro / Bishai / Shen Ruililin actually write on the Outlook thread. Principle: send what each of them would want to receive.
 - [`correspondence_ledger.yml`](correspondence_ledger.yml) — dated message record of that thread (no addresses).

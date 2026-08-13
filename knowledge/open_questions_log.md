@@ -19,6 +19,7 @@ Update a row by recording the decision, date and evidence link. Do not erase the
 | W07 | Is HKO Headquarters the primary exposure station, and what spatial sensitivity is feasible? | Headquarters is the working choice; multi-station sensitivity remains proposed | Hogan | Written station choice and any fixed sensitivity specification |
 | W08 | Does Hogan still endorse the “evolutionary comparison” framing after Goggins? | It is the current intellectual prompt, not a settled claim | Hogan | Tuesday wording on whether to retain, revise or drop “evolutionary” |
 | W09 | Should `CM05` remain in the first-wave panel? | Proposed as an any-day `Tmin ≤10°C` severe-cold sensitivity only | Hogan / Bishai | Written role; it must not be called a biological or genetic threshold |
+| W10 | Should the live paper’s night-heat exposure remain official monthly hot-night counts, given Guo et al. 2024 found `HNday28` null for daily emergency hospitalisation after mean-temperature adjustment while hourly `HNe` was associated? | Live draft keeps official counts and states they are coarser than intensity. No `HNe` reconstruction without a weather rewrite. | Hogan | Written encoding choice in the live weather Methods; do not substitute hourly excess heat in Bob’s processing paragraph |
 
 ## Outcome data and governance
 

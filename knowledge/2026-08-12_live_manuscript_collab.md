@@ -1,5 +1,7 @@
 # Live collaborative manuscript — 12 August 2026
 
+**Superseded for paste:** 13 August end-game pack in [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) (`Heat_CVD_Manuscript_20260813_collab_draft.docx`, [`LIVE_DOC_EDITS.md`](../manuscript/live_collaborative/LIVE_DOC_EDITS.md)). Night memo: [`2026-08-13_live_doc_night_explore.md`](2026-08-13_live_doc_night_explore.md).
+
 ## What happened
 
 Bob uploaded Hogan’s 28 July live skeleton (`Heat_CVD_Manuscript_20260728.docx`). The file still had AMI / ischaemic / haemorrhagic stroke among residents aged 35+ in the Introduction, Hogan’s weather Methods as the only real Methods text, and “work in progress” for health data, statistics, Results, Discussion, and Conclusion.
@@ -11,7 +13,7 @@ This session finished Methods for the **delivered** CHD/HF first-hospitalisation
 The shared live file remains manuscript authority. Repository draft:
 
 - `manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md`
-- `manuscript/live_collaborative/Heat_CVD_Manuscript_20260812_collab_draft.docx`
+- `manuscript/live_collaborative/Heat_CVD_Manuscript_20260813_collab_draft.docx`
 
 The Stage 3 progress report is a Laidlaw programme essay, not a substitute for this collaboration. Honesty edits that later drafts proposed for the Laidlaw report were taken **here** instead (`LIVE_DOC_EDITS.md`). Send pack: `analysis_plan/send_pack_2026-08-12/`.
 

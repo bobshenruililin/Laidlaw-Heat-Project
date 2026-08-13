@@ -1,6 +1,6 @@
-# Claim ledger — live collaborative manuscript (12 August 2026)
+# Claim ledger — live collaborative manuscript (13 August 2026)
 
-Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a disclosure-minimised `HA_APPROVED_AGGREGATE` or `REAL` public table. No new models were fitted for this draft.
+Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a disclosure-minimised `HA_APPROVED_AGGREGATE` or `REAL` public table, or to a cited paper. No new health models were fitted for this draft. Identification figures reuse existing tables.
 
 | Claim | Display | Source |
 |---|---|---|
@@ -9,8 +9,9 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | CHD annual 2013 → 2023 | 23,830 → 12,323 | `outputs/tables/cvd_descriptive_annual_totals.csv` |
 | HF annual 2013 → 2023 | 4,336 → 2,296 | same |
 | 2020 trough | CHD 10,237; HF 1,964 | same |
+| C&SD 35+ rise 2013→2023 | 17% (5,188,660 / 4,430,186) | same `mean_population` on CHD rows |
 | Seasonal means | CHD Jan 1,386 / Sep 1,097; HF Jan 287 / Sep 196 | `outputs/tables/cvd_descriptive_seasonality_by_month.csv` (rounded) |
-| Hot nights / VHD / cold days | 10/17/14 (2013); 61/54/13 (2021); 56/54/14 (2023); cold days 1 in 2019 | `outputs/tables/hko_annual_extremes_2013_2023.csv` |
+| 2013 hot nights vs 1981–2010 normal | 10; about seven days below normal | REAL HKO Year’s Weather 2013 |
 | Cold days in DJF | 141 of 145 (Dec 40, Jan 54, Feb 47; Mar 4) | `outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv` |
 | EPD general-station means | NO₂ 53.7→32.1; PM2.5 30.8→14.6; O₃ 42.6→58.3 | `outputs/tables/pollution_annual_means_general_2013_2023.csv` |
 | Table 2 twelve contrasts | as displayed | `outputs/release_chd_hf/tables/table2_core_models.csv` |
@@ -27,13 +28,23 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | Trend range CHD hot nights | 1.011–1.025 | `table3_robustness_summary.csv` |
 | Trend range HF cold days | 1.043–1.113 | same |
 | HF cold pre-2020 | 1.113 (1.053–1.176) | `cvd_trend_depletion_sensitivity.csv` `pre_covid` |
+| CHD hot nights pre-2020 | 1.011 (0.991–1.032) | same `pre_covid`; interval includes 1 |
+| CHD hot nights COVID-phase | 1.013 (0.994–1.033) | same `covid_phase_adjusted`; interval includes 1 |
 | CHD hot nights lag 1 | 1.010 (0.979–1.042) | `cvd_lag_sensitivity.csv` |
 | HF cold lag 1 / lag 2 | 1.073 (1.014–1.135); 1.053 (0.985–1.127) | same |
 | Influence months | CHD 2020-02; HF cold 2022-02 | `cvd_influence_sensitivity.csv` |
 | After max Cook | CHD 1.021 (1.001–1.040); HF 1.088 (1.034–1.144) | same |
 | M\|D gates | Type I 0.048–0.150; coverage 0.840; rel. bias 32.8; false-sign 0.808 | `md_calibration_gate_summary.csv` |
 | Flu coverage | 121/132 | CHP layer; P14 n_months |
-| Archive flu CHD | 1.673 (1.249–2.243) on 121 months | `combined_pathway_panel_estimates.csv` P14; **not** continuity-adjusted |
+| Archive flu CHD | 1.673 (1.249–2.243) on 121 months | `combined_pathway_panel_estimates.csv` P14; **not** core-adjusted |
 | Software | R 4.3.3; MASS 7.3-60.0.1; sandwich 3.1.3 | session on 12 Aug 2026 |
+| Goggins 2013 AMI | 3.7% per 1 °C below ~24 °C, lags 0–13; no significant heat in three cities | Goggins et al. *Int J Cardiol* 2013;168:243–249 [1] |
+| Goggins and Chan 2017 HF | cumulative RR 2.63 (2.43–2.84) for 11 °C vs 25 °C, lags to 23 days; daily public-hospital HF admissions 2002–2011 | Goggins and Chan *Int J Cardiol* 2017;228:537–542 [21] |
+| Guo 2024 official HNday28 | excess relative risk −0.2% (−1.2% to 0.7%) lag 0–4 after mean-temperature adjustment | Guo et al. *Lancet Reg Health West Pac* 2024;51:101168 [17], Table 3 |
+| Guo 2024 extreme HNe | +3.1% (1.5–4.8%) NCNE hospitalisation, 99th pct 28.9 °C·h vs 0 | same [17] |
+| Liu 2026 excess deaths | 1,455–3,238 across four heatwave definitions | Liu et al. medRxiv 2026 [13]; complementary mortality, not our ratios |
+| Figure 1 | depletion vs 35+ population | `figures/live_identification/figure_B_first_event_depletion.png` from annual totals |
+| Figure 2 | cold-day year×month heatmap | `figures/live_identification/figure_A_cold_day_identification.png` from temperature panel |
+| Figure 3 | residual ACF | `figures/live_identification/figure_C_residual_acf.png` from pathway ACF tables |
 
-**Not claimed.** Stroke coefficients; AMI / principal-diagnosis effects; cohort incidence; daily DLNM lags; Hogan-locked HM/CM confirmatory estimates; Gate 3 freeze; CNS-journal suitability.
+**Not claimed in the paper body.** Stroke coefficients; AMI / principal-diagnosis effects; cohort incidence; daily DLNM lags; Hogan-locked HM/CM confirmatory estimates (`CM08` 1.173, `CM03` 1.122, `HM23` null, `CM05` zero months — Explore only); Gate 3 freeze; CNS-journal suitability; sleep or blood-pressure mediation; numerical equality of 2.63 with 1.073 or of 3.1% with 1.022; 2019 as a health experiment; that model-based CHD intervals are too narrow (the hot-night Newey–West ladder is narrower than the model interval); Chau/Pun 2025, EcoEnv 2025, or Tian 2016 as this paper’s citations.

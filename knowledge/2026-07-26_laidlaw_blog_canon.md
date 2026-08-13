@@ -11,10 +11,10 @@ Scientific boundaries do not change with register. Do not invent biography, priv
 
 ## Canonical first posts
 
-1. [`reports/blog/week1_recalibration.md`](../reports/blog/week1_recalibration.md) — *My Research Question Changed Its Mind*: the 17 July recalibration from AMI to an honest monthly, multi-method project.
-2. [`reports/blog/week2_definitions_and_waiting.md`](../reports/blog/week2_definitions_and_waiting.md) — *How Many Ways Can a Month Be Hot?*: definitions as recipes, Hogan/Roro teamwork, and waiting before outcome inference.
-3. [`reports/blog/week3_methods_while_waiting.md`](../reports/blog/week3_methods_while_waiting.md) — *The Results Section Was Blank*: writing Methods into a shared manuscript while Results stayed empty.
-4. [`reports/blog/week4_then_there_was_something_to_run.md`](../reports/blog/week4_then_there_was_something_to_run.md) — *Then There Was Something To Run*: CHD/HF first-event counts arrive; stroke still absent; the prepared panel can be run. No coefficients.
+1. [`reports/blog/week1_recalibration.md`](../reports/blog/week1_recalibration.md) — Week 1. *My Research Question Changed Its Mind*: the 17 July recalibration from AMI to an honest monthly, multi-method project.
+2. [`reports/blog/week2_definitions_and_waiting.md`](../reports/blog/week2_definitions_and_waiting.md) — **Week 3 (published on the Laidlaw site).** *How Many Ways Can a Month Be Hot?*: definitions as recipes, Hogan/Roro teamwork, and waiting before outcome inference. Filename is historical.
+3. [`reports/blog/week4_methods_while_waiting.md`](../reports/blog/week4_methods_while_waiting.md) — Week 4 draft. *The Results Section Was Blank*: writing Methods into a shared manuscript while Results stayed empty.
+4. [`reports/blog/week5_then_there_was_something_to_run.md`](../reports/blog/week5_then_there_was_something_to_run.md) — Week 5 draft. *Then There Was Something To Run*: CHD/HF first-event counts arrive; stroke still absent; the prepared panel can be run. No coefficients.
 
 The withdrawn inventory draft `week_of_data_the_file_that_arrived.md` is not a model. Do not restore it.
 

@@ -64,9 +64,9 @@
 
 - [`2026-07-26_laidlaw_blog_canon.md`](2026-07-26_laidlaw_blog_canon.md) — MIT Admissions-style public-writing canon and the blog/CNS register split.
 - [`2026-07-26_commands_and_blog_auto.md`](2026-07-26_commands_and_blog_auto.md) — what `/blog-from-deck` automates and what Bob must still edit and publish.
-- [`reports/blog/`](../reports/blog/) — Weeks 1–4 ready-to-edit website drafts; Bob reviews before posting.
-- [`../reports/blog/week3_methods_while_waiting.md`](../reports/blog/week3_methods_while_waiting.md) — Week 3: writing Methods into a blank Results section.
-- [`../reports/blog/week4_then_there_was_something_to_run.md`](../reports/blog/week4_then_there_was_something_to_run.md) — Week 4: CHD/HF first-event file arrives; stroke still absent.
+- [`reports/blog/`](../reports/blog/) — Weeks 1, 3 (published), 4–5 (drafts); Bob reviews before posting.
+- [`../reports/blog/week4_methods_while_waiting.md`](../reports/blog/week4_methods_while_waiting.md) — Week 4 draft: writing Methods into a blank Results section.
+- [`../reports/blog/week5_then_there_was_something_to_run.md`](../reports/blog/week5_then_there_was_something_to_run.md) — Week 5 draft: the CHD/HF file arrives; stroke still absent.
 
 ## Living project canon
 

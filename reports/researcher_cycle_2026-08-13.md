@@ -8,7 +8,7 @@
 |---|---|---|
 | `reports/pathway_execution_audit_2026-08-13.md` | Bob / next agent | No. Status of P01–P18 and HM/CM first-wave |
 | `reports/hogan_identification_one_pager_2026-08-13.md` | Hogan meeting | No. Paid-table identification |
-| `reports/blog/week3_methods_while_waiting.md` and `week4_then_there_was_something_to_run.md` | Laidlaw website (drafts) | No. Process; Bob still edits/posts |
+| `reports/blog/week4_methods_while_waiting.md` and `week5_then_there_was_something_to_run.md` | Laidlaw website (drafts) | No. Process; Bob still edits/posts |
 | `reports/lsn/research_project_summary.md` + `docs/lsn/index.html` | LSN peers (draft) | No. CHD/HF framing; still no coefficients on the public page |
 | `reports/week_of_data_progress_note_2026-08-13.md` | Lab / self | No. This week’s arc in deck-length prose |
 
@@ -16,7 +16,7 @@
 
 **Sustainable?** Yes, if each cycle has a named hole in the *record* (public surfaces still said stroke; nobody had written “22 of 25 pathways ran”). Not sustainable if the loop becomes “fit another encoding.”
 
-**Good?** The audit answers a real question Bob asked. The Week 3–4 blogs follow the Week 1–2 register instead of an inventory post. The LSN pack can no longer be posted as a stroke project by accident.
+**Good?** The audit answers a real question Bob asked. The Week 4–5 blogs follow the Week 1 / Week 3 register instead of an inventory post. The LSN pack can no longer be posted as a stroke project by accident.
 
 **Diminishing if repeated as-is:** a second blog that retells the same arrival; a second audit of the same status CSVs; a LaTeX progress deck that restates the markdown note; any new HM/CM coefficient.
 

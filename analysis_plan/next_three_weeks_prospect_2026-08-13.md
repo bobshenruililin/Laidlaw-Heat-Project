@@ -1,7 +1,7 @@
 # Next three weeks — compute vs human gates (13 August 2026)
 
 **Mode:** Decide (menu) + prospect. Not a finding. Not a Gate 3 freeze.  
-**Why now:** Roro’s CHD/HF first-event aggregates (6–7 August) were the missing piece the summer was built to wait for. Week 3–4 Laidlaw website drafts now exist in the Week 1–2 register. LSN and the Week 2 deck may still lag. Do not revive the inventory “week of data” post.
+**Why now:** Roro’s CHD/HF first-event aggregates (6–7 August) were the missing piece the summer was built to wait for. Week 4–5 Laidlaw website drafts now exist in the Week 1 / Week 3 register. Week 3 on the site is the hot-month post. LSN and the Week 2 deck may still lag. Do not revive the inventory “week of data” post.
 
 Agents may run the **agent** column without new HA rows. The **human** column cannot be role-played.
 
@@ -15,7 +15,7 @@ Say the mode out loud. Explore without write-back is tourism.
 
 | Track | Mode | Done when | Do not |
 |---|---|---|---|
-| **A. Laidlaw website blog catch-up** | Ship `/laidlaw-blog` | Weeks 3–4 drafts exist (`week3_methods_while_waiting.md`, `week4_then_there_was_something_to_run.md`); Bob’s voice/privacy pass | CNS voice; coefficients; restoring `week_of_data_the_file_that_arrived.md` |
+| **A. Laidlaw website blog catch-up** | Ship `/laidlaw-blog` | Weeks 4–5 drafts exist (`week4_methods_while_waiting.md`, `week5_then_there_was_something_to_run.md`); Bob’s voice/privacy pass | CNS voice; coefficients; numbering a new post as Week 3; restoring `week_of_data_the_file_that_arrived.md` |
 | **B. Week-of-data progress deck** | Ship (Week 2 pattern) | Deck + speaker notes; optional `/blog-from-deck` | Ten-method press release; Stage 3 PDF rebuild |
 | **C. LSN rewrite** | Ship | CHD/HF first-event framing; exposure-only companion; stable link | Posting the 5 August stroke pack |
 | **D. Hogan briefing cards** | Teach / Explore | One page: pre-2020 CHD hot-night null; NW ladder narrower than Model; official HN vs Guo intensity (W10) | New HM/CM coefficients in the live paper |
@@ -26,12 +26,12 @@ Say the mode out loud. Explore without write-back is tourism.
 
 Highest leverage if only one thing runs: **C** (LSN still must not be posted as a stroke pack). Blog drafts A are written; Bob still edits/posts. Highest leverage for the journal: **you paste** `LIVE_DOC_EDITS.md`, then **D**.
 
-## Blog arc (Weeks 1–4 drafted; Bob still edits/posts)
+## Blog arc (Weeks 1 and 3 on the site; 4–5 drafted; Bob still edits/posts 4–5)
 
 1. Week 1 — the question changed its mind (AMI out; monthly aggregates in).
-2. Week 2 — definitions are recipes; waiting is full of verbs; stroke file not here yet.
-3. Week 3 — *The Results Section Was Blank*: write Methods while Results stay empty.
-4. Week 4 — *Then There Was Something To Run*: CHD/HF first-event file; stroke still absent; run what was prepared. No coefficients.
+2. Week 3 — definitions are recipes; waiting is full of verbs; stroke file not here yet. (Published; repo file still named `week2_definitions_and_waiting.md`.)
+3. Week 4 — *The Results Section Was Blank*: write Methods while Results stay empty.
+4. Week 5 — *Then There Was Something To Run*: CHD/HF first-event file; stroke still absent; run what was prepared. No coefficients.
 5. Optional later: submitting a Laidlaw report without a confirmatory headline (exploratory panel; Gate 3 open).
 
 Canon: Bob names the moment, image, or discomfort *before* the draft. Repository notes protect facts; they do not pick the story.
@@ -44,7 +44,7 @@ Today is 13 August 2026. These are forks, not a schedule. Human gates can idle a
 
 **You.** Paste the live pack into Hogan’s file. Send the 12 August reply-all (CSV + 2-page HKO PDF only). Send or hold the Bishai Stage 3 note and the short Roro ask. Pick one blog moment if you want a post this week.
 
-**Agents.** Do not rewrite Weeks 3–4 unless Bob rejects the voice. Rewrite the LSN pack to CHD/HF. Draft a progress deck on the Week 2 pattern (identity title slide; credit Hogan/Roro/Bishai; no coefficient dump). Hogan one-pager from paid tables.
+**Agents.** Do not rewrite Weeks 4–5 unless Bob rejects the voice. Do not number a new post as Week 3. Rewrite the LSN pack to CHD/HF. Draft a progress deck on the Week 2 pattern (identity title slide; credit Hogan/Roro/Bishai; no coefficient dump). Hogan one-pager from paid tables.
 
 ### Next week (18–24 August)
 
@@ -70,7 +70,7 @@ Correct agent behaviour in an idle week: public writing, teaching, parked-litera
 
 ## Magic phrases that start a session
 
-- `Ship: revise Week 3–4 Laidlaw blogs. Done when the voice matches Weeks 1–2 and I have a privacy pass left.`
+- `Ship: revise Week 4–5 Laidlaw blogs. Done when the voice matches Weeks 1 and 3 and I have a privacy pass left.`
 - `Ship: LSN pack rewritten to CHD/HF first events, still no coefficients.`
 - `Ship: Week-of-data progress deck, Week 2 pattern.`
 - `Explore: Hogan one-pager from figure4 and the pre-2020 CHD interval. Do not paste into the live file.`

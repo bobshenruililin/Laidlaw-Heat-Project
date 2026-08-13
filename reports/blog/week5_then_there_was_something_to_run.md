@@ -1,6 +1,6 @@
 # Then There Was Something To Run
 
-Week 4 began the way Week 3 had ended: with a Results heading and nowhere to put a number.
+Week 5 began the way Week 4 had ended: with a Results heading and nowhere to put a number.
 
 Then a file arrived.
 
@@ -28,8 +28,8 @@ Getting to work, it turns out, is mostly this: matching months, refusing to fill
 
 Stroke is still a named absence. Hogan’s weather writing is still his. Roro still owns the health-data methods, including whatever this file’s columns actually mean. Professor Bishai still owns whether a complete exploratory panel is allowed to remain exploratory.
 
-My job, now that there is something to run, is not to rush a headline into the blank that Week 3 left for Results. It is to describe the counts we actually have, including the ways they fail to be the counts I expected.
+My job, now that there is something to run, is not to rush a headline into the blank that Week 4 left for Results. It is to describe the counts we actually have, including the ways they fail to be the counts I expected.
 
-Week 4 ended with less rehearsal and more work.
+Week 5 ended with less rehearsal and more work.
 
 The Results heading finally had somewhere to put a sentence. The sentence was not about stroke.

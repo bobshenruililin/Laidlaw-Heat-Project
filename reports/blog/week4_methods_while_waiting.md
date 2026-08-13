@@ -4,7 +4,7 @@ A paper looks finished long before it is.
 
 It already has headings. Introduction. Methods. Results. Discussion. The Results heading is especially confident. It sits there as if numbers were a matter of arriving at the right page.
 
-By Week 3, we had not arrived.
+By Week 4, we had not arrived.
 
 The stroke file was still somewhere else. There were no coefficients to graph, mourn, or accidentally treat as a personality. From the outside, the week looked empty. I had pictured a cancelled laboratory: the instruments waiting, me waiting, perhaps another pass through papers I already knew.
 
@@ -30,9 +30,9 @@ Around that blank I checked the parts that could be checked. The temperature mon
 
 None of that is an answer. It is a refusal to pretend that waiting is the same as running.
 
-Week 2 had already taught me that waiting is full of verbs. Week 3 added a less glamorous one: write. Write the instructions carefully enough that, when there is finally something to run, we will not have to invent the rules in the same afternoon as the numbers.
+Week 3 had already taught me that waiting is full of verbs. Week 4 added a less glamorous one: write. Write the instructions carefully enough that, when there is finally something to run, we will not have to invent the rules in the same afternoon as the numbers.
 
-Week 3 ended with a methods section that was longer than it had been, and a results section that was exactly as empty as the data.
+Week 4 ended with a methods section that was longer than it had been, and a results section that was exactly as empty as the data.
 
 The waiting was not empty.
 

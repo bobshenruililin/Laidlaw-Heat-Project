@@ -1,6 +1,6 @@
 # How Many Ways Can a Month Be Hot?
 
-At the beginning of Week 2, I thought “hot month” was ordinary English.
+At the beginning of Week 3, I thought “hot month” was ordinary English.
 
 By the end, it had become a small constitutional crisis.
 
@@ -46,7 +46,7 @@ Student writing often wants to display everything it has learned. Mine certainly
 
 Hogan has offered to help me with that writing as well as the weather work. Roro has offered guidance on the regression and outcomes. Accepting both kinds of mentorship means accepting that clarity is not the final polish applied to research. Clarity is part of how research becomes trustworthy.
 
-I began Week 2 excited by the number of clever methods we could collect. I ended it more interested in locking a small set well enough that we can run it when the aggregates arrive.
+I began Week 3 excited by the number of clever methods we could collect. I ended it more interested in locking a small set well enough that we can run it when the aggregates arrive.
 
 This is a different kind of anticipation. Less “Which definition will win?” More “Can we specify each definition so precisely that it cannot quietly change after seeing the answer?”
 

@@ -19,6 +19,7 @@
 
 ## Current meeting record
 
+- [`../analysis_plan/next_three_weeks_prospect_2026-08-13.md`](../analysis_plan/next_three_weeks_prospect_2026-08-13.md) — compute vs human gates after the CHD/HF arrival; blog/LSN/deck tracks; idle-week rules.
 - [`2026-08-13_research_team_synthesis.md`](2026-08-13_research_team_synthesis.md) — Kimi/Fable/Opus/Sol wave: live-paper numbers verified; Fable honesty pass merged; Stage 3 PDFs stay frozen.
 - [`2026-08-13_fable_live_doc_critique.md`](2026-08-13_fable_live_doc_critique.md) — senior critique: Newey–West rationale was backwards for CHD hot nights; CHD pre-2020 interval was hidden.
 - [`2026-08-13_kimi_web_weather_lit_harvest.md`](2026-08-13_kimi_web_weather_lit_harvest.md) — public HKO/EPD/literature harvest; no live-paper number changes.

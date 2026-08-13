@@ -30,9 +30,10 @@ Laidlaw site numbering (Week 3 is already up):
 - [`week2_definitions_and_waiting.md`](week2_definitions_and_waiting.md) — **Week 3 (published).** *How Many Ways Can a Month Be Hot?* Filename is from an earlier draft count; do not treat this as a Week 2 slot that still needs filling.
 - [`week4_methods_while_waiting.md`](week4_methods_while_waiting.md) — Week 4 draft. *The Results Section Was Blank*
 - [`week5_then_there_was_something_to_run.md`](week5_then_there_was_something_to_run.md) — Week 5 draft. *Then There Was Something To Run*
+- [`week6_the_file_did_not_finish.md`](week6_the_file_did_not_finish.md) — Week 6 draft. *The File Did Not Finish the Paper*
 - [`STYLE_NOTES.md`](STYLE_NOTES.md)
 
-Bob’s voice, privacy, length, and site-format pass is still required before Weeks 4–5 go on the Laidlaw site. Do not revive the rejected inventory draft (`week_of_data_the_file_that_arrived.md`).
+Bob’s voice, privacy, length, and site-format pass is still required before Weeks 4–6 go on the Laidlaw site. Do not revive the rejected inventory draft (`week_of_data_the_file_that_arrived.md`).
 
 ## Related: Laidlaw Scholar Network (LSN)
 

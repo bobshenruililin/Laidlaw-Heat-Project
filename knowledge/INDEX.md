@@ -20,6 +20,7 @@
 ## Current meeting record
 
 - [`../analysis_plan/next_three_weeks_prospect_2026-08-13.md`](../analysis_plan/next_three_weeks_prospect_2026-08-13.md) — compute vs human gates after the CHD/HF arrival; blog/LSN/deck tracks; idle-week rules.
+- [`../analysis_plan/week6_compute_menu_2026-08-13.md`](../analysis_plan/week6_compute_menu_2026-08-13.md) — Week 6 cut: what more we did, what more we can do, where compute goes.
 - [`2026-08-13_research_team_synthesis.md`](2026-08-13_research_team_synthesis.md) — Kimi/Fable/Opus/Sol wave: live-paper numbers verified; Fable honesty pass merged; Stage 3 PDFs stay frozen.
 - [`../reports/pathway_execution_audit_2026-08-13.md`](../reports/pathway_execution_audit_2026-08-13.md) — P01–P18 and first-wave HM/CM: what ran, what the file cannot run, diminishing returns.
 - [`../reports/hogan_identification_one_pager_2026-08-13.md`](../reports/hogan_identification_one_pager_2026-08-13.md) — meeting card: DJF identification, pre-2020 CHD null, NW ladder direction.
@@ -64,9 +65,10 @@
 
 - [`2026-07-26_laidlaw_blog_canon.md`](2026-07-26_laidlaw_blog_canon.md) — MIT Admissions-style public-writing canon and the blog/CNS register split.
 - [`2026-07-26_commands_and_blog_auto.md`](2026-07-26_commands_and_blog_auto.md) — what `/blog-from-deck` automates and what Bob must still edit and publish.
-- [`reports/blog/`](../reports/blog/) — Weeks 1, 3 (published), 4–5 (drafts); Bob reviews before posting.
+- [`reports/blog/`](../reports/blog/) — Weeks 1, 3 (published), 4–6 (drafts); Bob reviews before posting.
 - [`../reports/blog/week4_methods_while_waiting.md`](../reports/blog/week4_methods_while_waiting.md) — Week 4 draft: writing Methods into a blank Results section.
 - [`../reports/blog/week5_then_there_was_something_to_run.md`](../reports/blog/week5_then_there_was_something_to_run.md) — Week 5 draft: the CHD/HF file arrives; stroke still absent.
+- [`../reports/blog/week6_the_file_did_not_finish.md`](../reports/blog/week6_the_file_did_not_finish.md) — Week 6 draft: after the run, distinction / paste / refusal.
 
 ## Living project canon
 

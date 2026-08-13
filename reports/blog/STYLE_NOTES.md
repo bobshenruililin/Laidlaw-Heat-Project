@@ -19,6 +19,6 @@
 - Claim AMI from the general HA file, daily effects from monthly data, or stroke findings before governed aggregates are analysed.
 - Treat every method as a separate discovery.
 - Turn a data-arrival week into a coefficient inventory, a *q*-value dump, or a plot twist. Week 5’s job is the name of the file and the work of running what was prepared — not Table 2.
-- Do not number a new post as Week 3. That slot is the published hot-month post (`week2_definitions_and_waiting.md`). The next drafts are Week 4 (Methods while waiting) and Week 5 (the CHD/HF file).
+- Do not number a new post as Week 3. That slot is the published hot-month post (`week2_definitions_and_waiting.md`). After that: Week 4 (Methods while waiting), Week 5 (the CHD/HF file), Week 6 (the file did not finish the paper).
 
 Bob makes the final editorial and privacy decisions before anything is posted.

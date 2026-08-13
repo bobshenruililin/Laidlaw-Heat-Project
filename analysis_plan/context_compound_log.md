@@ -48,6 +48,7 @@
 | 2026-08-13 | Ship | Did the ~10 methods and 98-recipe catalogue all run on the CHD/HF file? | 22/25 registry IDs ok; P09/P17 skipped (no age/sex); P13 disabled (no stroke subtypes); 11/12 first-wave HM/CM ok, CM05 zero months. Remaining catalogue IDs unfitted on purpose. | Keep | reports/pathway_execution_audit_2026-08-13.md; reports/researcher_cycle_2026-08-13.md |
 | 2026-08-13 | Ship | Week 3–4 Laidlaw blogs in the Week 1–2 register | Replaced the rejected week-of-data draft. Numbering was wrong: Bob already had Research Week 3 on the site. Superseded same day by the Week 4–5 row. | Drop (numbering) | reports/blog/week4_methods_while_waiting.md; reports/blog/week5_then_there_was_something_to_run.md |
 | 2026-08-13 | Decide | Bob already has Research Week 3 on the site | The hot-month post is Week 3. Renumber the new drafts: Methods-while-waiting = Week 4; CHD/HF file = Week 5. Align two leftover “Week 2” sentences in the Week 3 source. | Keep | reports/blog/week4_methods_while_waiting.md; reports/blog/week5_then_there_was_something_to_run.md |
+| 2026-08-13 | Ship | Week 6: what more after the file, and where compute goes | Menu of done / human-only / still-useful compute / fake motion. Blog draft: the file did not finish the paper. | Keep | analysis_plan/week6_compute_menu_2026-08-13.md; reports/blog/week6_the_file_did_not_finish.md |
 
 ---
 

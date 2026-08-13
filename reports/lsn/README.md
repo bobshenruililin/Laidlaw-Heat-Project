@@ -7,4 +7,4 @@ Paste-ready Laidlaw Scholar Network research-project summary plus an interactive
 | LSN post (title / intro / body) | [`research_project_summary.md`](research_project_summary.md) |
 | Interactive microsite | [`../../docs/lsn/`](../../docs/lsn/) |
 
-Scientific boundary matches the blog canon: no invented biography, no stroke coefficients, weather charts labelled REAL exposure descriptives only. Bob edits before posting to LSN.
+Scientific boundary: no invented biography, no coefficients on the public LSN page, weather charts labelled REAL exposure descriptives only. Outcome framing is CHD/HF first events (13 August rewrite); stroke remains named and not attached. Bob edits before posting to LSN.

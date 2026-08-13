@@ -27,5 +27,5 @@ https://bobshenruililin.github.io/Laidlaw-Heat-Project/
 ## Scientific boundary
 
 - Weather chart: **REAL** HKO Headquarters monthly exposures, 2013–2023.
-- **No** stroke admissions, rates, or coefficients.
-- Status section states honestly that association estimates do not yet exist.
+- **No** hospital counts, rates, or model coefficients on this page.
+- Status section (13 August): CHD/HF first-event aggregates exist internally; stroke still not attached; the companion still posts weather only.

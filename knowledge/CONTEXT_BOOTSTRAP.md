@@ -83,4 +83,4 @@ For shocks, use [Playbook 99](../analysis_plan/playbooks/99_emergencies.md). The
 
 For public Laidlaw website writing, use `/laidlaw-blog` or `/blog-from-deck`, the separate MIT Admissions-style canon in [`2026-07-26_laidlaw_blog_canon.md`](2026-07-26_laidlaw_blog_canon.md), and drafts in [`reports/blog/`](../reports/blog/). A deck can trigger a draft offer; Bob edits and publishes.
 
-For the **Laidlaw Scholar Network (LSN)** research-project summary and interactive companion, use [`reports/lsn/research_project_summary.md`](../reports/lsn/research_project_summary.md) and [`docs/lsn/`](../docs/lsn/). Exposure-only; Bob edits before posting.
+For the **Laidlaw Scholar Network (LSN)** research-project summary and interactive companion, use [`reports/lsn/research_project_summary.md`](../reports/lsn/research_project_summary.md) and [`docs/lsn/`](../docs/lsn/). Exposure-only public page; CHD/HF first-event framing as of 13 August; Bob edits before posting.

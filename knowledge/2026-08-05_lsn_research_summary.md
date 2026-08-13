@@ -14,7 +14,13 @@
 https://htmlpreview.github.io/?https://raw.githubusercontent.com/bobshenruililin/Laidlaw-Heat-Project/cursor/lsn-research-summary-1754/docs/lsn/index.html
 ```
 
-After merge to `main`, swap the branch segment for `main`, or enable GitHub Pages on `/docs` for `https://bobshenruililin.github.io/Laidlaw-Heat-Project/`.
+**13 August 2026 rewrite:** the paste pack and microsite no longer describe an inbound stroke project. CHD/HF first-event aggregates are acknowledged; coefficients stay off the public page. Preview URL on this branch:
+
+```text
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/bobshenruililin/Laidlaw-Heat-Project/cursor/live-manuscript-collab-1754/docs/lsn/index.html
+```
+
+Bob still makes the final edit before publishing on LSN.
 
 ## Boundaries
 

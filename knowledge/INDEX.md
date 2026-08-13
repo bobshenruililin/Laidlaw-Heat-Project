@@ -21,6 +21,10 @@
 
 - [`../analysis_plan/next_three_weeks_prospect_2026-08-13.md`](../analysis_plan/next_three_weeks_prospect_2026-08-13.md) — compute vs human gates after the CHD/HF arrival; blog/LSN/deck tracks; idle-week rules.
 - [`2026-08-13_research_team_synthesis.md`](2026-08-13_research_team_synthesis.md) — Kimi/Fable/Opus/Sol wave: live-paper numbers verified; Fable honesty pass merged; Stage 3 PDFs stay frozen.
+- [`../reports/pathway_execution_audit_2026-08-13.md`](../reports/pathway_execution_audit_2026-08-13.md) — P01–P18 and first-wave HM/CM: what ran, what the file cannot run, diminishing returns.
+- [`../reports/hogan_identification_one_pager_2026-08-13.md`](../reports/hogan_identification_one_pager_2026-08-13.md) — meeting card: DJF identification, pre-2020 CHD null, NW ladder direction.
+- [`../reports/blog/week_of_data_the_file_that_arrived.md`](../reports/blog/week_of_data_the_file_that_arrived.md) — Laidlaw blog draft; Bob’s privacy pass pending.
+- [`../reports/researcher_cycle_2026-08-13.md`](../reports/researcher_cycle_2026-08-13.md) — cycle 1 evaluate: sustainable if the hole is in the record, not in unrun encodings.
 - [`2026-08-13_fable_live_doc_critique.md`](2026-08-13_fable_live_doc_critique.md) — senior critique: Newey–West rationale was backwards for CHD hot nights; CHD pre-2020 interval was hidden.
 - [`2026-08-13_kimi_web_weather_lit_harvest.md`](2026-08-13_kimi_web_weather_lit_harvest.md) — public HKO/EPD/literature harvest; no live-paper number changes.
 - [`2026-08-13_sol_laidlaw_deliverable_system.md`](2026-08-13_sol_laidlaw_deliverable_system.md) — keep Stage 3 PDF/poster frozen; live Hogan file is journal authority; LSN/blogs are drafts.

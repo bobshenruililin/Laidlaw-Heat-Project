@@ -1,6 +1,6 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-13
+**Last updated:** 2026-08-14
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
@@ -63,6 +63,13 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - **Gene/~10°C:** discussion hypothesis only, not a biological threshold or result.
 - **No stroke coefficients.** CHD/HF coefficients are exploratory; all core
   q-values exceed 0.19. Synthetic calibration ≠ health findings.
+- **Peer-city thermal atlas (14 Aug, exposure only):** sixteen cities on
+  Open-Meteo ERA5-Land, 2013–2023. HKO Headquarters hot nights **449** vs ERA5
+  dry-bulb **17** (Jaccard 0.031); apparent temperature on the same grid is a
+  third object (**1,453** nights ≥28°C) and does not reconstruct the station.
+  Nearest thermal cousins: Taipei, Shenzhen, Guangzhou. Singapore and Phoenix
+  are contrasts, not replicates. No health coefficients; live paper stays on
+  HKO. `docs/peers/index.html`; `knowledge/2026-08-14_peer_cities_thermal_atlas.md`.
 
 ---
 

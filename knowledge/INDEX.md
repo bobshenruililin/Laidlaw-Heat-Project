@@ -19,6 +19,9 @@
 
 ## Current meeting record
 
+- [`2026-08-14_peer_cities_thermal_atlas.md`](2026-08-14_peer_cities_thermal_atlas.md) — exposure-only 16-city ERA5 atlas; HKO 28°C nights collapse on the grid (449 vs 17); apparent temperature is a third object; Taipei/Shenzhen cousins; Singapore and Phoenix contrasts.
+- [`../reports/hogan_peer_cities_one_pager_2026-08-14.md`](../reports/hogan_peer_cities_one_pager_2026-08-14.md) — Hogan lock card: do not export 28/33/12 onto reanalysis.
+- [`../docs/peers/index.html`](../docs/peers/index.html) — interactive public companion (no health coefficients).
 - [`../analysis_plan/next_three_weeks_prospect_2026-08-13.md`](../analysis_plan/next_three_weeks_prospect_2026-08-13.md) — compute vs human gates after the CHD/HF arrival; blog/LSN/deck tracks; idle-week rules.
 - [`2026-08-13_research_team_synthesis.md`](2026-08-13_research_team_synthesis.md) — Kimi/Fable/Opus/Sol wave: live-paper numbers verified; Fable honesty pass merged; Stage 3 PDFs stay frozen.
 - [`../reports/pathway_execution_audit_2026-08-13.md`](../reports/pathway_execution_audit_2026-08-13.md) — P01–P18 and first-wave HM/CM: what ran, what the file cannot run, diminishing returns.

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Peer-city thermal atlas · 2013–2023 · Laidlaw Heat Project</title>
+  <meta name="description" content="Exposure only. Sixteen cities on one public temperature grid, calibrated against HKO Headquarters. Not health findings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #12181f;
+      --muted: #5b6773;
+      --paper: #f4efe4;
+      --card: #fffdf8;
+      --line: rgba(18,24,31,.12);
+      --heat: #c24e16;
+      --cold: #1f5f8a;
+      --sea: #0c6b74;
+      --gold: #c9a227;
+      --shadow: 0 16px 40px rgba(18,24,31,.08);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: "IBM Plex Sans", system-ui, sans-serif; }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 500; letter-spacing: -.02em; }
+    a { color: var(--sea); }
+    .wrap { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; }
+    .banner {
+      background: #12181f; color: #f4efe4; font-size: .82rem; letter-spacing: .08em;
+      text-transform: uppercase; padding: .7rem 1rem; text-align: center;
+    }
+    .banner strong { color: #f0b36a; font-weight: 600; }
+    header { padding: 3.2rem 0 1.5rem; }
+    header p.lede { font-size: 1.15rem; max-width: 44rem; line-height: 1.55; color: var(--muted); }
+    .statrow { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin: 1.6rem 0 2rem; }
+    .stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.1rem; box-shadow: var(--shadow); }
+    .stat b { display: block; font-family: Fraunces, serif; font-size: 1.55rem; }
+    .stat span { color: var(--muted); font-size: .85rem; }
+    .grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1.1rem; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 1.1rem 1.2rem 1.3rem; box-shadow: var(--shadow); }
+    svg.chart { width: 100%; height: auto; display: block; }
+    .legend { display: flex; gap: 1rem; font-size: .8rem; color: var(--muted); margin-top: .6rem; flex-wrap: wrap; }
+    .sw { width: .7rem; height: .7rem; border-radius: 99px; display: inline-block; margin-right: .3rem; }
+    select { font: inherit; padding: .45rem .7rem; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+    .bars { display: grid; gap: .35rem; }
+    .barline { display: grid; grid-template-columns: 11rem 1fr 3.4rem; gap: .5rem; align-items: center; font-size: .85rem; }
+    .track { background: #efe7d6; border-radius: 99px; height: 10px; overflow: hidden; }
+    .fill { height: 100%; border-radius: 99px; }
+    .rank { list-style: none; padding: 0; margin: 0; max-height: 28rem; overflow: auto; }
+    .rank li { display: flex; justify-content: space-between; padding: .42rem 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+    .rank li.active { color: var(--sea); font-weight: 600; }
+    .lit { display: grid; gap: .8rem; }
+    .lit article { border-left: 3px solid var(--gold); padding: .2rem 0 .2rem .8rem; }
+    .lit small { color: var(--muted); }
+    footer { padding: 2.5rem 0 3.5rem; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+    .note { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+    .dot { cursor: pointer; }
+    .calgrid { display: grid; gap: .7rem; margin-top: .8rem; }
+    .calrow { display: grid; grid-template-columns: 7.5rem 1fr 1fr; gap: .6rem; align-items: center; font-size: .85rem; }
+    .pill { display: inline-block; background: #efe7d6; border-radius: 99px; padding: .15rem .55rem; font-size: .75rem; margin-right: .3rem; }
+    @media (max-width: 900px) {
+      .statrow, .grid, .calrow { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">Exposure only · public reanalysis · <strong>not</strong> health findings · not the live paper’s HKO flags</div>
+  <div class="wrap">
+    <header>
+      <p style="letter-spacing:.14em; text-transform:uppercase; font-size:.75rem; color:var(--sea); margin:0 0 .6rem;">Laidlaw Heat Project · overnight atlas</p>
+      <h1>Hong Kong is not Singapore.<br>A 28°C night is not a grid cell.</h1>
+      <p class="lede">
+        Sixteen cities, the same 4,017 days (2013–2023), one ERA5-Land source.
+        Then Hong Kong’s official hot-night and cold-day flags are laid on top —
+        and the station and the grid refuse to tell the same story.
+      </p>
+    </header>
+
+    <div class="statrow" id="stats"></div>
+
+    <div class="grid">
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">Climate space, not a map</h2>
+        <p class="note">Mean temperature against seasonal amplitude. Cousins sit near Hong Kong. Singapore is a high, flat line. Phoenix is a dry swing. Click a city.</p>
+        <svg class="chart" id="space" viewBox="0 0 760 460" role="img" aria-label="Climate space scatter of sixteen cities"></svg>
+        <div class="legend">
+          <span><i class="sw" style="background:#0c6b74"></i>Reference</span>
+          <span><i class="sw" style="background:#c24e16"></i>Peer</span>
+          <span><i class="sw" style="background:#1f5f8a"></i>Contrast</span>
+          <span>Bubble size ∝ annual rainfall</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">Distance to Hong Kong</h2>
+        <p class="note">Standardised thermal space: mean temperature, seasonal amplitude, and ERA5 counts of HKO’s 28°C nights and 12°C days. Same source, so the rank is fair. The absolute counts are not yearbook numbers.</p>
+        <ol class="rank" id="rank"></ol>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1.1rem;">
+      <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">The calibration that should change a sentence</h2>
+      <p class="note" id="calNote"></p>
+      <div class="calgrid" id="calBars"></div>
+      <p class="note" style="margin-top:.8rem;">This is why Guo’s distinction between an official hot-night <em>flag</em> and hourly night-heat intensity is not a footnote. A threshold is a station object. Reanalysis does not inherit it for free. Apparent temperature on the same grid is a third object: humidity pushes humid cities past 28°C far more often than dry-bulb, and also past the station. It does not reconstruct HKO, and it is not a reason to paste reanalysis flags into the live paper.</p>
+    </div>
+
+    <div class="card" style="margin-top:1.1rem;">
+      <div style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; align-items:end;">
+        <div>
+          <h2 style="margin:.2rem 0 .3rem; font-size:1.25rem;" id="cityTitle">Hong Kong</h2>
+          <p class="note" id="cityMeta"></p>
+        </div>
+        <label>City
+          <select id="picker"></select>
+        </label>
+      </div>
+      <h3 style="font-size:1rem; margin:1.1rem 0 .3rem;">Seasonal cycle (monthly mean, °C)</h3>
+      <svg class="chart" id="season" viewBox="0 0 640 220" role="img"></svg>
+      <h3 style="font-size:1rem; margin:1.1rem 0 .4rem;">If we export HKO’s 28°C / 12°C rules onto ERA5-Land</h3>
+      <div class="bars" id="bars"></div>
+      <p class="note" style="margin-top:.8rem;">Local winter is DJF in the north and JJA in Brisbane. Percentile bars use each city’s own 2013–2023 p95 maximum and p05 minimum — study-window only, not Hogan-locked. Apparent-temperature bars use the same 28/33/12 °C cuts on Open-Meteo’s feels-like series.</p>
+      <h3 style="font-size:1rem; margin:1.1rem 0 .3rem;">Year by year on this grid</h3>
+      <svg class="chart" id="years" viewBox="0 0 640 160" role="img"></svg>
+    </div>
+
+    <div class="card" style="margin-top:1.1rem;">
+      <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">What other cities already published</h2>
+      <p class="note">Other people’s estimands. Daily mortality, ambulance CVD, NSTEMI, heat-wave emergency visits. Not this project’s monthly first-event counts. No Guangzhou-specific card was locked; do not borrow a four-city southern-China paper.</p>
+      <div class="lit" id="lit"></div>
+    </div>
+
+    <footer>
+      <p><strong>Do not</strong> transport Hong Kong CHD/HF count ratios to another city. <strong>Do not</strong> quote Open-Meteo flag totals as HKO yearbook numbers. Stroke was not delivered for this project; this page does not analyse it.</p>
+      <p>Source: Open-Meteo archive API (ERA5-Land daily 2 m and apparent temperatures, local timezone). Hong Kong calibration against HKO Headquarters open data already in this repository. Rebuild: <code>python3 scripts/48_peer_cities_thermal_atlas.py</code>.</p>
+      <p><a href="../">Public companions</a> · <a href="../lsn/">LSN Hong Kong companion</a> · Laidlaw Heat Project · Shen Ruililin</p>
+    </footer>
+  </div>
+  <script src="./peers_embed.js"></script>
+  <script>
+    const A = window.PEER_ATLAS;
+    const cities = Object.fromEntries(A.cities.map(c => [c.id, c]));
+    const MONTHS = ["J","F","M","A","M","J","J","A","S","O","N","D"];
+    const colour = { reference: "#0c6b74", peer: "#c24e16", contrast: "#1f5f8a" };
+    const cal = A.calibration;
+    const cousin = A.distance_rank[1];
+    const sg = cities.singapore;
+
+    document.getElementById("stats").innerHTML = [
+      [`${cal.hko_hn_total} vs ${cal.openmeteo_hn_total}`, "HKO hot nights vs ERA5 dry-bulb at the same 28°C rule"],
+      [`${cal.bias_openmeteo_minus_hko_tmin}°C`, "ERA5 night-minimum bias vs HKO Headquarters"],
+      [cousin.name, "Nearest thermal cousin on this grid"],
+      [`${sg.cd_hko_total} cold days`, "Singapore never crosses HKO’s 12°C flag"]
+    ].map(([b,s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
+
+    const picker = document.getElementById("picker");
+    A.cities.forEach(c => {
+      const o = document.createElement("option");
+      o.value = c.id; o.textContent = c.name;
+      picker.appendChild(o);
+    });
+
+    function drawSpace() {
+      const w = 760, h = 460, padL = 64, padR = 28, padT = 36, padB = 52;
+      const amps = A.cities.map(c => c.seasonal_amp);
+      const means = A.cities.map(c => c.mean_t);
+      const rains = A.cities.map(c => c.precip_mm_year);
+      const x0 = 0, x1 = Math.max(...amps) * 1.12;
+      const y0 = Math.min(...means) - 1.5, y1 = Math.max(...means) + 1.5;
+      const r0 = Math.min(...rains), r1 = Math.max(...rains);
+      const xx = v => padL + (v - x0) / (x1 - x0) * (w - padL - padR);
+      const yy = v => padT + (y1 - v) / (y1 - y0) * (h - padT - padB);
+      const rr = v => 5 + 9 * (v - r0) / (r1 - r0);
+      let ticks = "";
+      for (let t = 0; t <= x1; t += 5) {
+        ticks += `<text x="${xx(t)}" y="${h-padB+16}" text-anchor="middle" font-size="11" fill="#5b6773">${t}</text>`;
+      }
+      for (let t = Math.ceil(y0); t <= Math.floor(y1); t += 4) {
+        ticks += `<text x="${padL-8}" y="${yy(t)+4}" text-anchor="end" font-size="11" fill="#5b6773">${t}</text>`;
+      }
+      const axes =
+        `<line x1="${padL}" y1="${h-padB}" x2="${w-padR}" y2="${h-padB}" stroke="#12181f" stroke-opacity=".35"/>` +
+        `<line x1="${padL}" y1="${padT}" x2="${padL}" y2="${h-padB}" stroke="#12181f" stroke-opacity=".35"/>` +
+        `<text x="${(padL+w-padR)/2}" y="${h-14}" text-anchor="middle" font-size="12" fill="#5b6773">Seasonal amplitude (°C)</text>` +
+        `<text x="18" y="${(padT+h-padB)/2}" text-anchor="middle" font-size="12" fill="#5b6773" transform="rotate(-90 18 ${(padT+h-padB)/2})">Mean temperature (°C)</text>`;
+      const dots = A.cities.map(c => {
+        const x = xx(c.seasonal_amp), y = yy(c.mean_t), r = rr(c.precip_mm_year);
+        const dx = c.lon >= 0 ? 11 : -11;
+        const anchor = dx > 0 ? "start" : "end";
+        return `<g class="dot" data-id="${c.id}">
+          <circle cx="${x}" cy="${y}" r="${c.id==="hong_kong"? r+2 : r}" fill="${colour[c.role]}" stroke="#fff" stroke-width="1.8"/>
+          <text x="${x+dx}" y="${y+4}" text-anchor="${anchor}" font-size="11" fill="#12181f">${c.name}</text>
+        </g>`;
+      }).join("");
+      document.getElementById("space").innerHTML = axes + ticks + dots;
+      document.querySelectorAll("#space .dot").forEach(g => {
+        g.addEventListener("click", () => select(g.dataset.id));
+      });
+    }
+
+    function drawSeason(id) {
+      const c = cities[id];
+      const hk = cities.hong_kong;
+      const hko = A.hko_official.climatology_mean_t;
+      const series = [
+        { ys: hk.climatology_mean_t, col: "#0c6b74", w: 2.5 },
+        { ys: c.climatology_mean_t, col: colour[c.role], w: 3 },
+        { ys: hko, col: "#c9a227", w: 1.5, dash: "4 3" }
+      ];
+      const all = series.flatMap(s => s.ys);
+      const lo = Math.floor(Math.min(...all) - 1);
+      const hi = Math.ceil(Math.max(...all) + 1);
+      const x = i => 40 + i * 48;
+      const y = v => 200 - ((v - lo) / (hi - lo)) * 170;
+      let paths = "";
+      series.forEach(s => {
+        const d = s.ys.map((v,i) => `${i?"L":"M"}${x(i)},${y(v)}`).join(" ");
+        paths += `<path d="${d}" fill="none" stroke="${s.col}" stroke-width="${s.w}" stroke-dasharray="${s.dash||""}"/>`;
+      });
+      const ticks = MONTHS.map((m,i) => `<text x="${x(i)}" y="216" text-anchor="middle" font-size="11" fill="#5b6773">${m}</text>`).join("");
+      const ylab = [lo, hi].map(v => `<text x="8" y="${y(v)+4}" font-size="11" fill="#5b6773">${v}</text>`).join("");
+      document.getElementById("season").innerHTML = paths + ticks + ylab;
+    }
+
+    function drawBars(id) {
+      const c = cities[id];
+      const maxN = Math.max(...A.cities.flatMap(x => [
+        x.hn_hko_total, x.cd_hko_total, x.hot_p95_total, x.cold_p05_total,
+        x.hn_at_total, x.vhd_at_total, 1
+      ]));
+      const rows = [
+        ["ERA5 hot nights (28°C dry)", c.hn_hko_total, "#c24e16"],
+        ["ERA5 hot nights (28°C feels-like)", c.hn_at_total, "#e07a3d"],
+        ["ERA5 cold days (12°C dry)", c.cd_hko_total, "#1f5f8a"],
+        ["Local p95 hot days", c.hot_p95_total, "#c9a227"],
+        ["Local p05 cold days", c.cold_p05_total, "#0c6b74"]
+      ];
+      document.getElementById("bars").innerHTML = rows.map(([lab, n, col]) => `
+        <div class="barline"><span>${lab}</span>
+          <div class="track"><div class="fill" style="width:${100*n/maxN}%;background:${col}"></div></div>
+          <b>${n}</b></div>`).join("");
+    }
+
+    function drawYears(id) {
+      const c = cities[id];
+      const years = c.annual;
+      const maxN = Math.max(...years.map(y => Math.max(y.hn_hko, y.cd_hko, 1)));
+      const x = i => 40 + i * 54;
+      const bars = years.map((y,i) => {
+        const hn = 110 * y.hn_hko / maxN;
+        const cd = 110 * y.cd_hko / maxN;
+        return `<rect x="${x(i)}" y="${120-hn}" width="14" height="${hn}" fill="#c24e16"/>
+                <rect x="${x(i)+16}" y="${120-cd}" width="14" height="${cd}" fill="#1f5f8a"/>
+                <text x="${x(i)+15}" y="148" text-anchor="middle" font-size="10" fill="#5b6773">${String(y.year).slice(2)}</text>`;
+      }).join("");
+      document.getElementById("years").innerHTML =
+        bars +
+        `<text x="40" y="14" font-size="11" fill="#c24e16">ERA5 hot nights</text>
+         <text x="150" y="14" font-size="11" fill="#1f5f8a">ERA5 cold days</text>`;
+    }
+
+    function select(id) {
+      picker.value = id;
+      const c = cities[id];
+      document.getElementById("cityTitle").textContent = c.name;
+      const winter = c.cd_hko_winter_share == null ? "no HKO-cold days" :
+        `${Math.round(100*c.cd_hko_winter_share)}% of ERA5 HKO-cold days fall in local winter`;
+      document.getElementById("cityMeta").innerHTML =
+        `<span class="pill">${c.group}</span><span class="pill">${c.role}</span>` +
+        ` mean ${c.mean_t.toFixed(1)}°C · amplitude ${c.seasonal_amp.toFixed(1)}°C · ` +
+        `${Math.round(c.precip_mm_year)} mm/year · ${winter}`;
+      document.querySelectorAll(".rank li").forEach(li => li.classList.toggle("active", li.dataset.id === id));
+      drawSeason(id);
+      drawBars(id);
+      drawYears(id);
+    }
+
+    document.getElementById("rank").innerHTML = A.distance_rank.map((r,i) =>
+      `<li data-id="${r.id}"><span>${i+1}. ${r.name}</span><span>${r.d.toFixed(2)}</span></li>`
+    ).join("");
+    document.querySelectorAll(".rank li").forEach(li => li.addEventListener("click", () => select(li.dataset.id)));
+    picker.addEventListener("change", e => select(e.target.value));
+
+    const maxFlag = Math.max(cal.hko_hn_total, cal.openmeteo_hn_total, cal.hko_vhd_total, cal.openmeteo_vhd_total, cal.hko_cd_total, cal.openmeteo_cd_total);
+    document.getElementById("calBars").innerHTML = [
+      ["Hot nights", cal.hko_hn_total, cal.openmeteo_hn_total, "#c24e16"],
+      ["Very hot days", cal.hko_vhd_total, cal.openmeteo_vhd_total, "#c9a227"],
+      ["Cold days", cal.hko_cd_total, cal.openmeteo_cd_total, "#1f5f8a"]
+    ].map(([lab, a, b, col]) => `
+      <div class="calrow">
+        <span>${lab}</span>
+        <div><div class="note">HKO ${a}</div><div class="track"><div class="fill" style="width:${100*a/maxFlag}%;background:${col}"></div></div></div>
+        <div><div class="note">ERA5 ${b}</div><div class="track"><div class="fill" style="width:${100*b/maxFlag}%;background:${col};opacity:.55"></div></div></div>
+      </div>`).join("");
+
+    document.getElementById("calNote").innerHTML =
+      `On 4,017 matched days, ERA5-Land nights at the Hong Kong coordinate are <strong>${cal.bias_openmeteo_minus_hko_tmin}°C</strong> relative to HKO Headquarters
+      (RMSE Tmin ${cal.rmse_tmin}°C). The official hot-night flag occurs on <strong>${cal.hko_hn_total}</strong> station days and only
+      <strong>${cal.openmeteo_hn_total}</strong> dry-bulb grid days (Jaccard ${cal.jaccard_hn}). Apparent temperature on the same grid records
+      <strong>${cal.openmeteo_apparent_hn_total}</strong> nights ≥28°C — more than the station, not a reconstruction of it. Adding the 1.47°C dry-bulb offset back recovers
+      <strong>${cal.bias_adjusted_openmeteo_hn}</strong> hot nights — still not 449.`;
+
+    document.getElementById("lit").innerHTML = A.literature.map(card => `
+      <article>
+        <strong>${card.citation}</strong><br/>
+        ${card.one_line}<br/>
+        <small>DOI <a href="https://doi.org/${card.doi}">${card.doi}</a> · ${card.kind.replaceAll("_"," ")}</small>
+      </article>`).join("");
+
+    drawSpace();
+    select("hong_kong");
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img">
+<rect width="100%" height="100%" fill="#fffdf8"/>
+<text x="360" y="24" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#12181f">Hong Kong: HKO Headquarters vs ERA5-Land, same 28/33/12 °C rules</text>
+<text x="210" y="48" text-anchor="middle" font-size="12" fill="#5b6773" font-family="sans-serif">HKO station</text>
+<text x="510" y="48" text-anchor="middle" font-size="12" fill="#5b6773" font-family="sans-serif">ERA5-Land grid</text>
+<text x="24" y="90" font-size="13" font-family="sans-serif" fill="#12181f">Hot nights</text>
+<rect x="-38.0" y="72" width="248.0" height="22" rx="6" fill="#c24e16"/>
+<text x="-46.0" y="88" text-anchor="end" font-size="13" font-family="sans-serif">449</text>
+<rect x="510" y="72" width="17.086859688195993" height="22" rx="6" fill="#c24e16" fill-opacity=".55"/>
+<text x="535.086859688196" y="88" font-size="13" font-family="sans-serif">17</text>
+<text x="24" y="154" font-size="13" font-family="sans-serif" fill="#12181f">Very hot days</text>
+<rect x="-23.033407572383084" y="136" width="233.03340757238308" height="22" rx="6" fill="#c9a227"/>
+<text x="-31.033407572383084" y="152" text-anchor="end" font-size="13" font-family="sans-serif">421</text>
+<rect x="510" y="136" width="18.15590200445434" height="22" rx="6" fill="#c9a227" fill-opacity=".55"/>
+<text x="536.1559020044543" y="152" font-size="13" font-family="sans-serif">19</text>
+<text x="24" y="218" font-size="13" font-family="sans-serif" fill="#12181f">Cold days</text>
+<rect x="124.49443207126949" y="200" width="85.50556792873051" height="22" rx="6" fill="#1f5f8a"/>
+<text x="116.49443207126949" y="216" text-anchor="end" font-size="13" font-family="sans-serif">145</text>
+<rect x="510" y="200" width="166.21826280623605" height="22" rx="6" fill="#1f5f8a" fill-opacity=".55"/>
+<text x="684.218262806236" y="216" font-size="13" font-family="sans-serif">296</text>
+</svg>

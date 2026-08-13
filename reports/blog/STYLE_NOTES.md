@@ -18,5 +18,6 @@
 - Turn waiting into fake progress or synthetic output into evidence.
 - Claim AMI from the general HA file, daily effects from monthly data, or stroke findings before governed aggregates are analysed.
 - Treat every method as a separate discovery.
+- Turn a data-arrival week into a coefficient inventory, a *q*-value dump, or a plot twist. Week 4’s job is the name of the file and the work of running what was prepared — not Table 2.
 
 Bob makes the final editorial and privacy decisions before anything is posted.

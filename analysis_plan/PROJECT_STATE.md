@@ -123,7 +123,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Kimi harvest: yearbooks, EPD endpoints, and Guo/Goggins/Liu numbers re-verified at source; no live-paper numeral change. [`2026-08-13_kimi_web_weather_lit_harvest.md`](../knowledge/2026-08-13_kimi_web_weather_lit_harvest.md).
 - Fable critique merged: Newey–West CHD hot-night intervals are *narrower* than Model (Discussion now says so); CHD pre-2020 1.011 (0.991–1.032) reported beside the HF pre-2020 interval; “continuity” → “core panel.” [`2026-08-13_fable_live_doc_critique.md`](../knowledge/2026-08-13_fable_live_doc_critique.md). Synthesis: [`2026-08-13_research_team_synthesis.md`](../knowledge/2026-08-13_research_team_synthesis.md).
 - Next three weeks (compute vs human gates): [`next_three_weeks_prospect_2026-08-13.md`](next_three_weeks_prospect_2026-08-13.md).
-- Cycle 1 (13 Aug): pathway execution audit; Hogan identification one-pager; week-of-data blog draft; LSN rewrite to CHD/HF. [`../reports/researcher_cycle_2026-08-13.md`](../reports/researcher_cycle_2026-08-13.md).
+- Cycle 1 (13 Aug): pathway execution audit; Hogan identification one-pager; Week 3–4 Laidlaw blogs (MIT Admissions register; the inventory “week of data” draft was withdrawn); LSN rewrite to CHD/HF. [`../reports/researcher_cycle_2026-08-13.md`](../reports/researcher_cycle_2026-08-13.md).
 
 ### Wednesday 12 August — Hogan tonight + Bishai Stage 3
 

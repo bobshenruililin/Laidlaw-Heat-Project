@@ -24,10 +24,13 @@ After each progress deck, run `/blog-from-deck` or let the agent offer it. The c
 
 ## Posts
 
-- [`week1_recalibration.md`](week1_recalibration.md)
-- [`week2_definitions_and_waiting.md`](week2_definitions_and_waiting.md)
-- [`week_of_data_the_file_that_arrived.md`](week_of_data_the_file_that_arrived.md) — draft: the August CHD/HF file was not the stroke series the earlier posts were waiting for. Bob’s voice/privacy pass still required.
+- [`week1_recalibration.md`](week1_recalibration.md) — *My Research Question Changed Its Mind*
+- [`week2_definitions_and_waiting.md`](week2_definitions_and_waiting.md) — *How Many Ways Can a Month Be Hot?*
+- [`week3_methods_while_waiting.md`](week3_methods_while_waiting.md) — *The Results Section Was Blank* (draft: Methods while waiting)
+- [`week4_then_there_was_something_to_run.md`](week4_then_there_was_something_to_run.md) — *Then There Was Something To Run* (draft: CHD/HF arrives; stroke still absent)
 - [`STYLE_NOTES.md`](STYLE_NOTES.md)
+
+Bob’s voice, privacy, length, and site-format pass is still required before any of these go on the Laidlaw site. Do not revive the rejected inventory draft (`week_of_data_the_file_that_arrived.md`).
 
 ## Related: Laidlaw Scholar Network (LSN)
 

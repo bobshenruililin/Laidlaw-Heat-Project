@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The threshold does not travel · Laidlaw Heat Project</title>
+  <meta name="description" content="Exposure only. Move Hong Kong’s 28°C night across encodings and a Pearl River Delta grid. Not health findings. Not the live paper’s HKO flags." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #f4efe4; --muted: #b7c0c7; --paper: #0c1218; --card: #161d26;
+      --line: rgba(244,239,228,.12); --heat: #e36a2a; --sea: #3cb8c0; --gold: #e0c36a;
+      --hko: #f4efe4; --era: #3cb8c0; --at: #e0c36a; --wag: #d27cff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: "IBM Plex Sans", system-ui, sans-serif; }
+    h1, h2, .num { font-family: Fraunces, Georgia, serif; font-weight: 500; letter-spacing: -.03em; }
+    a { color: var(--sea); }
+    .banner { background: #070b10; color: var(--gold); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; padding: .65rem 1rem; text-align: center; }
+    .banner strong { color: #fff; }
+    .wrap { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+    header { padding: 2.8rem 0 1.2rem; }
+    header p.k { letter-spacing: .16em; text-transform: uppercase; font-size: .72rem; color: var(--sea); margin: 0 0 .7rem; }
+    header h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.05; margin: 0 0 .8rem; }
+    .lede { font-size: 1.12rem; max-width: 40rem; line-height: 1.55; color: var(--muted); }
+    .objects { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin: 1.8rem 0 1.4rem; }
+    .obj { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 1.1rem 1.15rem 1.2rem; }
+    .obj .num { font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1; display: block; }
+    .obj span { color: var(--muted); font-size: .88rem; display: block; margin-top: .45rem; }
+    .obj small { display: block; margin-top: .35rem; letter-spacing: .08em; text-transform: uppercase; font-size: .68rem; color: var(--gold); }
+    .jac { font-size: 1.05rem; color: var(--muted); margin: 0 0 1.6rem; }
+    .jac b { color: var(--ink); font-weight: 600; }
+    .stage { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 1.15rem 1.2rem 1.3rem; margin-bottom: 1.1rem; }
+    .toolbar { display: flex; gap: .55rem; flex-wrap: wrap; align-items: center; margin-bottom: .85rem; }
+    button, select { font: inherit; padding: .42rem .75rem; border-radius: 999px; border: 1px solid var(--line); background: #0c1218; color: var(--ink); cursor: pointer; }
+    button.active, button:hover { background: var(--sea); color: #0c1218; border-color: var(--sea); }
+    input[type=range] { width: min(520px, 100%); accent-color: var(--sea); }
+    .tlabel { font-family: Fraunces, serif; font-size: 2rem; min-width: 7.5rem; }
+    .grid2 { display: grid; grid-template-columns: 1.05fr .95fr; gap: 1rem; }
+    svg { width: 100%; height: auto; display: block; }
+    .note { color: var(--muted); font-size: .88rem; line-height: 1.5; }
+    .legend { display: flex; gap: .9rem; flex-wrap: wrap; font-size: .78rem; color: var(--muted); margin-top: .55rem; }
+    .sw { width: .65rem; height: .65rem; border-radius: 99px; display: inline-block; margin-right: .28rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+    th, td { text-align: left; padding: .32rem 0; border-bottom: 1px solid var(--line); }
+    footer { padding: 2.2rem 0 3.2rem; color: var(--muted); font-size: .9rem; line-height: 1.55; }
+    .footlinks { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .6rem; }
+    .cal { display: grid; grid-template-columns: 3.2rem repeat(12, 1fr); gap: 3px; font-size: .65rem; color: var(--muted); }
+    .cal i { display: block; height: 18px; border-radius: 3px; background: #2a3340; overflow: hidden; position: relative; }
+    .cal i em { position: absolute; top: 0; bottom: 0; }
+    @media (max-width: 860px) {
+      .objects, .grid2 { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">Exploratory public companion · exposure descriptives only · <strong>not</strong> the Network essay, form 2a, or Professor Bishai’s endorsement · no health coefficients</div>
+  <div class="wrap">
+    <header>
+      <p class="k">Laidlaw Heat Project · one instrument</p>
+      <h1>The threshold does not travel.</h1>
+      <p class="lede">
+        Hong Kong’s official hot night is a station object at 28°C.
+        On ERA5-Land at the same coordinate it almost disappears.
+        Apparent temperature on that grid invents a third night.
+        Move the threshold and watch the geography change.
+      </p>
+    </header>
+
+    <div class="objects">
+      <div class="obj"><small>HKO Headquarters</small><b class="num" id="nHko">—</b><span>nights at this threshold, dry-bulb station</span></div>
+      <div class="obj"><small>ERA5-Land, same coordinate</small><b class="num" id="nEra" style="color:var(--sea)">—</b><span>nights, dry-bulb reanalysis</span></div>
+      <div class="obj"><small>ERA5 apparent temperature</small><b class="num" id="nAt" style="color:var(--gold)">—</b><span>nights that feel at least this warm</span></div>
+    </div>
+    <p class="jac" id="jacLine"></p>
+    <p class="jac" id="fixedLine"></p>
+
+    <div class="stage">
+      <div class="toolbar">
+        <span class="tlabel" id="tLabel">28.0°C</span>
+        <input id="slider" type="range" min="0" max="24" value="16" step="1" aria-label="Tmin threshold in half degrees from 20 to 32" />
+        <button type="button" id="btn28">Official 28°C</button>
+        <button type="button" id="btnMatch">Match 449 on ERA5</button>
+        <button type="button" id="btnPlay">Play 24→31</button>
+      </div>
+      <p class="note" id="eqNote"></p>
+    </div>
+
+    <div class="grid2">
+      <div class="stage">
+        <h2>Where the night exists</h2>
+        <p class="note">ERA5-Land 0.2° cells, 2013–2023. Paint is the count of nights ≥ the threshold. Not a hospital map.</p>
+        <svg id="field" viewBox="0 0 640 430" role="img" aria-label="Pearl River Delta cells coloured by night counts"></svg>
+        <div class="legend">
+          <span><i class="sw" style="background:#2a3340"></i>silent</span>
+          <span><i class="sw" style="background:#3cb8c0"></i>few</span>
+          <span><i class="sw" style="background:#e36a2a"></i>many</span>
+          <span>HQ / Waglan / Guangzhou outlined</span>
+        </div>
+      </div>
+      <div class="stage">
+        <h2>Counts against the cliff</h2>
+        <svg id="cliff" viewBox="0 0 560 280" role="img" aria-label="Night counts versus Tmin threshold"></svg>
+        <div class="legend">
+          <span><i class="sw" style="background:var(--hko)"></i>HKO</span>
+          <span><i class="sw" style="background:var(--era)"></i>ERA5 HK</span>
+          <span><i class="sw" style="background:var(--at)"></i>apparent</span>
+          <span><i class="sw" style="background:var(--wag)"></i>Waglan cell</span>
+        </div>
+        <p class="note" id="geoLine"></p>
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:1rem">
+      <div class="stage">
+        <h2>Do they fire on the same nights?</h2>
+        <p class="note">Each month: HKO-only (paper), both (teal), ERA5-only (gold). Empty months are both silent. Jaccard is not 1 just because both are quiet.</p>
+        <div class="cal" id="cal"></div>
+      </div>
+      <div class="stage">
+        <h2>Read-out</h2>
+        <table id="readout"></table>
+        <p class="note" style="margin-top:.9rem">
+          The live paper uses HKO Headquarters. This instrument is why those flags
+          cannot be exported onto reanalysis, across the harbour, or up the Pearl.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <p>Public climate only. No CHD/HF coefficients, no stroke, no Gate 3 freeze. Rebuild: <code>python3 scripts/53_threshold_does_not_travel.py</code>.</p>
+      <p>31 August 2026 is still the endorsed HKU 2a and the Scholars Network University-room essay. This URL does not count as that posting. Agreement on this page is not a result from the live health paper.</p>
+      <p>Static figure: <a href="../../figures/threshold_demo/exceedance_and_agreement.svg">exceedance and agreement</a>.</p>
+      <div class="footlinks">
+        <a href="../">Hub</a>
+        <a href="../peers/">Peer cities</a>
+        <a href="../geo/">Hong Kong lattice</a>
+        <a href="../prd/">PRD mosaic</a>
+        <a href="../field/">Field laboratory</a>
+      </div>
+    </footer>
+  </div>
+  <script src="./demo_embed.js"></script>
+  <script>
+    const D = window.THRESHOLD_DEMO;
+    const T = D.thresholds_c;
+    const S = D.series;
+    const O = D.overlap_hko_vs_era5_hk;
+    const cells = D.grid.cells;
+    const daily = D.daily;
+    let idx = T.indexOf(D.official_hot_night_c);
+    let playTimer = null;
+
+    const lons = [...new Set(cells.map(c => c.lon))].sort((a,b)=>a-b);
+    const lats = [...new Set(cells.map(c => c.lat))].sort((a,b)=>b-a);
+    const marks = {
+      [D.grid.hq_cell]: "#f4efe4",
+      [D.grid.waglan_cell]: "#d27cff",
+      [D.grid.guangzhou_cell]: "#e0c36a",
+    };
+
+    function fmt(n) { return n.toLocaleString("en-US"); }
+    function lerp(a,b,t){ return a + (b-a)*t; }
+    function heat(count, max) {
+      if (count <= 0) return "#2a3340";
+      const t = Math.min(1, count / Math.max(max, 1));
+      const r = Math.round(lerp(60, 227, t));
+      const g = Math.round(lerp(184, 106, t));
+      const b = Math.round(lerp(192, 42, t));
+      return `rgb(${r},${g},${b})`;
+    }
+
+    function setIdx(i, fromPlay) {
+      idx = Math.max(0, Math.min(T.length - 1, i));
+      document.getElementById("slider").value = String(idx);
+      document.getElementById("tLabel").textContent = T[idx].toFixed(1) + "°C";
+      document.getElementById("nHko").textContent = fmt(S.hko_tmin[idx]);
+      document.getElementById("nEra").textContent = fmt(S.era5_hk_tmin[idx]);
+      document.getElementById("nAt").textContent = fmt(S.era5_hk_atmin[idx]);
+      const j = O.jaccard[idx];
+      const jacTxt = j == null
+        ? "Both encodings are silent at this cut. That is not agreement."
+        : `Same-cut Jaccard <b>${j}</b> · ${fmt(O.intersection[idx])} nights in both · ${fmt(O.hko_only[idx])} HKO-only · ${fmt(O.era5_only[idx])} ERA5-only.`;
+      document.getElementById("jacLine").innerHTML = jacTxt;
+      const F = D.overlap_hko28_vs_era5_t;
+      const mx = D.max_jaccard_hko28_vs_era5_t;
+      const se = F.sensitivity[idx], ppv = F.ppv[idx], fj = F.jaccard[idx];
+      document.getElementById("fixedLine").innerHTML =
+        `Against the <b>fixed</b> HKO 28°C set: Jaccard ${fj == null ? "—" : fj}, sensitivity ${se == null ? "—" : se}, PPV ${ppv == null ? "—" : ppv}. ` +
+        `Maximum Jaccard is <b>${mx.jaccard}</b> at ${mx.threshold_c.toFixed(1)}°C — no monotone shift recovers the station nights. ` +
+        `Mean-bias correction recovers ${fmt(D.bias_adjusted_hko28.n_pred)} nights (Jaccard ${D.bias_adjusted_hko28.jaccard}).`;
+      if (history.replaceState) history.replaceState(null, "", "#t=" + T[idx]);
+      const share = S.marine_share_cellnights[idx];
+      document.getElementById("geoLine").innerHTML =
+        `Marine-south cells hold ${share == null ? "none of a silent field" : `<b>${Math.round(share*100)}%</b> of cell-nights`}. ` +
+        `Waglan cell ${fmt(S.era5_waglan_tmin[idx])} · Guangzhou cell ${fmt(S.era5_guangzhou_tmin[idx])} · ` +
+        `${S.n_cells_lit[idx]}/90 cells light at least once.`;
+      const eq = D.equivalent_thresholds.era5_tmin_matching_hko_449;
+      document.getElementById("eqNote").textContent =
+        `To get near HKO’s 449 nights, ERA5 dry-bulb at this coordinate needs about ${eq.threshold_c.toFixed(1)}°C (${fmt(eq.count)} nights, off by ${eq.abs_err}). Matching a count is not matching the nights.`;
+      drawField();
+      drawCliff();
+      drawCal();
+      drawTable();
+      if (!fromPlay) stopPlay();
+    }
+
+    function drawField() {
+      const max = Math.max(...cells.map(c => c.counts[idx]), 1);
+      const x0 = 36, y0 = 18, cw = 56, ch = 40;
+      let svg = `<rect width="640" height="430" fill="#0c1218"/>`;
+      for (const c of cells) {
+        const x = x0 + lons.indexOf(c.lon) * cw;
+        const y = y0 + lats.indexOf(c.lat) * ch;
+        const stroke = marks[c.id] ? `stroke="${marks[c.id]}" stroke-width="2.2"` : `stroke="#0c1218" stroke-width="1"`;
+        svg += `<rect x="${x}" y="${y}" width="${cw-6}" height="${ch-6}" rx="7" fill="${heat(c.counts[idx], max)}" ${stroke}><title>${c.id} · ${c.region} · ${c.counts[idx]} nights</title></rect>`;
+      }
+      svg += `<text x="36" y="408" fill="#b7c0c7" font-size="11">112.9°E</text><text x="560" y="408" fill="#b7c0c7" font-size="11">114.7°E</text>`;
+      svg += `<text x="12" y="40" fill="#b7c0c7" font-size="11">23.5°N</text><text x="12" y="370" fill="#b7c0c7" font-size="11">21.9°N</text>`;
+      document.getElementById("field").innerHTML = svg;
+    }
+
+    function pathFor(arr, x, y) {
+      return arr.map((v,i) => `${i?"L":"M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
+    }
+    function drawCliff() {
+      const pad = {l:48, r:16, t:16, b:36};
+      const w = 560, h = 280;
+      const max = Math.max(...S.hko_tmin, ...S.era5_hk_atmin);
+      const x = i => pad.l + (i / (T.length-1)) * (w-pad.l-pad.r);
+      const y = v => pad.t + (1 - v/max) * (h-pad.t-pad.b);
+      const ticks = [20,24,28,32];
+      let svg = `<rect width="${w}" height="${h}" fill="#0c1218"/>`;
+      ticks.forEach(tv => {
+        const i = T.indexOf(tv);
+        if (i < 0) return;
+        svg += `<line x1="${x(i)}" x2="${x(i)}" y1="${pad.t}" y2="${h-pad.b}" stroke="#2a3340"/><text x="${x(i)}" y="${h-12}" text-anchor="middle" fill="#b7c0c7" font-size="11">${tv}°C</text>`;
+      });
+      svg += `<path d="${pathFor(S.hko_tmin,x,y)}" fill="none" stroke="#f4efe4" stroke-width="2.4"/>`;
+      svg += `<path d="${pathFor(S.era5_hk_tmin,x,y)}" fill="none" stroke="#3cb8c0" stroke-width="2.4"/>`;
+      svg += `<path d="${pathFor(S.era5_hk_atmin,x,y)}" fill="none" stroke="#e0c36a" stroke-width="2.4"/>`;
+      svg += `<path d="${pathFor(S.era5_waglan_tmin,x,y)}" fill="none" stroke="#d27cff" stroke-width="1.8"/>`;
+      svg += `<line x1="${x(idx)}" x2="${x(idx)}" y1="${pad.t}" y2="${h-pad.b}" stroke="#e36a2a" stroke-dasharray="4 4"/>`;
+      document.getElementById("cliff").innerHTML = svg;
+    }
+
+    function drawCal() {
+      const t = T[idx];
+      const years = [...new Set(daily.year)];
+      const months = [1,2,3,4,5,6,7,8,9,10,11,12];
+      const bucket = {};
+      for (let i = 0; i < daily.year.length; i++) {
+        const key = daily.year[i] + "-" + daily.month[i];
+        if (!bucket[key]) bucket[key] = {h:0, b:0, e:0};
+        const hko = daily.hko_tmin_tenths[i] / 10 >= t;
+        const era = daily.era5_hk_tmin_tenths[i] / 10 >= t;
+        if (hko && era) bucket[key].b++;
+        else if (hko) bucket[key].h++;
+        else if (era) bucket[key].e++;
+      }
+      let html = `<span></span>` + months.map(m => `<span>${["J","F","M","A","M","J","J","A","S","O","N","D"][m-1]}</span>`).join("");
+      for (const y of years) {
+        html += `<span>${y}</span>`;
+        for (const m of months) {
+          const b = bucket[y + "-" + m] || {h:0,b:0,e:0};
+          const tot = b.h + b.b + b.e;
+          if (!tot) { html += `<i></i>`; continue; }
+          const wH = 100 * b.h / tot, wB = 100 * b.b / tot;
+          html += `<i title="${y}-${m}: HKO-only ${b.h}, both ${b.b}, ERA5-only ${b.e}"><em style="left:0;width:${wH}%;background:#f4efe4"></em><em style="left:${wH}%;width:${wB}%;background:#3cb8c0"></em><em style="left:${wH+wB}%;width:${100-wH-wB}%;background:#e0c36a"></em></i>`;
+        }
+      }
+      document.getElementById("cal").innerHTML = html;
+    }
+
+    function drawTable() {
+      const rows = [
+        ["HKO Headquarters", S.hko_tmin[idx]],
+        ["ERA5 HK coordinate", S.era5_hk_tmin[idx]],
+        ["ERA5 apparent HK", S.era5_hk_atmin[idx]],
+        ["ERA5 HQ cell " + D.grid.hq_cell, S.era5_hq_cell_tmin[idx]],
+        ["ERA5 Waglan cell", S.era5_waglan_tmin[idx]],
+        ["ERA5 Guangzhou cell", S.era5_guangzhou_tmin[idx]],
+        ["Marine-south mean (cells)", S.era5_marine_mean[idx]],
+        ["Guangzhou-box mean (cells)", S.era5_guangzhou_box_mean[idx]],
+        ["Sensitivity (ERA5 | HKO 28°C)", D.overlap_hko28_vs_era5_t.sensitivity[idx]],
+        ["PPV (HKO 28°C | ERA5)", D.overlap_hko28_vs_era5_t.ppv[idx]],
+      ];
+      document.getElementById("readout").innerHTML =
+        "<tr><th>Encoding / place</th><th>Nights</th></tr>" +
+        rows.map(r => `<tr><td>${r[0]}</td><td>${typeof r[1]==="number" ? fmt(r[1]) : r[1]}</td></tr>`).join("");
+    }
+
+    function stopPlay() {
+      if (playTimer) { clearInterval(playTimer); playTimer = null; }
+      document.getElementById("btnPlay").textContent = "Play 24→31";
+    }
+    function play() {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        setIdx(T.indexOf(31) >= 0 ? T.indexOf(31) : T.length-1);
+        return;
+      }
+      if (playTimer) { stopPlay(); return; }
+      let i = T.indexOf(24.0);
+      if (i < 0) i = 0;
+      setIdx(i, true);
+      document.getElementById("btnPlay").textContent = "Stop";
+      playTimer = setInterval(() => {
+        i += 1;
+        if (i >= T.length || T[i] > 31.0) { stopPlay(); return; }
+        setIdx(i, true);
+      }, 220);
+    }
+
+    document.getElementById("slider").addEventListener("input", e => setIdx(+e.target.value));
+    document.getElementById("btn28").addEventListener("click", () => setIdx(T.indexOf(28)));
+    document.getElementById("btnMatch").addEventListener("click", () => {
+      const t = D.equivalent_thresholds.era5_tmin_matching_hko_449.threshold_c;
+      let best = 0, err = 99;
+      T.forEach((v,i) => { const d = Math.abs(v-t); if (d < err) { err = d; best = i; } });
+      setIdx(best);
+    });
+    document.getElementById("btnPlay").addEventListener("click", play);
+    window.addEventListener("keydown", e => {
+      if (e.key === "ArrowRight") setIdx(idx+1);
+      if (e.key === "ArrowLeft") setIdx(idx-1);
+    });
+    const hash = (location.hash || "").match(/t=([0-9.]+)/);
+    if (hash) {
+      const want = parseFloat(hash[1]);
+      let best = idx, err = 99;
+      T.forEach((v,i) => { const d = Math.abs(v-want); if (d < err) { err = d; best = i; } });
+      idx = best;
+    }
+    setIdx(idx);
+  </script>
+</body>
+</html>

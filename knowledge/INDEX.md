@@ -19,6 +19,10 @@
 
 ## Current meeting record
 
+- [`2026-08-14_yc_board_synthesis.md`](2026-08-14_yc_board_synthesis.md) — Fable/Opus/Sol board: four maps are one product; max Jaccard against HKO 28°C is 0.47; 2a still owns 31 August.
+- [`2026-08-14_threshold_does_not_travel.md`](2026-08-14_threshold_does_not_travel.md) — one instrument: Jaccard(t), equivalent 26.4°C, max Jaccard 0.47 at 26.3°C; not a fifth dashboard.
+- [`../reports/hogan_threshold_does_not_travel_2026-08-14.md`](../reports/hogan_threshold_does_not_travel_2026-08-14.md) — Hogan lock card: frequency can be matched at 26.4°C; the nights cannot (max Jaccard 0.47).
+- [`../docs/demo/index.html`](../docs/demo/index.html) — threshold instrument.
 - [`2026-08-14_strong_model_synthesis.md`](2026-08-14_strong_model_synthesis.md) — Luna vs Sol vs Grok: EOF robust; 23/90 trends do not survive FDR; Sol killed the PhD-flex lede; Kimi k3 not launchable.
 - [`2026-08-14_luna_prd_second_cut.md`](2026-08-14_luna_prd_second_cut.md) — Luna climate cut: EOF holdout robust; BH 10% kills 23/90 trends; residual network 26 edges; pooled P(HN|VHD).
 - [`2026-08-14_sol_strong_model_pass.md`](2026-08-14_sol_strong_model_pass.md) — Sol packing pass: Bishai endorsement is the 31 August serial risk; field lab is not the deadline; logos stay print overlays.

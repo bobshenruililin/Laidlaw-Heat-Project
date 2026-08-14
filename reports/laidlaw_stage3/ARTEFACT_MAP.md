@@ -11,7 +11,7 @@
 | `submission_checklist.md` | Bob, supervisor, HKU administration | Living status record | Official dates from the programme Drive. |
 | `reports/lsn/research_project_summary.md` and `docs/lsn/` | Laidlaw Scholar Network | Draft rewritten 13 Aug to CHD/HF; still no coefficients on the public page | Bob’s voice/privacy pass before posting. Do not use the 5 August stroke pack. Network URL is what HKU reports to the Foundation. |
 | `reports/blog/` | Laidlaw website readers | Drafts | Process posts ≠ 3 C’s output. 3 C’s draft: `character_leadership_global_mindset.md`. |
-| `docs/` (hub, `prd/`, `geo/`, `peers/`, `field/`, `lsn/`) | Public map/ribbon companions linked from the blog or LSN | Living; GitHub Pages 404 until enabled | Exposure only. Do not add coefficients. Do not treat as the Laidlaw Scholars website. |
+| `docs/` (hub, `demo/`, `prd/`, `geo/`, `peers/`, `field/`, `lsn/`) | Public map/ribbon companions linked from the blog or LSN | Living; GitHub Pages 404 until enabled | Exposure only. Do not add coefficients. Do not treat as the Laidlaw Scholars website. The threshold instrument in `docs/demo/` is a companion, not form 2a. |
 | Hogan's shared file via `manuscript/live_collaborative/` | Journal co-authors | **LIVE MANUSCRIPT AUTHORITY** | Paste into the shared file; preserve Hogan's weather text and Roro's health-data ownership. |
 | `manuscript/chd_hf_thermal_associations_2013_2023.*` and supplement | Repository and reproducibility readers | Repository-only parallel draft | Use for explicit methods or release work. Do not treat it as the shared manuscript. |
 

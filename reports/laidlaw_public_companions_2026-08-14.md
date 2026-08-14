@@ -20,7 +20,7 @@ They are not the same object. The programme site is where Bob writes in the firs
 | Hogan live manuscript | Live authority; weather paragraph is Hogan’s | Hogan *cards* only. Do not paste mosaic flags as HKO. |
 | LSN research-project summary | Draft; Bob’s privacy pass | Yes — link the hub after the pass. No coefficients. |
 | Laidlaw website blog | Drafts; Bob’s privacy pass | Yes — `a_city_is_not_a_point.md`, `the_river_has_a_temperature.md`, `a_field_has_modes.md`. 3 C’s Network object is `character_leadership_global_mindset.md` (separate deadline 2027). |
-| GitHub Pages public companions | Living `docs/` | Yes — hub, field laboratory, Hong Kong lattice, PRD mosaic, peer atlas, LSN ribbon. |
+| GitHub Pages public companions | Living `docs/` | Yes — hub, threshold instrument, field laboratory, Hong Kong lattice, PRD mosaic, peer atlas, LSN ribbon. |
 | HKU 2a form + Network essay URL | Human | Worksheet only. Official DOCX stays off git. Due 31 August 2026. |
 
 ## Preview until Pages is on
@@ -28,6 +28,7 @@ They are not the same object. The programme site is where Bob writes in the firs
 Prefer **raw.githack** (correct MIME types for Leaflet JS). htmlpreview often 404s companion scripts.
 
 - Hub: https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/index.html
+- Threshold instrument: https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/demo/index.html
 - Field laboratory: https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/field/index.html
 - PRD mosaic: https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/prd/index.html
 - Hong Kong lattice: https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/geo/index.html

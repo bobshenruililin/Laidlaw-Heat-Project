@@ -86,6 +86,12 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   vs highland **0**. Theil–Sen median +0.29°C/decade; 23/90 CIs exclude 0
   but **0/90** survive BH at 10%. Not a climate-change result. `docs/field/index.html`;
   `knowledge/2026-08-14_prd_field_laboratory.md`.
+- **Threshold instrument (14 Aug, exposure only):** Jaccard(HKO, ERA5) is
+  **0.83 at 24°C** and **0.031 at 28°C**. ERA5 dry-bulb needs **26.4°C** to
+  match the HKO *count* of 449 (448 nights, not the same days). Marine-south
+  cells hold **78%** of 28°C cell-nights. Apparent temperature is a third
+  object (1,453 nights). `docs/demo/index.html`;
+  `knowledge/2026-08-14_threshold_does_not_travel.md`.
 
 ---
 

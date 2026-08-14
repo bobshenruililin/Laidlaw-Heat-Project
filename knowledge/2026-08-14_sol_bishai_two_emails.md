@@ -24,11 +24,7 @@
 
 ## What “alongside current progress” may say
 
-The current health analysis is a twelve-contrast monthly CHD/HF first-hospitalisation panel using separate negative-binomial models.  
-All core multiplicity-adjusted q-values exceed 0.19, so no coefficient should be presented as a triumph.  
-Gate 3 remains open, with no confirmatory headline frozen.  
-The live health paper remains anchored to the HKO Headquarters exposure series and does not model within-territory exposure variation.  
-The maps are exposure-identification work: they show what a source and threshold label, not cell-level health effects or validation of the health model.
+The current health analysis is a twelve-contrast monthly CHD/HF first-hospitalisation panel using separate negative-binomial models. All core multiplicity-adjusted q-values exceed 0.19, so no coefficient should be presented as a triumph. Gate 3 remains open, with no confirmatory headline frozen. The live health paper remains anchored to the HKO Headquarters exposure series and does not model within-territory exposure variation. The maps are exposure-identification work: they show what a source and threshold label, not cell-level health effects or validation of the health model.
 
 ## What must not be said
 

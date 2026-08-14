@@ -213,9 +213,12 @@ def summarise(pt: dict, days: list[dict], elevation: float) -> dict:
     tmaxs = [d["tmax"] for d in days]
     tmeans = [d["tmean"] for d in days]
     climatology = []
+    hn_by_month, cd_by_month = [], []
     for m in range(1, 13):
-        xs = [d["tmean"] for d in days if d["month"] == m]
-        climatology.append(round(sum(xs) / len(xs), 3) if xs else None)
+        xs = [d for d in days if d["month"] == m]
+        climatology.append(round(sum(d["tmean"] for d in xs) / len(xs), 3) if xs else None)
+        hn_by_month.append(sum(d["hn"] for d in xs))
+        cd_by_month.append(sum(d["cd"] for d in xs))
     amp = max(x for x in climatology if x is not None) - min(x for x in climatology if x is not None)
     return {
         **pt,
@@ -232,6 +235,9 @@ def summarise(pt: dict, days: list[dict], elevation: float) -> dict:
         "hn_total": sum(d["hn"] for d in days),
         "vhd_total": sum(d["vhd"] for d in days),
         "cd_total": sum(d["cd"] for d in days),
+        "jja_hn": hn_by_month[5] + hn_by_month[6] + hn_by_month[7],
+        "hn_by_month": hn_by_month,
+        "cd_by_month": cd_by_month,
         "fingerprint": series_fingerprint(days),
         "climatology_mean_t": climatology,
         "provenance": "OPEN_METEO_ERA5_LAND_PUBLIC",
@@ -511,7 +517,7 @@ def main() -> int:
     }
 
     OUT_TAB.mkdir(parents=True, exist_ok=True)
-    skip_keys = {"climatology_mean_t"}
+    skip_keys = {"climatology_mean_t", "hn_by_month", "cd_by_month"}
     write_csv(OUT_TAB / "hk_spatial_cells.csv", [
         {k: v for k, v in s.items() if k not in skip_keys} for s in summaries
     ])
@@ -535,6 +541,7 @@ def main() -> int:
         "window": {"start": START, "end": END, "n_years": 11},
         "provenance": "REAL_PUBLIC. Open-Meteo ERA5-Land daily 2 m temperatures on a 0.1° lattice plus named landmarks. Exposure descriptives only. No health outcomes. No project coefficients.",
         "step_deg": STEP,
+        "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         "thresholds_hko": {"hot_night_tmin_ge": HN_C, "very_hot_day_tmax_ge": VHD_C, "cold_day_tmin_le": CD_C},
         "model": model,
         "cells": summaries,

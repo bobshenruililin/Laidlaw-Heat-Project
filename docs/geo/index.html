@@ -65,10 +65,16 @@
       <div class="toolbar">
         <span class="note">Paint the lattice by</span>
         <button class="active" data-layer="hn_total">Hot nights ≥28°C</button>
+        <button data-layer="hn_month">Hot nights, by month</button>
         <button data-layer="mean_tmin">Mean night Tmin</button>
         <button data-layer="cd_total">Cold days ≤12°C</button>
         <button data-layer="elevation_m">Elevation</button>
         <button data-layer="tmin_resid">OLS residual</button>
+      </div>
+      <div class="monthbar" id="monthbar" style="display:none; gap:.6rem; align-items:center; margin:0 0 .8rem;">
+        <span class="month-label" id="monthName" style="font-family:Fraunces,serif; font-size:1.2rem;">July</span>
+        <input id="month" type="range" min="1" max="12" value="7" style="width:min(360px,100%); accent-color:#0c6b74;" />
+        <span class="note" id="monthStory"></span>
       </div>
       <div id="map" role="img" aria-label="Hong Kong ERA5-Land thermal lattice"></div>
       <div class="legendbox" id="mapLegend"></div>
@@ -83,6 +89,9 @@
         <h3 style="font-size:1rem; margin:1.1rem 0 .3rem;">Empirical variogram of night Tmin</h3>
         <svg class="chart" id="vgm" viewBox="0 0 640 180" role="img"></svg>
         <p class="note">Semivariance γ(h) versus separation. The lattice spacing is ~11 km, so the first occupied bin is the neighbour scale.</p>
+        <h3 style="font-size:1rem; margin:1.1rem 0 .3rem;">Elevation versus night Tmin</h3>
+        <svg class="chart" id="elev" viewBox="0 0 640 180" role="img"></svg>
+        <p class="note">Lattice cells only. The slope is the OLS elevation term; marine cells sit low and warm.</p>
       </div>
       <div class="card">
         <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;" id="placeTitle">HKO Headquarters</h2>
@@ -107,7 +116,7 @@
     <footer>
       <p><strong>Do not</strong> paint CHD/HF or stroke counts onto these cells. <strong>Do not</strong> quote lattice hot nights as HKO flags. Stroke was not delivered. Gate 3 is open. Live paper stays on Headquarters.</p>
       <p>Source: Open-Meteo ERA5-Land, 2013–2023, Asia/Hong_Kong. Model: ordinary least squares on 30 lattice cells. Rebuild: <code>python3 scripts/49_hk_spatial_thermal_field.py</code>.</p>
-      <p><a href="../">Public companions</a> · <a href="../peers/">Peer-city atlas</a> · <a href="../lsn/">LSN climate ribbon</a></p>
+      <p><a href="../">Public companions</a> · <a href="../prd/">Pearl River Delta mosaic</a> · <a href="../peers/">Peer-city atlas</a> · <a href="../lsn/">LSN climate ribbon</a></p>
     </footer>
   </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -151,11 +160,20 @@
     }
     const palettes = {
       hn_total: { lo: [31,95,138], hi: [194,78,22], label: "ERA5 nights Tmin ≥ 28°C, 2013–2023" },
+      hn_month: { lo: [31,95,138], hi: [194,78,22], label: "ERA5 nights Tmin ≥ 28°C in this month, 2013–2023" },
       mean_tmin: { lo: [31,95,138], hi: [194,78,22], label: "Mean night Tmin (°C)" },
       cd_total: { lo: [194,78,22], hi: [31,95,138], label: "ERA5 days Tmin ≤ 12°C" },
       elevation_m: { lo: [244,239,228], hi: [12,107,116], label: "DEM elevation at the sample point (m)" },
       tmin_resid: { lo: [31,95,138], hi: [194,78,22], diverging: true, label: "Residual from Tmin ~ elevation + coast (°C)" }
     };
+    const months = S.months || ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    let month = 7;
+    let layerName = "hn_total";
+
+    function valueOf(p, lyr) {
+      if (lyr === "hn_month") return (p.hn_by_month || [])[month - 1];
+      return p[lyr];
+    }
 
     function colorFor(layer, v, vmin, vmax) {
       const pal = palettes[layer];
@@ -178,14 +196,15 @@
     let marks = L.layerGroup().addTo(map);
 
     function paint(layer) {
-      const vals = cells.map(c => c[layer]).filter(v => v != null);
+      layerName = layer;
+      const vals = cells.map(c => valueOf(c, layer)).filter(v => v != null);
       const vmin = Math.min(...vals), vmax = Math.max(...vals);
       lattice.clearLayers();
       marks.clearLayers();
       S.geojson.features.forEach(f => {
         const p = f.properties;
         if (f.geometry.type === "Polygon") {
-          const v = p[layer];
+          const v = valueOf(p, layer);
           L.geoJSON(f, {
             style: {
               color: "#fff", weight: 1,
@@ -209,12 +228,23 @@
         `<span><i class="sw" style="background:${colorFor(layer, vmin, vmin, vmax)}"></i>${vmin}</span>
          &nbsp;${palettes[layer].label}&nbsp;
          <span><i class="sw" style="background:${colorFor(layer, vmax, vmin, vmax)}"></i>${vmax}</span>`;
+      const bar = document.getElementById("monthbar");
+      if (bar) bar.style.display = layer === "hn_month" ? "flex" : "none";
+      if (layer === "hn_month") {
+        document.getElementById("monthName").textContent = months[month - 1];
+        const wag = (waglan.hn_by_month || [])[month - 1];
+        const hqM = (hq.hn_by_month || [])[month - 1];
+        document.getElementById("monthStory").textContent =
+          `${months[month - 1]}: Waglan ${wag} ERA5 nights ≥28°C · Headquarters ${hqM}.`;
+      }
     }
 
     function popupHTML(p) {
+      const extra = layerName === "hn_month" && p.hn_by_month
+        ? `<br>${months[month-1]} hot nights ${p.hn_by_month[month-1]}` : "";
       return `<strong>${p.name}</strong><br>${p.kind}
         <br>Night Tmin ${p.mean_tmin.toFixed(2)}°C
-        <br>Hot nights ${p.hn_total} · cold days ${p.cd_total}
+        <br>Hot nights ${p.hn_total} · cold days ${p.cd_total}${extra}
         <br>Elevation ${p.elevation_m} m`;
     }
 
@@ -238,6 +268,13 @@
         paint(btn.dataset.layer);
       });
     });
+    const monthInput = document.getElementById("month");
+    if (monthInput) {
+      monthInput.addEventListener("input", (e) => {
+        month = Number(e.target.value);
+        paint("hn_month");
+      });
+    }
     paint("hn_total");
     showPlace("hko_hq");
 
@@ -258,6 +295,20 @@
     document.getElementById("vgm").innerHTML =
       `<path d="${path}" fill="none" stroke="#0c6b74" stroke-width="2.4"/>${dots}
        <text x="8" y="20" font-size="11" fill="#5b6773">γ</text>`;
+
+    const gridCells = cells.filter(c => c.kind === "grid");
+    const ex = gridCells.map(c => c.elevation_m);
+    const ey = gridCells.map(c => c.mean_tmin);
+    const exmin = Math.min(...ex), exmax = Math.max(...ex);
+    const eymin = Math.min(...ey), eymax = Math.max(...ey);
+    const eX = v => 50 + (v - exmin) / (exmax - exmin || 1) * 560;
+    const eY = v => 150 - (v - eymin) / (eymax - eymin || 1) * 120;
+    const eDots = gridCells.map(c =>
+      `<circle cx="${eX(c.elevation_m)}" cy="${eY(c.mean_tmin)}" r="4" fill="#0c6b74" fill-opacity=".8"/>`
+    ).join("");
+    document.getElementById("elev").innerHTML =
+      `${eDots}<text x="320" y="172" text-anchor="middle" font-size="11" fill="#5b6773">elevation (m)</text>
+       <text x="8" y="20" font-size="11" fill="#5b6773">Tmin</text>`;
 
     if (P) {
       const world = L.map("world", { scrollWheelZoom: true, maxZoom: 6 }).setView([22.3, 80], 2);

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The river has a temperature · Pearl River Delta mosaic · Laidlaw Heat Project</title>
+  <meta name="description" content="Exposure only. ERA5-Land mosaic of the Pearl River Delta with a spatial lag model. Not health findings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    :root {
+      --ink: #12181f; --muted: #5b6773; --paper: #f4efe4; --card: #fffdf8;
+      --line: rgba(18,24,31,.12); --heat: #c24e16; --cold: #1f5f8a; --sea: #0c6b74;
+      --gold: #c9a227; --shadow: 0 16px 40px rgba(18,24,31,.08);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: "IBM Plex Sans", system-ui, sans-serif; }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 500; letter-spacing: -.02em; }
+    a { color: var(--sea); }
+    .wrap { width: min(1220px, calc(100% - 2rem)); margin: 0 auto; }
+    .banner { background: #12181f; color: #f4efe4; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; padding: .7rem 1rem; text-align: center; }
+    .banner strong { color: #f0b36a; }
+    header { padding: 2.6rem 0 1rem; }
+    header p.lede { font-size: 1.12rem; max-width: 48rem; line-height: 1.55; color: var(--muted); }
+    .statrow { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin: 1.2rem 0 1.4rem; }
+    .stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.1rem; box-shadow: var(--shadow); }
+    .stat b { display: block; font-family: Fraunces, serif; font-size: 1.4rem; }
+    .stat span { color: var(--muted); font-size: .84rem; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 1.1rem 1.2rem 1.3rem; box-shadow: var(--shadow); }
+    #map { height: 560px; border-radius: 14px; border: 1px solid var(--line); }
+    .toolbar, .monthbar { display: flex; gap: .55rem; flex-wrap: wrap; align-items: center; margin: 0 0 .75rem; }
+    select, button { font: inherit; padding: .4rem .7rem; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+    button.active { background: var(--sea); color: #fff; border-color: var(--sea); }
+    input[type=range] { width: min(420px, 100%); accent-color: var(--sea); }
+    .grid2 { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.1rem; margin-top: 1.1rem; }
+    .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.1rem; margin-top: 1.1rem; }
+    .note { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+    .legendbox { font-size: .8rem; color: var(--muted); margin-top: .5rem; }
+    .sw { width: .7rem; height: .7rem; border-radius: 99px; display: inline-block; margin-right: .3rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    th, td { text-align: left; padding: .35rem 0; border-bottom: 1px solid var(--line); }
+    svg.chart { width: 100%; height: 200px; display: block; }
+    footer { padding: 2.4rem 0 3.4rem; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+    .month-label { font-family: Fraunces, serif; font-size: 1.35rem; }
+    .leaflet-popup-content { font-family: "IBM Plex Sans", sans-serif; font-size: .9rem; }
+    @media (max-width: 980px) {
+      .statrow, .grid2, .grid3 { grid-template-columns: 1fr; }
+      #map { height: 400px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">Exposure only · public reanalysis · <strong>not</strong> health findings · not a city-station yearbook</div>
+  <div class="wrap">
+    <header>
+      <p style="letter-spacing:.14em; text-transform:uppercase; font-size:.75rem; color:var(--sea); margin:0 0 .6rem;">Laidlaw Heat Project · geospatial companion</p>
+      <h1>The river has a temperature.</h1>
+      <p class="lede">
+        Hong Kong sits at the mouth of a delta. The peer-city atlas treated Shenzhen and Guangzhou
+        as points. This page paints the water between them: a 0.2° ERA5-Land mosaic, a spatial lag
+        model, and a month slider that shows where a 28°C night actually lives — mostly on the sea.
+      </p>
+    </header>
+
+    <div class="statrow" id="stats"></div>
+
+    <div class="card">
+      <div class="toolbar">
+        <span class="note">Paint the mosaic by</span>
+        <button class="active" data-layer="hn_month">Hot nights, by month</button>
+        <button data-layer="hn_total">Hot nights, annual</button>
+        <button data-layer="mean_tmin">Mean night Tmin</button>
+        <button data-layer="hn_gi_z">Gi* hotspot z</button>
+        <button data-layer="tmin_resid">OLS residual</button>
+        <button data-layer="thermal_distance">Thermal distance from HQ</button>
+      </div>
+      <div class="monthbar" id="monthbar">
+        <span class="month-label" id="monthName">July</span>
+        <input id="month" type="range" min="1" max="12" value="7" />
+        <span class="note" id="monthStory"></span>
+      </div>
+      <div id="map" role="img" aria-label="Pearl River Delta ERA5-Land thermal mosaic"></div>
+      <div class="legendbox" id="mapLegend"></div>
+      <p class="note" style="margin:.7rem 0 0;">OpenStreetMap geography, ERA5-Land temperature. Squares are 0.2° sample cells, not municipal boundaries. Dots are city coordinates on the same source. Click either.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">A nested spatial model</h2>
+        <p class="note" id="modelNote"></p>
+        <table id="modelTable"></table>
+        <p class="note" id="rhoNote"></p>
+      </div>
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">Waglan → Guangzhou</h2>
+        <p class="note">Nearest mosaic cell to each stop. Circle size in the SVG is annual ERA5 hot nights. This is a transect of the grid, not a ferry timetable.</p>
+        <div id="transectSvg"></div>
+        <table id="transectTable"></table>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.15rem;">Moran scatter</h2>
+        <p class="note">Standardised night Tmin versus its spatial lag. Quadrants I/III are clustering.</p>
+        <svg class="chart" id="moran" viewBox="0 0 320 200"></svg>
+      </div>
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.15rem;">Variogram</h2>
+        <p class="note">Semivariance of night Tmin with lag in kilometres. Neighbour scale is 35 km.</p>
+        <svg class="chart" id="vgm" viewBox="0 0 320 200"></svg>
+      </div>
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.15rem;">Climate vs map</h2>
+        <p class="note">Thermal distance from the Headquarters cell against kilometres on the ground.</p>
+        <svg class="chart" id="tdist" viewBox="0 0 320 200"></svg>
+        <p class="note" id="tdistNote"></p>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">Regions on one source</h2>
+        <p class="note">Mean of lattice cells, not official city climate normals. Hong Kong here is the SAR box on this grid, not Headquarters.</p>
+        <table id="regionTable"></table>
+      </div>
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;" id="placeTitle">Hong Kong</h2>
+        <p class="note" id="placeMeta"></p>
+        <table id="placeTable"></table>
+        <h3 style="font-size:1rem; margin:1.1rem 0 .3rem;">City coordinates</h3>
+        <table id="cityTable"></table>
+      </div>
+    </div>
+
+    <footer>
+      <p><strong>Do not</strong> paint CHD/HF or stroke counts onto these cells. <strong>Do not</strong> transport Hong Kong hospitalisation ratios to Shenzhen or Guangzhou. <strong>Do not</strong> quote mosaic hot nights as HKO or CMA flags. Stroke was not delivered. Gate 3 is open. Live paper stays on Headquarters.</p>
+      <p>Source: Open-Meteo ERA5-Land, 2013–2023, Asia/Hong_Kong. Models: OLS, SLX, SAR-2SLS on 90 lattice cells. Rebuild: <code>python3 scripts/50_prd_thermal_mosaic.py</code>.</p>
+      <p><a href="../">Public companions</a> · <a href="../geo/">Hong Kong lattice</a> · <a href="../peers/">Peer-city atlas</a> · <a href="../lsn/">LSN climate ribbon</a></p>
+    </footer>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./prd_embed.js"></script>
+  <script>
+    const S = window.PRD_SPATIAL;
+    const M = S.model;
+    const cells = S.cells;
+    const grid = cells.filter(c => c.kind === "grid");
+    const cities = cells.filter(c => c.kind === "city");
+    const hk = cells.find(c => c.id === "hong_kong");
+    const sz = cells.find(c => c.id === "shenzhen");
+    const gz = cells.find(c => c.id === "guangzhou");
+    const regions = M.regional_means;
+    let month = 7;
+    let layer = "hn_month";
+
+    const marineHn = regions["marine south"] ? regions["marine south"].hn_mean : "—";
+    const gzHn = regions["Guangzhou"] ? regions["Guangzhou"].hn_mean : "—";
+    document.getElementById("stats").innerHTML = [
+      [`ρ = ${M.sar_2sls.rho}`, "Spatial lag of night Tmin (SAR-2SLS)"],
+      [`R² ${M.slx.r2}`, "SLX: Tmin ~ elevation, lat, lon, and their spatial lags"],
+      [`${marineHn} vs ${gzHn}`, "Mean ERA5 hot nights: marine-south cells vs Guangzhou box"],
+      [`I = ${M.moran_raw_tmin.I}`, "Moran’s I of night Tmin on the 35 km neighbour graph"]
+    ].map(([b,s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
+
+    document.getElementById("modelNote").textContent =
+      `Nights cool toward the north (${M.ols.beta.lat.beta} °C per degree) and slightly with elevation. Neighbours still matter: Moran’s I on raw Tmin is ${M.moran_raw_tmin.I}. The SLX model (covariates plus their spatial lags) lifts R² from ${M.ols.r2} to ${M.slx.r2}. Residual I falls from ${M.ols.moran_residual.I} to ${M.slx.moran_residual.I}.`;
+
+    document.getElementById("modelTable").innerHTML = `
+      <tr><th>Model</th><th>R²</th><th>Residual I</th><th>Note</th></tr>
+      <tr><td>OLS: elev + lat + lon</td><td>${M.ols.r2}</td><td>${M.ols.moran_residual.I}</td><td>Latitude does most of the work</td></tr>
+      <tr><td>SLX: X + WX</td><td>${M.slx.r2}</td><td>${M.slx.moran_residual.I}</td><td>Neighbour elevation/latitude</td></tr>
+      <tr><td>SAR-2SLS: X + W y</td><td>${M.sar_2sls.r2}</td><td>${M.sar_2sls.moran_residual.I}</td><td>ρ = ${M.sar_2sls.rho} (SE ${M.sar_2sls.rho_se})</td></tr>`;
+
+    document.getElementById("rhoNote").textContent =
+      `Getis-Ord Gi* on annual hot-night counts: ${M.getis_ord_hn.n_hotspot_z_gt_1_96} hotspot cells and ${M.getis_ord_hn.n_coldspot_z_lt_m1_96} coldspot cells at |z| > 1.96. A hotspot here is a climate cluster on the grid, not a hospital cluster.`;
+
+    function ramp(t, a, b) {
+      const lerp = (x, y, u) => Math.round(x + (y - x) * u);
+      return `rgb(${lerp(a[0], b[0], t)},${lerp(a[1], b[1], t)},${lerp(a[2], b[2], t)})`;
+    }
+    const palettes = {
+      hn_month: { lo: [31,95,138], hi: [194,78,22], label: "ERA5 nights Tmin ≥ 28°C in this month, 2013–2023" },
+      hn_total: { lo: [31,95,138], hi: [194,78,22], label: "ERA5 nights Tmin ≥ 28°C, 2013–2023" },
+      mean_tmin: { lo: [31,95,138], hi: [194,78,22], label: "Mean night Tmin (°C)" },
+      hn_gi_z: { lo: [31,95,138], hi: [194,78,22], diverging: true, label: "Getis-Ord Gi* z on annual hot nights" },
+      tmin_resid: { lo: [31,95,138], hi: [194,78,22], diverging: true, label: "Residual from Tmin ~ elev + lat + lon (°C)" },
+      thermal_distance: { lo: [12,107,116], hi: [194,78,22], label: "Climate-space distance from the Headquarters cell" }
+    };
+
+    function valueOf(p, lyr) {
+      if (lyr === "hn_month") return (p.hn_by_month || [])[month - 1];
+      return p[lyr];
+    }
+
+    function colorFor(lyr, v, vmin, vmax) {
+      const pal = palettes[lyr];
+      if (v == null || Number.isNaN(v)) return "#ddd";
+      if (pal.diverging) {
+        const m = Math.max(Math.abs(vmin), Math.abs(vmax), 0.01);
+        const t = (v + m) / (2 * m);
+        return ramp(t, pal.lo, pal.hi);
+      }
+      const t = vmax === vmin ? 0.5 : (v - vmin) / (vmax - vmin);
+      return ramp(Math.min(1, Math.max(0, t)), pal.lo, pal.hi);
+    }
+
+    const map = L.map("map", { scrollWheelZoom: true, maxZoom: 12 }).setView([22.7, 113.8], 8);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap",
+      maxZoom: 12
+    }).addTo(map);
+
+    let lattice = L.layerGroup().addTo(map);
+    let marks = L.layerGroup().addTo(map);
+    const transectLine = L.polyline(M.transect.map(t => [t.lat, t.lon]), {
+      color: "#12181f", weight: 2, dashArray: "6 6", opacity: 0.7
+    }).addTo(map);
+
+    function monthStory() {
+      const name = S.months[month - 1];
+      document.getElementById("monthName").textContent = name;
+      const totals = {};
+      grid.forEach(c => {
+        const v = c.hn_by_month[month - 1];
+        totals[c.region] = (totals[c.region] || 0) + v;
+      });
+      const top = Object.entries(totals).sort((a,b) => b[1] - a[1])[0];
+      const hkM = regions["Hong Kong"] ? grid.filter(c => c.region === "Hong Kong").reduce((a,c) => a + c.hn_by_month[month-1], 0) : 0;
+      const gzM = regions["Guangzhou"] ? grid.filter(c => c.region === "Guangzhou").reduce((a,c) => a + c.hn_by_month[month-1], 0) : 0;
+      document.getElementById("monthStory").textContent =
+        `${name}: most 28°C nights sit in ${top[0]}. Hong Kong box ${hkM} cell-nights · Guangzhou box ${gzM}.`;
+    }
+
+    function paint() {
+      const vals = grid.map(c => valueOf(c, layer)).filter(v => v != null);
+      const vmin = Math.min(...vals), vmax = Math.max(...vals);
+      lattice.clearLayers();
+      marks.clearLayers();
+      S.geojson.features.forEach(f => {
+        const p = f.properties;
+        if (f.geometry.type !== "Polygon") return;
+        const v = valueOf(p, layer);
+        L.geoJSON(f, {
+          style: {
+            color: "#fff", weight: 0.8,
+            fillColor: colorFor(layer, v, vmin, vmax),
+            fillOpacity: 0.68
+          }
+        }).bindPopup(popupHTML(p)).on("click", () => showPlace(p.id)).addTo(lattice);
+      });
+      cities.forEach(p => {
+        const mk = L.circleMarker([p.lat, p.lon], {
+          radius: p.id === "hong_kong" ? 8 : 6,
+          color: "#fff", weight: 2,
+          fillColor: p.id === "hong_kong" ? "#0c6b74" : "#12181f",
+          fillOpacity: 1
+        }).bindPopup(popupHTML(p)).on("click", () => showPlace(p.id));
+        mk.bindTooltip(p.name, { permanent: false });
+        mk.addTo(marks);
+      });
+      document.getElementById("mapLegend").innerHTML =
+        `<span><i class="sw" style="background:${colorFor(layer, vmin, vmin, vmax)}"></i>${vmin}</span>
+         &nbsp;${palettes[layer].label}&nbsp;
+         <span><i class="sw" style="background:${colorFor(layer, vmax, vmin, vmax)}"></i>${vmax}</span>`;
+      document.getElementById("monthbar").style.display = layer === "hn_month" ? "flex" : "none";
+      if (layer === "hn_month") monthStory();
+    }
+
+    function popupHTML(p) {
+      const extra = layer === "hn_month" ? `<br>${S.months[month-1]} hot nights ${p.hn_by_month[month-1]}` : "";
+      return `<strong>${p.name}</strong><br>${p.kind} · ${p.region || ""}
+        <br>Night Tmin ${p.mean_tmin.toFixed(2)}°C
+        <br>Hot nights ${p.hn_total} · cold days ${p.cd_total}${extra}
+        <br>Elevation ${p.elevation_m} m`;
+    }
+
+    function showPlace(id) {
+      const p = cells.find(c => c.id === id);
+      document.getElementById("placeTitle").textContent = p.name;
+      document.getElementById("placeMeta").textContent = `${p.note} Region on this grid: ${p.region}.`;
+      document.getElementById("placeTable").innerHTML = `
+        <tr><td>Mean Tmin</td><td>${p.mean_tmin.toFixed(2)}°C</td></tr>
+        <tr><td>ERA5 hot nights (28°C)</td><td>${p.hn_total}</td></tr>
+        <tr><td>of which JJA</td><td>${p.jja_hn}</td></tr>
+        <tr><td>ERA5 cold days (12°C)</td><td>${p.cd_total}</td></tr>
+        <tr><td>Elevation</td><td>${p.elevation_m} m</td></tr>
+        <tr><td>km from Headquarters</td><td>${p.dist_hq_km}</td></tr>
+        <tr><td>Gi* z (if lattice)</td><td>${p.hn_gi_z == null ? "—" : p.hn_gi_z}</td></tr>`;
+    }
+
+    document.querySelectorAll(".toolbar button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".toolbar button").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        layer = btn.dataset.layer;
+        paint();
+      });
+    });
+    document.getElementById("month").addEventListener("input", (e) => {
+      month = Number(e.target.value);
+      paint();
+    });
+    paint();
+    showPlace("hong_kong");
+
+    document.getElementById("regionTable").innerHTML =
+      `<tr><th>Region</th><th>Cells</th><th>Tmin</th><th>Hot nights</th><th>Cold days</th></tr>` +
+      Object.entries(regions).map(([k,v]) => `<tr>
+        <td>${k}</td><td>${v.n}</td><td>${v.mean_tmin.toFixed(2)}°C</td>
+        <td>${v.hn_mean}</td><td>${v.cd_mean}</td>
+      </tr>`).join("");
+
+    document.getElementById("cityTable").innerHTML =
+      `<tr><th>City</th><th>Tmin</th><th>HN</th><th>CD</th></tr>` +
+      cities.map(p => `<tr>
+        <td>${p.name}</td><td>${p.mean_tmin.toFixed(2)}°C</td>
+        <td>${p.hn_total}</td><td>${p.cd_total}</td>
+      </tr>`).join("");
+
+    document.getElementById("transectTable").innerHTML =
+      `<tr><th>Stop</th><th>Tmin</th><th>Hot nights</th><th>km</th></tr>` +
+      M.transect.map(t => `<tr>
+        <td>${t.name}</td><td>${t.mean_tmin.toFixed(2)}°C</td>
+        <td>${t.hn_total}</td><td>${t.dist_hq_km}</td>
+      </tr>`).join("");
+
+    fetch("./prd_waglan_guangzhou_transect.svg")
+      .then(r => r.text())
+      .then(svg => { document.getElementById("transectSvg").innerHTML = svg; })
+      .catch(() => { document.getElementById("transectSvg").textContent = "Transect figure rebuilds with the mosaic."; });
+
+    function scatterSVG(svgId, pts, xLabel, yLabel) {
+      const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+      const xmin = Math.min(...xs), xmax = Math.max(...xs);
+      const ymin = Math.min(...ys), ymax = Math.max(...ys);
+      const x = v => 36 + (v - xmin) / (xmax - xmin || 1) * 260;
+      const y = v => 170 - (v - ymin) / (ymax - ymin || 1) * 140;
+      const dots = pts.map(p => `<circle cx="${x(p[0])}" cy="${y(p[1])}" r="2.4" fill="#0c6b74" fill-opacity=".75"/>`).join("");
+      document.getElementById(svgId).innerHTML =
+        `${dots}<text x="160" y="194" text-anchor="middle" font-size="11" fill="#5b6773">${xLabel}</text>
+         <text x="12" y="20" font-size="11" fill="#5b6773">${yLabel}</text>`;
+    }
+    scatterSVG("moran", M.moran_scatter_tmin, "z (Tmin)", "Wz");
+    const vgm = M.variogram_tmin.filter(d => d.gamma != null);
+    scatterSVG("vgm", vgm.map(d => [d.mid_km, d.gamma]), "lag (km)", "γ");
+    scatterSVG("tdist", grid.filter(c => c.thermal_distance != null).map(c => [c.dist_hq_km, c.thermal_distance]), "km from HQ", "thermal d");
+    document.getElementById("tdistNote").textContent =
+      `Pearson r = ${M.thermal_vs_geographic.pearson_r} between kilometres from Headquarters and climate-space distance (Tmin, hot nights, cold days, seasonal amplitude).`;
+  </script>
+</body>
+</html>

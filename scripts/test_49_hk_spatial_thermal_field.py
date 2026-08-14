@@ -46,6 +46,12 @@ class HkSpatialTests(unittest.TestCase):
         self.assertGreaterEqual(self.model["unique_fingerprints"], 30)
         self.assertFalse(self.model["peak_same_cell_as_hq"])
 
+    def test_monthly_hot_nights_are_summer_weighted(self) -> None:
+        hq = self.cells["hko_hq"]
+        self.assertEqual(len(hq["hn_by_month"]), 12)
+        self.assertGreaterEqual(hq["jja_hn"], max(1, int(0.6 * hq["hn_total"])))
+        self.assertIn("months", self.payload)
+
     def test_spatial_model_fit(self) -> None:
         self.assertGreater(self.model["r2"], 0.4)
         self.assertLess(self.model["coefficients"]["elevation_m"]["beta"], 0)
@@ -60,6 +66,7 @@ class HkSpatialTests(unittest.TestCase):
         html = HTML_PATH.read_text()
         self.assertIn("Exposure only", html)
         self.assertIn("leaflet", html.lower())
+        self.assertIn("hn_month", html)
         self.assertNotRegex(html, r"q\s*=\s*0\.")
 
 

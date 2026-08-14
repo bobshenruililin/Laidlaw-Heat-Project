@@ -1,0 +1,649 @@
+{
+  "outcome": "ERA5-Land mean daily Tmin, 2013\u20132023, 0.2\u00b0 PRD lattice",
+  "weights": {
+    "type": "binary distance",
+    "cutoff_km": 35.0,
+    "row_standardized_for_lag": true
+  },
+  "ols": {
+    "formula": "mean_tmin ~ elevation_m + lat + lon",
+    "r2": 0.8896,
+    "rmse": 0.514,
+    "aic": -111.86,
+    "beta": {
+      "intercept": {
+        "beta": 17.685,
+        "se": 11.243
+      },
+      "elevation_m": {
+        "beta": -0.0074,
+        "se": 0.0006,
+        "unit": "\u00b0C per metre"
+      },
+      "lat": {
+        "beta": -2.1849,
+        "se": 0.1087,
+        "unit": "\u00b0C per degree north"
+      },
+      "lon": {
+        "beta": 0.461,
+        "se": 0.0965,
+        "unit": "\u00b0C per degree east"
+      }
+    },
+    "moran_residual": {
+      "I": 0.5671,
+      "expected": -0.0112,
+      "W": 610.0,
+      "cutoff_km": 35.0,
+      "mean_neighbors": 6.78
+    }
+  },
+  "slx": {
+    "formula": "mean_tmin ~ X + WX  (X = elevation, lat, lon)",
+    "r2": 0.9061,
+    "rmse": 0.474,
+    "aic": -120.39,
+    "beta": {
+      "intercept": 6.4977,
+      "elevation_m": -0.0068,
+      "lat": -1.7091,
+      "lon": 0.0597,
+      "W_elevation_m": -0.0048,
+      "W_lat": -0.3821,
+      "W_lon": 0.4831
+    },
+    "se": [
+      15.7382,
+      0.0006,
+      1.2329,
+      1.3483,
+      0.0013,
+      1.3312,
+      1.4433
+    ],
+    "moran_residual": {
+      "I": 0.5196,
+      "expected": -0.0112,
+      "W": 610.0,
+      "cutoff_km": 35.0,
+      "mean_neighbors": 6.78
+    },
+    "note": "Spatial lag of X. Neighbours' elevation and latitude can shift a cell without lagging the outcome."
+  },
+  "sar_2sls": {
+    "formula": "mean_tmin ~ elevation_m + lat + lon + W mean_tmin",
+    "rho": 0.4513,
+    "rho_se": 0.119,
+    "r2": 0.9056,
+    "rmse": 0.475,
+    "aic": -123.94,
+    "beta": {
+      "intercept": 5.0956,
+      "elevation_m": -0.0065,
+      "lat": -1.2109,
+      "lon": 0.2972
+    },
+    "moran_residual": {
+      "I": 0.5221,
+      "expected": -0.0112,
+      "W": 610.0,
+      "cutoff_km": 35.0,
+      "mean_neighbors": 6.78
+    },
+    "note": "Anselin 2SLS: WX instruments Wy. R\u00b2 is a fit diagnostic, not a likelihood."
+  },
+  "moran_raw_tmin": {
+    "I": 0.6763,
+    "expected": -0.0112,
+    "W": 610.0,
+    "cutoff_km": 35.0,
+    "mean_neighbors": 6.78
+  },
+  "moran_hn": {
+    "I": 0.6276,
+    "expected": -0.0112,
+    "W": 610.0,
+    "cutoff_km": 35.0,
+    "mean_neighbors": 6.78
+  },
+  "moran_scatter_tmin": [
+    [
+      -0.3772,
+      0.0898
+    ],
+    [
+      0.8158,
+      0.2093
+    ],
+    [
+      1.3544,
+      0.8101
+    ],
+    [
+      1.745,
+      1.0495
+    ],
+    [
+      1.7715,
+      1.3297
+    ],
+    [
+      1.8006,
+      1.6134
+    ],
+    [
+      1.8291,
+      1.7464
+    ],
+    [
+      1.9183,
+      1.8217
+    ],
+    [
+      2.0198,
+      1.9015
+    ],
+    [
+      2.0916,
+      1.9351
+    ],
+    [
+      -1.0795,
+      -0.1737
+    ],
+    [
+      0.5332,
+      -0.038
+    ],
+    [
+      0.6153,
+      0.6162
+    ],
+    [
+      0.3412,
+      0.9613
+    ],
+    [
+      1.165,
+      1.1013
+    ],
+    [
+      1.5969,
+      1.2943
+    ],
+    [
+      1.7043,
+      1.3079
+    ],
+    [
+      1.712,
+      1.4646
+    ],
+    [
+      1.8433,
+      1.6255
+    ],
+    [
+      1.9422,
+      1.8151
+    ],
+    [
+      -1.6181,
+      -0.2006
+    ],
+    [
+      -0.222,
+      -0.1942
+    ],
+    [
+      0.2073,
+      0.195
+    ],
+    [
+      0.1549,
+      0.5271
+    ],
+    [
+      0.6768,
+      0.5706
+    ],
+    [
+      0.7233,
+      0.7876
+    ],
+    [
+      0.6839,
+      0.6831
+    ],
+    [
+      0.1989,
+      0.884
+    ],
+    [
+      1.5193,
+      1.0087
+    ],
+    [
+      1.6015,
+      1.1946
+    ],
+    [
+      -0.2098,
+      -0.4969
+    ],
+    [
+      -0.0248,
+      -0.2948
+    ],
+    [
+      0.0224,
+      0.0307
+    ],
+    [
+      0.1401,
+      0.3086
+    ],
+    [
+      1.0486,
+      0.1566
+    ],
+    [
+      -0.6049,
+      0.3726
+    ],
+    [
+      0.0301,
+      0.0445
+    ],
+    [
+      0.1039,
+      0.1224
+    ],
+    [
+      -0.5247,
+      0.5646
+    ],
+    [
+      1.1928,
+      0.5677
+    ],
+    [
+      -0.4755,
+      -0.1526
+    ],
+    [
+      -0.1438,
+      -0.1488
+    ],
+    [
+      0.0812,
+      -0.0387
+    ],
+    [
+      0.0528,
+      0.1266
+    ],
+    [
+      0.2248,
+      -0.0174
+    ],
+    [
+      -0.1147,
+      -0.1752
+    ],
+    [
+      -0.2919,
+      -0.4286
+    ],
+    [
+      -0.3423,
+      -0.4908
+    ],
+    [
+      -0.2945,
+      -0.1727
+    ],
+    [
+      0.5371,
+      -0.2068
+    ],
+    [
+      -0.2835,
+      -0.2817
+    ],
+    [
+      -0.1011,
+      -0.2452
+    ],
+    [
+      -0.1994,
+      -0.1301
+    ],
+    [
+      -0.0559,
+      -0.1207
+    ],
+    [
+      -0.2492,
+      -0.163
+    ],
+    [
+      -0.3559,
+      -0.3641
+    ],
+    [
+      -1.2036,
+      -0.4538
+    ],
+    [
+      -0.9411,
+      -0.5826
+    ],
+    [
+      -0.8047,
+      -0.4401
+    ],
+    [
+      -0.6029,
+      -0.3584
+    ],
+    [
+      -0.3481,
+      -0.34
+    ],
+    [
+      -0.3397,
+      -0.3388
+    ],
+    [
+      -0.2531,
+      -0.3766
+    ],
+    [
+      -0.2815,
+      -0.4195
+    ],
+    [
+      -0.341,
+      -0.5299
+    ],
+    [
+      -0.4322,
+      -0.6528
+    ],
+    [
+      -0.5046,
+      -0.9603
+    ],
+    [
+      -0.6475,
+      -0.9663
+    ],
+    [
+      -0.5719,
+      -0.9434
+    ],
+    [
+      -0.6579,
+      -0.7256
+    ],
+    [
+      -0.4878,
+      -0.649
+    ],
+    [
+      -0.4878,
+      -0.6176
+    ],
+    [
+      -0.5492,
+      -0.6425
+    ],
+    [
+      -0.998,
+      -0.6422
+    ],
+    [
+      -0.7103,
+      -0.8182
+    ],
+    [
+      -1.1564,
+      -0.8614
+    ],
+    [
+      -0.7012,
+      -1.1905
+    ],
+    [
+      -2.2447,
+      -0.927
+    ],
+    [
+      -0.7587,
+      -1.0513
+    ],
+    [
+      -0.89,
+      -0.7791
+    ],
+    [
+      -1.1364,
+      -0.6361
+    ],
+    [
+      -0.9327,
+      -0.711
+    ],
+    [
+      -0.8939,
+      -0.7842
+    ],
+    [
+      -0.9534,
+      -0.8613
+    ],
+    [
+      -1.1551,
+      -1.0093
+    ],
+    [
+      -1.2282,
+      -1.1083
+    ],
+    [
+      -1.8186,
+      -1.3644
+    ],
+    [
+      -1.4914,
+      -1.2891
+    ],
+    [
+      -0.9223,
+      -1.2739
+    ],
+    [
+      -0.9844,
+      -0.857
+    ]
+  ],
+  "variogram_tmin": [
+    {
+      "bin_km": "0\u201325",
+      "mid_km": 12.5,
+      "n_pairs": 161,
+      "gamma": 0.4154
+    },
+    {
+      "bin_km": "25\u201340",
+      "mid_km": 32.5,
+      "n_pairs": 144,
+      "gamma": 0.5877
+    },
+    {
+      "bin_km": "40\u201360",
+      "mid_km": 50.0,
+      "n_pairs": 396,
+      "gamma": 0.8369
+    },
+    {
+      "bin_km": "60\u201385",
+      "mid_km": 72.5,
+      "n_pairs": 751,
+      "gamma": 1.23
+    },
+    {
+      "bin_km": "85\u2013120",
+      "mid_km": 102.5,
+      "n_pairs": 949,
+      "gamma": 2.2634
+    },
+    {
+      "bin_km": "120\u2013170",
+      "mid_km": 145.0,
+      "n_pairs": 1191,
+      "gamma": 3.3003
+    }
+  ],
+  "getis_ord_hn": {
+    "cutoff_km": 35.0,
+    "n_hotspot_z_gt_1_96": 17,
+    "n_coldspot_z_lt_m1_96": 0,
+    "note": "Gi* z-score on annual ERA5 hot-night counts, binary weights including self."
+  },
+  "thermal_vs_geographic": {
+    "features": [
+      "mean_tmin",
+      "hn_total",
+      "cd_total",
+      "seasonal_amp"
+    ],
+    "pearson_r": 0.5328,
+    "hq_anchor_cell": "p_22.3_114.1",
+    "note": "Euclidean distance in z-scored climate space versus km from Headquarters. High r means climate follows the map; low r means local marine/ridge effects dominate."
+  },
+  "regional_means": {
+    "marine south": {
+      "n": 20,
+      "mean_tmin": 22.066,
+      "hn_mean": 353.2,
+      "cd_mean": 165.9,
+      "jja_hn_mean": 292.4
+    },
+    "Hong Kong": {
+      "n": 6,
+      "mean_tmin": 20.399,
+      "hn_mean": 29.7,
+      "cd_mean": 368.7,
+      "jja_hn_mean": 28.3
+    },
+    "Shenzhen": {
+      "n": 3,
+      "mean_tmin": 19.72,
+      "hn_mean": 5.3,
+      "cd_mean": 508.3,
+      "jja_hn_mean": 5.3
+    },
+    "Guangzhou": {
+      "n": 12,
+      "mean_tmin": 19.327,
+      "hn_mean": 12.1,
+      "cd_mean": 629.6,
+      "jja_hn_mean": 11.6
+    },
+    "Dongguan": {
+      "n": 6,
+      "mean_tmin": 19.311,
+      "hn_mean": 3.5,
+      "cd_mean": 581.7,
+      "jja_hn_mean": 3.5
+    },
+    "Zhuhai\u2013Macau": {
+      "n": 10,
+      "mean_tmin": 20.134,
+      "hn_mean": 43.5,
+      "cd_mean": 458.7,
+      "jja_hn_mean": 40.0
+    },
+    "Huizhou": {
+      "n": 12,
+      "mean_tmin": 18.622,
+      "hn_mean": 0.2,
+      "cd_mean": 717.9,
+      "jja_hn_mean": 0.2
+    },
+    "wider PRD": {
+      "n": 21,
+      "mean_tmin": 19.719,
+      "hn_mean": 57.8,
+      "cd_mean": 531.4,
+      "jja_hn_mean": 48.5
+    }
+  },
+  "transect": [
+    {
+      "name": "Waglan Island",
+      "lat": 22.182,
+      "lon": 114.3033,
+      "cell_id": "p_22.1_114.3",
+      "mean_tmin": 22.754,
+      "hn_total": 423,
+      "cd_total": 68,
+      "dist_hq_km": 18.85,
+      "region": "marine south"
+    },
+    {
+      "name": "HKO Headquarters",
+      "lat": 22.3022,
+      "lon": 114.1742,
+      "cell_id": "p_22.3_114.1",
+      "mean_tmin": 21.164,
+      "hn_total": 68,
+      "cd_total": 256,
+      "dist_hq_km": 0.0,
+      "region": "Hong Kong"
+    },
+    {
+      "name": "Shenzhen",
+      "lat": 22.5431,
+      "lon": 114.0579,
+      "cell_id": "p_22.5_114.1",
+      "mean_tmin": 20.153,
+      "hn_total": 10,
+      "cd_total": 429,
+      "dist_hq_km": 29.33,
+      "region": "Hong Kong"
+    },
+    {
+      "name": "Dongguan",
+      "lat": 23.0205,
+      "lon": 113.7518,
+      "cell_id": "p_23.1_113.7",
+      "mean_tmin": 19.579,
+      "hn_total": 11,
+      "cd_total": 562,
+      "dist_hq_km": 90.87,
+      "region": "Dongguan"
+    },
+    {
+      "name": "Guangzhou",
+      "lat": 23.1291,
+      "lon": 113.2644,
+      "cell_id": "p_23.1_113.3",
+      "mean_tmin": 19.715,
+      "hn_total": 23,
+      "cd_total": 569,
+      "dist_hq_km": 131.0,
+      "region": "Guangzhou"
+    }
+  ],
+  "unique_fingerprints": 99,
+  "n_points": 100,
+  "n_grid": 90,
+  "n_cities": 10,
+  "hong_kong_vs_guangzhou_hn_mean": 17.6,
+  "shenzhen_hn_mean": 5.3,
+  "note": "A 0.2\u00b0 cell is not a city, a weather station, or a hospital catchment. Open-Meteo applies DEM elevation. Do not transport Hong Kong CHD/HF ratios across this mosaic. Live paper stays on HKO Headquarters."
+}

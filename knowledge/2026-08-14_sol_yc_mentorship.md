@@ -6,7 +6,7 @@
 
 **YC insight:** A hot-night count is not a property of a city; it is a property of a city × thermometer × threshold, and matching the count still does not recover the nights.
 
-**Supervisor register:** Across 4,017 matched nights, the HKO and ERA5 28°C flags had Jaccard 0.031; at monthly grain, mean Tmin tracked closely (*r* = 0.986) while hot-night counts did not (slope = 0.045), documenting exposure-source sensitivity rather than a health effect.
+**Supervisor register (later; never Email A):** Across 4,017 matched nights, the HKO and ERA5 28°C flags had Jaccard 0.031; at monthly grain, mean Tmin tracked closely (*r* = 0.986) while hot-night counts did not (slope = 0.045), documenting exposure-source sensitivity rather than a health effect.
 
 The 0.045 slope is exposure-on-exposure. It is never a health-attenuation factor.
 
@@ -21,11 +21,11 @@ The 31 August objects are the endorsed local 2a and unchanged essay. Professor B
 | After Email A | Agents | 5.0 | The existing hub is one hallway: its four Leaflet rooms remain four depths, while the SVG threshold instrument is the front-door interaction and a same-night date scrubber steps through real matched cache records. | No fifth map, new data, HA rows, health layer, PDF rebuild or request for Bob’s attention. The scrubber must never enter Email A. |
 | After that build | Agents | 2.0 | Exact-cache checks pass; provenance, keyboard use, mobile layout, refusal copy and stateful links are checked. | No approximated dates, “dangerous-night” ranking, scrollytelling or “AI ran eight methods.” |
 | Before Bob’s pass | Agents | 1.0 | Bob receives one preview, one launch checklist and the already-shipped citable figure; nothing else needs a product decision. | No six-URL tour and no claim that Pages is live. |
-| 18–19 Aug, only after A | Bob | 0.75 | Privacy/claim pass is complete; Bob enables Pages with GitHub Actions and verifies the stable companion URL. | Pages is not the Scholars Network, and a working Pages URL closes no programme requirement. |
+| 18–19 Aug, only after A | Bob | 0.75 | Privacy/claim pass is complete; Bob enables Pages with GitHub Actions and verifies the stable companion URL. | Pages remains 404 until Bob enables Actions; even working Pages is not the Scholars Network. |
 | 20 Aug; repeat 26 Aug if needed | Bob | 0.15 each | A short endorsement follow-up is sent, or the signed 2a has returned. | No figure, map update or scientific discussion in the chase. |
 | On return, no later than 30 Aug | Bob | 0.5 | Every required 2a field is complete; the endorsed form and unchanged essay reach `laidlaw@hku.hk`; receipt is saved. | Do not wait for the companion, Email B or poster work. |
 | After submission, on a later calendar date than A | Bob | 0.25 | **Email B** sends the single existing composite figure with the restrained exposure-identification note. | No form/signature ask, map tour, health triumph or claim that any coefficient survived multiplicity. |
-| By 30 Aug | Bob | 1.0 | The full essay is posted with relevant badges in the HKU University room; rendering is checked and its URL saved. | Do not report GitHub Pages as the Network URL. |
+| By 30 Aug | Bob | 1.0 | The full essay is posted with relevant badges in the HKU University room; rendering is checked and the URL HKU reports is saved. | Do not report GitHub Pages as the Network URL. |
 | 31 Aug buffer | Bob | 0.25 | Submission receipt, endorsed 2a, unchanged essay and University-room URL are all locally recoverable. | No emergency PDF edits; poster `4f7c1e408ae2d31f…` remains frozen. |
 
 If Bishai’s block is still outstanding, Email B and every product task wait.

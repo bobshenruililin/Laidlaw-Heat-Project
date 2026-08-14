@@ -228,10 +228,13 @@
         totals[c.region] = (totals[c.region] || 0) + v;
       });
       const top = Object.entries(totals).sort((a,b) => b[1] - a[1])[0];
-      const hkM = regions["Hong Kong"] ? grid.filter(c => c.region === "Hong Kong").reduce((a,c) => a + c.hn_by_month[month-1], 0) : 0;
-      const gzM = regions["Guangzhou"] ? grid.filter(c => c.region === "Guangzhou").reduce((a,c) => a + c.hn_by_month[month-1], 0) : 0;
+      const meanHn = (region) => {
+        const xs = grid.filter(c => c.region === region);
+        if (!xs.length) return 0;
+        return xs.reduce((a,c) => a + c.hn_by_month[month-1], 0) / xs.length;
+      };
       document.getElementById("monthStory").textContent =
-        `${name}: most 28°C nights sit in ${top[0]}. Hong Kong box ${hkM} cell-nights · Guangzhou box ${gzM}.`;
+        `${name}: most 28°C nights sit in ${top[0]}. Hong Kong cells mean ${meanHn("Hong Kong").toFixed(1)} · Guangzhou cells mean ${meanHn("Guangzhou").toFixed(1)}.`;
     }
 
     function paint() {

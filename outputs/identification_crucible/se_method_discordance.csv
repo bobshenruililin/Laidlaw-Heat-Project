@@ -1,0 +1,13 @@
+outcome,pathway_id,model_excludes_1,hc1_excludes_1,nw3_excludes_1,nw6_excludes_1,n_methods_excluding_1,se_concordant_exclude_1,data_status
+chd,P01A,False,False,False,False,0,False,HA_APPROVED_AGGREGATE
+chd,P02A,False,False,False,False,0,False,HA_APPROVED_AGGREGATE
+chd,P02B,False,False,False,False,0,False,HA_APPROVED_AGGREGATE
+chd,P04A,False,False,True,True,2,False,HA_APPROVED_AGGREGATE
+chd,P04B,False,False,False,False,0,False,HA_APPROVED_AGGREGATE
+chd,P04C,False,False,False,False,0,False,HA_APPROVED_AGGREGATE
+hf,P01A,True,True,False,False,2,False,HA_APPROVED_AGGREGATE
+hf,P02A,True,False,False,False,1,False,HA_APPROVED_AGGREGATE
+hf,P02B,True,True,True,False,3,False,HA_APPROVED_AGGREGATE
+hf,P04A,False,False,False,False,0,False,HA_APPROVED_AGGREGATE
+hf,P04B,True,True,True,True,4,True,HA_APPROVED_AGGREGATE
+hf,P04C,False,False,False,False,0,False,HA_APPROVED_AGGREGATE

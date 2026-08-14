@@ -19,6 +19,7 @@
 
 ## Current meeting record
 
+- [`crucible_agent_delta_decision_rule.md`](crucible_agent_delta_decision_rule.md) — Explore proof: Option A is a reporting rule not a null; HF cold SE-concordant residual vs CHD hot-night SE-fragile; BH/power arithmetic.
 - [`../analysis_plan/next_three_weeks_prospect_2026-08-13.md`](../analysis_plan/next_three_weeks_prospect_2026-08-13.md) — compute vs human gates after the CHD/HF arrival; blog/LSN/deck tracks; idle-week rules.
 - [`2026-08-13_research_team_synthesis.md`](2026-08-13_research_team_synthesis.md) — Kimi/Fable/Opus/Sol wave: live-paper numbers verified; Fable honesty pass merged; Stage 3 PDFs stay frozen.
 - [`../reports/pathway_execution_audit_2026-08-13.md`](../reports/pathway_execution_audit_2026-08-13.md) — P01–P18 and first-wave HM/CM: what ran, what the file cannot run, diminishing returns.

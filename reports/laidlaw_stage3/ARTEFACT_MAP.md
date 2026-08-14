@@ -6,7 +6,8 @@
 | Surface | Audience | Status | Route |
 |---|---|---|---|
 | `Laidlaw_Research_Report_2026.pdf` and `outputs/Laidlaw_Stage3_Research_Report_Shen.pdf` | HKU Laidlaw | **LOCKED** — SHA-256 prefix `6136e85a654502a0` | Submit existing bytes by **31 August 2026**. Also post full text on the Scholars Network (University room). Do not edit, trim, or rebuild. |
-| `reports/poster/Laidlaw_Stage3_A0_portrait.pdf` and `outputs/Laidlaw_Stage3_Poster_Shen.pdf` | HKU Laidlaw events | **LOCKED** — SHA-256 prefix `4f7c1e408ae2d31f` | File due **15 September 2026**; Chi Wah session week of **5 October**. Logos = print overlay from Welcome pack. Do not rebuild. |
+| `reports/poster/Laidlaw_Stage3_A0_portrait.pdf` and `outputs/Laidlaw_Stage3_Poster_Shen.pdf` | HKU Laidlaw events | **LOCKED** — SHA-256 prefix `4f7c1e408ae2d31f` | File due **15 September 2026**; Chi Wah session week of **5 October**. Logos = print overlay from Welcome pack. Do not rebuild. Imperial wants an **A1** print of the same file, not a new poster. |
+| Horizons tracking sheet (columns J–O, Q–R) + Imperial conference | Audrey Chung / Laidlaw conference | Living paste pack | [`imperial_conference_2026.md`](imperial_conference_2026.md). J–O overdue since 20 June. Panel abstract midnight **6 September**. T&F **24 September** optional. Do not apply to a LiA panel. |
 | `hku_report_form_worksheet.md` | Bob → Bishai → Horizons | Living; HUMAN blanks remain | Fill year/dates/signature locally on official 2a. Leave Bishai’s block blank. |
 | `submission_checklist.md` | Bob, supervisor, HKU administration | Living status record | Official dates from the programme Drive. |
 | `reports/lsn/research_project_summary.md` and `docs/lsn/` | Laidlaw Scholar Network | Draft rewritten 13 Aug to CHD/HF; still no coefficients on the public page | Bob’s voice/privacy pass before posting. Do not use the 5 August stroke pack. Network URL is what HKU reports to the Foundation. |

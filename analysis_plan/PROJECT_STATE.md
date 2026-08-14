@@ -148,6 +148,12 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   the monthly ERA5 mean-versus-flag limitation. Hogan can strike. Weather
   paragraph untouched. `knowledge/2026-08-14_cns_live_quality_gap.md`;
   `manuscript/live_collaborative/cns_checklist_2026-08-14.md`.
+- **Imperial conference (Audrey Chung, 14 Aug):** 16–18 October, Imperial
+  College London. Spreadsheet J–O overdue since 20 June. Panel abstract
+  midnight 6 September (research only; not LiA). T&F 24 September optional.
+  Chi Wah stays A0; Imperial print is A1 of the locked poster. 2a still wins.
+  `knowledge/2026-08-14_audrey_imperial_conference.md`;
+  `reports/laidlaw_stage3/imperial_conference_2026.md`.
 
 ---
 

@@ -54,5 +54,7 @@ The overlapping programme pieces on the preceding page: research project, leader
 5. Poster file to Horizons by **15 September**; logos from Welcome pack before the October showcase.
 6. 3C Network post can wait until 2027, but a draft now keeps the register honest.
 
+Imperial conference (Audrey Chung, 14 August 2026): spreadsheet J–O is overdue; panel abstract 6 September; T&F 24 September optional; Imperial 16–18 October wants **A1** print. Action board: [`../reports/laidlaw_stage3/imperial_conference_2026.md`](../reports/laidlaw_stage3/imperial_conference_2026.md). 2a still wins. Do not rebuild locked PDFs.
+
 Form worksheet: [`../reports/laidlaw_stage3/hku_report_form_worksheet.md`](../reports/laidlaw_stage3/hku_report_form_worksheet.md).  
 3C blog draft: [`../reports/blog/character_leadership_global_mindset.md`](../reports/blog/character_leadership_global_mindset.md).

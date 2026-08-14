@@ -20,6 +20,7 @@
 ## Current meeting record
 
 - [`2026-08-14_cns_live_quality_gap.md`](2026-08-14_cns_live_quality_gap.md) — Stage 3 is sufficient for Laidlaw, not for a journal. Live-file CNS register pass; Cell/Nature/Science acceptance is not the target.
+- [`2026-08-14_audrey_imperial_conference.md`](2026-08-14_audrey_imperial_conference.md) — Horizons conference email: Imperial 16–18 Oct; J–O overdue; panel abstract 6 Sep; A1 print. Action board: [`../reports/laidlaw_stage3/imperial_conference_2026.md`](../reports/laidlaw_stage3/imperial_conference_2026.md).
 - [`2026-08-14_parked_object_closeout.md`](2026-08-14_parked_object_closeout.md) — six parked identification objects: four shipped, year-shift teaching shipped with health re-fit parked (A60), W03 card written not locked.
 - [`2026-08-14_bishai_and_altman_pitches.md`](2026-08-14_bishai_and_altman_pitches.md) — two first-person pitches of the internship: Bishai (research) and Altman (passion). Not emails. Not form 2a.
 - [`2026-08-14_effort_and_caliber_estimate.md`](2026-08-14_effort_and_caliber_estimate.md) — ESTIMATE only: ~800 unaided hours of substance; not a PhD; not for form 2a.

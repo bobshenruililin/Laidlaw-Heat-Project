@@ -7,7 +7,7 @@
 
 Bob should make a final voice and privacy pass before posting. Do not post the 5 August stroke version.
 
-Routing: [`ARTEFACT_MAP.md`](../laidlaw_stage3/ARTEFACT_MAP.md).
+Routing: [`ARTEFACT_MAP.md`](../laidlaw_stage3/ARTEFACT_MAP.md). Imperial panel abstract (different form, 6 September): [`../laidlaw_stage3/imperial_conference_2026.md`](../laidlaw_stage3/imperial_conference_2026.md).
 
 ---
 

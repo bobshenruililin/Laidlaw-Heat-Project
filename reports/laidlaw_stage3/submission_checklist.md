@@ -72,3 +72,18 @@ Horizons later reports **name, project title, and Network URL** to the Foundatio
 6. Submit the poster file by **15 September 2026**; present in Chi Wah the week of **5 October 2026**.
 7. 3 C’s Network post can wait until 2027; a draft now lives in [`../blog/character_leadership_global_mindset.md`](../blog/character_leadership_global_mindset.md).
 8. LiA remains a 2027 placement. Do not reframe the heat analysis as community organising.
+
+## Imperial conference (Audrey Chung, 14 August 2026)
+
+Separate from Chi Wah. Action board: [`imperial_conference_2026.md`](imperial_conference_2026.md).
+
+| Output | Due | Notes |
+|---|---|---|
+| Spreadsheet J–O | Overdue 20 June 2026 | LSN topic / objectives / anticipated outcomes. Paste pack in the action board. |
+| Opening performance | 23 August 2026 | Default skip. |
+| Panel abstract + conference form | midnight HKT 6 September 2026 | 6-minute oral. Research panel only. Draft in the action board. |
+| Spreadsheet Q, R | With essay 31 Aug / poster 15 Sep | Network URLs blank until posted. |
+| Taylor & Francis consent + poster PDF on LSN | 24 September 2026 | Optional. Selected speakers print **A1** and may miss one session. |
+| Imperial showcase | 16–18 October 2026 | Bring **A1** portrait even if not on a panel. Scale the locked A0. Six HKU posters shortlisted for panels. |
+
+Do not rebuild locked PDFs for A1. 2a still wins conflicts with the 6 September abstract.

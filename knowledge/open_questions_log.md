@@ -34,6 +34,7 @@ Update a row by recording the decision, date and evidence link. Do not erase the
 | D07 | What ethics/governance determination applies to the current aggregate use? | PI decision remains open | Bishai | Written PI/governance determination and any required protocol update |
 | D08 | What population universe matches the HA outcome denominator? | C&SD age–sex denominators are ready, but resident/eligibility alignment is unconfirmed | Roro / Bob | Outcome eligibility definition matched to a documented denominator construction |
 | D09 | Is any valid AMI series available outside the general HA file? | General HA data lack reasons for admission; AMI is out of scope unless a separate series exists | Bishai / Roro | Separate governed AMI outcome definition and file, or explicit closure as out of scope |
+| D10 | Is the monthly T2D/HTN risk set actually depleting, and by how much? | Unknown. The outcome is a first event in an absorbing risk set and `A48` offsets days-in-month only. Approved annual totals halve while C&SD 35+ rises, but with cohort inflow unobserved the direction of the omitted-denominator bias cannot be signed. See `knowledge/crucible_agent_beta_depletion.md` | Roro / Bishai | Approved monthly aggregate of persons at risk and person-days at risk, with entries and exits split by first event, death and other censoring, separately for the CHD-free and HF-free risk sets |
 
 ## Analysis and reporting
 

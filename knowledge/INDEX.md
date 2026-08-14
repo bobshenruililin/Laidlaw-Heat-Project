@@ -20,6 +20,13 @@
 ## Current meeting record
 
 - [`2026-08-15_wake_bob.md`](2026-08-15_wake_bob.md) — three human moves after sleep: 2a first; insights named; scrubber exists.
+- [`2026-08-14_identification_laboratory.md`](2026-08-14_identification_laboratory.md) — overnight work is now a research object: profile table, Figure D, companion reliability curve, `docs/id/`.
+- [`2026-08-14_bounce_ideas_after_identification_lab.md`](2026-08-14_bounce_ideas_after_identification_lab.md) — parked angles; Fable’s bounce question; misconduct list.
+- [`2026-08-14_fable_research_contribution.md`](2026-08-14_fable_research_contribution.md) — daily vs monthly law; reliability yes/companion; eight layout rules.
+- [`2026-08-14_sol_research_packing.md`](2026-08-14_sol_research_packing.md) — one hallway; `docs/id/` is not a hub card; 2a wins.
+- [`2026-08-14_luna_calibration_cut.md`](2026-08-14_luna_calibration_cut.md) — independent 449/17/14 calibration tables.
+- [`../reports/hogan_identification_profile_2026-08-14.md`](../reports/hogan_identification_profile_2026-08-14.md) — Hogan card: six-row table before paste.
+- [`../docs/id/index.html`](../docs/id/index.html) — identification laboratory (second-level from the instrument).
 - [`2026-08-14_sol_yc_fable_ias_ladder.md`](2026-08-14_sol_yc_fable_ias_ladder.md) — Sol as YC + Fable as IAS; digestible steps; 2a wins conflicts.
 - [`2026-08-14_fable_ias_mentorship.md`](2026-08-14_fable_ias_mentorship.md) — IAS: identification over discovery; scholarly ladder; ignore-until-31-Aug.
 - [`2026-08-14_sol_yc_mentorship.md`](2026-08-14_sol_yc_mentorship.md) — YC packing: Email A, one hallway, resource-conflict rule.

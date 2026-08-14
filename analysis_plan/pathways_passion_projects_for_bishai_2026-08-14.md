@@ -25,6 +25,7 @@ That is multi-method in Bishai’s sense: one health panel, one identification p
 | Intensive vs extensive residual (script 57) | **Enter — shipped** | June–Sep always on; 95% of remaining hot-night SS is intensity; July 1 vs 25. Hogan card. Not a Bishai email. |
 | One composite figure for Email B (script 56) | **Enter — shipped** | Two scatters + the 28°C Jaccard line. One SVG, later one URL. |
 | Same-night three thermometers (script 59) | **Enter — shipped** | Companion only. 14 both / 435 / 3. Not form 2a. Not Email A. |
+| Identification laboratory (script 60) | **Enter — shipped** | Profile table + Figure D + companion reliability curve. `docs/id/` behind the instrument, not a hub card. Daily grain stays out of the live paper. |
 | Paste-ready limitation for the live file | **Enter** | Monthly station–grid sentence. Optional intensive-margin sentence is a second, Hogan-first decision. |
 | Two emails: 2a first, science later | **Enter** | Sol. Do not mix endorsement with a map tour. Not today. |
 | Sol YC + Fable IAS ladders | **Enter** | Digestible steps. 2a wins conflicts. Wake note for 15 Aug. |

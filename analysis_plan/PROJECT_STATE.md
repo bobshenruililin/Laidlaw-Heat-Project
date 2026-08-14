@@ -114,6 +114,13 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - **Same-night scrubber (14–15 Aug, exposure only):** 14 nights in both,
   435 HKO-only, 3 ERA5-only; 71 station nights ≥29°C still miss ERA5 at
   28°C. `docs/demo/index.html` hash `#d=2015-08-08`.
+- **Identification laboratory (14 Aug, exposure only):** Jaccard 0.031 is
+  an integral. Among 365 station nights in [28, 29)°C, ERA5 agrees once
+  (rate 0.003); among 16 nights ≥29.5°C the rate is 0.44. 48 of 57 HKO
+  hot-night months contain no ERA5 28°C night. Six-row identification
+  profile + Figure D (July 2013 = 1, July 2022 = 25). Companion page
+  `docs/id/` is a second-level door from the instrument, not a hub card.
+  Daily grain stays out of the live paper. `scripts/60_identification_laboratory.py`.
 - **Bishai positioning (14 Aug, not sent):** maps are exposure identification
   for the single-station limitation. Two emails, not one: form 2a first;
   one composite figure later. Do not mix endorsement with a map tour.

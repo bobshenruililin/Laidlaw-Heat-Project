@@ -34,6 +34,7 @@ If Hogan has already edited weather, paste from `methods_remainder_paste.md` aro
 
 11. **Optional, after Hogan has seen the card.** One sentence after the existing territory-wide limitation. Paste-ready file: `limitation_station_grid_bridge.md`. Do not overwrite his weather paragraph. Do not treat 0.045 as a health attenuation factor. Do not add Mistry as a live citation unless he asks.
 12. **Optional, after Hogan has seen the intensive-margin card, and not bolted onto item 11.** One sentence: June–September always had ≥1 official hot night; remaining contrast is July intensity (1 vs 25). Paste-ready file: `limitation_intensive_margin.md`. Different limitation from the station–grid check. Do not paste 95.4% or the 14 overlapping nights.
+13. **Optional, after Hogan has seen the identification-profile card.** One supplementary table (six encodings × identifying share / intensive split / family / instrument). Card: `reports/hogan_identification_profile_2026-08-14.md`. Optional Figure 4 (hot-night year×month, vmax 25) beside Figure 2, or supplement-only. Do not paste the reliability curve, Jaccard 0.031, or the fourteen nights into Methods. Bounce: which Discussion sentence, if any, the table licenses.
 
 ## Honesty taken from later drafts (approved for *this* file only)
 

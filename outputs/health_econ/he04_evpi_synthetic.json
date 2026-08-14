@@ -1,0 +1,19 @@
+{
+  "data_status": "SYNTHETIC_THEORY",
+  "hypothesis": "HE-04",
+  "verdict_parent": "KILL",
+  "note": "Utilities are dimensionless SYNTHETIC knobs, not currency. EVPI is prior-dependent by construction.",
+  "knobs": {
+    "wait_cost": 0.1,
+    "irr_claim_bonus": 0.15,
+    "threshold_abs_logRR": 0.04879016416943205,
+    "prior_sd": 0.05,
+    "draws": 8000
+  },
+  "EV_proceed": -0.327625,
+  "EV_wait": -0.7723750000000001,
+  "chosen_without_info": "proceed",
+  "EVPI_stroke_file": 0.2948625,
+  "claim_set_value_person_time": 0.15,
+  "interpretation": "Under Option A (no confirmatory primary) the stroke-file EVPI is the value of changing wait/proceed, which is small when the prior is centred at zero. Person-time value is almost entirely the IRR claim-set bonus, independent of the posterior."
+}

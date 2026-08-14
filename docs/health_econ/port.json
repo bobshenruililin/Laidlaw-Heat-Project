@@ -1,0 +1,86 @@
+{
+  "data_status": "SYNTHETIC_THEORY",
+  "hypothesis": "HE-C2-PORT",
+  "asserts_data_exist": false,
+  "parameters": [
+    "lambda_bed_shadow",
+    "Delta_adaptation_capital_wedge",
+    "theta_h_household_capital",
+    "varsigma_cluster_variance_gradient",
+    "sigma_public_share"
+  ],
+  "elements": [
+    "cluster_monthly_counts",
+    "bedday_capacity_occupancy",
+    "elective_cancellations",
+    "cluster_capital_recurrent_budgets",
+    "catchment_housing_mix",
+    "private_inpatient_volumes"
+  ],
+  "cells": {
+    "lambda_bed_shadow": {
+      "cluster_monthly_counts": 0,
+      "bedday_capacity_occupancy": 0,
+      "elective_cancellations": 0,
+      "cluster_capital_recurrent_budgets": 0,
+      "catchment_housing_mix": 0,
+      "private_inpatient_volumes": 0,
+      "full_bundle": 0,
+      "note": "Capacity remains endogenous to anticipated weather even at cluster grain."
+    },
+    "Delta_adaptation_capital_wedge": {
+      "cluster_monthly_counts": 0,
+      "bedday_capacity_occupancy": 0,
+      "elective_cancellations": 0,
+      "cluster_capital_recurrent_budgets": 0,
+      "catchment_housing_mix": 0,
+      "private_inpatient_volumes": 0,
+      "full_bundle": 1,
+      "note": "Counts + budgets + capital vintage together; no singleton flips the row."
+    },
+    "theta_h_household_capital": {
+      "cluster_monthly_counts": 0,
+      "bedday_capacity_occupancy": 0,
+      "elective_cancellations": 0,
+      "cluster_capital_recurrent_budgets": 0,
+      "catchment_housing_mix": 0,
+      "private_inpatient_volumes": 0,
+      "full_bundle": 1,
+      "note": "Counts + housing mix; still a strong between-cluster assumption."
+    },
+    "varsigma_cluster_variance_gradient": {
+      "cluster_monthly_counts": 0,
+      "bedday_capacity_occupancy": 0,
+      "elective_cancellations": 0,
+      "cluster_capital_recurrent_budgets": 0,
+      "catchment_housing_mix": 0,
+      "private_inpatient_volumes": 0,
+      "full_bundle": 0,
+      "note": "varsigma is already computable from public HKO at territory grain; cluster weather would help, not HA counts."
+    },
+    "sigma_public_share": {
+      "cluster_monthly_counts": 0,
+      "bedday_capacity_occupancy": 0,
+      "elective_cancellations": 0,
+      "cluster_capital_recurrent_budgets": 0,
+      "catchment_housing_mix": 0,
+      "private_inpatient_volumes": 1,
+      "full_bundle": 1,
+      "note": "Private volumes are the singleton that would flip this row IF they exist monthly and are comparable \u2014 unverified."
+    }
+  },
+  "singleton_flips": [
+    {
+      "parameter": "sigma_public_share",
+      "element": "private_inpatient_volumes"
+    }
+  ],
+  "supermodularity": "Most rows flip only as a bundle. sigma_public_share is the exception: comparable monthly private volumes would flip it alone. lambda remains unflipped even under the full bundle.",
+  "governance_unit": "integer_human_asks_not_currency",
+  "smallest_useful_bundle": [
+    "cluster_monthly_counts",
+    "cluster_capital_recurrent_budgets",
+    "catchment_housing_mix"
+  ],
+  "human_decision": "Whether to ask is owned by Roro/Bishai/governance. This matrix does not ask."
+}

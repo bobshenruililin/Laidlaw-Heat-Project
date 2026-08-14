@@ -1,0 +1,11 @@
+{
+  "data_status": "REAL_PUBLIC_HKO",
+  "quantity": "varsigma = ds2/dTbar from monthly OLS on daily HKO tmean",
+  "n_months": 132,
+  "intercept": 14.652150278354345,
+  "varsigma": -0.4378129083737376,
+  "r2": 0.39073269549246403,
+  "mean_s2": 4.136707023289198,
+  "mean_tbar": 24.018120649125933,
+  "note": "Climate statistic only. Not a health finding. Sign expected negative in a subtropical year."
+}

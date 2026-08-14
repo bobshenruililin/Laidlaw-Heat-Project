@@ -1,0 +1,53 @@
+{
+  "provenance": "SYNTHETIC_CALIBRATION",
+  "engine": "python_poisson_glm_patsy_cr_df4",
+  "r_twin": "scripts/48_health_econ_monte_carlo.R",
+  "family_note": "Poisson GLM, not MASS::glm.nb. Same mean structure: month FE + cr(time,4) + x + log(days) offset.",
+  "master_seed": 20260814,
+  "n_reps": 200,
+  "scenarios": "all",
+  "monetisation_permitted": false,
+  "gate3_input": false,
+  "existing_interval_widths_log": {
+    "hf_cold_days": 0.1285488212800586,
+    "chd_hot_nights": 0.03914394066850215,
+    "source": "EXISTING_EXPLORATORY_INTERVAL"
+  },
+  "HE01_size": 0.05,
+  "HE01_size_gate": "size_nominal_costing_caveat_only",
+  "HE03_median_attenuation": 0.5278185690988189,
+  "HE05_power_phi06": 0.675,
+  "HE07_SEW": 1.5691609468801877,
+  "HE07_SS": 0.20708333333333334,
+  "HE07_gate": "lower_bound_fails",
+  "HE08_RTE_p95_when_delta0": 0.12167881908680094,
+  "HE08_power_when_delta_log103": 0.45,
+  "HE10_ADR_p95": 0.9326909281745412,
+  "HE10_gate": "cosmetic_under_imposed_g",
+  "HEC210_CATD_p05": 0.18541177443649487,
+  "HEC210_CATD_p95": 0.44402954451195653,
+  "HEC210_sign_flip": false,
+  "HEC202_demand_slope": -0.0008325897221306306,
+  "HEC202_queue_slope": -0.007220085505503391,
+  "notes": [
+    "All count series are SYNTHETIC. Exposure path is REAL_PUBLIC_HKO.",
+    "No HA microdata were read. No stroke file. No currency.",
+    "A passing size test does not revive a KILL on an unobserved stock level.",
+    "ADR/CATD are conditional on an imposed daily g; they do not recover a daily coefficient."
+  ],
+  "HE08_size_when_delta0": 0.41,
+  "HE08_gate": "transportability_fails_low_power_inflated_size",
+  "HE10_ADR_p95_by_scenario": {
+    "HE10_cold_base": 0.42005385320021754,
+    "HE10_cold_mnar": 0.8152962365365137,
+    "HE10_mean_base": 0.2363272600321855,
+    "HE10_mean_macro": 0.9737052325521153,
+    "HE10_mean_mnar": 0.27663352147189996,
+    "HE10_mean_select": 1.0499036306671756
+  },
+  "HE10_select_family_fails": true,
+  "HE03_note": "Median relative attenuation ~0.53 at u>=0.85: monthly aggregation does NOT wash out daily censoring in this DGP. Shadow price still unidentified.",
+  "HE05_size_phi00": 0.345,
+  "HE07_SS_is_Pr_epsY_positive": 0.20708333333333334,
+  "HE07_note": "Observed count elasticity is positive in only ~21% of the full threshold-movement ensemble; the lower-bound reading can change sign."
+}

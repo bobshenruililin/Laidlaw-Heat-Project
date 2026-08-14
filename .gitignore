@@ -53,7 +53,8 @@ outputs/session_info_setup.txt
 outputs/calibration_md/checkpoints/
 outputs/calibration_md/md_calibration_raw_metrics.csv
 outputs/calibration_md/md_calibration_*_pilot_10.csv
-outputs/calibration_md/md_calibration_*_core_500.csv
+outputs/health_econ/cycle1_mc_raw.csv
+outputs/health_econ/varsigma_hko_months.csv.json
 
 # Month-grain HA count visualisations stay local; release uses indexed series.
 outputs/figures/descriptives/cvd_monthly_timeseries.png

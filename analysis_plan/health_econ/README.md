@@ -17,8 +17,11 @@ Runnable:
 
 ```bash
 python3 scripts/48b_health_econ_theory_helpers.py
+HE_MC_SCENARIOS=smoke HE_MC_REPS=8 python3 scripts/48_health_econ_monte_carlo.py
+HE_MC_SCENARIOS=all HE_MC_REPS=200 python3 scripts/48_health_econ_monte_carlo.py
+python3 scripts/48_health_econ_mc_checks.py
+# Optional MASS::glm.nb twin if Rscript is available:
 HE_MC_SCENARIOS=smoke HE_MC_REPS=8 Rscript scripts/48_health_econ_monte_carlo.R
-HE_MC_SCENARIOS=all HE_MC_REPS=200 Rscript scripts/48_health_econ_monte_carlo.R
 ```
 
 UI: [`docs/health_econ/index.html`](../../docs/health_econ/index.html)

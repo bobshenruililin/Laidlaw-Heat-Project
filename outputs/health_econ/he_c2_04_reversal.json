@@ -1,0 +1,129 @@
+{
+  "data_status": "SYNTHETIC_THEORY",
+  "hypothesis": "HE-C2-04",
+  "reversal_set_nonempty_under_enumerated_orderings": true,
+  "orderings": [
+    {
+      "ordering": "wait_backloaded",
+      "P": [
+        1.0,
+        0.2
+      ],
+      "W": [
+        0.1,
+        1.2
+      ],
+      "choices": {
+        "1.0": "W",
+        "0.8": "P",
+        "0.6": "P",
+        "0.4": "P"
+      },
+      "exponential_planner": "W",
+      "reversal_at_beta": 0.4
+    },
+    {
+      "ordering": "proceed_frontloaded",
+      "P": [
+        1.2,
+        0.3
+      ],
+      "W": [
+        0.2,
+        0.8
+      ],
+      "choices": {
+        "1.0": "P",
+        "0.8": "P",
+        "0.6": "P",
+        "0.4": "P"
+      },
+      "exponential_planner": "P"
+    },
+    {
+      "ordering": "wait_dominates",
+      "P": [
+        0.4,
+        0.4
+      ],
+      "W": [
+        0.5,
+        0.9
+      ],
+      "choices": {
+        "1.0": "W",
+        "0.8": "W",
+        "0.6": "W",
+        "0.4": "W"
+      },
+      "exponential_planner": "W"
+    },
+    {
+      "ordering": "proceed_dominates",
+      "P": [
+        0.9,
+        0.9
+      ],
+      "W": [
+        0.2,
+        0.3
+      ],
+      "choices": {
+        "1.0": "P",
+        "0.8": "P",
+        "0.6": "P",
+        "0.4": "P"
+      },
+      "exponential_planner": "P"
+    },
+    {
+      "ordering": "incomparable_equal",
+      "P": [
+        0.6,
+        0.6
+      ],
+      "W": [
+        0.6,
+        0.6
+      ],
+      "choices": {
+        "1.0": "tie",
+        "0.8": "tie",
+        "0.6": "tie",
+        "0.4": "tie"
+      },
+      "exponential_planner": "tie"
+    }
+  ],
+  "revocability_audit": [
+    {
+      "device": "Gate 3 written Option A recommendation",
+      "written_before_information": true,
+      "third_party_observable": true,
+      "costly_to_revoke": "human_owned_unknown",
+      "commitment": "incomplete"
+    },
+    {
+      "device": "SAP / Playbook 03 pre-specification",
+      "written_before_information": true,
+      "third_party_observable": true,
+      "costly_to_revoke": "human_owned_unknown",
+      "commitment": "incomplete"
+    },
+    {
+      "device": "Stage 3 PDF byte-lock",
+      "written_before_information": true,
+      "third_party_observable": true,
+      "costly_to_revoke": "repository_enforced",
+      "commitment": "programme_surface_only"
+    },
+    {
+      "device": "this Explore cycle itself",
+      "written_before_information": false,
+      "third_party_observable": true,
+      "costly_to_revoke": false,
+      "commitment": "cheap_talk"
+    }
+  ],
+  "note": "No EVPI number. No currency. Gate 3 is not moved."
+}

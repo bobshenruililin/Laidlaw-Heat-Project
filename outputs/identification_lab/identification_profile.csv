@@ -1,0 +1,7 @@
+encoding,label,identifying_share,share_intensive,share_extensive,always_on,family,instrument
+mean_temp,Mean temperature,0.0422,1.0,0.0,all 12 (continuous),continuous temperature,ERA5 monthly mean Tmin r = 0.986; means travel
+mean_tmax,Mean Tmax,0.0529,1.0,0.0,all 12 (continuous),continuous temperature,ERA5 monthly mean Tmin r = 0.986; means travel
+mean_tmin,Mean Tmin,0.0443,1.0,0.0,all 12 (continuous),continuous temperature,ERA5 monthly mean Tmin r = 0.986; means travel
+hot_nights,Hot nights ≥ 28°C,0.2883,0.9541,0.0459,Jun–Sep,official heat-count,Headquarters-only flag; ERA5 28°C months 9 vs HKO 57
+very_hot_days,Very hot days ≥ 33°C,0.3305,0.8543,0.1457,Jun–Aug,official heat-count,Official HKO flag; live paper stays on Headquarters
+cold_days,Cold days ≤ 12°C,0.4688,0.6119,0.3881,none,official cold-count,ERA5 over-fires cold months (36 vs HKO 29); opposite night bias

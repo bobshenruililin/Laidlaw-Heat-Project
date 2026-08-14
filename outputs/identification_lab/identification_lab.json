@@ -1,0 +1,1329 @@
+{
+  "title": "Identification laboratory",
+  "window": {
+    "start": "2013-01-01",
+    "end": "2023-12-31",
+    "n_days": 4017,
+    "n_months": 132
+  },
+  "provenance": "REAL_PUBLIC. HKO Headquarters daily Tmin; Open-Meteo ERA5-Land dry-bulb and apparent Tmin at the Hong Kong coordinate. Exposure descriptives only. No health outcomes. No project coefficients.",
+  "anchors": {
+    "hko_hn": 449,
+    "era5_hn": 17,
+    "both": 14,
+    "hko_only": 435,
+    "era5_only": 3,
+    "p_era5_given_hko_hn": 0.0312
+  },
+  "reliability_0p2": [
+    {
+      "lo": 26.0,
+      "hi": 26.2,
+      "mid": 26.1,
+      "n": 66,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 61,
+      "rate_at": 0.9242
+    },
+    {
+      "lo": 26.2,
+      "hi": 26.4,
+      "mid": 26.3,
+      "n": 74,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 51,
+      "rate_at": 0.6892
+    },
+    {
+      "lo": 26.4,
+      "hi": 26.6,
+      "mid": 26.5,
+      "n": 76,
+      "n_era5_ge28": 1,
+      "rate_era5": 0.0132,
+      "n_at_ge28": 72,
+      "rate_at": 0.9474
+    },
+    {
+      "lo": 26.6,
+      "hi": 26.8,
+      "mid": 26.7,
+      "n": 82,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 69,
+      "rate_at": 0.8415
+    },
+    {
+      "lo": 26.8,
+      "hi": 27.0,
+      "mid": 26.9,
+      "n": 85,
+      "n_era5_ge28": 1,
+      "rate_era5": 0.0118,
+      "n_at_ge28": 80,
+      "rate_at": 0.9412
+    },
+    {
+      "lo": 27.0,
+      "hi": 27.2,
+      "mid": 27.1,
+      "n": 67,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 64,
+      "rate_at": 0.9552
+    },
+    {
+      "lo": 27.2,
+      "hi": 27.4,
+      "mid": 27.3,
+      "n": 74,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 71,
+      "rate_at": 0.9595
+    },
+    {
+      "lo": 27.4,
+      "hi": 27.6,
+      "mid": 27.5,
+      "n": 84,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 81,
+      "rate_at": 0.9643
+    },
+    {
+      "lo": 27.6,
+      "hi": 27.8,
+      "mid": 27.7,
+      "n": 76,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 71,
+      "rate_at": 0.9342
+    },
+    {
+      "lo": 27.8,
+      "hi": 28.0,
+      "mid": 27.9,
+      "n": 101,
+      "n_era5_ge28": 1,
+      "rate_era5": 0.0099,
+      "n_at_ge28": 99,
+      "rate_at": 0.9802
+    },
+    {
+      "lo": 28.0,
+      "hi": 28.2,
+      "mid": 28.1,
+      "n": 91,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 91,
+      "rate_at": 1.0
+    },
+    {
+      "lo": 28.2,
+      "hi": 28.4,
+      "mid": 28.3,
+      "n": 81,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 80,
+      "rate_at": 0.9877
+    },
+    {
+      "lo": 28.4,
+      "hi": 28.6,
+      "mid": 28.5,
+      "n": 75,
+      "n_era5_ge28": 1,
+      "rate_era5": 0.0133,
+      "n_at_ge28": 72,
+      "rate_at": 0.96
+    },
+    {
+      "lo": 28.6,
+      "hi": 28.8,
+      "mid": 28.7,
+      "n": 64,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 64,
+      "rate_at": 1.0
+    },
+    {
+      "lo": 28.8,
+      "hi": 29.0,
+      "mid": 28.9,
+      "n": 54,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 54,
+      "rate_at": 1.0
+    },
+    {
+      "lo": 29.0,
+      "hi": 29.2,
+      "mid": 29.1,
+      "n": 36,
+      "n_era5_ge28": 4,
+      "rate_era5": 0.1111,
+      "n_at_ge28": 36,
+      "rate_at": 1.0
+    },
+    {
+      "lo": 29.2,
+      "hi": 29.4,
+      "mid": 29.3,
+      "n": 26,
+      "n_era5_ge28": 1,
+      "rate_era5": 0.0385,
+      "n_at_ge28": 26,
+      "rate_at": 1.0
+    },
+    {
+      "lo": 29.4,
+      "hi": 29.6,
+      "mid": 29.5,
+      "n": 14,
+      "n_era5_ge28": 3,
+      "rate_era5": 0.2143,
+      "n_at_ge28": 14,
+      "rate_at": 1.0
+    },
+    {
+      "lo": 29.6,
+      "hi": 29.8,
+      "mid": 29.7,
+      "n": 5,
+      "n_era5_ge28": 2,
+      "rate_era5": 0.4,
+      "n_at_ge28": 5,
+      "rate_at": 1.0
+    },
+    {
+      "lo": 29.8,
+      "hi": 30.0,
+      "mid": 29.9,
+      "n": 2,
+      "n_era5_ge28": 2,
+      "rate_era5": 1.0,
+      "n_at_ge28": 2,
+      "rate_at": 1.0
+    },
+    {
+      "lo": 30.0,
+      "hi": 30.2,
+      "mid": 30.1,
+      "n": 1,
+      "n_era5_ge28": 1,
+      "rate_era5": 1.0,
+      "n_at_ge28": 1,
+      "rate_at": 1.0
+    },
+    {
+      "lo": 30.2,
+      "hi": 30.4,
+      "mid": 30.3,
+      "n": 0,
+      "n_era5_ge28": 0,
+      "rate_era5": null,
+      "n_at_ge28": 0,
+      "rate_at": null
+    },
+    {
+      "lo": 30.4,
+      "hi": 30.6,
+      "mid": 30.5,
+      "n": 0,
+      "n_era5_ge28": 0,
+      "rate_era5": null,
+      "n_at_ge28": 0,
+      "rate_at": null
+    },
+    {
+      "lo": 30.6,
+      "hi": 30.8,
+      "mid": 30.7,
+      "n": 0,
+      "n_era5_ge28": 0,
+      "rate_era5": null,
+      "n_at_ge28": 0,
+      "rate_at": null
+    },
+    {
+      "lo": 30.8,
+      "hi": 31.0,
+      "mid": 30.9,
+      "n": 0,
+      "n_era5_ge28": 0,
+      "rate_era5": null,
+      "n_at_ge28": 0,
+      "rate_at": null
+    },
+    {
+      "lo": 31.0,
+      "hi": 31.2,
+      "mid": 31.1,
+      "n": 0,
+      "n_era5_ge28": 0,
+      "rate_era5": null,
+      "n_at_ge28": 0,
+      "rate_at": null
+    }
+  ],
+  "reliability_0p5": [
+    {
+      "lo": 24.0,
+      "hi": 24.5,
+      "mid": 24.25,
+      "n": 116,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 19,
+      "rate_at": 0.1638
+    },
+    {
+      "lo": 24.5,
+      "hi": 25.0,
+      "mid": 24.75,
+      "n": 144,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 58,
+      "rate_at": 0.4028
+    },
+    {
+      "lo": 25.0,
+      "hi": 25.5,
+      "mid": 25.25,
+      "n": 176,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 89,
+      "rate_at": 0.5057
+    },
+    {
+      "lo": 25.5,
+      "hi": 26.0,
+      "mid": 25.75,
+      "n": 154,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 106,
+      "rate_at": 0.6883
+    },
+    {
+      "lo": 26.0,
+      "hi": 26.5,
+      "mid": 26.25,
+      "n": 180,
+      "n_era5_ge28": 1,
+      "rate_era5": 0.0056,
+      "n_at_ge28": 150,
+      "rate_at": 0.8333
+    },
+    {
+      "lo": 26.5,
+      "hi": 27.0,
+      "mid": 26.75,
+      "n": 203,
+      "n_era5_ge28": 1,
+      "rate_era5": 0.0049,
+      "n_at_ge28": 183,
+      "rate_at": 0.9015
+    },
+    {
+      "lo": 27.0,
+      "hi": 27.5,
+      "mid": 27.25,
+      "n": 183,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 175,
+      "rate_at": 0.9563
+    },
+    {
+      "lo": 27.5,
+      "hi": 28.0,
+      "mid": 27.75,
+      "n": 219,
+      "n_era5_ge28": 1,
+      "rate_era5": 0.0046,
+      "n_at_ge28": 211,
+      "rate_at": 0.9635
+    },
+    {
+      "lo": 28.0,
+      "hi": 28.5,
+      "mid": 28.25,
+      "n": 217,
+      "n_era5_ge28": 1,
+      "rate_era5": 0.0046,
+      "n_at_ge28": 215,
+      "rate_at": 0.9908
+    },
+    {
+      "lo": 28.5,
+      "hi": 29.0,
+      "mid": 28.75,
+      "n": 148,
+      "n_era5_ge28": 0,
+      "rate_era5": 0.0,
+      "n_at_ge28": 146,
+      "rate_at": 0.9865
+    },
+    {
+      "lo": 29.0,
+      "hi": 29.5,
+      "mid": 29.25,
+      "n": 68,
+      "n_era5_ge28": 6,
+      "rate_era5": 0.0882,
+      "n_at_ge28": 68,
+      "rate_at": 1.0
+    },
+    {
+      "lo": 29.5,
+      "hi": 30.0,
+      "mid": 29.75,
+      "n": 15,
+      "n_era5_ge28": 6,
+      "rate_era5": 0.4,
+      "n_at_ge28": 15,
+      "rate_at": 1.0
+    },
+    {
+      "lo": 30.0,
+      "hi": 30.5,
+      "mid": 30.25,
+      "n": 1,
+      "n_era5_ge28": 1,
+      "rate_era5": 1.0,
+      "n_at_ge28": 1,
+      "rate_at": 1.0
+    },
+    {
+      "lo": 30.5,
+      "hi": 31.0,
+      "mid": 30.75,
+      "n": 0,
+      "n_era5_ge28": 0,
+      "rate_era5": null,
+      "n_at_ge28": 0,
+      "rate_at": null
+    },
+    {
+      "lo": 31.0,
+      "hi": 31.5,
+      "mid": 31.25,
+      "n": 0,
+      "n_era5_ge28": 0,
+      "rate_era5": null,
+      "n_at_ge28": 0,
+      "rate_at": null
+    },
+    {
+      "lo": 31.5,
+      "hi": 32.0,
+      "mid": 31.75,
+      "n": 0,
+      "n_era5_ge28": 0,
+      "rate_era5": null,
+      "n_at_ge28": 0,
+      "rate_at": null
+    },
+    {
+      "lo": 32.0,
+      "hi": 32.5,
+      "mid": 32.25,
+      "n": 0,
+      "n_era5_ge28": 0,
+      "rate_era5": null,
+      "n_at_ge28": 0,
+      "rate_at": null
+    }
+  ],
+  "tail": {
+    "n_hko_28_to_29": 365,
+    "n_era5_in_28_to_29": 1,
+    "rate_28_to_29": 0.0027,
+    "n_hko_ge29": 84,
+    "rate_ge29": 0.1548,
+    "n_hko_ge29_5": 16,
+    "rate_ge29_5": 0.4375
+  },
+  "always_on": {
+    "n_hko_hn_jun_sep": 400,
+    "share_jun_sep": 0.8909,
+    "both_nights_calendar_months": [
+      6,
+      7,
+      8
+    ]
+  },
+  "monthly_containment": {
+    "n_hko_positive_months": 57,
+    "n_those_with_any_era5_hn": 9,
+    "n_hko_positive_without_era5": 48
+  },
+  "spells_of_both_nights": [
+    {
+      "date": "2014-07-08",
+      "hko_tmin": 28.4,
+      "era5_tmin": 28.0,
+      "run_length": 2,
+      "position_in_run": 1,
+      "place": "start"
+    },
+    {
+      "date": "2014-07-23",
+      "hko_tmin": 29.2,
+      "era5_tmin": 28.4,
+      "run_length": 1,
+      "position_in_run": 1,
+      "place": "isolated"
+    },
+    {
+      "date": "2015-06-30",
+      "hko_tmin": 29.1,
+      "era5_tmin": 28.1,
+      "run_length": 7,
+      "position_in_run": 2,
+      "place": "middle"
+    },
+    {
+      "date": "2015-07-01",
+      "hko_tmin": 29.4,
+      "era5_tmin": 28.3,
+      "run_length": 7,
+      "position_in_run": 3,
+      "place": "middle"
+    },
+    {
+      "date": "2015-07-02",
+      "hko_tmin": 29.5,
+      "era5_tmin": 28.4,
+      "run_length": 7,
+      "position_in_run": 4,
+      "place": "middle"
+    },
+    {
+      "date": "2015-08-08",
+      "hko_tmin": 30.0,
+      "era5_tmin": 28.7,
+      "run_length": 2,
+      "position_in_run": 2,
+      "place": "end"
+    },
+    {
+      "date": "2016-07-17",
+      "hko_tmin": 29.0,
+      "era5_tmin": 28.1,
+      "run_length": 4,
+      "position_in_run": 3,
+      "place": "middle"
+    },
+    {
+      "date": "2017-07-30",
+      "hko_tmin": 29.6,
+      "era5_tmin": 28.0,
+      "run_length": 6,
+      "position_in_run": 4,
+      "place": "middle"
+    },
+    {
+      "date": "2017-07-31",
+      "hko_tmin": 29.8,
+      "era5_tmin": 28.3,
+      "run_length": 6,
+      "position_in_run": 5,
+      "place": "middle"
+    },
+    {
+      "date": "2021-07-28",
+      "hko_tmin": 29.1,
+      "era5_tmin": 28.2,
+      "run_length": 4,
+      "position_in_run": 3,
+      "place": "middle"
+    },
+    {
+      "date": "2022-07-24",
+      "hko_tmin": 29.5,
+      "era5_tmin": 28.1,
+      "run_length": 21,
+      "position_in_run": 16,
+      "place": "middle"
+    },
+    {
+      "date": "2022-07-25",
+      "hko_tmin": 29.9,
+      "era5_tmin": 28.3,
+      "run_length": 21,
+      "position_in_run": 17,
+      "place": "middle"
+    },
+    {
+      "date": "2022-07-29",
+      "hko_tmin": 29.7,
+      "era5_tmin": 28.7,
+      "run_length": 21,
+      "position_in_run": 21,
+      "place": "end"
+    },
+    {
+      "date": "2022-08-01",
+      "hko_tmin": 29.1,
+      "era5_tmin": 28.1,
+      "run_length": 3,
+      "position_in_run": 2,
+      "place": "middle"
+    }
+  ],
+  "identification_profile": [
+    {
+      "encoding": "mean_temp",
+      "label": "Mean temperature",
+      "identifying_share": 0.0422,
+      "share_intensive": 1.0,
+      "share_extensive": 0.0,
+      "always_on": "all 12 (continuous)",
+      "family": "continuous temperature",
+      "instrument": "ERA5 monthly mean Tmin r = 0.986; means travel"
+    },
+    {
+      "encoding": "mean_tmax",
+      "label": "Mean Tmax",
+      "identifying_share": 0.0529,
+      "share_intensive": 1.0,
+      "share_extensive": 0.0,
+      "always_on": "all 12 (continuous)",
+      "family": "continuous temperature",
+      "instrument": "ERA5 monthly mean Tmin r = 0.986; means travel"
+    },
+    {
+      "encoding": "mean_tmin",
+      "label": "Mean Tmin",
+      "identifying_share": 0.0443,
+      "share_intensive": 1.0,
+      "share_extensive": 0.0,
+      "always_on": "all 12 (continuous)",
+      "family": "continuous temperature",
+      "instrument": "ERA5 monthly mean Tmin r = 0.986; means travel"
+    },
+    {
+      "encoding": "hot_nights",
+      "label": "Hot nights \u2265 28\u00b0C",
+      "identifying_share": 0.2883,
+      "share_intensive": 0.9541,
+      "share_extensive": 0.0459,
+      "always_on": "Jun\u2013Sep",
+      "family": "official heat-count",
+      "instrument": "Headquarters-only flag; ERA5 28\u00b0C months 9 vs HKO 57"
+    },
+    {
+      "encoding": "very_hot_days",
+      "label": "Very hot days \u2265 33\u00b0C",
+      "identifying_share": 0.3305,
+      "share_intensive": 0.8543,
+      "share_extensive": 0.1457,
+      "always_on": "Jun\u2013Aug",
+      "family": "official heat-count",
+      "instrument": "Official HKO flag; live paper stays on Headquarters"
+    },
+    {
+      "encoding": "cold_days",
+      "label": "Cold days \u2264 12\u00b0C",
+      "identifying_share": 0.4688,
+      "share_intensive": 0.6119,
+      "share_extensive": 0.3881,
+      "always_on": "none",
+      "family": "official cold-count",
+      "instrument": "ERA5 over-fires cold months (36 vs HKO 29); opposite night bias"
+    }
+  ],
+  "year_month_hot_nights": [
+    {
+      "year": 2013,
+      "month": 1,
+      "hot_nights": 0
+    },
+    {
+      "year": 2013,
+      "month": 2,
+      "hot_nights": 0
+    },
+    {
+      "year": 2013,
+      "month": 3,
+      "hot_nights": 0
+    },
+    {
+      "year": 2013,
+      "month": 4,
+      "hot_nights": 0
+    },
+    {
+      "year": 2013,
+      "month": 5,
+      "hot_nights": 1
+    },
+    {
+      "year": 2013,
+      "month": 6,
+      "hot_nights": 6
+    },
+    {
+      "year": 2013,
+      "month": 7,
+      "hot_nights": 1
+    },
+    {
+      "year": 2013,
+      "month": 8,
+      "hot_nights": 1
+    },
+    {
+      "year": 2013,
+      "month": 9,
+      "hot_nights": 1
+    },
+    {
+      "year": 2013,
+      "month": 10,
+      "hot_nights": 0
+    },
+    {
+      "year": 2013,
+      "month": 11,
+      "hot_nights": 0
+    },
+    {
+      "year": 2013,
+      "month": 12,
+      "hot_nights": 0
+    },
+    {
+      "year": 2014,
+      "month": 1,
+      "hot_nights": 0
+    },
+    {
+      "year": 2014,
+      "month": 2,
+      "hot_nights": 0
+    },
+    {
+      "year": 2014,
+      "month": 3,
+      "hot_nights": 0
+    },
+    {
+      "year": 2014,
+      "month": 4,
+      "hot_nights": 0
+    },
+    {
+      "year": 2014,
+      "month": 5,
+      "hot_nights": 3
+    },
+    {
+      "year": 2014,
+      "month": 6,
+      "hot_nights": 8
+    },
+    {
+      "year": 2014,
+      "month": 7,
+      "hot_nights": 13
+    },
+    {
+      "year": 2014,
+      "month": 8,
+      "hot_nights": 6
+    },
+    {
+      "year": 2014,
+      "month": 9,
+      "hot_nights": 4
+    },
+    {
+      "year": 2014,
+      "month": 10,
+      "hot_nights": 0
+    },
+    {
+      "year": 2014,
+      "month": 11,
+      "hot_nights": 0
+    },
+    {
+      "year": 2014,
+      "month": 12,
+      "hot_nights": 0
+    },
+    {
+      "year": 2015,
+      "month": 1,
+      "hot_nights": 0
+    },
+    {
+      "year": 2015,
+      "month": 2,
+      "hot_nights": 0
+    },
+    {
+      "year": 2015,
+      "month": 3,
+      "hot_nights": 0
+    },
+    {
+      "year": 2015,
+      "month": 4,
+      "hot_nights": 0
+    },
+    {
+      "year": 2015,
+      "month": 5,
+      "hot_nights": 2
+    },
+    {
+      "year": 2015,
+      "month": 6,
+      "hot_nights": 13
+    },
+    {
+      "year": 2015,
+      "month": 7,
+      "hot_nights": 12
+    },
+    {
+      "year": 2015,
+      "month": 8,
+      "hot_nights": 8
+    },
+    {
+      "year": 2015,
+      "month": 9,
+      "hot_nights": 2
+    },
+    {
+      "year": 2015,
+      "month": 10,
+      "hot_nights": 0
+    },
+    {
+      "year": 2015,
+      "month": 11,
+      "hot_nights": 0
+    },
+    {
+      "year": 2015,
+      "month": 12,
+      "hot_nights": 0
+    },
+    {
+      "year": 2016,
+      "month": 1,
+      "hot_nights": 0
+    },
+    {
+      "year": 2016,
+      "month": 2,
+      "hot_nights": 0
+    },
+    {
+      "year": 2016,
+      "month": 3,
+      "hot_nights": 0
+    },
+    {
+      "year": 2016,
+      "month": 4,
+      "hot_nights": 0
+    },
+    {
+      "year": 2016,
+      "month": 5,
+      "hot_nights": 2
+    },
+    {
+      "year": 2016,
+      "month": 6,
+      "hot_nights": 15
+    },
+    {
+      "year": 2016,
+      "month": 7,
+      "hot_nights": 13
+    },
+    {
+      "year": 2016,
+      "month": 8,
+      "hot_nights": 4
+    },
+    {
+      "year": 2016,
+      "month": 9,
+      "hot_nights": 2
+    },
+    {
+      "year": 2016,
+      "month": 10,
+      "hot_nights": 0
+    },
+    {
+      "year": 2016,
+      "month": 11,
+      "hot_nights": 0
+    },
+    {
+      "year": 2016,
+      "month": 12,
+      "hot_nights": 0
+    },
+    {
+      "year": 2017,
+      "month": 1,
+      "hot_nights": 0
+    },
+    {
+      "year": 2017,
+      "month": 2,
+      "hot_nights": 0
+    },
+    {
+      "year": 2017,
+      "month": 3,
+      "hot_nights": 0
+    },
+    {
+      "year": 2017,
+      "month": 4,
+      "hot_nights": 0
+    },
+    {
+      "year": 2017,
+      "month": 5,
+      "hot_nights": 0
+    },
+    {
+      "year": 2017,
+      "month": 6,
+      "hot_nights": 13
+    },
+    {
+      "year": 2017,
+      "month": 7,
+      "hot_nights": 6
+    },
+    {
+      "year": 2017,
+      "month": 8,
+      "hot_nights": 14
+    },
+    {
+      "year": 2017,
+      "month": 9,
+      "hot_nights": 4
+    },
+    {
+      "year": 2017,
+      "month": 10,
+      "hot_nights": 4
+    },
+    {
+      "year": 2017,
+      "month": 11,
+      "hot_nights": 0
+    },
+    {
+      "year": 2017,
+      "month": 12,
+      "hot_nights": 0
+    },
+    {
+      "year": 2018,
+      "month": 1,
+      "hot_nights": 0
+    },
+    {
+      "year": 2018,
+      "month": 2,
+      "hot_nights": 0
+    },
+    {
+      "year": 2018,
+      "month": 3,
+      "hot_nights": 0
+    },
+    {
+      "year": 2018,
+      "month": 4,
+      "hot_nights": 0
+    },
+    {
+      "year": 2018,
+      "month": 5,
+      "hot_nights": 6
+    },
+    {
+      "year": 2018,
+      "month": 6,
+      "hot_nights": 6
+    },
+    {
+      "year": 2018,
+      "month": 7,
+      "hot_nights": 7
+    },
+    {
+      "year": 2018,
+      "month": 8,
+      "hot_nights": 5
+    },
+    {
+      "year": 2018,
+      "month": 9,
+      "hot_nights": 2
+    },
+    {
+      "year": 2018,
+      "month": 10,
+      "hot_nights": 0
+    },
+    {
+      "year": 2018,
+      "month": 11,
+      "hot_nights": 0
+    },
+    {
+      "year": 2018,
+      "month": 12,
+      "hot_nights": 0
+    },
+    {
+      "year": 2019,
+      "month": 1,
+      "hot_nights": 0
+    },
+    {
+      "year": 2019,
+      "month": 2,
+      "hot_nights": 0
+    },
+    {
+      "year": 2019,
+      "month": 3,
+      "hot_nights": 0
+    },
+    {
+      "year": 2019,
+      "month": 4,
+      "hot_nights": 0
+    },
+    {
+      "year": 2019,
+      "month": 5,
+      "hot_nights": 3
+    },
+    {
+      "year": 2019,
+      "month": 6,
+      "hot_nights": 11
+    },
+    {
+      "year": 2019,
+      "month": 7,
+      "hot_nights": 15
+    },
+    {
+      "year": 2019,
+      "month": 8,
+      "hot_nights": 9
+    },
+    {
+      "year": 2019,
+      "month": 9,
+      "hot_nights": 7
+    },
+    {
+      "year": 2019,
+      "month": 10,
+      "hot_nights": 1
+    },
+    {
+      "year": 2019,
+      "month": 11,
+      "hot_nights": 0
+    },
+    {
+      "year": 2019,
+      "month": 12,
+      "hot_nights": 0
+    },
+    {
+      "year": 2020,
+      "month": 1,
+      "hot_nights": 0
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "hot_nights": 0
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "hot_nights": 0
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "hot_nights": 0
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "hot_nights": 1
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "hot_nights": 18
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "hot_nights": 21
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "hot_nights": 6
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "hot_nights": 4
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "hot_nights": 0
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "hot_nights": 0
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "hot_nights": 0
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "hot_nights": 0
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "hot_nights": 0
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "hot_nights": 0
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "hot_nights": 0
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "hot_nights": 14
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "hot_nights": 8
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "hot_nights": 18
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "hot_nights": 6
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "hot_nights": 11
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "hot_nights": 4
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "hot_nights": 0
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "hot_nights": 0
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "hot_nights": 0
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "hot_nights": 0
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "hot_nights": 0
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "hot_nights": 0
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "hot_nights": 0
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "hot_nights": 10
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "hot_nights": 25
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "hot_nights": 8
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "hot_nights": 9
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "hot_nights": 0
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "hot_nights": 0
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "hot_nights": 0
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "hot_nights": 0
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "hot_nights": 0
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "hot_nights": 0
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "hot_nights": 0
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "hot_nights": 5
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "hot_nights": 8
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "hot_nights": 18
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "hot_nights": 15
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "hot_nights": 7
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "hot_nights": 3
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "hot_nights": 0
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "hot_nights": 0
+    }
+  ],
+  "heatmap_vmax": 25,
+  "cold_analogue": {
+    "n_hko_8_to_12": 128,
+    "n_era5_le12_in_that_bin": 127,
+    "rate": 0.9922,
+    "note": "Opposite bias: when Headquarters is already 8\u201312\u00b0C, ERA5 almost always also reports \u226412\u00b0C. Not a health finding."
+  },
+  "hm_cm_footnote": "The unlocked HM/CM catalogue is a separate family (11 live flags, effective rank 3.92). It is not these six rows, and rank is not a licence to refit outcomes.",
+  "punchline": "Among 365 station nights in [28, 29)\u00b0C, ERA5 called 28\u00b0C 1 time(s) (rate 0.003). Among 16 nights \u226529.5\u00b0C the rate is 0.44. 400/449 official hot nights fall in June\u2013September. 48 of 57 HKO hot-night months contain no ERA5 28\u00b0C night.",
+  "claim_boundaries": [
+    "This laboratory does not use hospital counts.",
+    "A calibration rate is not a daily admissions coefficient.",
+    "Do not paste daily Jaccard or the 14 nights into Hogan\u2019s weather paragraph.",
+    "Do not treat 0.045 as a health attenuation factor.",
+    "This page is not form 2a and not Gate 3."
+  ]
+}

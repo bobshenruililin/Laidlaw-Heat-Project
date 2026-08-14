@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Identification laboratory · Laidlaw Heat Project</title>
+  <meta name="description" content="Exposure identification only. Jaccard 0.031 is an integral: ERA5 almost never fires until Headquarters is already ≥29°C. Not form 2a. Not a health finding." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #12181f;
+      --muted: #5b6773;
+      --paper: #f4efe4;
+      --card: #fffdf8;
+      --line: rgba(18,24,31,.12);
+      --sea: #0c6b74;
+      --heat: #c24e16;
+      --gold: #8a6d12;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+    }
+    h1, h2, .num {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 560;
+      letter-spacing: -.02em;
+    }
+    a { color: var(--sea); }
+    .banner {
+      background: #12181f;
+      color: #e0c36a;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .65rem 1rem;
+      text-align: center;
+    }
+    .banner strong { color: #fff; }
+    .wrap { width: min(920px, calc(100% - 2rem)); margin: 0 auto; padding-bottom: 3.5rem; }
+    header { padding: 2.4rem 0 0.4rem; }
+    header p.k {
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      color: var(--sea);
+      margin: 0 0 .7rem;
+    }
+    header h1 { font-size: clamp(1.9rem, 4.4vw, 2.8rem); line-height: 1.12; margin: 0 0 .85rem; }
+    .lede {
+      max-width: 68ch;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: var(--muted);
+      margin: 0;
+    }
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      margin: 1.8rem 0 0.4rem;
+    }
+    .fact {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1rem 1.05rem 1.1rem;
+    }
+    .fact .num { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1; display: block; color: var(--sea); }
+    .fact span { display: block; margin-top: .45rem; color: var(--muted); font-size: .88rem; line-height: 1.4; }
+    .prose { max-width: 68ch; color: var(--muted); line-height: 1.55; }
+    figure {
+      margin-block: 2.5rem;
+      margin-inline: 0;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.15rem 1.15rem 1.25rem;
+    }
+    figure h2 { margin: 0 0 .35rem; font-size: 1.35rem; }
+    figure img, figure svg { width: 100%; height: auto; display: block; }
+    figcaption, .caption {
+      display: block;
+      margin-top: 0.85rem;
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.5;
+      max-width: 68ch;
+    }
+    .legend {
+      display: flex;
+      gap: .85rem;
+      flex-wrap: wrap;
+      font-size: .78rem;
+      color: var(--muted);
+      margin: .7rem 0 0;
+    }
+    .sw { width: .7rem; height: .7rem; border-radius: 99px; display: inline-block; margin-right: .28rem; vertical-align: middle; }
+    .heatwrap { overflow-x: auto; margin-top: .85rem; }
+    .heat {
+      display: grid;
+      grid-template-columns: 3.6rem repeat(12, minmax(2.15rem, 1fr));
+      gap: 3px;
+      min-width: 640px;
+      font-size: .72rem;
+    }
+    .heat b, .heat i, .heat em {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 1.85rem;
+      font-style: normal;
+      font-weight: 500;
+    }
+    .heat b { color: var(--muted); font-weight: 500; }
+    .heat i {
+      border-radius: 4px;
+      background: #e8e2d4;
+      color: #12181f;
+    }
+    .season {
+      display: grid;
+      grid-template-columns: 3.6rem repeat(12, minmax(2.15rem, 1fr));
+      gap: 3px;
+      min-width: 640px;
+      margin-top: 6px;
+      font-size: .78rem;
+      color: var(--sea);
+    }
+    .season span { grid-column: 7 / 11; text-align: center; border-top: 2px solid var(--sea); padding-top: .25rem; }
+    .chips { display: flex; gap: .4rem; flex-wrap: wrap; margin: .8rem 0 .2rem; }
+    button {
+      font: inherit;
+      padding: .38rem .7rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+    }
+    button[aria-pressed="true"], button:hover { background: var(--sea); color: #fff; border-color: var(--sea); }
+    .tablewrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: .86rem; min-width: 640px; }
+    th, td { text-align: left; padding: .42rem .35rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-weight: 500; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
+    .refuse {
+      background: #12181f;
+      color: #d7ddd8;
+      border-radius: 18px;
+      padding: 1.15rem 1.2rem;
+      margin: 2.2rem 0 0;
+    }
+    .refuse h2 { color: #f4efe4; margin: 0 0 .5rem; font-size: 1.2rem; }
+    .refuse ul { margin: 0; padding-left: 1.15rem; line-height: 1.5; }
+    footer { padding: 1.8rem 0 0; color: var(--muted); font-size: .9rem; line-height: 1.55; }
+    .footlinks { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .55rem; }
+    @media (max-width: 860px) {
+      .facts { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">Exploratory public companion · exposure identification only · <strong>not</strong> form 2a · no health coefficients</div>
+  <div class="wrap">
+    <header>
+      <p class="k">Laidlaw Heat Project · identification laboratory</p>
+      <h1>Jaccard 0.031 is an integral.</h1>
+      <p class="lede">
+        ERA5 almost never calls a 28°C night until Headquarters is already ≥29°C.
+        Forty-eight of fifty-seven official hot-night months are invisible to the grid.
+        The live paper stays on Headquarters. This room is exposure identification,
+        not form 2a, and not a health finding.
+      </p>
+    </header>
+
+    <div class="facts" aria-label="Three identification facts">
+      <div class="fact"><b class="num" id="f1">—</b><span>ERA5 ≥28°C among station nights in [28, 29)°C</span></div>
+      <div class="fact"><b class="num" id="f2">—</b><span>official hot-night months with no ERA5 28°C night</span></div>
+      <div class="fact"><b class="num" id="f3">—</b><span>of remaining hot-night variation is intensity, not on/off</span></div>
+    </div>
+
+    <p class="prose">
+      After calendar-month indicators, a hot-night coefficient is identified on how many
+      nights an already-hot month contained. June–September always had at least one.
+      July 2013 had 1 night; July 2022 had 25. That is the paper object.
+      The reliability curve below explains why a second thermometer cannot reconstruct it.
+    </p>
+
+    <figure>
+      <h2>Official hot nights by year and month</h2>
+      <p class="prose" style="margin:.2rem 0 .4rem">HKO Headquarters, 2013–2023. Each cell is a count of nights with Tmin ≥ 28°C.</p>
+      <div class="heatwrap">
+        <div class="heat" id="heat" role="img" aria-label="Year by month counts of official hot nights"></div>
+        <div class="season" aria-hidden="true"><span>always ≥1 night (11/11 years)</span></div>
+      </div>
+      <div class="legend">
+        <span><i class="sw" style="background:#e8e2d4"></i>none</span>
+        <span><i class="sw" style="background:rgb(70,98,85)"></i>few</span>
+        <span><i class="sw" style="background:#c24e16"></i>many (July 2022 = 25)</span>
+        <span>June–September always on</span>
+      </div>
+      <figcaption class="caption">
+        Figure D analogue of the live paper’s cold-day heatmap. Mixed months are May and October.
+        Not a health finding. Live paper stays on Headquarters.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <h2>ERA5 agrees only after Headquarters is already hot</h2>
+      <p class="prose" style="margin:.2rem 0 .5rem">P(ERA5 Tmin ≥ 28°C | HKO Tmin in a 0.5°C bin). 4,017 matched nights. Titles and the legend sit here, not on the plot.</p>
+      <img src="../../figures/identification_lab/era5_reliability_given_hko_web.svg" alt="Reliability curve of ERA5 28°C nights given HKO Tmin. The rate stays near zero until Headquarters exceeds 29°C." />
+      <div class="legend">
+        <span><i class="sw" style="background:#0c6b74"></i>ERA5 dry-bulb ≥ 28°C</span>
+        <span><i class="sw" style="background:#c24e16"></i>official 28°C cut (dashed)</span>
+        <span>Apparent temperature omitted: it is already ~1 once HKO ≥ 28°C</span>
+      </div>
+      <div class="chips" id="bins" aria-label="Headquarters temperature bins"></div>
+      <p class="caption" id="binReadout">Choose a bin. The rate is reported here, under the figure, never as a label on the points.</p>
+      <figcaption class="caption" id="relCap"></figcaption>
+    </figure>
+
+    <figure>
+      <h2>Identification profile</h2>
+      <p class="prose" style="margin:.2rem 0 .7rem">
+        Six live-paper encodings. Four columns: what survives month indicators;
+        how much of that residual is intensity versus on/off; which family the encoding belongs to;
+        whether a second thermometer corroborates it. Hogan-first, supplement-grade, monthly grain.
+      </p>
+      <div class="tablewrap">
+        <table id="profile">
+          <thead>
+            <tr>
+              <th>Encoding</th>
+              <th>Identifying share</th>
+              <th>Intensive / extensive</th>
+              <th>Family</th>
+              <th>Instrument</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <figcaption class="caption" id="profileCap"></figcaption>
+    </figure>
+
+    <figure>
+      <h2>The fourteen nights both thermometers called hot</h2>
+      <p class="prose" style="margin:.2rem 0 .7rem">
+        Companion grain only. Thirteen of fourteen sit inside a Headquarters hot-night run.
+        Only 23 July 2014 is isolated. Step the same dates on the
+        <a href="../demo/#t=28&amp;d=2015-08-08">instrument</a>.
+      </p>
+      <div class="tablewrap">
+        <table id="spells">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>HKO Tmin</th>
+              <th>ERA5 Tmin</th>
+              <th>Place in HKO run</th>
+              <th>Run length</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <figcaption class="caption">
+        These fourteen nights are not a reconstructed Headquarters series and not a harm ranking.
+        Do not paste them into Hogan’s weather paragraph.
+      </figcaption>
+    </figure>
+
+    <div class="refuse">
+      <h2>What this room is not</h2>
+      <ul>
+        <li>Not form 2a, not Gate 3, not Professor Bishai’s endorsement.</li>
+        <li>Not a fifth Leaflet, not a hospital map, not a daily admissions model.</li>
+        <li>Not a licence to invert P(HKO | ERA5) and impute flags onto cells or other cities.</li>
+        <li>Not a reason to treat 0.045 as a health attenuation factor, or rank 3.92 as a reason to refit.</li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>Rebuild: <code>python3 scripts/60_identification_laboratory.py</code>. Anchors must remain 449 / 17 / 14. Kimi k3 is not launchable in this environment; layout follows the eight-rule law in the Fable research-contribution note (HTML captions, reserved SVG margins, stack at 860px).</p>
+      <p>31 August 2026 is still the endorsed HKU 2a. This URL does not count as that posting.</p>
+      <div class="footlinks">
+        <a href="../demo/">Return to the instrument</a>
+        <a href="../">Hub</a>
+        <a href="../field/">Field laboratory</a>
+      </div>
+    </footer>
+  </div>
+  <script src="./id_embed.js"></script>
+  <script>
+    const L = window.ID_LAB;
+    const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+    function pct(x) { return (100 * x).toFixed(1) + "%"; }
+    function heatColor(v, vmax) {
+      if (v <= 0) return "#e8e2d4";
+      const t = Math.min(1, v / vmax);
+      const r = Math.round(12 + (194 - 12) * t);
+      const g = Math.round(107 + (78 - 107) * t);
+      const b = Math.round(116 + (22 - 116) * t);
+      return `rgb(${r},${g},${b})`;
+    }
+
+    document.getElementById("f1").textContent = `${L.tail.n_era5_in_28_to_29}/${L.tail.n_hko_28_to_29}`;
+    document.getElementById("f2").textContent = `${L.monthly_containment.n_hko_positive_without_era5}/${L.monthly_containment.n_hko_positive_months}`;
+    document.getElementById("f3").textContent = pct(L.identification_profile.find(r => r.encoding === "hot_nights").share_intensive);
+
+    const by = {};
+    for (const row of L.year_month_hot_nights) by[`${row.year}-${row.month}`] = row.hot_nights;
+    const heat = document.getElementById("heat");
+    const head = document.createElement("b");
+    heat.appendChild(head);
+    MONTHS.forEach(m => { const el = document.createElement("b"); el.textContent = m; heat.appendChild(el); });
+    for (let y = 2013; y <= 2023; y++) {
+      const lab = document.createElement("b");
+      lab.textContent = String(y);
+      heat.appendChild(lab);
+      for (let m = 1; m <= 12; m++) {
+        const v = by[`${y}-${m}`] || 0;
+        const cell = document.createElement("i");
+        cell.textContent = v ? String(v) : "";
+        cell.style.background = heatColor(v, L.heatmap_vmax);
+        cell.style.color = v >= 12 ? "#f4efe4" : "#12181f";
+        cell.title = `${MONTHS[m-1]} ${y}: ${v} official hot night${v===1?"":"s"}`;
+        heat.appendChild(cell);
+      }
+    }
+
+    const tbody = document.querySelector("#profile tbody");
+    for (const row of L.identification_profile) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${row.label}</td>
+        <td>${pct(row.identifying_share)}</td>
+        <td>${pct(row.share_intensive)} intensive · ${pct(row.share_extensive)} extensive<br><span style="color:var(--muted)">${row.always_on}</span></td>
+        <td>${row.family}</td>
+        <td>${row.instrument}</td>`;
+      tbody.appendChild(tr);
+    }
+    document.getElementById("profileCap").textContent = L.hm_cm_footnote;
+
+    const sb = document.querySelector("#spells tbody");
+    for (const s of L.spells_of_both_nights) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${s.date}</td><td>${s.hko_tmin.toFixed(1)}°C</td>
+        <td>${s.era5_tmin.toFixed(1)}°C</td><td>${s.place}</td><td>${s.run_length}</td>`;
+      sb.appendChild(tr);
+    }
+
+    document.getElementById("relCap").textContent = L.punchline + " " + L.cold_analogue.note;
+
+    const chips = document.getElementById("bins");
+    const readout = document.getElementById("binReadout");
+    const picks = [
+      { lo: 27.5, hi: 28.0, label: "27.5–28" },
+      { lo: 28.0, hi: 28.5, label: "28–28.5" },
+      { lo: 28.5, hi: 29.0, label: "28.5–29" },
+      { lo: 29.0, hi: 29.5, label: "29–29.5" },
+      { lo: 29.5, hi: 30.0, label: "29.5–30" },
+    ];
+    function showBin(pick, btn) {
+      const row = L.reliability_0p5.find(r => r.lo === pick.lo && r.hi === pick.hi);
+      chips.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", "false"));
+      btn.setAttribute("aria-pressed", "true");
+      if (!row || row.n === 0) {
+        readout.textContent = `${pick.label}°C: no matched nights in this bin.`;
+        return;
+      }
+      readout.textContent = `${pick.label}°C: ${row.n_era5_ge28}/${row.n} nights also had ERA5 Tmin ≥ 28°C (rate ${row.rate_era5}). Reported under the figure, not on it.`;
+    }
+    picks.forEach((pick, i) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = pick.label + "°C";
+      btn.setAttribute("aria-pressed", i === 1 ? "true" : "false");
+      btn.addEventListener("click", () => showBin(pick, btn));
+      chips.appendChild(btn);
+      if (i === 1) showBin(pick, btn);
+    });
+  </script>
+</body>
+</html>

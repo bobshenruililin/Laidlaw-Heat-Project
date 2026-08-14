@@ -8,6 +8,7 @@ These pages are **not** the Laidlaw Scholars programme website. That website is 
 |---|---|
 | [`index.html`](index.html) | Hub |
 | [`demo/`](demo/) | Threshold instrument (HKO vs ERA5 vs apparent T; Jaccard(t); PRD field) |
+| [`id/`](id/) | Identification laboratory (second-level from the instrument: reliability curve, hot-night year×month map, six-row profile). Not a hub card. |
 | [`field/`](field/) | PRD space-time laboratory (EOF, harmonics, k-means, entropy, spells, Theil–Sen) |
 | [`prd/`](prd/) | Pearl River Delta mosaic (Leaflet + OLS / SLX / SAR-2SLS / Gi* / month slider) |
 | [`geo/`](geo/) | Hong Kong spatial thermal field (Leaflet lattice + OLS / Moran / variogram) |

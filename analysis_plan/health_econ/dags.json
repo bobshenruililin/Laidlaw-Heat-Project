@@ -1,0 +1,77 @@
+{
+  "provenance": "SYNTHETIC_THEORY",
+  "cycle": 1,
+  "note": "Adjacency lists for the health-economics identification laboratory. Not a finding.",
+  "graphs": {
+    "HE-01": [
+      {"source": "Temperature", "target": "Hazard"},
+      {"source": "Time", "target": "Inflow"},
+      {"source": "At-risk stock", "target": "First hospitalisation"},
+      {"source": "Hazard", "target": "First hospitalisation"},
+      {"source": "First hospitalisation", "target": "Next-month stock"},
+      {"source": "Inflow", "target": "Next-month stock"},
+      {"source": "At-risk stock", "target": "Next-month stock"}
+    ],
+    "HE-02": [
+      {"source": "Temperature", "target": "Biological need"},
+      {"source": "Temperature", "target": "Conversion probability"},
+      {"source": "Access", "target": "Conversion probability"},
+      {"source": "Biological need", "target": "Observed hospitalisation"},
+      {"source": "Conversion probability", "target": "Observed hospitalisation"},
+      {"source": "Macro shock", "target": "Access"}
+    ],
+    "HE-03": [
+      {"source": "Temperature", "target": "Latent daily demand"},
+      {"source": "Macro shock", "target": "Latent daily demand"},
+      {"source": "Capacity", "target": "Realised daily admissions"},
+      {"source": "Latent daily demand", "target": "Realised daily admissions"},
+      {"source": "Realised daily admissions", "target": "Monthly count"},
+      {"source": "Capacity", "target": "Shadow value"}
+    ],
+    "HE-05": [
+      {"source": "Current thermal exposure", "target": "Current monthly count"},
+      {"source": "Lag-1 thermal exposure", "target": "Current monthly count"},
+      {"source": "Lag-2 thermal exposure", "target": "Current monthly count"},
+      {"source": "Displacement fraction", "target": "Lag-1 response"},
+      {"source": "Displacement fraction", "target": "Lag-2 response"},
+      {"source": "Seasonality", "target": "Thermal exposure"},
+      {"source": "Seasonality", "target": "Monthly count"}
+    ],
+    "HE-07": [
+      {"source": "Temperature", "target": "Latent morbidity"},
+      {"source": "Temperature", "target": "Severity threshold"},
+      {"source": "Latent morbidity", "target": "Observed hospitalisation"},
+      {"source": "Severity threshold", "target": "Visibility fraction"},
+      {"source": "Visibility fraction", "target": "Observed hospitalisation"},
+      {"source": "Access", "target": "Severity threshold"}
+    ],
+    "HE-08": [
+      {"source": "Temperature", "target": "Utilisation"},
+      {"source": "Regime", "target": "Utilisation"},
+      {"source": "Temperature-by-regime", "target": "Utilisation"},
+      {"source": "Regime", "target": "Temperature-by-regime"},
+      {"source": "Temperature", "target": "Temperature-by-regime"},
+      {"source": "Macro shock", "target": "Regime"},
+      {"source": "Macro shock", "target": "Utilisation"}
+    ],
+    "HE-10": [
+      {"source": "Daily temperature", "target": "Daily response"},
+      {"source": "Daily temperature", "target": "Monthly mean temperature"},
+      {"source": "Daily temperature", "target": "Within-month variance"},
+      {"source": "Daily response", "target": "Monthly count"},
+      {"source": "Monthly mean temperature", "target": "Representative-day response"},
+      {"source": "Within-month variance", "target": "Aggregation correction"},
+      {"source": "Curvature", "target": "Aggregation correction"},
+      {"source": "Aggregation correction", "target": "Monthly count"}
+    ],
+    "HE-C2-cartel": [
+      {"source": "Temperature", "target": "Latent daily demand"},
+      {"source": "Cartel capacity", "target": "Daily truncation"},
+      {"source": "Latent daily demand", "target": "Daily truncation"},
+      {"source": "Daily truncation", "target": "Monthly count"},
+      {"source": "Within-month variance", "target": "Aggregation correction"},
+      {"source": "Aggregation correction", "target": "Monthly count"},
+      {"source": "Present bias", "target": "Cartel capacity"}
+    ]
+  }
+}

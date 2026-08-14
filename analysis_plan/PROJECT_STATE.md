@@ -1,6 +1,6 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-13
+**Last updated:** 2026-08-14
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
@@ -198,6 +198,12 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - **REAL CHD/HF full pathway + provisional HM/CM panels, descriptives, sensitivities, Gate 2 close, Gate 3 packet, CNS panel Results report**
 
 Until the team freezes Gate 3, panel coefficients are complete analyses but not primary manuscript claims. Stroke remains unanalysed.
+
+### 14 August — health-economics identification laboratory (Explore)
+
+- First health-economics layer: `analysis_plan/health_econ/`. Twelve Cycle 1 hypotheses; adversarial audit killed seven, parked two, escalated three (HE-07 SEW, HE-08 RTE, HE-10 ADR). Cycle 2 mutates survivors under present bias and daily rationing (`HE-C2-*`).
+- Monte Carlo uses real public HKO exposures and SYNTHETIC counts only. Naive cost-of-illness is a rejected paradigm, not a survivor. Not a Gate 3 input. UI: `docs/health_econ/`.
+- Durable note: `knowledge/2026-08-14_health_econ_night_engine.md`.
 
 ---
 

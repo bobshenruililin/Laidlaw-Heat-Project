@@ -5,6 +5,7 @@
 - [`CONTEXT_BOOTSTRAP.md`](CONTEXT_BOOTSTRAP.md) — ≤800-word canon for every new chat or agent.
 - [`THIS_ARC_COMPOUND.md`](THIS_ARC_COMPOUND.md) — dated July 2026 compound from meeting recalibration through the CNS-register essay.
 - [`analysis_plan/PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md) — living science, people, tone, and human gates.
+- [`2026-08-14_health_econ_night_engine.md`](2026-08-14_health_econ_night_engine.md) — Explore-mode health-economics identification laboratory (not a costing; not Gate 3).
 
 ## Re-engageable workflows
 

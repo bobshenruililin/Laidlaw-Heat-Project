@@ -1,0 +1,672 @@
+{
+  "title": "Effective rank of first-wave HM/CM flags",
+  "window": {
+    "start": "2013-01",
+    "end": "2023-12",
+    "n_months": 132
+  },
+  "source": "data_processed/hm_cm_month_flags_2013_2023.csv",
+  "provenance": "REAL HKO-derived first-wave hot-month and cold-month binaries. The on-disk file has twelve named flags plus HM23 event starts, not the 98-recipe catalogue. Effective rank is the participation ratio of the correlation-matrix eigenvalues of the 11 non-degenerate binaries. Exposure descriptives only. No health outcomes. No project coefficients.",
+  "why_this_exists": "An unlocked catalogue can look like 98 independent tests. The fitted first-wave set is 11 live binaries whose correlation has effective rank about four, and heat never co-fires with cold. Adding the next ID is not a new test unless it leaves this span.",
+  "n_named_binaries_on_disk": 12,
+  "n_nondegenerate": 11,
+  "degenerate": [
+    "CM05"
+  ],
+  "live_names": [
+    "HM08",
+    "HM15",
+    "HM17",
+    "HM19",
+    "HM27",
+    "HM32",
+    "HM23",
+    "CM03",
+    "CM08",
+    "CM15",
+    "CM30"
+  ],
+  "heat_names": [
+    "HM08",
+    "HM15",
+    "HM17",
+    "HM19",
+    "HM27",
+    "HM32",
+    "HM23"
+  ],
+  "cold_names": [
+    "CM03",
+    "CM08",
+    "CM15",
+    "CM30"
+  ],
+  "eigenvalues": [
+    4.5621,
+    2.8327,
+    0.8679,
+    0.7396,
+    0.4786,
+    0.4631,
+    0.3497,
+    0.2354,
+    0.2312,
+    0.15,
+    0.0897
+  ],
+  "variance_share": [
+    0.4147,
+    0.2575,
+    0.0789,
+    0.0672,
+    0.0435,
+    0.0421,
+    0.0318,
+    0.0214,
+    0.021,
+    0.0136,
+    0.0082
+  ],
+  "pc1_share": 0.4147,
+  "pc1_pc2_share": 0.6723,
+  "pc1_pc2_pc3_share": 0.7512,
+  "effective_rank": 3.923,
+  "max_heat_cold_jaccard": 0.0,
+  "nested_subsets": [
+    {
+      "inner": "HM08",
+      "outer": "HM32",
+      "n_inner": 14,
+      "n_outer": 38
+    },
+    {
+      "inner": "HM15",
+      "outer": "HM08",
+      "n_inner": 7,
+      "n_outer": 14
+    },
+    {
+      "inner": "HM15",
+      "outer": "HM17",
+      "n_inner": 7,
+      "n_outer": 14
+    },
+    {
+      "inner": "HM15",
+      "outer": "HM32",
+      "n_inner": 7,
+      "n_outer": 38
+    },
+    {
+      "inner": "HM17",
+      "outer": "HM32",
+      "n_inner": 14,
+      "n_outer": 38
+    },
+    {
+      "inner": "HM19",
+      "outer": "HM32",
+      "n_inner": 14,
+      "n_outer": 38
+    },
+    {
+      "inner": "HM23",
+      "outer": "HM32",
+      "n_inner": 7,
+      "n_outer": 38
+    },
+    {
+      "inner": "CM08",
+      "outer": "CM03",
+      "n_inner": 7,
+      "n_outer": 14
+    },
+    {
+      "inner": "CM08",
+      "outer": "CM15",
+      "n_inner": 7,
+      "n_outer": 15
+    },
+    {
+      "inner": "CM08",
+      "outer": "CM30",
+      "n_inner": 7,
+      "n_outer": 21
+    },
+    {
+      "inner": "CM15",
+      "outer": "CM30",
+      "n_inner": 15,
+      "n_outer": 21
+    }
+  ],
+  "flags": [
+    {
+      "name": "HM08",
+      "n_months_on": 14,
+      "degenerate": false,
+      "calendar_months_ever_on": [
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "name": "HM15",
+      "n_months_on": 7,
+      "degenerate": false,
+      "calendar_months_ever_on": [
+        7,
+        9
+      ]
+    },
+    {
+      "name": "HM17",
+      "n_months_on": 14,
+      "degenerate": false,
+      "calendar_months_ever_on": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "name": "HM19",
+      "n_months_on": 14,
+      "degenerate": false,
+      "calendar_months_ever_on": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "HM27",
+      "n_months_on": 23,
+      "degenerate": false,
+      "calendar_months_ever_on": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "name": "HM32",
+      "n_months_on": 38,
+      "degenerate": false,
+      "calendar_months_ever_on": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "name": "HM23",
+      "n_months_on": 7,
+      "degenerate": false,
+      "calendar_months_ever_on": [
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "name": "CM03",
+      "n_months_on": 14,
+      "degenerate": false,
+      "calendar_months_ever_on": [
+        1,
+        2,
+        12
+      ]
+    },
+    {
+      "name": "CM08",
+      "n_months_on": 7,
+      "degenerate": false,
+      "calendar_months_ever_on": [
+        1,
+        2,
+        12
+      ]
+    },
+    {
+      "name": "CM15",
+      "n_months_on": 15,
+      "degenerate": false,
+      "calendar_months_ever_on": [
+        1,
+        2,
+        12
+      ]
+    },
+    {
+      "name": "CM05",
+      "n_months_on": 0,
+      "degenerate": true,
+      "calendar_months_ever_on": []
+    },
+    {
+      "name": "CM30",
+      "n_months_on": 21,
+      "degenerate": false,
+      "calendar_months_ever_on": [
+        1,
+        2,
+        12
+      ]
+    }
+  ],
+  "hm23_event_starts": {
+    "n_months_with_start": 30,
+    "n_event_starts_total": 38,
+    "max_starts_in_a_month": 3,
+    "note": "Count 0\u20133, not a binary; excluded from the correlation rank."
+  },
+  "pairwise_jaccard": [
+    {
+      "a": "HM08",
+      "b": "HM15",
+      "jaccard": 0.5,
+      "intersection": 7,
+      "union": 14
+    },
+    {
+      "a": "HM08",
+      "b": "HM17",
+      "jaccard": 0.4737,
+      "intersection": 9,
+      "union": 19
+    },
+    {
+      "a": "HM08",
+      "b": "HM19",
+      "jaccard": 0.75,
+      "intersection": 12,
+      "union": 16
+    },
+    {
+      "a": "HM08",
+      "b": "HM27",
+      "jaccard": 0.4231,
+      "intersection": 11,
+      "union": 26
+    },
+    {
+      "a": "HM08",
+      "b": "HM32",
+      "jaccard": 0.3684,
+      "intersection": 14,
+      "union": 38
+    },
+    {
+      "a": "HM08",
+      "b": "HM23",
+      "jaccard": 0.2353,
+      "intersection": 4,
+      "union": 17
+    },
+    {
+      "a": "HM08",
+      "b": "CM03",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 28
+    },
+    {
+      "a": "HM08",
+      "b": "CM08",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 21
+    },
+    {
+      "a": "HM08",
+      "b": "CM15",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 29
+    },
+    {
+      "a": "HM08",
+      "b": "CM30",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 35
+    },
+    {
+      "a": "HM15",
+      "b": "HM17",
+      "jaccard": 0.5,
+      "intersection": 7,
+      "union": 14
+    },
+    {
+      "a": "HM15",
+      "b": "HM19",
+      "jaccard": 0.3125,
+      "intersection": 5,
+      "union": 16
+    },
+    {
+      "a": "HM15",
+      "b": "HM27",
+      "jaccard": 0.25,
+      "intersection": 6,
+      "union": 24
+    },
+    {
+      "a": "HM15",
+      "b": "HM32",
+      "jaccard": 0.1842,
+      "intersection": 7,
+      "union": 38
+    },
+    {
+      "a": "HM15",
+      "b": "HM23",
+      "jaccard": 0.4,
+      "intersection": 4,
+      "union": 10
+    },
+    {
+      "a": "HM15",
+      "b": "CM03",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 21
+    },
+    {
+      "a": "HM15",
+      "b": "CM08",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 14
+    },
+    {
+      "a": "HM15",
+      "b": "CM15",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 22
+    },
+    {
+      "a": "HM15",
+      "b": "CM30",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 28
+    },
+    {
+      "a": "HM17",
+      "b": "HM19",
+      "jaccard": 0.4,
+      "intersection": 8,
+      "union": 20
+    },
+    {
+      "a": "HM17",
+      "b": "HM27",
+      "jaccard": 0.5417,
+      "intersection": 13,
+      "union": 24
+    },
+    {
+      "a": "HM17",
+      "b": "HM32",
+      "jaccard": 0.3684,
+      "intersection": 14,
+      "union": 38
+    },
+    {
+      "a": "HM17",
+      "b": "HM23",
+      "jaccard": 0.4,
+      "intersection": 6,
+      "union": 15
+    },
+    {
+      "a": "HM17",
+      "b": "CM03",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 28
+    },
+    {
+      "a": "HM17",
+      "b": "CM08",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 21
+    },
+    {
+      "a": "HM17",
+      "b": "CM15",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 29
+    },
+    {
+      "a": "HM17",
+      "b": "CM30",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 35
+    },
+    {
+      "a": "HM19",
+      "b": "HM27",
+      "jaccard": 0.3704,
+      "intersection": 10,
+      "union": 27
+    },
+    {
+      "a": "HM19",
+      "b": "HM32",
+      "jaccard": 0.3684,
+      "intersection": 14,
+      "union": 38
+    },
+    {
+      "a": "HM19",
+      "b": "HM23",
+      "jaccard": 0.2353,
+      "intersection": 4,
+      "union": 17
+    },
+    {
+      "a": "HM19",
+      "b": "CM03",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 28
+    },
+    {
+      "a": "HM19",
+      "b": "CM08",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 21
+    },
+    {
+      "a": "HM19",
+      "b": "CM15",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 29
+    },
+    {
+      "a": "HM19",
+      "b": "CM30",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 35
+    },
+    {
+      "a": "HM27",
+      "b": "HM32",
+      "jaccard": 0.525,
+      "intersection": 21,
+      "union": 40
+    },
+    {
+      "a": "HM27",
+      "b": "HM23",
+      "jaccard": 0.25,
+      "intersection": 6,
+      "union": 24
+    },
+    {
+      "a": "HM27",
+      "b": "CM03",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 37
+    },
+    {
+      "a": "HM27",
+      "b": "CM08",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 30
+    },
+    {
+      "a": "HM27",
+      "b": "CM15",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 38
+    },
+    {
+      "a": "HM27",
+      "b": "CM30",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 44
+    },
+    {
+      "a": "HM32",
+      "b": "HM23",
+      "jaccard": 0.1842,
+      "intersection": 7,
+      "union": 38
+    },
+    {
+      "a": "HM32",
+      "b": "CM03",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 52
+    },
+    {
+      "a": "HM32",
+      "b": "CM08",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 45
+    },
+    {
+      "a": "HM32",
+      "b": "CM15",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 53
+    },
+    {
+      "a": "HM32",
+      "b": "CM30",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 59
+    },
+    {
+      "a": "HM23",
+      "b": "CM03",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 21
+    },
+    {
+      "a": "HM23",
+      "b": "CM08",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 14
+    },
+    {
+      "a": "HM23",
+      "b": "CM15",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 22
+    },
+    {
+      "a": "HM23",
+      "b": "CM30",
+      "jaccard": 0.0,
+      "intersection": 0,
+      "union": 28
+    },
+    {
+      "a": "CM03",
+      "b": "CM08",
+      "jaccard": 0.5,
+      "intersection": 7,
+      "union": 14
+    },
+    {
+      "a": "CM03",
+      "b": "CM15",
+      "jaccard": 0.7059,
+      "intersection": 12,
+      "union": 17
+    },
+    {
+      "a": "CM03",
+      "b": "CM30",
+      "jaccard": 0.5909,
+      "intersection": 13,
+      "union": 22
+    },
+    {
+      "a": "CM08",
+      "b": "CM15",
+      "jaccard": 0.4667,
+      "intersection": 7,
+      "union": 15
+    },
+    {
+      "a": "CM08",
+      "b": "CM30",
+      "jaccard": 0.3333,
+      "intersection": 7,
+      "union": 21
+    },
+    {
+      "a": "CM15",
+      "b": "CM30",
+      "jaccard": 0.7143,
+      "intersection": 15,
+      "union": 21
+    }
+  ],
+  "punchline": "11 non-degenerate first-wave flags; effective rank 3.92; PC1+PC2 67%. Heat\u2013cold Jaccard is 0.00 (they never co-fire). CM05 is all zeros. The 98-recipe catalogue is not 98 tests.",
+  "claim_boundaries": [
+    "This rank does not use hospital counts.",
+    "Do not reopen the outcome panel because the rank is small.",
+    "Do not treat a nested inner flag as an independent sensitivity.",
+    "Do not call the 98-recipe catalogue a fitted universe; most IDs were unfitted on purpose.",
+    "This is not Gate 3, not form 2a, and not a Hogan lock by itself."
+  ]
+}

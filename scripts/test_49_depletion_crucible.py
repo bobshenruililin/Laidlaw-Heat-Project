@@ -152,7 +152,31 @@ def main() -> int:
     # HF cold days is the exception, as the memo states.
     assert float(inv[("hf", "P04B")]["implied_dip_log_amplitude"]) < 0.05
 
+    # Bind the memo to the tables: every string below is formatted from a value
+    # computed above, so a pipeline change that moves the algebra fails here
+    # instead of silently leaving stale figures in the proof.
+    memo = (ROOT / "knowledge" / "crucible_agent_beta_depletion.md").read_text()
+    claims = {
+        "smooth absorption": f"{float(absorb['front_loaded']['r2_absorbed_by_month_plus_ns4']):.4f}",
+        "kink surviving": f"{100 * float(absorb['covid_kink_0p10_only']['share_surviving_controls']):.1f}\\%",
+        "kink absorbed": f"{100 * float(absorb['covid_kink_0p10_only']['r2_absorbed_by_month_plus_ns4']):.1f}\\%",
+        "hot transfer": f"{hot_kink:.5f}",
+        "cold transfer": f"{cold_kink:.5f}",
+        "amplitude mean": f"{summary['covid_kink_inversion']['chd_non_cold_amplitude_mean']:.4f}",
+        "amplitude sd": f"{summary['covid_kink_inversion']['chd_non_cold_amplitude_sd']:.4f}",
+        "interaction cold": f"{100 * float(inter[('front_loaded', 'cold_days')]['share_of_residualised_product_surviving']):.1f}\\%",
+        "interaction hot": f"{100 * float(inter[('front_loaded', 'hot_nights')]['share_of_residualised_product_surviving']):.1f}\\%",
+        "hot annual corr": f"{float(annual[('hot_nights', 'chd')]['pearson_annual_exposure_vs_events']):.3f}",
+        "cold annual corr": f"{float(annual[('cold_days', 'chd')]['pearson_annual_exposure_vs_events']):+.3f}",
+        "time control share": f"{100 * tcs['chd_hot_nights_width_share_of_baseline']:.0f}\\%",
+        "cold info share": f"{100 * float(cold['count_weighted_info_share_2013_2018']):.1f}\\%",
+        "hot info share": f"{100 * float(hot['count_weighted_info_share_2013_2018']):.1f}\\%",
+    }
+    missing = {k: v for k, v in claims.items() if v not in memo}
+    assert not missing, f"memo out of sync with tables: {missing}"
+
     print("PASS scripts/test_49_depletion_crucible.py")
+    print(f"  memo claims bound to tables: {len(claims)}")
     print(
         "  smooth depletion absorbed: front_loaded R2="
         f"{float(absorb['front_loaded']['r2_absorbed_by_month_plus_ns4']):.5f}"

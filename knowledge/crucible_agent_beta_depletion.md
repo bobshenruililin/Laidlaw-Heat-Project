@@ -291,8 +291,10 @@ Do not treat attenuation toward \(1\) as a null finding.
    near-linear series and is therefore nearly collinear with
    \(ns(\text{time},4)\), so substituting it changes almost nothing. An
    inert wrong denominator is not evidence that the right denominator is inert.
-   The T2D/HTN risk set moves by a factor of about two while the C&SD series
-   rises \(17\%\) — in the opposite direction.
+   `[HA_APPROVED_AGGREGATE + REAL]` The counted first-event pool falls by a
+   factor of \(1.93\) while the C&SD series rises \(17.1\%\), in the opposite
+   direction. Whether the risk set itself moves that way is §7.4, and it is
+   exactly what the offset sensitivity does not test.
 5. **"A perfectly absorbed \(\log R_t\) would settle it."** It would settle
    (3.2) and not (3.3), and it would still leave \(\exp(\beta)\) a count ratio.
    Incidence requires the denominator in the model, not partialled out of it

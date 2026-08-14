@@ -92,6 +92,21 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   cells hold **78%** of 28°C cell-nights. Apparent temperature is a third
   object (1,453 nights). `docs/demo/index.html`;
   `knowledge/2026-08-14_threshold_does_not_travel.md`.
+- **Monthly station–grid bridge (14 Aug, exposure only):** at 132 months,
+  ERA5 mean Tmin tracks HKO (r = **0.986**, slope **1.032**) but 28°C-night
+  counts do not (slope **0.045**; HKO positive in 57 months, ERA5 in 9).
+  Daily Jaccard 0.031 is not an aggregation artefact. Identifying share of
+  HKO hot nights after month indicators: **29%**, May–October only.
+  `knowledge/2026-08-14_monthly_station_grid_bridge.md`.
+- **Identifying months (14 Aug, exposure only):** six live-paper encodings.
+  Mean temperature **4.2%** identifying; hot nights **28.8%** on May–Oct;
+  cold days **46.9%** on Dec–Mar. Explains q > 0.19 as design, not only
+  multiplicity. No hospital counts used.
+  `knowledge/2026-08-14_identifying_months_six_encodings.md`.
+- **Bishai positioning (14 Aug, not sent):** maps are exposure identification
+  for the single-station limitation. Two emails, not one: form 2a first;
+  one composite figure later. Do not mix endorsement with a map tour.
+  `analysis_plan/pathways_passion_projects_for_bishai_2026-08-14.md`.
 
 ---
 

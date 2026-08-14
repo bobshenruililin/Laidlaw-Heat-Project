@@ -19,7 +19,7 @@ Do not fill, predict, or imply Professor Bishai's performance rating, comments, 
 
 ## Email B
 
-Attach only `figures/monthly_bridge/email_b_composite.svg`.
+Attach only `figures/monthly_bridge/email_b_composite.png` (the SVG is the rebuildable source).
 
 Do not attach:
 

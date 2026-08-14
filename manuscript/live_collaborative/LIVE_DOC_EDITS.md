@@ -32,6 +32,8 @@ If Hogan has already edited weather, paste from `methods_remainder_paste.md` aro
 9. **Discussion / Conclusion / limitations.** Replace “work in progress.” Keep the refusal of a protected primary claim. Bounded comparisons only: HF–cold with Goggins and Chan (2017); hot nights with Guo et al. (2024) metric distinction. Do not paste HM/CM coefficients or archive flu/NO₂ as adjusted Table 2.
 10. **References.** Keep his 1–8 (C&SD repaired as 8). Add 9–21 from the draft. Do not drop Yang CY. New overnight addition is [21] Goggins and Chan 2017.
 
+11. **Optional, after Hogan has seen the card.** One sentence after the existing territory-wide limitation. Paste-ready file: `limitation_station_grid_bridge.md`. Do not overwrite his weather paragraph. Do not treat 0.045 as a health attenuation factor. Do not add Mistry as a live citation unless he asks.
+
 ## Honesty taken from later drafts (approved for *this* file only)
 
 | Taken | Why |

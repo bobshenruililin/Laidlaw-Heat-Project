@@ -13,7 +13,7 @@ This is a two-email pack. Email A is the short programme-administration request.
 | Draft | Purpose | Pack |
 |---|---|---|
 | `email_a_2a_endorsement.md` | One endorsement request | Bob's local form 2a with Professor Bishai's block blank; frozen essay PDF |
-| `email_b_science_maps.md` | Science progress and exposure identification | One composite figure at `figures/monthly_bridge/email_b_composite.svg`; no URL while GitHub Pages is not live |
+| `email_b_science_maps.md` | Science progress and exposure identification | One composite figure at `figures/monthly_bridge/email_b_composite.png`; no URL while GitHub Pages is not live |
 
 Before Email A, Bob must complete only his verified local fields and leave Professor Bishai's rating, comments, signature, and date blank. The essay remains `reports/laidlaw_stage3/Laidlaw_Research_Report_2026.pdf` (SHA-256 prefix `6136e85a654502a0`).
 

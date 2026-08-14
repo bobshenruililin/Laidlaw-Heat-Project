@@ -19,6 +19,15 @@
 
 ## Current meeting record
 
+- [`2026-08-14_bob_brief_passion_projects_for_bishai.md`](2026-08-14_bob_brief_passion_projects_for_bishai.md) — brief Bob first: research vs maps vs two emails, not today.
+- [`../analysis_plan/pathways_passion_projects_for_bishai_2026-08-14.md`](../analysis_plan/pathways_passion_projects_for_bishai_2026-08-14.md) — enter / park / never: maps are identification, not a second health paper; two emails, not today.
+- [`2026-08-14_fable_bishai_positioning.md`](2026-08-14_fable_bishai_positioning.md) — supervisor sentence: measured the limitation; the measurement defends Headquarters.
+- [`2026-08-14_sol_bishai_two_emails.md`](2026-08-14_sol_bishai_two_emails.md) — Email A = 2a; Email B = one figure + one URL later.
+- [`2026-08-14_monthly_station_grid_bridge.md`](2026-08-14_monthly_station_grid_bridge.md) — 132-month grain: mean Tmin r = 0.986; hot-night slope 0.045; 57 vs 9 months.
+- [`2026-08-14_identifying_months_six_encodings.md`](2026-08-14_identifying_months_six_encodings.md) — mean T 4% identifying; hot nights 29% on May–Oct; cold days 47% on Dec–Mar.
+- [`../reports/hogan_monthly_bridge_2026-08-14.md`](../reports/hogan_monthly_bridge_2026-08-14.md) — Hogan card: means travel; the flag does not.
+- [`../reports/hogan_identifying_months_2026-08-14.md`](../reports/hogan_identifying_months_2026-08-14.md) — Hogan card: what survives month indicators.
+- [`../figures/monthly_bridge/email_b_composite.svg`](../figures/monthly_bridge/email_b_composite.svg) — Email B one-pager (not to send until Bob reviews).
 - [`2026-08-14_yc_board_synthesis.md`](2026-08-14_yc_board_synthesis.md) — Fable/Opus/Sol board: four maps are one product; max Jaccard against HKO 28°C is 0.47; 2a still owns 31 August.
 - [`2026-08-14_threshold_does_not_travel.md`](2026-08-14_threshold_does_not_travel.md) — one instrument: Jaccard(t), equivalent 26.4°C, max Jaccard 0.47 at 26.3°C; not a fifth dashboard.
 - [`../reports/hogan_threshold_does_not_travel_2026-08-14.md`](../reports/hogan_threshold_does_not_travel_2026-08-14.md) — Hogan lock card: frequency can be matched at 26.4°C; the nights cannot (max Jaccard 0.47).

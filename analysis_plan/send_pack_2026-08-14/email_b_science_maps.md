@@ -2,7 +2,7 @@
 
 **Subject:** `CHD/HF progress and exposure-identification maps`
 
-**Attachment (one only):** `figures/monthly_bridge/email_b_composite.svg`
+**Attachment (one only):** `figures/monthly_bridge/email_b_composite.png` (raster of the SVG; Outlook will not preview SVG reliably)
 
 **URL:** None. GitHub Pages is not live.
 

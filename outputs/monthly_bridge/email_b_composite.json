@@ -1,0 +1,13 @@
+{
+  "title": "Email B composite \u2014 exposure identification",
+  "path": "figures/monthly_bridge/email_b_composite.svg",
+  "provenance": "REAL_PUBLIC. Built from script 54 monthly bridge and script 53 threshold sweep. No health outcomes.",
+  "not_to_send_until": "Bob reviews Email B; Email A (form 2a) has already gone; GitHub Pages URL is optional and separate.",
+  "punchline": "Monthly mean Tmin agrees (r = 0.9861, slope = 1.0324). Monthly 28\u00b0C-night counts do not (r = 0.4749, slope = 0.0453). Headquarters has hot nights in 57 months; ERA5 in 9.",
+  "claim_boundaries": [
+    "Do not treat the slope as a health attenuation factor. No outcome was used.",
+    "Do not paste ERA5 monthly counts into the live paper\u2019s HKO flags.",
+    "Mean Tmin agreement does not license threshold-flag agreement.",
+    "This is not Gate 3 and not form 2a."
+  ]
+}

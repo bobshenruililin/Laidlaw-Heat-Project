@@ -100,3 +100,5 @@ Official Laidlaw Drive (HKU 2a form, Foundation outputs, 3 C’s, poster notes):
 Strong-model experiment (Luna / Sol / Grok; Kimi k3 not launchable): [`2026-08-14_strong_model_synthesis.md`](2026-08-14_strong_model_synthesis.md). EOF1 is robust; the 23/90 trend count is not.
 
 YC/professor/packing board (Fable / Opus / Sol): [`2026-08-14_yc_board_synthesis.md`](2026-08-14_yc_board_synthesis.md). Four maps are one product. Max Jaccard against the fixed HKO 28°C set is 0.47 at 26.3°C.
+
+Passion projects → research (14 Aug): monthly bridge (script 54) shows daily Jaccard 0.031 is not an aggregation artefact (mean Tmin r = 0.986; hot-night slope 0.045). Identifying-month table (script 55): mean T 4%, hot nights 29% on May–Oct, cold days 47% on Dec–Mar. Email B composite is `figures/monthly_bridge/email_b_composite.svg`. Two emails to Bishai, not one, and **not today**: [`../analysis_plan/pathways_passion_projects_for_bishai_2026-08-14.md`](../analysis_plan/pathways_passion_projects_for_bishai_2026-08-14.md). Kimi k3 still not launchable; Mistry et al. 2022 (*Sci Rep* 12:5178) used from public sources.

@@ -135,6 +135,11 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   Mentors: Sol as YC + Fable as IAS in
   `knowledge/2026-08-14_sol_yc_fable_ias_ladder.md`. Wake:
   `knowledge/2026-08-15_wake_bob.md`.
+- **Two long pitches (14 Aug, not sent):** first-person as Bob. Bishai
+  register = one health panel + one identification panel + refusal to mix;
+  2a remains a separate human act. Altman register = price the instrument
+  before the coefficient; demo 449 / 17 / 1,453, max Jaccard 0.47; no
+  hospital choropleth. `knowledge/2026-08-14_bishai_and_altman_pitches.md`.
 
 ---
 

@@ -10,14 +10,14 @@ Tests: `python3 scripts/test_51_prd_field_laboratory.py`.
 
 ## Why this exists
 
-Bob asked to use methods an agent can run more densely than a human PhD usually will — many disciplines, one labelled field, no fake discoveries. Climate dynamics, geophysics, robust climatology, unsupervised learning, information theory, extremes, optimal transport, and network science all see the same 4,017 × 90 Tmin matrix. Panel reporting, not eight press releases.
+Bob asked for a denser descriptive panel on one labelled field, without promoting coefficients into findings. Climate dynamics, geophysics, robust climatology, unsupervised learning, information theory, extremes, optimal transport, and network science all see the same 4,017 × 90 Tmin matrix. Panel reporting, not eight press releases.
 
 ## Punchline numbers
 
 | Object | Result | How to read it |
 |---|---|---|
 | EOF1 of *de-seasoned* daily Tmin | **92.1%** of variance; all loadings positive | A basin-wide pulse. Neighbouring cells share the weather. |
-| EOF1 vs latitude / vs hot-night counts | r = **+0.78** / **−0.93** | Inland cells have the larger anomaly; the sea has the 28°C nights. Those are different maps. |
+| EOF1 vs latitude / vs hot-night counts | r = **+0.78** / **−0.93** | In this ERA5-Land sample, threshold exceedances concentrate in marine cells, while EOF1 loadings are larger inland. Those are different maps. |
 | First three EOFs | **96.2%** cumulative | EOF2 is a small residual (3.0%). North’s rule separates 1 from 2 (Bartlett n_eff ≈ 425). |
 | Annual harmonic | Peak day **198–207** (mid-July) everywhere; marine amp **6.1°C**, highland **7.3°C** | The year turns together. The sea damps the swing. |
 | k-means (k=4) | marine 17 cells, HN mean **444**; highland 10 cells, HN **0**, elev **295 m**; estuary 32; inland 31 | Labels are interpretive, not municipalities. |

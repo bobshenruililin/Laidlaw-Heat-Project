@@ -1,0 +1,736 @@
+{
+  "title": "Identifying months for six HKO encodings",
+  "window": {
+    "start": "2013-01",
+    "end": "2023-12",
+    "n_months": 132
+  },
+  "source": "data_processed/climate_monthly_2013_2023.csv (HKO Headquarters)",
+  "provenance": "REAL HKO monthly encodings used in the live twelve-contrast panel. Identifying share is the within-calendar-month, between-year fraction of the 132-month sum of squares. Exposure descriptives only. No health outcomes. No project coefficients.",
+  "why_this_exists": "All core q-values exceed 0.19. Part of that is multiplicity. Part is design: month indicators absorb the seasonal cycle, so mean temperature is identified on a 4% residual, hot nights on six calendar months, and cold days on four.",
+  "encodings": [
+    {
+      "encoding": "mean_temp",
+      "label": "Mean temperature",
+      "kind": "continuous",
+      "share_identifying_within_month": 0.0422,
+      "n_calendar_months_with_sd": 12,
+      "months_with_sd": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "months_with_sd_abbr": "all 12",
+      "n_months_positive": 132,
+      "calendar_months_ever_positive": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "mean": 24.018,
+      "ss_between_calendar_month": 2769.606,
+      "ss_within_month_between_year": 122.048,
+      "by_month": [
+        {
+          "month": 1,
+          "mean": 17.096,
+          "sd": 1.019,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 2,
+          "mean": 17.538,
+          "sd": 1.815,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 3,
+          "mean": 20.35,
+          "sd": 1.366,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 4,
+          "mean": 23.312,
+          "sd": 0.921,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 5,
+          "mean": 26.753,
+          "sd": 1.255,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 6,
+          "mean": 28.99,
+          "sd": 0.46,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 7,
+          "mean": 29.483,
+          "sd": 0.708,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 8,
+          "mean": 28.957,
+          "sd": 0.377,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 9,
+          "mean": 28.627,
+          "sd": 0.68,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 10,
+          "mean": 26.105,
+          "sd": 0.438,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 11,
+          "mean": 22.864,
+          "sd": 0.701,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 12,
+          "mean": 18.141,
+          "sd": 1.257,
+          "n_positive": 11,
+          "n_years": 11
+        }
+      ]
+    },
+    {
+      "encoding": "mean_tmax",
+      "label": "Mean Tmax",
+      "kind": "continuous",
+      "share_identifying_within_month": 0.0529,
+      "n_calendar_months_with_sd": 12,
+      "months_with_sd": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "months_with_sd_abbr": "all 12",
+      "n_months_positive": 132,
+      "calendar_months_ever_positive": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "mean": 26.6638,
+      "ss_between_calendar_month": 2882.053,
+      "ss_within_month_between_year": 160.946,
+      "by_month": [
+        {
+          "month": 1,
+          "mean": 19.509,
+          "sd": 0.984,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 2,
+          "mean": 20.331,
+          "sd": 2.074,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 3,
+          "mean": 23.055,
+          "sd": 1.667,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 4,
+          "mean": 26.098,
+          "sd": 1.071,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 5,
+          "mean": 29.336,
+          "sd": 1.575,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 6,
+          "mean": 31.578,
+          "sd": 0.557,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 7,
+          "mean": 32.319,
+          "sd": 0.781,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 8,
+          "mean": 31.732,
+          "sd": 0.487,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 9,
+          "mean": 31.474,
+          "sd": 0.821,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 10,
+          "mean": 28.841,
+          "sd": 0.461,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 11,
+          "mean": 25.228,
+          "sd": 0.862,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 12,
+          "mean": 20.462,
+          "sd": 1.278,
+          "n_positive": 11,
+          "n_years": 11
+        }
+      ]
+    },
+    {
+      "encoding": "mean_tmin",
+      "label": "Mean Tmin",
+      "kind": "continuous",
+      "share_identifying_within_month": 0.0443,
+      "n_calendar_months_with_sd": 12,
+      "months_with_sd": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "months_with_sd_abbr": "all 12",
+      "n_months_positive": 132,
+      "calendar_months_ever_positive": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "mean": 22.1044,
+      "ss_between_calendar_month": 2755.49,
+      "ss_within_month_between_year": 127.742,
+      "by_month": [
+        {
+          "month": 1,
+          "mean": 15.221,
+          "sd": 1.211,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 2,
+          "mean": 15.575,
+          "sd": 1.841,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 3,
+          "mean": 18.499,
+          "sd": 1.35,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 4,
+          "mean": 21.396,
+          "sd": 0.945,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 5,
+          "mean": 24.92,
+          "sd": 1.14,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 6,
+          "mean": 27.102,
+          "sd": 0.403,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 7,
+          "mean": 27.471,
+          "sd": 0.654,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 8,
+          "mean": 26.919,
+          "sd": 0.372,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 9,
+          "mean": 26.715,
+          "sd": 0.627,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 10,
+          "mean": 24.191,
+          "sd": 0.495,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 11,
+          "mean": 21.097,
+          "sd": 0.809,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 12,
+          "mean": 16.149,
+          "sd": 1.372,
+          "n_positive": 11,
+          "n_years": 11
+        }
+      ]
+    },
+    {
+      "encoding": "hot_nights",
+      "label": "Hot nights \u2265 28\u00b0C",
+      "kind": "count",
+      "share_identifying_within_month": 0.2883,
+      "n_calendar_months_with_sd": 6,
+      "months_with_sd": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "months_with_sd_abbr": "May\u2013Oct",
+      "n_months_positive": 57,
+      "calendar_months_ever_positive": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mean": 3.4015,
+      "ss_between_calendar_month": 2718.447,
+      "ss_within_month_between_year": 1101.273,
+      "by_month": [
+        {
+          "month": 1,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 2,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 3,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 4,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 5,
+          "mean": 3.364,
+          "sd": 4.007,
+          "n_positive": 9,
+          "n_years": 11
+        },
+        {
+          "month": 6,
+          "mean": 10.545,
+          "sd": 3.857,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 7,
+          "mean": 13.545,
+          "sd": 6.991,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 8,
+          "mean": 7.455,
+          "sd": 4.108,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 9,
+          "mean": 4.818,
+          "sd": 3.25,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 10,
+          "mean": 1.091,
+          "sd": 1.7,
+          "n_positive": 4,
+          "n_years": 11
+        },
+        {
+          "month": 11,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 12,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        }
+      ]
+    },
+    {
+      "encoding": "very_hot_days",
+      "label": "Very hot days \u2265 33\u00b0C",
+      "kind": "count",
+      "share_identifying_within_month": 0.3305,
+      "n_calendar_months_with_sd": 6,
+      "months_with_sd": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "months_with_sd_abbr": "May\u2013Oct",
+      "n_months_positive": 53,
+      "calendar_months_ever_positive": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mean": 3.1894,
+      "ss_between_calendar_month": 2351.538,
+      "ss_within_month_between_year": 1160.727,
+      "by_month": [
+        {
+          "month": 1,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 2,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 3,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 4,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 5,
+          "mean": 3.0,
+          "sd": 5.586,
+          "n_positive": 5,
+          "n_years": 11
+        },
+        {
+          "month": 6,
+          "mean": 6.455,
+          "sd": 2.734,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 7,
+          "mean": 12.818,
+          "sd": 6.096,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 8,
+          "mean": 9.0,
+          "sd": 3.493,
+          "n_positive": 11,
+          "n_years": 11
+        },
+        {
+          "month": 9,
+          "mean": 6.273,
+          "sd": 5.198,
+          "n_positive": 10,
+          "n_years": 11
+        },
+        {
+          "month": 10,
+          "mean": 0.727,
+          "sd": 1.009,
+          "n_positive": 5,
+          "n_years": 11
+        },
+        {
+          "month": 11,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 12,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        }
+      ]
+    },
+    {
+      "encoding": "cold_days",
+      "label": "Cold days \u2264 12\u00b0C",
+      "kind": "count",
+      "share_identifying_within_month": 0.4688,
+      "n_calendar_months_with_sd": 4,
+      "months_with_sd": [
+        1,
+        2,
+        3,
+        12
+      ],
+      "months_with_sd_abbr": "Dec\u2013Mar",
+      "n_months_positive": 29,
+      "calendar_months_ever_positive": [
+        1,
+        2,
+        3,
+        12
+      ],
+      "mean": 1.0985,
+      "ss_between_calendar_month": 453.538,
+      "ss_within_month_between_year": 400.182,
+      "by_month": [
+        {
+          "month": 1,
+          "mean": 4.909,
+          "sd": 3.7,
+          "n_positive": 9,
+          "n_years": 11
+        },
+        {
+          "month": 2,
+          "mean": 4.273,
+          "sd": 4.149,
+          "n_positive": 8,
+          "n_years": 11
+        },
+        {
+          "month": 3,
+          "mean": 0.364,
+          "sd": 0.924,
+          "n_positive": 2,
+          "n_years": 11
+        },
+        {
+          "month": 4,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 5,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 6,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 7,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 8,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 9,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 10,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 11,
+          "mean": 0.0,
+          "sd": 0.0,
+          "n_positive": 0,
+          "n_years": 11
+        },
+        {
+          "month": 12,
+          "mean": 3.636,
+          "sd": 2.873,
+          "n_positive": 10,
+          "n_years": 11
+        }
+      ]
+    }
+  ],
+  "claim_boundaries": [
+    "This table does not use hospital counts.",
+    "An identifying share is not a coefficient and not a q-value.",
+    "Do not treat a low identifying share as proof that a null is true.",
+    "This is not Gate 3 and not form 2a."
+  ],
+  "punchline": "Mean temperature: 4.2% identifying (12 months). Hot nights: 28.8% identifying (6 months, May\u2013Oct). Cold days: 46.9% identifying (4 months, Dec\u2013Mar)."
+}

@@ -1,0 +1,7 @@
+encoding,label,kind,share_intensive_of_identifying,share_extensive_of_identifying,always_on_months,mixed_months,n_months_positive
+mean_temp,Mean temperature,continuous,1.0,0.0,,,132
+mean_tmax,Mean Tmax,continuous,1.0,0.0,,,132
+mean_tmin,Mean Tmin,continuous,1.0,0.0,,,132
+hot_nights,Hot nights ≥ 28°C,count,0.9541,0.0459,"6,7,8,9","5,10",57
+very_hot_days,Very hot days ≥ 33°C,count,0.8543,0.1457,"6,7,8","5,9,10",53
+cold_days,Cold days ≤ 12°C,count,0.6119,0.3881,,"1,2,3,12",29

@@ -33,6 +33,7 @@ If Hogan has already edited weather, paste from `methods_remainder_paste.md` aro
 10. **References.** Keep his 1–8 (C&SD repaired as 8). Add 9–21 from the draft. Do not drop Yang CY. New overnight addition is [21] Goggins and Chan 2017.
 
 11. **Optional, after Hogan has seen the card.** One sentence after the existing territory-wide limitation. Paste-ready file: `limitation_station_grid_bridge.md`. Do not overwrite his weather paragraph. Do not treat 0.045 as a health attenuation factor. Do not add Mistry as a live citation unless he asks.
+12. **Optional, after Hogan has seen the intensive-margin card, and not bolted onto item 11.** One sentence: June–September always had ≥1 official hot night; remaining contrast is July intensity (1 vs 25). Paste-ready file: `limitation_intensive_margin.md`. Different limitation from the station–grid check. Do not paste 95.4% or the 14 overlapping nights.
 
 ## Honesty taken from later drafts (approved for *this* file only)
 

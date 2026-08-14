@@ -48,8 +48,18 @@
     footer { padding: 2.2rem 0 3.2rem; color: var(--muted); font-size: .9rem; line-height: 1.55; }
     .footlinks { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .6rem; }
     .cal { display: grid; grid-template-columns: 3.2rem repeat(12, 1fr); gap: 3px; font-size: .65rem; color: var(--muted); }
-    .cal i { display: block; height: 18px; border-radius: 3px; background: #2a3340; overflow: hidden; position: relative; }
-    .cal i em { position: absolute; top: 0; bottom: 0; }
+    .cal i { display: block; height: 18px; border-radius: 3px; background: #2a3340; overflow: hidden; position: relative; cursor: pointer; }
+    .cal i em { position: absolute; top: 0; bottom: 0; pointer-events: none; }
+    .chips { display: flex; gap: .4rem; flex-wrap: wrap; margin: .55rem 0 .85rem; }
+    .datebig { font-family: Fraunces, Georgia, serif; font-size: 1.7rem; margin: 0; }
+    .tagpill { display: inline-block; margin-left: .45rem; padding: .12rem .55rem; border-radius: 999px; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+    .therms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; min-height: 280px; align-items: end; }
+    .therm { text-align: center; }
+    .tube { width: 38px; height: 230px; margin: 0 auto; border-radius: 19px; border: 2px solid; position: relative; background: #070b10; }
+    .mercury { position: absolute; left: 6px; right: 6px; bottom: 10px; border-radius: 12px; }
+    .bulb { width: 46px; height: 46px; border-radius: 50%; margin: -10px auto 0; }
+    .cut28 { position: absolute; left: -10px; right: -10px; border-top: 1px dashed var(--heat); }
+    .tval { font-family: Fraunces, Georgia, serif; font-size: 1.55rem; margin: .35rem 0 0; }
     @media (max-width: 860px) {
       .objects, .grid2 { grid-template-columns: 1fr; }
     }
@@ -132,8 +142,29 @@
       </div>
     </div>
 
+    <div class="stage" id="scrubber" style="margin-top:1rem">
+      <h2>The same night, three thermometers</h2>
+      <p class="note">
+        Station dry-bulb, ERA5 dry-bulb, ERA5 apparent temperature, on one matched date.
+        The official cut is the dashed 28°C line. The 14 nights in both are not a reconstructed series.
+        Not form 2a.
+      </p>
+      <div class="toolbar">
+        <button type="button" id="nPrev">Previous night</button>
+        <button type="button" id="nNext">Next night</button>
+        <button type="button" id="nBoth">The 14 in both</button>
+        <button type="button" id="nHotMiss">Hottest miss</button>
+        <button type="button" id="nGap">Widest gap</button>
+        <button type="button" id="nEra">ERA5-only (3)</button>
+      </div>
+      <div class="chips" id="nFilter"></div>
+      <p class="datebig" id="nDate">—</p>
+      <p class="note" id="nCap"></p>
+      <div class="therms" id="nTherms"></div>
+    </div>
+
     <footer>
-      <p>Public climate only. No CHD/HF coefficients, no stroke, no Gate 3 freeze. Rebuild: <code>python3 scripts/53_threshold_does_not_travel.py</code>.</p>
+      <p>Public climate only. No CHD/HF coefficients, no stroke, no Gate 3 freeze. Rebuild: <code>python3 scripts/53_threshold_does_not_travel.py</code> and <code>python3 scripts/59_same_night_three_thermometers.py</code>.</p>
       <p>31 August 2026 is still the endorsed HKU 2a and the Scholars Network University-room essay. This URL does not count as that posting. Agreement on this page is not a result from the live health paper.</p>
       <p>Static figure: <a href="../../figures/threshold_demo/exceedance_and_agreement.svg">exceedance and agreement</a>.</p>
       <div class="footlinks">
@@ -146,6 +177,7 @@
     </footer>
   </div>
   <script src="./demo_embed.js"></script>
+  <script src="./nights_28.js"></script>
   <script>
     const D = window.THRESHOLD_DEMO;
     const T = D.thresholds_c;
@@ -194,7 +226,7 @@
         `Against the <b>fixed</b> HKO 28°C set: Jaccard ${fj == null ? "—" : fj}, sensitivity ${se == null ? "—" : se}, PPV ${ppv == null ? "—" : ppv}. ` +
         `Maximum Jaccard is <b>${mx.jaccard}</b> at ${mx.threshold_c.toFixed(1)}°C — no monotone shift recovers the station nights. ` +
         `Mean-bias correction recovers ${fmt(D.bias_adjusted_hko28.n_pred)} nights (Jaccard ${D.bias_adjusted_hko28.jaccard}).`;
-      if (history.replaceState) history.replaceState(null, "", "#t=" + T[idx]);
+      writeHash();
       const share = S.marine_share_cellnights[idx];
       document.getElementById("geoLine").innerHTML =
         `Marine-south cells hold ${share == null ? "none of a silent field" : `<b>${Math.round(share*100)}%</b> of cell-nights`}. ` +
@@ -271,7 +303,7 @@
           const tot = b.h + b.b + b.e;
           if (!tot) { html += `<i></i>`; continue; }
           const wH = 100 * b.h / tot, wB = 100 * b.b / tot;
-          html += `<i title="${y}-${m}: HKO-only ${b.h}, both ${b.b}, ERA5-only ${b.e}"><em style="left:0;width:${wH}%;background:#f4efe4"></em><em style="left:${wH}%;width:${wB}%;background:#3cb8c0"></em><em style="left:${wH+wB}%;width:${100-wH-wB}%;background:#e0c36a"></em></i>`;
+          html += `<i data-year="${y}" data-month="${m}" title="${y}-${m}: HKO-only ${b.h}, both ${b.b}, ERA5-only ${b.e}"><em style="left:0;width:${wH}%;background:#f4efe4"></em><em style="left:${wH}%;width:${wB}%;background:#3cb8c0"></em><em style="left:${wH+wB}%;width:${100-wH-wB}%;background:#e0c36a"></em></i>`;
         }
       }
       document.getElementById("cal").innerHTML = html;
@@ -316,6 +348,124 @@
       }, 220);
     }
 
+    const N28 = window.NIGHTS_28;
+    const allNights = N28.nights;
+    let nightFilter = "all";
+    let nightPtr = allNights.findIndex(n => n.date === N28.featured.hottest_both);
+    if (nightPtr < 0) nightPtr = 0;
+
+    function writeHash() {
+      const tPart = "t=" + T[idx];
+      const dPart = allNights[nightPtr] ? "d=" + allNights[nightPtr].date : "";
+      const hash = "#" + tPart + (dPart ? "&" + dPart : "");
+      if (history.replaceState) history.replaceState(null, "", hash);
+    }
+
+    function filteredNights() {
+      if (nightFilter === "all") return allNights;
+      return allNights.filter(n => n.tag === nightFilter);
+    }
+
+    function yOfTemp(t) {
+      const lo = 22, hi = 36;
+      const clamped = Math.max(lo, Math.min(hi, t));
+      return 10 + (1 - (clamped - lo) / (hi - lo)) * 210;
+    }
+
+    function drawNight() {
+      const pool = filteredNights();
+      if (!pool.length) return;
+      const curDate = allNights[nightPtr].date;
+      if (!pool.some(n => n.date === curDate)) {
+        nightPtr = allNights.findIndex(n => n.date === pool[0].date);
+      }
+      const n = allNights[nightPtr];
+      const labels = {hko: "HKO-only", both: "both encodings", era5: "ERA5-only"};
+      const colors = {hko: "#f4efe4", both: "#3cb8c0", era5: "#e0c36a"};
+      const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      const pretty = parseInt(n.date.slice(8), 10) + " " + months[n.month - 1] + " " + n.year;
+      document.getElementById("nDate").innerHTML = pretty +
+        ` <span class="tagpill" style="background:${colors[n.tag]};color:#0c1218">${labels[n.tag]}</span>`;
+      const poolNow = filteredNights();
+      const pos = poolNow.findIndex(x => x.date === n.date) + 1;
+      document.getElementById("nCap").innerHTML =
+        `HKO ${n.hko_tmin.toFixed(1)}°C · ERA5 ${n.era5_tmin.toFixed(1)}°C · apparent ${n.atmin.toFixed(1)}°C · gap ${n.gap_hko_minus_era5.toFixed(1)}°C. ` +
+        `${pos} of ${poolNow.length} in this list. Hash <code>#d=${n.date}</code>. Apparent temperature is a third encoding, not a correction.`;
+      const tubes = [
+        ["HKO Headquarters", n.hko_tmin, "#f4efe4", n.hko_tmin >= 28],
+        ["ERA5 dry-bulb", n.era5_tmin, "#3cb8c0", n.era5_tmin >= 28],
+        ["ERA5 apparent", n.atmin, "#e0c36a", n.atmin >= 28],
+      ];
+      document.getElementById("nTherms").innerHTML = tubes.map(([lab, val, col, on]) => {
+        const y = yOfTemp(val);
+        const y28 = yOfTemp(28);
+        const mercuryH = 230 - y - 10;
+        return `<div class="therm">
+          <div style="font-size:.78rem;color:var(--muted);margin-bottom:.35rem">${lab}${on ? " · on" : " · off"}</div>
+          <div class="tube" style="border-color:${col}">
+            <div class="cut28" style="top:${y28}px"></div>
+            <div class="mercury" style="height:${Math.max(8, mercuryH)}px;background:${col}"></div>
+          </div>
+          <div class="bulb" style="background:${col}"></div>
+          <p class="tval" style="color:${col}">${val.toFixed(1)}°C</p>
+        </div>`;
+      }).join("");
+      writeHash();
+    }
+
+    function setNightByDate(date) {
+      const i = allNights.findIndex(n => n.date === date);
+      if (i >= 0) nightPtr = i;
+      drawNight();
+      document.getElementById("scrubber").scrollIntoView({block: "nearest"});
+    }
+
+    function stepNight(delta) {
+      const pool = filteredNights();
+      if (!pool.length) return;
+      let local = pool.findIndex(n => n.date === allNights[nightPtr].date);
+      if (local < 0) local = 0;
+      local = (local + delta + pool.length) % pool.length;
+      nightPtr = allNights.findIndex(n => n.date === pool[local].date);
+      drawNight();
+    }
+
+    function setFilter(tag) {
+      nightFilter = tag;
+      [...document.getElementById("nFilter").querySelectorAll("button")].forEach(b => {
+        b.classList.toggle("active", b.dataset.tag === tag);
+      });
+      const pool = filteredNights();
+      if (pool.length && !pool.some(n => n.date === allNights[nightPtr].date)) {
+        nightPtr = allNights.findIndex(n => n.date === pool[0].date);
+      }
+      drawNight();
+    }
+
+    document.getElementById("nFilter").innerHTML = [
+      ["all", "Union " + N28.counts.union],
+      ["hko", "HKO-only " + N28.counts.hko_only],
+      ["both", "Both " + N28.counts.both],
+      ["era5", "ERA5-only " + N28.counts.era5_only],
+    ].map(([tag, lab]) => `<button type="button" data-tag="${tag}">${lab}</button>`).join("");
+    document.getElementById("nFilter").addEventListener("click", e => {
+      const b = e.target.closest("button");
+      if (b) setFilter(b.dataset.tag);
+    });
+    document.getElementById("nPrev").addEventListener("click", () => stepNight(-1));
+    document.getElementById("nNext").addEventListener("click", () => stepNight(1));
+    document.getElementById("nBoth").addEventListener("click", () => { setFilter("both"); setNightByDate(N28.featured.hottest_both); });
+    document.getElementById("nHotMiss").addEventListener("click", () => { setFilter("hko"); setNightByDate(N28.featured.hottest_hko_miss); });
+    document.getElementById("nGap").addEventListener("click", () => { setFilter("hko"); setNightByDate(N28.featured.widest_gap); });
+    document.getElementById("nEra").addEventListener("click", () => { setFilter("era5"); setNightByDate(N28.featured.era5_only[0]); });
+    document.getElementById("cal").addEventListener("click", e => {
+      const cell = e.target.closest("i[data-year]");
+      if (!cell) return;
+      const y = +cell.dataset.year, m = +cell.dataset.month;
+      const hit = allNights.find(n => n.year === y && n.month === m);
+      if (hit) { setFilter("all"); setNightByDate(hit.date); }
+    });
+
     document.getElementById("slider").addEventListener("input", e => setIdx(+e.target.value));
     document.getElementById("btn28").addEventListener("click", () => setIdx(T.indexOf(28)));
     document.getElementById("btnMatch").addEventListener("click", () => {
@@ -328,15 +478,23 @@
     window.addEventListener("keydown", e => {
       if (e.key === "ArrowRight") setIdx(idx+1);
       if (e.key === "ArrowLeft") setIdx(idx-1);
+      if (e.key === "[") stepNight(-1);
+      if (e.key === "]") stepNight(1);
     });
-    const hash = (location.hash || "").match(/t=([0-9.]+)/);
-    if (hash) {
-      const want = parseFloat(hash[1]);
+    const hashT = (location.hash || "").match(/t=([0-9.]+)/);
+    if (hashT) {
+      const want = parseFloat(hashT[1]);
       let best = idx, err = 99;
       T.forEach((v,i) => { const d = Math.abs(v-want); if (d < err) { err = d; best = i; } });
       idx = best;
     }
+    const hashD = (location.hash || "").match(/d=([0-9-]+)/);
+    if (hashD) {
+      const i = allNights.findIndex(n => n.date === hashD[1]);
+      if (i >= 0) nightPtr = i;
+    }
     setIdx(idx);
+    setFilter("all");
   </script>
 </body>
 </html>

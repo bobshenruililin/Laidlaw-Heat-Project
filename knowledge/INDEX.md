@@ -19,6 +19,13 @@
 
 ## Current meeting record
 
+- [`2026-08-14_laidlaw_official_drive.md`](2026-08-14_laidlaw_official_drive.md) — HKU 2a form, Foundation outputs, 3 C’s, official deadlines (essay 31 Aug; poster 15 Sep; Chi Wah week of 5 Oct).
+- [`../reports/laidlaw_stage3/hku_report_form_worksheet.md`](../reports/laidlaw_stage3/hku_report_form_worksheet.md) — known fields only; Bishai’s block stays blank.
+- [`../reports/blog/character_leadership_global_mindset.md`](../reports/blog/character_leadership_global_mindset.md) — 3 C’s Network draft; Bob’s privacy pass pending.
+- [`2026-08-14_prd_field_laboratory.md`](2026-08-14_prd_field_laboratory.md) — eight methods on the PRD Tmin cache; EOF1 92% basin-wide pulse; not a health factor.
+- [`../reports/hogan_prd_field_modes_2026-08-14.md`](../reports/hogan_prd_field_modes_2026-08-14.md) — Hogan lock card: a mode is not a hot night.
+- [`../docs/field/index.html`](../docs/field/index.html) — Leaflet field laboratory.
+- [`../reports/blog/a_field_has_modes.md`](../reports/blog/a_field_has_modes.md) — Laidlaw website draft; Bob’s privacy pass pending.
 - [`2026-08-14_prd_thermal_mosaic.md`](2026-08-14_prd_thermal_mosaic.md) — 0.2° ERA5 mosaic of the Pearl River Delta; marine-south 353 vs Guangzhou 12 hot nights; SAR ρ 0.45; not a prefecture health map.
 - [`../reports/hogan_prd_marine_nights_2026-08-14.md`](../reports/hogan_prd_marine_nights_2026-08-14.md) — Hogan lock card: exporting 28°C up the river is a larger spatial act than exporting it across the harbour.
 - [`../docs/prd/index.html`](../docs/prd/index.html) — Leaflet PRD companion with month slider.

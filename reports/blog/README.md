@@ -29,6 +29,8 @@ After each progress deck, run `/blog-from-deck` or let the agent offer it. The c
 - [`week_of_data_the_file_that_arrived.md`](week_of_data_the_file_that_arrived.md) — draft: the August CHD/HF file was not the stroke series the earlier posts were waiting for. Bob’s voice/privacy pass still required.
 - [`a_city_is_not_a_point.md`](a_city_is_not_a_point.md) — draft: Headquarters is a location; the ERA5 lattice shows the 28°C night moving inside the territory. Link the public map after Pages or raw.githack. Bob’s voice/privacy pass still required.
 - [`the_river_has_a_temperature.md`](the_river_has_a_temperature.md) — draft: the same 28°C night is marine in the Pearl River Delta, not an inland Guangdong event. Bob’s voice/privacy pass still required.
+- [`a_field_has_modes.md`](a_field_has_modes.md) — draft: eight methods on one public Tmin field; EOF1 is a pulse, not a hot night. Bob’s voice/privacy pass still required.
+- [`character_leadership_global_mindset.md`](character_leadership_global_mindset.md) — draft: official 3 C’s Network object (Capacities / Character / Change Maker Values). Research-process posts do not replace it. Bob’s voice/privacy pass still required.
 - [`STYLE_NOTES.md`](STYLE_NOTES.md)
 
 ## Related: Laidlaw Scholar Network (LSN)

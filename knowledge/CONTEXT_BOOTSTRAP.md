@@ -90,3 +90,7 @@ For the **peer-city thermal atlas** (exposure only; no coefficients), use [`docs
 For the **Hong Kong spatial field** (exposure only), use [`docs/geo/`](../docs/geo/) and [`2026-08-14_hk_spatial_thermal_field.md`](2026-08-14_hk_spatial_thermal_field.md). A 28°C night is a location even inside the territory. Do not overlay health counts on cells.
 
 For the **Pearl River Delta mosaic** (exposure only), use [`docs/prd/`](../docs/prd/) and [`2026-08-14_prd_thermal_mosaic.md`](2026-08-14_prd_thermal_mosaic.md). On this grid the 28°C night is marine, not an inland Guangdong event. Do not transport Hong Kong hospitalisation ratios.
+
+For the **PRD field laboratory** (exposure only), use [`docs/field/`](../docs/field/) and [`2026-08-14_prd_field_laboratory.md`](2026-08-14_prd_field_laboratory.md). EOF1 of de-seasoned Tmin is a basin-wide pulse; it is not a hot-night map and not a health factor.
+
+Official Laidlaw Drive (HKU 2a form, Foundation outputs, 3 C’s, poster notes): [`2026-08-14_laidlaw_official_drive.md`](2026-08-14_laidlaw_official_drive.md). Research essay due **31 August 2026**; poster file **15 September**; Chi Wah week of **5 October**. Network University-room URL is what HKU reports to the Foundation. GitHub Pages is not a substitute.

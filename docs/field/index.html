@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A field has modes · Pearl River Delta laboratory · Laidlaw Heat Project</title>
+  <meta name="description" content="Exposure only. Eight methods on one public ERA5-Land Tmin field. Not health findings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    :root {
+      --ink: #12181f; --muted: #5b6773; --paper: #f4efe4; --card: #fffdf8;
+      --line: rgba(18,24,31,.12); --heat: #c24e16; --cold: #1f5f8a; --sea: #0c6b74;
+      --gold: #c9a227; --shadow: 0 16px 40px rgba(18,24,31,.08);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: "IBM Plex Sans", system-ui, sans-serif; }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 500; letter-spacing: -.02em; }
+    a { color: var(--sea); }
+    .wrap { width: min(1220px, calc(100% - 2rem)); margin: 0 auto; }
+    .banner { background: #12181f; color: #f4efe4; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; padding: .7rem 1rem; text-align: center; }
+    .banner strong { color: #f0b36a; }
+    header { padding: 2.6rem 0 1rem; }
+    header p.lede { font-size: 1.12rem; max-width: 52rem; line-height: 1.55; color: var(--muted); }
+    .statrow { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin: 1.2rem 0 1.4rem; }
+    .stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.1rem; box-shadow: var(--shadow); }
+    .stat b { display: block; font-family: Fraunces, serif; font-size: 1.35rem; }
+    .stat span { color: var(--muted); font-size: .84rem; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 1.1rem 1.2rem 1.3rem; box-shadow: var(--shadow); }
+    #map { height: 560px; border-radius: 14px; border: 1px solid var(--line); }
+    .toolbar, .monthbar { display: flex; gap: .55rem; flex-wrap: wrap; align-items: center; margin: 0 0 .75rem; }
+    select, button { font: inherit; padding: .4rem .7rem; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+    button.active { background: var(--sea); color: #fff; border-color: var(--sea); }
+    input[type=range] { width: min(420px, 100%); accent-color: var(--sea); }
+    .grid2 { display: grid; grid-template-columns: 1.15fr .85fr; gap: 1.1rem; margin-top: 1.1rem; }
+    .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.1rem; margin-top: 1.1rem; }
+    .note { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+    .legendbox { font-size: .8rem; color: var(--muted); margin-top: .5rem; }
+    .sw { width: .7rem; height: .7rem; border-radius: 99px; display: inline-block; margin-right: .3rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    th, td { text-align: left; padding: .35rem 0; border-bottom: 1px solid var(--line); }
+    svg.chart { width: 100%; height: 200px; display: block; }
+    footer { padding: 2.4rem 0 3.4rem; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+    .month-label { font-family: Fraunces, serif; font-size: 1.35rem; }
+    .leaflet-popup-content { font-family: "IBM Plex Sans", sans-serif; font-size: .9rem; }
+    @media (max-width: 980px) {
+      .statrow, .grid2, .grid3 { grid-template-columns: 1fr; }
+      #map { height: 400px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">Exposure only · public reanalysis · <strong>not</strong> health findings · eight methods, one field</div>
+  <div class="wrap">
+    <header>
+      <p style="letter-spacing:.14em; text-transform:uppercase; font-size:.75rem; color:var(--sea); margin:0 0 .6rem;">Laidlaw Heat Project · geospatial laboratory</p>
+      <h1>A field has modes.</h1>
+      <p class="lede">
+        A human PhD usually ships one method and defends it. This page does the other thing:
+        eight disciplines on the same 90 cells and 4,017 nights, then refuses to promote any
+        coefficient into a finding. The first EOF of de-seasoned Tmin is a basin-wide pulse.
+        The 28°C night is a climatology object sitting on the water. Those are not the same map.
+      </p>
+    </header>
+
+    <div class="statrow" id="stats"></div>
+
+    <div class="card">
+      <div class="toolbar">
+        <span class="note">Paint the field by</span>
+        <button class="active" data-layer="harmonic_month">Annual cycle, by month</button>
+        <button data-layer="eof1">EOF1 loading</button>
+        <button data-layer="cluster">k-means regime</button>
+        <button data-layer="harmonic_amp">Harmonic amplitude</button>
+        <button data-layer="theil_sen_c_per_decade">Theil–Sen °C/decade</button>
+        <button data-layer="mi_hq_bits">MI with HQ cell</button>
+        <button data-layer="spell_mean">Hot-night spell length</button>
+        <button data-layer="p_hn_given_vhd">P(HN | VHD)</button>
+        <button data-layer="wasserstein_hq">Wasserstein from HQ</button>
+        <button data-layer="corr_degree_r90">Network degree (r&gt;0.90)</button>
+      </div>
+      <div class="monthbar" id="monthbar">
+        <span class="month-label" id="monthName">July</span>
+        <input id="month" type="range" min="1" max="12" value="7" />
+        <span class="note" id="monthStory"></span>
+      </div>
+      <div id="map" role="img" aria-label="Pearl River Delta ERA5-Land field laboratory"></div>
+      <div class="legendbox" id="mapLegend"></div>
+      <p class="note" style="margin:.7rem 0 0;">OpenStreetMap geography, ERA5-Land temperature. Squares are 0.2° sample cells. Dots are city coordinates on the same source. Click either.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">Eight methods, one labelled field</h2>
+        <p class="note" id="eofNote"></p>
+        <table id="methodTable"></table>
+      </div>
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">Regimes (k = 4)</h2>
+        <p class="note">k-means on standardised mean Tmin, hot-night count, harmonic amplitude, distance to coast, and elevation. Names are interpretive, not municipalities.</p>
+        <table id="clusterTable"></table>
+        <h3 style="font-size:1rem; margin:1.1rem 0 .3rem;" id="placeTitle">Hong Kong</h3>
+        <p class="note" id="placeMeta"></p>
+        <table id="placeTable"></table>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.15rem;">PC1 through the years</h2>
+        <p class="note">Monthly mean of the first principal component. The seasonal cycle is already gone, so July is not a special month here.</p>
+        <svg class="chart" id="pc1chart" viewBox="0 0 320 200"></svg>
+      </div>
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.15rem;">EOF1 vs latitude</h2>
+        <p class="note">Loadings are all the same sign. Inland cells move a little more; the sea damps the pulse.</p>
+        <svg class="chart" id="eoflat" viewBox="0 0 320 200"></svg>
+      </div>
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.15rem;">Amplitude vs hot nights</h2>
+        <p class="note">The annual harmonic is larger inland. The 28°C night lives where the mean is high, not where the year swings hardest.</p>
+        <svg class="chart" id="amphn" viewBox="0 0 320 200"></svg>
+      </div>
+    </div>
+
+    <footer>
+      <p><strong>Do not</strong> treat EOF loadings as hospitalisation factors. <strong>Do not</strong> paint CHD/HF or stroke counts onto these cells. <strong>Do not</strong> transport Hong Kong hospitalisation ratios to Shenzhen or Guangzhou. <strong>Do not</strong> paste Theil–Sen slopes as a climate-change finding. Stroke was not delivered. Gate 3 is open. Live paper stays on Headquarters.</p>
+      <p>Source: Open-Meteo ERA5-Land, 2013–2023, Asia/Hong_Kong, script 50 cache. Rebuild: <code>python3 scripts/51_prd_field_laboratory.py</code>.</p>
+      <p><a href="../">Public companions</a> · <a href="../prd/">Delta mosaic</a> · <a href="../geo/">Hong Kong lattice</a> · <a href="../peers/">Peer-city atlas</a> · <a href="../lsn/">LSN climate ribbon</a></p>
+    </footer>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./field_embed.js"></script>
+  <script>
+    const S = window.PRD_FIELD;
+    const M = S.model;
+    const cells = S.cells;
+    const cities = S.cities;
+    const clusterColor = {
+      marine: "#c24e16",
+      estuary: "#c9a227",
+      inland: "#1f5f8a",
+      highland: "#5b6773"
+    };
+    let month = 7;
+    let layer = "harmonic_month";
+
+    document.getElementById("stats").innerHTML = [
+      [`${(M.eof.variance_frac[0]*100).toFixed(1)}%`, "EOF1 of de-seasoned daily Tmin (area-weighted SVD)"],
+      [`${M.eof.cumulative_3}`, "Cumulative variance in the first three EOFs"],
+      [`${M.entropy.evenness}`, "Spatial evenness of 28°C-night occupancy (1 = spread evenly)"],
+      [`${M.trend.n_ci_excludes_zero} / 90`, "Cells whose Theil–Sen 90% bootstrap interval excludes 0"]
+    ].map(([b,s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
+
+    document.getElementById("eofNote").textContent =
+      `EOF1 is a domain-wide pulse (all loadings positive). It correlates with latitude (r = ${M.eof.eof1_lat_corr}) and anti-correlates with ERA5 hot-night counts (r = ${M.eof.eof1_hn_corr}). The sea has the nights; the inland cells have the larger anomaly. North’s rule separates EOF1 from EOF2 on a Bartlett n_eff of ${M.eof.n_eff_bartlett} days. Headquarters–Waglan anomaly r = ${M.eof.hq_waglan_anom_r}; Headquarters–Guangzhou r = ${M.eof.hq_guangzhou_anom_r}.`;
+
+    document.getElementById("methodTable").innerHTML =
+      `<tr><th>Discipline</th><th>Method</th></tr>` +
+      S.methods.map(m => `<tr><td>${m.field}</td><td>${m.name}</td></tr>`).join("");
+
+    document.getElementById("clusterTable").innerHTML =
+      `<tr><th>Regime</th><th>Cells</th><th>Tmin</th><th>Hot nights</th><th>Elev</th></tr>` +
+      M.clusters.summary.map(s => `<tr>
+        <td><i class="sw" style="background:${clusterColor[s.name]||'#999'}"></i>${s.name}</td>
+        <td>${s.n}</td><td>${s.mean_tmin.toFixed(2)}°C</td>
+        <td>${s.hn_mean}</td><td>${s.elev_mean} m</td>
+      </tr>`).join("");
+
+    function ramp(t, a, b) {
+      const lerp = (x, y, u) => Math.round(x + (y - x) * u);
+      return `rgb(${lerp(a[0], b[0], t)},${lerp(a[1], b[1], t)},${lerp(a[2], b[2], t)})`;
+    }
+    const palettes = {
+      harmonic_month: { lo: [31,95,138], hi: [194,78,22], label: "Fitted annual-cycle Tmin this month (°C)" },
+      eof1: { lo: [31,95,138], hi: [194,78,22], label: "EOF1 loading on de-seasoned Tmin" },
+      harmonic_amp: { lo: [31,95,138], hi: [194,78,22], label: "Annual harmonic amplitude (°C)" },
+      theil_sen_c_per_decade: { lo: [31,95,138], hi: [194,78,22], diverging: true, label: "Theil–Sen yearly-mean Tmin (°C / decade)" },
+      mi_hq_bits: { lo: [12,107,116], hi: [194,78,22], label: "Mutual information of hot nights with the HQ cell (bits)" },
+      spell_mean: { lo: [31,95,138], hi: [194,78,22], label: "Mean hot-night spell length (days)" },
+      p_hn_given_vhd: { lo: [31,95,138], hi: [194,78,22], label: "P(Tmin ≥ 28°C | Tmax ≥ 33°C)" },
+      wasserstein_hq: { lo: [12,107,116], hi: [194,78,22], label: "Wasserstein-1 distance of daily Tmin from the HQ cell (°C)" },
+      corr_degree_r90: { lo: [12,107,116], hi: [194,78,22], label: "Anomaly-correlation degree (r > 0.90)" }
+    };
+
+    function valueOf(p, lyr) {
+      if (lyr === "harmonic_month") return (p.harmonic_by_month || [])[month - 1];
+      return p[lyr];
+    }
+
+    function colorFor(lyr, v, vmin, vmax, p) {
+      if (lyr === "cluster") return clusterColor[p.cluster_name] || "#ddd";
+      const pal = palettes[lyr];
+      if (v == null || Number.isNaN(v)) return "#ddd";
+      if (pal.diverging) {
+        const m = Math.max(Math.abs(vmin), Math.abs(vmax), 0.01);
+        const t = (v + m) / (2 * m);
+        return ramp(t, pal.lo, pal.hi);
+      }
+      const t = vmax === vmin ? 0.5 : (v - vmin) / (vmax - vmin);
+      return ramp(Math.min(1, Math.max(0, t)), pal.lo, pal.hi);
+    }
+
+    const map = L.map("map", { scrollWheelZoom: true, maxZoom: 12 }).setView([22.7, 113.8], 8);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap",
+      maxZoom: 12
+    }).addTo(map);
+
+    let lattice = L.layerGroup().addTo(map);
+    let marks = L.layerGroup().addTo(map);
+
+    function monthStory() {
+      const name = S.months[month - 1];
+      document.getElementById("monthName").textContent = name;
+      const marine = cells.filter(c => c.cluster_name === "marine");
+      const inland = cells.filter(c => c.cluster_name === "inland");
+      const mean = (xs) => xs.reduce((a,c) => a + c.harmonic_by_month[month-1], 0) / xs.length;
+      document.getElementById("monthStory").textContent =
+        `${name}: fitted Tmin marine ${mean(marine).toFixed(1)}°C · inland ${mean(inland).toFixed(1)}°C. The harmonic peaks around day ${Math.round(cells.reduce((a,c)=>a+c.harmonic_doy_max,0)/cells.length)} (mid-July) everywhere.`;
+    }
+
+    function paint() {
+      const vals = cells.map(c => valueOf(c, layer)).filter(v => v != null && !Number.isNaN(v));
+      const vmin = Math.min(...vals), vmax = Math.max(...vals);
+      lattice.clearLayers();
+      marks.clearLayers();
+      S.geojson.features.forEach(f => {
+        const p = f.properties;
+        const v = valueOf(p, layer);
+        L.geoJSON(f, {
+          style: {
+            color: "#fff", weight: 0.8,
+            fillColor: colorFor(layer, v, vmin, vmax, p),
+            fillOpacity: 0.68
+          }
+        }).bindPopup(popupHTML(p)).on("click", () => showPlace(p.id)).addTo(lattice);
+      });
+      cities.forEach(p => {
+        const mk = L.circleMarker([p.lat, p.lon], {
+          radius: p.id === "hong_kong" ? 8 : 6,
+          color: "#fff", weight: 2,
+          fillColor: p.id === "hong_kong" ? "#0c6b74" : "#12181f",
+          fillOpacity: 1
+        }).bindPopup(`<strong>${p.name}</strong><br>nearest cell ${p.nearest_cell}<br>regime ${p.cluster_name}<br>EOF1 ${p.eof1}`).on("click", () => showPlace(p.nearest_cell));
+        mk.bindTooltip(p.name, { permanent: false });
+        mk.addTo(marks);
+      });
+      if (layer === "cluster") {
+        document.getElementById("mapLegend").innerHTML =
+          Object.entries(clusterColor).map(([k,v]) => `<span><i class="sw" style="background:${v}"></i>${k}</span>`).join("&nbsp;&nbsp;");
+      } else {
+        document.getElementById("mapLegend").innerHTML =
+          `<span><i class="sw" style="background:${colorFor(layer, vmin, vmin, vmax, cells[0])}"></i>${vmin}</span>
+           &nbsp;${palettes[layer].label}&nbsp;
+           <span><i class="sw" style="background:${colorFor(layer, vmax, vmin, vmax, cells[0])}"></i>${vmax}</span>`;
+      }
+      document.getElementById("monthbar").style.display = layer === "harmonic_month" ? "flex" : "none";
+      if (layer === "harmonic_month") monthStory();
+    }
+
+    function popupHTML(p) {
+      const extra = layer === "harmonic_month" ? `<br>${S.months[month-1]} fitted Tmin ${p.harmonic_by_month[month-1]}°C` : "";
+      return `<strong>${p.name}</strong><br>${p.region} · ${p.cluster_name}
+        <br>Night Tmin ${p.mean_tmin.toFixed(2)}°C · HN ${p.hn_total}
+        <br>EOF1 ${p.eof1} · amp ${p.harmonic_amp}°C
+        <br>Theil–Sen ${p.theil_sen_c_per_decade} °C/decade${extra}`;
+    }
+
+    function showPlace(id) {
+      const p = cells.find(c => c.id === id);
+      if (!p) return;
+      document.getElementById("placeTitle").textContent = p.name;
+      document.getElementById("placeMeta").textContent = `${p.region}. Regime ${p.cluster_name}. Elevation ${p.elevation_m} m.`;
+      document.getElementById("placeTable").innerHTML = `
+        <tr><td>Mean Tmin</td><td>${p.mean_tmin.toFixed(2)}°C</td></tr>
+        <tr><td>ERA5 hot nights</td><td>${p.hn_total}</td></tr>
+        <tr><td>EOF1 / EOF2</td><td>${p.eof1} / ${p.eof2}</td></tr>
+        <tr><td>Harmonic amplitude</td><td>${p.harmonic_amp}°C (peak day ${p.harmonic_doy_max})</td></tr>
+        <tr><td>Theil–Sen</td><td>${p.theil_sen_c_per_decade} °C/decade [${p.theil_sen_p05}, ${p.theil_sen_p95}]</td></tr>
+        <tr><td>MI with HQ</td><td>${p.mi_hq_bits} bits</td></tr>
+        <tr><td>Mean / max spell</td><td>${p.spell_mean} / ${p.spell_max} days</td></tr>
+        <tr><td>P(HN | VHD)</td><td>${p.p_hn_given_vhd == null ? "—" : p.p_hn_given_vhd}</td></tr>
+        <tr><td>Wasserstein from HQ</td><td>${p.wasserstein_hq}°C</td></tr>`;
+    }
+
+    document.querySelectorAll(".toolbar button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".toolbar button").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        layer = btn.dataset.layer;
+        paint();
+      });
+    });
+    document.getElementById("month").addEventListener("input", (e) => {
+      month = Number(e.target.value);
+      paint();
+    });
+    paint();
+    const hkCity = cities.find(c => c.id === "hong_kong");
+    showPlace(hkCity ? hkCity.nearest_cell : cells[0].id);
+
+    function scatterSVG(svgId, pts, xLabel, yLabel) {
+      const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+      const xmin = Math.min(...xs), xmax = Math.max(...xs);
+      const ymin = Math.min(...ys), ymax = Math.max(...ys);
+      const x = v => 36 + (v - xmin) / (xmax - xmin || 1) * 260;
+      const y = v => 170 - (v - ymin) / (ymax - ymin || 1) * 140;
+      const dots = pts.map(p => `<circle cx="${x(p[0])}" cy="${y(p[1])}" r="2.4" fill="#0c6b74" fill-opacity=".75"/>`).join("");
+      document.getElementById(svgId).innerHTML =
+        `${dots}<text x="160" y="194" text-anchor="middle" font-size="11" fill="#5b6773">${xLabel}</text>
+         <text x="12" y="20" font-size="11" fill="#5b6773">${yLabel}</text>`;
+    }
+    scatterSVG("eoflat", cells.map(c => [c.lat, c.eof1]), "latitude", "EOF1");
+    scatterSVG("amphn", cells.map(c => [c.harmonic_amp, c.hn_total]), "harmonic amp (°C)", "hot nights");
+
+    const pc = M.monthly_pc;
+    const xs = pc.map((d,i) => i), ys = pc.map(d => d.pc1);
+    const xmin = 0, xmax = xs.length - 1;
+    const ymin = Math.min(...ys), ymax = Math.max(...ys);
+    const x = v => 16 + v / (xmax || 1) * 290;
+    const y = v => 170 - (v - ymin) / (ymax - ymin || 1) * 140;
+    let d = "";
+    pc.forEach((pt, i) => { d += `${i ? "L" : "M"}${x(i).toFixed(1)},${y(pt.pc1).toFixed(1)} `; });
+    document.getElementById("pc1chart").innerHTML =
+      `<path d="${d}" fill="none" stroke="#0c6b74" stroke-width="1.4"/>
+       <text x="160" y="194" text-anchor="middle" font-size="11" fill="#5b6773">2013–2023 months</text>`;
+  </script>
+</body>
+</html>

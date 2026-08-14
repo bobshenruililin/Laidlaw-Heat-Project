@@ -80,6 +80,12 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   Guangzhou box **12**; Huizhou **0.2**. OLS R² 0.89; SAR-2SLS ρ **0.45**;
   Gi* hotspots sit on the water. Not a prefecture health map. Do not transport
   CHD/HF ratios. `docs/prd/index.html`; `knowledge/2026-08-14_prd_thermal_mosaic.md`.
+- **PRD field laboratory (14 Aug, exposure only):** same cache, eight methods.
+  EOF1 of de-seasoned Tmin holds **92%** of variance (basin-wide pulse) and
+  anti-correlates with hot-night counts (r = −0.93). k-means: marine HN **444**
+  vs highland **0**. Theil–Sen median +0.29°C/decade; only 23/90 cells exclude
+  0. Not a climate-change result. `docs/field/index.html`;
+  `knowledge/2026-08-14_prd_field_laboratory.md`.
 
 ---
 
@@ -173,8 +179,11 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   `reports/poster/Laidlaw_Stage3_A0_portrait.pdf`; six required sections,
   26-point body type, reproducible poster-specific figures. The GEST landscape
   poster is legacy only.
-- HKU report form: pending an accessible copy of the official template plus
-  supervisor endorsement; spreadsheet Q/R — Bob.
+- HKU report form: worksheet in `reports/laidlaw_stage3/hku_report_form_worksheet.md`
+  (official 2a on the programme Drive; HUMAN blanks + Bishai signature remain).
+  Essay + endorsed form due **31 August 2026** to `laidlaw@hku.hk` and the
+  Scholars Network University room. Poster file **15 September**; Chi Wah
+  session week of **5 October**. Locked PDFs stay frozen. Logos = print overlay.
 
 ---
 

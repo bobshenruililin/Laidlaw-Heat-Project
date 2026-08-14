@@ -7,6 +7,7 @@ These pages are **not** the Laidlaw Scholars programme website. That website is 
 | Path | What it is |
 |---|---|
 | [`index.html`](index.html) | Hub |
+| [`field/`](field/) | PRD space-time laboratory (EOF, harmonics, k-means, entropy, spells, Theil–Sen) |
 | [`prd/`](prd/) | Pearl River Delta mosaic (Leaflet + OLS / SLX / SAR-2SLS / Gi* / month slider) |
 | [`geo/`](geo/) | Hong Kong spatial thermal field (Leaflet lattice + OLS / Moran / variogram) |
 | [`peers/`](peers/) | Sixteen-city climate-space atlas |
@@ -18,6 +19,7 @@ Prefer **raw.githack** (correct MIME types for JS). htmlpreview often fails to l
 
 ```text
 https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/index.html
+https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/field/index.html
 https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/prd/index.html
 https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/geo/index.html
 https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/peers/index.html

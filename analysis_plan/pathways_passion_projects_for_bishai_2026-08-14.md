@@ -22,11 +22,14 @@ That is multi-method in Bishai’s sense: one health panel, one identification p
 |---|---|---|
 | Monthly HKO vs ERA5 at 132 months (script 54) | **Enter — shipped** | The paper’s grain. Means travel; the flag does not. |
 | Identifying-month table for all six HKO encodings (script 55) | **Enter — shipped** | Exposure only. Mean T is 4% identifying; hot nights 29% on May–Oct; cold days 47% on Dec–Mar. |
+| Intensive vs extensive residual (script 57) | **Enter — shipped** | June–Sep always on; 95% of remaining hot-night SS is intensity; July 1 vs 25. Hogan card. Not a Bishai email. |
 | One composite figure for Email B (script 56) | **Enter — shipped** | Two scatters + the 28°C Jaccard line. One SVG, later one URL. |
-| Paste-ready limitation for the live file | **Enter** | One sentence with Jaccard 0.031 and slope 0.045. Hogan sees it before paste. |
+| Same-night three thermometers (script 59) | **Enter — shipped** | Companion only. 14 both / 435 / 3. Not form 2a. Not Email A. |
+| Paste-ready limitation for the live file | **Enter** | Monthly station–grid sentence. Optional intensive-margin sentence is a second, Hogan-first decision. |
 | Two emails: 2a first, science later | **Enter** | Sol. Do not mix endorsement with a map tour. Not today. |
+| Sol YC + Fable IAS ladders | **Enter** | Digestible steps. 2a wins conflicts. Wake note for 15 Aug. |
 | Population-weighted nights (WorldPop/GHSL) | **Park** | Marmot-relevant, still exposure-only. Needs a public population grid and a human nod that it is worth Bishai’s time. |
-| HM/CM correlation rank | **Park** | Helps Hogan’s lock. Not a Bishai object. |
+| HM/CM correlation rank (script 58) | **Enter — shipped** | Hogan lock gift. Effective rank 3.92. Not a Bishai object. Not a licence to refit. |
 | Year-shifted negative control | **Park** | Needs HA and a Gate-3-open label. Do not run as a new headline. |
 | Station replicates (Waglan / King’s Park as public HKO series) | **Park** | Answers n = 1 coordinate. Public stations only; never “validation of ERA5.” |
 | Health on cells / transported ratios / fifth Leaflet | **Never** | Ends credibility with Hogan, Roro, and Bishai. |

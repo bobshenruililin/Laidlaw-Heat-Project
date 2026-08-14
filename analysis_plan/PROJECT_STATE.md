@@ -103,10 +103,24 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   cold days **46.9%** on Dec–Mar. Explains q > 0.19 as design, not only
   multiplicity. No hospital counts used.
   `knowledge/2026-08-14_identifying_months_six_encodings.md`.
+- **Intensive vs extensive (14–15 Aug, exposure only):** June–September
+  always had ≥1 official hot night (11/11 years). **95.4%** of remaining
+  hot-night SS is intensity (July 2013 = 1 night, July 2022 = 25). Cold
+  days have no always-on winter month. `scripts/57_intensive_extensive_identification.py`.
+- **HM/CM effective rank (14–15 Aug, exposure only):** twelve named
+  binaries on disk, not 98 tests. CM05 is zeros. Eleven live flags,
+  effective rank **3.92**; heat never co-fires with cold. Not a licence
+  to refit. `scripts/58_hm_cm_effective_rank.py`.
+- **Same-night scrubber (14–15 Aug, exposure only):** 14 nights in both,
+  435 HKO-only, 3 ERA5-only; 71 station nights ≥29°C still miss ERA5 at
+  28°C. `docs/demo/index.html` hash `#d=2015-08-08`.
 - **Bishai positioning (14 Aug, not sent):** maps are exposure identification
   for the single-station limitation. Two emails, not one: form 2a first;
   one composite figure later. Do not mix endorsement with a map tour.
   `analysis_plan/pathways_passion_projects_for_bishai_2026-08-14.md`.
+  Mentors: Sol as YC + Fable as IAS in
+  `knowledge/2026-08-14_sol_yc_fable_ias_ladder.md`. Wake:
+  `knowledge/2026-08-15_wake_bob.md`.
 
 ---
 
@@ -235,6 +249,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 5. **Bob live-file paste:** 13 August end-game pack in `manuscript/live_collaborative/LIVE_DOC_EDITS.md`; paste into Hogan’s shared file only; do not overwrite weather Methods; do not email a parallel Word copy. Send pack: `send_pack_2026-08-12/`
 6. Jasmine full PDF; Roro revised mortality manuscript diff
 7. PI governance confirmation for current aggregate use
+8. **HKU form 2a endorsement (31 Aug):** Bob fills the local form with only verified fields; Email A to Bishai; Bishai’s block stays blank until he writes it. Do not mix maps. Pack: `analysis_plan/send_pack_2026-08-14/`. Wake: `knowledge/2026-08-15_wake_bob.md`.
 
 ### Done remotely (do not re-do without new evidence)
 - Pathway panel plumbing + HM/CM catalogue (50/48) + starters

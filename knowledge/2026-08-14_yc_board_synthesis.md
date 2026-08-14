@@ -26,7 +26,7 @@ The parent slider was a visualisation of a bias already stated (Opus). The board
 
 No monotone threshold shift recovers the station nights. That is the methods sentence Hogan can keep. Static figure: `figures/threshold_demo/exceedance_and_agreement.svg`. Instrument: `docs/demo/index.html` (SVG field, not a fifth Leaflet). Hash `#t=26.3` is stateful. Banner states it is not form 2a.
 
-Parked (honest, not this gift): Opus’s monthly-grain attenuation slope, effective identifying months, HM/CM rank, year-shifted negative control, population-weighted nights. Fable’s date-scrubber and refusal ledger. Sol forbade scrollytelling and any Bob review request before the 2a goes to Bishai.
+Parked (honest, not this gift): WorldPop-weighted nights, year-shifted negative control, public HKO station replicates. Date-scrubber, identifying months, monthly grain, and HM/CM rank shipped overnight 14–15 Aug (scripts 54–59). Sol forbade scrollytelling and any Bob review request before the 2a goes to Bishai.
 
 ## Demo Day sentence (Fable, tightened by the new number)
 

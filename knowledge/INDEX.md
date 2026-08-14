@@ -19,6 +19,14 @@
 
 ## Current meeting record
 
+- [`2026-08-15_wake_bob.md`](2026-08-15_wake_bob.md) — three human moves after sleep: 2a first; insights named; scrubber exists.
+- [`2026-08-14_sol_yc_fable_ias_ladder.md`](2026-08-14_sol_yc_fable_ias_ladder.md) — Sol as YC + Fable as IAS; digestible steps; 2a wins conflicts.
+- [`2026-08-14_fable_ias_mentorship.md`](2026-08-14_fable_ias_mentorship.md) — IAS: identification over discovery; scholarly ladder; ignore-until-31-Aug.
+- [`2026-08-14_sol_yc_mentorship.md`](2026-08-14_sol_yc_mentorship.md) — YC packing: Email A, one hallway, resource-conflict rule.
+- [`2026-08-14_two_instruments_one_field.md`](2026-08-14_two_instruments_one_field.md) — EOF1 vs Jaccard; intensive residual; 14 nights. Maps are identification.
+- [`2026-08-14_intensive_extensive_identification.md`](2026-08-14_intensive_extensive_identification.md) — June–Sep always on; 95% intensive; July 1 vs 25.
+- [`2026-08-14_hm_cm_effective_rank.md`](2026-08-14_hm_cm_effective_rank.md) — 11 flags, effective rank 3.92; heat ⊥ cold; not 98 tests.
+- [`2026-08-14_same_night_three_thermometers.md`](2026-08-14_same_night_three_thermometers.md) — 14 both / 435 HKO-only / 3 ERA5-only; hash `#d=`.
 - [`2026-08-14_bob_brief_passion_projects_for_bishai.md`](2026-08-14_bob_brief_passion_projects_for_bishai.md) — brief Bob first: research vs maps vs two emails, not today.
 - [`../analysis_plan/pathways_passion_projects_for_bishai_2026-08-14.md`](../analysis_plan/pathways_passion_projects_for_bishai_2026-08-14.md) — enter / park / never: maps are identification, not a second health paper; two emails, not today.
 - [`2026-08-14_fable_bishai_positioning.md`](2026-08-14_fable_bishai_positioning.md) — supervisor sentence: measured the limitation; the measurement defends Headquarters.
@@ -27,6 +35,8 @@
 - [`2026-08-14_identifying_months_six_encodings.md`](2026-08-14_identifying_months_six_encodings.md) — mean T 4% identifying; hot nights 29% on May–Oct; cold days 47% on Dec–Mar.
 - [`../reports/hogan_monthly_bridge_2026-08-14.md`](../reports/hogan_monthly_bridge_2026-08-14.md) — Hogan card: means travel; the flag does not.
 - [`../reports/hogan_identifying_months_2026-08-14.md`](../reports/hogan_identifying_months_2026-08-14.md) — Hogan card: what survives month indicators.
+- [`../reports/hogan_intensive_extensive_2026-08-14.md`](../reports/hogan_intensive_extensive_2026-08-14.md) — Hogan card: June–September always had hot nights.
+- [`../reports/hogan_hm_cm_rank_2026-08-14.md`](../reports/hogan_hm_cm_rank_2026-08-14.md) — Hogan card: eleven flags, about four dimensions.
 - [`../figures/monthly_bridge/email_b_composite.svg`](../figures/monthly_bridge/email_b_composite.svg) — Email B one-pager (not to send until Bob reviews).
 - [`2026-08-14_yc_board_synthesis.md`](2026-08-14_yc_board_synthesis.md) — Fable/Opus/Sol board: four maps are one product; max Jaccard against HKO 28°C is 0.47; 2a still owns 31 August.
 - [`2026-08-14_threshold_does_not_travel.md`](2026-08-14_threshold_does_not_travel.md) — one instrument: Jaccard(t), equivalent 26.4°C, max Jaccard 0.47 at 26.3°C; not a fifth dashboard.

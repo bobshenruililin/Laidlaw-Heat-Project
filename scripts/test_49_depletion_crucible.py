@@ -132,6 +132,18 @@ def main() -> int:
     assert summary["riskset_fatness_ladder"]["n_with_abs_log_rr_rank_corr_ge_0p8"] == 7
     assert summary["riskset_fatness_ladder"]["n_with_abs_log_rr_rank_corr_le_0"] == 3
 
+    # Changing only the secular time control moves most contrasts by more than
+    # their own point estimate, and the four that stay put are exactly the four
+    # whose magnitude tracks risk-set fatness.
+    tcs = summary["time_control_sensitivity"]
+    assert tcs["n_contrasts_width_ge_baseline_log_rr"] == 6
+    assert tcs["n_contrasts_stable_width_lt_0p30"] == 4
+    assert tcs["sets_identical"] is True
+    assert tcs["stable_set"] == ["hf/P01A", "hf/P02A", "hf/P02B", "hf/P04B"]
+    assert tcs["chd_hot_nights_width_share_of_baseline"] > 0.60
+    assert tcs["hf_cold_days_width_share_of_baseline"] < 0.20
+    assert tcs["chd_hot_nights_p_range"][1] > 0.30
+
     # Amplitude inversion coherence: five CHD contrasts with transfer
     # coefficients spread ~3x recover the same latent dip amplitude.
     assert summary["covid_kink_inversion"]["transfer_coefficient_spread_ratio"] > 2.5

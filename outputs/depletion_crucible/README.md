@@ -27,6 +27,7 @@ Provenance of every column is carried in the tables:
 | `riskset_fatness_ladder.csv` | Already-paid scenario coefficients placed against the mean monthly approved count of their estimation window. |
 | `riskset_fatness_ladder_stats.csv` | Rank association between window risk-set fatness and \|log RR\|, all twelve core contrasts. |
 | `covid_kink_amplitude_inversion.csv` | What non-smooth care-seeking amplitude reproduces the already-paid `covid_phase_adjusted` coefficient shift? |
+| `time_control_sensitivity.csv` | How far does each contrast move when only the representation of the secular trend changes across `ns3`, `ns4`, `ns6`, `ns8`, and year fixed effects? |
 | `annual_trend_collinearity.csv` | Annual correlation between each exposure and the depleting approved count series. |
 | `depletion_summary.json` | Headline quantities plus provenance flags. |
 

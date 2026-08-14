@@ -48,6 +48,33 @@
     "chd_non_cold_amplitude_sd": 0.005305516441825644,
     "transfer_coefficient_spread_ratio": 2.8824816289165285
   },
+  "time_control_sensitivity": {
+    "n_contrasts_width_ge_baseline_log_rr": 6,
+    "n_contrasts_stable_width_lt_0p30": 4,
+    "stable_set": [
+      "hf/P01A",
+      "hf/P02A",
+      "hf/P02B",
+      "hf/P04B"
+    ],
+    "fatness_rank_corr_1_set": [
+      "hf/P01A",
+      "hf/P02A",
+      "hf/P02B",
+      "hf/P04B"
+    ],
+    "sets_identical": true,
+    "chd_hot_nights_width_share_of_baseline": 0.6264811485356447,
+    "hf_cold_days_width_share_of_baseline": 0.16285915337175222,
+    "chd_hot_nights_rr_range": [
+      1.01088238080681,
+      1.02464784910213
+    ],
+    "chd_hot_nights_p_range": [
+      0.0143662998446061,
+      0.315138318189256
+    ]
+  },
   "interaction_never_absorbed": {
     "min_share_surviving_controls": 0.027592729211953215,
     "cold_days_front_loaded": 0.5243788558982275

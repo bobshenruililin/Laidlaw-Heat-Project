@@ -430,6 +430,44 @@ def main() -> None:
             }
         )
 
+    # ------------------------------------------------------------------ 6
+    # How much does a contrast move when only the secular time control changes?
+    # Same exposure series, same months, same offset; only the representation of
+    # the depleting trend differs.
+    TIME_CONTROLS = (
+        "trend_ns3",
+        "baseline_ns4",
+        "trend_ns6",
+        "trend_ns8",
+        "year_fixed_effects",
+    )
+    time_rows = []
+    for (outcome, pid, expo), got in sorted(by_key.items()):
+        have = [s for s in TIME_CONTROLS if s in got]
+        if len(have) < len(TIME_CONTROLS):
+            continue
+        logs = {s: math.log(float(got[s]["rr"])) for s in have}
+        base = logs["baseline_ns4"]
+        width = max(logs.values()) - min(logs.values())
+        ps = {s: float(got[s]["p_value_nw6"]) for s in have}
+        time_rows.append(
+            {
+                "outcome": outcome,
+                "pathway_id": pid,
+                "exposure": expo,
+                "rr_min_over_time_controls": math.exp(min(logs.values())),
+                "rr_max_over_time_controls": math.exp(max(logs.values())),
+                "log_rr_baseline_ns4": base,
+                "log_rr_width_over_time_controls": width,
+                "width_as_share_of_baseline_log_rr": width / abs(base)
+                if base != 0
+                else float("nan"),
+                "p_min_over_time_controls": min(ps.values()),
+                "p_max_over_time_controls": max(ps.values()),
+                "provenance": "HA_APPROVED_AGGREGATE",
+            }
+        )
+
     # Annual collinearity of exposure trend with the depleting count trend.
     annual_rows = []
     yrs = sorted(set(int(y) for y in year))
@@ -450,6 +488,20 @@ def main() -> None:
                     "provenance": "REAL climate x HA_APPROVED_AGGREGATE annual totals",
                 }
             )
+
+    # Do the contrasts that are stable to the time control coincide with the
+    # contrasts whose magnitude tracks risk-set fatness? Both are computed as
+    # sets, not chosen by inspection.
+    stable_set = {
+        (r["outcome"], r["pathway_id"])
+        for r in time_rows
+        if r["width_as_share_of_baseline_log_rr"] < 0.30
+    }
+    fatness_set = {
+        (r["outcome"], r["pathway_id"])
+        for r in ladder_stats
+        if abs(r["spearman_fatness_vs_abs_log_rr"] - 1.0) < 1e-9
+    }
 
     hf_cold = next(
         r for r in ladder_stats if r["outcome"] == "hf" and r["pathway_id"] == "P04B"
@@ -578,6 +630,51 @@ def main() -> None:
                 / min(abs(v) for v in unit_bias.values())
             ),
         },
+        "time_control_sensitivity": {
+            "n_contrasts_width_ge_baseline_log_rr": sum(
+                1
+                for r in time_rows
+                if r["width_as_share_of_baseline_log_rr"] >= 1.0
+            ),
+            "n_contrasts_stable_width_lt_0p30": len(stable_set),
+            "stable_set": sorted("/".join(k) for k in stable_set),
+            "fatness_rank_corr_1_set": sorted("/".join(k) for k in fatness_set),
+            "sets_identical": stable_set == fatness_set,
+            "chd_hot_nights_width_share_of_baseline": next(
+                r["width_as_share_of_baseline_log_rr"]
+                for r in time_rows
+                if r["outcome"] == "chd" and r["pathway_id"] == "P04A"
+            ),
+            "hf_cold_days_width_share_of_baseline": next(
+                r["width_as_share_of_baseline_log_rr"]
+                for r in time_rows
+                if r["outcome"] == "hf" and r["pathway_id"] == "P04B"
+            ),
+            "chd_hot_nights_rr_range": [
+                next(
+                    r["rr_min_over_time_controls"]
+                    for r in time_rows
+                    if r["outcome"] == "chd" and r["pathway_id"] == "P04A"
+                ),
+                next(
+                    r["rr_max_over_time_controls"]
+                    for r in time_rows
+                    if r["outcome"] == "chd" and r["pathway_id"] == "P04A"
+                ),
+            ],
+            "chd_hot_nights_p_range": [
+                next(
+                    r["p_min_over_time_controls"]
+                    for r in time_rows
+                    if r["outcome"] == "chd" and r["pathway_id"] == "P04A"
+                ),
+                next(
+                    r["p_max_over_time_controls"]
+                    for r in time_rows
+                    if r["outcome"] == "chd" and r["pathway_id"] == "P04A"
+                ),
+            ],
+        },
         "interaction_never_absorbed": {
             "min_share_surviving_controls": min(
                 r["share_of_interaction_surviving_controls"] for r in inter_rows
@@ -615,6 +712,7 @@ def main() -> None:
     write_csv(OUT_DIR / "riskset_fatness_ladder_stats.csv", ladder_stats)
     write_csv(OUT_DIR / "annual_trend_collinearity.csv", annual_rows)
     write_csv(OUT_DIR / "covid_kink_amplitude_inversion.csv", inversion_rows)
+    write_csv(OUT_DIR / "time_control_sensitivity.csv", time_rows)
     with (OUT_DIR / "depletion_summary.json").open("w") as f:
         json.dump(summary, f, indent=2)
 

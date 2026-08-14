@@ -140,6 +140,9 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   2a remains a separate human act. Altman register = price the instrument
   before the coefficient; demo 449 / 17 / 1,453, max Jaccard 0.47; no
   hospital choropleth. `knowledge/2026-08-14_bishai_and_altman_pitches.md`.
+- **Effort/caliber (14 Aug, ESTIMATE only):** calendar 5 weeks; unaided
+  substance ~800 hours; not a PhD; not for form 2a.
+  `knowledge/2026-08-14_effort_and_caliber_estimate.md`.
 
 ---
 

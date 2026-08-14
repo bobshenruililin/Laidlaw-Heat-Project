@@ -21,6 +21,7 @@
 
 - [`2026-08-14_parked_object_closeout.md`](2026-08-14_parked_object_closeout.md) — six parked identification objects: four shipped, year-shift teaching shipped with health re-fit parked (A60), W03 card written not locked.
 - [`2026-08-14_bishai_and_altman_pitches.md`](2026-08-14_bishai_and_altman_pitches.md) — two first-person pitches of the internship: Bishai (research) and Altman (passion). Not emails. Not form 2a.
+- [`2026-08-14_effort_and_caliber_estimate.md`](2026-08-14_effort_and_caliber_estimate.md) — ESTIMATE only: ~800 unaided hours of substance; not a PhD; not for form 2a.
 - [`../reports/hogan_w03_lock_card_2026-08-14.md`](../reports/hogan_w03_lock_card_2026-08-14.md) — HM23 checkbox card; Playbook 01 not executed.
 - [`../reports/hogan_station_replicates_2026-08-14.md`](../reports/hogan_station_replicates_2026-08-14.md) — KP 160 / WGL 107 vs HKO 449 complete hot nights.
 - [`../reports/hogan_population_weighted_nights_2026-08-14.md`](../reports/hogan_population_weighted_nights_2026-08-14.md) — WorldPop 1 km: 66% unweighted south vs 22% weighted.

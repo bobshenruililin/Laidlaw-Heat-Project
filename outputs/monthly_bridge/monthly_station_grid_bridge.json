@@ -1,0 +1,267 @@
+{
+  "title": "Monthly station\u2013grid bridge",
+  "window": {
+    "start": "2013-01",
+    "end": "2023-12",
+    "n_months": 132,
+    "n_days": 4017
+  },
+  "provenance": "REAL_PUBLIC. HKO Headquarters daily Tmin rolled to 132 calendar months; Open-Meteo ERA5-Land dry-bulb and apparent Tmin at the Hong Kong coordinate (script 48 cache). Exposure descriptives only. No health outcomes. No project coefficients. Live paper stays on HKO Headquarters.",
+  "why_this_exists": "The live paper\u2019s exposures are monthly counts. Daily Jaccard 0.031 could have been an aggregation artefact. It is not: at 132 months, ERA5 28\u00b0C nights still do not reconstruct Headquarters.",
+  "fits": {
+    "era5_hn_on_hko_hn": {
+      "n": 132,
+      "intercept": -0.0254,
+      "slope": 0.0453,
+      "se_slope": 0.0074,
+      "r": 0.4749,
+      "r2": 0.2255,
+      "rmse": 0.4519,
+      "mean_x": 3.4015,
+      "mean_y": 0.1288
+    },
+    "era5_at_hn_on_hko_hn": {
+      "n": 132,
+      "intercept": 4.7031,
+      "slope": 1.8534,
+      "se_slope": 0.129,
+      "r": 0.7833,
+      "r2": 0.6135,
+      "rmse": 7.9131,
+      "mean_x": 3.4015,
+      "mean_y": 11.0076
+    },
+    "era5_tmin_on_hko_tmin": {
+      "n": 132,
+      "intercept": -2.1879,
+      "slope": 1.0324,
+      "se_slope": 0.0153,
+      "r": 0.9861,
+      "r2": 0.9724,
+      "rmse": 0.813,
+      "mean_x": 22.1044,
+      "mean_y": 20.6319
+    },
+    "era5_cd_on_hko_cd": {
+      "n": 132,
+      "intercept": 0.5545,
+      "slope": 1.5366,
+      "se_slope": 0.0723,
+      "r": 0.8812,
+      "r2": 0.7764,
+      "rmse": 2.0969,
+      "mean_x": 1.0985,
+      "mean_y": 2.2424
+    },
+    "era5_hn_on_hko_hn_may_oct": {
+      "n": 66,
+      "intercept": -0.0847,
+      "slope": 0.0503,
+      "se_slope": 0.0135,
+      "r": 0.4218,
+      "r2": 0.1779,
+      "rmse": 0.6374,
+      "mean_x": 6.803,
+      "mean_y": 0.2576
+    }
+  },
+  "month_flags": {
+    "hko_hn_positive": 57,
+    "era5_hn_positive": 9,
+    "both_hn_positive": 9,
+    "hko_cd_positive": 29,
+    "era5_cd_positive": 36
+  },
+  "identification_hko_hn": {
+    "ss_between_calendar_month": 2718.447,
+    "ss_within_month_between_year": 1101.273,
+    "share_identifying_within_month": 0.2883,
+    "n_calendar_months_with_sd": 6,
+    "by_month": [
+      {
+        "month": 1,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 2,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 3,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 4,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 5,
+        "mean": 3.364,
+        "sd": 4.007,
+        "n_positive": 9,
+        "n_years": 11
+      },
+      {
+        "month": 6,
+        "mean": 10.545,
+        "sd": 3.857,
+        "n_positive": 11,
+        "n_years": 11
+      },
+      {
+        "month": 7,
+        "mean": 13.545,
+        "sd": 6.991,
+        "n_positive": 11,
+        "n_years": 11
+      },
+      {
+        "month": 8,
+        "mean": 7.455,
+        "sd": 4.108,
+        "n_positive": 11,
+        "n_years": 11
+      },
+      {
+        "month": 9,
+        "mean": 4.818,
+        "sd": 3.25,
+        "n_positive": 11,
+        "n_years": 11
+      },
+      {
+        "month": 10,
+        "mean": 1.091,
+        "sd": 1.7,
+        "n_positive": 4,
+        "n_years": 11
+      },
+      {
+        "month": 11,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 12,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      }
+    ]
+  },
+  "identification_hko_cd": {
+    "ss_between_calendar_month": 453.538,
+    "ss_within_month_between_year": 400.182,
+    "share_identifying_within_month": 0.4688,
+    "n_calendar_months_with_sd": 4,
+    "by_month": [
+      {
+        "month": 1,
+        "mean": 4.909,
+        "sd": 3.7,
+        "n_positive": 9,
+        "n_years": 11
+      },
+      {
+        "month": 2,
+        "mean": 4.273,
+        "sd": 4.149,
+        "n_positive": 8,
+        "n_years": 11
+      },
+      {
+        "month": 3,
+        "mean": 0.364,
+        "sd": 0.924,
+        "n_positive": 2,
+        "n_years": 11
+      },
+      {
+        "month": 4,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 5,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 6,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 7,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 8,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 9,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 10,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 11,
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_positive": 0,
+        "n_years": 11
+      },
+      {
+        "month": 12,
+        "mean": 3.636,
+        "sd": 2.873,
+        "n_positive": 10,
+        "n_years": 11
+      }
+    ]
+  },
+  "claim_boundaries": [
+    "Do not treat the slope as a health attenuation factor. No outcome was used.",
+    "Do not paste ERA5 monthly counts into the live paper\u2019s HKO flags.",
+    "Mean Tmin agreement does not license threshold-flag agreement.",
+    "This is not Gate 3 and not form 2a."
+  ],
+  "literature_position": "Mistry et al. 2022 found ERA5-Land generally usable for temperature\u2013mortality curves, with weaker heat performance in the tropics. Guo et al. 2024 found the official Hong Kong 28\u00b0C night flag was a poor hospitalization metric next to hourly excess. This bridge is the missing piece between those papers: the official flag also fails as a reanalysis object, at the monthly grain of our panel.",
+  "punchline": "Monthly mean Tmin agrees (r = 0.9861, slope = 1.0324). Monthly 28\u00b0C-night counts do not (r = 0.4749, slope = 0.0453). Headquarters has hot nights in 57 months; ERA5 in 9."
+}

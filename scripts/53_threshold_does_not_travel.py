@@ -193,10 +193,10 @@ def write_static_figure(payload: dict) -> None:
     parts.append(polyline(s["era5_hk_atmin"], "#c9a227", ymax, y_count))
     i28 = t.index(28.0)
     parts.append(f'<line x1="{x_of(i28):.1f}" x2="{x_of(i28):.1f}" y1="{pad}" y2="{mid-20}" stroke="#c24e16" stroke-dasharray="4 4"/>')
-    parts.append(f'<text x="{x_of(i28)+6:.1f}" y="{pad+14}" font-size="11" fill="#c24e16">28°C</text>')
-    parts.append('<text x="56" y="70" font-size="11" fill="#12181f">HKO</text>')
-    parts.append('<text x="100" y="70" font-size="11" fill="#0c6b74">ERA5 dry-bulb</text>')
-    parts.append('<text x="210" y="70" font-size="11" fill="#c9a227">ERA5 apparent</text>')
+    parts.append(f'<text x="{x_of(i28)+8:.1f}" y="{pad+18}" font-size="11" fill="#c24e16">28°C</text>')
+    parts.append('<text x="700" y="70" font-size="11" fill="#12181f">HKO</text>')
+    parts.append('<text x="740" y="70" font-size="11" fill="#0c6b74">ERA5 dry-bulb</text>')
+    parts.append('<text x="840" y="70" font-size="11" fill="#c9a227">apparent</text>')
     parts.append('<text x="20" y="180" font-size="11" fill="#5b6773" transform="rotate(-90 20 180)">nights ≥ t</text>')
 
     # agreement panel

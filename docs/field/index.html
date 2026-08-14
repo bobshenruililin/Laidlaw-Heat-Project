@@ -58,10 +58,10 @@
       <p style="letter-spacing:.14em; text-transform:uppercase; font-size:.75rem; color:var(--sea); margin:0 0 .6rem;">Laidlaw Heat Project · geospatial laboratory</p>
       <h1>A field has modes.</h1>
       <p class="lede">
-        A human PhD usually ships one method and defends it. This page does the other thing:
-        eight disciplines on the same 90 cells and 4,017 nights, then refuses to promote any
-        coefficient into a finding. The first EOF of de-seasoned Tmin is a basin-wide pulse.
-        The 28°C night is a climatology object sitting on the water. Those are not the same map.
+        This exploratory page applies eight descriptive methods to the same 90 cells and
+        4,017 nights; none is treated as confirmatory. The first EOF of de-seasoned Tmin
+        is a common pulse on this grid. The 28°C night is a marine threshold in the same
+        sample. Those are not the same map.
       </p>
     </header>
 
@@ -125,14 +125,28 @@
       </div>
     </div>
 
+    <div class="grid2">
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">What survives a harder cut</h2>
+        <p class="note" id="strongNote"></p>
+        <table id="strongTable"></table>
+      </div>
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">A hot night is not the same object inland</h2>
+        <p class="note">Conditional on a hot night (Tmin ≥ 28°C), how often was the day also very hot (Tmax ≥ 33°C)? On the water, almost never. In the Guangzhou box, almost always. The odds ratio for Guangzhou is large because hot nights are rare there, not because the inland is “more extreme.”</p>
+        <table id="compoundTable"></table>
+      </div>
+    </div>
+
     <footer>
       <p><strong>Do not</strong> treat EOF loadings as hospitalisation factors. <strong>Do not</strong> paint CHD/HF or stroke counts onto these cells. <strong>Do not</strong> transport Hong Kong hospitalisation ratios to Shenzhen or Guangzhou. <strong>Do not</strong> paste Theil–Sen slopes as a climate-change finding. Stroke was not delivered. Gate 3 is open. Live paper stays on Headquarters.</p>
-      <p>Source: Open-Meteo ERA5-Land, 2013–2023, Asia/Hong_Kong, script 50 cache. Rebuild: <code>python3 scripts/51_prd_field_laboratory.py</code>.</p>
+      <p>Source: Open-Meteo ERA5-Land, 2013–2023, Asia/Hong_Kong, script 50 cache. Rebuild: <code>python3 scripts/51_prd_field_laboratory.py</code> then <code>python3 scripts/52_prd_strong_cut.py</code>.</p>
       <p><a href="../">Public companions</a> · <a href="../prd/">Delta mosaic</a> · <a href="../geo/">Hong Kong lattice</a> · <a href="../peers/">Peer-city atlas</a> · <a href="../lsn/">LSN climate ribbon</a></p>
     </footer>
   </div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./field_embed.js"></script>
+  <script src="./strong_cut_embed.js"></script>
   <script>
     const S = window.PRD_FIELD;
     const M = S.model;
@@ -151,11 +165,11 @@
       [`${(M.eof.variance_frac[0]*100).toFixed(1)}%`, "EOF1 of de-seasoned daily Tmin (area-weighted SVD)"],
       [`${M.eof.cumulative_3}`, "Cumulative variance in the first three EOFs"],
       [`${M.entropy.evenness}`, "Spatial evenness of 28°C-night occupancy (1 = spread evenly)"],
-      [`${M.trend.n_ci_excludes_zero} / 90`, "Cells whose Theil–Sen 90% bootstrap interval excludes 0"]
+      [`${M.trend.n_ci_excludes_zero} / 90`, "Cells whose Theil–Sen 90% bootstrap interval excludes 0 (not FDR-protected)"]
     ].map(([b,s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
 
     document.getElementById("eofNote").textContent =
-      `EOF1 is a domain-wide pulse (all loadings positive). It correlates with latitude (r = ${M.eof.eof1_lat_corr}) and anti-correlates with ERA5 hot-night counts (r = ${M.eof.eof1_hn_corr}). The sea has the nights; the inland cells have the larger anomaly. North’s rule separates EOF1 from EOF2 on a Bartlett n_eff of ${M.eof.n_eff_bartlett} days. Headquarters–Waglan anomaly r = ${M.eof.hq_waglan_anom_r}; Headquarters–Guangzhou r = ${M.eof.hq_guangzhou_anom_r}.`;
+      `EOF1 is a common pulse on this grid (all loadings positive). It correlates with latitude (r = ${M.eof.eof1_lat_corr}) and anti-correlates with ERA5 hot-night counts (r = ${M.eof.eof1_hn_corr}). In this sample, 28°C nights concentrate in marine cells; EOF1 loadings are larger inland. North’s rule separates EOF1 from EOF2 on a Bartlett n_eff of ${M.eof.n_eff_bartlett} days (heuristic). Headquarters–Waglan anomaly r = ${M.eof.hq_waglan_anom_r}; Headquarters–Guangzhou r = ${M.eof.hq_guangzhou_anom_r}.`;
 
     document.getElementById("methodTable").innerHTML =
       `<tr><th>Discipline</th><th>Method</th></tr>` +
@@ -327,6 +341,28 @@
     document.getElementById("pc1chart").innerHTML =
       `<path d="${d}" fill="none" stroke="#0c6b74" stroke-width="1.4"/>
        <text x="160" y="194" text-anchor="middle" font-size="11" fill="#5b6773">2013–2023 months</text>`;
+
+    const C = window.PRD_STRONG_CUT;
+    if (C) {
+      const f = C.mann_kendall_fdr;
+      const h = C.eof_year_holdout;
+      const b = C.eof_block_bootstrap;
+      const ph = C.circular_phase;
+      document.getElementById("strongNote").textContent =
+        `Leave-one-year-out EOF1 pattern r stays ≥ ${h.pattern_r_min}; variance fraction stays ${h.var_frac_min}–${h.var_frac_max}. A 10-day moving-block bootstrap puts EOF1 variance in ${b.var1_p05}–${b.var1_p95}. The 92% pulse is not a one-year fluke. The Theil–Sen “${M.trend.n_ci_excludes_zero} / 90 intervals exclude 0” count does not survive Benjamini–Hochberg at 10% (minimum Mann–Kendall p = ${f.min_p}; ${f.n_fdr_q_0_10} cells). Eleven years are too short.`;
+      document.getElementById("strongTable").innerHTML = `
+        <tr><th>Check</th><th>Result</th></tr>
+        <tr><td>EOF1 year-holdout pattern r</td><td>${h.pattern_r_min} – ${h.pattern_r_max}</td></tr>
+        <tr><td>EOF1 block-bootstrap 5–95%</td><td>${b.var1_p05} – ${b.var1_p95}</td></tr>
+        <tr><td>BH 10% on 90 Mann–Kendall tests</td><td>${f.n_fdr_q_0_10} / ${f.n_cells} (raw p&lt;0.10: ${f.n_raw_p_lt_0_10})</td></tr>
+        <tr><td>Circular phase SD</td><td>${ph.all.sd_days} days around day ${ph.all.mean_doy}</td></tr>
+        <tr><td>HQ vs Guangzhou lag</td><td>peak at ${C.hq_guangzhou_xcorr.peak.lag_days} days (r = ${C.hq_guangzhou_xcorr.peak.r})</td></tr>
+        <tr><td>r&gt;0.90 edges after removing EOF1</td><td>${C.network_after_eof1.n_edges_after_removing_eof1} (raw ${C.network_after_eof1.n_edges_raw})</td></tr>`;
+      const rows = [["Marine south", C.compound_extremes.marine_south], ["Guangzhou box", C.compound_extremes.guangzhou], ["HQ cell", C.compound_extremes.hq_cell]];
+      document.getElementById("compoundTable").innerHTML =
+        `<tr><th>Where</th><th>P(VHD | HN)</th><th>P(HN | VHD)</th><th>n both</th></tr>` +
+        rows.map(([name, o]) => `<tr><td>${name}</td><td>${o.p_vhd_given_hn}</td><td>${o.p_hn_given_vhd}</td><td>${o.n11}</td></tr>`).join("");
+    }
   </script>
 </body>
 </html>

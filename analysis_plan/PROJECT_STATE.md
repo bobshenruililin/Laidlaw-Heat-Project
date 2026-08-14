@@ -83,8 +83,8 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - **PRD field laboratory (14 Aug, exposure only):** same cache, eight methods.
   EOF1 of de-seasoned Tmin holds **92%** of variance (basin-wide pulse) and
   anti-correlates with hot-night counts (r = −0.93). k-means: marine HN **444**
-  vs highland **0**. Theil–Sen median +0.29°C/decade; only 23/90 cells exclude
-  0. Not a climate-change result. `docs/field/index.html`;
+  vs highland **0**. Theil–Sen median +0.29°C/decade; 23/90 CIs exclude 0
+  but **0/90** survive BH at 10%. Not a climate-change result. `docs/field/index.html`;
   `knowledge/2026-08-14_prd_field_laboratory.md`.
 
 ---

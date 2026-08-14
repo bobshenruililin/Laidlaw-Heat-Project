@@ -1,0 +1,222 @@
+{
+  "provenance": "REAL_PUBLIC. Same Open-Meteo ERA5-Land 0.2\u00b0 cache as script 51. Exposure only.",
+  "eof_year_holdout": {
+    "pattern_r_min": 0.9989,
+    "pattern_r_median": 0.9998,
+    "pattern_r_max": 0.9999,
+    "var_frac_min": 0.9179,
+    "var_frac_median": 0.9208,
+    "var_frac_max": 0.9228,
+    "by_year": [
+      {
+        "year": 2013,
+        "pattern_r": 0.9989,
+        "var_frac": 0.9214
+      },
+      {
+        "year": 2014,
+        "pattern_r": 0.9994,
+        "var_frac": 0.9228
+      },
+      {
+        "year": 2015,
+        "pattern_r": 0.9998,
+        "var_frac": 0.9218
+      },
+      {
+        "year": 2016,
+        "pattern_r": 0.9996,
+        "var_frac": 0.9179
+      },
+      {
+        "year": 2017,
+        "pattern_r": 0.9999,
+        "var_frac": 0.9206
+      },
+      {
+        "year": 2018,
+        "pattern_r": 0.9996,
+        "var_frac": 0.9181
+      },
+      {
+        "year": 2019,
+        "pattern_r": 0.9998,
+        "var_frac": 0.922
+      },
+      {
+        "year": 2020,
+        "pattern_r": 0.9999,
+        "var_frac": 0.9208
+      },
+      {
+        "year": 2021,
+        "pattern_r": 0.9999,
+        "var_frac": 0.9209
+      },
+      {
+        "year": 2022,
+        "pattern_r": 0.9996,
+        "var_frac": 0.9206
+      },
+      {
+        "year": 2023,
+        "pattern_r": 0.9999,
+        "var_frac": 0.9203
+      }
+    ]
+  },
+  "eof_block_bootstrap": {
+    "n_boot": 80,
+    "block_days": 10,
+    "var1_mean": 0.9203,
+    "var1_p05": 0.9152,
+    "var1_p95": 0.9259,
+    "var1_min": 0.9113,
+    "var1_max": 0.9281
+  },
+  "full_sample_eof1_var": 0.9207,
+  "mann_kendall_fdr": {
+    "q": 0.1,
+    "n_cells": 90,
+    "n_raw_p_lt_0_10": 24,
+    "n_fdr_q_0_10": 0,
+    "min_p": 0.0127,
+    "n_fdr_positive_z": 0,
+    "n_fdr_negative_z": 0,
+    "script51_n_ci_excludes_zero": 23,
+    "note": "BH on two-sided Mann\u2013Kendall normal p-values, n=11 years. Ignores spatial dependence, so surviving cells are still an upper bound on detections. Not a climate-change result."
+  },
+  "circular_phase": {
+    "all": {
+      "mean_doy": 201.37,
+      "resultant_length": 0.9991,
+      "sd_days": 2.48,
+      "n": 90
+    },
+    "marine_south": {
+      "mean_doy": 204.28,
+      "resultant_length": 0.999,
+      "sd_days": 2.66,
+      "n": 20
+    },
+    "guangzhou": {
+      "mean_doy": 199.89,
+      "resultant_length": 1.0,
+      "sd_days": 0.17,
+      "n": 12
+    },
+    "marine_minus_guangzhou_days": 4.39,
+    "note": "Day of fitted Tmin maximum. The year turns together."
+  },
+  "compound_extremes": {
+    "marine_south": {
+      "n11": 59,
+      "n10": 7005,
+      "n01": 129,
+      "n00": 73147,
+      "p_hn": 0.0879,
+      "p_vhd": 0.0023,
+      "p_both": 0.0007,
+      "p_vhd_given_hn": 0.0084,
+      "p_hn_given_vhd": 0.3138,
+      "lift_vs_independence": 3.569,
+      "odds_ratio": 4.776,
+      "or_unstable_small_n11_or_n10": false
+    },
+    "guangzhou": {
+      "n11": 140,
+      "n10": 5,
+      "n01": 3571,
+      "n00": 44488,
+      "p_hn": 0.003,
+      "p_vhd": 0.077,
+      "p_both": 0.0029,
+      "p_vhd_given_hn": 0.9655,
+      "p_hn_given_vhd": 0.0377,
+      "lift_vs_independence": 12.542,
+      "odds_ratio": 348.828,
+      "or_unstable_small_n11_or_n10": true
+    },
+    "hq_cell": {
+      "n11": 10,
+      "n10": 58,
+      "n01": 24,
+      "n00": 3925,
+      "p_hn": 0.0169,
+      "p_vhd": 0.0085,
+      "p_both": 0.0025,
+      "p_vhd_given_hn": 0.1471,
+      "p_hn_given_vhd": 0.2941,
+      "lift_vs_independence": 17.375,
+      "odds_ratio": 28.197,
+      "or_unstable_small_n11_or_n10": true
+    },
+    "grid": {
+      "n11": 520,
+      "n10": 8555,
+      "n01": 12178,
+      "n00": 340277,
+      "p_hn": 0.0251,
+      "p_vhd": 0.0351,
+      "p_both": 0.0014,
+      "p_vhd_given_hn": 0.0573,
+      "p_hn_given_vhd": 0.041,
+      "lift_vs_independence": 1.631,
+      "odds_ratio": 1.698,
+      "or_unstable_small_n11_or_n10": false
+    }
+  },
+  "spearman_tmin_tmax_anomaly": {
+    "marine_tmin_tmax_anom": 0.7204,
+    "guangzhou_tmin_tmax_anom": 0.6326,
+    "hq_tmin_tmax_anom": 0.6764
+  },
+  "hq_guangzhou_xcorr": {
+    "lags": [
+      {
+        "lag_days": -3,
+        "r": 0.2945
+      },
+      {
+        "lag_days": -2,
+        "r": 0.458
+      },
+      {
+        "lag_days": -1,
+        "r": 0.6997
+      },
+      {
+        "lag_days": 0,
+        "r": 0.8919
+      },
+      {
+        "lag_days": 1,
+        "r": 0.7617
+      },
+      {
+        "lag_days": 2,
+        "r": 0.5368
+      },
+      {
+        "lag_days": 3,
+        "r": 0.3572
+      }
+    ],
+    "peak": {
+      "lag_days": 0,
+      "r": 0.8919
+    },
+    "note": "De-seasoned Tmin. Positive lag means Guangzhou follows Headquarters."
+  },
+  "network_after_eof1": {
+    "r_threshold": 0.9,
+    "n_edges_raw": 2428,
+    "n_edges_after_removing_eof1": 26,
+    "note": "If the r>0.90 graph collapses after removing EOF1, it was the common pulse, not a separate network."
+  },
+  "claim_boundaries": [
+    "Do not paste FDR counts as climate-change detections.",
+    "Do not treat lagged r as a hospitalisation lag.",
+    "Live paper stays on HKO Headquarters."
+  ]
+}

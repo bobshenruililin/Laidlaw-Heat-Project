@@ -22,7 +22,7 @@ Bob asked to use methods an agent can run more densely than a human PhD usually 
 | Annual harmonic | Peak day **198–207** (mid-July) everywhere; marine amp **6.1°C**, highland **7.3°C** | The year turns together. The sea damps the swing. |
 | k-means (k=4) | marine 17 cells, HN mean **444**; highland 10 cells, HN **0**, elev **295 m**; estuary 32; inland 31 | Labels are interpretive, not municipalities. |
 | Spatial evenness of hot-night occupancy | **0.735** (1 = spread evenly) | 28°C nights are concentrated, not a delta-wide event. |
-| Theil–Sen on 11 yearly means | median **+0.29°C/decade**; only **23/90** cells have a 90% bootstrap interval excluding 0 (14 up, 9 down) | A window slope, not a detection. Do not paste into the live paper. |
+| Theil–Sen on 11 yearly means | median **+0.29°C/decade**; **23/90** CIs exclude 0; **0/90** survive BH at 10% | A window slope, not a detection. Do not paste into the live paper. |
 | Anomaly-correlation network (r > 0.90) | **2,428** edges; mean degree **54** | The de-seasoned field is coherent. That is EOF1 again. |
 | P(HN \| VHD) | marine **0.43**; Guangzhou box **0.03** | A very hot day is often a hot night on the water, rarely inland. |
 | HQ–Waglan / HQ–Guangzhou anomaly r | **0.93** / **0.89** | Same pulse, slightly weaker up-river. |
@@ -39,4 +39,4 @@ The live paper stays on **HKO Headquarters**. This page is a public companion.
 
 ## Relation to the mosaic (script 50)
 
-Script 50 asked whether a 28°C night travels up the Pearl (it does not; it sits on the water) and fitted OLS/SLX/SAR. Script 51 asks what *kind of object* the field is once you look at every day. The mosaic is a spatial model of climatology. The laboratory is a space-time decomposition of the same cache.
+Script 50 mapped where the 28°C threshold occurred in this ERA5-Land sample: mainly marine cells, with little inland occurrence. It also fitted OLS/SLX/SAR. Script 51 asks what *kind of object* the field is once you look at every day. The mosaic is a spatial model of climatology. The laboratory is a space-time decomposition of the same cache.

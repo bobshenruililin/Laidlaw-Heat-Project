@@ -93,4 +93,6 @@ For the **Pearl River Delta mosaic** (exposure only), use [`docs/prd/`](../docs/
 
 For the **PRD field laboratory** (exposure only), use [`docs/field/`](../docs/field/) and [`2026-08-14_prd_field_laboratory.md`](2026-08-14_prd_field_laboratory.md). EOF1 of de-seasoned Tmin is a basin-wide pulse; it is not a hot-night map and not a health factor.
 
-Official Laidlaw Drive (HKU 2a form, Foundation outputs, 3 C’s, poster notes): [`2026-08-14_laidlaw_official_drive.md`](2026-08-14_laidlaw_official_drive.md). Research essay due **31 August 2026**; poster file **15 September**; Chi Wah week of **5 October**. Network University-room URL is what HKU reports to the Foundation. GitHub Pages is not a substitute.
+Official Laidlaw Drive (HKU 2a form, Foundation outputs, 3 C’s, poster notes): [`2026-08-14_laidlaw_official_drive.md`](2026-08-14_laidlaw_official_drive.md). Research essay due **31 August 2026**; poster file **15 September**; Chi Wah week of **5 October**. Network University-room URL is what HKU reports to the Foundation. GitHub Pages is not a substitute. **Likeliest miss:** delaying Professor Bishai’s endorsement of form 2a.
+
+Strong-model experiment (Luna / Sol / Grok; Kimi k3 not launchable): [`2026-08-14_strong_model_synthesis.md`](2026-08-14_strong_model_synthesis.md). EOF1 is robust; the 23/90 trend count is not.

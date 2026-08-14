@@ -19,6 +19,7 @@
 
 ## Current meeting record
 
+- [`2026-08-14_strong_model_synthesis.md`](2026-08-14_strong_model_synthesis.md) — Luna vs Sol vs Grok: EOF robust; 23/90 trends do not survive FDR; Sol killed the PhD-flex lede; Kimi k3 not launchable.
 - [`2026-08-14_laidlaw_official_drive.md`](2026-08-14_laidlaw_official_drive.md) — HKU 2a form, Foundation outputs, 3 C’s, official deadlines (essay 31 Aug; poster 15 Sep; Chi Wah week of 5 Oct).
 - [`../reports/laidlaw_stage3/hku_report_form_worksheet.md`](../reports/laidlaw_stage3/hku_report_form_worksheet.md) — known fields only; Bishai’s block stays blank.
 - [`../reports/blog/character_leadership_global_mindset.md`](../reports/blog/character_leadership_global_mindset.md) — 3 C’s Network draft; Bob’s privacy pass pending.

@@ -1,5 +1,8 @@
 # Crucible Agent Gamma — calendar-month fixed effects are overcontrol
 
+**Post-audit (14 Aug):** ELIMINATED as stated. The labelling rule (do not narrate anomaly nulls as “temperature is unrelated”) survives and was already project law. The live manuscript already asks the anomaly question; flu is detected inside month FE. See `knowledge/crucible_adversarial_audit.md` and `reports/identification_crucible_2026-08-14.md`.
+
+
 **Date:** 2026-08-14  
 **Mode:** Explore (proof memo; no new health models; no HA microdata; no web search)  
 **Agent:** Gamma (Fable 5)  

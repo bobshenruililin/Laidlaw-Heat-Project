@@ -1,5 +1,8 @@
 # The missing denominator is the finding
 
+**Post-audit (14 Aug):** SURVIVES-IN-REDUCED-FORM. `A48` as identification and the person-time falsifier stand. “Primarily an artifact,” the 0.109 common-amplitude inversion, and the blanket ban on the word “null” are eliminated. See `knowledge/crucible_adversarial_audit.md` and `reports/identification_crucible_2026-08-14.md`.
+
+
 **Agent Beta · identification crucible · 14 August 2026 · Mode: Explore**
 **Constraints:** no new health model, no governed monthly count read, no HA
 microdata, no web search.

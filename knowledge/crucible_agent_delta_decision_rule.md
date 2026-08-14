@@ -1,5 +1,8 @@
 # Crucible Agent Delta — residual-signal decision rule
 
+**Post-audit (14 Aug):** SURVIVES-IN-REDUCED-FORM. BH arithmetic and “q > 0.19 ≠ absence” stand. The 77%-of-detectable power inversion is *p* restated and is struck. Option B-lite is not a rival freeze (Option A already requires the full panel). See `knowledge/crucible_adversarial_audit.md` and `reports/identification_crucible_2026-08-14.md`.
+
+
 **Date:** 2026-08-14  
 **Mode:** Explore (proof memo; no new models; no HA microdata)  
 **Agent:** Delta (requested GLM-5.3 Max; slot filled by Grok 4.5 High)  

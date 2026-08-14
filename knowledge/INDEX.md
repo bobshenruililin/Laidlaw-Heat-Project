@@ -19,8 +19,12 @@
 
 ## Current meeting record
 
-- [`crucible_agent_delta_decision_rule.md`](crucible_agent_delta_decision_rule.md) — Explore proof: Option A is a reporting rule not a null; HF cold SE-concordant residual vs CHD hot-night SE-fragile; BH/power arithmetic.
-- [`crucible_agent_gamma_overcontrol.md`](crucible_agent_gamma_overcontrol.md) — Explore proof: month FE annihilate the seasonal contrast (mean-T SD 4.70→0.90°C); continuous-T nulls are anomaly answers; extreme-day counts survive by projection geometry; seasonal-contrast estimand is a human Gate 3/Hogan choice.
+- [`../reports/identification_crucible_2026-08-14.md`](../reports/identification_crucible_2026-08-14.md) — **parent remainder** after four exclusive theses and an adversarial audit: what the 132-month first-event panel can license; Gate 3 still human.
+- [`crucible_adversarial_audit.md`](crucible_adversarial_audit.md) — kill-sheet: Alpha uniqueness and Gamma overcontrol eliminated; Beta “primarily” and Delta power inversion eliminated; reduced forms stated.
+- [`crucible_agent_alpha_aggregation.md`](crucible_agent_alpha_aggregation.md) — pre-audit; reduced: NB2 estimand + M|D failure stand; unique-freeze claim dies.
+- [`crucible_agent_beta_depletion.md`](crucible_agent_beta_depletion.md) — pre-audit; reduced: A48 identification stands; common-amplitude inversion dies.
+- [`crucible_agent_gamma_overcontrol.md`](crucible_agent_gamma_overcontrol.md) — pre-audit; extreme overcontrol thesis eliminated; labelling rule already project law.
+- [`crucible_agent_delta_decision_rule.md`](crucible_agent_delta_decision_rule.md) — pre-audit; reduced: BH arithmetic stands; 77%-detectable identity dies.
 - [`../analysis_plan/next_three_weeks_prospect_2026-08-13.md`](../analysis_plan/next_three_weeks_prospect_2026-08-13.md) — compute vs human gates after the CHD/HF arrival; blog/LSN/deck tracks; idle-week rules.
 - [`2026-08-13_research_team_synthesis.md`](2026-08-13_research_team_synthesis.md) — Kimi/Fable/Opus/Sol wave: live-paper numbers verified; Fable honesty pass merged; Stage 3 PDFs stay frozen.
 - [`../reports/pathway_execution_audit_2026-08-13.md`](../reports/pathway_execution_audit_2026-08-13.md) — P01–P18 and first-wave HM/CM: what ran, what the file cannot run, diminishing returns.

@@ -1,6 +1,6 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-13
+**Last updated:** 2026-08-14
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
@@ -27,6 +27,16 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Lead scientific recommendation: Gate 3 Option A — explicit no confirmatory
   primary; methods-focused exploratory paper. Human approval remains open.
 - Durable handoff: `knowledge/2026-08-10_cns_final_reanalysis.md`.
+
+### 14 August — identification crucible (no new health model)
+
+Four exclusive readings of the *q* > 0.19 panel were pushed and audited.
+Remainder: the design identifies a within-calendar-month anomaly count ratio;
+it does not identify daily triggering, incidence, or a confounder-adjusted
+seasonal contrast. Option A as already written is compatible with that
+remainder. Narrating *q* > 0.19 as absence is not. Gate 3 remains human.
+Proof: `reports/identification_crucible_2026-08-14.md`. Audit:
+`knowledge/crucible_adversarial_audit.md`. Assumption `A63`.
 
 ---
 

@@ -1,5 +1,8 @@
 # Aggregation is the estimand
 
+**Post-audit (14 Aug):** SURVIVES-IN-REDUCED-FORM. Estimand name, aggregation null space, F1.2, and `A58` stand. The claim that Option A is the *only* licensed freeze is eliminated. See `knowledge/crucible_adversarial_audit.md` and `reports/identification_crucible_2026-08-14.md`.
+
+
 ## 1. Thesis
 
 This design identifies only a negative-binomial projection of a depleting first-event monthly count onto year-to-year weather deviations within the same calendar month after a smooth time control; it does not identify daily thermal triggering, individual causality, or heat- or cold-caused hospitalisation, so Gate 3 Option A is the only logically licensed freeze.

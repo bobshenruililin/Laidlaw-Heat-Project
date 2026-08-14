@@ -13,4 +13,5 @@ python3 scripts/48_identification_crucible.py
 python3 scripts/test_48_identification_crucible.py
 ```
 
-Parent proof: `reports/identification_crucible_2026-08-14.md`.
+Parent remainder: `reports/identification_crucible_2026-08-14.md`.  
+Audit: `knowledge/crucible_adversarial_audit.md`.

@@ -1,6 +1,6 @@
 # Context bootstrap — read first in every new chat
 
-**Canon date:** 10 August 2026. Read [`PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md) and [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md) for living detail. Update this file whenever a human gate changes.
+**Canon date:** 14 August 2026. Read [`PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md) and [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md) for living detail. Identification remainder: [`../reports/identification_crucible_2026-08-14.md`](../reports/identification_crucible_2026-08-14.md). Update this file whenever a human gate changes.
 
 ## Scientific contract
 
@@ -59,6 +59,13 @@ Exact Wang/Li weather morphology now reproduces five source anchors. A
 clean-room monthly-outcome/daily-exposure method failed 500-replicate F1.2
 calibration and no real daily coefficient is admitted. See
 [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md).
+
+A 14 August identification crucible (no new health model) left a remainder:
+the panel identifies a within-calendar-month anomaly count ratio; it does not
+identify daily triggering, incidence, or a confounder-adjusted seasonal
+contrast. Option A as written is compatible with that remainder; narrating
+*q* > 0.19 as absence is not. See
+[`../reports/identification_crucible_2026-08-14.md`](../reports/identification_crucible_2026-08-14.md).
 
 The definition catalogue contains `HM01–HM50` and `CM01–CM48`. Core starters are `HM23`, `HM08`, `HM15`, `HM17`, `HM19`, `CM03`, `CM08`, and `CM15`; first-wave sensitivities are `HM27`, `HM32`, `CM05`, and `CM30`. `HM23` translates Li et al.’s event into Hogan’s monthly count-tail design; reference period, percentiles/ties, gaps, missingness, and month assignment remain pending Hogan. Flu covers 121/132 months and is never zero-filled.
 

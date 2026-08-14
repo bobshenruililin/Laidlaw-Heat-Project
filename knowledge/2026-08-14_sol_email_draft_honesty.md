@@ -1,6 +1,6 @@
 # Sol email-draft honesty note — 14 August 2026
 
-**Mode:** Decide.  
+**Mode:** Decide.
 **Status:** Residue only. No email sent. No frozen PDF rebuilt.
 
 ## Why two emails

@@ -1,0 +1,106 @@
+{
+  "outcome": "ERA5-Land mean daily Tmin, 2013\u20132023, grid cells only",
+  "formula": "mean_tmin ~ elevation_m + dist_coast_km",
+  "coefficients": {
+    "intercept": {
+      "beta": 21.1284,
+      "se": 0.2632
+    },
+    "elevation_m": {
+      "beta": -0.0062,
+      "se": 0.0011,
+      "unit": "\u00b0C per metre"
+    },
+    "dist_coast_km": {
+      "beta": -0.0012,
+      "se": 0.0323,
+      "unit": "\u00b0C per km inland"
+    }
+  },
+  "r2": 0.5464,
+  "rmse": 0.598,
+  "n_grid": 30,
+  "moran_raw_tmin": {
+    "I": 0.179,
+    "expected": -0.0345,
+    "W": 98.0,
+    "cutoff_km": 12.0,
+    "mean_neighbors": 3.27
+  },
+  "moran_residual": {
+    "I": 0.669,
+    "expected": -0.0345,
+    "W": 98.0,
+    "cutoff_km": 12.0,
+    "mean_neighbors": 3.27
+  },
+  "trend_model": {
+    "formula": "mean_tmin ~ elevation_m + lat + lon",
+    "r2": 0.8816,
+    "rmse": 0.305,
+    "beta": {
+      "intercept": 96.9447,
+      "elevation_m": -0.0067,
+      "lat": -3.656,
+      "lon": 0.0518
+    },
+    "moran_residual": {
+      "I": 0.3404,
+      "expected": -0.0345,
+      "W": 98.0,
+      "cutoff_km": 12.0,
+      "mean_neighbors": 3.27
+    }
+  },
+  "variogram_tmin": [
+    {
+      "bin_km": "0\u201312",
+      "mid_km": 6.0,
+      "n_pairs": 49,
+      "gamma": 0.6884
+    },
+    {
+      "bin_km": "12\u201320",
+      "mid_km": 16.0,
+      "n_pairs": 40,
+      "gamma": 0.9234
+    },
+    {
+      "bin_km": "20\u201328",
+      "mid_km": 24.0,
+      "n_pairs": 100,
+      "gamma": 0.6899
+    },
+    {
+      "bin_km": "28\u201340",
+      "mid_km": 34.0,
+      "n_pairs": 129,
+      "gamma": 0.8503
+    },
+    {
+      "bin_km": "40\u201356",
+      "mid_km": 48.0,
+      "n_pairs": 103,
+      "gamma": 0.9423
+    },
+    {
+      "bin_km": "56\u201380",
+      "mid_km": 68.0,
+      "n_pairs": 14,
+      "gamma": 0.5696
+    }
+  ],
+  "loo_headquarters": {
+    "observed_era5_tmin": 20.66,
+    "predicted_from_neighbors": 20.94,
+    "error": 0.28,
+    "r2_without_hq": 0.6052
+  },
+  "unique_fingerprints": 37,
+  "n_points": 39,
+  "n_grid_points": 30,
+  "peak_vs_hq_tmin_rmse": 2.154,
+  "peak_same_cell_as_hq": false,
+  "airport_minus_tkl_tmin": 0.832,
+  "note": "Open-Meteo returns a DEM elevation at the requested coordinate and a lapse-adjusted temperature. Victoria Peak (407 m) is 2.15 \u00b0C cooler at night than Headquarters on this source; that is not an HKO hill station. Waglan records 252 ERA5 nights \u226528 \u00b0C against Headquarters' 17. The 28 \u00b0C flag is a location even inside the territory. Residual Moran's I after elevation+coast stays high because the leftover field is marine and north\u2013south, not white noise. Live paper stays on HKO."
+}

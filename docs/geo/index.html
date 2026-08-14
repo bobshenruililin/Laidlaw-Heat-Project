@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hong Kong is not a point · spatial thermal field · Laidlaw Heat Project</title>
+  <meta name="description" content="Exposure only. ERA5-Land lattice over Hong Kong with a spatial model. Not health findings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    :root {
+      --ink: #12181f; --muted: #5b6773; --paper: #f4efe4; --card: #fffdf8;
+      --line: rgba(18,24,31,.12); --heat: #c24e16; --cold: #1f5f8a; --sea: #0c6b74;
+      --gold: #c9a227; --shadow: 0 16px 40px rgba(18,24,31,.08);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: "IBM Plex Sans", system-ui, sans-serif; }
+    h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 500; letter-spacing: -.02em; }
+    a { color: var(--sea); }
+    .wrap { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; }
+    .banner { background: #12181f; color: #f4efe4; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; padding: .7rem 1rem; text-align: center; }
+    .banner strong { color: #f0b36a; }
+    header { padding: 2.8rem 0 1.2rem; }
+    header p.lede { font-size: 1.12rem; max-width: 46rem; line-height: 1.55; color: var(--muted); }
+    .statrow { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin: 1.4rem 0 1.6rem; }
+    .stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.1rem; box-shadow: var(--shadow); }
+    .stat b { display: block; font-family: Fraunces, serif; font-size: 1.45rem; }
+    .stat span { color: var(--muted); font-size: .84rem; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 1.1rem 1.2rem 1.3rem; box-shadow: var(--shadow); }
+    #map { height: 540px; border-radius: 14px; border: 1px solid var(--line); }
+    #world { height: 420px; border-radius: 14px; border: 1px solid var(--line); }
+    .toolbar { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin: 0 0 .8rem; }
+    select, button { font: inherit; padding: .4rem .7rem; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+    button.active { background: var(--sea); color: #fff; border-color: var(--sea); }
+    .grid2 { display: grid; grid-template-columns: 1.15fr .85fr; gap: 1.1rem; margin-top: 1.1rem; }
+    .note { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+    .legendbox { font-size: .8rem; color: var(--muted); margin-top: .5rem; }
+    .sw { width: .7rem; height: .7rem; border-radius: 99px; display: inline-block; margin-right: .3rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    th, td { text-align: left; padding: .35rem 0; border-bottom: 1px solid var(--line); }
+    svg.chart { width: 100%; height: 180px; display: block; }
+    footer { padding: 2.4rem 0 3.4rem; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+    .leaflet-popup-content { font-family: "IBM Plex Sans", sans-serif; font-size: .9rem; }
+    @media (max-width: 900px) { .statrow, .grid2 { grid-template-columns: 1fr; } #map, #world { height: 380px; } }
+  </style>
+</head>
+<body>
+  <div class="banner">Exposure only · public reanalysis · <strong>not</strong> health findings · not a district health map</div>
+  <div class="wrap">
+    <header>
+      <p style="letter-spacing:.14em; text-transform:uppercase; font-size:.75rem; color:var(--sea); margin:0 0 .6rem;">Laidlaw Heat Project · geospatial companion</p>
+      <h1>Hong Kong is not a point.</h1>
+      <p class="lede">
+        The live paper uses one station: HKO Headquarters. This page puts a 0.1° ERA5-Land lattice
+        over the territory, then asks a spatial question the yearbook cannot: how much does a 28°C
+        night move if you stand somewhere else?
+      </p>
+    </header>
+
+    <div class="statrow" id="stats"></div>
+
+    <div class="card">
+      <div class="toolbar">
+        <span class="note">Paint the lattice by</span>
+        <button class="active" data-layer="hn_total">Hot nights ≥28°C</button>
+        <button data-layer="mean_tmin">Mean night Tmin</button>
+        <button data-layer="cd_total">Cold days ≤12°C</button>
+        <button data-layer="elevation_m">Elevation</button>
+        <button data-layer="tmin_resid">OLS residual</button>
+      </div>
+      <div id="map" role="img" aria-label="Hong Kong ERA5-Land thermal lattice"></div>
+      <div class="legendbox" id="mapLegend"></div>
+      <p class="note" style="margin:.7rem 0 0;">OpenStreetMap geography, ERA5-Land temperature. Squares are 0.1° sample cells, not cadastral lots. Dots are named landmarks. Click either.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">A two-line spatial model</h2>
+        <p class="note" id="modelNote"></p>
+        <table id="modelTable"></table>
+        <h3 style="font-size:1rem; margin:1.1rem 0 .3rem;">Empirical variogram of night Tmin</h3>
+        <svg class="chart" id="vgm" viewBox="0 0 640 180" role="img"></svg>
+        <p class="note">Semivariance γ(h) versus separation. The lattice spacing is ~11 km, so the first occupied bin is the neighbour scale.</p>
+      </div>
+      <div class="card">
+        <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;" id="placeTitle">HKO Headquarters</h2>
+        <p class="note" id="placeMeta"></p>
+        <table id="placeTable"></table>
+        <p class="note" style="margin-top:.8rem;">Leave-one-out: neighbours predict Headquarters’ ERA5 night Tmin to <span id="loo"></span>. The remaining gap to the <em>station</em> is the 1.47°C bias from the peer atlas — a different object.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1.1rem;">
+      <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">Named places on the same source</h2>
+      <p class="note">Not HKO yearbook numbers. Same ERA5-Land encoding as the lattice. Waglan is the marine foil; Ta Kwu Ling is the winter foil; The Peak is a DEM-lapse adjustment, not a hill station.</p>
+      <table id="lmTable"></table>
+    </div>
+
+    <div class="card" style="margin-top:1.1rem;">
+      <h2 style="margin:.2rem 0 .4rem; font-size:1.25rem;">And Hong Kong is not Singapore, on a real map</h2>
+      <p class="note">The sixteen-city atlas in geographic space. Circle size is seasonal amplitude. Colour is role. Click a city; the peer atlas has the thermal-space version.</p>
+      <div id="world"></div>
+    </div>
+
+    <footer>
+      <p><strong>Do not</strong> paint CHD/HF or stroke counts onto these cells. <strong>Do not</strong> quote lattice hot nights as HKO flags. Stroke was not delivered. Gate 3 is open. Live paper stays on Headquarters.</p>
+      <p>Source: Open-Meteo ERA5-Land, 2013–2023, Asia/Hong_Kong. Model: ordinary least squares on 30 lattice cells. Rebuild: <code>python3 scripts/49_hk_spatial_thermal_field.py</code>.</p>
+      <p><a href="../">Public companions</a> · <a href="../peers/">Peer-city atlas</a> · <a href="../lsn/">LSN climate ribbon</a></p>
+    </footer>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="./geo_embed.js"></script>
+  <script src="../peers/peers_embed.js"></script>
+  <script>
+    const S = window.HK_SPATIAL;
+    const P = window.PEER_ATLAS;
+    const M = S.model;
+    const cells = S.cells;
+    const landmarks = cells.filter(c => c.kind !== "grid");
+    const hq = cells.find(c => c.id === "hko_hq");
+    const peak = cells.find(c => c.id === "the_peak");
+    const waglan = cells.find(c => c.id === "waglan");
+    const tkl = cells.find(c => c.id === "ta_kwu_ling");
+
+    document.getElementById("stats").innerHTML = [
+      [`${waglan.hn_total} vs ${hq.hn_total}`, "ERA5 hot nights: Waglan Island vs HKO Headquarters"],
+      [`${(hq.mean_tmin - peak.mean_tmin).toFixed(2)}°C`, "Headquarters minus Victoria Peak, night Tmin"],
+      [`R² ${M.r2}`, "Night Tmin ~ elevation + coast (30 lattice cells)"],
+      [`I = ${M.trend_model.moran_residual.I}`, "Residual Moran’s I after elevation + lat + lon"]
+    ].map(([b,s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
+
+    document.getElementById("modelNote").textContent =
+      `Elevation does the work (−${Math.abs(M.coefficients.elevation_m.beta*100).toFixed(2)}°C per 100 m). Distance-to-coast is indistinguishable from zero on this small territory. Adding latitude and longitude lifts R² from ${M.r2} to ${M.trend_model.r2}: nights cool toward the north. Residual Moran’s I stays positive (${M.moran_residual.I} after elevation+coast; ${M.trend_model.moran_residual.I} after the trend). The leftover is still a field, not white noise.`;
+
+    document.getElementById("modelTable").innerHTML = `
+      <tr><th>Term</th><th>β</th><th>SE</th></tr>
+      <tr><td>Intercept</td><td>${M.coefficients.intercept.beta}</td><td>${M.coefficients.intercept.se}</td></tr>
+      <tr><td>Elevation (m)</td><td>${M.coefficients.elevation_m.beta}</td><td>${M.coefficients.elevation_m.se}</td></tr>
+      <tr><td>Distance to coast (km)</td><td>${M.coefficients.dist_coast_km.beta}</td><td>${M.coefficients.dist_coast_km.se}</td></tr>
+      <tr><td>Trend model R²</td><td colspan="2">${M.trend_model.r2} (elev + lat + lon)</td></tr>
+      <tr><td>Latitude β</td><td colspan="2">${M.trend_model.beta.lat} °C per degree north</td></tr>`;
+
+    document.getElementById("loo").textContent =
+      `${M.loo_headquarters.predicted_from_neighbors}°C (error ${M.loo_headquarters.error}°C)`;
+
+    function ramp(t, a, b) {
+      const lerp = (x, y, u) => Math.round(x + (y - x) * u);
+      return `rgb(${lerp(a[0], b[0], t)},${lerp(a[1], b[1], t)},${lerp(a[2], b[2], t)})`;
+    }
+    const palettes = {
+      hn_total: { lo: [31,95,138], hi: [194,78,22], label: "ERA5 nights Tmin ≥ 28°C, 2013–2023" },
+      mean_tmin: { lo: [31,95,138], hi: [194,78,22], label: "Mean night Tmin (°C)" },
+      cd_total: { lo: [194,78,22], hi: [31,95,138], label: "ERA5 days Tmin ≤ 12°C" },
+      elevation_m: { lo: [244,239,228], hi: [12,107,116], label: "DEM elevation at the sample point (m)" },
+      tmin_resid: { lo: [31,95,138], hi: [194,78,22], diverging: true, label: "Residual from Tmin ~ elevation + coast (°C)" }
+    };
+
+    function colorFor(layer, v, vmin, vmax) {
+      const pal = palettes[layer];
+      if (pal.diverging) {
+        const m = Math.max(Math.abs(vmin), Math.abs(vmax), 0.01);
+        const t = (v + m) / (2 * m);
+        return ramp(t, pal.lo, pal.hi);
+      }
+      const t = vmax === vmin ? 0.5 : (v - vmin) / (vmax - vmin);
+      return ramp(Math.min(1, Math.max(0, t)), pal.lo, pal.hi);
+    }
+
+    const map = L.map("map", { scrollWheelZoom: true }).setView([22.35, 114.12], 11);
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      attribution: "&copy; OpenStreetMap &copy; CARTO",
+      maxZoom: 16
+    }).addTo(map);
+
+    let lattice = L.layerGroup().addTo(map);
+    let marks = L.layerGroup().addTo(map);
+
+    function paint(layer) {
+      const vals = cells.map(c => c[layer]).filter(v => v != null);
+      const vmin = Math.min(...vals), vmax = Math.max(...vals);
+      lattice.clearLayers();
+      marks.clearLayers();
+      S.geojson.features.forEach(f => {
+        const p = f.properties;
+        if (f.geometry.type === "Polygon") {
+          const v = p[layer];
+          L.geoJSON(f, {
+            style: {
+              color: "#fff", weight: 1,
+              fillColor: colorFor(layer, v, vmin, vmax),
+              fillOpacity: 0.62
+            }
+          }).bindPopup(popupHTML(p)).on("click", () => showPlace(p.id)).addTo(lattice);
+        }
+      });
+      landmarks.forEach(p => {
+        const mk = L.circleMarker([p.lat, p.lon], {
+          radius: p.id === "hko_hq" ? 8 : 6,
+          color: "#fff", weight: 2,
+          fillColor: p.id === "hko_hq" ? "#0c6b74" : "#12181f",
+          fillOpacity: 1
+        }).bindPopup(popupHTML(p)).on("click", () => showPlace(p.id));
+        mk.bindTooltip(p.name, { permanent: false });
+        mk.addTo(marks);
+      });
+      document.getElementById("mapLegend").innerHTML =
+        `<span><i class="sw" style="background:${colorFor(layer, vmin, vmin, vmax)}"></i>${vmin}</span>
+         &nbsp;${palettes[layer].label}&nbsp;
+         <span><i class="sw" style="background:${colorFor(layer, vmax, vmin, vmax)}"></i>${vmax}</span>`;
+    }
+
+    function popupHTML(p) {
+      return `<strong>${p.name}</strong><br>${p.kind}
+        <br>Night Tmin ${p.mean_tmin.toFixed(2)}°C
+        <br>Hot nights ${p.hn_total} · cold days ${p.cd_total}
+        <br>Elevation ${p.elevation_m} m`;
+    }
+
+    function showPlace(id) {
+      const p = cells.find(c => c.id === id);
+      document.getElementById("placeTitle").textContent = p.name;
+      document.getElementById("placeMeta").textContent = p.note;
+      document.getElementById("placeTable").innerHTML = `
+        <tr><td>Mean Tmin</td><td>${p.mean_tmin.toFixed(2)}°C</td></tr>
+        <tr><td>ERA5 hot nights (28°C)</td><td>${p.hn_total}</td></tr>
+        <tr><td>ERA5 cold days (12°C)</td><td>${p.cd_total}</td></tr>
+        <tr><td>Elevation</td><td>${p.elevation_m} m</td></tr>
+        <tr><td>Distance to Headquarters</td><td>${p.dist_hq_km} km</td></tr>
+        <tr><td>Fingerprint</td><td><code>${p.fingerprint}</code></td></tr>`;
+    }
+
+    document.querySelectorAll(".toolbar button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".toolbar button").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        paint(btn.dataset.layer);
+      });
+    });
+    paint("hn_total");
+    showPlace("hko_hq");
+
+    document.getElementById("lmTable").innerHTML =
+      `<tr><th>Place</th><th>Tmin</th><th>Hot nights</th><th>Cold days</th><th>Elev.</th></tr>` +
+      landmarks.map(p => `<tr>
+        <td>${p.name}</td><td>${p.mean_tmin.toFixed(2)}°C</td>
+        <td>${p.hn_total}</td><td>${p.cd_total}</td><td>${p.elevation_m} m</td>
+      </tr>`).join("");
+
+    const vgm = M.variogram_tmin.filter(d => d.gamma != null);
+    const gmax = Math.max(...vgm.map(d => d.gamma));
+    const x = d => 50 + (d.mid_km / 80) * 560;
+    const y = g => 150 - (g / (gmax * 1.15)) * 120;
+    const path = vgm.map((d,i) => `${i?"L":"M"}${x(d)},${y(d.gamma)}`).join(" ");
+    const dots = vgm.map(d => `<circle cx="${x(d)}" cy="${y(d.gamma)}" r="4.5" fill="#0c6b74"/>
+      <text x="${x(d)}" y="170" text-anchor="middle" font-size="11" fill="#5b6773">${d.bin_km}</text>`).join("");
+    document.getElementById("vgm").innerHTML =
+      `<path d="${path}" fill="none" stroke="#0c6b74" stroke-width="2.4"/>${dots}
+       <text x="8" y="20" font-size="11" fill="#5b6773">γ</text>`;
+
+    if (P) {
+      const world = L.map("world", { scrollWheelZoom: true }).setView([22.3, 80], 2);
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+        attribution: "&copy; OpenStreetMap &copy; CARTO"
+      }).addTo(world);
+      const colour = { reference: "#0c6b74", peer: "#c24e16", contrast: "#1f5f8a" };
+      P.cities.forEach(c => {
+        L.circleMarker([c.lat, c.lon], {
+          radius: 4 + c.seasonal_amp / 4,
+          color: "#fff", weight: 1.5,
+          fillColor: colour[c.role], fillOpacity: 0.9
+        }).bindPopup(`<strong>${c.name}</strong><br>mean ${c.mean_t.toFixed(1)}°C · amp ${c.seasonal_amp.toFixed(1)}°C<br>ERA5 hot nights ${c.hn_hko_total} · cold days ${c.cd_hko_total}`)
+          .addTo(world);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -18,10 +18,16 @@ Paste-ready LSN post copy: [`../../reports/lsn/research_project_summary.md`](../
 https://htmlpreview.github.io/?https://raw.githubusercontent.com/bobshenruililin/Laidlaw-Heat-Project/cursor/lsn-research-summary-1754/docs/lsn/index.html
 ```
 
-After merge to `main`, prefer the same URL with `/main/` in the path, or enable GitHub Pages (Settings → Pages → Deploy from branch `main` / folder `/docs`) for:
+After merge to `main`, prefer the same URL with `/main/` in the path, or enable GitHub Pages (Settings → Pages → GitHub Actions, workflow in `.github/workflows/github-pages.yml`) for:
 
 ```text
 https://bobshenruililin.github.io/Laidlaw-Heat-Project/
+```
+
+Until Pages is on, the 14 August spatial + peer companions preview from:
+
+```text
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/index.html
 ```
 
 ## Scientific boundary

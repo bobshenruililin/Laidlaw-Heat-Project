@@ -50,6 +50,25 @@ Hong Kong’s summers feel like an emergency; Hong Kong’s winters still matter
 
 ---
 
+## 14 August addendum — maps Bob can link after a privacy pass
+
+The public companions now include a **spatial lattice** and a **sixteen-city atlas**. Still exposure only. GitHub Pages is not enabled yet (`github.io` 404s). Preview this branch:
+
+Hub:  
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/index.html
+
+Hong Kong is not a point (Leaflet lattice):  
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/geo/index.html
+
+Hong Kong is not Singapore (peer cities):  
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/peers/index.html
+
+Optional sentence for the LSN body: “I also mapped whether a 28°C night is a place. On the same public grid, Waglan Island records far more of those nights than Headquarters. That is climate geography, not a hospital map.”
+
+To make `https://bobshenruililin.github.io/Laidlaw-Heat-Project/` work: Settings → Pages → GitHub Actions (workflow already in `.github/workflows/github-pages.yml`), then merge to `main`.
+
+---
+
 ## Suggested badges / tags (if the UI offers them)
 
 Climate and health · Hong Kong · Epidemiology · Coronary heart disease · Heart failure · Research methods · Collaboration

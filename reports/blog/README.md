@@ -27,6 +27,7 @@ After each progress deck, run `/blog-from-deck` or let the agent offer it. The c
 - [`week1_recalibration.md`](week1_recalibration.md)
 - [`week2_definitions_and_waiting.md`](week2_definitions_and_waiting.md)
 - [`week_of_data_the_file_that_arrived.md`](week_of_data_the_file_that_arrived.md) — draft: the August CHD/HF file was not the stroke series the earlier posts were waiting for. Bob’s voice/privacy pass still required.
+- [`a_city_is_not_a_point.md`](a_city_is_not_a_point.md) — draft: Headquarters is a location; the ERA5 lattice shows the 28°C night moving inside the territory. Link the public map after Pages or htmlpreview. Bob’s voice/privacy pass still required.
 - [`STYLE_NOTES.md`](STYLE_NOTES.md)
 
 ## Related: Laidlaw Scholar Network (LSN)

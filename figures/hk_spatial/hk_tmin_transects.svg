@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420">
+<rect width="100%" height="100%" fill="#fffdf8"/>
+<text x="190" y="28" text-anchor="middle" font-family="Georgia, serif" font-size="15">West–east night Tmin (~22.35°N)</text>
+<text x="570" y="28" text-anchor="middle" font-family="Georgia, serif" font-size="15">South–north night Tmin (~114.15°E)</text>
+<path d="M40.0,94.6 L100.0,130.8 L160.0,234.6 L220.0,315.4 L280.0,212.5 L340.0,139.7" fill="none" stroke="#0c6b74" stroke-width="2.4"/>
+<path d="M420.0,80.6 L495.0,197.2 L570.0,294.4 L645.0,329.4 L720.0,268.4" fill="none" stroke="#0c6b74" stroke-width="2.4"/>
+<text x="190" y="400" text-anchor="middle" font-size="11" fill="#5b6773">Longitude</text>
+<text x="570" y="400" text-anchor="middle" font-size="11" fill="#5b6773">Latitude</text>
+</svg>

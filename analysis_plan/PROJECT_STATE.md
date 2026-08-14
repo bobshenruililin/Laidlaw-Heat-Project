@@ -70,6 +70,11 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   Nearest thermal cousins: Taipei, Shenzhen, Guangzhou. Singapore and Phoenix
   are contrasts, not replicates. No health coefficients; live paper stays on
   HKO. `docs/peers/index.html`; `knowledge/2026-08-14_peer_cities_thermal_atlas.md`.
+- **Hong Kong spatial field (14 Aug, exposure only):** 0.1° ERA5-Land lattice plus
+  landmarks. Waglan **252** ERA5 hot nights vs Headquarters **17**. OLS
+  `Tmin ~ elevation + coast` R² 0.55; elevation + lat + lon R² 0.88. Residual
+  Moran’s I stays positive. Not a district health map. Live paper stays on HKO.
+  `docs/geo/index.html`; `knowledge/2026-08-14_hk_spatial_thermal_field.md`.
 
 ---
 

@@ -20,6 +20,10 @@
 ## Current meeting record
 
 - [`2026-08-14_peer_cities_thermal_atlas.md`](2026-08-14_peer_cities_thermal_atlas.md) — exposure-only 16-city ERA5 atlas; HKO 28°C nights collapse on the grid (449 vs 17); apparent temperature is a third object; Taipei/Shenzhen cousins; Singapore and Phoenix contrasts.
+- [`2026-08-14_hk_spatial_thermal_field.md`](2026-08-14_hk_spatial_thermal_field.md) — 0.1° ERA5 lattice over Hong Kong; Waglan 252 vs HQ 17 hot nights; OLS + Moran + variogram; not a district health map.
+- [`../reports/hogan_hk_is_a_location_2026-08-14.md`](../reports/hogan_hk_is_a_location_2026-08-14.md) — Hogan lock card: Headquarters remains the encoding; exporting 28°C is already spatial.
+- [`../docs/geo/index.html`](../docs/geo/index.html) — Leaflet spatial companion.
+- [`../reports/blog/a_city_is_not_a_point.md`](../reports/blog/a_city_is_not_a_point.md) — Laidlaw website draft; Bob’s privacy pass pending.
 - [`../reports/hogan_peer_cities_one_pager_2026-08-14.md`](../reports/hogan_peer_cities_one_pager_2026-08-14.md) — Hogan lock card: do not export 28/33/12 onto reanalysis.
 - [`../docs/peers/index.html`](../docs/peers/index.html) — interactive public companion (no health coefficients).
 - [`../analysis_plan/next_three_weeks_prospect_2026-08-13.md`](../analysis_plan/next_three_weeks_prospect_2026-08-13.md) — compute vs human gates after the CHD/HF arrival; blog/LSN/deck tracks; idle-week rules.
@@ -68,7 +72,7 @@
 
 - [`2026-07-26_laidlaw_blog_canon.md`](2026-07-26_laidlaw_blog_canon.md) — MIT Admissions-style public-writing canon and the blog/CNS register split.
 - [`2026-07-26_commands_and_blog_auto.md`](2026-07-26_commands_and_blog_auto.md) — what `/blog-from-deck` automates and what Bob must still edit and publish.
-- [`reports/blog/`](../reports/blog/) — Week 1 and Week 2 ready-to-edit website drafts; Bob reviews before posting.
+- [`reports/blog/`](../reports/blog/) — Week 1 and Week 2 ready-to-edit website drafts plus `a_city_is_not_a_point.md`; Bob reviews before posting.
 
 ## Living project canon
 

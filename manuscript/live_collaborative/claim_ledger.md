@@ -1,4 +1,4 @@
-# Claim ledger — live collaborative manuscript (13 August 2026)
+# Claim ledger — live collaborative manuscript (14 August 2026 CNS pass)
 
 Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a disclosure-minimised `HA_APPROVED_AGGREGATE` or `REAL` public table, or to a cited paper. No new health models were fitted for this draft. Identification figures reuse existing tables.
 
@@ -46,5 +46,9 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | Figure 1 | depletion vs 35+ population | `figures/live_identification/figure_B_first_event_depletion.png` from annual totals |
 | Figure 2 | cold-day year×month heatmap | `figures/live_identification/figure_A_cold_day_identification.png` from temperature panel |
 | Figure 3 | residual ACF | `figures/live_identification/figure_C_residual_acf.png` from pathway ACF tables |
+| Figure 4 | hot-night year×month heatmap | `figures/live_identification/figure_D_hot_night_identification.png` from the same temperature panel as Figure 2; vmax 25 |
+| June–Sep always ≥1 hot night | 11/11 years; July 2013 = 1; July 2022 = 25 | `outputs/live_identification/hot_nights_by_month_year.csv`; `outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv` |
+| ERA5 monthly mean Tmin vs HKO | r = 0.986; slope 1.032 | `outputs/monthly_bridge/monthly_station_grid_bridge.json` `era5_tmin_on_hko_tmin` (r 0.9861, slope 1.0324) |
+| ERA5 monthly 28 °C nights vs HKO | slope 0.045 (SE 0.007); 57 months vs 9 | same JSON `era5_hn_on_hko_hn` (slope 0.0453, se 0.0074); `month_flags` |
 
-**Not claimed in the paper body.** Stroke coefficients; AMI / principal-diagnosis effects; cohort incidence; daily DLNM lags; Hogan-locked HM/CM confirmatory estimates (`CM08` 1.173, `CM03` 1.122, `HM23` null, `CM05` zero months — Explore only); Gate 3 freeze; CNS-journal suitability; sleep or blood-pressure mediation; numerical equality of 2.63 with 1.073 or of 3.1% with 1.022; 2019 as a health experiment; that model-based CHD intervals are too narrow (the hot-night Newey–West ladder is narrower than the model interval); Chau/Pun 2025, EcoEnv 2025, or Tian 2016 as this paper’s citations.
+**Not claimed in the paper body.** Stroke coefficients; AMI / principal-diagnosis effects; cohort incidence; daily DLNM lags; Hogan-locked HM/CM confirmatory estimates (`CM08` 1.173, `CM03` 1.122, `HM23` null, `CM05` zero months — Explore only); Gate 3 freeze; CNS-journal suitability; sleep or blood-pressure mediation; numerical equality of 2.63 with 1.073 or of 3.1% with 1.022; 2019 as a health experiment; that model-based CHD intervals are too narrow (the hot-night Newey–West ladder is narrower than the model interval); Chau/Pun 2025, EcoEnv 2025, or Tian 2016 as this paper’s citations; daily Jaccard 0.031; 449 vs 17 nights; apparent-temperature 1,453 nights; 0.045 as a health attenuation factor; identifying-share percentages; King’s Park / Waglan as substitute encodings; WorldPop-weighted night shares as a health disparity.

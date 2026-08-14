@@ -143,6 +143,11 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - **Effort/caliber (14 Aug, ESTIMATE only):** calendar 5 weeks; unaided
   substance ~800 hours; not a PhD; not for form 2a.
   `knowledge/2026-08-14_effort_and_caliber_estimate.md`.
+- **CNS live-file pass (14 Aug):** Stage 3 PDFs remain locked and are not a
+  journal manuscript. Live markdown now carries Figure 4 (July 1 vs 25) and
+  the monthly ERA5 mean-versus-flag limitation. Hogan can strike. Weather
+  paragraph untouched. `knowledge/2026-08-14_cns_live_quality_gap.md`;
+  `manuscript/live_collaborative/cns_checklist_2026-08-14.md`.
 
 ---
 

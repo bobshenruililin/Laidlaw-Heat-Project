@@ -1,6 +1,6 @@
 # Optional Figure 4 and supplement paragraph — hot-night identification
 
-**Status:** NOT PASTED. Hogan sees [`hogan_intensive_extensive_2026-08-14.md`](../../reports/hogan_intensive_extensive_2026-08-14.md) first. Journal-track file; it does not touch his *Weather and pollutants data* paragraph. Exposure only; no health finding; no coefficient.
+**Status:** PROPOSED IN `Heat_CVD_Manuscript_live_update.md` (14 August CNS pass). Hogan can still strike Figure 4 or demote it to a supplement. Journal-track file; it does not touch his *Weather and pollutants data* paragraph. Exposure only; no health finding; no coefficient. ggplot PNG/PDF now exist (`figure_D_hot_night_identification.png` / `.pdf`); Python SVG remains the web analogue.
 
 ## 1. Figure 4 caption (optional)
 

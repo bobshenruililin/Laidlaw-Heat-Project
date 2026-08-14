@@ -1,6 +1,6 @@
 # Optional limitation sentence — intensive hot-night margin
 
-**Status:** NOT PASTED. Hogan sees [`../../reports/hogan_intensive_extensive_2026-08-14.md`](../../reports/hogan_intensive_extensive_2026-08-14.md) first. A different limitation from the station–grid sentence. Do not bolt them together. Do not overwrite his weather paragraph. Not a health finding.
+**Status:** PROPOSED IN `Heat_CVD_Manuscript_live_update.md` Abstract, Results, Discussion, and Limitations (14 August CNS pass). Hogan can strike. Sees [`../../reports/hogan_intensive_extensive_2026-08-14.md`](../../reports/hogan_intensive_extensive_2026-08-14.md) first. A different limitation from the station–grid sentence. Do not bolt them together. Do not overwrite his weather paragraph. Not a health finding.
 
 ## Paste-ready sentence
 

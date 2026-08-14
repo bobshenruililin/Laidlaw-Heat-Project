@@ -221,8 +221,8 @@ p_d <- ggplot2::ggplot(
   ) +
   ggplot2::scale_y_reverse(breaks = 2013:2023) +
   ggplot2::labs(
-    title = "Hot nights are intensive, not on/off",
-    subtitle = "June–September always had at least one night (11/11 years); July 2013 = 1, July 2022 = 25",
+    title = "Official hot nights by year and month, Hong Kong Observatory Headquarters, 2013–2023",
+    subtitle = "June–September recorded at least one official hot night in every year; July 2013 contained 1 night and July 2022 contained 25",
     x = NULL,
     y = NULL,
     caption = wrap_caption(paste(

@@ -1,6 +1,6 @@
 # Optional limitation sentence — station vs grid
 
-**Status:** NOT PASTED. Hogan sees [`../../reports/hogan_monthly_bridge_2026-08-14.md`](../../reports/hogan_monthly_bridge_2026-08-14.md) first. Do not overwrite his weather paragraph. Not a health finding.
+**Status:** PROPOSED IN `Heat_CVD_Manuscript_live_update.md` Limitations (14 August CNS pass). Hogan can strike. Sees [`../../reports/hogan_monthly_bridge_2026-08-14.md`](../../reports/hogan_monthly_bridge_2026-08-14.md) first. Do not overwrite his weather paragraph. Not a health finding.
 
 Fable residue: [`../../knowledge/2026-08-14_fable_limitation_sentence.md`](../../knowledge/2026-08-14_fable_limitation_sentence.md).
 

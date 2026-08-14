@@ -1,9 +1,13 @@
 # The missing denominator is the finding
 
 **Agent Beta · identification crucible · 14 August 2026 · Mode: Explore**
-**Sibling positions:** `crucible_agent_alpha_aggregation.md` (aggregation),
-`crucible_agent_delta_decision_rule.md` (multiplicity). This memo contests both
-on one point only: whether attenuation toward \(1\) may be read as absence.
+**Constraints:** no new health model, no governed monthly count read, no HA
+microdata, no web search.
+**Sibling positions:** `crucible_agent_alpha_aggregation.md` (aggregation
+grain), `crucible_agent_gamma_overcontrol.md` (calendar-month overcontrol),
+`crucible_agent_delta_decision_rule.md` (multiplicity). This memo argues none of
+those three. Its subject is the denominator, and it contests Alpha and Delta on
+one point only: whether attenuation toward \(1\) may be read as absence.
 
 ## 1. Thesis
 
@@ -171,10 +175,17 @@ Do not treat attenuation toward \(1\) as a null finding.
    \(0.1089\), SD \(0.0053\), from transfer coefficients that themselves differ
    by a factor of \(2.9\). Five contrasts with different sensitivities recover
    one common amplitude of about a \(10\%\) count shortfall. That coherence is
-   what a single omitted non-smooth risk-set factor predicts and what six
+   what a single omitted non-smooth risk-set factor predicts and what five
    independent thermal effects would not produce. `[HA_APPROVED_AGGREGATE]` The
    influence diagnostics agree on where it sits: 2020-02 and 2022-02 dominate
    Cook's distance for both outcomes.
+   The two exceptions are the cold-day contrasts, and they cut the right way for
+   this memo rather than against it. CHD cold days inverts to \(-0.096\), the
+   wrong sign, and HF cold days to only \(0.020\). Cold-day burden is the one
+   exposure whose identifying variance sits mostly in the fat pre-pandemic
+   window (§5.4), so it is the contrast least exposed to a 2020/2022 shock.
+   `[DESIGN_DERIVED]` A common latent factor should be recoverable from the
+   contrasts that overlap it and not from the one that does not.
 4. **Second failure: the interaction is never absorbed.** `[DESIGN_DERIVED]`
    \(ns(\text{time},4)\) spans functions of \(t\). A slope that varies along the
    depletion gradient contributes \(\delta\,d_t x_t\), a *product*, which lies
@@ -347,8 +358,10 @@ Do not treat attenuation toward \(1\) as a null finding.
 6. **What would not falsify it.** A monthly stroke file; a larger or smoother
    general-population offset; more spline degrees of freedom; a different
    standard-error method; a longer calendar window that continues to omit
-   \(R_t\). None of these supplies the denominator, and the first four are
-   already known to leave the ladder in §5.1 intact.
+   \(R_t\). None supplies the denominator. `[HA_APPROVED_AGGREGATE]` The first
+   three are already shown to be beside the point: the general-population offset
+   is inert (§6.4), extra spline degrees of freedom move the coefficient without
+   stabilising it (§4.6), and no standard-error method changes a point estimate.
 
 ## 8. Gate 3 consequence
 

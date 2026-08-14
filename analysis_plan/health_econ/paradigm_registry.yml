@@ -1,0 +1,186 @@
+# Health-economics paradigm registry
+# Provenance: SYNTHETIC_THEORY. These are hypotheses, not findings.
+# Source document: analysis_plan/health_econ/cycle1_hypotheses.md
+# Promotion to a pathway ID or SAP amendment requires a human nod (AGENTS.md §5).
+
+cycle: 1
+date: 2026-08-14
+mode: explore
+provenance: SYNTHETIC_THEORY
+
+scope_contract:
+  estimand: ecological monthly count ratio, first hospitalisation after first CHD/HF diagnosis, T2D/HTN cohort
+  months: 132
+  window: 2013-01/2023-12
+  admission_cause: absent
+  stroke_file: not_delivered
+  daily_coefficient: none_admitted_after_failed_MD_calibration
+  gate3: open
+  monetisation_permitted: false
+
+paradigms:
+  - id: HE-01
+    title: Depletion as an exhaustible stock, not a renewable flow
+    space: stock_flow_finite_risk_pool
+    claim_type: costing
+    status: candidate
+    runnable_without_new_governed_data: true
+    kill_test: monte_carlo_depletion_vs_ns_time_4_size
+    one_line: >-
+      First-event counts draw down a bounded pool, so any projection multiplying a ratio
+      by future events prices a flow the stock cannot sustain.
+
+  - id: HE-02
+    title: Two-equation utilisation, need versus conversion
+    space: two_equation_utilisation
+    claim_type: identification
+    status: candidate
+    runnable_without_new_governed_data: partly
+    depends_on: [HE-12]
+    kill_test: admissible_exclusion_restriction_exists_or_not
+    one_line: >-
+      Monthly counts identify only the sum of a pathophysiology elasticity and a
+      care-seeking elasticity, so the sign of the welfare effect is unidentified.
+
+  - id: HE-03
+    title: Shadow price of a bed under capacity rationing
+    space: capacity_constrained_supply
+    claim_type: identification
+    status: likely_fail
+    runnable_without_new_governed_data: true
+    kill_test: monte_carlo_daily_censoring_aggregated_to_months
+    one_line: >-
+      Capacity binds on days and washes out in monthly sums, so the bed shadow price is
+      not recoverable at our resolution.
+
+  - id: HE-04
+    title: Value of information with a moving claim set and a static posterior
+    space: value_of_information
+    claim_type: VoI
+    status: candidate
+    runnable_without_new_governed_data: true
+    kill_test: evpi_below_cost_of_delay_under_all_plausible_priors
+    one_line: >-
+      The stroke file changes no decision under Option A, while person-time changes the
+      admissible sentence rather than the estimate.
+
+  - id: HE-05
+    title: Economic harvesting of hospital spending
+    space: intertemporal_cost_shifting
+    claim_type: welfare
+    status: candidate
+    runnable_without_new_governed_data: true
+    kill_test: monte_carlo_power_to_separate_phi_0_from_phi_0p5_at_n132
+    one_line: >-
+      The displacement fraction separates shifted spending from new spending and bounds any
+      monetisation, but may be unidentified at n=132.
+
+  - id: HE-06
+    title: Present-biased budgeting and the fiscal cycle inside the month dummies
+    space: time_inconsistent_public_budgeting
+    claim_type: mechanism
+    status: park
+    runnable_without_new_governed_data: false
+    revives_with: cluster_level_counts_and_budgets
+    kill_test: no_single_territory_design_exists
+    one_line: >-
+      Annual budget myopia under-provides adaptation capital, and fiscal seasonality is
+      perfectly collinear with our calendar-month indicators.
+
+  - id: HE-07
+    title: The visible fraction of the welfare loss
+    space: selection_into_hospitalisation
+    claim_type: welfare
+    status: candidate
+    runnable_without_new_governed_data: false
+    kill_test: outpatient_elasticity_vs_admission_elasticity
+    one_line: >-
+      Admissions are the tail above a severity threshold that itself moves with heat, so the
+      burden is a selected subset and not a clean lower bound.
+
+  - id: HE-08
+    title: The weather-to-spending map is not policy-invariant
+    space: macro_health_system_shocks
+    claim_type: identification
+    status: candidate
+    runnable_without_new_governed_data: true
+    kill_test: prespecified_regime_invariance_test_with_power_calculation
+    one_line: >-
+      Pandemic demand destruction is concentrated in the Februaries that carry cold-day
+      identification, making the pooled elasticity a regime-weighted average.
+
+  - id: HE-09
+    title: Public counts are a share, not a total
+    space: dual_public_private_system
+    claim_type: identification
+    status: candidate
+    runnable_without_new_governed_data: false
+    kill_test: verify_monthly_private_inpatient_volumes_exist_then_compare
+    one_line: >-
+      The Authority extract measures the public share, so a thermal coefficient mixes
+      morbidity with routing between public and private sectors.
+
+  - id: HE-10
+    title: Monthly exposure as a unit-value index
+    space: aggregation_index_number_bias
+    claim_type: costing
+    status: candidate
+    runnable_without_new_governed_data: true
+    distinct_from: failed_MD_daily_recovery
+    kill_test: monte_carlo_real_daily_hko_synthetic_g_bias_vs_ci_width
+    one_line: >-
+      The monthly coefficient aggregates a nonlinear daily response with variance-gradient
+      weights, giving a signed bias in any scenario costing.
+
+  - id: HE-11
+    title: Household adaptation capital, housing and tariffs
+    space: household_adaptation_capital
+    claim_type: mechanism
+    status: park
+    runnable_without_new_governed_data: false
+    revives_with: district_or_cluster_geography_plus_census_appliance_linkage
+    kill_test: no_spatial_dimension_exists_in_current_file
+    one_line: >-
+      Effective exposure is produced with air-conditioning capital, so a territory
+      coefficient is a capital-weighted average that drifts as saturation rises.
+
+  - id: HE-12
+    title: The time price of an admission
+    space: household_time_endowment
+    claim_type: identification
+    status: candidate
+    runnable_without_new_governed_data: true
+    kill_test: refit_with_rest_day_and_non_lny_holiday_counts
+    one_line: >-
+      Rest-day and holiday composition varies across months and is orthogonal to
+      temperature, giving a candidate exclusion restriction for the conversion equation.
+
+failed_on_arrival:
+  - simple_cost_of_illness_rr_times_events_times_unit_cost
+  - behavioural_nudges_sms_heat_warning_messaging
+  - dlnm_attributable_fraction_costing
+  - retuning_md_daily_recovery_for_daily_costs
+  - vsl_mortality_valuation
+  - qaly_daly_burden_from_counts_only
+  - cost_effectiveness_of_an_unobserved_heat_action_plan
+  - difference_in_differences_on_territory_wide_heat_warnings
+  - synthetic_control_for_hong_kong
+  - price_elasticity_or_insurance_demand_estimation
+  - machine_learning_cost_prediction_or_dashboard
+  - air_pollution_co_benefit_monetisation_from_p11
+  - ami_or_principal_diagnosis_costing
+  - any_stroke_economic_quantity
+  - gazetted_ward_fees_used_as_opportunity_costs
+  - mortality_displacement_relabelled_as_economic_harvesting
+  - productivity_loss_transfer_without_hong_kong_labour_data
+
+cycle2_mutation_seeds:
+  dynamic_time_inconsistency:
+    - HE-01 becomes a Hotelling exhaustible-stock pricing rule with a rising scarcity rent
+    - HE-04 becomes a commitment-device problem rather than an option-value calculation
+    - HE-07 threshold becomes endogenous to the adaptation policy being evaluated
+  supply_side_rationing_or_monopsony:
+    - HE-02 conversion becomes a queue-clearing rule, not a demand object
+    - HE-09 and HE-03 stop being independent under a monopsonistic Authority
+    - HE-10 composes with daily top-truncation into an analytically sign-ambiguous bias
+    - price the cluster-level data request as one portfolio using HE-04 machinery

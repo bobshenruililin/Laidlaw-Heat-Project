@@ -768,7 +768,7 @@ observational-equivalence problem in place.
 
 ## Final disposition
 
-Cycle 1 does not produce an economic estimate. It kills eight proposed
+Cycle 1 does not produce an economic estimate. It kills seven proposed
 claims as currently identified, confirms two as parked, and leaves three
 conditional sensitivity objects for escalation. None of these dispositions
 changes the CHD/HF analysis of record, promotes a pathway, closes Gate 3,

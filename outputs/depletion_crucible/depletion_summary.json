@@ -1,0 +1,64 @@
+{
+  "problem": "What does an absorbing first-event risk set do to a log-link monthly count model that offsets days-in-month instead of still-at-risk person-time?",
+  "n_months": 132,
+  "total_log_decline_normalisation": 0.6557935242463797,
+  "implied_event_halving_ratio": 1.9266707709145632,
+  "information_asymmetry": {
+    "cold_days_hf_count_weighted_info_share_2013_2018": 0.6322124274182523,
+    "hot_nights_chd_count_weighted_info_share_2013_2018": 0.4991088298356076,
+    "cold_days_residual_var_share_2013_2018": 0.5533050791262598,
+    "hot_nights_residual_var_share_2013_2018": 0.4632281759237726
+  },
+  "annual_trend_collinearity": {
+    "hot_nights_vs_chd_events": -0.8179253901325461,
+    "hot_nights_vs_log_chd_events": -0.8107789074458249,
+    "cold_days_vs_chd_events": 0.2053558014602943
+  },
+  "riskset_fatness_ladder": {
+    "n_core_contrasts": 12,
+    "n_with_abs_log_rr_rank_corr_eq_1": 4,
+    "n_with_abs_log_rr_rank_corr_ge_0p8": 7,
+    "n_with_abs_log_rr_rank_corr_le_0": 3,
+    "mean_abs_log_rr_rank_corr": 0.48333333333333334,
+    "note": "The twelve contrasts share one climate series and are not independent; the mean is a description, not a test.",
+    "hf_cold_days_spearman": 1.0,
+    "hf_cold_days_rr_range": [
+      1.04289295509967,
+      1.11283089052394
+    ],
+    "chd_hot_nights_spearman": -0.19999999999999998,
+    "chd_hot_nights_rr_range": [
+      1.0109822438503,
+      1.02182421201542
+    ]
+  },
+  "covid_kink_inversion": {
+    "chd_hot_nights_implied_dip_log_amplitude": 0.11286875357458705,
+    "hf_cold_days_implied_dip_log_amplitude": 0.019579243725273004,
+    "transfer_per_0p10_log_dip_hot_nights": 0.0074950026675214,
+    "transfer_per_0p10_log_dip_cold_days": -0.004234589807322217,
+    "chd_non_cold_amplitudes": [
+      0.10893125286025977,
+      0.111681827190029,
+      0.0997131024427229,
+      0.11286875357458705,
+      0.11107147432828453
+    ],
+    "chd_non_cold_amplitude_mean": 0.10885328207917666,
+    "chd_non_cold_amplitude_sd": 0.005305516441825644,
+    "transfer_coefficient_spread_ratio": 2.8824816289165285
+  },
+  "interaction_never_absorbed": {
+    "min_share_surviving_controls": 0.027592729211953215,
+    "cold_days_front_loaded": 0.5243788558982275
+  },
+  "provenance": {
+    "climate": "REAL",
+    "annual_totals": "HA_APPROVED_AGGREGATE",
+    "scenario_coefficients": "HA_APPROVED_AGGREGATE",
+    "depletion_paths": "ILLUSTRATIVE_ALGEBRA",
+    "new_health_models": false,
+    "governed_monthly_counts_read": false,
+    "cohort_risk_set_available": false
+  }
+}

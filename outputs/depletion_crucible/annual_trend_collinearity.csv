@@ -1,0 +1,13 @@
+exposure,outcome,pearson_annual_exposure_vs_events,pearson_annual_exposure_vs_log_events,provenance
+mean_temp,chd,-0.7521904991341386,-0.7566704188955452,REAL climate x HA_APPROVED_AGGREGATE annual totals
+mean_temp,hf,-0.7669424845807494,-0.7560845633509334,REAL climate x HA_APPROVED_AGGREGATE annual totals
+mean_tmax,chd,-0.7646839355515133,-0.7934604888101158,REAL climate x HA_APPROVED_AGGREGATE annual totals
+mean_tmax,hf,-0.7892525079357756,-0.8003555810959287,REAL climate x HA_APPROVED_AGGREGATE annual totals
+mean_tmin,chd,-0.7359881908375633,-0.734792302439454,REAL climate x HA_APPROVED_AGGREGATE annual totals
+mean_tmin,hf,-0.7506072946999561,-0.7340637536075689,REAL climate x HA_APPROVED_AGGREGATE annual totals
+hot_nights,chd,-0.8179253901325461,-0.8107789074458249,REAL climate x HA_APPROVED_AGGREGATE annual totals
+hot_nights,hf,-0.822563502327668,-0.8186077551948633,REAL climate x HA_APPROVED_AGGREGATE annual totals
+cold_days,chd,0.2053558014602943,0.22182814802723552,REAL climate x HA_APPROVED_AGGREGATE annual totals
+cold_days,hf,0.27665196880060694,0.284647916545328,REAL climate x HA_APPROVED_AGGREGATE annual totals
+very_hot_days,chd,-0.7814245712345506,-0.7990988634691433,REAL climate x HA_APPROVED_AGGREGATE annual totals
+very_hot_days,hf,-0.7836418685225228,-0.8015538094530072,REAL climate x HA_APPROVED_AGGREGATE annual totals

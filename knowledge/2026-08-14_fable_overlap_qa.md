@@ -37,4 +37,6 @@
 
 One mechanical fix still required, then ship: regenerate the three SVGs with the type floor respected — axis ticks ≥16 user units (Figure D cell values ≥14) and, per rule 8, give the reliability `<img>` the same 640 px min-width `overflow-x: auto` wrapper the heatmap already uses so those units land at ≥12 px on a 360 px screen — and commit the untracked web SVG so the fix survives deploy.
 
+**Applied the same day:** script 60 now emits 16-unit axis ticks and 14-unit cell values; the reliability `<img>` sits in `.heatwrap` with `min-width: 640px`; `docs/id/era5_reliability_given_hko_web.svg` is a first-class page asset. Re-audit is a screenshot, not a new research object.
+
 — Fable, IAS mentor, 14 August 2026

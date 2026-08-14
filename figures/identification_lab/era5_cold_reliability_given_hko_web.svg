@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 500" preserveAspectRatio="xMidYMid meet" font-family="Georgia, serif" role="img">
+<rect width="100%" height="100%" fill="#f4efe4"/>
+<clipPath id="coldWeb"><rect x="72.0" y="20.0" width="820.0" height="416.0"/></clipPath>
+<line x1="80" y1="28" x2="80" y2="428" stroke="#12181f"/>
+<line x1="80" y1="428" x2="884" y2="428" stroke="#12181f"/>
+<line x1="562.4" y1="28" x2="562.4" y2="428" stroke="#245E83" stroke-dasharray="4 3"/>
+<g clip-path="url(#coldWeb)">
+<circle cx="140.3" cy="28.0" r="2.7" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="180.5" cy="28.0" r="2.8" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="220.7" cy="28.0" r="3.2" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="260.9" cy="28.0" r="3.4" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="301.1" cy="28.0" r="3.2" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="341.3" cy="28.0" r="3.3" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="381.5" cy="28.0" r="3.4" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="421.7" cy="28.0" r="3.5" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="461.9" cy="28.0" r="4.0" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="502.1" cy="28.0" r="3.9" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="542.3" cy="40.9" r="4.1" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="582.5" cy="45.4" r="3.9" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="622.7" cy="197.7" r="4.2" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="662.9" cy="143.8" r="4.3" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="703.1" cy="214.0" r="4.4" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="743.3" cy="328.0" r="4.6" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="783.5" cy="279.4" r="5.0" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="823.7" cy="390.5" r="4.9" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<circle cx="863.9" cy="381.2" r="5.4" fill="#245E83" fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>
+<polyline fill="none" stroke="#245E83" stroke-width="1.6" points="140.3,28.0 180.5,28.0 220.7,28.0 260.9,28.0 301.1,28.0 341.3,28.0 381.5,28.0 421.7,28.0 461.9,28.0 502.1,28.0 542.3,40.9 582.5,45.4 622.7,197.7 662.9,143.8 703.1,214.0 743.3,328.0 783.5,279.4 823.7,390.5 863.9,381.2"/>
+</g>
+<line x1="80.0" y1="428" x2="80.0" y2="434" stroke="#12181f"/>
+<text x="80.0" y="452" text-anchor="middle" font-size="16">6°C</text>
+<line x1="240.8" y1="428" x2="240.8" y2="434" stroke="#12181f"/>
+<text x="240.8" y="452" text-anchor="middle" font-size="16">8°C</text>
+<line x1="401.6" y1="428" x2="401.6" y2="434" stroke="#12181f"/>
+<text x="401.6" y="452" text-anchor="middle" font-size="16">10°C</text>
+<line x1="562.4" y1="428" x2="562.4" y2="434" stroke="#12181f"/>
+<text x="562.4" y="452" text-anchor="middle" font-size="16">12°C</text>
+<line x1="723.2" y1="428" x2="723.2" y2="434" stroke="#12181f"/>
+<text x="723.2" y="452" text-anchor="middle" font-size="16">14°C</text>
+<line x1="884.0" y1="428" x2="884.0" y2="434" stroke="#12181f"/>
+<text x="884.0" y="452" text-anchor="middle" font-size="16">16°C</text>
+<line x1="76" y1="428.0" x2="80" y2="428.0" stroke="#12181f"/>
+<text x="70" y="433.0" text-anchor="end" font-size="16" fill="#5b6773">0%</text>
+<line x1="76" y1="328.0" x2="80" y2="328.0" stroke="#12181f"/>
+<text x="70" y="333.0" text-anchor="end" font-size="16" fill="#5b6773">25%</text>
+<line x1="76" y1="228.0" x2="80" y2="228.0" stroke="#12181f"/>
+<text x="70" y="233.0" text-anchor="end" font-size="16" fill="#5b6773">50%</text>
+<line x1="76" y1="128.0" x2="80" y2="128.0" stroke="#12181f"/>
+<text x="70" y="133.0" text-anchor="end" font-size="16" fill="#5b6773">75%</text>
+<line x1="76" y1="28.0" x2="80" y2="28.0" stroke="#12181f"/>
+<text x="70" y="33.0" text-anchor="end" font-size="16" fill="#5b6773">100%</text>
+</svg>

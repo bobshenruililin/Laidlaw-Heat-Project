@@ -231,6 +231,15 @@
     </figure>
 
     <figure>
+      <h2>ERA5 is already cold when Headquarters is 8–12°C</h2>
+      <p class="prose" style="margin:.2rem 0 .5rem">P(ERA5 Tmin ≤ 12°C | HKO Tmin in a 0.5°C bin). Opposite bias. Companion panel, not a third public essay.</p>
+      <div class="heatwrap">
+        <img src="./era5_cold_reliability_given_hko_web.svg" alt="Reliability curve of ERA5 cold days given HKO Tmin. When Headquarters is 8–12°C, ERA5 is almost always also ≤12°C." style="min-width:640px" />
+      </div>
+      <figcaption class="caption" id="coldCap"></figcaption>
+    </figure>
+
+    <figure>
       <h2>Identification profile</h2>
       <p class="prose" style="margin:.2rem 0 .7rem">
         Six live-paper encodings. Four columns: what survives month indicators;
@@ -281,6 +290,37 @@
       </figcaption>
     </figure>
 
+    <figure>
+      <h2>King’s Park is not Headquarters</h2>
+      <p class="prose" style="margin:.2rem 0 .4rem">
+        Public HKO open data, 2013–2023, completeness C. This splits siting from instrument.
+        It is not a validation of ERA5. The live paper stays on Headquarters.
+      </p>
+      <div class="heatwrap">
+        <img src="./hko_station_hot_nights.svg" alt="Bar chart of official hot nights at Headquarters, King's Park, and Waglan Island." style="min-width:640px" />
+      </div>
+      <figcaption class="caption" id="stationCap">Station counts load from the replicate script.</figcaption>
+    </figure>
+
+    <figure>
+      <h2>Unweighted 28°C nights sit south of the people</h2>
+      <p class="prose" style="margin:.2rem 0 .4rem">
+        WorldPop 2020 1 km × the 0.1° ERA5 lattice. Exposure only. Not a hospital map,
+        not a Marmot finding, not a T2D/HTN denominator.
+      </p>
+      <div class="heatwrap">
+        <img src="./population_weighted_south_share.svg" alt="Unweighted versus population-weighted share of ERA5 hot nights in southern cells." style="min-width:640px" />
+      </div>
+      <figcaption class="caption" id="popCap">Population weights load from the WorldPop script.</figcaption>
+    </figure>
+
+    <p class="prose" id="shiftTeach">
+      A twelve-month shift of a seasonal count flag does not collapse identifying share.
+      That share is a calendar-month property. The useful negative control is
+      health in year t against exposure in year t−1. That re-fit stays Gate-3-open
+      and does not run without the gitignored HA panels. No new q. Not a headline.
+    </p>
+
     <div class="refuse">
       <h2>What this room is not</h2>
       <ul>
@@ -292,7 +332,7 @@
     </div>
 
     <footer>
-      <p>Rebuild: <code>python3 scripts/60_identification_laboratory.py</code>. Anchors must remain 449 / 17 / 14. Kimi k3 is not launchable in this environment; layout follows the eight-rule law in the Fable research-contribution note (HTML captions, reserved SVG margins, stack at 860px).</p>
+      <p>Rebuild: <code>python3 scripts/60_identification_laboratory.py</code> then scripts 61–63. Anchors must remain 449 / 17 / 14. Kimi k3 is not launchable in this environment; layout follows the eight-rule law in the Fable research-contribution note (HTML captions, reserved SVG margins, stack at 860px).</p>
       <p>31 August 2026 is still the endorsed HKU 2a. This URL does not count as that posting.</p>
       <div class="footlinks">
         <a href="../demo/">Return to the instrument</a>
@@ -302,6 +342,8 @@
     </footer>
   </div>
   <script src="./id_embed.js"></script>
+  <script src="./stations_embed.js"></script>
+  <script src="./pop_embed.js"></script>
   <script>
     const L = window.ID_LAB;
     const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -362,6 +404,21 @@
     }
 
     document.getElementById("relCap").textContent = L.punchline + " " + L.cold_analogue.note;
+    const coldCap = document.getElementById("coldCap");
+    if (coldCap) {
+      coldCap.textContent = L.cold_analogue.note +
+        ` ${L.cold_analogue.n_era5_le12_in_that_bin}/${L.cold_analogue.n_hko_8_to_12} nights.`;
+    }
+    const S = window.ID_STATIONS;
+    if (S) {
+      const el = document.getElementById("stationCap");
+      if (el) el.textContent = S.punchline;
+    }
+    const P = window.ID_POP;
+    if (P) {
+      const el = document.getElementById("popCap");
+      if (el) el.textContent = P.punchline;
+    }
 
     const chips = document.getElementById("bins");
     const readout = document.getElementById("binReadout");

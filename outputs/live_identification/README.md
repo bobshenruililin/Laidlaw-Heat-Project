@@ -20,13 +20,20 @@
 - **Sources:** `outputs/tables/chd_pathway_residual_acf.csv`, `outputs/tables/hf_pathway_residual_acf.csv`, `outputs/release_chd_hf/tables/table2_core_models.csv`, and `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv` (existing `HA_APPROVED_AGGREGATE` diagnostics).
 - **Do not claim:** that this script fitted a model, that Newey–West uncertainty confirms either thermal association, or that residual ACF establishes causality.
 
+## Figure D — hot-night identification (ggplot twin)
+
+- **What it shows:** June–September always had at least one official hot night (11/11 years). July 2013 = 1 night; July 2022 = 25. Remaining variation after calendar-month indicators is intensity inside already-hot months.
+- **Source:** the same monthly Headquarters file as Figure A. vmax = 25. Python SVG from script 60 remains the web analogue.
+- **Do not claim:** a health effect, or that this is a new finding beyond Figure A’s construction.
+
 ## Files
 
 - `figures/live_identification/figure_A_cold_day_identification.pdf` and `.png`
 - `figures/live_identification/figure_B_first_event_depletion.pdf` and `.png`
 - `figures/live_identification/figure_C_residual_acf.pdf` and `.png`
-- `figures/live_identification/figure_D_hot_night_identification.svg` (optional hot-night analogue of Figure 2; vmax 25; Python, script 60; not a health finding)
+- `figures/live_identification/figure_D_hot_night_identification.pdf` and `.png` (ggplot); `.svg` from script 60
 - `outputs/live_identification/cold_days_by_month_year.csv`
+- `outputs/live_identification/hot_nights_by_month_year.csv`
 
 Figure captions distinguish public environmental/demographic data from approved health aggregates.
 
@@ -36,7 +43,7 @@ Figure captions distinguish public environmental/demographic data from approved 
 |---|---|---|
 | Figure 1 | `figure_B_first_event_depletion.png` | Outcome series: first-event counts vs C&SD 35+ |
 | Figure 2 | `figure_A_cold_day_identification.png` | Exposure identification: DJF concentration of official cold days |
-| Optional Figure 4 | `figure_D_hot_night_identification.svg` | Exposure identification: June–September always on; July intensity 1 vs 25. Hogan chooses main vs supplement. |
+| Optional Figure 4 | `figure_D_hot_night_identification.svg` / `.png` | Exposure identification: June–September always on; July intensity 1 vs 25. Hogan chooses main vs supplement. |
 | Figure 3 | `figure_C_residual_acf.png` | Why Newey–West is shown for CHD |
 
 Do not paste provisional HM/CM or archive flu/NO₂ coefficients into the paper body.

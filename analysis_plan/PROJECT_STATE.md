@@ -121,6 +121,13 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   profile + Figure D (July 2013 = 1, July 2022 = 25). Companion page
   `docs/id/` is a second-level door from the instrument, not a hub card.
   Daily grain stays out of the live paper. `scripts/60_identification_laboratory.py`.
+- **Parked-object close-out (14 Aug):** cold reliability 127/128 as a companion
+  panel; ggplot Figure D in script 47; public HKO King’s Park **160** and
+  Waglan **107** complete hot nights vs Headquarters **449**; WorldPop 1 km
+  weights move southern ERA5 nights from **66%** unweighted to **22%**;
+  year-shift identifying share does not collapse; health re-fit parked
+  (A60, no invented HA rows); W03 checkbox card written, not locked.
+  `knowledge/2026-08-14_parked_object_closeout.md`.
 - **Bishai positioning (14 Aug, not sent):** maps are exposure identification
   for the single-station limitation. Two emails, not one: form 2a first;
   one composite figure later. Do not mix endorsement with a map tour.

@@ -1,0 +1,7 @@
+encoding,label,n_months_original,n_months_shifted,identifying_share_original,identifying_share_year_shifted,delta
+mean_temp,Mean temperature,132,132,0.0422,0.0427,0.0005
+mean_tmax,Mean Tmax,132,132,0.0529,0.0533,0.0004
+mean_tmin,Mean Tmin,132,132,0.0443,0.0446,0.0003
+hot_nights,Hot nights,132,132,0.2883,0.3177,0.0294
+very_hot_days,Very hot days,132,132,0.3305,0.3562,0.0257
+cold_days,Cold days,132,132,0.4688,0.4378,-0.031

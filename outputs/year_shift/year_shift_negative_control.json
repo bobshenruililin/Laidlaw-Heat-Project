@@ -1,0 +1,91 @@
+{
+  "title": "Year-shifted negative control",
+  "provenance": "REAL_PUBLIC climate. Identifying-share comparison uses HKO Headquarters monthly encodings; 12-month count shifts use complete open-data days including 2012. Health re-fit is Gate-3-open and runs only when HA panels are present. Not a headline. Not a new q.",
+  "teaching": "Identifying share after calendar-month indicators is a within-month between-year property. A whole-year permutation of a seasonal count flag leaves that share almost unchanged. Collapsing identifying share is the wrong test of a 12-month shift. The useful test is whether a displaced exposure still predicts the unshifted monthly counts.",
+  "encodings": [
+    {
+      "encoding": "mean_temp",
+      "label": "Mean temperature",
+      "n_months_original": 132,
+      "n_months_shifted": 132,
+      "identifying_share_original": 0.0422,
+      "identifying_share_year_shifted": 0.0427,
+      "delta": 0.0005
+    },
+    {
+      "encoding": "mean_tmax",
+      "label": "Mean Tmax",
+      "n_months_original": 132,
+      "n_months_shifted": 132,
+      "identifying_share_original": 0.0529,
+      "identifying_share_year_shifted": 0.0533,
+      "delta": 0.0004
+    },
+    {
+      "encoding": "mean_tmin",
+      "label": "Mean Tmin",
+      "n_months_original": 132,
+      "n_months_shifted": 132,
+      "identifying_share_original": 0.0443,
+      "identifying_share_year_shifted": 0.0446,
+      "delta": 0.0003
+    },
+    {
+      "encoding": "hot_nights",
+      "label": "Hot nights",
+      "n_months_original": 132,
+      "n_months_shifted": 132,
+      "identifying_share_original": 0.2883,
+      "identifying_share_year_shifted": 0.3177,
+      "delta": 0.0294
+    },
+    {
+      "encoding": "very_hot_days",
+      "label": "Very hot days",
+      "n_months_original": 132,
+      "n_months_shifted": 132,
+      "identifying_share_original": 0.3305,
+      "identifying_share_year_shifted": 0.3562,
+      "delta": 0.0257
+    },
+    {
+      "encoding": "cold_days",
+      "label": "Cold days",
+      "n_months_original": 132,
+      "n_months_shifted": 132,
+      "identifying_share_original": 0.4688,
+      "identifying_share_year_shifted": 0.4378,
+      "delta": -0.031
+    }
+  ],
+  "hot_nights_anchor": {
+    "encoding": "hot_nights",
+    "label": "Hot nights",
+    "n_months_original": 132,
+    "n_months_shifted": 132,
+    "identifying_share_original": 0.2883,
+    "identifying_share_year_shifted": 0.3177,
+    "delta": 0.0294
+  },
+  "health_refit": {
+    "status": "PARKED_NO_PANEL",
+    "reason": "data_processed/*_analysis_panel.csv is gitignored and absent in this workspace (assumption A60). The useful negative control is health_t ~ exposure_{t-12}. No HA rows were invented.",
+    "r_hook": "scripts/63_year_shift_health.R",
+    "ran": true,
+    "returncode": 0,
+    "stdout_tail": "",
+    "stderr_tail": "PARKED_NO_PANEL: analysis panels absent (A60).\n",
+    "r_status": {
+      "status": "PARKED_NO_PANEL",
+      "gate3": "open",
+      "headline": false,
+      "detail": "gitignored CHD/HF analysis panels are not on disk; no HA rows invented"
+    }
+  },
+  "claim_boundaries": [
+    "A pass of the health negative control does not upgrade any q.",
+    "Do not chase 1.022.",
+    "Do not treat identifying-share invariance as confirmation of a health model.",
+    "Gate 3 stays open."
+  ]
+}

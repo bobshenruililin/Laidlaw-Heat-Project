@@ -80,7 +80,9 @@ class IdentificationLabTests(unittest.TestCase):
         self.assertIn("not form 2a", self.html.lower())
         self.assertIn("id_embed.js", self.html)
         self.assertIn("./era5_reliability_given_hko_web.svg", self.html)
+        self.assertIn("./era5_cold_reliability_given_hko_web.svg", self.html)
         self.assertTrue((ROOT / "docs" / "id" / "era5_reliability_given_hko_web.svg").exists())
+        self.assertTrue((ROOT / "docs" / "id" / "era5_cold_reliability_given_hko_web.svg").exists())
         # Overlap law: plot captions are HTML, not absolutely stacked on the SVG.
         self.assertNotIn("position:absolute", self.html.split("/* plots */")[-1] if "/* plots */" in self.html else self.html)
         self.assertIn("class=\"caption\"", self.html)
@@ -97,6 +99,8 @@ class IdentificationLabTests(unittest.TestCase):
         self.assertIn("Headquarters-only", by["hot_nights"]["instrument"])
         self.assertEqual(self.p["heatmap_vmax"], 25)
         self.assertGreater(self.p["cold_analogue"]["rate"], 0.95)
+        self.assertEqual(self.p["cold_analogue"]["n_era5_le12_in_that_bin"], 127)
+        self.assertEqual(self.p["cold_analogue"]["n_hko_8_to_12"], 128)
 
     def test_no_health_coefficients(self) -> None:
         blob = (json.dumps(self.p) + self.html).lower()

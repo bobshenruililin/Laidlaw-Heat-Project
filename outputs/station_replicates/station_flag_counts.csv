@@ -1,0 +1,7 @@
+station,name,cut,hot_nights,very_hot_days,cold_days,n_tmin_used,n_tmax_used,identifying_share_hot_nights
+HKO,Hong Kong Observatory Headquarters,complete,449,421,145,4017,4017,0.2883
+HKO,Hong Kong Observatory Headquarters,numeric_including_incomplete,449,421,145,4017,4017,0.2883
+KP,King's Park,complete,160,187,154,3191,3191,0.4935
+KP,King's Park,numeric_including_incomplete,205,249,193,4013,4013,0.4935
+WGL,Waglan Island,complete,107,371,130,3578,3578,0.6556
+WGL,Waglan Island,numeric_including_incomplete,117,421,146,3996,3996,0.6556

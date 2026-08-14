@@ -1,0 +1,161 @@
+{
+  "title": "Public HKO station replicates",
+  "window": {
+    "start": "2013-01-01",
+    "end": "2023-12-31",
+    "n_days": 4017
+  },
+  "provenance": "REAL_PUBLIC. Hong Kong Observatory open-data CLMMINT/CLMMAXT for stations HKO, KP, and WGL. Completeness code C is the primary cut. Not ERA5. Not a substitute Headquarters series. Exposure only.",
+  "stations": {
+    "HKO": {
+      "name": "Hong Kong Observatory Headquarters",
+      "role": "live-paper encoding",
+      "complete": {
+        "n_calendar_days": 4017,
+        "n_tmin_used": 4017,
+        "n_tmax_used": 4017,
+        "n_tmin_complete_C": 4017,
+        "n_tmax_complete_C": 4017,
+        "hot_nights": 449,
+        "very_hot_days": 421,
+        "cold_days": 145,
+        "complete_only": true
+      },
+      "numeric_including_incomplete": {
+        "n_calendar_days": 4017,
+        "n_tmin_used": 4017,
+        "n_tmax_used": 4017,
+        "n_tmin_complete_C": 4017,
+        "n_tmax_complete_C": 4017,
+        "hot_nights": 449,
+        "very_hot_days": 421,
+        "cold_days": 145,
+        "complete_only": false
+      },
+      "identifying_share_hot_nights": 0.2883
+    },
+    "KP": {
+      "name": "King's Park",
+      "role": "nearby official park station",
+      "complete": {
+        "n_calendar_days": 4017,
+        "n_tmin_used": 3191,
+        "n_tmax_used": 3191,
+        "n_tmin_complete_C": 3191,
+        "n_tmax_complete_C": 3191,
+        "hot_nights": 160,
+        "very_hot_days": 187,
+        "cold_days": 154,
+        "complete_only": true
+      },
+      "numeric_including_incomplete": {
+        "n_calendar_days": 4017,
+        "n_tmin_used": 4013,
+        "n_tmax_used": 4013,
+        "n_tmin_complete_C": 3191,
+        "n_tmax_complete_C": 3191,
+        "hot_nights": 205,
+        "very_hot_days": 249,
+        "cold_days": 193,
+        "complete_only": false
+      },
+      "identifying_share_hot_nights": 0.4935
+    },
+    "WGL": {
+      "name": "Waglan Island",
+      "role": "marine official station",
+      "complete": {
+        "n_calendar_days": 4017,
+        "n_tmin_used": 3578,
+        "n_tmax_used": 3578,
+        "n_tmin_complete_C": 3578,
+        "n_tmax_complete_C": 3578,
+        "hot_nights": 107,
+        "very_hot_days": 371,
+        "cold_days": 130,
+        "complete_only": true
+      },
+      "numeric_including_incomplete": {
+        "n_calendar_days": 4017,
+        "n_tmin_used": 3996,
+        "n_tmax_used": 3996,
+        "n_tmin_complete_C": 3578,
+        "n_tmax_complete_C": 3578,
+        "hot_nights": 117,
+        "very_hot_days": 421,
+        "cold_days": 146,
+        "complete_only": false
+      },
+      "identifying_share_hot_nights": 0.6556
+    }
+  },
+  "pairs": {
+    "HKO_vs_KP_hot_nights": {
+      "n_both_complete": 3191,
+      "n_a": 337,
+      "n_b": 160,
+      "n_both_flag": 160,
+      "n_a_only": 177,
+      "n_b_only": 0,
+      "jaccard": 0.4748,
+      "subset_b_in_a": 1.0
+    },
+    "HKO_vs_WGL_hot_nights": {
+      "n_both_complete": 3578,
+      "n_a": 398,
+      "n_b": 107,
+      "n_both_flag": 86,
+      "n_a_only": 312,
+      "n_b_only": 21,
+      "jaccard": 0.2053,
+      "subset_b_in_a": 0.8037
+    },
+    "HKO_vs_KP_very_hot_days": {
+      "n_both_complete": 3191,
+      "n_a": 310,
+      "n_b": 187,
+      "n_both_flag": 163,
+      "n_a_only": 147,
+      "n_b_only": 24,
+      "jaccard": 0.488,
+      "subset_b_in_a": 0.8717
+    },
+    "HKO_vs_WGL_very_hot_days": {
+      "n_both_complete": 3578,
+      "n_a": 368,
+      "n_b": 371,
+      "n_both_flag": 219,
+      "n_a_only": 149,
+      "n_b_only": 152,
+      "jaccard": 0.4212,
+      "subset_b_in_a": 0.5903
+    },
+    "HKO_vs_KP_cold_days": {
+      "n_both_complete": 3191,
+      "n_a": 115,
+      "n_b": 154,
+      "n_both_flag": 115,
+      "n_a_only": 0,
+      "n_b_only": 39,
+      "jaccard": 0.7468,
+      "subset_b_in_a": 0.7468
+    },
+    "HKO_vs_WGL_cold_days": {
+      "n_both_complete": 3578,
+      "n_a": 130,
+      "n_b": 130,
+      "n_both_flag": 119,
+      "n_a_only": 11,
+      "n_b_only": 11,
+      "jaccard": 0.844,
+      "subset_b_in_a": 0.9154
+    }
+  },
+  "punchline": "On days both complete, Headquarters has 337 hot nights and King's Park 160 (Jaccard 0.4748). Waglan Jaccard 0.2053. Nearby siting is not the same instrument. Live paper stays on Headquarters.",
+  "claim_boundaries": [
+    "These series are not a validation of ERA5.",
+    "Do not replace Headquarters with King's Park or Waglan in the live paper.",
+    "Do not overlay hospital counts on stations.",
+    "Incomplete (#) days are reported separately and are not the primary cut."
+  ]
+}

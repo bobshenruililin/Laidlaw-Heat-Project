@@ -1,15 +1,19 @@
 # Bounce ideas after the identification-laboratory milestone — 14 August 2026
 
-**Mode:** Explore, parked. The milestone is reached: identification is a first-class research surface (profile table + Figure D + companion reliability curve + `docs/id/`). These angles stay unfinished on purpose. None of them is Email A. None of them is Gate 3.
+**Mode:** Ship (close-out). Identification is a first-class research surface. The parked angles that could finish from public HKO, WorldPop, and caches already in the repo are now measured or marked still-human. None of them is Email A. None of them is Gate 3.
 
 ## Honest unfinished (park; do not run as headlines)
 
-1. **WorldPop / GHSL population-weighted nights.** In-repo C&SD is not spatial. Would ask where the marine-south 28°C mass sits relative to people. Exposure only. Needs a public population grid and a human nod.
-2. **Public HKO station replicates** (King’s Park, Waglan as published series). Splits siting from instrument. Never “validation of ERA5.” Never a substitute Headquarters series for the live paper.
-3. **Year-shifted negative control** on the identification profile. Shifted flags should collapse identifying shares. Needs HA + a Gate-3-open label. Diagnostic only.
-4. **Hogan W03 lock card** — reference period, percentile, ties, month assignment for HM23. The rank card (3.92) does **not** replace this lock.
-5. **Cold-side reliability as a second companion panel.** Already computed: when HKO is 8–12°C, P(ERA5 ≤ 12) ≈ 1. Opposite bias. Do not promote it to a third public essay.
-6. **ggplot Figure D inside script 47** so it shares construction with Figure 2 exactly. Python SVG is the paper-adjacent analogue shipped today (vmax = 25 from the same monthly file). R rebuild is polish, not a new finding.
+1. **WorldPop / GHSL population-weighted nights.** **Shipped** (script 62). Southern cells hold 66% of unweighted ERA5 28°C nights and 22% after WorldPop weights. Exposure only. Not Marmot-as-finding.
+2. **Public HKO station replicates** (King’s Park, Waglan as published series). **Shipped** (script 61). Complete-C hot nights: HKO 449, KP 160, WGL 107. Not ERA5. Not a substitute encoding.
+3. **Year-shifted negative control.** Teaching **shipped** (script 63): identifying share does not collapse under a 12-month shift. Health re-fit **still parked** — gitignored HA panels absent (A60). Gate-3-open label ready. Do not run as a headline.
+4. **Hogan W03 lock card.** **Card shipped**; lock **not** made. `reports/hogan_w03_lock_card_2026-08-14.md`. Rank 3.92 does **not** replace this lock.
+5. **Cold-side reliability as a second companion panel.** **Shipped** (script 60): 127/128. On `docs/id/`, not a third public essay.
+6. **ggplot Figure D inside script 47.** **Shipped.** vmax = 25 from the same monthly file as Figure 2.
+
+## Still human after this close-out
+
+Hogan ticks W03. Bishai’s 2a (Email A, not today). Roro’s stroke file. Local restore of analysis panels before any health year-shift numbers.
 
 ## Misconduct if dressed as unfinished
 

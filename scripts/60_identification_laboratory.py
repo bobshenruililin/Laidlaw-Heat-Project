@@ -101,6 +101,26 @@ def reliability(rows: list[dict], lo: float, hi: float, width: float) -> list[di
     return out
 
 
+def reliability_cold(rows: list[dict], lo: float, hi: float, width: float) -> list[dict]:
+    """P(ERA5 Tmin ≤ 12°C | HKO Tmin in bin). Opposite bias to the heat curve."""
+    edges = np.round(np.arange(lo, hi + 1e-9, width), 2)
+    out = []
+    for i in range(len(edges) - 1):
+        a, b = float(edges[i]), float(edges[i + 1])
+        xs = [r for r in rows if a <= r["hko"] < b]
+        n = len(xs)
+        n_era = sum(1 for r in xs if r["era"] <= 12.0)
+        out.append({
+            "lo": a,
+            "hi": b,
+            "mid": round((a + b) / 2, 3),
+            "n": n,
+            "n_era5_le12": n_era,
+            "rate_era5_le12": None if n == 0 else round(n_era / n, 4),
+        })
+    return out
+
+
 def spell_membership(rows: list[dict]) -> list[dict]:
     hn_dates = {r["date"] for r in rows if r["hko_hn"]}
     both = [r for r in rows if r["hko_hn"] and r["era_hn"]]
@@ -306,6 +326,98 @@ def write_reliability(path: Path, bins05: list[dict], p_ge28: float, p_ge295: fl
     path.write_text("\n".join(parts) + "\n")
 
 
+def write_cold_reliability(path: Path, bins05: list[dict], p_8_12: float, *, chrome: bool) -> None:
+    """Companion panel: P(ERA5 ≤ 12°C | HKO Tmin in bin). Opposite bias."""
+    w, h = 920, 500
+    if chrome:
+        left, top, right, bot = 72, 64, 28, 96
+        tick_fs = 16
+    else:
+        left, top, right, bot = 80, 28, 36, 72
+        tick_fs = 16
+    inner_w = w - left - right
+    inner_h = h - top - bot
+    tmin, tmax = 6.0, 16.0
+    pad = 8.0
+    clip_id = "coldChrome" if chrome else "coldWeb"
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" '
+        'preserveAspectRatio="xMidYMid meet" font-family="Georgia, serif" role="img">',
+        '<rect width="100%" height="100%" fill="#f4efe4"/>',
+    ]
+    if chrome:
+        parts.append('<text x="24" y="28" font-size="18">ERA5 is already cold when Headquarters is 8–12°C</text>')
+        parts.append(
+            '<text x="24" y="48" font-size="12" fill="#5b6773">'
+            "P(ERA5 Tmin ≤ 12°C | HKO Tmin in 0.5°C bin). Opposite bias to the heat curve. "
+            "Caption sits under the plot. Exposure only.</text>"
+        )
+    parts.extend([
+        f'<clipPath id="{clip_id}"><rect x="{left - pad}" y="{top - pad}" '
+        f'width="{inner_w + 2 * pad}" height="{inner_h + 2 * pad}"/></clipPath>',
+        f'<line x1="{left}" y1="{top}" x2="{left}" y2="{h - bot}" stroke="#12181f"/>',
+        f'<line x1="{left}" y1="{h - bot}" x2="{w - right}" y2="{h - bot}" stroke="#12181f"/>',
+    ])
+
+    def x_of(t: float) -> float:
+        return left + (t - tmin) / (tmax - tmin) * inner_w
+
+    def y_of(p: float) -> float:
+        return h - bot - p * inner_h
+
+    x12 = x_of(12.0)
+    parts.append(
+        f'<line x1="{x12:.1f}" y1="{top}" x2="{x12:.1f}" y2="{h - bot}" '
+        'stroke="#245E83" stroke-dasharray="4 3"/>'
+    )
+    parts.append(f'<g clip-path="url(#{clip_id})">')
+    pts = []
+    for row in bins05:
+        if row["n"] == 0 or row["rate_era5_le12"] is None:
+            continue
+        if row["mid"] < tmin or row["mid"] > tmax:
+            continue
+        x = x_of(row["mid"])
+        y = y_of(row["rate_era5_le12"])
+        r = 2.4 + min(5.5, math.sqrt(row["n"]) / 3.2)
+        pts.append(f"{x:.1f},{y:.1f}")
+        parts.append(
+            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.1f}" fill="#245E83" '
+            'fill-opacity="0.88" stroke="#f4efe4" stroke-width="0.7"/>'
+        )
+    if len(pts) > 1:
+        parts.append(
+            f'<polyline fill="none" stroke="#245E83" stroke-width="1.6" points="{" ".join(pts)}"/>'
+        )
+    parts.append("</g>")
+    for tick in (6, 8, 10, 12, 14, 16):
+        x = x_of(tick)
+        parts.append(f'<line x1="{x:.1f}" y1="{h - bot}" x2="{x:.1f}" y2="{h - bot + 6}" stroke="#12181f"/>')
+        parts.append(
+            f'<text x="{x:.1f}" y="{h - bot + 24}" text-anchor="middle" font-size="{tick_fs}">{tick}°C</text>'
+        )
+    for p in (0.0, 0.25, 0.5, 0.75, 1.0):
+        y = y_of(p)
+        parts.append(f'<line x1="{left - 4}" y1="{y:.1f}" x2="{left}" y2="{y:.1f}" stroke="#12181f"/>')
+        parts.append(
+            f'<text x="{left - 10}" y="{y + 5:.1f}" text-anchor="end" font-size="{tick_fs}" fill="#5b6773">{p:.0%}</text>'
+        )
+    if chrome:
+        parts.append(
+            f'<text x="24" y="{h - 40}" font-size="12" fill="#5b6773">'
+            "Blue = P(ERA5 dry-bulb ≤ 12°C). Marker area scales with bin count. "
+            "Dashed line = official cold-day cut. Not a third public essay.</text>"
+        )
+        parts.append(
+            f'<text x="24" y="{h - 20}" font-size="12" fill="#5b6773">'
+            f"When Headquarters is already 8–12°C, ERA5 is ≤12°C on {p_8_12:.1%} of nights. "
+            "Opposite bias to 28°C. Not a health finding.</text>"
+        )
+    parts.append("</svg>")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(parts) + "\n")
+
+
 def identification_profile() -> list[dict]:
     six = json.loads(SIX.read_text())
     ie = json.loads(IE.read_text())
@@ -360,6 +472,7 @@ def main() -> int:
 
     bins02 = reliability(rows, 26.0, 31.2, 0.2)
     bins05 = reliability(rows, 24.0, 32.5, 0.5)
+    bins_cold = reliability_cold(rows, 6.0, 16.5, 0.5)
     hn = [r for r in rows if r["hko_hn"]]
     n_ge29 = sum(1 for r in hn if r["hko"] >= 29.0)
     n_ge295 = sum(1 for r in hn if r["hko"] >= 29.5)
@@ -413,6 +526,7 @@ def main() -> int:
         },
         "reliability_0p2": bins02,
         "reliability_0p5": bins05,
+        "reliability_cold_0p5": bins_cold,
         "tail": {
             "n_hko_28_to_29": n_bin28,
             "n_era5_in_28_to_29": n_era_bin28,
@@ -476,7 +590,8 @@ def main() -> int:
             "title", "window", "provenance", "anchors", "reliability_0p5", "tail",
             "always_on", "monthly_containment", "spells_of_both_nights",
             "identification_profile", "year_month_hot_nights", "heatmap_vmax",
-            "cold_analogue", "hm_cm_footnote", "punchline", "claim_boundaries",
+            "cold_analogue", "reliability_cold_0p5", "hm_cm_footnote", "punchline",
+            "claim_boundaries",
         )
     }
     (OUT_DOCS / "id_embed.js").write_text(
@@ -515,6 +630,24 @@ def main() -> int:
         bins05,
         n_both / n_hko,
         n_era_ge295 / n_ge295,
+        chrome=False,
+    )
+    write_cold_reliability(
+        OUT_FIG / "era5_cold_reliability_given_hko.svg",
+        bins_cold,
+        n_cold_era / n_cold_hko_8_12,
+        chrome=True,
+    )
+    write_cold_reliability(
+        OUT_FIG / "era5_cold_reliability_given_hko_web.svg",
+        bins_cold,
+        n_cold_era / n_cold_hko_8_12,
+        chrome=False,
+    )
+    write_cold_reliability(
+        OUT_DOCS / "era5_cold_reliability_given_hko_web.svg",
+        bins_cold,
+        n_cold_era / n_cold_hko_8_12,
         chrome=False,
     )
     print(payload["punchline"])

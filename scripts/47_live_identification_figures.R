@@ -71,7 +71,7 @@ climate_path <- file.path(
 climate <- readr::read_csv(climate_path, show_col_types = FALSE)
 validate_required_columns(
   climate,
-  c("month_id", "year", "month", "cold_days", "station"),
+  c("month_id", "year", "month", "cold_days", "hot_nights", "station"),
   "temperature monthly panel"
 )
 assert_month_id(climate$month_id)
@@ -160,6 +160,87 @@ p_a <- ggplot2::ggplot(
     axis.text.x = ggplot2::element_text(face = "bold")
   )
 save_figure(p_a, "figure_A_cold_day_identification", 8.0, 5.8)
+
+# ---------------------------------------------------------------------------
+# Figure D: where monthly hot-night variation occurs (ggplot twin of Python SVG)
+# ---------------------------------------------------------------------------
+hot_month_totals <- climate |>
+  dplyr::group_by(month) |>
+  dplyr::summarise(hot_nights = sum(hot_nights), .groups = "drop")
+july_2022 <- climate$hot_nights[climate$year == 2022L & climate$month == 7L]
+july_2013 <- climate$hot_nights[climate$year == 2013L & climate$month == 7L]
+stopifnot(
+  sum(climate$hot_nights) == 449L,
+  identical(as.integer(july_2022), 25L),
+  identical(as.integer(july_2013), 1L),
+  max(climate$hot_nights) == 25L
+)
+always_on <- climate |>
+  dplyr::filter(month %in% 6:9) |>
+  dplyr::group_by(month) |>
+  dplyr::summarise(n_positive_years = sum(hot_nights >= 1), .groups = "drop")
+stopifnot(all(always_on$n_positive_years == 11L))
+
+hot_by_month_year <- climate |>
+  dplyr::transmute(
+    month_id,
+    year = as.integer(year),
+    month = as.integer(month),
+    month_label = factor(month.abb[month], levels = month.abb),
+    hot_nights = as.integer(hot_nights),
+    station,
+    data_status = "REAL",
+    source = "Hong Kong Observatory Headquarters"
+  )
+readr::write_csv(
+  hot_by_month_year,
+  file.path(out_dir, "hot_nights_by_month_year.csv")
+)
+
+p_d <- ggplot2::ggplot(
+  hot_by_month_year,
+  ggplot2::aes(x = month_label, y = year, fill = hot_nights)
+) +
+  ggplot2::geom_tile(colour = "white", linewidth = 0.45) +
+  ggplot2::geom_text(
+    ggplot2::aes(
+      label = ifelse(hot_nights > 0, hot_nights, ""),
+      colour = hot_nights >= 12
+    ),
+    size = 3.0,
+    fontface = "bold",
+    show.legend = FALSE
+  ) +
+  ggplot2::scale_colour_manual(values = c(`FALSE` = "#183143", `TRUE` = "white")) +
+  ggplot2::scale_fill_gradientn(
+    colours = c("#F4EFE4", "#C26B4A", "#C24E16", "#6B1C0A"),
+    values = scales::rescale(c(0, 6, 12, 25)),
+    breaks = c(0, 5, 10, 15, 20, 25),
+    limits = c(0, 25),
+    name = "Hot nights"
+  ) +
+  ggplot2::scale_y_reverse(breaks = 2013:2023) +
+  ggplot2::labs(
+    title = "Hot nights are intensive, not on/off",
+    subtitle = "June–September always had at least one night (11/11 years); July 2013 = 1, July 2022 = 25",
+    x = NULL,
+    y = NULL,
+    caption = wrap_caption(paste(
+      "Environmental provenance: REAL public Hong Kong Observatory Headquarters data;",
+      "hot night = daily minimum temperature ≥28°C. vmax = 25 from this monthly file.",
+      "ggplot twin of the Python Figure D SVG, sharing construction with Figure A.",
+      "Identification: remaining variation after calendar-month indicators is intensity",
+      "inside already-hot months. Not a health finding."
+    ))
+  ) +
+  theme_identification() +
+  ggplot2::theme(
+    panel.grid = ggplot2::element_blank(),
+    legend.position = "right",
+    legend.title = ggplot2::element_text(face = "bold"),
+    axis.text.x = ggplot2::element_text(face = "bold")
+  )
+save_figure(p_d, "figure_D_hot_night_identification", 8.0, 5.8)
 
 # ---------------------------------------------------------------------------
 # Figure B: first-event totals versus a broad population denominator
@@ -504,266 +585,37 @@ readme_lines <- c(
   "- **Sources:** `outputs/tables/chd_pathway_residual_acf.csv`, `outputs/tables/hf_pathway_residual_acf.csv`, `outputs/release_chd_hf/tables/table2_core_models.csv`, and `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv` (existing `HA_APPROVED_AGGREGATE` diagnostics).",
   "- **Do not claim:** that this script fitted a model, that Newey–West uncertainty confirms either thermal association, or that residual ACF establishes causality.",
   "",
+  "## Figure D — hot-night identification (ggplot twin)",
+  "",
+  "- **What it shows:** June–September always had at least one official hot night (11/11 years). July 2013 = 1 night; July 2022 = 25. Remaining variation after calendar-month indicators is intensity inside already-hot months.",
+  "- **Source:** the same monthly Headquarters file as Figure A. vmax = 25. Python SVG from script 60 remains the web analogue.",
+  "- **Do not claim:** a health effect, or that this is a new finding beyond Figure A’s construction.",
+  "",
   "## Files",
   "",
   "- `figures/live_identification/figure_A_cold_day_identification.pdf` and `.png`",
   "- `figures/live_identification/figure_B_first_event_depletion.pdf` and `.png`",
   "- `figures/live_identification/figure_C_residual_acf.pdf` and `.png`",
+  "- `figures/live_identification/figure_D_hot_night_identification.pdf` and `.png` (ggplot); `.svg` from script 60",
   "- `outputs/live_identification/cold_days_by_month_year.csv`",
+  "- `outputs/live_identification/hot_nights_by_month_year.csv`",
   "",
-  "Figure captions distinguish public environmental/demographic data from approved health aggregates."
+  "Figure captions distinguish public environmental/demographic data from approved health aggregates.",
+  "",
+  "## Mapping to the live manuscript (13 August)",
+  "",
+  "| Paper figure | File | Role in Results |",
+  "|---|---|---|",
+  "| Figure 1 | `figure_B_first_event_depletion.png` | Outcome series: first-event counts vs C&SD 35+ |",
+  "| Figure 2 | `figure_A_cold_day_identification.png` | Exposure identification: DJF concentration of official cold days |",
+  "| Optional Figure 4 | `figure_D_hot_night_identification.svg` / `.png` | Exposure identification: June–September always on; July intensity 1 vs 25. Hogan chooses main vs supplement. |",
+  "| Figure 3 | `figure_C_residual_acf.png` | Why Newey–West is shown for CHD |",
+  "",
+  "Do not paste provisional HM/CM or archive flu/NO₂ coefficients into the paper body."
 )
 writeLines(readme_lines, file.path(out_dir, "README.md"))
 
 message("Wrote ", file.path(out_dir, "cold_days_by_month_year.csv"))
+message("Wrote ", file.path(out_dir, "hot_nights_by_month_year.csv"))
 message("Wrote ", file.path(out_dir, "README.md"))
-message("Wrote three PDF/PNG figure pairs under ", fig_dir)
-#!/usr/bin/env Rscript
-# 47_live_identification_figures.R
-# Identification figures for Hogan's live manuscript.
-# No new health models. Provenance labelled in captions.
-
-source(file.path("scripts", "utils.R"))
-root <- project_root()
-setwd(root)
-ensure_packages(c("ggplot2", "dplyr", "tidyr", "readr", "scales"))
-
-dir.create("figures/live_identification", showWarnings = FALSE, recursive = TRUE)
-dir.create("outputs/live_identification", showWarnings = FALSE, recursive = TRUE)
-
-pdf_device <- if (isTRUE(capabilities("cairo"))) cairo_pdf else "pdf"
-
-# ---------------------------------------------------------------------------
-# Figure A. Cold-day identification (REAL public HKO)
-# ---------------------------------------------------------------------------
-temp <- readr::read_csv(
-  file.path(root, "outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv"),
-  show_col_types = FALSE
-)
-stopifnot(nrow(temp) == 132L)
-stopifnot(sum(temp$cold_days) == 145L)
-
-by_month <- temp |>
-  group_by(month) |>
-  summarise(cold_days = sum(cold_days), .groups = "drop")
-stopifnot(as.integer(by_month$cold_days[by_month$month == 12]) == 40L)
-stopifnot(as.integer(by_month$cold_days[by_month$month == 1]) == 54L)
-stopifnot(as.integer(by_month$cold_days[by_month$month == 2]) == 47L)
-stopifnot(as.integer(by_month$cold_days[by_month$month == 3]) == 4L)
-
-readr::write_csv(
-  temp |>
-    select(month_id, year, month, cold_days, hot_nights, very_hot_days) |>
-    mutate(data_status = "REAL"),
-  "outputs/live_identification/cold_days_by_month_year.csv"
-)
-
-temp <- temp |>
-  mutate(
-    month_lab = factor(
-      month,
-      levels = 1:12,
-      labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
-    )
-  )
-
-p_a <- ggplot(temp, aes(x = month_lab, y = factor(year), fill = cold_days)) +
-  geom_tile(colour = "white", linewidth = 0.3) +
-  geom_text(
-    aes(label = ifelse(cold_days > 0, cold_days, "")),
-    size = 2.4,
-    colour = "#1a1a1a"
-  ) +
-  scale_fill_gradient(
-    name = "Cold days",
-    low = "#f7fbff",
-    high = "#08519c",
-    limits = c(0, max(temp$cold_days))
-  ) +
-  labs(
-    title = "Official cold days by month, Hong Kong Observatory Headquarters, 2013-2023",
-    subtitle = "141 of 145 cold days fell in December-February (December 40, January 54, February 47; March 4).",
-    x = NULL,
-    y = NULL,
-    caption = paste(
-      "REAL public HKO daily flags (Tmin <= 12 C) rolled to calendar months.",
-      "After calendar-month indicators, remaining cold-day variation is between-year winter,",
-      "not summer versus winter. Environmental descriptors only; not hospitalisation results."
-    )
-  ) +
-  theme_minimal(base_size = 11) +
-  theme(
-    plot.title = element_text(face = "bold", size = 12),
-    plot.subtitle = element_text(size = 9.5),
-    plot.caption = element_text(size = 8, colour = "#555555", hjust = 0),
-    panel.grid = element_blank(),
-    legend.position = "right"
-  )
-
-ggsave(
-  "figures/live_identification/figA_cold_days_year_month.pdf",
-  p_a, width = 8.2, height = 5.4, units = "in", device = pdf_device
-)
-ggsave(
-  "figures/live_identification/figA_cold_days_year_month.png",
-  p_a, width = 8.2, height = 5.4, units = "in", dpi = 300, bg = "white"
-)
-
-# ---------------------------------------------------------------------------
-# Figure B. First-event depletion (HA_APPROVED_AGGREGATE annual totals)
-# ---------------------------------------------------------------------------
-ann <- readr::read_csv(
-  file.path(root, "outputs/tables/cvd_descriptive_annual_totals.csv"),
-  show_col_types = FALSE
-)
-stopifnot(ann$total_events[ann$outcome == "chd" & ann$year == 2013] == 23830)
-stopifnot(ann$total_events[ann$outcome == "chd" & ann$year == 2023] == 12323)
-
-pop <- ann |>
-  filter(outcome == "chd") |>
-  transmute(
-    year,
-    series = "C&SD population aged 35+ (index, 2013 = 1)",
-    value = mean_population / mean_population[year == 2013]
-  )
-
-events_idx <- ann |>
-  group_by(outcome) |>
-  mutate(value = total_events / total_events[year == 2013]) |>
-  ungroup() |>
-  transmute(
-    year,
-    series = recode(
-      outcome,
-      chd = "CHD first hospitalisations (index, 2013 = 1)",
-      hf = "HF first hospitalisations (index, 2013 = 1)"
-    ),
-    value
-  )
-
-idx <- bind_rows(events_idx, pop) |>
-  mutate(
-    series = factor(
-      series,
-      levels = c(
-        "CHD first hospitalisations (index, 2013 = 1)",
-        "HF first hospitalisations (index, 2013 = 1)",
-        "C&SD population aged 35+ (index, 2013 = 1)"
-      )
-    )
-  )
-
-p_b <- ggplot(idx, aes(x = year, y = value, colour = series, linetype = series)) +
-  geom_hline(yintercept = 1, colour = "#bbbbbb", linewidth = 0.3) +
-  geom_line(linewidth = 0.85) +
-  geom_point(size = 2) +
-  scale_colour_manual(
-    values = c(
-      "CHD first hospitalisations (index, 2013 = 1)" = "#9C2C2C",
-      "HF first hospitalisations (index, 2013 = 1)" = "#2C6E9C",
-      "C&SD population aged 35+ (index, 2013 = 1)" = "#555555"
-    )
-  ) +
-  scale_linetype_manual(
-    values = c(
-      "CHD first hospitalisations (index, 2013 = 1)" = "solid",
-      "HF first hospitalisations (index, 2013 = 1)" = "solid",
-      "C&SD population aged 35+ (index, 2013 = 1)" = "dashed"
-    )
-  ) +
-  scale_x_continuous(breaks = 2013:2023) +
-  scale_y_continuous(labels = scales::label_number(accuracy = 0.1)) +
-  labs(
-    title = "First-event hospitalisation totals fell while the general population aged 35+ rose",
-    subtitle = "CHD 23,830 to 12,323; HF 4,336 to 2,296 (2013 to 2023). 2020 is a further trough.",
-    x = NULL,
-    y = "Index (2013 = 1)",
-    colour = NULL,
-    linetype = NULL,
-    caption = paste(
-      "HA_APPROVED_AGGREGATE annual first-hospitalisation totals among the T2D/HTN cohort;",
-      "C&SD Table 110-01001 interpolated mid-year population aged 35+ (ecological, not the cohort still at risk).",
-      "The decline is the expected shape of a first-event construction in a 2013-2023 diagnosis window,",
-      "plus pandemic care-seeking. Without still-at-risk person-time these are not incidence rates."
-    )
-  ) +
-  theme_minimal(base_size = 11) +
-  theme(
-    plot.title = element_text(face = "bold", size = 12),
-    plot.subtitle = element_text(size = 9.5),
-    plot.caption = element_text(size = 8, colour = "#555555", hjust = 0),
-    legend.position = "bottom",
-    legend.direction = "vertical",
-    panel.grid.minor = element_blank(),
-    axis.text.x = element_text(angle = 45, hjust = 1)
-  )
-
-ggsave(
-  "figures/live_identification/figB_first_event_depletion.pdf",
-  p_b, width = 8.0, height = 5.6, units = "in", device = pdf_device
-)
-ggsave(
-  "figures/live_identification/figB_first_event_depletion.png",
-  p_b, width = 8.0, height = 5.6, units = "in", dpi = 300, bg = "white"
-)
-
-# ---------------------------------------------------------------------------
-# Figure C. Residual ACF (from already-fitted continuity models)
-# ---------------------------------------------------------------------------
-chd_acf <- readr::read_csv(
-  file.path(root, "outputs/tables/chd_pathway_residual_acf.csv"),
-  show_col_types = FALSE
-)
-hf_acf <- readr::read_csv(
-  file.path(root, "outputs/tables/hf_pathway_residual_acf.csv"),
-  show_col_types = FALSE
-)
-
-lead <- bind_rows(
-  chd_acf |> filter(pathway_id == "P04A") |> mutate(series = "CHD, hot nights"),
-  hf_acf |> filter(pathway_id == "P04B") |> mutate(series = "HF, cold days")
-)
-
-band <- 1.96 / sqrt(132)
-
-p_c <- ggplot(lead, aes(x = lag, y = acf, colour = series)) +
-  geom_hline(yintercept = 0, colour = "#888888") +
-  geom_hline(yintercept = c(-band, band), linetype = "dashed", colour = "#aaaaaa") +
-  geom_col(position = position_dodge(width = 0.7), width = 0.65, alpha = 0.9) +
-  scale_colour_manual(
-    values = c("CHD, hot nights" = "#9C2C2C", "HF, cold days" = "#2C6E9C")
-  ) +
-  scale_x_continuous(breaks = 1:12) +
-  labs(
-    title = "Pearson residual autocorrelation after month and trend",
-    subtitle = "Lag-1 autocorrelation 0.508 (CHD hot nights) versus 0.146 (HF cold days). Dashed lines: +/- 1.96 / sqrt(132).",
-    x = "Lag (months)",
-    y = "Autocorrelation",
-    colour = NULL,
-    caption = paste(
-      "From already-fitted separate negative-binomial continuity models (days-in-month offset).",
-      "Not a new regression. Serial dependence is why Newey-West intervals are shown for CHD",
-      "alongside model-based intervals, not because an interval excluded 1."
-    )
-  ) +
-  theme_minimal(base_size = 11) +
-  theme(
-    plot.title = element_text(face = "bold", size = 12),
-    plot.subtitle = element_text(size = 9.5),
-    plot.caption = element_text(size = 8, colour = "#555555", hjust = 0),
-    legend.position = "bottom",
-    panel.grid.minor = element_blank()
-  )
-
-ggsave(
-  "figures/live_identification/figC_residual_acf.pdf",
-  p_c, width = 8.0, height = 4.8, units = "in", device = pdf_device
-)
-ggsave(
-  "figures/live_identification/figC_residual_acf.png",
-  p_c, width = 8.0, height = 4.8, units = "in", dpi = 300, bg = "white"
-)
-
-message("Wrote figures/live_identification/ fig A-C")
-message("Wrote outputs/live_identification/cold_days_by_month_year.csv")
+message("Wrote four PDF/PNG figure pairs under ", fig_dir)

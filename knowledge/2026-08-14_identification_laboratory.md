@@ -20,6 +20,8 @@ The live monthly paper still admits **no daily-grain number**: not 0.031, not 14
 
 Kimi k3 is still not in this environment’s Task model list. Layout follows Fable’s eight-rule law; overlap QA is Fable + Chromium, not a substituted Kimi run.
 
+Parked close-out (same day): cold companion 127/128; ggplot Figure D; public HKO KP/WGL; WorldPop weights; year-shift teaching with health re-fit parked; W03 card. See [`2026-08-14_parked_object_closeout.md`](2026-08-14_parked_object_closeout.md).
+
 ## Anchors (must not drift)
 
 HKO 449 / ERA5 17 / both 14 / 4,017 matched days / 48 of 57 HKO hot-night months contain no ERA5 28°C night / 400/449 nights in June–September / heatmap vmax 25.

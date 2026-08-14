@@ -1,0 +1,300 @@
+{
+  "title": "Population-weighted ERA5 28\u00b0C nights",
+  "provenance": "REAL_PUBLIC. WorldPop unconstrained 1 km 2020 ASCII over Hong Kong; ERA5-Land 0.1\u00b0 cell-nights from script 49. Exposure descriptives only. No hospital counts. No district health overlay.",
+  "worldpop": {
+    "n_pixels": 1921,
+    "sum_people_in_file": 7833049.6,
+    "sum_people_in_30_cells": 7832853.5,
+    "source": "ppp_HKG_2020_1km_Aggregated.csv"
+  },
+  "grid": {
+    "n_cells": 30,
+    "hn_total": 2935,
+    "hn_south_le_22p25": 1937,
+    "pop_south_le_22p25": 1498724.1
+  },
+  "shares": {
+    "unweighted_hn_south": 0.66,
+    "population_weighted_hn_south": 0.2161,
+    "population_share_south": 0.1913
+  },
+  "cells": [
+    {
+      "id": "g_22.15_113.85",
+      "lat": 22.15,
+      "lon": 113.85,
+      "hn_total": 134,
+      "pop": 28.5,
+      "n_pop_pixels": 3,
+      "south": true
+    },
+    {
+      "id": "g_22.15_113.95",
+      "lat": 22.15,
+      "lon": 113.95,
+      "hn_total": 134,
+      "pop": 133.6,
+      "n_pop_pixels": 20,
+      "south": true
+    },
+    {
+      "id": "g_22.15_114.05",
+      "lat": 22.15,
+      "lon": 114.05,
+      "hn_total": 283,
+      "pop": 1360.8,
+      "n_pop_pixels": 2,
+      "south": true
+    },
+    {
+      "id": "g_22.15_114.15",
+      "lat": 22.15,
+      "lon": 114.15,
+      "hn_total": 288,
+      "pop": 1101.7,
+      "n_pop_pixels": 15,
+      "south": true
+    },
+    {
+      "id": "g_22.15_114.25",
+      "lat": 22.15,
+      "lon": 114.25,
+      "hn_total": 267,
+      "pop": 553.7,
+      "n_pop_pixels": 22,
+      "south": true
+    },
+    {
+      "id": "g_22.15_114.35",
+      "lat": 22.15,
+      "lon": 114.35,
+      "hn_total": 318,
+      "pop": 17.0,
+      "n_pop_pixels": 2,
+      "south": true
+    },
+    {
+      "id": "g_22.25_113.85",
+      "lat": 22.25,
+      "lon": 113.85,
+      "hn_total": 70,
+      "pop": 3501.2,
+      "n_pop_pixels": 60,
+      "south": true
+    },
+    {
+      "id": "g_22.25_113.95",
+      "lat": 22.25,
+      "lon": 113.95,
+      "hn_total": 0,
+      "pop": 80918.7,
+      "n_pop_pixels": 127,
+      "south": true
+    },
+    {
+      "id": "g_22.25_114.05",
+      "lat": 22.25,
+      "lon": 114.05,
+      "hn_total": 148,
+      "pop": 37665.3,
+      "n_pop_pixels": 57,
+      "south": true
+    },
+    {
+      "id": "g_22.25_114.15",
+      "lat": 22.25,
+      "lon": 114.15,
+      "hn_total": 39,
+      "pop": 776329.6,
+      "n_pop_pixels": 107,
+      "south": true
+    },
+    {
+      "id": "g_22.25_114.25",
+      "lat": 22.25,
+      "lon": 114.25,
+      "hn_total": 8,
+      "pop": 596695.8,
+      "n_pop_pixels": 110,
+      "south": true
+    },
+    {
+      "id": "g_22.25_114.35",
+      "lat": 22.25,
+      "lon": 114.35,
+      "hn_total": 248,
+      "pop": 418.1,
+      "n_pop_pixels": 20,
+      "south": true
+    },
+    {
+      "id": "g_22.35_113.85",
+      "lat": 22.35,
+      "lon": 113.85,
+      "hn_total": 148,
+      "pop": 638.2,
+      "n_pop_pixels": 11,
+      "south": false
+    },
+    {
+      "id": "g_22.35_113.95",
+      "lat": 22.35,
+      "lon": 113.95,
+      "hn_total": 128,
+      "pop": 268759.2,
+      "n_pop_pixels": 77,
+      "south": false
+    },
+    {
+      "id": "g_22.35_114.05",
+      "lat": 22.35,
+      "lon": 114.05,
+      "hn_total": 20,
+      "pop": 134812.0,
+      "n_pop_pixels": 108,
+      "south": false
+    },
+    {
+      "id": "g_22.35_114.15",
+      "lat": 22.35,
+      "lon": 114.15,
+      "hn_total": 3,
+      "pop": 2402369.9,
+      "n_pop_pixels": 131,
+      "south": false
+    },
+    {
+      "id": "g_22.35_114.25",
+      "lat": 22.35,
+      "lon": 114.25,
+      "hn_total": 36,
+      "pop": 1427163.1,
+      "n_pop_pixels": 134,
+      "south": false
+    },
+    {
+      "id": "g_22.35_114.35",
+      "lat": 22.35,
+      "lon": 114.35,
+      "hn_total": 75,
+      "pop": 4946.4,
+      "n_pop_pixels": 106,
+      "south": false
+    },
+    {
+      "id": "g_22.45_113.85",
+      "lat": 22.45,
+      "lon": 113.85,
+      "hn_total": 111,
+      "pop": 0.0,
+      "n_pop_pixels": 0,
+      "south": false
+    },
+    {
+      "id": "g_22.45_113.95",
+      "lat": 22.45,
+      "lon": 113.95,
+      "hn_total": 96,
+      "pop": 312034.4,
+      "n_pop_pixels": 71,
+      "south": false
+    },
+    {
+      "id": "g_22.45_114.05",
+      "lat": 22.45,
+      "lon": 114.05,
+      "hn_total": 13,
+      "pop": 530845.4,
+      "n_pop_pixels": 141,
+      "south": false
+    },
+    {
+      "id": "g_22.45_114.15",
+      "lat": 22.45,
+      "lon": 114.15,
+      "hn_total": 3,
+      "pop": 465454.1,
+      "n_pop_pixels": 143,
+      "south": false
+    },
+    {
+      "id": "g_22.45_114.25",
+      "lat": 22.45,
+      "lon": 114.25,
+      "hn_total": 40,
+      "pop": 263505.1,
+      "n_pop_pixels": 126,
+      "south": false
+    },
+    {
+      "id": "g_22.45_114.35",
+      "lat": 22.45,
+      "lon": 114.35,
+      "hn_total": 54,
+      "pop": 3533.0,
+      "n_pop_pixels": 113,
+      "south": false
+    },
+    {
+      "id": "g_22.55_113.85",
+      "lat": 22.55,
+      "lon": 113.85,
+      "hn_total": 111,
+      "pop": 0.0,
+      "n_pop_pixels": 0,
+      "south": false
+    },
+    {
+      "id": "g_22.55_113.95",
+      "lat": 22.55,
+      "lon": 113.95,
+      "hn_total": 93,
+      "pop": 2005.5,
+      "n_pop_pixels": 1,
+      "south": false
+    },
+    {
+      "id": "g_22.55_114.05",
+      "lat": 22.55,
+      "lon": 114.05,
+      "hn_total": 10,
+      "pop": 180751.2,
+      "n_pop_pixels": 21,
+      "south": false
+    },
+    {
+      "id": "g_22.55_114.15",
+      "lat": 22.55,
+      "lon": 114.15,
+      "hn_total": 14,
+      "pop": 322521.7,
+      "n_pop_pixels": 78,
+      "south": false
+    },
+    {
+      "id": "g_22.55_114.25",
+      "lat": 22.55,
+      "lon": 114.25,
+      "hn_total": 13,
+      "pop": 14554.2,
+      "n_pop_pixels": 75,
+      "south": false
+    },
+    {
+      "id": "g_22.55_114.35",
+      "lat": 22.55,
+      "lon": 114.35,
+      "hn_total": 30,
+      "pop": 236.1,
+      "n_pop_pixels": 27,
+      "south": false
+    }
+  ],
+  "punchline": "Southern cells (\u226422.25\u00b0N) hold 1937/2935 unweighted ERA5 28\u00b0C nights (66.0%) but 19.1% of the WorldPop mass in the lattice, so the population-weighted night share is 21.6%. People are not where the marine flag is. Not a health finding.",
+  "claim_boundaries": [
+    "This is not a Marmot / equity hospitalisation result.",
+    "Do not overlay CHD/HF on cells or districts.",
+    "WorldPop is not C&SD and not a T2D/HTN cohort denominator.",
+    "The live paper stays on Headquarters."
+  ]
+}

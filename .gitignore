@@ -63,3 +63,7 @@ outputs/figures/descriptives/cvd_events_vs_mean_temp.png
 data_processed/*_aggregates_normalized.csv
 data_processed/*_analysis_panel.csv
 !data_processed/samples/
+
+# Rebuildable WorldPop rasters (ASCII CSV is the committed grid)
+data_raw/worldpop/*.tif
+data_raw/worldpop/*.zip

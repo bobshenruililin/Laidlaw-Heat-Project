@@ -19,6 +19,10 @@
 
 ## Current meeting record
 
+- [`2026-08-14_parked_object_closeout.md`](2026-08-14_parked_object_closeout.md) — six parked identification objects: four shipped, year-shift teaching shipped with health re-fit parked (A60), W03 card written not locked.
+- [`../reports/hogan_w03_lock_card_2026-08-14.md`](../reports/hogan_w03_lock_card_2026-08-14.md) — HM23 checkbox card; Playbook 01 not executed.
+- [`../reports/hogan_station_replicates_2026-08-14.md`](../reports/hogan_station_replicates_2026-08-14.md) — KP 160 / WGL 107 vs HKO 449 complete hot nights.
+- [`../reports/hogan_population_weighted_nights_2026-08-14.md`](../reports/hogan_population_weighted_nights_2026-08-14.md) — WorldPop 1 km: 66% unweighted south vs 22% weighted.
 - [`2026-08-15_wake_bob.md`](2026-08-15_wake_bob.md) — three human moves after sleep: 2a first; insights named; scrubber exists.
 - [`2026-08-14_identification_laboratory.md`](2026-08-14_identification_laboratory.md) — overnight work is now a research object: profile table, Figure D, companion reliability curve, `docs/id/`.
 - [`2026-08-14_bounce_ideas_after_identification_lab.md`](2026-08-14_bounce_ideas_after_identification_lab.md) — parked angles; Fable’s bounce question; misconduct list.

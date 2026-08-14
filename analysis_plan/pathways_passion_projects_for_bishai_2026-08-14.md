@@ -29,10 +29,10 @@ That is multi-method in Bishai’s sense: one health panel, one identification p
 | Paste-ready limitation for the live file | **Enter** | Monthly station–grid sentence. Optional intensive-margin sentence is a second, Hogan-first decision. |
 | Two emails: 2a first, science later | **Enter** | Sol. Do not mix endorsement with a map tour. Not today. |
 | Sol YC + Fable IAS ladders | **Enter** | Digestible steps. 2a wins conflicts. Wake note for 15 Aug. |
-| Population-weighted nights (WorldPop/GHSL) | **Park** | Marmot-relevant, still exposure-only. Needs a public population grid and a human nod that it is worth Bishai’s time. |
+| Population-weighted nights (WorldPop/GHSL) | **Enter — shipped** | Script 62. Southern ERA5 cells 66% unweighted vs 22% population-weighted. Exposure only. Not Marmot-as-finding. |
 | HM/CM correlation rank (script 58) | **Enter — shipped** | Hogan lock gift. Effective rank 3.92. Not a Bishai object. Not a licence to refit. |
-| Year-shifted negative control | **Park** | Needs HA and a Gate-3-open label. Do not run as a new headline. |
-| Station replicates (Waglan / King’s Park as public HKO series) | **Park** | Answers n = 1 coordinate. Public stations only; never “validation of ERA5.” |
+| Year-shifted negative control | **Teaching shipped; health re-fit parked** | Script 63. Identifying share does not collapse. HA panels gitignored (A60). Gate-3-open. Do not run as a new headline. |
+| Station replicates (Waglan / King’s Park as public HKO series) | **Enter — shipped** | Script 61. KP 160 / WGL 107 complete hot nights vs HKO 449. Not ERA5. |
 | Health on cells / transported ratios / fifth Leaflet | **Never** | Ends credibility with Hogan, Roro, and Bishai. |
 | Rebuild frozen Stage 3 PDF to insert maps | **Never** | Byte lock. Link later, if at all. |
 | Asking Bishai to freeze Gate 3 in a map email | **Never** | |

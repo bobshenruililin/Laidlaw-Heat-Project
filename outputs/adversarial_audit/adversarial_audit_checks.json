@@ -1,0 +1,475 @@
+{
+  "problem": "Does each crucible thesis survive a concrete counterexample?",
+  "provenance": {
+    "climate": "REAL",
+    "coefficients": "HA_APPROVED_AGGREGATE",
+    "new_health_models": false,
+    "governed_counts_read": false
+  },
+  "gamma_seasonal_containment": [
+    {
+      "outcome": "chd",
+      "jan_mean_events": 1386.27272727273,
+      "sep_mean_events": 1097.09090909091,
+      "jan_minus_sep_temp_c": -11.530478983382302,
+      "crude_between_season_slope_per_c": -0.020290276420714116,
+      "anomaly_slope_per_c": -0.00696915668562447,
+      "anomaly_ci_low": -0.024037270675326516,
+      "anomaly_ci_high": 0.010098957304077574,
+      "anomaly_ci_contains_crude_seasonal_slope": true,
+      "provenance": "HA_APPROVED_AGGREGATE descriptives x paid NW6 coefficient"
+    },
+    {
+      "outcome": "hf",
+      "jan_mean_events": 286.909090909091,
+      "sep_mean_events": 196.363636363636,
+      "jan_minus_sep_temp_c": -11.530478983382302,
+      "crude_between_season_slope_per_c": -0.032886507302433345,
+      "anomaly_slope_per_c": -0.0260055379373725,
+      "anomaly_ci_low": -0.05405146023674404,
+      "anomaly_ci_high": 0.002040384361999034,
+      "anomaly_ci_contains_crude_seasonal_slope": true,
+      "provenance": "HA_APPROVED_AGGREGATE descriptives x paid NW6 coefficient"
+    }
+  ],
+  "gamma_flu_inside_month_fe": {
+    "controls": "month_f + splines::ns(time_index, df = 4) (scripts/20_fit_pathway_panel.R core controls)",
+    "flu_months_observed": 121,
+    "flu_r2_month_plus_ns4": 0.5118330802103971,
+    "flu_variation_share_remaining_after_full_controls": 0.4881669197896029,
+    "mean_temp_variation_share_remaining_after_full_controls": 0.036449846216810355,
+    "rows": [
+      {
+        "outcome": "chd",
+        "term": "flu_indicator",
+        "rr": 1.67348469190786,
+        "rr_low": 1.24878173550753,
+        "rr_high": 2.24262650102883,
+        "p_value": 0.000565800471146851,
+        "n_months": 121,
+        "offset_policy": "population_x_days",
+        "pathway_role": "original_panel",
+        "provenance": "HA_APPROVED_AGGREGATE"
+      },
+      {
+        "outcome": "hf",
+        "term": "flu_indicator",
+        "rr": 1.4073795471534,
+        "rr_low": 0.958310969690244,
+        "rr_high": 2.06688356117425,
+        "p_value": 0.0813639730430395,
+        "n_months": 121,
+        "offset_policy": "population_x_days",
+        "pathway_role": "original_panel",
+        "provenance": "HA_APPROVED_AGGREGATE"
+      }
+    ]
+  },
+  "delta_observed_power_identity": {
+    "claim": "observed/detectable = |beta|/(2.8*SE) = z/2.8, a monotone function of p alone",
+    "max_abs_gap": 1.415206984722861e-05,
+    "rows": [
+      {
+        "outcome": "chd",
+        "pathway_id": "P01A",
+        "p_value": 0.423539192797939,
+        "z_from_p": 0.8002962188246022,
+        "z_over_2p8": 0.2858200781516437,
+        "reported_observed_over_detectable": 0.2858148287173078,
+        "abs_gap": 5.249434335885539e-06
+      },
+      {
+        "outcome": "chd",
+        "pathway_id": "P02A",
+        "p_value": 0.320946001953216,
+        "z_from_p": 0.9925157474077492,
+        "z_over_2p8": 0.35446990978848186,
+        "reported_observed_over_detectable": 0.35446339881227545,
+        "abs_gap": 6.510976206408614e-06
+      },
+      {
+        "outcome": "chd",
+        "pathway_id": "P02B",
+        "p_value": 0.509026940897322,
+        "z_from_p": 0.6603536002227672,
+        "z_over_2p8": 0.23584057150813117,
+        "reported_observed_over_detectable": 0.23583623968759992,
+        "abs_gap": 4.331820531250363e-06
+      },
+      {
+        "outcome": "chd",
+        "pathway_id": "P04A",
+        "p_value": 0.0320398433085943,
+        "z_from_p": 2.1439131855570293,
+        "z_over_2p8": 0.7656832805560819,
+        "reported_observed_over_detectable": 0.7656692178171232,
+        "abs_gap": 1.406273895876442e-05
+      },
+      {
+        "outcome": "chd",
+        "pathway_id": "P04B",
+        "p_value": 0.823078662594747,
+        "z_from_p": 0.22358702228601016,
+        "z_over_2p8": 0.07985250795928935,
+        "reported_observed_over_detectable": 0.07985104135459575,
+        "abs_gap": 1.4666046935923882e-06
+      },
+      {
+        "outcome": "chd",
+        "pathway_id": "P04C",
+        "p_value": 0.962414276235873,
+        "z_from_p": 0.047124154516897485,
+        "z_over_2p8": 0.016830055184606247,
+        "reported_observed_over_detectable": 0.016829746044793877,
+        "abs_gap": 3.0913981237043475e-07
+      },
+      {
+        "outcome": "hf",
+        "pathway_id": "P01A",
+        "p_value": 0.0691548229807702,
+        "z_from_p": 1.8174069599158909,
+        "z_over_2p8": 0.6490739142556754,
+        "reported_observed_over_detectable": 0.6490619921474842,
+        "abs_gap": 1.1922108191231295e-05
+      },
+      {
+        "outcome": "hf",
+        "pathway_id": "P02A",
+        "p_value": 0.113483325974114,
+        "z_from_p": 1.5827286460698187,
+        "z_over_2p8": 0.5652602307392209,
+        "reported_observed_over_detectable": 0.5652498487495118,
+        "abs_gap": 1.0381989709151718e-05
+      },
+      {
+        "outcome": "hf",
+        "pathway_id": "P02B",
+        "p_value": 0.0504136413025569,
+        "z_from_p": 1.9564374760874326,
+        "z_over_2p8": 0.6987276700312259,
+        "reported_observed_over_detectable": 0.6987148355551511,
+        "abs_gap": 1.283447607480781e-05
+      },
+      {
+        "outcome": "hf",
+        "pathway_id": "P04A",
+        "p_value": 0.824752454236862,
+        "z_from_p": 0.22143665471750676,
+        "z_over_2p8": 0.0790845195419667,
+        "reported_observed_over_detectable": 0.07908306704131317,
+        "abs_gap": 1.45250065353153e-06
+      },
+      {
+        "outcome": "hf",
+        "pathway_id": "P04B",
+        "p_value": 0.0309646706542344,
+        "z_from_p": 2.1575264202872924,
+        "z_over_2p8": 0.7705451501026045,
+        "reported_observed_over_detectable": 0.7705309980327573,
+        "abs_gap": 1.415206984722861e-05
+      },
+      {
+        "outcome": "hf",
+        "pathway_id": "P04C",
+        "p_value": 0.76411154706375,
+        "z_from_p": 0.3000860137018779,
+        "z_over_2p8": 0.10717357632209924,
+        "reported_observed_over_detectable": 0.10717160794451688,
+        "abs_gap": 1.9683775823592375e-06
+      }
+    ]
+  },
+  "delta_identifying_variance_sparsity": {
+    "cold_days": {
+      "nonzero_months": 29,
+      "share_by_year_group": {
+        "2013": 0.030551733544124365,
+        "2014": 0.1567346366451551,
+        "2015": 0.05467249514260709,
+        "2016": 0.10520699153717504,
+        "2017": 0.0935460307099033,
+        "2018": 0.10818299648395538,
+        "2019": 0.08091922603215136,
+        "2020": 0.03206882390424426,
+        "2021": 0.14569912323882758,
+        "2022": 0.1025077854250755,
+        "2023": 0.07779322004422909,
+        "2024": 0.012116937292552128
+      },
+      "top_year_group_share": 0.1567346366451551,
+      "year_groups_for_80pct": 8,
+      "top1_month_share": 0.10345176834407703,
+      "top5_month_share": 0.4025388756735162,
+      "top10_month_share": 0.650097056928965,
+      "provenance": "REAL"
+    },
+    "hot_nights": {
+      "nonzero_months": 57,
+      "share_by_year_group": {
+        "2013": 0.1750012175353434,
+        "2014": 0.012668901751072206,
+        "2015": 0.019814705856454656,
+        "2016": 0.041890577305911864,
+        "2017": 0.13595633782509695,
+        "2018": 0.0777068097415458,
+        "2019": 0.00975085370903804,
+        "2020": 0.11848473019175157,
+        "2021": 0.16216026835469124,
+        "2022": 0.16251467252462432,
+        "2023": 0.08330130574541997,
+        "2024": 0.0007496194590500342
+      },
+      "top_year_group_share": 0.1750012175353434,
+      "year_groups_for_80pct": 6,
+      "top1_month_share": 0.11522942445570143,
+      "top5_month_share": 0.41571031352404963,
+      "top10_month_share": 0.6179749631817228,
+      "provenance": "REAL"
+    }
+  },
+  "delta_hf_cold_window_ladder": [
+    {
+      "scenario": "baseline_ns4",
+      "n_months": 132,
+      "rr": 1.07280014928024,
+      "rr_low": 1.00645431800469,
+      "rr_high": 1.14351952165835,
+      "p_value_nw6": 0.0309646706542344,
+      "excludes_1": true,
+      "provenance": "HA_APPROVED_AGGREGATE"
+    },
+    {
+      "scenario": "trend_ns3",
+      "n_months": 132,
+      "rr": 1.06647133131429,
+      "rr_low": 1.0052778166412,
+      "rr_high": 1.13138983242999,
+      "p_value_nw6": 0.032793762930022,
+      "excludes_1": true,
+      "provenance": "HA_APPROVED_AGGREGATE"
+    },
+    {
+      "scenario": "trend_ns6",
+      "n_months": 132,
+      "rr": 1.07202088429018,
+      "rr_low": 1.0053385719585,
+      "rr_high": 1.14312611532998,
+      "p_value_nw6": 0.0337959956766121,
+      "excludes_1": true,
+      "provenance": "HA_APPROVED_AGGREGATE"
+    },
+    {
+      "scenario": "trend_ns8",
+      "n_months": 132,
+      "rr": 1.06225750136188,
+      "rr_low": 0.994393588240467,
+      "rr_high": 1.13475289115271,
+      "p_value_nw6": 0.0729593334183776,
+      "excludes_1": false,
+      "provenance": "HA_APPROVED_AGGREGATE"
+    },
+    {
+      "scenario": "year_fixed_effects",
+      "n_months": 132,
+      "rr": 1.06059250868813,
+      "rr_low": 0.996594448765144,
+      "rr_high": 1.12870031624114,
+      "p_value_nw6": 0.0639438477755118,
+      "excludes_1": false,
+      "provenance": "HA_APPROVED_AGGREGATE"
+    },
+    {
+      "scenario": "drop_first_12_months",
+      "n_months": 120,
+      "rr": 1.06667723793865,
+      "rr_low": 0.995110739341851,
+      "rr_high": 1.14339066493137,
+      "p_value_nw6": 0.068503934791973,
+      "excludes_1": false,
+      "provenance": "HA_APPROVED_AGGREGATE"
+    },
+    {
+      "scenario": "drop_first_24_months",
+      "n_months": 108,
+      "rr": 1.04289295509967,
+      "rr_low": 0.965133127767839,
+      "rr_high": 1.12691781527797,
+      "p_value_nw6": 0.288088512760822,
+      "excludes_1": false,
+      "provenance": "HA_APPROVED_AGGREGATE"
+    },
+    {
+      "scenario": "pre_covid",
+      "n_months": 84,
+      "rr": 1.11283089052394,
+      "rr_low": 1.05303734075742,
+      "rr_high": 1.17601963669547,
+      "p_value_nw6": 0.000148225555054209,
+      "excludes_1": true,
+      "provenance": "HA_APPROVED_AGGREGATE"
+    },
+    {
+      "scenario": "covid_phase_adjusted",
+      "n_months": 132,
+      "rr": 1.07368997741871,
+      "rr_low": 1.00646182472812,
+      "rr_high": 1.14540873710815,
+      "p_value_nw6": 0.0311428606151051,
+      "excludes_1": true,
+      "provenance": "HA_APPROVED_AGGREGATE"
+    }
+  ],
+  "beta_inversion_genericity": {
+    "claim": "The recovered amplitude is proportional to Cov(xtilde,utilde)/Cov(xtilde,vtilde); cross-exposure coherence is a property of the two time shapes, not evidence for an omitted risk set.",
+    "stipulated_shape_v": "0.10 log-unit dip, 2020-02..2020-05 and 2022-02..2022-05",
+    "released_operator": "covid_phase_f, a 5-level factor (4 dummies) spanning 2020-02..2023-12, config.yml covid_phases",
+    "share_of_stipulated_dip_spanned_by_released_phase_dummies": 0.36729464915671717,
+    "rows": [
+      {
+        "assumed_true_shape": "beta_stipulated_dip_2020_2022_feb_may",
+        "ratio_by_exposure": {
+          "mean_temp": 1.0,
+          "mean_tmax": 1.0,
+          "mean_tmin": 1.0,
+          "hot_nights": 1.0,
+          "cold_days": 1.0,
+          "very_hot_days": 1.0
+        },
+        "non_cold_mean": 1.0,
+        "non_cold_sd": 0.0,
+        "non_cold_cv": 0.0,
+        "cold_days_ratio_sign_flips_vs_non_cold": false,
+        "provenance": "REAL climate projection"
+      },
+      {
+        "assumed_true_shape": "released_covid_phase_early_covid_2020_02_2021_12",
+        "ratio_by_exposure": {
+          "mean_temp": -5.36010532821137,
+          "mean_tmax": -7.3090708467430705,
+          "mean_tmin": -5.357058785695441,
+          "hot_nights": -4.5756095396407614,
+          "cold_days": 11.893481532906108,
+          "very_hot_days": -6.120659319453781
+        },
+        "non_cold_mean": -5.744500763948885,
+        "non_cold_sd": 1.0312071366422284,
+        "non_cold_cv": 0.1795120549228295,
+        "cold_days_ratio_sign_flips_vs_non_cold": true,
+        "provenance": "REAL climate projection"
+      },
+      {
+        "assumed_true_shape": "released_covid_phase_fifth_wave_2022_01_2022_04",
+        "ratio_by_exposure": {
+          "mean_temp": 3.4977123902073504,
+          "mean_tmax": 3.2488085244871105,
+          "mean_tmin": 3.6468305157381398,
+          "hot_nights": 4.380486425588926,
+          "cold_days": -4.0195820969374205,
+          "very_hot_days": 4.538526618315755
+        },
+        "non_cold_mean": 3.862472894867456,
+        "non_cold_sd": 0.5660217477954326,
+        "non_cold_cv": 0.1465438756987979,
+        "cold_days_ratio_sign_flips_vs_non_cold": true,
+        "provenance": "REAL climate projection"
+      },
+      {
+        "assumed_true_shape": "released_covid_phase_late_2022",
+        "ratio_by_exposure": {
+          "mean_temp": 10.07062107304771,
+          "mean_tmax": 11.415371566826513,
+          "mean_tmin": 10.212930945137973,
+          "hot_nights": 0.058889249331527935,
+          "cold_days": 3.3817646234553815,
+          "very_hot_days": -2.488317848161906
+        },
+        "non_cold_mean": 5.853898997236364,
+        "non_cold_sd": 6.536180107748792,
+        "non_cold_cv": 1.1165515685929215,
+        "cold_days_ratio_sign_flips_vs_non_cold": false,
+        "provenance": "REAL climate projection"
+      },
+      {
+        "assumed_true_shape": "released_covid_phase_post_reopening_2023",
+        "ratio_by_exposure": {
+          "mean_temp": -6.449620456204319,
+          "mean_tmax": -6.56351728167255,
+          "mean_tmin": -6.772612100906895,
+          "hot_nights": -0.23978671972013463,
+          "cold_days": -3.7333250093207373,
+          "very_hot_days": 1.6158156972062303
+        },
+        "non_cold_mean": -3.6819441722595334,
+        "non_cold_sd": 4.044453962074684,
+        "non_cold_cv": 1.0984560799553584,
+        "cold_days_ratio_sign_flips_vs_non_cold": false,
+        "provenance": "REAL climate projection"
+      },
+      {
+        "assumed_true_shape": "single_block_2020_02_to_2023_12",
+        "ratio_by_exposure": {
+          "mean_temp": 1.758607678839379,
+          "mean_tmax": 0.7915919628980098,
+          "mean_tmin": 1.7300905742737824,
+          "hot_nights": -0.3760205844404273,
+          "cold_days": 7.522339050103312,
+          "very_hot_days": -2.454634852093682
+        },
+        "non_cold_mean": 0.28992695589541234,
+        "non_cold_sd": 1.7648560661744153,
+        "non_cold_cv": 6.087243804991578,
+        "cold_days_ratio_sign_flips_vs_non_cold": false,
+        "provenance": "REAL climate projection"
+      },
+      {
+        "assumed_true_shape": "ramp_from_2020_02",
+        "ratio_by_exposure": {
+          "mean_temp": 0.9676362242497158,
+          "mean_tmax": 0.9185127443659535,
+          "mean_tmin": 1.1454763843814775,
+          "hot_nights": 0.31642668295940307,
+          "cold_days": 0.2837523661487128,
+          "very_hot_days": -0.025531711648388966
+        },
+        "non_cold_mean": 0.6645040648616323,
+        "non_cold_sd": 0.49624870884436817,
+        "non_cold_cv": 0.74679559552085,
+        "cold_days_ratio_sign_flips_vs_non_cold": false,
+        "provenance": "REAL climate projection"
+      }
+    ]
+  },
+  "beta_inversion_by_outcome": {
+    "note": "Beta reports the CHD five only. The same table's HF five span a factor of 2.3 and centre on a different amplitude.",
+    "by_outcome": {
+      "chd": {
+        "non_cold_amplitudes": [
+          0.10893125286025977,
+          0.111681827190029,
+          0.0997131024427229,
+          0.11286875357458705,
+          0.11107147432828453
+        ],
+        "mean": 0.10885328207917666,
+        "sd": 0.005305516441825644,
+        "cv": 0.048740068654673806,
+        "cold_days_amplitude": -0.0958775165809505
+      },
+      "hf": {
+        "non_cold_amplitudes": [
+          0.21054459833856556,
+          0.20758314099330036,
+          0.21222020315405538,
+          0.12563199196371638,
+          0.09210190655992061
+        ],
+        "mean": 0.16961636820191164,
+        "sd": 0.05673358733513191,
+        "cv": 0.33448179522153276,
+        "cold_days_amplitude": 0.019579243725273004
+      }
+    },
+    "hf_over_chd_mean_ratio": 1.5582108776337833,
+    "provenance": "HA_APPROVED_AGGREGATE x ILLUSTRATIVE_ALGEBRA"
+  }
+}

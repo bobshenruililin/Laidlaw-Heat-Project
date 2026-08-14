@@ -1,8 +1,8 @@
 # Cycle 1 adversarial health-economics audit
 
-**Mode:** Explore  
-**Date:** 14 August 2026  
-**Provenance:** `SYNTHETIC_THEORY`  
+**Mode:** Explore
+**Date:** 14 August 2026
+**Provenance:** `SYNTHETIC_THEORY`
 **Status:** No findings. No Gate 3 freeze. No monetisation. No stroke coefficients.
 
 This is a hostile referee report on HE-01–HE-12. “Kill” means that the

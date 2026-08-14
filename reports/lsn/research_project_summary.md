@@ -52,20 +52,23 @@ Hong Kong’s summers feel like an emergency; Hong Kong’s winters still matter
 
 ## 14 August addendum — maps Bob can link after a privacy pass
 
-The public companions now include a **spatial lattice** and a **sixteen-city atlas**. Still exposure only. GitHub Pages is not enabled yet (`github.io` 404s). Preview this branch:
+The public companions now include a **Pearl River Delta mosaic**, a **Hong Kong spatial lattice**, and a **sixteen-city atlas**. Still exposure only. GitHub Pages is not enabled yet (`github.io` 404s). Prefer raw.githack until then (htmlpreview often drops the Leaflet scripts):
 
 Hub:  
-https://htmlpreview.github.io/?https://raw.githubusercontent.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/index.html
+https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/index.html
+
+The river has a temperature (PRD mosaic + spatial lag model):  
+https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/prd/index.html
 
 Hong Kong is not a point (Leaflet lattice):  
-https://htmlpreview.github.io/?https://raw.githubusercontent.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/geo/index.html
+https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/geo/index.html
 
 Hong Kong is not Singapore (peer cities):  
-https://htmlpreview.github.io/?https://raw.githubusercontent.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/peers/index.html
+https://raw.githack.com/bobshenruililin/Laidlaw-Heat-Project/cursor/peer-cities-thermal-atlas-1754/docs/peers/index.html
 
-Optional sentence for the LSN body: “I also mapped whether a 28°C night is a place. On the same public grid, Waglan Island records far more of those nights than Headquarters. That is climate geography, not a hospital map.”
+Optional sentences for the LSN body: “I also mapped whether a 28°C night is a place. On the same public grid, Waglan Island records far more of those nights than Headquarters. South of the estuary the flag is common; in Guangzhou’s box it almost disappears. That is climate geography, not a hospital map.”
 
-To make `https://bobshenruililin.github.io/Laidlaw-Heat-Project/` work: Settings → Pages → GitHub Actions (workflow already in `.github/workflows/github-pages.yml`), then merge to `main`.
+To make `https://bobshenruililin.github.io/Laidlaw-Heat-Project/` work: Settings → Pages → GitHub Actions (workflow already in `.github/workflows/github-pages.yml`), then merge to `main`. The Laidlaw Scholars *website* is still the programme blog (`reports/blog/`), not this GitHub URL. See [`laidlaw_public_companions_2026-08-14.md`](../laidlaw_public_companions_2026-08-14.md).
 
 ---
 

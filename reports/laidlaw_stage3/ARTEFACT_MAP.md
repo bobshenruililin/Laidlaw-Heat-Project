@@ -10,6 +10,7 @@
 | `submission_checklist.md` | Bob, supervisor, HKU administration | Living status record | Update administrative completion only. |
 | `reports/lsn/research_project_summary.md` and `docs/lsn/` | Laidlaw Scholar Network | Draft rewritten 13 Aug to CHD/HF; still no coefficients on the public page | Bob’s voice/privacy pass before posting. Do not use the 5 August stroke pack. |
 | `reports/blog/` | Laidlaw website readers | Drafts | Write about process. Bob completes the voice, privacy, and publishing pass. |
+| `docs/` (hub, `prd/`, `geo/`, `peers/`, `lsn/`) | Public map/ribbon companions linked from the blog or LSN | Living; GitHub Pages 404 until enabled | Exposure only. Do not add coefficients. Do not treat as the Laidlaw Scholars website. |
 | Hogan's shared file via `manuscript/live_collaborative/` | Journal co-authors | **LIVE MANUSCRIPT AUTHORITY** | Paste into the shared file; preserve Hogan's weather text and Roro's health-data ownership. |
 | `manuscript/chd_hf_thermal_associations_2013_2023.*` and supplement | Repository and reproducibility readers | Repository-only parallel draft | Use for explicit methods or release work. Do not treat it as the shared manuscript. |
 

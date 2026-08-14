@@ -164,7 +164,7 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 | **Permanent knowledge base** | [`knowledge/README.md`](knowledge/README.md) · [`knowledge/INDEX.md`](knowledge/INDEX.md) |
 | **Laidlaw Stage 3 submission packet** | [`reports/laidlaw_stage3/Laidlaw_Research_Report_2026.pdf`](reports/laidlaw_stage3/Laidlaw_Research_Report_2026.pdf) · [`reports/poster/Laidlaw_Stage3_A0_portrait.pdf`](reports/poster/Laidlaw_Stage3_A0_portrait.pdf) · [`reports/laidlaw_stage3/README.md`](reports/laidlaw_stage3/README.md) |
 | **Laidlaw website blogs** (MIT Admissions-style) | [`reports/blog/`](reports/blog/) · [`knowledge/2026-07-26_laidlaw_blog_canon.md`](knowledge/2026-07-26_laidlaw_blog_canon.md) |
-| **Public exposure companions** (no health coefficients) | [`docs/index.html`](docs/index.html) · [`docs/geo/`](docs/geo/) spatial lattice · [`docs/peers/`](docs/peers/) peer-city atlas · [`docs/lsn/`](docs/lsn/) |
+| **Public exposure companions** (no health coefficients) | [`docs/index.html`](docs/index.html) · [`docs/prd/`](docs/prd/) Pearl River Delta mosaic · [`docs/geo/`](docs/geo/) spatial lattice · [`docs/peers/`](docs/peers/) peer-city atlas · [`docs/lsn/`](docs/lsn/) |
 | **Hogan Tuesday pack (28 Jul 2026)** | [`reports/hogan_tuesday/README.md`](reports/hogan_tuesday/README.md) |
 
 | HKO extremes figure | `figures/hko_annual_extremes_2013_2023.pdf` |

@@ -19,6 +19,11 @@
 
 ## Current meeting record
 
+- [`2026-08-14_prd_thermal_mosaic.md`](2026-08-14_prd_thermal_mosaic.md) — 0.2° ERA5 mosaic of the Pearl River Delta; marine-south 353 vs Guangzhou 12 hot nights; SAR ρ 0.45; not a prefecture health map.
+- [`../reports/hogan_prd_marine_nights_2026-08-14.md`](../reports/hogan_prd_marine_nights_2026-08-14.md) — Hogan lock card: exporting 28°C up the river is a larger spatial act than exporting it across the harbour.
+- [`../docs/prd/index.html`](../docs/prd/index.html) — Leaflet PRD companion with month slider.
+- [`../reports/blog/the_river_has_a_temperature.md`](../reports/blog/the_river_has_a_temperature.md) — Laidlaw website draft; Bob’s privacy pass pending.
+- [`../reports/laidlaw_public_companions_2026-08-14.md`](../reports/laidlaw_public_companions_2026-08-14.md) — programme blog vs GitHub Pages vs frozen Stage 3 PDFs.
 - [`2026-08-14_peer_cities_thermal_atlas.md`](2026-08-14_peer_cities_thermal_atlas.md) — exposure-only 16-city ERA5 atlas; HKO 28°C nights collapse on the grid (449 vs 17); apparent temperature is a third object; Taipei/Shenzhen cousins; Singapore and Phoenix contrasts.
 - [`2026-08-14_hk_spatial_thermal_field.md`](2026-08-14_hk_spatial_thermal_field.md) — 0.1° ERA5 lattice over Hong Kong; Waglan 252 vs HQ 17 hot nights; OLS + Moran + variogram; not a district health map.
 - [`../reports/hogan_hk_is_a_location_2026-08-14.md`](../reports/hogan_hk_is_a_location_2026-08-14.md) — Hogan lock card: Headquarters remains the encoding; exporting 28°C is already spatial.
@@ -72,7 +77,7 @@
 
 - [`2026-07-26_laidlaw_blog_canon.md`](2026-07-26_laidlaw_blog_canon.md) — MIT Admissions-style public-writing canon and the blog/CNS register split.
 - [`2026-07-26_commands_and_blog_auto.md`](2026-07-26_commands_and_blog_auto.md) — what `/blog-from-deck` automates and what Bob must still edit and publish.
-- [`reports/blog/`](../reports/blog/) — Week 1 and Week 2 ready-to-edit website drafts plus `a_city_is_not_a_point.md`; Bob reviews before posting.
+- [`reports/blog/`](../reports/blog/) — Week 1 and Week 2 ready-to-edit website drafts plus `a_city_is_not_a_point.md` and `the_river_has_a_temperature.md`; Bob reviews before posting.
 
 ## Living project canon
 

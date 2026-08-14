@@ -75,6 +75,11 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   `Tmin ~ elevation + coast` R² 0.55; elevation + lat + lon R² 0.88. Residual
   Moran’s I stays positive. Not a district health map. Live paper stays on HKO.
   `docs/geo/index.html`; `knowledge/2026-08-14_hk_spatial_thermal_field.md`.
+- **Pearl River Delta mosaic (14 Aug, exposure only):** 0.2° ERA5-Land lattice
+  over HK–Shenzhen–Guangzhou. Marine-south cells mean **353** ERA5 hot nights;
+  Guangzhou box **12**; Huizhou **0.2**. OLS R² 0.89; SAR-2SLS ρ **0.45**;
+  Gi* hotspots sit on the water. Not a prefecture health map. Do not transport
+  CHD/HF ratios. `docs/prd/index.html`; `knowledge/2026-08-14_prd_thermal_mosaic.md`.
 
 ---
 

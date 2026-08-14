@@ -37,7 +37,7 @@ On 30 lattice cells:
 
 ## Laidlaw deliverable path
 
-- Public companion in `docs/` (hub + geo + peers + LSN).
+- Public companion in `docs/` (hub + prd + geo + peers + LSN).
 - GitHub Pages workflow: `.github/workflows/github-pages.yml`. The `github.io` URL still 404s until Bob enables Pages.
 - Website blog draft: [`reports/blog/a_city_is_not_a_point.md`](../reports/blog/a_city_is_not_a_point.md). Bob’s voice/privacy pass before posting.
 - LSN addendum with preview links: [`reports/lsn/research_project_summary.md`](../reports/lsn/research_project_summary.md).

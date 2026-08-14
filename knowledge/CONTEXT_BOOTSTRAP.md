@@ -88,3 +88,5 @@ For the **Laidlaw Scholar Network (LSN)** research-project summary and interacti
 For the **peer-city thermal atlas** (exposure only; no coefficients), use [`docs/peers/`](../docs/peers/) and [`2026-08-14_peer_cities_thermal_atlas.md`](2026-08-14_peer_cities_thermal_atlas.md). ERA5 is for same-source city ranks; the live paper stays on HKO.
 
 For the **Hong Kong spatial field** (exposure only), use [`docs/geo/`](../docs/geo/) and [`2026-08-14_hk_spatial_thermal_field.md`](2026-08-14_hk_spatial_thermal_field.md). A 28°C night is a location even inside the territory. Do not overlay health counts on cells.
+
+For the **Pearl River Delta mosaic** (exposure only), use [`docs/prd/`](../docs/prd/) and [`2026-08-14_prd_thermal_mosaic.md`](2026-08-14_prd_thermal_mosaic.md). On this grid the 28°C night is marine, not an inland Guangdong event. Do not transport Hong Kong hospitalisation ratios.

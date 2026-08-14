@@ -149,26 +149,28 @@ def write_heatmap(path: Path, monthly: list[dict], *, chrome: bool) -> int:
     by = {(int(r["year"]), int(r["month"])): int(float(r["hot_nights"])) for r in monthly}
     years = list(range(2013, 2024))
     vmax = max(by.values()) if by else 1
-    w, h = 920, 520
-    left, top, right, bot = 72, 28 if not chrome else 64, 36, 56 if not chrome else 80
+    w, h = 920, 540
+    left, top, right, bot = 80, 28 if not chrome else 64, 36, 64 if not chrome else 88
     cw = (w - left - right) / 12
     ch = (h - top - bot) / 11
+    cell_fs = 14
+    tick_fs = 16
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" '
         'preserveAspectRatio="xMidYMid meet" font-family="Georgia, serif" role="img">',
         '<rect width="100%" height="100%" fill="#f4efe4"/>',
     ]
     if chrome:
-        parts.append('<text x="24" y="28" font-size="16">Official hot nights by year and month</text>')
+        parts.append('<text x="24" y="28" font-size="18">Official hot nights by year and month</text>')
         parts.append(
-            '<text x="24" y="46" font-size="11" fill="#5b6773">'
+            '<text x="24" y="48" font-size="12" fill="#5b6773">'
             "HKO Headquarters, 2013–2023. Cell = count of nights Tmin ≥ 28°C. "
             "Exposure only.</text>"
         )
     for i, y in enumerate(years):
         yy = top + i * ch
         parts.append(
-            f'<text x="{left - 10}" y="{yy + ch * 0.68:.1f}" text-anchor="end" font-size="11">{y}</text>'
+            f'<text x="{left - 10}" y="{yy + ch * 0.68:.1f}" text-anchor="end" font-size="{tick_fs}">{y}</text>'
         )
         for m in range(1, 13):
             xx = left + (m - 1) * cw
@@ -181,28 +183,28 @@ def write_heatmap(path: Path, monthly: list[dict], *, chrome: bool) -> int:
             if v > 0:
                 ink = "#f4efe4" if v >= 12 else "#12181f"
                 parts.append(
-                    f'<text x="{xx + cw / 2:.1f}" y="{yy + ch * 0.68:.1f}" text-anchor="middle" '
-                    f'font-size="10" fill="{ink}">{v}</text>'
+                    f'<text x="{xx + cw / 2:.1f}" y="{yy + ch * 0.70:.1f}" text-anchor="middle" '
+                    f'font-size="{cell_fs}" fill="{ink}">{v}</text>'
                 )
     for m in range(1, 13):
         xx = left + (m - 1) * cw + cw / 2
         parts.append(
-            f'<text x="{xx:.1f}" y="{h - bot + 16}" text-anchor="middle" font-size="11">{MONTH_NAMES[m - 1]}</text>'
+            f'<text x="{xx:.1f}" y="{h - bot + 20}" text-anchor="middle" font-size="{tick_fs}">{MONTH_NAMES[m - 1]}</text>'
         )
     x0 = left + 5 * cw
     x1 = left + 9 * cw
-    bracket_y = h - bot + 28
+    bracket_y = h - bot + 34
     parts.append(
         f'<line x1="{x0 + 8:.1f}" y1="{bracket_y}" x2="{x1 - 8:.1f}" y2="{bracket_y}" '
         'stroke="#0c6b74" stroke-width="2"/>'
     )
     parts.append(
-        f'<text x="{(x0 + x1) / 2:.1f}" y="{bracket_y + 14}" text-anchor="middle" font-size="11" fill="#0c6b74">'
+        f'<text x="{(x0 + x1) / 2:.1f}" y="{bracket_y + 18}" text-anchor="middle" font-size="13" fill="#0c6b74">'
         "always ≥1 night (11/11 years)</text>"
     )
     if chrome:
         parts.append(
-            f'<text x="24" y="{h - 12}" font-size="11" fill="#5b6773">'
+            f'<text x="24" y="{h - 14}" font-size="12" fill="#5b6773">'
             "July 2013 = 1 night; July 2022 = 25. May and October are mixed. "
             "Not a health finding. Live paper stays on Headquarters.</text>"
         )
@@ -213,11 +215,17 @@ def write_heatmap(path: Path, monthly: list[dict], *, chrome: bool) -> int:
 
 
 def write_reliability(path: Path, bins05: list[dict], p_ge28: float, p_ge295: float, *, chrome: bool) -> None:
-    w, h = 920, 480
-    left, top, right, bot = 64, 28 if not chrome else 64, 28, 56 if not chrome else 88
+    w, h = 920, 500
+    if chrome:
+        left, top, right, bot = 72, 64, 28, 96
+        tick_fs = 16
+    else:
+        left, top, right, bot = 80, 28, 36, 72
+        tick_fs = 16
     inner_w = w - left - right
     inner_h = h - top - bot
     tmin, tmax = 24.0, 31.0
+    pad = 8.0
     clip_id = "plotChrome" if chrome else "plotWeb"
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" '
@@ -225,14 +233,15 @@ def write_reliability(path: Path, bins05: list[dict], p_ge28: float, p_ge295: fl
         '<rect width="100%" height="100%" fill="#f4efe4"/>',
     ]
     if chrome:
-        parts.append('<text x="24" y="28" font-size="16">ERA5 agrees only after Headquarters is already hot</text>')
+        parts.append('<text x="24" y="28" font-size="18">ERA5 agrees only after Headquarters is already hot</text>')
         parts.append(
-            '<text x="24" y="46" font-size="11" fill="#5b6773">'
+            '<text x="24" y="48" font-size="12" fill="#5b6773">'
             "P(ERA5 Tmin ≥ 28°C | HKO Tmin in 0.5°C bin). 4,017 matched nights. "
             "Caption sits under the plot, not on it. Exposure only.</text>"
         )
     parts.extend([
-        f'<clipPath id="{clip_id}"><rect x="{left}" y="{top}" width="{inner_w}" height="{inner_h}"/></clipPath>',
+        f'<clipPath id="{clip_id}"><rect x="{left - pad}" y="{top - pad}" '
+        f'width="{inner_w + 2 * pad}" height="{inner_h + 2 * pad}"/></clipPath>',
         f'<line x1="{left}" y1="{top}" x2="{left}" y2="{h - bot}" stroke="#12181f"/>',
         f'<line x1="{left}" y1="{h - bot}" x2="{w - right}" y2="{h - bot}" stroke="#12181f"/>',
     ])
@@ -272,22 +281,22 @@ def write_reliability(path: Path, bins05: list[dict], p_ge28: float, p_ge295: fl
         x = x_of(tick)
         parts.append(f'<line x1="{x:.1f}" y1="{h - bot}" x2="{x:.1f}" y2="{h - bot + 6}" stroke="#12181f"/>')
         label = f"{tick}°C"
-        parts.append(f'<text x="{x:.1f}" y="{h - bot + 20}" text-anchor="middle" font-size="11">{label}</text>')
+        parts.append(f'<text x="{x:.1f}" y="{h - bot + 24}" text-anchor="middle" font-size="{tick_fs}">{label}</text>')
     for p in (0.0, 0.25, 0.5, 0.75, 1.0):
         y = y_of(p)
         parts.append(f'<line x1="{left - 4}" y1="{y:.1f}" x2="{left}" y2="{y:.1f}" stroke="#12181f"/>')
         parts.append(
-            f'<text x="{left - 8}" y="{y + 4:.1f}" text-anchor="end" font-size="11" fill="#5b6773">{p:.0%}</text>'
+            f'<text x="{left - 10}" y="{y + 5:.1f}" text-anchor="end" font-size="{tick_fs}" fill="#5b6773">{p:.0%}</text>'
         )
     if chrome:
         parts.append(
-            f'<text x="24" y="{h - 36}" font-size="11" fill="#5b6773">'
+            f'<text x="24" y="{h - 40}" font-size="12" fill="#5b6773">'
             "Teal = P(ERA5 dry-bulb ≥ 28°C). Marker area scales with bin count. "
             "Axis labels sit in the margin. Apparent temperature is omitted here "
             "because it is already ~1 once Headquarters is ≥ 28°C.</text>"
         )
         parts.append(
-            f'<text x="24" y="{h - 18}" font-size="11" fill="#5b6773">'
+            f'<text x="24" y="{h - 20}" font-size="12" fill="#5b6773">'
             f"Among station nights ≥ 29.5°C, ERA5 still agrees only {p_ge295:.0%} of the time "
             f"(unconditional P among official hot nights = {p_ge28:.3f}). "
             "Not a health finding. Not a daily admissions model.</text>"
@@ -496,6 +505,13 @@ def main() -> int:
     )
     write_reliability(
         OUT_FIG / "era5_reliability_given_hko_web.svg",
+        bins05,
+        n_both / n_hko,
+        n_era_ge295 / n_ge295,
+        chrome=False,
+    )
+    write_reliability(
+        OUT_DOCS / "era5_reliability_given_hko_web.svg",
         bins05,
         n_both / n_hko,
         n_era_ge295 / n_ge295,

@@ -104,10 +104,10 @@
     .heatwrap { overflow-x: auto; margin-top: .85rem; }
     .heat {
       display: grid;
-      grid-template-columns: 3.6rem repeat(12, minmax(2.15rem, 1fr));
+      grid-template-columns: 4.2rem repeat(12, minmax(2.4rem, 1fr));
       gap: 3px;
-      min-width: 640px;
-      font-size: .72rem;
+      min-width: 720px;
+      font-size: .8rem;
     }
     .heat b, .heat i, .heat em {
       display: flex;
@@ -125,11 +125,11 @@
     }
     .season {
       display: grid;
-      grid-template-columns: 3.6rem repeat(12, minmax(2.15rem, 1fr));
+      grid-template-columns: 4.2rem repeat(12, minmax(2.4rem, 1fr));
       gap: 3px;
-      min-width: 640px;
+      min-width: 720px;
       margin-top: 6px;
-      font-size: .78rem;
+      font-size: .8rem;
       color: var(--sea);
     }
     .season span { grid-column: 7 / 11; text-align: center; border-top: 2px solid var(--sea); padding-top: .25rem; }
@@ -198,6 +198,7 @@
       <h2>Official hot nights by year and month</h2>
       <p class="prose" style="margin:.2rem 0 .4rem">HKO Headquarters, 2013–2023. Each cell is a count of nights with Tmin ≥ 28°C.</p>
       <div class="heatwrap">
+        <p class="caption" style="margin:0 0 .55rem">On a narrow screen, scroll this grid sideways. June–September are always on (11/11 years).</p>
         <div class="heat" id="heat" role="img" aria-label="Year by month counts of official hot nights"></div>
         <div class="season" aria-hidden="true"><span>always ≥1 night (11/11 years)</span></div>
       </div>
@@ -216,7 +217,9 @@
     <figure>
       <h2>ERA5 agrees only after Headquarters is already hot</h2>
       <p class="prose" style="margin:.2rem 0 .5rem">P(ERA5 Tmin ≥ 28°C | HKO Tmin in a 0.5°C bin). 4,017 matched nights. Titles and the legend sit here, not on the plot.</p>
-      <img src="../../figures/identification_lab/era5_reliability_given_hko_web.svg" alt="Reliability curve of ERA5 28°C nights given HKO Tmin. The rate stays near zero until Headquarters exceeds 29°C." />
+      <div class="heatwrap">
+        <img src="./era5_reliability_given_hko_web.svg" alt="Reliability curve of ERA5 28°C nights given HKO Tmin. The rate stays near zero until Headquarters exceeds 29°C." style="min-width:640px" />
+      </div>
       <div class="legend">
         <span><i class="sw" style="background:#0c6b74"></i>ERA5 dry-bulb ≥ 28°C</span>
         <span><i class="sw" style="background:#c24e16"></i>official 28°C cut (dashed)</span>

@@ -79,6 +79,8 @@ class IdentificationLabTests(unittest.TestCase):
         self.assertIn("figcaption", self.html)
         self.assertIn("not form 2a", self.html.lower())
         self.assertIn("id_embed.js", self.html)
+        self.assertIn("./era5_reliability_given_hko_web.svg", self.html)
+        self.assertTrue((ROOT / "docs" / "id" / "era5_reliability_given_hko_web.svg").exists())
         # Overlap law: plot captions are HTML, not absolutely stacked on the SVG.
         self.assertNotIn("position:absolute", self.html.split("/* plots */")[-1] if "/* plots */" in self.html else self.html)
         self.assertIn("class=\"caption\"", self.html)

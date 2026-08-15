@@ -37,7 +37,9 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | After max Cook | CHD 1.021 (1.001–1.040); HF 1.088 (1.034–1.144) | same |
 | M\|D gates | Type I 0.048–0.150; coverage 0.840; rel. bias 32.8; false-sign 0.808 | `md_calibration_gate_summary.csv` |
 | Flu coverage | 121/132 | CHP layer; P14 n_months |
-| Archive flu CHD | Direction only in the body; numeral 1.673 (1.249–2.243) stays in the release | `combined_pathway_panel_estimates.csv` P14; **not** core-adjusted |
+| Archive flu CHD | Direction in the body; numeral in Supplementary Table S7: 1.673 (1.249–2.243) on 121 months | `combined_pathway_panel_estimates.csv` P14; **not** core-adjusted |
+| Archive flu HF | 1.407 (0.958–2.067) in Supplementary Table S7 only | same |
+| Archive P11 pollution stages | Supplementary Table S9; joint Tmax/Tmin; population×days offset; not core-adjusted | same file, P11 |
 | Software | R 4.3.3; MASS 7.3-60.0.1; sandwich 3.1.3 | session on 12 Aug 2026 |
 | Goggins 2013 AMI | 3.7% per 1 °C below ~24 °C, lags 0–13; no significant heat in three cities | Goggins et al. *Int J Cardiol* 2013;168:243–249 [1] |
 | Goggins and Chan 2017 HF | cumulative RR 2.63 (2.43–2.84) for 11 °C vs 25 °C, lags to 23 days; daily public-hospital HF admissions 2002–2011 | Goggins and Chan *Int J Cardiol* 2017;228:537–542 [21] |

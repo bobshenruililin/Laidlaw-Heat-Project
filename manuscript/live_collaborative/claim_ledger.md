@@ -18,6 +18,7 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | HF Tmin NW6 upper bound includes 1 | 1.00004966 | table2 `rr_high` |
 | Table 3 ladder | as displayed; NW3 CHD hot nights 1.000253–1.043860 | `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv` |
 | All core *q* > 0.19 | min *q* = 0.192 | table2 `q_value_core_bh` |
+| BH rank-1 threshold vs smallest *p* | *p* ≤ 0.004167 for rank 1 at *q* < 0.05 (12 tests); smallest NW6 *p* = 0.031 (HF cold days) | `cvd_core_robust_estimates.csv` NeweyWest_lag6 `p_value`; 0.05/12 |
 | Joint CHD hot nights | 1.045 (1.015–1.075) | `cvd_single_vs_joint_estimates.csv` NW6 |
 | Joint HF cold days | 1.073 | same |
 | VIF Tmax/Tmin | 4.66 | `cvd_exposure_vif.csv` (4.658) |

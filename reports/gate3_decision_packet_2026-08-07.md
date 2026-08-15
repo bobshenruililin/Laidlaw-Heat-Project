@@ -54,6 +54,14 @@ CHD baseline Pearson residual ACF(1) ≈ 0.51 (Ljung–Box rejects white noise).
 5. Stroke file arrival and role relative to this CHD/HF paper.
 6. Roro/Bishai confirmation before external submission (aggregates reduce disclosure risk; they do not grant publication authority).
 
+## Identification remainder (15 August; not a freeze)
+
+Copied from the identification-crucible licensed paragraph so it is not stranded on an unmerged branch. Ledger: `A79`.
+
+Across twelve core contrasts fitted separately by outcome and exposure, the estimand is a within-calendar-month, year-to-year weather-anomaly count ratio for first recorded hospitalisation after first diagnosis, conditional on a four-degree-of-freedom secular trend and a days-in-month offset, with the still-at-risk cohort denominator absent. No contrast clears Benjamini–Hochberg control: rank one would require *p* ≤ 0.004167 and the smallest observed *p* is 0.031 (HF cold days, Newey–West lag-6). Narrating *q* > 0.19 as “no association” is not compatible with Option A.
+
+This is a reporting rule, not a finding. Gate 3 remains a human decision.
+
 ## Outputs index
 
 - Release package: `outputs/release_chd_hf/` (tables, figures, supplement, claim ledger, validation)

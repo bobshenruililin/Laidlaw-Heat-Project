@@ -16,7 +16,7 @@ Human-owned. Agents do not email. Agents do not invent the missing answer.
 | D10 | Still-at-risk monthly person-time | Roro / HA | Deliver or not | Days-in-month offset remains analysis of record | Estimand stays a count ratio |
 | D11 | Paste into Hogan’s shared file | Bob | Paste from markdown using `LIVE_DOC_EDITS.md` | Agents cannot paste | Shared file lags the repo |
 | D12 | Email A to Bishai (form 2a) | Bob | Send / not send | **Do not send from this agent.** If he answers one email this month it should be A, not a manuscript-comment dump. | Programme 31 Aug vs journal track stay separate |
-| D13 | J–O cells in Audrey’s sheet | Bob | Paste the audited pack | Agents cannot edit the sheet | Spreadsheet remains overdue |
+| D14 | Pre-2020 CHD hot-night null in the Abstract | Bob / Hogan | (a) One clause already in Results (1.011, 0.991–1.032). (b) Leave Abstract without it. | **(a)** recorded 15 Aug after Opus flagged silence | Abstract now carries the deflationary window; Hogan may strike |
 
 ## Blockers that do not stop unblocked work
 

@@ -102,4 +102,3 @@ Do **not** rebuild the A0 poster:
 The report copies must remain byte-identical with SHA-256 `6136e85a654502a0aff3018918a6b27f16d449b9da65678a238df2f53e9d36c2`. The poster must remain byte-identical with SHA-256 `4f7c1e408ae2d31fd5c316c0b435ea46ed2d6091d156c577fd25cbdd7a68afa2`.
 
 No PDF was rebuilt as part of this cleanup.
-

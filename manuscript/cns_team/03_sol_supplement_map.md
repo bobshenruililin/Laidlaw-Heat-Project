@@ -181,4 +181,3 @@ Line numbers refer to the pre-edit file audited on 15 August 2026. These replace
 | 242 | `days-offset continuity estimates` | `days-offset core estimates` |
 | 246 | `Continuity residual ACF` and `continuity exposures` | `Core residual ACF` and `core exposures` |
 | 382 | `Confounding-adjusted continuity estimates` | `Confounding-adjusted core estimates` |
-

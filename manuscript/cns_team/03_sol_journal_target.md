@@ -89,4 +89,3 @@ Limits are planning values, not a substitute for a final author-instructions che
 - [The Lancet Planetary Health](https://www.thelancet.com/journals/lanplh/home)
 - [Nature Communications Article guidance](https://www.nature.com/ncomms/submit/article)
 - [Nature formatting guide](https://www.nature.com/nature/for-authors/formatting-guide)
-

@@ -154,9 +154,9 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   Chi Wah stays A0; Imperial print is A1 of the locked poster. 2a still wins.
 - **Draft-PR hygiene (15 Aug):** eleven open drafts were one stack plus four
   independent surfaces. Keep blogs (#46), panel crucible (#53, unmerged),
-  health-econ Explore (#54, unmerged), and the live-manuscript tip (#56).
-  Do not merge #56 to `main` (would dump ~43 MB ERA5 caches with the paper).
-  Map: `knowledge/2026-08-15_pr_triage.md`.
+  and the live-manuscript tip (#56). Health-econ Explore closed after
+  copying dead-end notes. Do not merge #56 to `main` (would dump ~43 MB
+  ERA5 caches with the paper). Map: `knowledge/2026-08-15_pr_triage.md`.
   `knowledge/2026-08-14_audrey_imperial_conference.md`;
   `reports/laidlaw_stage3/imperial_conference_2026.md`.
 

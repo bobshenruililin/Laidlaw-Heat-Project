@@ -18,7 +18,7 @@ Official Headquarters flags versus ERA5 means versus ERA5 flags; King’s Park /
 
 ## Track C — health economics (only if Track B plus prices)
 
-A defensible extension would specify: decision problem (e.g. whether to add nighttime intensity to HKO warnings); comparator (current 28 °C flag vs HNe-informed warning); perspective (HA / societal); population (T2D/HTN cohort); resource use (admissions, LOS); costs (HA costing, not invented); time horizon; equity (age/SES if delivered); uncertainty. **None of that is identified today.** Do not add a “policy implications” cost paragraph to the live Discussion.
+A defensible extension would specify: decision problem (e.g. whether to add nighttime intensity to HKO warnings); comparator (current 28 °C flag vs HNe-informed warning); perspective (HA / societal); population (T2D/HTN cohort); resource use (admissions, LOS); costs (HA costing, not invented); time horizon; equity (age/SES if delivered); uncertainty. **None of that is identified today.** Do not add a “policy implications” cost paragraph to the live Discussion. Dead ends already walked: [`../../../analysis_plan/health_econ/failed_hypotheses.md`](../../../analysis_plan/health_econ/failed_hypotheses.md).
 
 ## Track D — scientific passions worth a PhD-scale sequel
 

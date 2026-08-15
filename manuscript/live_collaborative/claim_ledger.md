@@ -13,7 +13,7 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | Seasonal means | CHD Jan 1,386 / Sep 1,097; HF Jan 287 / Sep 196 | `outputs/tables/cvd_descriptive_seasonality_by_month.csv` (rounded) |
 | 2013 hot nights vs 1981–2010 normal | 10; about seven days below normal | REAL HKO Year’s Weather 2013 |
 | Cold days in DJF | 141 of 145 (Dec 40, Jan 54, Feb 47; Mar 4) | `outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv` |
-| EPD general-station means | NO₂ 53.7→32.1; PM2.5 30.8→14.6; O₃ 42.6→58.3 | `outputs/tables/pollution_annual_means_general_2013_2023.csv` |
+| EPD general-station means | NO₂ 53.7→32.1; PM2.5 30.8→14.6; O₃ 42.6→58.3 | `outputs/tables/pollution_annual_means_general_2013_2023.csv`; 2013–2023 only, not 2000–2009 |
 | Table 2 twelve contrasts | as displayed | `outputs/release_chd_hf/tables/table2_core_models.csv` |
 | HF Tmin NW6 upper bound includes 1 | 1.00004966 | table2 `rr_high` |
 | Table 3 ladder | as displayed; NW3 CHD hot nights 1.000253–1.043860 | `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv` |
@@ -36,7 +36,7 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | After max Cook | CHD 1.021 (1.001–1.040); HF 1.088 (1.034–1.144) | same |
 | M\|D gates | Type I 0.048–0.150; coverage 0.840; rel. bias 32.8; false-sign 0.808 | `md_calibration_gate_summary.csv` |
 | Flu coverage | 121/132 | CHP layer; P14 n_months |
-| Archive flu CHD | 1.673 (1.249–2.243) on 121 months | `combined_pathway_panel_estimates.csv` P14; **not** core-adjusted |
+| Archive flu CHD | 1.673 (1.249–2.243) on 121 months | `combined_pathway_panel_estimates.csv` P14; offset `population_x_days` (not core days-only); **not** core-adjusted |
 | Software | R 4.3.3; MASS 7.3-60.0.1; sandwich 3.1.3 | session on 12 Aug 2026 |
 | Goggins 2013 AMI | 3.7% per 1 °C below ~24 °C, lags 0–13; no significant heat in three cities | Goggins et al. *Int J Cardiol* 2013;168:243–249 [1] |
 | Goggins and Chan 2017 HF | cumulative RR 2.63 (2.43–2.84) for 11 °C vs 25 °C, lags to 23 days; daily public-hospital HF admissions 2002–2011 | Goggins and Chan *Int J Cardiol* 2017;228:537–542 [21] |

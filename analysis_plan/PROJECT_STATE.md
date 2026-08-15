@@ -1,6 +1,6 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-14
+**Last updated:** 2026-08-15
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.

@@ -2,7 +2,7 @@
 
 This is the **journal-track** shared file, not the Laidlaw Stage 3 report. Do not paste Laidlaw-essay language into it. Do not overwrite Hogan’s weather paragraph.
 
-**Paste source (14 August CNS identification pass):** `Heat_CVD_Manuscript_live_update.md`  
+**Paste source (15 August protocol pass on the 14 August CNS draft):** `Heat_CVD_Manuscript_live_update.md`  
 The 13 August Word copy (`Heat_CVD_Manuscript_20260813_collab_draft.docx`) is behind this markdown. Paste from the markdown. Do not email a parallel Word copy.
 
 If Hogan has already edited weather, paste from `methods_remainder_paste.md` around his paragraph instead.
@@ -17,7 +17,7 @@ If Hogan has already edited weather, paste from `methods_remainder_paste.md` aro
 
 ## Paste / replace (in order)
 
-1. **Title.** Replace the 28 July AMI/stroke title with: *Thermal extremes and first hospitalisation after coronary heart disease or heart failure diagnosis in Hong Kong, 2013–2023*.
+1. **Title.** Replace the 28 July AMI/stroke title with: *Thermal extremes and first hospitalisation after coronary heart disease or heart failure diagnosis in Hong Kong, 2013–2023*. Keep the italic working-title note under affiliations (Hogan comment 0).
 2. **Abstract.** Replace the yellow “work in progress” with the draft Abstract. Keep exploratory language (all twelve *q* > 0.19). The Abstract states DJF cold-day concentration, June–September hot-night intensity (July 2013, 1 night; July 2022, 25), and the two lag-1 ACF values.
 3. **Introduction.** Replace the 28 July text. This answers his comment threads and adds two literature upgrades: Goggins and Chan (2017) as the local daily HF admissions anchor [21]; Guo et al. (2024) used for the official hot-night flag versus hourly excess-heat distinction [17], not as a replication. Goggins AMI remains history, not our endpoint. Reply on each comment using `hogan_comment_responses.md`.
 4. **Health data.** Paste the bridge paragraph. Leave a visible note that Roro should replace ICD, timing, and inpatient versus DAE.
@@ -31,8 +31,10 @@ If Hogan has already edited weather, paste from `methods_remainder_paste.md` aro
    - Figure 3 — residual ACF: `figures/live_identification/figure_C_residual_acf.png` (numbers already in the Abstract and Results; Fable recommends demoting this to a supplement if the live file is crowded).
    - Preferred extra if a third identification figure is wanted: `outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.png` (CHD hot-night interval includes 1 before 2020; HF cold-day interval strengthens). Caption: “Core count ratios across trend and first-event sensitivities (Newey–West lag-6 intervals).”
    - Optional extras from `outputs/release_chd_hf/figures/` if he wants a forest or SE-ladder graphic in addition to Tables 2–3: `figure3_core_forest.svg`, `figure5_se_method_ladder.svg`.
-9. **Discussion / Conclusion / limitations.** Replace “work in progress.” Keep the refusal of a protected primary claim. Bounded comparisons only: HF–cold with Goggins and Chan (2017); hot nights with Guo et al. (2024) metric distinction. The 14 August pass adds: hot-night identifying variation is summer intensity (Figure 4); ERA5 monthly mean Tmin tracks Headquarters while 28 °C-night counts do not. Do not paste HM/CM coefficients or archive flu/NO₂ as adjusted Table 2. Do not paste daily Jaccard 0.031, 449 vs 17, or 0.045 as a health attenuation factor.
-10. **References.** Keep his 1–8 (C&SD repaired as 8). Add 9–21 from the draft. Do not drop Yang CY. New overnight addition is [21] Goggins and Chan 2017. Do not add Mistry unless Hogan asks.
+9. **Discussion / Conclusion / limitations.** Replace “work in progress.” Keep the refusal of a protected primary claim. Bounded comparisons only: HF–cold with Goggins and Chan (2017); hot nights with Guo et al. (2024) metric distinction. The 14 August pass adds: hot-night identifying variation is summer intensity (Figure 4); ERA5 monthly mean Tmin tracks Headquarters while 28 °C-night counts do not. The 15 August pass states that archive influenza 1.673 used a general-population × days offset, not the core days-in-month offset. Do not paste HM/CM coefficients or archive flu/NO₂ as adjusted Table 2. Do not paste daily Jaccard 0.031, 449 vs 17, or 0.045 as a health attenuation factor.
+10. **References.** Keep his 1–8 (C&SD repaired as 8). Add 9–21 from the draft. Do not drop Yang CY. New overnight addition is [21] Goggins and Chan 2017. Do not add Mistry unless Hogan asks. Hogan’s unused yearbooks [3] 2017 and [5] 2024 stay in the list; do not attach 2024 as a health year.
+14. **Competing interest.** Do not paste “The authors declare no competing interests.” Paste: “Each author will complete a competing-interest statement before journal submission.”
+15. **Introduction pollution paragraph (comment 8).** Keep 2013–2023 EPD means. Include the sentence that this is not a 2000–2009 reconstruction. Do not use “pathway variable.”
 
 11. **ERA5 limitation (in the markdown already; Hogan can strike).** One sentence after the existing territory-wide limitation. Source: `limitation_station_grid_bridge.md`. Do not overwrite his weather paragraph. Do not treat 0.045 as a health attenuation factor.
 12. **Intensive-margin identification (in the markdown already; Hogan can strike Figure 4).** June–September always had ≥1 official hot night; remaining contrast is July intensity (1 vs 25). Source: `limitation_intensive_margin.md`. Different limitation from the station–grid check. Do not paste 95.4% or the 14 overlapping nights.

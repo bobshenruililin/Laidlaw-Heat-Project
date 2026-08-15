@@ -4,7 +4,7 @@ Bob Ruililin Shen^1^, Author 2^1^, Author 3^1^, Author 4^1^, David Makram Bishai
 
 ^1^ School of Public Health, Li Ka Shing Faculty of Medicine, The University of Hong Kong, Hong Kong SAR, China
 
-*Author order after the first and last positions remains to be confirmed with the supervising investigator. Scientific roles are recorded in the Acknowledgements.*
+*Author order after the first and last positions remains to be confirmed with the supervising investigator. Scientific roles are recorded in the Acknowledgements. The title is a working title; a shorter running head can be set once the team freezes the Results emphasis.*
 
 ## Abstract
 
@@ -26,7 +26,7 @@ Local evidence on cardiac admissions is daily, diagnosis-specific, and drawn fro
 
 Nighttime heat can be encoded in more than one way. Guo et al. analysed daily unplanned emergency hospitalisations in Hong Kong during the hot seasons of 2000–2019 [17]. After adjustment for multi-day mean temperature, the official hot-night indicator (minimum temperature ≥ 28 °C) showed no overall association with non-cancer, non-external hospitalisation over lags 0–4 days (excess relative risk −0.2%, 95% CI −1.2% to 0.7%) [17]. An hourly excess-heat metric for 20:00–07:59 was associated with higher hospitalisation, including a 3.1% (1.5–4.8%) increase at its extreme value [17]. Official monthly counts of hot nights are, by construction, a coarser encoding than nighttime intensity. They remain an interpretable public climatological series, and they are not a test of the hourly metric. Guo et al. did not study first CHD or HF hospitalisation in a diabetes or hypertension cohort [17].
 
-Air pollution also changed during the present study window. At general monitoring stations, mean nitrogen dioxide declined from 53.7 µg m^−3^ in 2013 to 32.1 µg m^−3^ in 2023, and fine particulate matter (PM2.5) from 30.8 to 14.6 µg m^−3^, while ozone rose from 42.6 to 58.3 µg m^−3^ [7]. Temperature and pollutants are not interchangeable covariates. Ozone is coupled with hot, sunny conditions and may confound the thermal association or lie on its pathway, so pollution adjustment is staged rather than screened for attenuation.
+Air pollution also changed during the present study window. At general monitoring stations, mean nitrogen dioxide declined from 53.7 µg m^−3^ in 2013 to 32.1 µg m^−3^ in 2023, and fine particulate matter (PM2.5) from 30.8 to 14.6 µg m^−3^, while ozone rose from 42.6 to 58.3 µg m^−3^ [7]. These concentrations describe 2013–2023. They are not a reconstruction of 2000–2009, the window of the earlier daily AMI study [1]. Temperature and pollutants are not interchangeable covariates. Ozone is coupled with hot, sunny conditions. Entering ozone in the same model as temperature can change the meaning of the thermal coefficient, so pollution adjustment is staged rather than screened for attenuation.
 
 Daily mortality studies in Hong Kong answer a further, distinct question. Liu et al. (2020) reported a cold-dominant attributable fraction for cause-specific mortality during 2006–2016 (4.72% for cold versus 0.16% for heat), and a larger fraction for moderate non-optimum temperatures than for extremes (4.25% versus 0.63%) [12]. Liu et al. (2026) estimated 1,455 to 3,238 model-based excess heat deaths for 2014–2023, the range reflecting which local heatwave definition was applied [13]. Attributable fractions and modelled excess deaths are mortality burden quantities. They cannot be rescaled into monthly morbidity count ratios.
 
@@ -181,7 +181,7 @@ The direction of the HF cold-day residual is consistent with earlier daily evide
 
 Liu et al. (2020, 2026) remain complementary mortality baselines [12,13]. Their attributable fractions and excess-death totals cannot be rescaled into the present count ratios. The failed daily-recovery calibration is the corresponding methods limit: monthly sums do not automatically yield daily trigger estimates [15,16]. That refusal is specific to this series, this implementation, and this calibration standard. It is not evidence that recovery of daily effects from aggregated outcomes fails in general.
 
-Pollution and influenza are scientifically motivated in this setting [1,18]. Archive models in which they enter are not adjusted versions of the core panel. On the 121 months with influenza data, an archive model associated influenza activity with higher CHD counts (1.673, 1.249–2.243), and that coefficient does not adjust Table 2. Confounding by infection, ozone, or nitrogen dioxide is therefore unresolved. Absent cohort person-time, even a stable count ratio remains a count ratio [14].
+Pollution and influenza are scientifically motivated in this setting [1,18]. Archive models in which they enter are not adjusted versions of the core panel. On the 121 months with influenza data, an archive model that used a general-population × days offset, not the core days-in-month offset, associated influenza activity with higher CHD counts (1.673, 1.249–2.243). That coefficient does not adjust Table 2. Confounding by infection, ozone, or nitrogen dioxide is therefore unresolved. Absent cohort person-time, even a stable count ratio remains a count ratio [14].
 
 A protected primary claim would have required a predeclared confirmatory contrast, multiplicity control that survives the twelve-contrast family, uncertainty constructions that are not chosen for null exclusion, and residual diagnostics that leave no substantial CHD serial correlation unaddressed. This analysis does not meet that bar. We report the complete panel and the refusals.
 
@@ -207,7 +207,7 @@ AI-assisted tools were used for code scaffolding, methodological brainstorming, 
 
 ## Declaration of competing interest
 
-The authors declare no competing interests.
+Each author will complete a competing-interest statement before journal submission.
 
 ## Acknowledgements
 

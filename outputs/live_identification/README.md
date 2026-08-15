@@ -25,16 +25,18 @@
 - `figures/live_identification/figure_A_cold_day_identification.pdf` and `.png`
 - `figures/live_identification/figure_B_first_event_depletion.pdf` and `.png`
 - `figures/live_identification/figure_C_residual_acf.pdf` and `.png`
+- `figures/live_identification/figure_D_trend_depletion_sensitivity.pdf` and `.png` (copy of the validated release `figure4_trend_depletion_sensitivity`)
 - `outputs/live_identification/cold_days_by_month_year.csv`
 
 Figure captions distinguish public environmental/demographic data from approved health aggregates.
 
-## Mapping to the live manuscript (13 August)
+## Mapping to the live manuscript (15 August)
 
 | Paper figure | File | Role in Results |
 |---|---|---|
 | Figure 1 | `figure_B_first_event_depletion.png` | Outcome series: first-event counts vs C&SD 35+ |
-| Figure 2 | `figure_A_cold_day_identification.png` | Exposure identification: DJF concentration of official cold days |
-| Figure 3 | `figure_C_residual_acf.png` | Why Newey–West is shown for CHD |
+| Figure 2 | `figure_A_cold_day_identification.png` | Exposure identification: DJF concentration of official cold days; 29 of 132 months carry ≥1 cold day |
+| Figure 3 | `figure_D_trend_depletion_sensitivity.png` | Window / trend / COVID-phase sensitivity: pre-2020 CHD hot-night interval includes 1 |
+| Supplementary Figure S1 | `figure_C_residual_acf.png` | Residual ACF (demoted from main Figure 3) |
 
 Do not paste provisional HM/CM or archive flu/NO₂ coefficients into the paper body.

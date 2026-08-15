@@ -381,6 +381,10 @@ Excluded from the journal scientific claims by design or delivery:
 - Real daily-exposure M|D coefficients (calibration failed);
 - Confounding-adjusted core estimates for pollution, humidity, or influenza (legacy/joint archive paths only).
 
+### S7 note — archive influenza (not core-adjusted)
+
+On the 121 months with influenza data, archive pathway P14 associated influenza activity with CHD counts 1.673 (1.249–2.243). That numeral is **not** an adjusted version of Table 2 and does not appear in the live collaborative manuscript body. Source: `outputs/release_chd_hf/supplement/combined_pathway_panel_estimates.csv`.
+
 Cloud-runtime availability of governed panels is an internal operations fact and is documented in the supervisor integrated report, not as a journal result.
 
 ## S11. What this supplement does not contain

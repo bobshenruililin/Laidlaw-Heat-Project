@@ -10,7 +10,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 ## 0a. Canonical update — CNS-register live paper (15 August)
 
 - Fable / Opus / Sol team produced the strongest honest paper the monthly panel can support: an identification article, not a discovery headline.
-- Live paste pack: `manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md`. Hogan weather paragraph unchanged. Figure 3 is now trend/depletion sensitivity; ACF is supplement. Abstract carries the pre-2020 CHD hot-night null. Twenty-nine of 132 months carry ≥1 official cold day.
+- Live paste pack: `manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md` and `Heat_CVD_Manuscript_20260815_collab_draft.docx`. Hogan weather paragraph unchanged. His seven 28 July comments are answered in `hogan_comment_paste_replies.md`. Figure 3 is now trend/depletion sensitivity; ACF is supplement. Abstract carries the pre-2020 CHD hot-night null. Twenty-nine of 132 months carry ≥1 official cold day.
 - CNS *register* applied; CNS *venue* not claimed. First journal target after human blockers: Environmental Research (EHP reach). Gate 3 still open. Stage 3 PDFs still byte-locked.
 - Durable: `knowledge/2026-08-15_cns_paper_team.md`; `manuscript/cns_team/00_parent_synthesis.md`.
 

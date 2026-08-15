@@ -20,6 +20,7 @@
 ## Current meeting record
 
 - [`2026-08-15_cns_paper_team.md`](2026-08-15_cns_paper_team.md) — Fable/Opus/Sol identification paper; live paste pack; Environmental Research first target; Gate 3 still open.
+- [`2026-08-15_hogan_live_comments.md`](2026-08-15_hogan_live_comments.md) — seven 28 July Hogan threads answered in the live paste pack; weather paragraph untouched.
 
 - [`../analysis_plan/next_three_weeks_prospect_2026-08-13.md`](../analysis_plan/next_three_weeks_prospect_2026-08-13.md) — compute vs human gates after the CHD/HF arrival; blog/LSN/deck tracks; idle-week rules.
 - [`2026-08-13_research_team_synthesis.md`](2026-08-13_research_team_synthesis.md) — Kimi/Fable/Opus/Sol wave: live-paper numbers verified; Fable honesty pass merged; Stage 3 PDFs stay frozen.
@@ -59,7 +60,7 @@
 - [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Start at `LIVE_DOC_EDITS.md`.
 - [`analysis_plan/send_pack_2026-08-12/`](../analysis_plan/send_pack_2026-08-12/) — one reply-all on Hogan’s 12 August thread; temperature panel for Roro.
 - [`manuscript/methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md) — earlier stroke-framed remainder; superseded for paste by the live_collaborative pack.
-- [`manuscript/introduction_revision_notes.md`](../manuscript/introduction_revision_notes.md) — comment-response process and tightened Introduction draft.
+- [`manuscript/introduction_revision_notes.md`](../manuscript/introduction_revision_notes.md) — Hogan comment-response process; paste the CHD/HF Introduction from the live pack, not any older stroke draft.
 - [`analysis_plan/hogan_aug2_ack_to_hogan.md`](../analysis_plan/hogan_aug2_ack_to_hogan.md) — short acknowledgement of the live file and ownership split.
 - [`2026-07-23_stage3_essay_publication_register.md`](2026-07-23_stage3_essay_publication_register.md) — canonical CNS-calibre Stage 3 literature-and-methods essay; no stroke results claimed.
 

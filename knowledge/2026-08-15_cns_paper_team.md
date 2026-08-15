@@ -12,6 +12,7 @@ The strongest honest paper these data support is an **identification article**: 
 - Ljung–Box lag-6 reporting is *p* < 10^−7^ for every CHD core model.
 - Archive influenza 1.673 is out of the Discussion body.
 - Hogan’s weather paragraph is unchanged.
+- His seven 28 July comment threads are answered in `manuscript/live_collaborative/hogan_comment_paste_replies.md` (running title; AMI-scope removal; housing/medication omitted; 2013–2023 pollution window; one-sentence thesis; Yang CY). Do not resolve the threads until he has read them.
 - Stage 3 PDF and A0 poster are unchanged.
 
 ## Venue honesty

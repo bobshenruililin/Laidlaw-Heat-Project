@@ -2,30 +2,28 @@
 
 ## Process in the live manuscript
 
-Hogan’s 28 July comments are now recorded in [`live_collaborative/hogan_comment_responses.md`](live_collaborative/hogan_comment_responses.md). The CHD/HF Introduction that answers them is in [`live_collaborative/Heat_CVD_Manuscript_live_update.md`](live_collaborative/Heat_CVD_Manuscript_live_update.md). Do not invent further threads.
+Hogan’s 28 July comments are recorded in [`live_collaborative/hogan_comment_responses.md`](live_collaborative/hogan_comment_responses.md). Paste-ready bubble replies are in [`live_collaborative/hogan_comment_paste_replies.md`](live_collaborative/hogan_comment_paste_replies.md). The CHD/HF Introduction that answers them is in [`live_collaborative/Heat_CVD_Manuscript_live_update.md`](live_collaborative/Heat_CVD_Manuscript_live_update.md). Do not invent further threads. Do not paste the older stroke-framed draft that used to live in this file.
 
 1. **Read the complete comment set first.** Identify whether each thread concerns the scientific claim, evidence, scope, structure or wording.
 2. **Revise the claim before polishing the sentence.** For example, a comment about Goggins may require a narrower novelty claim, not merely another citation.
-3. **Keep the monthly estimand stable.** The Introduction should describe associations between monthly thermal burden and monthly stroke-event aggregates. It should not drift into daily triggering, attributable mortality or modelled excess deaths.
+3. **Keep the monthly estimand stable.** The Introduction describes associations between monthly thermal burden and monthly first-hospitalisation counts after CHD or HF diagnosis. It does not drift into daily triggering, attributable mortality, modelled excess deaths, or undelivered stroke.
 4. **Preserve cold and heat as parallel questions.** Parallel treatment is a design commitment, not a prediction that their associations will be equal.
-5. **Use Goggins as the local foundation.** The distinction is the later study period, monthly governed outcome grain and pre-specified comparison across thermal definitions. Do not imply that the present design supersedes daily work.
+5. **Use Goggins as the local foundation.** The distinction is the later study period, monthly governed outcome grain and the complete twelve-contrast panel. Do not imply that the present design supersedes daily work.
 6. **Move operations to Methods.** Temperature thresholds, event-assignment rules, pollutant completeness and model diagnostics do not need to remain in the Introduction.
-7. **Edit visibly.** Apply changes in the live file, answer a thread with the edit or a short rationale, and leave genuinely interpretive questions open for Hogan rather than guessing.
+7. **Edit visibly.** Apply changes in the live file, answer a thread with the edit or a short rationale, and leave genuinely interpretive questions open for Hogan rather than guessing. Do not resolve threads until he has read the replies.
 8. **Check the join to Methods.** Terms used in the final Introduction must match Hogan’s weather section and Bob’s remaining Methods.
 9. **Run a final compression pass.** Remove duplicated motivation, internal project language, inflated priority claims and specialist terms that do not add precision.
 
-## Tightened Introduction draft
+## What the 15 August Introduction does with his seven threads
 
-Stroke is a major cause of death, disability and sustained health-care need. The timing of acute cerebrovascular events reflects clinical and behavioural determinants, but it may also respond to environmental stress. Temperature can alter blood pressure, peripheral vascular tone, fluid balance and cardiovascular demand. Air pollution can contribute oxidative and inflammatory stress. These mechanisms make both thermal conditions and ambient pollution plausible short-term influences on stroke burden.
+| ID | Edit in the live Introduction |
+|---|---|
+| 0 | Running title added: *Thermal extremes and first CHD/HF hospitalisation* |
+| 1 | Author 2–4 left as placeholders |
+| 3 | “AMI and stroke may respond differently” removed as our endpoint. Goggins AMI remains local daily history; Goggins and Chan 2017 is the closer HF admissions paper |
+| 4 | Housing, behavioural adaptation, air-conditioning, and medication omitted (none is in the monthly aggregates). Opening citation is Ye et al. [9] |
+| 8 | Pollution paragraph reports 2013–2023 EPD general-station means and states they are not a reconstruction of Goggins 2000–2009 |
+| 9 | Closing paragraph is one sentence |
+| 54 | Yang CY kept |
 
-Hong Kong is a stringent setting in which to examine these relations. The city combines a humid subtropical climate, high urban density and rapid population ageing. Hot nights and very hot days have become more frequent, yet cold days continue to occur. Warming therefore changes the balance of thermal hazards rather than making cold irrelevant. The atmospheric mixture is also changing: concentrations of nitrogen dioxide and particulate matter have declined, whereas ozone has risen. Thermal associations must therefore be interpreted within a seasonally structured and evolving environmental context.
-
-Local evidence establishes the importance of cold while also defining the limits of direct comparison. Goggins et al. (2012) analysed daily public-hospital stroke admissions in Hong Kong during 1999–2006. Lower temperatures were associated with greater haemorrhagic stroke admissions across the observed range, while the ischaemic association was weaker and concentrated at lower temperatures. More recently, Yang et al. (2025) identified cold weather and influenza activity as risk factors for stroke admissions in a weekly analysis spanning 1998–2019. These studies make cold a necessary part of any contemporary Hong Kong analysis. Their daily or weekly coefficients, however, do not estimate associations at the monthly scale.
-
-Heat also requires more than a single temperature measure. An official extreme-day threshold is interpretable, but it may not capture exposure intensity, persistence or the combination of daytime and nighttime heat. Guo et al. (2024) found that nighttime heat intensity carried information not represented by the official binary hot-night indicator in an analysis of hospitalisation. Wang et al. (2019) showed how prolonged very hot days, prolonged hot nights and combined day–night events represent distinct forms of extreme heat in Hong Kong. Across multiple settings, heatwave estimates also vary with the percentile and duration used to define an event (Guo et al., 2017). Exposure definition is therefore part of the scientific question, not a technical choice to be made after examining the health estimates.
-
-Temperature-related mortality studies provide important context but answer different questions. Liu et al. (2020) reported a cold-dominant attributable burden for cause-specific mortality in Hong Kong and showed that moderate non-optimal temperatures accounted for more burden than extremes. Liu et al. (2026) subsequently estimated heatwave-related excess mortality under several local heatwave definitions. Attributable fractions and modelled excess deaths depend on their outcome, exposure distribution, reference temperature and transported risks. They are not stroke coefficients and should not be used to predict the direction or magnitude of a monthly stroke association.
-
-The present study examines monthly stroke-event aggregates in Hong Kong from January 2013 through December 2023. Its estimand is the association between a specified monthly thermal-exposure contrast and the monthly rate of stroke events, conditional on seasonality, long-term trend and stated covariates. Monthly aggregation cannot locate acute lag effects measured in days. It instead permits analysis of governed outcome aggregates aligned with reproducible monthly weather, pollution and population series. The contribution is therefore not a claim to replace earlier daily studies. It is an estimand-specific extension into a later period, with thermal-definition uncertainty addressed explicitly.
-
-We will compare continuous temperature, official extreme-day counts, persistent events, combined daytime–nighttime heat and pre-specified hot- and cold-month definitions within a labelled analysis panel. Heat and cold will be evaluated in parallel, while their potentially different mechanisms and exposure distributions remain visible. Pollution, population ageing, seasonality, long-term trend and pandemic-period changes in health-care use will be addressed through planned adjustment or sensitivity analyses. This design asks whether conclusions about monthly stroke burden are consistent across defensible thermal definitions without presenting each specification as an independent discovery.
+The full Introduction text to paste is the Introduction section of `live_collaborative/Heat_CVD_Manuscript_live_update.md`. Do not use any earlier stroke-admission thesis from this notes file.

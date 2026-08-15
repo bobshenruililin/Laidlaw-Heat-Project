@@ -43,10 +43,12 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | Guo 2024 official HNday28 | excess relative risk −0.2% (−1.2% to 0.7%) lag 0–4 after mean-temperature adjustment | Guo et al. *Lancet Reg Health West Pac* 2024;51:101168 [17], Table 3 |
 | Guo 2024 extreme HNe | +3.1% (1.5–4.8%) NCNE hospitalisation, 99th pct 28.9 °C·h vs 0 | same [17] |
 | Liu 2026 excess deaths | 1,455–3,238 across four heatwave definitions | Liu et al. medRxiv 2026 [13]; complementary mortality, not our ratios |
+| Liu 2020 AFs | 4.72% cold vs 0.16% heat; 4.25% moderate vs 0.63% extreme | Live wording is “for mortality” (abstract all-cause AFs inside a cause-specific paper) [12] |
+| 2023 HN/VHD/CD | 56 / 54 / 14 | HKO Year’s Weather 2023 [22]; not the open-data landing page |
 | Figure 1 | depletion vs 35+ population | `figures/live_identification/figure_B_first_event_depletion.png` from annual totals |
 | Figure 2 | cold-day year×month heatmap | `figures/live_identification/figure_A_cold_day_identification.png` from temperature panel |
-| Figure 3 | residual ACF | `figures/live_identification/figure_C_residual_acf.png` from pathway ACF tables |
-| Figure 4 | hot-night year×month heatmap | `figures/live_identification/figure_D_hot_night_identification.png` from the same temperature panel as Figure 2; vmax 25 |
+| Figure 3 | hot-night year×month heatmap | `figures/live_identification/figure_D_hot_night_identification.png` from the same temperature panel as Figure 2; vmax 25 |
+| Figure 4 | residual ACF | `figures/live_identification/figure_C_residual_acf.png` from pathway ACF tables |
 | June–Sep always ≥1 hot night | 11/11 years; July 2013 = 1; July 2022 = 25 | `outputs/live_identification/hot_nights_by_month_year.csv`; `outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv` |
 | ERA5 monthly mean Tmin vs HKO | r = 0.986; slope 1.032 | `outputs/monthly_bridge/monthly_station_grid_bridge.json` `era5_tmin_on_hko_tmin` (r 0.9861, slope 1.0324) |
 | ERA5 monthly 28 °C nights vs HKO | slope 0.045 (SE 0.007); 57 months vs 9 | same JSON `era5_hn_on_hko_hn` (slope 0.0453, se 0.0074); `month_flags` |

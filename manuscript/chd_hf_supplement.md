@@ -21,7 +21,7 @@ Provenance for CHD/HF association rows is `HA_APPROVED_AGGREGATE`.
 |---|---|
 | Estimand (monthly count ratio; days offset) | Main Methods; S2 |
 | Outcome construction (first recorded hospitalisation after diagnosis; column-label semantics open) | Main Methods; S1 |
-| Complete 12-contrast continuity table | `outputs/release_chd_hf/tables/table2_core_models.csv` |
+| Complete 12-contrast core table | `outputs/release_chd_hf/tables/table2_core_models.csv` |
 | Claim ledger identity CVD-01 to CVD-12 | `outputs/release_chd_hf/tables/claim_ledger_v2.csv` |
 | SE ladder Model/HC1/NW3/NW6 | `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv`; Figure 5 |
 | Multiplicity (BH q across 12) | Table 2 `q_value_core_bh` |
@@ -56,7 +56,7 @@ From `outputs/release_chd_hf/tables/table1_outcome_summary.csv`:
 | CHD | 132 | 156,156 | 1,183.0 |
 | HF | 132 | 29,681 | 224.9 |
 
-### S1.3 Thermal exposures used in the continuity panel
+### S1.3 Thermal exposures used in the core panel
 
 Internal pathway IDs are retained here for archive mapping only; they do not appear in the journal scientific body.
 
@@ -79,14 +79,14 @@ Population aged 35+ × days is an ecological sensitivity only. It is not person-
 | Table / figure | Path | Role |
 |---|---|---|
 | Table 1 | `outputs/release_chd_hf/tables/table1_outcome_summary.csv` | Outcome summary |
-| Table 2 | `outputs/release_chd_hf/tables/table2_core_models.csv` | Twelve continuity NW6 contrasts |
+| Table 2 | `outputs/release_chd_hf/tables/table2_core_models.csv` | Twelve core NW6 contrasts |
 | Table 3 | `outputs/release_chd_hf/tables/table3_robustness_summary.csv` | Robustness ranges |
 | Table 4 | `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv` | 12 × 4 SE ladder |
 | Claim ledger v2 | `outputs/release_chd_hf/tables/claim_ledger_v2.csv` | CVD-01 to CVD-12 with tiers |
 | Analysis availability | `outputs/release_chd_hf/tables/analysis_availability.csv` | Scope / blocker inventory |
 | Figure 1 | `outputs/release_chd_hf/figures/figure1_indexed_outcome_series.png` | Indexed series |
 | Figure 2 | `outputs/release_chd_hf/figures/figure2_seasonal_pattern.png` | Seasonality |
-| Figure 3 | `outputs/release_chd_hf/figures/figure3_core_forest.png` | Continuity forest |
+| Figure 3 | `outputs/release_chd_hf/figures/figure3_core_forest.png` | Core forest |
 | Figure 4 | `outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.png` | Trend/depletion |
 | Figure 5 | `outputs/release_chd_hf/figures/figure5_se_method_ladder.png` | SE ladder forest |
 
@@ -99,9 +99,9 @@ Population aged 35+ × days is an ecological sensitivity only. It is not person-
 - Core fit summary: `outputs/release_chd_hf/supplement/cvd_core_model_fit.csv`
 - Robust SE/offset/family ladder: `outputs/release_chd_hf/supplement/cvd_core_robust_estimates.csv`
 
-Joint extreme-day and nested heat-month structures remain exploratory. Separate continuity IDs P01A, P02A/B, and P04A–C map to the manuscript continuity panel.
+Joint extreme-day and nested heat-month structures remain exploratory. Separate core IDs P01A, P02A/B, and P04A–C map to the manuscript core panel.
 
-Legacy pollution, humidity, and influenza pathway fits in the broader archive are not adjusted versions of these separate continuity models.
+Legacy pollution, humidity, and influenza pathway fits in the broader archive are not adjusted versions of these separate core models.
 
 ### S2.2 Supplementary Table S1 — complete standard-error ladder
 
@@ -206,7 +206,7 @@ Provisional HM/CM flags remain unlocked. Calendar figure: `outputs/release_chd_h
 ### S5.1 Offset and family
 
 File: `outputs/release_chd_hf/supplement/cvd_core_robust_estimates.csv`.
-For each continuity-panel exposure: offsets (days only, population × days, none); families (negative binomial, quasi-Poisson); SE methods (model, HC1, NW3, NW6). Manuscript Table 2 freezes the days-only / negative-binomial / NW6 continuity slice; Table 4 shows the SE ladder without selecting an interval by null exclusion.
+For each core-panel exposure: offsets (days only, population × days, none); families (negative binomial, quasi-Poisson); SE methods (model, HC1, NW3, NW6). Manuscript Table 2 freezes the days-only / negative-binomial / NW6 core slice; Table 4 shows the SE ladder without selecting an interval by null exclusion.
 
 ### S5.2 Trend and first-event depletion
 
@@ -239,11 +239,11 @@ File: `outputs/release_chd_hf/supplement/cvd_influence_sensitivity.csv`.
 
 File: `outputs/release_chd_hf/supplement/cvd_count_timeseries_sensitivity.csv`.
 
-Negative-binomial INGARCH(1,1) models were fitted **without an offset**. They reduced residual ACF1 (CHD hot-night residual ACF1 ≈ 0.25; HF cold-day residual ACF1 ≈ −0.04) while retaining positive CHD hot-night and HF cold-day associations. These fits are unoffset residual-dependence diagnostics. They are not directly comparable with the days-offset continuity estimates and are not a second primary estimand.
+Negative-binomial INGARCH(1,1) models were fitted **without an offset**. They reduced residual ACF1 (CHD hot-night residual ACF1 ≈ 0.25; HF cold-day residual ACF1 ≈ −0.04) while retaining positive CHD hot-night and HF cold-day associations. These fits are unoffset residual-dependence diagnostics. They are not directly comparable with the days-offset core estimates and are not a second primary estimand.
 
 ## S6. Residual diagnostics
 
-| Outcome | Continuity residual ACF1 (approx.) | Range across six continuity exposures | Ljung–Box lag 6 |
+| Outcome | Core residual ACF1 (approx.) | Range across six core exposures | Ljung–Box lag 6 |
 |---|---|---|---|
 | CHD | 0.51 | 0.508–0.534 | Rejects white noise |
 | HF | 0.15 | 0.131–0.179 | Does not reject |
@@ -379,7 +379,7 @@ Excluded from the journal scientific claims by design or delivery:
 - Locked hot-month / cold-month primary estimates (weather reference rules unlocked);
 - Cohort incidence with the true still-at-risk denominator (denominator unavailable);
 - Real daily-exposure M|D coefficients (calibration failed);
-- Confounding-adjusted continuity estimates for pollution, humidity, or influenza (legacy/joint archive paths only).
+- Confounding-adjusted core estimates for pollution, humidity, or influenza (legacy/joint archive paths only).
 
 Cloud-runtime availability of governed panels is an internal operations fact and is documented in the supervisor integrated report, not as a journal result.
 

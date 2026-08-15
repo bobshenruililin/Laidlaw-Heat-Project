@@ -381,10 +381,6 @@ Excluded from the journal scientific claims by design or delivery:
 - Real daily-exposure M|D coefficients (calibration failed);
 - Confounding-adjusted core estimates for pollution, humidity, or influenza (legacy/joint archive paths only).
 
-### S7 note — archive influenza (not core-adjusted)
-
-On the 121 months with influenza data, archive pathway P14 associated influenza activity with CHD counts 1.673 (1.249–2.243). That numeral is **not** an adjusted version of Table 2 and does not appear in the live collaborative manuscript body. Source: `outputs/release_chd_hf/supplement/combined_pathway_panel_estimates.csv`.
-
 Cloud-runtime availability of governed panels is an internal operations fact and is documented in the supervisor integrated report, not as a journal result.
 
 ## S11. What this supplement does not contain
@@ -394,3 +390,42 @@ Cloud-runtime availability of governed panels is an internal operations fact and
 - Synthetic coefficients presented as health findings
 - Private email text or raw addresses
 - Final author order or unrecorded headline approval
+
+## S12. Journal-track archive tables (not core-adjusted)
+
+These two tables are the objects cited from the live collaborative manuscript as Supplementary Tables S7 and S9. They reuse existing `HA_APPROVED_AGGREGATE` archive fits. They do not revise Table 2. Offset in both is general-population × days.
+
+**Supplementary Table S7. Archive influenza co-exposure (pathway P14; 121 months).**
+
+| Outcome | Term | Count ratio (95% CI) | Months |
+|:--|:--|--:|--:|
+| CHD | Influenza indicator | 1.673 (1.249–2.243) | 121 |
+| HF | Influenza indicator | 1.407 (0.958–2.067) | 121 |
+
+Source: `outputs/release_chd_hf/supplement/combined_pathway_panel_estimates.csv`. The live manuscript reports the CHD direction only.
+
+**Supplementary Table S9. Archive pollution-staged models (pathway P11; joint mean Tmax and Tmin).**
+
+Count ratios are for a 1 °C temperature contrast or a 1 µg m^−3^ pollutant contrast. Stages: none, NO₂, PM2.5, ozone, and all three (`multi`). On a monthly grain these models cannot separate ozone confounding from mediation.
+
+*CHD*
+
+| Stage | Mean Tmax | Mean Tmin | Pollutant term |
+|:--|--:|--:|:--|
+| none | 0.990 (0.960–1.021) | 1.003 (0.970–1.038) | — |
+| NO₂ | 0.975 (0.947–1.003) | 1.026 (0.992–1.061) | NO₂ 1.007 (1.004–1.011) |
+| PM2.5 | 0.987 (0.958–1.018) | 1.009 (0.974–1.045) | PM2.5 1.002 (1.000–1.005) |
+| O₃ | 0.989 (0.958–1.021) | 1.004 (0.969–1.041) | O₃ 1.000 (0.999–1.001) |
+| multi | 0.973 (0.945–1.003) | 1.025 (0.992–1.060) | NO₂ 1.011 (1.006–1.016); PM2.5 0.996 (0.992–1.000); O₃ 1.000 (0.998–1.001) |
+
+*HF*
+
+| Stage | Mean Tmax | Mean Tmin | Pollutant term |
+|:--|--:|--:|:--|
+| none | 1.016 (0.975–1.059) | 0.958 (0.919–0.998) | — |
+| NO₂ | 0.994 (0.959–1.029) | 0.988 (0.951–1.025) | NO₂ 1.010 (1.006–1.014) |
+| PM2.5 | 1.009 (0.972–1.047) | 0.972 (0.934–1.011) | PM2.5 1.006 (1.002–1.009) |
+| O₃ | 1.011 (0.971–1.052) | 0.964 (0.925–1.004) | O₃ 1.001 (0.999–1.003) |
+| multi | 0.995 (0.959–1.033) | 0.986 (0.949–1.024) | NO₂ 1.010 (1.004–1.016); PM2.5 1.000 (0.995–1.006); O₃ 1.000 (0.997–1.002) |
+
+Nitrogen dioxide retains a positive coefficient in the CHD and HF archive fits. That is a co-predictor fact, not a thermal finding.

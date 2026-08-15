@@ -44,6 +44,10 @@ Cover-letter sentence (Sol): *We report a complete exploratory panel of ecologic
 
 Written dissemination authority; PI IRB; ICD/inpatient semantics; authorship; cohort risk-set; Hogan weather lock; Roro health-data paragraph; Gate 3 Option A with the team.
 
+## Hostile-read follow-up (Fable, same day)
+
+Zero desk-reject items. Referee-facing major KL1 closed by displaying existing P11 archive fits as Supplementary Table S9, labelled not-core-adjusted (joint Tmax/Tmin, population×days offset). KL2 stays human-owned. Minors KL3–KL7 and nit KL9 pasted into the live file. IJE 248-word Abstract held in `05_ije_abstract_hold.md`.
+
 ## Files
 
 - Live paper: `manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md`

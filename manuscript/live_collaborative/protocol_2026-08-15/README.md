@@ -31,6 +31,7 @@ See [`QUEUE.md`](QUEUE.md).
 | Approach registry | [`approach_registry.md`](approach_registry.md) |
 | Continuation plan | [`CONTINUATION.md`](CONTINUATION.md) |
 | Round A / B reports | `round_a_*.md`, `round_b_*.md`, `fresh_inspect.md` |
+| Open draft-PR map | [`../../../knowledge/2026-08-15_pr_triage.md`](../../../knowledge/2026-08-15_pr_triage.md) |
 
 ## What this pass may change in the paper
 

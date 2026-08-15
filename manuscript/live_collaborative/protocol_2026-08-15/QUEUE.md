@@ -10,5 +10,6 @@ Priority order. Update status as items close. Do not manufacture work.
 | 4 | Feasible supplementary analyses | **Parked** | No new health models |
 | 5 | Collaborator decision requests | **Drafted, not sent** | [`email_draft_not_sent.md`](email_draft_not_sent.md) |
 | 6 | Future research / passion projects | **Separated** | [`passion_project_brief.md`](passion_project_brief.md) |
+| 7 | Draft-PR hygiene | **Mapped** | [`../../../knowledge/2026-08-15_pr_triage.md`](../../../knowledge/2026-08-15_pr_triage.md) |
 
 Unblocked while humans decide: comment ledger completeness, citation ledger, J–O audit, ozone wording, competing-interest honesty, influenza offset honesty, working-title note.

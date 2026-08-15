@@ -34,7 +34,7 @@ may leave governance.
   remains a human step.
 - **Jingwen Liu (“Jasmine”):** first author of the confirmed mortality paper; do not confuse her with Roro.
 
-The manuscript now has one authority: the live file shared by Hogan with Bob and Roro. The canonical Stage 3 essay is reusable source material, not a parallel manuscript. See [`2026-08-02_hogan_live_manuscript.md`](2026-08-02_hogan_live_manuscript.md).
+The manuscript now has one authority: the live file shared by Hogan with Bob and Roro. The canonical Stage 3 essay is reusable source material, not a parallel manuscript. See [`2026-08-02_hogan_live_manuscript.md`](2026-08-02_hogan_live_manuscript.md). Open draft PRs: keep the live-paper tip, blogs, panel crucible, and health-econ Explore; do not merge maps+caches with the paper ([`2026-08-15_pr_triage.md`](2026-08-15_pr_triage.md)).
 
 ## Evidence spine
 

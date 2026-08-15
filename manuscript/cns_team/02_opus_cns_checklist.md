@@ -57,7 +57,7 @@
 
 ## 4. Number audit
 
-Every numeral in the drop-ins, with the source consulted for this pass. All CSV paths are relative to the repository root.
+Two layers were used. First, a machine check parsed every estimate-with-interval statement out of the seven prose sections and required each one to match an `rr`, `rr_low`, `rr_high` triple in a governed output table at the precision printed: 33 statements checked, 0 unmatched. The same check compared all twelve Table 2 markdown rows against `table2_core_models.csv` cell by cell (0 mismatches), confirmed the Ljung–Box thresholds, confirmed that the weather paragraph is identical to the live file, and confirmed that 2.63 appears only in the Introduction and that 1.673 appears nowhere. Second, the remaining claims — counts, prevalences, percentages, and cited-paper values — were read against source by hand, as listed below. All CSV paths are relative to the repository root.
 
 | Claim as written | Source | Verified |
 |---|---|---|

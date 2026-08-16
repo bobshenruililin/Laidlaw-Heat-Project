@@ -19,7 +19,8 @@ This folder is the **journal-track** paste pack for Hogan’s live shared file. 
 | `Heat_CVD_Manuscript_20260728_hogan_comments.docx` | Commented 28 July original (provenance) |
 | `Heat_CVD_Manuscript_20260813_collab_draft.docx` | Stale 13 Aug Word copy; do not paste over the 15 Aug text |
 | `methods_remainder_paste.md` | Methods only, with Hogan’s weather paragraph left as a hole |
-| `claim_ledger.md` | Every number → source table |
+| `claim_ledger.md` | Every number → source table (human) |
+| `claim_ledger.yml` | Machine sibling; `python3 scripts/50_audit_live_claim_ledger.py` |
 | `../cns_team/` | Architecture, drop-ins, venue note, parent synthesis |
 
 **How to use**

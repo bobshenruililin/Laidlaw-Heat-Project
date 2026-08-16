@@ -2,6 +2,8 @@
 
 **Purpose:** keep the journal article short without hiding the diagnostics that determine identification and uncertainty. This map uses existing `HA_APPROVED_AGGREGATE`, `REAL`, `REAL_PUBLIC_HKO`, and `SYNTHETIC_CALIBRATION` artifacts. It adds no health model and does not freeze Gate 3.
 
+**16 August lab collision (named gap, owner Bob):** the live manuscript cites residual ACF as Supplementary Figure S1. This map assigned S1 to the core forest and S3 to ACF. `manuscript/chd_hf_supplement.md` still uses Figure S1 for the exposure-correlation heatmap. Do not invent a new numbering in Hogan’s live file in this lab; reconcile one list before submission. See [`analysis_plan/auto_research/named_gaps_2026-08-16.md`](../../analysis_plan/auto_research/named_gaps_2026-08-16.md).
+
 ## Main paper
 
 The main paper should carry the estimand, the complete core family, and the three displays needed to understand identification. It should not carry every diagnostic plot.

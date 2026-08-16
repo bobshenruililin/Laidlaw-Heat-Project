@@ -1,11 +1,17 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-15
+**Last updated:** 2026-08-16
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0b. Canonical update — auto-research lab (16 August)
+
+- Jin-adapted lab (Playbook 05): branching families, adversarial audit, machine claim ledger. Stop rule is “identification article survives checking,” not “assume a thermal proof exists.”
+- First run residue: `analysis_plan/auto_research/`. Independent adversary recorded no kills. Hogan-lock readiness and stroke/person-time idle checklists are packets, not locks or coefficients. Supplementary numbering (S1/S7/S9) is a named Bob-owned gap, not a new result.
+- Durable: `knowledge/2026-08-16_auto_research_lab.md`.
 
 ## 0a. Canonical update — CNS-register live paper (15 August)
 

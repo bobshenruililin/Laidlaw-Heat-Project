@@ -10,15 +10,17 @@
 
 - [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md) — publication-register scholarly writing mode.
 - [Slash-command and blog-drafting contract](2026-07-26_commands_and_blog_auto.md) — command inventory, deck trigger, and human publication gate.
-- [Playbook skill router](../.cursor/skills/playbook/SKILL.md) — explicit `/playbook` selection across `01–04` and `99`.
+- [Playbook skill router](../.cursor/skills/playbook/SKILL.md) — explicit `/playbook` selection across `01–05` and `99`.
 - [Playbook 01: Hogan definition lock](../analysis_plan/playbooks/01_hogan_definition_lock.md)
 - [Playbook 02: HA data arrival](../analysis_plan/playbooks/02_ha_data_arrival.md)
 - [Playbook 03: full analysis run](../analysis_plan/playbooks/03_full_analysis_run.md)
 - [Playbook 04: final write-up](../analysis_plan/playbooks/04_final_writeup.md)
+- [Playbook 05: auto-research lab](../analysis_plan/playbooks/05_auto_research_lab.md)
 - [Playbook 99: emergencies](../analysis_plan/playbooks/99_emergencies.md)
 
 ## Current meeting record
 
+- [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md) — Jin-adapted lab contract; first run; machine claim-ledger auditor; Gate 3 still open.
 - [`2026-08-15_cns_paper_team.md`](2026-08-15_cns_paper_team.md) — Fable/Opus/Sol identification paper; live paste pack; Environmental Research first target; Gate 3 still open.
 - [`2026-08-15_hogan_live_comments.md`](2026-08-15_hogan_live_comments.md) — seven 28 July Hogan threads answered in the live paste pack; weather paragraph untouched.
 

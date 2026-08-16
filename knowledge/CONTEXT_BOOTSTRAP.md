@@ -1,6 +1,6 @@
 # Context bootstrap — read first in every new chat
 
-**Canon date:** 15 August 2026. Read [`PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md), [`2026-08-15_cns_paper_team.md`](2026-08-15_cns_paper_team.md), and [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md) for living detail. Update this file whenever a human gate changes.
+**Canon date:** 16 August 2026. Read [`PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md), [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md), [`2026-08-15_cns_paper_team.md`](2026-08-15_cns_paper_team.md), and [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md) for living detail. Update this file whenever a human gate changes.
 
 ## Scientific contract
 
@@ -77,7 +77,7 @@ The definition catalogue contains `HM01–HM50` and `CM01–CM48`. Core starters
    manuscript and supplement in [`manuscript/`](../manuscript/); validated
    release in [`outputs/release_chd_hf/`](../outputs/release_chd_hf/).
 
-Use the explicit slash skills `/playbook-01-hogan-lock`, `/playbook-02-ha-arrival`, `/playbook-03-full-analysis`, `/playbook-04-final-writeup`, or `/playbook-99-emergencies`; `/playbook` asks which one. Each skill reads the canonical playbook and cannot replace human evidence or gate ownership. See the [command contract](2026-07-26_commands_and_blog_auto.md).
+Use the explicit slash skills `/playbook-01-hogan-lock`, `/playbook-02-ha-arrival`, `/playbook-03-full-analysis`, `/playbook-04-final-writeup`, `/playbook-05-auto-research`, or `/playbook-99-emergencies`; `/playbook` asks which one. Each skill reads the canonical playbook and cannot replace human evidence or gate ownership. See the [command contract](2026-07-26_commands_and_blog_auto.md). Auto-research lab: [`analysis_plan/playbooks/05_auto_research_lab.md`](../analysis_plan/playbooks/05_auto_research_lab.md) and [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md).
 
 For shocks, use [Playbook 99](../analysis_plan/playbooks/99_emergencies.md). The prose exemplar is [`essay_lit_methods.md`](../reports/laidlaw_stage3/essay_lit_methods.md); the voice standard is [`writing_standards_hogan.md`](../analysis_plan/writing_standards_hogan.md). Update durable context, not only chat.
 

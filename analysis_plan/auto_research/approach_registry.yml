@@ -1,0 +1,110 @@
+# Approach families for Playbook 05. Group by scientific idea, not wording.
+# An adversary may kill a family only with a table contradiction or a forbidden-claim hit.
+# Status: alive | blocked_human | killed
+# Do not collapse incompatible families into one attractive incomplete story.
+
+lab: heat_chd_hf_auto_research
+updated: 2026-08-16
+stop_rule: identification_article_survives_audit_and_gaps_are_human_owned
+do_not_copy_from_crouzeix:
+  - assume_complete_affirmative_proof_exists
+  - isolate_from_goggins_guo_liu_hogan_weather
+  - unsupervised_search_for_a_new_coefficient
+
+families:
+  identification:
+    id: F01
+    status: alive
+    job: "Show where monthly first-event information comes from: DJF concentration of official cold days, first-event depletion vs C&SD 35+, Newey–West ladder, pre-2020 window."
+    must_not_collapse_into: "A discovery headline or a protected primary contrast."
+    kill_only_with:
+      - table_contradiction
+      - forbidden_claim_hit
+    primary_files:
+      - manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+      - outputs/live_identification/cold_days_by_month_year.csv
+      - outputs/tables/cvd_descriptive_annual_totals.csv
+      - outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+      - outputs/tables/cvd_trend_depletion_sensitivity.csv
+
+  multiplicity_uncertainty:
+    id: F02
+    status: alive
+    job: "Keep the twelve-contrast family visible. All core q > 0.19. Report Model, HC1, NW3, and NW6 without selecting the interval because it excludes 1."
+    must_not_collapse_into: "Picking the interval that excludes 1, or treating q = 0.192 as multiplicity protection."
+    kill_only_with:
+      - table_contradiction
+      - forbidden_claim_hit
+    primary_files:
+      - outputs/release_chd_hf/tables/table2_core_models.csv
+      - outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+      - outputs/tables/chd_pathway_residual_acf.csv
+      - outputs/tables/hf_pathway_residual_acf.csv
+
+  local_daily_history:
+    id: F03
+    status: alive
+    job: "Hold Goggins AMI/HF, Guo official vs hourly hot nights, and both Liu mortality layers as distinct estimands."
+    must_not_collapse_into: "Rescaling 2.63 or 3.1% onto 1.073 / 1.022, or treating mortality AF as monthly morbidity."
+    kill_only_with:
+      - table_contradiction
+      - forbidden_claim_hit
+    primary_files:
+      - literature/jasmine_liu2020_confirmed.md
+      - literature/roro_manuscript_deep_read.md
+      - manuscript/live_collaborative/claim_ledger.md
+
+  weather_lock_readiness:
+    id: F04
+    status: blocked_human
+    blocked_reason: "Hogan has not written the definition lock. A blank Tuesday sheet is not evidence."
+    job: "Playbook 01 packet for HM23 / CM05 / official counts: pending vs already in the registry. No fake lock."
+    must_not_collapse_into: "Locking definitions Hogan has not written, or calling a weather nomination Gate 3."
+    kill_only_with:
+      - table_contradiction
+      - forbidden_claim_hit
+    owner: Hogan
+    primary_files:
+      - analysis_plan/playbooks/01_hogan_definition_lock.md
+      - analysis_plan/hogan_tuesday_decision_sheet.md
+      - analysis_plan/hot_cold_month_registry.yml
+      - analysis_plan/auto_research/hogan_lock_readiness.md
+
+  idle_stroke_person_time:
+    id: F05
+    status: blocked_human
+    blocked_reason: "Stroke file not attached; still-at-risk person-time not delivered."
+    job: "Schema, QC, and first-hour checklist for the hour a governed file arrives. No rows, no coefficients."
+    must_not_collapse_into: "Invented stroke coefficients or incidence language from a days-in-month offset."
+    kill_only_with:
+      - table_contradiction
+      - forbidden_claim_hit
+    owner: Roro
+    primary_files:
+      - analysis_plan/playbooks/02_ha_data_arrival.md
+      - schemas/ha_stroke_aggregate.schema.json
+      - analysis_plan/roro_missing_data_asks.md
+      - analysis_plan/auto_research/stroke_person_time_idle_checklist.md
+
+  public_surfaces:
+    id: F06
+    status: alive
+    job: "Laidlaw blog / LSN remain MIT Admissions register. Bob owns voice, privacy, and posting."
+    must_not_collapse_into: "CNS voice in a blog, coefficient triumph, or posting the 5 August stroke LSN pack."
+    kill_only_with:
+      - table_contradiction
+      - forbidden_claim_hit
+    owner: Bob
+    primary_files:
+      - knowledge/2026-07-26_laidlaw_blog_canon.md
+      - reports/blog/
+      - reports/lsn/research_project_summary.md
+
+human_owned_never_fill:
+  - gate_3_freeze
+  - hogan_weather_paragraph
+  - roro_icd_inpatient_semantics
+  - bishai_irb_dissemination
+  - authorship_order
+  - paste_into_hogan_live_file
+  - outlook_thread

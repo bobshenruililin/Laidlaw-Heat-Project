@@ -1,0 +1,46 @@
+Current task statement — Laidlaw heat–CHD/HF auto-research lab
+
+This is not Crouzeix's conjecture. Do not assume a complete affirmative health proof exists. Do not return a protected thermal finding.
+
+Scientific object (already estimated; do not re-fit as a discovery):
+An ecological territory-month panel, January 2013–December 2023 (132 months), of first hospitalisation after first CHD diagnosis (156,156 events) or first HF diagnosis (29,681 events) among people with type 2 diabetes and/or hypertension in Hong Kong. Admission cause was not recorded. Core models are twelve separate negative-binomial exposures (CHD/HF × mean temperature, mean Tmax, mean Tmin, hot nights, cold days, very hot days) with calendar-month indicators, a 4-df time spline, and a days-in-month offset. All twelve Benjamini–Hochberg q-values exceed 0.19. Gate 3 is open. Lead recommendation is Option A: no confirmatory primary.
+
+Authority:
+- Live wording: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+- Numerals: manuscript/live_collaborative/claim_ledger.yml (machine) and claim_ledger.md (human)
+- Hogan weather paragraph is verbatim and is not to be rewritten, including “Meteorological data was obtained from the HKO.”
+- Literature spine (use; do not isolate from): Goggins 2013 AMI, Goggins and Chan 2017 HF, Guo 2024 hot nights, Liu 2020 mortality AF, Liu 2026 excess heat deaths. Do not rescale those estimands onto 1.022 or 1.073.
+
+Isolation rule (the Lean analog, not Jin's web ban):
+Do not invent HA row counts, field meanings, stroke coefficients, daily DLNM coefficients, still-at-risk person-time, or Hogan-locked HM/CM confirmatory estimates. Numerals in the live file must trace to HA_APPROVED_AGGREGATE, REAL public tables, or a cited paper. Web search is allowed for literature verification, not for manufacturing missing data.
+
+Stop rule:
+Return only when (i) the identification article’s quantitative sentences survive adversarial audit against frozen tables, (ii) every remaining hole is labelled human-owned with an owner (Hogan / Roro / Bishai / Bob), and (iii) no agent has filled a hole by invention. Partial scientific progress is a named gap, never a coefficient.
+
+Use multiagents aggressively and dynamically. Do not use a fixed assignment such as “N agents for strategy X.” Manage the search using these heuristics:
+
+Begin with a genuinely diverse portfolio of approach families from analysis_plan/auto_research/approach_registry.yml: identification; multiplicity/uncertainty; local daily history; weather-lock readiness; idle-state stroke/person-time; public surfaces.
+
+Do not tell an independent adversary the currently favoured thesis (identification article, not discovery headline) until after its first unaided read of the live file.
+
+Maintain an explicit registry of approach families. Group agents by the scientific idea they are using, not by superficial wording. If many agents converge to one family, redirect some of them toward underexplored families.
+
+Do not allow one approach to dominate merely because it gives elegant prose. A route that restates “all q > 0.19” as if that were a new result is not close to completion.
+
+When an approach stalls at a human-owned gate (weather lock, stroke file, person-time, Gate 3, IRB, authorship, ICD/inpatient semantics), mark that route as blocked. Only continue assigning agents to it for readiness packets, not for invented closures.
+
+Keep several incompatible families alive through the round. Cross-pollinate only after independent agents have exposed strengths and gaps.
+
+Use adversarial agents throughout: every candidate sentence must be checked for gaps, conditionals, handwavings, estimand mixing, and circular uses of an equivalent claim. Kill a family only with a table contradiction or a forbidden-claim hit.
+
+Forbidden-claim hits include: AMI / principal-diagnosis effects from this file; daily DLNM from 132 monthly sums; stroke coefficients; Gate 3 freeze; Hogan weather rewrite; numerical equality of 2.63 with 1.073 or of 3.1% with 1.022; sleep/BP mechanism as measured; health-econ Monte Carlo in the paper; calling CNS register a Nature/Science/Cell venue.
+
+Require agents to return concrete lemmas: file paths, table cells, display strings, or counterexamples. Reject status reports, vague optimism, and claims that an unproved collaborator decision is “routine.”
+
+The root agent should repeatedly synthesise, challenge, redirect, and launch new rounds inside this lab. Do not stop after the first wave of compliments.
+
+Return a complete lab-run note if the identification article survives audit and remaining gaps are human-owned; otherwise report only the strongest rigorously checked derivation and its exact remaining gap.
+
+Do not return merely because current approaches fail or agents report human-owned gates.
+
+Do not paste into Hogan’s shared live file. Do not email the Outlook thread. Do not rebuild Stage 3 PDF or A0 poster. Do not start a parallel manuscript.

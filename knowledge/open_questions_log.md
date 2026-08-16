@@ -47,7 +47,7 @@ Update a row by recording the decision, date and evidence link. Do not erase the
 | A06 | How will COVID-era care-seeking be handled? | Sensitivity phases exist; final role is not frozen | Team | Gate 3 sensitivity specification recorded before interpreting results |
 | A07 | Are pollution, humidity and influenza confounders, mediators or effect modifiers in each pathway? | Staged models are proposed; causal roles differ and 132 months limit interactions | Team | Pathway-specific adjustment rationale and model ladder frozen in the SAP |
 | A08 | What result, if any, would justify an adaptation discussion? | No stroke result exists; the design cannot identify genes or ancestry effects | Team | At most a carefully bounded discussion after real results, with non-genetic alternatives; no genetic inference from this study |
-| A09 | How should Supplementary Figure S1 (and Tables S7/S9) be numbered across the live paper, repo supplement, and Sol map? | Live body: residual ACF = S1. Repo supplement: S1 = exposure correlation. Sol map: S1 = core forest, S3 = ACF. S7/S9 are both section numbers and archive-table numbers. | Bob | One numbered supplement list cited from the live body; no Hogan-file rewrite until paste. Lab residue: `analysis_plan/auto_research/named_gaps_2026-08-16.md` |
+| A09 | How should Supplementary Figure S1 (and Tables S7/S9) be numbered across the live paper, repo supplement, and Sol map? | **Live pack closed 16 Aug:** S1 = residual ACF; S7 = archive flu; S9 = archive pollution (`supplement_inventory.md`). 10 August supplement PDF still uses the heatmap filename and is not rebuilt. | Bob pastes; do not rebuild Stage 3/supplement PDFs | Hogan shared-file paste uses the live-pack list |
 
 ## Hard stop rules while questions remain open
 

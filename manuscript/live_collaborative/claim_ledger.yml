@@ -301,6 +301,169 @@ claims:
     provenance: cited_paper
     citation: "Liu et al. medRxiv 2026; 10.64898/2026.03.05.26347683"
 
+  - id: hf_cold_days_hc1
+    display: "1.073 (1.011–1.138)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+    csv:
+      match: {outcome: hf, exposure: cold_days, se_method: HC1}
+      column: count_ratio_95CI
+      equals_display: "1.073 (1.011-1.138)"
+
+  - id: hf_cold_days_nw3
+    display: "1.073 (1.007–1.143)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+    csv:
+      match: {outcome: hf, exposure: cold_days, se_method: NeweyWest_lag3}
+      column: count_ratio_95CI
+      equals_display: "1.073 (1.007-1.143)"
+
+  - id: chd_hot_nights_nw3_unrounded
+    display: "1.000253 to 1.043860"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+    note: "Live Table 3 prints extra precision 1.0003–1.0439; unrounded bounds are the audit target."
+    csv_rr_ci:
+      match: {outcome: chd, exposure: hot_nights, se_method: NeweyWest_lag3}
+      decimals: 6
+      equals: "1.021824 (1.000253-1.043860)"
+
+  - id: n_months
+    display: "132 territory-months"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table1_outcome_summary.csv
+    csv:
+      match: {outcome: chd}
+      column: n_months
+      equals: 132
+
+  - id: chd_hot_nights_covid_phase
+    display: "1.013 (0.994–1.033)"
+    display_alt: "1.013, 0.994–1.033"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    csv_rr_ci:
+      match: {outcome: chd, exposure: hot_nights, scenario: covid_phase_adjusted}
+      decimals: 3
+      equals: "1.013 (0.994-1.033)"
+
+  - id: hf_tmin_unrounded_upper
+    display: "1.00005"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: mean_tmin}
+      column: rr_high
+      round: 5
+      equals: 1.00005
+
+  - id: chd_mean_temp_nw6
+    display: "0.993 (0.976–1.010)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: chd, exposure: mean_temp}
+      column: count_ratio_95CI
+      equals_display: "0.993 (0.976-1.010)"
+
+  - id: chd_tmax_nw6
+    display: "0.993 (0.979–1.007)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: chd, exposure: mean_tmax}
+      column: count_ratio_95CI
+      equals_display: "0.993 (0.979-1.007)"
+
+  - id: chd_tmin_nw6
+    display: "0.994 (0.977–1.012)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: chd, exposure: mean_tmin}
+      column: count_ratio_95CI
+      equals_display: "0.994 (0.977-1.012)"
+
+  - id: chd_cold_days_nw6
+    display: "0.995 (0.949–1.043)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: chd, exposure: cold_days}
+      column: count_ratio_95CI
+      equals_display: "0.995 (0.949-1.043)"
+
+  - id: chd_vhd_nw6
+    display: "0.999 (0.974–1.025)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: chd, exposure: very_hot_days}
+      column: count_ratio_95CI
+      equals_display: "0.999 (0.974-1.025)"
+
+  - id: hf_mean_temp_nw6
+    display: "0.974 (0.947–1.002)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: mean_temp}
+      column: count_ratio_95CI
+      equals_display: "0.974 (0.947-1.002)"
+
+  - id: hf_tmax_nw6
+    display: "0.981 (0.958–1.005)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: mean_tmax}
+      column: count_ratio_95CI
+      equals_display: "0.981 (0.958-1.005)"
+
+  - id: hf_tmin_nw6
+    display: "0.973 (0.947–1.000)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: mean_tmin}
+      column: count_ratio_95CI
+      equals_display: "0.973 (0.947-1.000)"
+
+  - id: hf_hot_nights_nw6
+    display: "1.003 (0.976–1.031)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: hot_nights}
+      column: count_ratio_95CI
+      equals_display: "1.003 (0.976-1.031)"
+
+  - id: hf_vhd_nw6
+    display: "0.995 (0.963–1.028)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: very_hot_days}
+      column: count_ratio_95CI
+      equals_display: "0.995 (0.963-1.028)"
+
+  - id: supp_fig_s1
+    display: "Supplementary Figure S1"
+    provenance: manuscript_meta
+    source: manuscript/live_collaborative/supplement_inventory.md
+    note: "Live-pack S1 is residual ACF, not the release heatmap filename."
+
+  - id: supp_table_s7
+    display: "Supplementary Table S7"
+    provenance: manuscript_meta
+    source: manuscript/live_collaborative/supplement_inventory.md
+
+  - id: supp_table_s9
+    display: "Supplementary Table S9"
+    provenance: manuscript_meta
+    source: manuscript/live_collaborative/supplement_inventory.md
+
   - id: running_title
     display: "Thermal extremes and first CHD/HF hospitalisation"
     provenance: manuscript_meta

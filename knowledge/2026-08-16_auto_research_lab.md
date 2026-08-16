@@ -20,11 +20,11 @@ Slash command: `/playbook-05-auto-research` (explicit only).
 
 ## First-run result
 
-Auditor **passed** (100 checks after arming min *q*, pre-2020 intervals, 141/145, and EPD PM2.5/O₃, and adding cited-paper rows for Liu 2020/2026). Hogan weather start string intact and byte-checked against the locked paragraph. Independent adversary (`bc-c760d429`, thesis withheld) recorded **no kills**. Architecture, numeral, and venue subagents agreed: F01–F03 stay alive; F04–F05 remain human-blocked; Environmental Research is the honest first target; CNS register ≠ CNS venue.
+Auditor **passed** (154 checks). Hogan weather start string intact and byte-checked against the locked paragraph. Independent adversary (thesis withheld) recorded **no kills**. Architecture, numeral, and venue subagents agreed: F01–F03 stay alive; F04–F05 remain human-blocked; Environmental Research is the honest first target; CNS register ≠ CNS venue.
 
-Named gaps (not findings): Supplementary Figure S1 is assigned three ways; S7/S9 section-vs-table overlap; pre-2020 window has nine NW6 intervals excluding 1 of which the Abstract quotes two. See [`analysis_plan/auto_research/named_gaps_2026-08-16.md`](../analysis_plan/auto_research/named_gaps_2026-08-16.md).
+Round 2 (same day, no scientific redo): live-pack [`supplement_inventory.md`](../manuscript/live_collaborative/supplement_inventory.md) binds Figure S1 / Tables S7 and S9; Sol map matches the live body; auditor covers all twelve Table 2 count-ratio displays. UI “stopped with error” on the four Task children was resume-while-running, not a table contradiction — do not rerun a 16-hour search.
 
-Remaining holes are human-owned: live-file paste (Bob), weather lock (Hogan), stroke/person-time/ICD (Roro), Gate 3 / IRB / authorship (Bishai/team).
+Remaining holes are human-owned: live-file paste (Bob), weather lock (Hogan), stroke/person-time/ICD (Roro), Gate 3 / IRB / authorship (Bishai/team). Pre-2020 narration (G3) is a presentation choice.
 
 ## Sources for the method (not for heat findings)
 

@@ -48,7 +48,7 @@ Copy each block from `hogan_comment_paste_replies.md` into the matching thread. 
    - Figure 1 — first-event depletion vs C&SD 35+: `figures/live_identification/figure_B_first_event_depletion.png`
    - Figure 2 — cold-day year × month heatmap: `figures/live_identification/figure_A_cold_day_identification.png`
    - Figure 3 — trend / window / COVID-phase sensitivity: `figures/live_identification/figure_D_trend_depletion_sensitivity.png` (copy of `outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.png`)
-   - **Supplement only:** residual ACF `figures/live_identification/figure_C_residual_acf.png` (was main Figure 3 on 13 August). Optional extras: `outputs/release_chd_hf/figures/figure3_core_forest.svg`, `figure5_se_method_ladder.svg`.
+   - **Supplement only:** residual ACF `figures/live_identification/figure_C_residual_acf.png` — this is **Supplementary Figure S1** in the live body. Bindings: `supplement_inventory.md`. Optional extras: `outputs/release_chd_hf/figures/figure3_core_forest.svg`, `figure5_se_method_ladder.svg`. Do not insert the release heatmap `figureS1_exposure_correlation.png` as S1.
 9. **Discussion / Conclusion / limitations.** Replace. Flu numeral 1.673 is out of the body (direction only; numeral in the release). CHD hot-night window dependence and spline entanglement are explicit. Conclusion remains comparative, not superlative.
 10. **References.** Keep 1–21. Flag to Hogan: [3] (2017 yearbook) and [5] (2024 yearbook) are uncited in the body; prune or attach. Do not delete his block unilaterally. Yang CY stays.
 

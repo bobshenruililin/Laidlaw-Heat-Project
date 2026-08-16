@@ -13,6 +13,7 @@ Jin-adapted virtual research institute for the heat–CHD/HF project. Method, no
 | [`named_gaps_2026-08-16.md`](named_gaps_2026-08-16.md) | Bookkeeping and presentation gaps; not coefficients |
 | [`adversary_2026-08-16.md`](adversary_2026-08-16.md) | Independent kill/near-kill report |
 | [`opus_numeral_2026-08-16.md`](opus_numeral_2026-08-16.md) | Numeral and Hogan-thread audit |
+| [`../../manuscript/live_collaborative/supplement_inventory.md`](../../manuscript/live_collaborative/supplement_inventory.md) | Live-pack S1/S7/S9 bindings |
 
 Machine auditor: `python3 scripts/50_audit_live_claim_ledger.py`  
 Ledger: `manuscript/live_collaborative/claim_ledger.yml`

@@ -13,6 +13,8 @@ monofont: DejaVu Sans Mono
 
 Companion to [`chd_hf_thermal_associations_2013_2023.md`](chd_hf_thermal_associations_2013_2023.md).
 All health-effect numbers below are drawn from `outputs/release_chd_hf/` unless labelled `SYNTHETIC_CALIBRATION` or `REAL_PUBLIC_HKO`.
+
+**Live-pack display numbers (16 August).** The Hogan paste pack cites Supplementary Figure S1 as residual ACF, Supplementary Table S7 as archive influenza, and Supplementary Table S9 as archive pollution. Canonical list: [`live_collaborative/supplement_inventory.md`](live_collaborative/supplement_inventory.md). This file’s “Figure S1” heatmap below is the 10 August **release filename**, not the live-body S1. Section headings S7 (M\|D calibration) and S9 (reproducibility) are section numbers; the live body means the **tables** in S12. Do not rebuild `chd_hf_supplement.pdf` in Playbook 05.
 Provenance for CHD/HF association rows is `HA_APPROVED_AGGREGATE`.
 
 ## S0. Reporting checklist

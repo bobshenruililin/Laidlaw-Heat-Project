@@ -51,7 +51,7 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | Figure 1 | depletion vs 35+ population | `figures/live_identification/figure_B_first_event_depletion.png` from annual totals |
 | Figure 2 | cold-day year×month heatmap | `figures/live_identification/figure_A_cold_day_identification.png` from temperature panel |
 | Figure 3 | trend / window / COVID-phase sensitivity | `figures/live_identification/figure_D_trend_depletion_sensitivity.png` (= release `figure4_trend_depletion_sensitivity.png`) |
-| Supplementary Figure S1 | residual ACF (demoted) | `figures/live_identification/figure_C_residual_acf.png`. **Collision:** repo supplement and Sol map assign S1 differently; see `analysis_plan/auto_research/named_gaps_2026-08-16.md`. |
+| Supplementary Figure S1 | residual ACF (demoted) | `figures/live_identification/figure_C_residual_acf.png`. Live-pack list: `supplement_inventory.md`. |
 
 Machine sibling: `claim_ledger.yml` (`python3 scripts/50_audit_live_claim_ledger.py`).
 

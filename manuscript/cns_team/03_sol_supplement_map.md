@@ -2,7 +2,7 @@
 
 **Purpose:** keep the journal article short without hiding the diagnostics that determine identification and uncertainty. This map uses existing `HA_APPROVED_AGGREGATE`, `REAL`, `REAL_PUBLIC_HKO`, and `SYNTHETIC_CALIBRATION` artifacts. It adds no health model and does not freeze Gate 3.
 
-**16 August lab collision (named gap, owner Bob):** the live manuscript cites residual ACF as Supplementary Figure S1. This map assigned S1 to the core forest and S3 to ACF. `manuscript/chd_hf_supplement.md` still uses Figure S1 for the exposure-correlation heatmap. Do not invent a new numbering in Hogan’s live file in this lab; reconcile one list before submission. See [`analysis_plan/auto_research/named_gaps_2026-08-16.md`](../../analysis_plan/auto_research/named_gaps_2026-08-16.md).
+**16 August live-pack numbering (canonical for Hogan paste):** Supplementary **Figure S1** is residual ACF (`figures/live_identification/figure_C_residual_acf.png`). Supplementary **Tables S7** and **S9** are archive influenza and archive pollution. See [`manuscript/live_collaborative/supplement_inventory.md`](../live_collaborative/supplement_inventory.md). This map previously assigned Figure S1 to the core forest; that assignment is withdrawn. The 10 August `chd_hf_supplement.pdf` is not rebuilt.
 
 ## Main paper
 
@@ -62,7 +62,7 @@ Do not describe the ladder as a search for the interval that excludes 1.
 
 Demote the current ACF display and core forest:
 
-- **Supplementary Figure S3:** `figures/live_identification/figure_C_residual_acf.png`
+- **Supplementary Figure S1:** `figures/live_identification/figure_C_residual_acf.png` (live-body citation)
 - supporting ACF/PACF plots:
   - `outputs/release_chd_hf/supplement/chd_core_residual_acf_pacf.png`
   - `outputs/release_chd_hf/supplement/hf_core_residual_acf_pacf.png`
@@ -71,19 +71,19 @@ Demote the current ACF display and core forest:
   - `outputs/release_chd_hf/supplement/hf_pathway_residual_acf.csv`
   - `outputs/release_chd_hf/supplement/chd_pathway_core_diagnostics.csv`
   - `outputs/release_chd_hf/supplement/hf_pathway_core_diagnostics.csv`
-- **Supplementary Figure S1, complete core forest:** `outputs/release_chd_hf/figures/figure3_core_forest.png`
+- **Supplementary Figure S3, complete core forest:** `outputs/release_chd_hf/figures/figure3_core_forest.png`
 - available vector source in this checkout: `outputs/release_chd_hf/figures/figure3_core_forest.svg`
 - collinearity files:
   - `outputs/release_chd_hf/supplement/cvd_single_vs_joint_estimates.csv`
   - `outputs/release_chd_hf/supplement/cvd_exposure_vif.csv`
   - `outputs/release_chd_hf/supplement/cvd_exposure_correlations.csv`
-  - **Supplementary Figure S4:** `outputs/release_chd_hf/supplement/figureS1_exposure_correlation.png` (source filename retained; published display number changes)
+  - **Supplementary Figure S4:** `outputs/release_chd_hf/supplement/figureS1_exposure_correlation.png` (source filename retained; live-pack display number is S4, not S1)
 
-The live-identification ACF PNG is present at `figures/live_identification/figure_C_residual_acf.png`. The numbering collision (live body S1 vs this map S3 vs repo-supplement heatmap S1) is recorded in [`analysis_plan/auto_research/named_gaps_2026-08-16.md`](../../analysis_plan/auto_research/named_gaps_2026-08-16.md); do not invent a new Hogan-file numbering here.
+The live-identification ACF PNG is present at `figures/live_identification/figure_C_residual_acf.png`. Live-pack numbering: [`manuscript/live_collaborative/supplement_inventory.md`](../live_collaborative/supplement_inventory.md).
 
 ### Caption for the demoted ACF figure
 
-> **Supplementary Figure S3. Residual autocorrelation in two displayed exploratory core models.** Bars show the Pearson residual autocorrelation function for the separate-exposure negative-binomial CHD hot-night and HF cold-day models. Dashed lines mark ±1.96/√132. Lag-1 residual autocorrelation was 0.508 for CHD hot nights and 0.146 for HF cold days. These diagnostics motivate reporting more than one covariance estimator; they do not establish that a particular estimator is correct, protect either contrast from multiplicity, or identify a causal thermal effect. Provenance: `HA_APPROVED_AGGREGATE` residuals from existing fitted core models.
+> **Supplementary Figure S1. Residual autocorrelation in two displayed exploratory core models.** Bars show the Pearson residual autocorrelation function for the separate-exposure negative-binomial CHD hot-night and HF cold-day models. Dashed lines mark ±1.96/√132. Lag-1 residual autocorrelation was 0.508 for CHD hot nights and 0.146 for HF cold days. These diagnostics motivate reporting more than one covariance estimator; they do not establish that a particular estimator is correct, protect either contrast from multiplicity, or identify a causal thermal effect. Provenance: `HA_APPROVED_AGGREGATE` residuals from existing fitted core models.
 
 ### S4. Full twelve-contrast robustness
 

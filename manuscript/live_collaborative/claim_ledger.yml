@@ -124,18 +124,31 @@ claims:
     provenance: HA_APPROVED_AGGREGATE
     source: outputs/release_chd_hf/tables/table2_core_models.csv
     note: "minimum q_value_core_bh across twelve core rows"
+    csv_min:
+      column: q_value_core_bh
+      n_rows_equals: 12
+      round: 3
+      equals: 0.192
 
   - id: chd_hot_nights_pre2020
     display: "1.011 (0.991–1.032)"
     display_alt: "1.011, 0.991–1.032"
     provenance: HA_APPROVED_AGGREGATE
     source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    csv_rr_ci:
+      match: {outcome: chd, exposure: hot_nights, scenario: pre_covid}
+      decimals: 3
+      equals: "1.011 (0.991-1.032)"
 
   - id: hf_cold_days_pre2020
     display: "1.113 (1.053–1.176)"
     display_alt: "1.113, 1.053–1.176"
     provenance: HA_APPROVED_AGGREGATE
     source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    csv_rr_ci:
+      match: {outcome: hf, exposure: cold_days, scenario: pre_covid}
+      decimals: 3
+      equals: "1.113 (1.053-1.176)"
 
   - id: chd_hot_nights_model
     display: "1.022 (0.995–1.049)"
@@ -176,6 +189,17 @@ claims:
       equals: 29
       n_rows_equals: 132
 
+  - id: cold_days_djf
+    display: "141 of 145"
+    provenance: REAL
+    source: outputs/live_identification/cold_days_by_month_year.csv
+    csv_sum_where:
+      column: cold_days
+      where_in:
+        month: [12, 1, 2]
+      equals: 141
+      total_equals: 145
+
   - id: epd_no2_2013
     display: "53.7"
     provenance: REAL
@@ -196,10 +220,86 @@ claims:
       round: 1
       equals: 32.1
 
+  - id: epd_pm25_2013
+    display: "30.8"
+    provenance: REAL
+    source: outputs/tables/pollution_annual_means_general_2013_2023.csv
+    csv:
+      match: {year: "2013"}
+      column: PM25
+      round: 1
+      equals: 30.8
+
+  - id: epd_pm25_2023
+    display: "14.6"
+    provenance: REAL
+    source: outputs/tables/pollution_annual_means_general_2013_2023.csv
+    csv:
+      match: {year: "2023"}
+      column: PM25
+      round: 1
+      equals: 14.6
+
+  - id: epd_o3_2013
+    display: "42.6"
+    provenance: REAL
+    source: outputs/tables/pollution_annual_means_general_2013_2023.csv
+    csv:
+      match: {year: "2013"}
+      column: O3
+      round: 1
+      equals: 42.6
+
+  - id: epd_o3_2023
+    display: "58.3"
+    provenance: REAL
+    source: outputs/tables/pollution_annual_means_general_2013_2023.csv
+    csv:
+      match: {year: "2023"}
+      column: O3
+      round: 1
+      equals: 58.3
+
   - id: goggins_hf_2017
     display: "2.63 (2.43–2.84)"
     provenance: cited_paper
     citation: "Goggins and Chan Int J Cardiol 2017;228:537-542"
+
+  - id: goggins_ami_2013
+    display: "3.7%"
+    provenance: cited_paper
+    citation: "Goggins et al. Heart 2013"
+
+  - id: goggins_stroke_2012
+    display: "22 °C"
+    display_alt: "22 °C"
+    provenance: cited_paper
+    citation: "Goggins et al. stroke admissions 1999–2006; live file [11]"
+
+  - id: liu2020_cold_af
+    display: "4.72%"
+    provenance: cited_paper
+    citation: "Liu et al. Sustainable Cities and Society 2020;57:102131"
+
+  - id: liu2020_heat_af
+    display: "0.16%"
+    provenance: cited_paper
+    citation: "Liu et al. Sustainable Cities and Society 2020;57:102131"
+
+  - id: liu2020_moderate_af
+    display: "4.25%"
+    provenance: cited_paper
+    citation: "Liu et al. Sustainable Cities and Society 2020;57:102131"
+
+  - id: liu2020_extreme_af
+    display: "0.63%"
+    provenance: cited_paper
+    citation: "Liu et al. Sustainable Cities and Society 2020;57:102131"
+
+  - id: liu2026_excess_range
+    display: "1,455 to 3,238"
+    provenance: cited_paper
+    citation: "Liu et al. medRxiv 2026; 10.64898/2026.03.05.26347683"
 
   - id: running_title
     display: "Thermal extremes and first CHD/HF hospitalisation"

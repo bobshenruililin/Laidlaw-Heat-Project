@@ -6,17 +6,19 @@ missing source files, and CSV contradictions.
 
 Usage:
   python3 scripts/50_audit_live_claim_ledger.py
+  python3 scripts/50_audit_live_claim_ledger.py --ledger PATH --live PATH --out PATH
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-LEDGER = ROOT / "manuscript/live_collaborative/claim_ledger.yml"
-OUT = ROOT / "outputs/auto_research/claim_ledger_audit.json"
+DEFAULT_LEDGER = ROOT / "manuscript/live_collaborative/claim_ledger.yml"
+DEFAULT_OUT = ROOT / "outputs/auto_research/claim_ledger_audit.json"
 
 
 def load_yaml(path: Path) -> dict:
@@ -57,9 +59,29 @@ def as_float(x) -> float:
     return float(str(x).replace(",", "").strip())
 
 
-def main() -> int:
-    spec = load_yaml(LEDGER)
-    manuscript = ROOT / spec["manuscript"]
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    p = argparse.ArgumentParser(description="Audit live manuscript against claim_ledger.yml")
+    p.add_argument("--ledger", type=Path, default=DEFAULT_LEDGER)
+    p.add_argument("--live", type=Path, default=None, help="Override manuscript path in the YAML")
+    p.add_argument("--out", type=Path, default=DEFAULT_OUT)
+    return p.parse_args(argv)
+
+
+def fmt_rr_ci(row: dict, decimals: int) -> str:
+    rr = round(as_float(row["rr"]), decimals)
+    lo = round(as_float(row["rr_low"]), decimals)
+    hi = round(as_float(row["rr_high"]), decimals)
+    return f"{rr:.{decimals}f} ({lo:.{decimals}f}-{hi:.{decimals}f})"
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
+    ledger_path = args.ledger if args.ledger.is_absolute() else ROOT / args.ledger
+    spec = load_yaml(ledger_path)
+    manuscript = args.live if args.live is not None else ROOT / spec["manuscript"]
+    if not manuscript.is_absolute():
+        manuscript = ROOT / manuscript
+    out_path = args.out if args.out.is_absolute() else ROOT / args.out
     body = manuscript.read_text(encoding="utf-8")
     failures: list[str] = []
     passes: list[str] = []
@@ -147,6 +169,70 @@ def main() -> int:
             else:
                 passes.append(f"{cid}:csv_count_where")
 
+        min_spec = claim.get("csv_min")
+        if min_spec:
+            rows = csv_rows(ROOT / src)
+            if min_spec.get("n_rows_equals") is not None and len(rows) != int(
+                min_spec["n_rows_equals"]
+            ):
+                failures.append(
+                    f"{cid}: row count {len(rows)} != {min_spec['n_rows_equals']}"
+                )
+            vals = [as_float(r[min_spec["column"]]) for r in rows]
+            got = min(vals)
+            want = as_float(min_spec["equals"])
+            rnd = min_spec.get("round")
+            if rnd is not None:
+                got = round(got, int(rnd))
+                want = round(want, int(rnd))
+            if got != want:
+                failures.append(f"{cid}: csv_min got {got!r} != {want!r}")
+            else:
+                passes.append(f"{cid}:csv_min")
+
+        rr_spec = claim.get("csv_rr_ci")
+        if rr_spec:
+            rows = csv_rows(ROOT / src)
+            hits = [r for r in rows if row_matches(r, rr_spec["match"])]
+            if len(hits) != 1:
+                failures.append(
+                    f"{cid}: expected 1 CSV row, got {len(hits)} for {rr_spec['match']}"
+                )
+            else:
+                decimals = int(rr_spec.get("decimals", 3))
+                got = norm_dash(fmt_rr_ci(hits[0], decimals))
+                want = norm_dash(rr_spec["equals"])
+                if got != want:
+                    failures.append(
+                        f"{cid}: csv_rr_ci {got!r} != {want!r}"
+                    )
+                else:
+                    passes.append(f"{cid}:csv_rr_ci")
+
+        sum_spec = claim.get("csv_sum_where")
+        if sum_spec:
+            rows = csv_rows(ROOT / src)
+            col = sum_spec["column"]
+            subset = rows
+            for k, allowed in (sum_spec.get("where_in") or {}).items():
+                allowed_s = {str(x).strip() for x in allowed}
+                subset = [r for r in subset if str(r.get(k, "")).strip() in allowed_s]
+            got = sum(as_float(r[col]) for r in subset)
+            total = sum(as_float(r[col]) for r in rows)
+            want = as_float(sum_spec["equals"])
+            if got != want:
+                failures.append(f"{cid}: csv_sum_where got {got} != {want}")
+            else:
+                passes.append(f"{cid}:csv_sum_where")
+            if sum_spec.get("total_equals") is not None:
+                want_total = as_float(sum_spec["total_equals"])
+                if total != want_total:
+                    failures.append(
+                        f"{cid}: csv_sum total {total} != {want_total}"
+                    )
+                else:
+                    passes.append(f"{cid}:csv_sum_total")
+
         if claim.get("provenance") not in {
             "HA_APPROVED_AGGREGATE",
             "REAL",
@@ -163,17 +249,17 @@ def main() -> int:
         "failures": failures,
         "ok": not failures,
     }
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     if failures:
         print("CLAIM LEDGER AUDIT FAILED")
         for f in failures:
             print(" -", f)
-        print(f"wrote {OUT}")
+        print(f"wrote {out_path}")
         return 1
     print("CLAIM LEDGER AUDIT PASSED")
     print(f"{len(passes)} checks")
-    print(f"wrote {OUT}")
+    print(f"wrote {out_path}")
     return 0
 
 

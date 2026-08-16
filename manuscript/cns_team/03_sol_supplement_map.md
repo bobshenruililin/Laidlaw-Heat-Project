@@ -12,9 +12,9 @@ The main paper should carry the estimand, the complete core family, and the thre
 
 | Main display | Exact path | Role | Assembly status in this checkout |
 |---|---|---|---|
-| **Figure 1: first-event depletion** | `figures/live_identification/figure_B_first_event_depletion.png` | Shows the decline in CHD/HF first-event counts against the rise in the general population aged 35 years or older. It prevents incidence language. | Named in `outputs/live_identification/README.md`, but the PNG and PDF are absent from this checkout. Regenerate the display-only asset with `scripts/47_live_identification_figures.R` or recover the validated export; the script fits no health model. |
-| **Figure 2: DJF cold-day identification** | `figures/live_identification/figure_A_cold_day_identification.png` | Shows that 141 of 145 official cold days occurred in December–February. It makes clear that the cold-day coefficient is identified by differences between winters. | Named in `outputs/live_identification/README.md`, but the PNG and PDF are absent from this checkout. The source table is `outputs/live_identification/cold_days_by_month_year.csv`. |
-| **Figure 3: trend and first-event-depletion sensitivity** | `outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.png` | Shows the full core family across trend, window, and COVID-phase specifications. It makes the pre-2020 CHD hot-night interval crossing 1 visible while showing the stronger pre-2020 HF cold-day estimate. | The PNG is recorded in `outputs/release_chd_hf/release_manifest.csv`; only `outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.svg` is present in this checkout. Use the manifest-listed PNG for submission or export it from the validated SVG without refitting. |
+| **Figure 1: first-event depletion** | `figures/live_identification/figure_B_first_event_depletion.png` | Shows the decline in CHD/HF first-event counts against the rise in the general population aged 35 years or older. It prevents incidence language. | Present in this checkout (PNG and PDF). Source table: `outputs/tables/cvd_descriptive_annual_totals.csv`. |
+| **Figure 2: DJF cold-day identification** | `figures/live_identification/figure_A_cold_day_identification.png` | Shows that 141 of 145 official cold days occurred in December–February. It makes clear that the cold-day coefficient is identified by differences between winters. | Present in this checkout (PNG and PDF). Source table: `outputs/live_identification/cold_days_by_month_year.csv`. |
+| **Figure 3: trend and first-event-depletion sensitivity** | `outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.png` | Shows the full core family across trend, window, and COVID-phase specifications. It makes the pre-2020 CHD hot-night interval crossing 1 visible while showing the stronger pre-2020 HF cold-day estimate. | Present in this checkout as PNG, PDF, and SVG. The live paste pack also carries `figures/live_identification/figure_D_trend_depletion_sensitivity.png`. |
 
 Do not substitute the indexed-series, seasonal-profile, or core-forest release figures for these three. Figures 1 and 2 explain the estimand and exposure variation. Figure 3 explains temporal sensitivity.
 
@@ -79,7 +79,7 @@ Demote the current ACF display and core forest:
   - `outputs/release_chd_hf/supplement/cvd_exposure_correlations.csv`
   - **Supplementary Figure S4:** `outputs/release_chd_hf/supplement/figureS1_exposure_correlation.png` (source filename retained; published display number changes)
 
-The live-identification ACF PNG is named in `outputs/live_identification/README.md` but absent from this checkout. Restore or regenerate the display only; do not fit a new health model.
+The live-identification ACF PNG is present at `figures/live_identification/figure_C_residual_acf.png`. The numbering collision (live body S1 vs this map S3 vs repo-supplement heatmap S1) is recorded in [`analysis_plan/auto_research/named_gaps_2026-08-16.md`](../../analysis_plan/auto_research/named_gaps_2026-08-16.md); do not invent a new Hogan-file numbering here.
 
 ### Caption for the demoted ACF figure
 

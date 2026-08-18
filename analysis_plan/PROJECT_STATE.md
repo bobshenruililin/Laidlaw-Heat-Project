@@ -1,11 +1,24 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-13
+**Last updated:** 2026-08-16
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0b. Canonical update — auto-research lab (16 August)
+
+- Jin-adapted lab (Playbook 05): branching families, adversarial audit, machine claim ledger. Stop rule is “identification article survives checking,” not “assume a thermal proof exists.”
+- First run residue: `analysis_plan/auto_research/`. Independent adversary recorded no kills. Hogan-lock readiness and stroke/person-time idle checklists are packets, not locks or coefficients. Supplementary numbering (S1/S7/S9) is a named Bob-owned gap, not a new result.
+- Durable: `knowledge/2026-08-16_auto_research_lab.md`.
+
+## 0a. Canonical update — CNS-register live paper (15 August)
+
+- Fable / Opus / Sol team produced the strongest honest paper the monthly panel can support: an identification article, not a discovery headline.
+- Live paste pack: `manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md` and `Heat_CVD_Manuscript_20260815_collab_draft.docx`. Hogan weather paragraph unchanged. His seven 28 July comments are answered in `hogan_comment_paste_replies.md`. Figure 3 is now trend/depletion sensitivity; ACF is supplement. Abstract carries the pre-2020 CHD hot-night null. Twenty-nine of 132 months carry ≥1 official cold day.
+- CNS *register* applied; CNS *venue* not claimed. First journal target after human blockers: Environmental Research (EHP reach). Gate 3 still open. Stage 3 PDFs still byte-locked.
+- Durable: `knowledge/2026-08-15_cns_paper_team.md`; `manuscript/cns_team/00_parent_synthesis.md`.
 
 ## 0. Canonical update — final integrated reanalysis (10 August)
 

@@ -18,6 +18,7 @@ If Bob supplies no number or workflow, ask which playbook to run. Do not infer a
 | `/playbook-02-ha-arrival` | A governed HA aggregate release, dictionary, or revision arrives. |
 | `/playbook-03-full-analysis` | Gates 1–2 are closed and the real merged panel is ready. |
 | `/playbook-04-final-writeup` | Gate 3, verified real results, diagnostics, and cleared tables are ready. |
+| `/playbook-05-auto-research` | Jin-adapted lab: adversarial audit and readiness packets; does not invent findings or freeze Gate 3. |
 | `/playbook-99-emergencies` | Source, scope, governance, definition, or provenance shocks interrupt normal work. |
 
 After Bob chooses, open the named skill and its linked playbook. Check preconditions before execution, preserve human-owned gates, and stop at the first unmet scientific or governance boundary.

@@ -91,7 +91,7 @@ These short commands re-engage a durable mode without rebuilding the project fro
 | **`/cns-writing`** or **“CNS register.”** | Engage [`.cursor/skills/cns-writing/SKILL.md`](../.cursor/skills/cns-writing/SKILL.md); use spare publication prose and do not invent completeness. |
 | **`/laidlaw-blog`** | Draft or revise warm, quirky, first-person public writing in [`reports/blog/`](../reports/blog/); never import CNS voice or invent biography/findings. |
 | **`/blog-from-deck`** | Extract the honest week arc from a progress deck, draft and index the blog, log the arc, then stop for Bob’s creative/privacy pass. |
-| **`/playbook-01-hogan-lock`** | Read and execute [`playbooks/01_hogan_definition_lock.md`](playbooks/01_hogan_definition_lock.md) after actual meeting evidence exists. Use the corresponding `02`, `03`, `04`, or `99` command for later gates or shocks. |
+| **`/playbook-01-hogan-lock`** | Read and execute [`playbooks/01_hogan_definition_lock.md`](playbooks/01_hogan_definition_lock.md) after actual meeting evidence exists. Use the corresponding `02`, `03`, `04`, `05`, or `99` command for later gates, the auto-research lab, or shocks. |
 | **`/playbook`** | Ask which numbered playbook Bob intends; do not infer or bypass an unmet gate. |
 | **“Compound this into knowledge.”** | Write the durable decision or learning to `knowledge/`, refresh `knowledge/INDEX.md`, `PROJECT_STATE.md`, and `CONTEXT_BOOTSTRAP.md`, and link the detailed owner file. |
 

@@ -13,6 +13,8 @@ monofont: DejaVu Sans Mono
 
 Companion to [`chd_hf_thermal_associations_2013_2023.md`](chd_hf_thermal_associations_2013_2023.md).
 All health-effect numbers below are drawn from `outputs/release_chd_hf/` unless labelled `SYNTHETIC_CALIBRATION` or `REAL_PUBLIC_HKO`.
+
+**Live-pack display numbers (16 August).** The Hogan paste pack cites Supplementary Figure S1 as residual ACF, Supplementary Table S7 as archive influenza, and Supplementary Table S9 as archive pollution. Canonical list: [`live_collaborative/supplement_inventory.md`](live_collaborative/supplement_inventory.md). This file’s “Figure S1” heatmap below is the 10 August **release filename**, not the live-body S1. Section headings S7 (M\|D calibration) and S9 (reproducibility) are section numbers; the live body means the **tables** in S12. Do not rebuild `chd_hf_supplement.pdf` in Playbook 05.
 Provenance for CHD/HF association rows is `HA_APPROVED_AGGREGATE`.
 
 ## S0. Reporting checklist
@@ -21,7 +23,7 @@ Provenance for CHD/HF association rows is `HA_APPROVED_AGGREGATE`.
 |---|---|
 | Estimand (monthly count ratio; days offset) | Main Methods; S2 |
 | Outcome construction (first recorded hospitalisation after diagnosis; column-label semantics open) | Main Methods; S1 |
-| Complete 12-contrast continuity table | `outputs/release_chd_hf/tables/table2_core_models.csv` |
+| Complete 12-contrast core table | `outputs/release_chd_hf/tables/table2_core_models.csv` |
 | Claim ledger identity CVD-01 to CVD-12 | `outputs/release_chd_hf/tables/claim_ledger_v2.csv` |
 | SE ladder Model/HC1/NW3/NW6 | `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv`; Figure 5 |
 | Multiplicity (BH q across 12) | Table 2 `q_value_core_bh` |
@@ -56,7 +58,7 @@ From `outputs/release_chd_hf/tables/table1_outcome_summary.csv`:
 | CHD | 132 | 156,156 | 1,183.0 |
 | HF | 132 | 29,681 | 224.9 |
 
-### S1.3 Thermal exposures used in the continuity panel
+### S1.3 Thermal exposures used in the core panel
 
 Internal pathway IDs are retained here for archive mapping only; they do not appear in the journal scientific body.
 
@@ -79,14 +81,14 @@ Population aged 35+ × days is an ecological sensitivity only. It is not person-
 | Table / figure | Path | Role |
 |---|---|---|
 | Table 1 | `outputs/release_chd_hf/tables/table1_outcome_summary.csv` | Outcome summary |
-| Table 2 | `outputs/release_chd_hf/tables/table2_core_models.csv` | Twelve continuity NW6 contrasts |
+| Table 2 | `outputs/release_chd_hf/tables/table2_core_models.csv` | Twelve core NW6 contrasts |
 | Table 3 | `outputs/release_chd_hf/tables/table3_robustness_summary.csv` | Robustness ranges |
 | Table 4 | `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv` | 12 × 4 SE ladder |
 | Claim ledger v2 | `outputs/release_chd_hf/tables/claim_ledger_v2.csv` | CVD-01 to CVD-12 with tiers |
 | Analysis availability | `outputs/release_chd_hf/tables/analysis_availability.csv` | Scope / blocker inventory |
 | Figure 1 | `outputs/release_chd_hf/figures/figure1_indexed_outcome_series.png` | Indexed series |
 | Figure 2 | `outputs/release_chd_hf/figures/figure2_seasonal_pattern.png` | Seasonality |
-| Figure 3 | `outputs/release_chd_hf/figures/figure3_core_forest.png` | Continuity forest |
+| Figure 3 | `outputs/release_chd_hf/figures/figure3_core_forest.png` | Core forest |
 | Figure 4 | `outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.png` | Trend/depletion |
 | Figure 5 | `outputs/release_chd_hf/figures/figure5_se_method_ladder.png` | SE ladder forest |
 
@@ -99,9 +101,9 @@ Population aged 35+ × days is an ecological sensitivity only. It is not person-
 - Core fit summary: `outputs/release_chd_hf/supplement/cvd_core_model_fit.csv`
 - Robust SE/offset/family ladder: `outputs/release_chd_hf/supplement/cvd_core_robust_estimates.csv`
 
-Joint extreme-day and nested heat-month structures remain exploratory. Separate continuity IDs P01A, P02A/B, and P04A–C map to the manuscript continuity panel.
+Joint extreme-day and nested heat-month structures remain exploratory. Separate core IDs P01A, P02A/B, and P04A–C map to the manuscript core panel.
 
-Legacy pollution, humidity, and influenza pathway fits in the broader archive are not adjusted versions of these separate continuity models.
+Legacy pollution, humidity, and influenza pathway fits in the broader archive are not adjusted versions of these separate core models.
 
 ### S2.2 Supplementary Table S1 — complete standard-error ladder
 
@@ -206,7 +208,7 @@ Provisional HM/CM flags remain unlocked. Calendar figure: `outputs/release_chd_h
 ### S5.1 Offset and family
 
 File: `outputs/release_chd_hf/supplement/cvd_core_robust_estimates.csv`.
-For each continuity-panel exposure: offsets (days only, population × days, none); families (negative binomial, quasi-Poisson); SE methods (model, HC1, NW3, NW6). Manuscript Table 2 freezes the days-only / negative-binomial / NW6 continuity slice; Table 4 shows the SE ladder without selecting an interval by null exclusion.
+For each core-panel exposure: offsets (days only, population × days, none); families (negative binomial, quasi-Poisson); SE methods (model, HC1, NW3, NW6). Manuscript Table 2 freezes the days-only / negative-binomial / NW6 core slice; Table 4 shows the SE ladder without selecting an interval by null exclusion.
 
 ### S5.2 Trend and first-event depletion
 
@@ -239,11 +241,11 @@ File: `outputs/release_chd_hf/supplement/cvd_influence_sensitivity.csv`.
 
 File: `outputs/release_chd_hf/supplement/cvd_count_timeseries_sensitivity.csv`.
 
-Negative-binomial INGARCH(1,1) models were fitted **without an offset**. They reduced residual ACF1 (CHD hot-night residual ACF1 ≈ 0.25; HF cold-day residual ACF1 ≈ −0.04) while retaining positive CHD hot-night and HF cold-day associations. These fits are unoffset residual-dependence diagnostics. They are not directly comparable with the days-offset continuity estimates and are not a second primary estimand.
+Negative-binomial INGARCH(1,1) models were fitted **without an offset**. They reduced residual ACF1 (CHD hot-night residual ACF1 ≈ 0.25; HF cold-day residual ACF1 ≈ −0.04) while retaining positive CHD hot-night and HF cold-day associations. These fits are unoffset residual-dependence diagnostics. They are not directly comparable with the days-offset core estimates and are not a second primary estimand.
 
 ## S6. Residual diagnostics
 
-| Outcome | Continuity residual ACF1 (approx.) | Range across six continuity exposures | Ljung–Box lag 6 |
+| Outcome | Core residual ACF1 (approx.) | Range across six core exposures | Ljung–Box lag 6 |
 |---|---|---|---|
 | CHD | 0.51 | 0.508–0.534 | Rejects white noise |
 | HF | 0.15 | 0.131–0.179 | Does not reject |
@@ -379,7 +381,7 @@ Excluded from the journal scientific claims by design or delivery:
 - Locked hot-month / cold-month primary estimates (weather reference rules unlocked);
 - Cohort incidence with the true still-at-risk denominator (denominator unavailable);
 - Real daily-exposure M|D coefficients (calibration failed);
-- Confounding-adjusted continuity estimates for pollution, humidity, or influenza (legacy/joint archive paths only).
+- Confounding-adjusted core estimates for pollution, humidity, or influenza (legacy/joint archive paths only).
 
 Cloud-runtime availability of governed panels is an internal operations fact and is documented in the supervisor integrated report, not as a journal result.
 
@@ -390,3 +392,42 @@ Cloud-runtime availability of governed panels is an internal operations fact and
 - Synthetic coefficients presented as health findings
 - Private email text or raw addresses
 - Final author order or unrecorded headline approval
+
+## S12. Journal-track archive tables (not core-adjusted)
+
+These two tables are the objects cited from the live collaborative manuscript as Supplementary Tables S7 and S9. They reuse existing `HA_APPROVED_AGGREGATE` archive fits. They do not revise Table 2. Offset in both is general-population × days.
+
+**Supplementary Table S7. Archive influenza co-exposure (pathway P14; 121 months).**
+
+| Outcome | Term | Count ratio (95% CI) | Months |
+|:--|:--|--:|--:|
+| CHD | Influenza indicator | 1.673 (1.249–2.243) | 121 |
+| HF | Influenza indicator | 1.407 (0.958–2.067) | 121 |
+
+Source: `outputs/release_chd_hf/supplement/combined_pathway_panel_estimates.csv`. The live manuscript reports the CHD direction only.
+
+**Supplementary Table S9. Archive pollution-staged models (pathway P11; joint mean Tmax and Tmin).**
+
+Count ratios are for a 1 °C temperature contrast or a 1 µg m^−3^ pollutant contrast. Stages: none, NO₂, PM2.5, ozone, and all three (`multi`). On a monthly grain these models cannot separate ozone confounding from mediation.
+
+*CHD*
+
+| Stage | Mean Tmax | Mean Tmin | Pollutant term |
+|:--|--:|--:|:--|
+| none | 0.990 (0.960–1.021) | 1.003 (0.970–1.038) | — |
+| NO₂ | 0.975 (0.947–1.003) | 1.026 (0.992–1.061) | NO₂ 1.007 (1.004–1.011) |
+| PM2.5 | 0.987 (0.958–1.018) | 1.009 (0.974–1.045) | PM2.5 1.002 (1.000–1.005) |
+| O₃ | 0.989 (0.958–1.021) | 1.004 (0.969–1.041) | O₃ 1.000 (0.999–1.001) |
+| multi | 0.973 (0.945–1.003) | 1.025 (0.992–1.060) | NO₂ 1.011 (1.006–1.016); PM2.5 0.996 (0.992–1.000); O₃ 1.000 (0.998–1.001) |
+
+*HF*
+
+| Stage | Mean Tmax | Mean Tmin | Pollutant term |
+|:--|--:|--:|:--|
+| none | 1.016 (0.975–1.059) | 0.958 (0.919–0.998) | — |
+| NO₂ | 0.994 (0.959–1.029) | 0.988 (0.951–1.025) | NO₂ 1.010 (1.006–1.014) |
+| PM2.5 | 1.009 (0.972–1.047) | 0.972 (0.934–1.011) | PM2.5 1.006 (1.002–1.009) |
+| O₃ | 1.011 (0.971–1.052) | 0.964 (0.925–1.004) | O₃ 1.001 (0.999–1.003) |
+| multi | 0.995 (0.959–1.033) | 0.986 (0.949–1.024) | NO₂ 1.010 (1.004–1.016); PM2.5 1.000 (0.995–1.006); O₃ 1.000 (0.997–1.002) |
+
+Nitrogen dioxide retains a positive coefficient in the CHD and HF archive fits. That is a co-predictor fact, not a thermal finding.

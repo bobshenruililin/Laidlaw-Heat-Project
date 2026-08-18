@@ -36,9 +36,9 @@ is recorded separately and is not finalised in this repository version.
 
 **Background.** Monthly ecological analyses of thermal burden and cardiovascular hospitalisation must confront correlated exposure definitions, serial dependence, and the limits of recovering daily effects from monthly sums. In subtropical Hong Kong, hot nights and cold days both remain common.
 
-**Methods.** We analysed territory-month counts of the first recorded hospitalisation after a first coronary heart disease (CHD) or heart failure (HF) diagnosis record among people diagnosed with type 2 diabetes and/or hypertension during January 2013–December 2023 (132 months; 156,156 CHD events; 29,681 HF events). Admission cause was not recorded. Exposures were monthly mean temperature, mean maximum and minimum temperature, and official extreme-day counts (hot nights, cold days, and very hot days). Separate negative-binomial models adjusted for calendar month and a natural spline of time (4 df). The analysis-of-record offset was days in month. Uncertainty was reported as a Model / HC1 / Newey–West lag-3 / Newey–West lag-6 ladder; Newey–West lag 6 was retained as continuity analysis of record, not because an interval excluded the null. Benjamini–Hochberg q-values covered the twelve core contrasts. A constrained monthly-outcome / daily-exposure (M|D) estimator was evaluated under synthetic calibration only. The reported model set was specified after the outcome series were available and is exploratory.
+**Methods.** We analysed territory-month counts of the first recorded hospitalisation after a first coronary heart disease (CHD) or heart failure (HF) diagnosis record among people diagnosed with type 2 diabetes and/or hypertension during January 2013–December 2023 (132 months; 156,156 CHD events; 29,681 HF events). Admission cause was not recorded. Exposures were monthly mean temperature, mean maximum and minimum temperature, and official extreme-day counts (hot nights, cold days, and very hot days). Separate negative-binomial models adjusted for calendar month and a natural spline of time (4 df). The analysis-of-record offset was days in month. Uncertainty was reported as a Model / HC1 / Newey–West lag-3 / Newey–West lag-6 ladder; Newey–West lag 6 was the core reporting choice, not because an interval excluded the null. Benjamini–Hochberg q-values covered the twelve core contrasts. A constrained monthly-outcome / daily-exposure (M|D) estimator was evaluated under synthetic calibration only. The reported model set was specified after the outcome series were available and is exploratory.
 
-**Results.** Continuity Newey–West lag-6 count ratios included CHD hot nights 1.022 (1.002–1.042) and HF cold days 1.073 (1.006–1.144); both had q = 0.192. Across the Model–HC1–NW3–NW6 ladder, the CHD hot-night intervals were 0.995–1.049, 0.997–1.047, 1.0003–1.0439, and 1.002–1.042; the HF cold-day intervals were 1.023–1.125, 1.011–1.138, 1.007–1.143, and 1.006–1.144. All twelve core q-values exceeded 0.19. CHD Pearson residual autocorrelation at lag 1 was approximately 0.51; HF was approximately 0.15. Joint entry of correlated heat metrics inflated the CHD hot-night coefficient relative to the separate model. Synthetic M|D calibration failed under strict worst-cell gates (null Type I 0.048–0.150; minimum coverage 0.840; maximum non-null relative bias 32.77; maximum moderate false-sign 0.808; stress coverage 0.842). No real daily-exposure coefficient was admitted.
+**Results.** Under Newey–West lag-6 reporting, count ratios included CHD hot nights 1.022 (1.002–1.042) and HF cold days 1.073 (1.006–1.144); both had q = 0.192. Across the Model–HC1–NW3–NW6 ladder, the CHD hot-night intervals were 0.995–1.049, 0.997–1.047, 1.0003–1.0439, and 1.002–1.042; the HF cold-day intervals were 1.023–1.125, 1.011–1.138, 1.007–1.143, and 1.006–1.144. All twelve core q-values exceeded 0.19. CHD Pearson residual autocorrelation at lag 1 was approximately 0.51; HF was approximately 0.15. Joint entry of correlated heat metrics inflated the CHD hot-night coefficient relative to the separate model. Synthetic M|D calibration failed under strict worst-cell gates (null Type I 0.048–0.150; minimum coverage 0.840; maximum non-null relative bias 32.77; maximum moderate false-sign 0.808; stress coverage 0.842). No real daily-exposure coefficient was admitted.
 
 **Conclusions.** The current data do not support a protected differential thermal claim for CHD versus HF. The HF cold-day association is concordant across standard-error methods but unprotected by multiplicity (q = 0.192). The CHD hot-night association is sensitive to standard-error construction. Monthly first-hospitalisation associations in this series remain ecological count ratios under a first-event construction without recorded admission cause.
 
@@ -64,7 +64,7 @@ Thermal definition multiplies the problem. A month can be labelled hot because i
 
 ### Design and estimand
 
-The study is an ecological territory-month time series covering January 2013 through December 2023 (132 months). For each separate single-exposure model in the continuity panel, the target quantity is a count ratio for monthly first-hospitalisation counts associated with a one-unit or five-day exposure contrast, conditional on seasonality and long-term trend. Because the diabetes or hypertension cohort still at risk of a first event was unavailable, the analysis-of-record offset was days in month. Estimates are therefore monthly count ratios, not cohort incidence-rate ratios [@greenland1989ecological]. The reported model set was specified after the outcome series were available and is exploratory rather than prospectively confirmatory.
+The study is an ecological territory-month time series covering January 2013 through December 2023 (132 months). For each separate single-exposure model in the core panel, the target quantity is a count ratio for monthly first-hospitalisation counts associated with a one-unit or five-day exposure contrast, conditional on seasonality and long-term trend. Because the diabetes or hypertension cohort still at risk of a first event was unavailable, the analysis-of-record offset was days in month. Estimates are therefore monthly count ratios, not cohort incidence-rate ratios [@greenland1989ecological]. The reported model set was specified after the outcome series were available and is exploratory rather than prospectively confirmatory. We refer to the twelve separate single-exposure models as the core panel.
 
 ### Outcome data
 
@@ -85,17 +85,17 @@ Supplement.
 
 ### Statistical models
 
-Continuity panel models entered one exposure at a time for each outcome: mean temperature, mean maximum temperature, mean minimum temperature, hot nights, cold days, and very hot days. Each model used a negative-binomial likelihood, a calendar-month factor, and a natural cubic spline of month index with four degrees of freedom [@bhaskaran2013]. Continuity analysis-of-record intervals used Newey–West standard errors with lag 6, reported together with model-based, HC1, and Newey–West lag-3 intervals [@lazarus2018har]. No interval was selected because it excluded the null. Quasi-Poisson models were fitted as a family sensitivity.
+Core panel models entered one exposure at a time for each outcome: mean temperature, mean maximum temperature, mean minimum temperature, hot nights, cold days, and very hot days. Each model used a negative-binomial likelihood, a calendar-month factor, and a natural cubic spline of month index with four degrees of freedom [@bhaskaran2013]. Core intervals used Newey–West standard errors with lag 6, reported together with model-based, HC1, and Newey–West lag-3 intervals [@lazarus2018har]. No interval was selected because it excluded the null. Quasi-Poisson models were fitted as a family sensitivity.
 
 Joint exploratory models that entered maximum and minimum temperature together, or the three official extreme-day counts together, were retained as collinearity diagnostics. Heat-month percentile indicators were fitted one definition at a time in separate supplementary models.
 
-Robustness analyses comprised alternative trend smooths (3, 6, and 8 degrees of freedom), year fixed effects, exclusion of the first 12 or 24 months, a pre-2020 window, COVID-phase adjustment, lag-0/1/2 exposure models, and exclusion of the highest Cook’s-distance month. Negative-binomial INGARCH(1,1) models without an offset were fitted as residual-dependence diagnostics only; they are not directly comparable with the days-offset continuity estimates [@zhu2011nbingarch]. Residual autocorrelation and Ljung–Box tests were inspected. Benjamini–Hochberg q-values were computed across the twelve continuity-panel contrasts.
+Robustness analyses comprised alternative trend smooths (3, 6, and 8 degrees of freedom), year fixed effects, exclusion of the first 12 or 24 months, a pre-2020 window, COVID-phase adjustment, lag-0/1/2 exposure models, and exclusion of the highest Cook’s-distance month. Negative-binomial INGARCH(1,1) models without an offset were fitted as residual-dependence diagnostics only; they are not directly comparable with the days-offset core estimates [@zhu2011nbingarch]. Residual autocorrelation and Ljung–Box tests were inspected. Benjamini–Hochberg q-values were computed across the twelve core-panel contrasts.
 
-Existing pollution, absolute-humidity, and influenza model paths in the broader pathway archive were legacy or joint structures from earlier panel scaffolding. They are not adjusted versions of the present separate single-exposure continuity models and were not used to claim resolution of confounding.
+Existing pollution, absolute-humidity, and influenza model paths in the broader pathway archive were legacy or joint structures from earlier panel scaffolding. They are not adjusted versions of the present separate single-exposure core models and were not used to claim resolution of confounding.
 
 ### Multiplicity and uncertainty display
 
-The twelve outcome–exposure contrasts form one family for false-discovery control. Continuity intervals use Newey–West lag 6 because residual serial dependence is expected in monthly counts and is material for CHD. Model-based, HC1, and Newey–West lag-3 intervals are shown in parallel [@lazarus2018har]. The analysis does not choose an interval after inspecting whether it excludes the null. That display rule is part of the estimand discipline: uncertainty construction is reported, not optimised for significance.
+The twelve outcome–exposure contrasts form one family for false-discovery control. Core intervals use Newey–West lag 6 because residual serial dependence is expected in monthly counts and is material for CHD. Model-based, HC1, and Newey–West lag-3 intervals are shown in parallel [@lazarus2018har]. The analysis does not choose an interval after inspecting whether it excludes the null. That display rule is part of the estimand discipline: uncertainty construction is reported, not optimised for significance.
 
 ### Constrained monthly-outcome / daily-exposure method
 
@@ -125,11 +125,11 @@ CHD contributed 156,156 first recorded hospitalisations over 132 months (mean 1,
 
 ![Calendar-month seasonal profiles of indexed CHD and HF first-hospitalisation counts.](../outputs/release_chd_hf/figures/figure2_seasonal_pattern.png){width=100%}
 
-### Complete continuity panel
+### Complete core panel
 
-Table 2 and Figure 3 summarise the twelve separate-exposure count ratios under days-in-month offset. Continuity analysis-of-record intervals are Newey–West lag 6. The full uncertainty ladder is Table 4 and Figure 5.
+Table 2 and Figure 3 summarise the twelve separate-exposure count ratios under days-in-month offset. Core intervals are Newey–West lag 6. The full uncertainty ladder is Table 4 and Figure 5.
 
-**Table 2. Complete continuity panel: separate negative-binomial models with
+**Table 2. Complete core panel: separate negative-binomial models with
 days-in-month offset and Newey–West lag-6 intervals.**
 
 | Outcome | Exposure contrast | Count ratio (95% CI) | p | BH q |
@@ -147,7 +147,7 @@ days-in-month offset and Newey–West lag-6 intervals.**
 | HF | Cold days / 5 days | 1.073 (1.006–1.144) | 0.031 | 0.192 |
 | HF | Very hot days / 5 days | 0.995 (0.963–1.028) | 0.764 | 0.900 |
 
-![Forest plot of the twelve continuity-panel count ratios under days-in-month offset and Newey–West lag-6 intervals. Point estimates and intervals correspond to Table 2. Benjamini–Hochberg q-values for all twelve contrasts exceeded 0.19.](../outputs/release_chd_hf/figures/figure3_core_forest.png){width=100%}
+![Forest plot of the twelve core-panel count ratios under days-in-month offset and Newey–West lag-6 intervals. Point estimates and intervals correspond to Table 2. Benjamini–Hochberg q-values for all twelve contrasts exceeded 0.19.](../outputs/release_chd_hf/figures/figure3_core_forest.png){width=100%}
 
 <!-- claim:CVD-01 -->
 <!-- CHD mean temperature per 1 °C: 0.993 (0.976–1.010); q = 0.726. -->
@@ -185,9 +185,9 @@ days-in-month offset and Newey–West lag-6 intervals.**
 <!-- claim:CVD-12 -->
 <!-- HF very hot days per five days: 0.995 (0.963–1.028); q = 0.900. -->
 
-All twelve continuity-panel Benjamini–Hochberg q-values exceeded 0.19. No contrast therefore meets a multiplicity-protected confirmatory threshold in this exploratory panel.
+All twelve core-panel Benjamini–Hochberg q-values exceeded 0.19. No contrast therefore meets a multiplicity-protected confirmatory threshold in this exploratory panel.
 
-For CHD, continuous monthly mean temperatures were near null (count ratios 0.993–0.994), whereas the official hot-night count association was larger under continuity Newey–West lag-6 reporting. These encodings are non-interchangeable descriptions of monthly thermal burden; the contrast does not imply that a causal hot-night effect was missed by the means. For HF, continuous temperature associations were weakly inverse and the cold-day count association was positive. That pattern remains exploratory under multiplicity control.
+For CHD, continuous monthly mean temperatures were near null (count ratios 0.993–0.994), whereas the official hot-night count association was larger under Newey–West lag-6 reporting. These encodings are non-interchangeable descriptions of monthly thermal burden; the contrast does not imply that a causal hot-night effect was missed by the means. For HF, continuous temperature associations were weakly inverse and the cold-day count association was positive. That pattern remains exploratory under multiplicity control.
 
 ### Standard-error discordance for the leading exploratory contrasts
 
@@ -200,7 +200,7 @@ For CHD, continuous monthly mean temperatures were near null (count ratios 0.993
 
 The complete 48-row ladder is Supplementary Table S1.
 
-For CHD hot nights, the point estimate was 1.022 under all four standard-error methods. The 95% intervals were Model 0.995–1.049, HC1 0.997–1.047, Newey–West lag 3 1.0003–1.0439, and Newey–West lag 6 1.002–1.042. Model-based and HC1 intervals included the null; NW3 and NW6 excluded it on the unrounded scale. No interval was used to designate a primary claim.
+For CHD hot nights, the point estimate was 1.022 under all four standard-error methods. The 95% intervals were Model 0.995–1.049, HC1 0.997–1.047, Newey–West lag 3 1.0003–1.0439, and Newey–West lag 6 1.002–1.042. Model-based and HC1 intervals included the null; NW3 and NW6 excluded it on the unrounded scale. No interval was used to designate a primary claim. For this contrast, the ladder narrowed from the model-based to the Newey–West intervals. Robust intervals are not automatically wider, and the direction of that change is itself informative.
 
 For HF cold days, the point estimate was 1.073. The 95% intervals were Model 1.023–1.125, HC1 1.011–1.138, Newey–West lag 3 1.007–1.143, and Newey–West lag 6 1.006–1.144. All four intervals excluded the null for this contrast, but the corresponding q-value remained 0.192. Concordance across standard-error methods therefore does not by itself create multiplicity protection.
 
@@ -210,7 +210,7 @@ After month and trend residualisation, maximum and minimum temperature retained 
 
 ### Residual dependence
 
-Pearson residual autocorrelation at lag 1 was approximately 0.51 for CHD baseline models (range 0.508–0.534 across the six continuity-panel exposures) and approximately 0.15 for HF (range 0.131–0.179). Ljung–Box tests rejected residual white noise for CHD but not for HF. Negative-binomial INGARCH(1,1) models without an offset reduced residual autocorrelation and retained positive CHD hot-night and HF cold-day associations; those unoffset diagnostics are not directly comparable with the days-offset continuity estimates. Serial dependence is therefore part of the inferential problem, not an optional diagnostic footnote.
+Pearson residual autocorrelation at lag 1 was approximately 0.51 for CHD baseline models (range 0.508–0.534 across the six core-panel exposures) and approximately 0.15 for HF (range 0.131–0.179). Ljung–Box tests rejected residual white noise for CHD but not for HF. Negative-binomial INGARCH(1,1) models without an offset reduced residual autocorrelation and retained positive CHD hot-night and HF cold-day associations; those unoffset diagnostics are not directly comparable with the days-offset core estimates. Serial dependence is therefore part of the inferential problem, not an optional diagnostic footnote.
 
 ### Robustness
 
@@ -232,11 +232,11 @@ influence analyses.**
 | HF | Cold days / 5 days | 1.073 | 1.043–1.113 | 1.073–1.075 | 1.053–1.073 | 1.088 |
 | HF | Very hot days / 5 days | 0.995 | 0.988–0.997 | 0.995–0.995 | 0.995–1.018 | 0.994 |
 
-![Trend and first-event-depletion sensitivity forest for continuity-panel exposures. Ranges summarise alternative trend smooths, year fixed effects, early-period exclusions, pre-2020 restriction, and COVID-phase adjustment (Table 3).](../outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.png){width=100%}
+![Trend and first-event-depletion sensitivity forest for core-panel exposures. Ranges summarise alternative trend smooths, year fixed effects, early-period exclusions, pre-2020 restriction, and COVID-phase adjustment (Table 3).](../outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.png){width=100%}
 
-![Standard-error method ladder for the twelve continuity-panel contrasts. Each exposure shows Model, HC1, Newey–West lag-3, and Newey–West lag-6 intervals around the same point estimate. Intervals were not selected by null exclusion.](../outputs/release_chd_hf/figures/figure5_se_method_ladder.png){width=100%}
+![Standard-error method ladder for the twelve core-panel contrasts. Each exposure shows Model, HC1, Newey–West lag-3, and Newey–West lag-6 intervals around the same point estimate. Intervals were not selected by null exclusion.](../outputs/release_chd_hf/figures/figure5_se_method_ladder.png){width=100%}
 
-Offset choice changed continuity-panel count ratios only trivially (Table 3; Figure 4). Across trend and first-event-depletion scenarios, the CHD hot-night ratio ranged from 1.011 to 1.025, and the HF cold-day ratio ranged from 1.043 to 1.113. The HF cold-day association was stronger in the pre-2020 window (1.113, 1.053–1.176). Lag-1 and lag-2 models attenuated the CHD hot-night association toward the null. The HF cold-day association remained elevated at lag 1 (1.073, 1.014–1.135) and was weaker at lag 2 (1.053, 0.985–1.127). Exclusion of the highest Cook’s-distance month left both signals in the same direction.
+Offset choice changed core-panel count ratios only trivially (Table 3; Figure 4). Across trend and first-event-depletion scenarios, the CHD hot-night ratio ranged from 1.011 to 1.025, and the HF cold-day ratio ranged from 1.043 to 1.113. The HF cold-day association was stronger in the pre-2020 window (1.113, 1.053–1.176). The CHD hot-night association was weaker and compatible with 1 in the pre-2020 window (1.011, 0.991–1.032) and under COVID-phase adjustment (1.013, 0.994–1.033). Lag-1 and lag-2 models attenuated the CHD hot-night association toward the null. The HF cold-day association remained elevated at lag 1 (1.073, 1.014–1.135) and was weaker at lag 2 (1.053, 0.985–1.127). Exclusion of the highest Cook’s-distance month left both signals in the same direction.
 
 Offset triviality and directional stability under influence checks reduce concern that a single coding month drives the exploratory pattern. They do not resolve residual autocorrelation in the CHD series, nor do they convert q-values above 0.19 into protected primary claims. Lag-one and lag-two month models remain labelled sensitivities and do not identify a daily lag curve.
 
@@ -246,7 +246,9 @@ Synthetic M|D calibration failed under the frozen F1.2 worst-cell gates. Null Ty
 
 ## Discussion
 
-The current data do not support a protected differential thermal claim for CHD versus HF. Under continuity Newey–West lag-6 reporting, CHD first-hospitalisation counts were more closely associated with official hot-night burden than with mean temperature or cold days, and HF counts were more closely associated with cold-day burden than with hot nights. Those exploratory patterns sit inside multiplicity adjustment that leaves all twelve core q-values above 0.19. The HF cold-day association is concordant across Model, HC1, NW3, and NW6 intervals but remains q-unprotected (q = 0.192). The CHD hot-night association is standard-error sensitive: Model and HC1 intervals include the null, whereas NW3 and NW6 exclude it on the unrounded scale.
+The current data do not support a protected differential thermal claim for CHD versus HF. Under Newey–West lag-6 reporting, CHD first-hospitalisation counts were more closely associated with official hot-night burden than with mean temperature or cold days, and HF counts were more closely associated with cold-day burden than with hot nights. Those exploratory patterns sit inside multiplicity adjustment that leaves all twelve core q-values above 0.19. The HF cold-day association is concordant across Model, HC1, NW3, and NW6 intervals but remains q-unprotected (q = 0.192). The CHD hot-night association is standard-error sensitive: Model and HC1 intervals include the null, whereas NW3 and NW6 exclude it on the unrounded scale.
+
+The CHD hot-night association was not evident in the pre-2020 window. For this contrast, the Newey–West intervals were narrower than the model-based interval, which is atypical under positive residual autocorrelation. The exclusion of 1 therefore rests on the smaller robust variance estimate and is a reason for caution, not confirmation.
 
 That pattern is consistent with local historical emphasis on cold for cardiac admissions and with contemporary concern about nighttime heat [@goggins2013; @guo2024hotnights]. It should not be over-interpreted as a causal partition of heat and cold pathways. Joint entry of correlated heat metrics inflated the CHD hot-night coefficient relative to the separate model. Declining first-event counts over the decade raise the possibility of cohort depletion or changing coding and care patterns; trend and early-period sensitivities bound that concern but cannot eliminate it without cohort denominators.
 
@@ -256,7 +258,7 @@ Daily mortality attributable fractions [@liu2020jasmine] and modelled excess dea
 
 A protected primary claim would have required, at minimum, a predeclared confirmatory contrast, multiplicity control that survives the twelve-contrast family, standard-error constructions that do not rest on choosing the interval that excludes the null, and residual diagnostics that do not leave substantial CHD serial correlation unaddressed. The present release does not meet that bar. The scientifically stronger move is to report the complete panel and the refusals.
 
-Pollution, influenza, and humidity associations are scientifically motivated in Hong Kong [@guo2025temppollution; @yang2025coldflu]. Existing archive paths for those covariates were legacy or joint structures and are not adjusted versions of the present separate continuity models. Confounding by pollution, humidity, or influenza is therefore not resolved here [@greenland1989ecological]. Absent the still-at-risk cohort denominator, even a perfectly stable count ratio remains a count ratio. Future incidence language requires that denominator, not a change of adjectives in the abstract.
+Pollution, influenza, and humidity associations are scientifically motivated in Hong Kong [@guo2025temppollution; @yang2025coldflu]. Existing archive paths for those covariates were legacy or joint structures and are not adjusted versions of the present separate core models. Confounding by pollution, humidity, or influenza is therefore not resolved here [@greenland1989ecological]. Absent the still-at-risk cohort denominator, even a perfectly stable count ratio remains a count ratio. Future incidence language requires that denominator, not a change of adjectives in the abstract.
 
 ## Strengths and limitations
 
@@ -273,10 +275,10 @@ Limitations:
 4. The analysis is ecological and monthly; within-month timing and individual temperature exposure are unobserved [@greenland1989ecological].
 5. Age, sex, and subtype strata were not delivered.
 6. CHD residual serial correlation remains material under the baseline spline.
-7. Multiplicity-adjusted q-values for the exploratory continuity family do not support a protected primary claim; HF cold-day SE concordance does not create multiplicity protection, and CHD hot-night inference is SE-sensitive.
+7. Multiplicity-adjusted q-values for the exploratory core family do not support a protected primary claim; HF cold-day SE concordance does not create multiplicity protection, and CHD hot-night inference is SE-sensitive.
 8. Weather hot-month and cold-month reference rules remain unlocked; those indicators stay supplementary.
-9. Legacy pollution, humidity, and influenza pathway fits were not adjusted versions of the separate continuity panel; confounding by those covariates is unresolved.
-10. Negative-binomial INGARCH fits were unoffset diagnostics and are not directly comparable with days-offset continuity estimates.
+9. Legacy pollution, humidity, and influenza pathway fits were not adjusted versions of the separate core panel; confounding by those covariates is unresolved.
+10. Negative-binomial INGARCH fits were unoffset diagnostics and are not directly comparable with days-offset core estimates.
 11. Synthetic calibration used disclosure-minimised seasonality rather than governed daily outcomes; failure blocks real M|D admission but does not itself estimate a health effect.
 12. External dissemination still requires confirmation from the outcome and supervising investigators.
 13. Author order remains unresolved and is recorded separately.

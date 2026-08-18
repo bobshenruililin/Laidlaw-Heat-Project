@@ -1,6 +1,6 @@
 # Slash commands and deck-to-blog drafting — 26 July 2026
 
-**Decision:** The project’s five playbooks are explicit Cursor skills, and progress decks can reliably trigger an offer to draft a Laidlaw blog. Automation stops before publication.
+**Decision:** The project’s playbooks are explicit Cursor skills, and progress decks can reliably trigger an offer to draft a Laidlaw blog. Automation stops before publication.
 
 ## Command surface
 
@@ -11,6 +11,7 @@
 | `/playbook-02-ha-arrival` | Governed HA receipt and QC | Explicit only |
 | `/playbook-03-full-analysis` | Complete real-data analysis panel | Explicit only |
 | `/playbook-04-final-writeup` | Final write-up plus CNS-writing | Explicit only |
+| `/playbook-05-auto-research` | Jin-adapted lab (audit + readiness; no invented findings) | Explicit only |
 | `/playbook-99-emergencies` | Source/scope/governance/provenance shock | Explicit only |
 | `/laidlaw-blog` | Draft or revise a public Laidlaw post | Explicit only |
 | `/blog-from-deck` | Draft from a named progress deck | Explicit or deck-change suggestion |

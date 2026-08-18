@@ -11,6 +11,7 @@ Jin-adapted virtual research institute for the heat–CHD/HF project. Method, no
 | [`stroke_person_time_idle_checklist.md`](stroke_person_time_idle_checklist.md) | First hour after a governed file arrives |
 | `lab_run_YYYY-MM-DD.md` | Dated residue of a lab round |
 | [`named_gaps_2026-08-16.md`](named_gaps_2026-08-16.md) | Bookkeeping and presentation gaps; not coefficients |
+| [`frozen_rubric_2026-08-18.md`](frozen_rubric_2026-08-18.md) | Locked 1–10 bar for the raise-and-stop loop; do not revise after scores |
 | [`adversary_2026-08-16.md`](adversary_2026-08-16.md) | Independent kill/near-kill report |
 | [`opus_numeral_2026-08-16.md`](opus_numeral_2026-08-16.md) | Numeral and Hogan-thread audit |
 | [`../../manuscript/live_collaborative/supplement_inventory.md`](../../manuscript/live_collaborative/supplement_inventory.md) | Live-pack S1/S7/S9 bindings |

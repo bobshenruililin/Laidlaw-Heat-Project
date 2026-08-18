@@ -21,6 +21,7 @@ Jin-adapted virtual research institute for the heat–CHD/HF project. Method, no
 | [`unlimited_time_2026-08-18.md`](unlimited_time_2026-08-18.md) | Parent synthesis of the three unlimited-time answers |
 | [`../../reports/ceiling_note_hogan_bishai_2026-08-18.md`](../../reports/ceiling_note_hogan_bishai_2026-08-18.md) | Intern meeting note: peak, diminishing returns, ceiling-breakers, what Hogan/Roro/Bishai can open |
 | [`../../scripts/52_public_outcome_ceiling_search.py`](../../scripts/52_public_outcome_ceiling_search.py) | Re-runnable public-file grain check (not a health finding) |
+| [`mde_from_ladder_2026-08-18.md`](mde_from_ladder_2026-08-18.md) | Wald MDE from existing Table 4 SEs; not a new model; not a primary |
 | [`lab_run_2026-08-18.md`](lab_run_2026-08-18.md) | Parent adjudication and implemented intersection |
 | [`adversary_2026-08-16.md`](adversary_2026-08-16.md) | Independent kill/near-kill report |
 | [`opus_numeral_2026-08-16.md`](opus_numeral_2026-08-16.md) | Numeral and Hogan-thread audit |

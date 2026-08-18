@@ -325,6 +325,18 @@
       "bytes": 739948,
       "error": null,
       "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "CHP_CEREBROVASCULAR",
+      "url": "https://www.chp.gov.hk/en/healthtopics/content/25/58.html",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 17040,
+      "error": null,
+      "grain": "annual whole-population episode discharges/deaths with cerebrovascular disease as principal diagnosis; 2024 about 27100 discharges and 2911 registered deaths; PHS stroke prevalence 0.8%; not the project stroke aggregate",
+      "has_27100": false,
+      "has_2911": false
     }
-  ]
+  ],
+  "fetched_at_utc_stroke_amend": "2026-08-18T19:06:08Z"
 }

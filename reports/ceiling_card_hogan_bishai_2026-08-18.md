@@ -6,9 +6,9 @@ Hospital Authority–approved monthly first-event CHD/HF counts among people wit
 
 ## What the extract supports
 
-Ecological monthly count ratios. Not incidence. Not principal diagnosis. Not daily triggering. Twelve predeclared contrasts; all *q* > 0.19. CHD hot nights 1.022 (1.002–1.042) in the analysis of record, 1.011 (0.991–1.032) before 2020. Cold days sit almost entirely in December–February. Hogan’s weather paragraph already stands.
+Ecological monthly count ratios. Not incidence. Not principal diagnosis. Not daily triggering. Twelve predeclared contrasts; all *q* > 0.19. CHD hot nights 1.022 per five hot nights (1.002–1.042) under Newey–West lag 6; other error constructions and the pre-2020 window include 1. Cold days sit almost entirely in December–February. Hogan’s weather paragraph already stands.
 
-Further modelling cannot create missing person-time, ICD semantics, or a stroke file.
+Further modelling cannot create missing person-time or a stroke file. A detectable-effect calculation on this covariance ladder is intern work; it does not mint a primary.
 
 ## Public substitutes
 

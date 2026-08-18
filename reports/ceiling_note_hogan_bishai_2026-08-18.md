@@ -15,15 +15,15 @@ Zhenyuan Liu (Roro) delivered territory-month counts of first recorded CHD and H
 
 The delivered panel supports an ecological monthly analysis of those first recorded hospitalisations. The models are separate negative binomial regressions with calendar-month indicators, a 4-df time spline, and a days-in-month offset. The panel does not support cohort incidence, principal-diagnosis claims, daily triggering, or attributable-mortality claims.
 
-All twelve predeclared contrasts had Benjamini–Hochberg *q*-values above 0.19. For CHD hot nights, the analysis-of-record estimate was 1.022 (95% CI 1.002–1.042), compared with 1.011 (0.991–1.032) before 2020. Official cold days in 2013–2023 totalled 145; 141 fell in December–February. CHD first-event counts declined from 23,830 in 2013 to 12,323 in 2023, while the interpolated Census population aged 35 or older rose about 17%. Without still-at-risk person-time, these count ratios cannot be interpreted as incidence.
+All twelve predeclared contrasts had Benjamini–Hochberg *q*-values above 0.19. For CHD hot nights, the analysis-of-record estimate was 1.022 per five hot nights (95% CI 1.002–1.042, Newey–West lag 6); model-based and HC1 intervals included 1, as did the pre-2020 estimate (1.011, 0.991–1.032). Official cold days in 2013–2023 totalled 145; 141 fell in December–February. CHD first-event counts declined from 23,830 in 2013 to 12,323 in 2023, while the interpolated Census population aged 35 or older rose about 17%. Without still-at-risk person-time, these count ratios cannot be interpreted as incidence.
 
 Hogan’s weather paragraph is already the authority. Official hot-night, very-hot-day, and cold-day flags are aggregated to months. I have not overwritten that paragraph. Jingwen Liu et al. (2020) and Roro’s excess-mortality work answer different questions. I have not transported their relative risks onto this CHD/HF series.
 
 ---
 
-## Why further intern modelling does not raise this
+## Why further intern modelling does not raise the data ceiling
 
-Additional modelling cannot resolve the main limitations: monthly outcome timing, incomplete outcome semantics, and absent person-time. Further specifications may test robustness. They cannot create the missing data.
+Additional modelling cannot resolve the main limitations: monthly outcome timing, incomplete outcome semantics, and absent person-time. Two analyses on the delivered file remain worth intern hours: a minimum-detectable-effect calculation at the observed dispersion, so the null panel states what it could have seen and did not, and predeclared falsification checks using permutation and negative-control exposures. Neither creates missing data, and neither can mint a primary.
 
 I cannot sign a Hospital Authority Undertaking or act as principal investigator.
 
@@ -33,7 +33,7 @@ I cannot sign a Hospital Authority Undertaking or act as principal investigator.
 
 I checked whether a public substitute existed. It does not. The fetch log is `public_data_ceiling_search_2026-08-18.md`.
 
-Public HA open data give financial-year discharges by hospital (809 rows; no month; no ICD). The Department of Health 2023 disease-class file gives one year of episode counts, including day inpatients; circulatory chapter I00–I99 is 162,691 discharges and deaths. DATA.GOV.HK’s catalogue search for inpatient/hospitalisation returned one quarterly throughput table. Public HKO daily mean temperature for 2013 is complete (365 days). Weather is not the missing object.
+Public HA open data give financial-year discharges by hospital (809 rows; no month; no ICD). The Department of Health 2023 disease-class file gives one year of episode counts, including day inpatients; circulatory chapter I00–I99 is 162,691 discharges and deaths. CHP’s Cerebrovascular Disease page reports about 27,100 annual episode discharges in 2024; that is not the project’s stroke aggregate. The HA disease-group table exists on the Data Sharing Portal at financial-year grain for the whole HA population; it is the wrong object, not a hidden file. Public HKO daily mean temperature for 2013 is complete (365 days). Weather is not the missing object.
 
 Guo et al. (2024) analysed daily emergency hospitalisations using HA data under licence; those admissions are not public. A different outcome series would require a collaborator-provided extract or a separate PI-led application (HA Form A or B, or HKU-EHPDCL). I can draft a specification. I cannot submit it.
 
@@ -53,4 +53,4 @@ Authorship, ethics paperwork, journal choice, paid HA access, and a new governed
 
 ## What I will keep doing
 
-I will work in the shared manuscript using the agreed outcome and weather definitions. Any new governed file will be checked for structure, documentation, and suppression before analysis.
+I will work in the shared manuscript using the agreed outcome and weather definitions. Any new governed file will be checked for structure, documentation, and suppression before analysis. A detectable-effect table from the existing covariance ladder is in `analysis_plan/auto_research/mde_from_ladder_2026-08-18.md`. Permutation and negative-control checks are not yet run.

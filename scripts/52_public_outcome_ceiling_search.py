@@ -250,6 +250,7 @@ def main() -> None:
         ("EHPDCL_ACCESS", "https://ehpdigital.com/data-service/accessingdcl/"),
         ("HKU_EHPDCL", "https://www.med.hku.hk/en/research/facilities-and-services/hku-ehpdcl"),
         ("CHP_HEART_DISEASES", "https://www.chp.gov.hk/en/healthtopics/content/25/57.html"),
+        ("CHP_CEREBROVASCULAR", "https://www.chp.gov.hk/en/healthtopics/content/25/58.html"),
         ("HA_MAJOR_STATISTICS", "https://www3.ha.org.hk/Data/HAStatistics/MajorReport"),
     ):
         rec = fetch(url)

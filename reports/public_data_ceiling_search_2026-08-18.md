@@ -33,6 +33,7 @@ No. Public files are annual or financial-year episode throughput, survey prevale
 | `EHPDCL_ACCESS` | 200 | 44225 |  |
 | `HKU_EHPDCL` | 200 | 42659 |  |
 | `CHP_HEART_DISEASES` | 200 | 19708 |  |
+| `CHP_CEREBROVASCULAR` | 200 |  | annual whole-population episode discharges (2024 ~27,100) and 2,911 registered deaths; not the project stroke aggregate |
 | `HA_MAJOR_STATISTICS` | 200 | 739948 |  |
 
 ## HA throughput sample (first row of `ipdpdd-en.json`)

@@ -26,7 +26,7 @@ On that file I can defend the following, and not more.
 
 The estimand is an ecological monthly count ratio from separate negative-binomial models, with calendar-month indicators, a 4-df time spline, and a days-in-month offset. It is not cohort incidence. It is not a principal-diagnosis claim. It is not a daily triggering analysis. It is not an attributable mortality fraction.
 
-The analysis of record is twelve contrasts: CHD and HF each against mean temperature, mean Tmax, mean Tmin, official hot nights, official cold days, and official very hot days. All twelve Benjamini–Hochberg *q*-values exceed 0.19. HF cold days are directionally stable across standard-error constructions but are not multiplicity-protected. CHD hot nights exclude 1 under Newey–West lag 6 (count ratio 1.022, 1.002–1.042) and do not exclude 1 before 2020 (1.011, 0.991–1.032). Nine of the twelve pre-2020 intervals with Newey–West lag 6 include 1. That sentence is a sensitivity, not a primary.
+The analysis of record is twelve contrasts: CHD and HF each against mean temperature, mean Tmax, mean Tmin, official hot nights, official cold days, and official very hot days. All twelve Benjamini–Hochberg *q*-values exceed 0.19. HF cold days are directionally stable across standard-error constructions but are not multiplicity-protected. CHD hot nights exclude 1 under Newey–West lag 6 (count ratio 1.022 per five hot nights, 1.002–1.042); model-based and HC1 intervals included 1, as did the pre-2020 estimate (1.011, 0.991–1.032). Nine of the twelve pre-2020 intervals with Newey–West lag 6 exclude 1, including inverse associations for all six continuous temperature contrasts. That pattern is a trend signature, not a discovery, and the pre-2020 window is a sensitivity, not a primary.
 
 Official cold days in 2013–2023 total 145; 141 fall in December–February. After calendar-month indicators, remaining cold-day variation is between-year winter, not summer versus winter. First-event CHD counts fell from 23,830 in 2013 to 12,323 in 2023 while the interpolated Census population aged 35 or older rose about 17%. That decline is compatible with depletion of a 2013–2023 diagnosis window and with pandemic changes in care-seeking. Without monthly still-at-risk person-time I cannot apportion those two, and I cannot convert a count ratio into incidence.
 
@@ -74,7 +74,7 @@ The age–gender companion file is financial year × age band × sex. Still no I
 
 The DATA.GOV.HK specification for this family is beds, discharges, patient days, occupancy, and average length of stay. “Monthly/daily archives” on that portal are file-version history, not monthly disease counts.
 
-HA Major Statistics lists “Number of Inpatient and Day Inpatient Discharges and Deaths in Hospitals under the Hospital Authority by Disease Group.” I guessed three JSON filenames under `ha.org.hk/opendata/`. Each returned HTTP 200 wrapping an HTML 404 page. CKAN search for “disease group hospital authority” returned **zero** packages.
+HA Major Statistics lists “Number of Inpatient and Day Inpatient Discharges and Deaths in Hospitals under the Hospital Authority by Disease Group.” That table exists on the HA Data Sharing Portal at financial-year grain for the whole HA population; it is the wrong object, not a hidden one. It is not published as a flat file: three guessed JSON filenames returned HTTP 200 wrapping an HTML 404 page, and the CKAN search for “disease group hospital authority” returned zero packages.
 
 ### 5.2 Department of Health — one year, one chapter, episodes
 
@@ -84,13 +84,13 @@ I downloaded
 
 from the DH DATA.GOV.HK series. Twenty-eight rows. Circulatory chapter I00–I99: **162,691** episode discharges and deaths, 7.20% of 2,266,303. The file’s own note: figures are on an **episode basis including day inpatients**. There is no month. There is no T2D/HTN restriction. There is no first-hospitalisation-after-first-diagnosis rule. This is not our series at a coarser grain. It is a different object.
 
-CHP’s Heart Diseases page (updated 31 March 2026) reports **about 88,900** inpatient discharges and inpatient deaths with heart diseases as principal diagnosis in 2024, and 6,594 registered deaths. Annual. Territory. Principal diagnosis in that episode. Still not a monthly first-event T2D/HTN panel.
+CHP’s Heart Diseases page (updated 31 March 2026) reports **about 88,900** inpatient discharges and inpatient deaths with heart diseases as principal diagnosis in 2024, and 6,594 registered deaths. Annual. Territory. Principal diagnosis in that episode. Still not a monthly first-event T2D/HTN panel. CHP’s Cerebrovascular Disease page (same date) reports about 27,100 inpatient discharges and deaths with cerebrovascular disease as principal diagnosis in 2024, and 2,911 registered deaths, with PHS 2020–22 self-reported stroke prevalence 0.8% among persons aged 15 or above. That page is annual, whole-population, and episode-based. It is not the stroke aggregate this project was promised.
 
 ### 5.3 Census population and survey prevalence — not person-time
 
 C&SD Table 110-01001 (population by sex and age group) updates **half-yearly**. I already use an interpolated 35+ series as an ecological sensitivity. It is not person-time among members of the HA T2D/HTN cohort who have not yet had a first CHD or HF hospitalisation.
 
-The Health Behaviour Survey 2023 reports doctor-diagnosed hypertension with ongoing care in **21.3%** of persons aged 15 or above, and diabetes mellitus in **9.2%**. Population Health Survey 2020–22 gives related point prevalences, including 1.6% self-reported doctor-diagnosed coronary heart disease among persons aged 15 or above. A survey prevalence is a snapshot of a sampled population. It cannot be divided into 132 monthly still-at-risk counts for our cohort.
+From prior reading rather than this fetch log: the Health Behaviour Survey 2023 reports doctor-diagnosed hypertension with ongoing care in 21.3% of persons aged 15 or above, and diabetes mellitus in 9.2%. Population Health Survey 2020–22 gives related point prevalences, including 1.6% self-reported doctor-diagnosed coronary heart disease among persons aged 15 or above. A survey prevalence is a snapshot of a sampled population. It cannot be divided into 132 monthly still-at-risk counts for our cohort.
 
 Published papers that do have those denominators use HA Clinical Management System extracts under collaboration. The Hong Kong Diabetes Surveillance Database is described in *IJE* (Wu et al., 2022) as a curated HA EMR resource, not a download. The BMJ Open GOPC protocol for HT/DM trajectories states that the HA statistics team extracts anonymised CMS data for the collaborating team. That is Roro’s world, not DATA.GOV.HK.
 
@@ -178,7 +178,7 @@ Guo et al. needed licensed daily emergency admissions. Our clean-room monthly-ou
 
 The 17 July meeting closed principal-diagnosis AMI from the general HA file. Only a separate extract with reasons for admission would reopen it. I will not rebuild the Week-1 AMI frame on the present file.
 
-### 7.7 Weather lock (changes exposure definition, not outcome grain)
+### 7.7 Weather lock (closes a pending definition; raises defensibility, not the ceiling)
 
 Hogan’s remaining decisions are written down in the readiness sheet: Li-HW / HM23 season; percentile reference period; ties; gap rule; missing-day tolerance; whether a heatwave that crosses months is assigned by start, touch, or burden; whether official monthly hot-night **counts** remain the live encoding given Guo’s HNe result; whether Roro’s four `HWD_*` definitions are named monthly siblings. I can implement whatever he writes. I must not fill the blanks from registry defaults.
 

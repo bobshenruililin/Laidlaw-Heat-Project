@@ -14,6 +14,7 @@ Jin-adapted virtual research institute for the heat–CHD/HF project. Method, no
 | [`frozen_rubric_2026-08-18.md`](frozen_rubric_2026-08-18.md) | Locked 1–10 bar for the raise-and-stop loop; do not revise after scores |
 | [`fable_score_2026-08-18.md`](fable_score_2026-08-18.md) | Fable 5 round-1 architecture score (6.5, band 6–7) |
 | [`sol_score_2026-08-18.md`](sol_score_2026-08-18.md) | Sol 5.6 round-1 submission-object score (5.0, band 4–5 pending live-track SI) |
+| [`fable_stop_round_2026-08-18.md`](fable_stop_round_2026-08-18.md) | Fable 5 stop-round: 7.0; loop closed at this seat |
 | [`sol_stop_round_2026-08-18.md`](sol_stop_round_2026-08-18.md) | Sol 5.6 stop-round: 6.5; no further agent-owned score movement |
 | [`lab_run_2026-08-18.md`](lab_run_2026-08-18.md) | Parent adjudication and implemented intersection |
 | [`adversary_2026-08-16.md`](adversary_2026-08-16.md) | Independent kill/near-kill report |

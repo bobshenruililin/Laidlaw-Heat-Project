@@ -11,6 +11,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 - Frozen 1–10 bar locked before Fable 5 / Sol 5.6 scored. Ceiling remains 6–7. No 8 without new governed data or a multiplicity-protected claim.
 - Intersection implemented: Results sentence for the pre-2020 nine-of-twelve (Abstract unchanged); live-track SI `manuscript/live_collaborative/supplement_live_track.md`. Cover letter not drafted (does not land).
+- Stop-round: Fable **7.0**, Sol **6.5**. Both: further agent-owned work cannot move either number. Loop closed.
 - Bob re-pastes from `REPASTE_2026-08-18.md` into Hogan’s file. Hogan-before-Bishai. Gate 3 still open.
 
 ## 0b. Canonical update — auto-research lab (16 August)

@@ -17,6 +17,8 @@ Jin-adapted virtual research institute for the heat–CHD/HF project. Method, no
 | [`fable_stop_round_2026-08-18.md`](fable_stop_round_2026-08-18.md) | Fable 5 stop-round: 7.0; loop closed at this seat |
 | [`sol_stop_round_2026-08-18.md`](sol_stop_round_2026-08-18.md) | Sol 5.6 stop-round: 6.5; no further agent-owned score movement |
 | [`sol_unlimited_time_2026-08-18.md`](sol_unlimited_time_2026-08-18.md) | Sol: how unlimited hours would be spent (question, not a score) |
+| [`fable_unlimited_time_2026-08-18.md`](fable_unlimited_time_2026-08-18.md) | Fable: MDE, pre-declared fragility atlas; not a score |
+| [`unlimited_time_2026-08-18.md`](unlimited_time_2026-08-18.md) | Parent synthesis of the three unlimited-time answers |
 | [`lab_run_2026-08-18.md`](lab_run_2026-08-18.md) | Parent adjudication and implemented intersection |
 | [`adversary_2026-08-16.md`](adversary_2026-08-16.md) | Independent kill/near-kill report |
 | [`opus_numeral_2026-08-16.md`](opus_numeral_2026-08-16.md) | Numeral and Hogan-thread audit |

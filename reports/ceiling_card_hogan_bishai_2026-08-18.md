@@ -1,32 +1,23 @@
-# One card — what the intern can finish
+# Monthly CHD/HF analysis — one card
 
-**Shen Ruililin · 18 August 2026 · print with the long note if wanted · not a live-file paste**
+**Shen Ruililin · 18 August 2026 · print · not a live-file paste**
 
-The monthly CHD/HF paper is an identification article. That is the intern-owned peak. I checked whether a public file could raise it. It cannot.
+Hospital Authority–approved monthly first-event CHD/HF counts among people with T2D and/or HTN, 2013–2023. Stroke, daily outcomes, and cohort person-time are not in the file.
 
-## What this extract supports
+## What the extract supports
 
-132 months of first CHD/HF hospitalisation after first diagnosis among people with T2D and/or HTN. No admission cause. No stroke file. No still-at-risk person-time. Twelve contrasts; all *q* > 0.19. Cold days almost all sit in December–February. CHD hot nights exclude 1 only in specifications that include 2020–2023. Hogan’s weather paragraph already stands.
+Ecological monthly count ratios. Not incidence. Not principal diagnosis. Not daily triggering. Twelve predeclared contrasts; all *q* > 0.19. CHD hot nights 1.022 (1.002–1.042) in the analysis of record, 1.011 (0.991–1.032) before 2020. Cold days sit almost entirely in December–February. Hogan’s weather paragraph already stands.
 
-## Diminishing returns
+Further modelling cannot create missing person-time, ICD semantics, or a stroke file.
 
-More encodings, cover letters, or hourly heat in my processing paragraph will not mint a primary. They groom the same 132 months.
+## Public substitutes
 
-## What I actually downloaded
+I downloaded HA financial-year hospital throughput (no month, no ICD), the DH 2023 ICD-chapter episode file, and public HKO daily temperature. They are the wrong grain. Guo et al. (2024) used licensed HA emergency admissions. Full log: `public_data_ceiling_search_2026-08-18.md`.
 
-| Public object | Grain | Why it is not our series |
-|---|---|---|
-| HA `ipdpdd-en.json` (809 rows) | Financial year × hospital | No month, no ICD, not a T2D/HTN first-event rule |
-| DH 2023 disease-class CSV | One year; I00–I99 = 162,691 episodes | Episode basis, all hospitals, no cohort |
-| CKAN inpatient search | One hit: C&SD 930-92087, quarterly | Throughput, not ICD first-events |
-| HKO daily mean T, 2013 | 365 public days | Weather is not missing; the lock is Hogan’s definition |
+## Questions for this meeting
 
-Guo et al. (2024) used HA emergency admissions **under licence**. Those data are not public. HA Form A (~HK$15,000+) / Form B (~HK$60,000+) and EHPDCL (DARE/EXPERT) require a local PI. I cannot sign the Undertaking.
+1. **Hogan.** Keep official monthly hot-night, very-hot-day, and cold-day counts as the exposure family? If HM23 remains, which reference period and month-assignment rule?
+2. **Professor Bishai.** Proceed as an identification-focused paper without a confirmatory primary, once weather and health-data methods are confirmed?
+3. **Roro, as a follow-up.** Outcome definitions, and a yes/no on stroke, person-time, and 65–69 / 70–74. Not a same-day extract request.
 
-## What would raise the ceiling
-
-- **Roro:** stroke file or a written “not available”; ICD / inpatient vs DAE / event dating; monthly still-at-risk person-time; 65–69 / 70–74 if disclosure allows.
-- **Hogan:** write the HM23 / tail rules; say whether official monthly hot-night counts remain the encoding; endorse the live file before Professor Bishai is asked to bless it. You do not need to send another temperature CSV.
-- **Professor Bishai:** no confirmatory primary on this extract (my recommendation); written dissemination; ethics note if needed; authorship; wait-for-stroke or submit identification now; whether you will open Form B / EHPDCL as PI.
-
-Long note and fetch log: `ceiling_note_hogan_bishai_2026-08-18.md`, `public_data_ceiling_search_2026-08-18.md`.
+Short note: `ceiling_note_hogan_bishai_2026-08-18.md`.

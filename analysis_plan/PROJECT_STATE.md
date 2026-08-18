@@ -9,9 +9,9 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ## 0d. Canonical update — intern ceiling note (18 August)
 
-- Printable intern note for Hogan and Bishai: the monthly identification article is the intern-owned peak; further encodings have diminishing returns; ceiling-breakers are stroke, person-time, ICD/inpatient semantics, weather lock, and PI-level HA Form A/B or EHPDCL.
+- Printable intern note for Hogan and Bishai, cut to a two-page meeting object (three questions: Hogan exposure family; Bishai identification-focused paper without a confirmatory primary; Roro yes/no on definitions/stroke/person-time/age, not a same-day extract). Public-file search remains a separate log. Form A/B and EHPDCL remain PI paths.
 - Public-file search was executed, not asserted: HA throughput JSON, DH 2023 ICD-chapter CSV, CKAN (one quarterly throughput table; zero disease-group packages), public HKO daily temperature. Guo 2024 admissions remain licensed. Form A/B and EHPDCL are PI paths.
-- Files: `reports/ceiling_card_hogan_bishai_2026-08-18.md` (one page) and `reports/ceiling_note_hogan_bishai_2026-08-18.md` (justification + search). Search: `reports/public_data_ceiling_search_2026-08-18.md`. Durable: `knowledge/2026-08-18_intern_ceiling_note.md`. Gate 3 still open. Do not paste the note into the live manuscript.
+- Files: `reports/ceiling_card_hogan_bishai_2026-08-18.md` (one page) and `reports/ceiling_note_hogan_bishai_2026-08-18.md` (two-page meeting note). Long working justification: `reports/ceiling_note_hogan_bishai_2026-08-18_long.md`. Search: `reports/public_data_ceiling_search_2026-08-18.md`. Durable: `knowledge/2026-08-18_intern_ceiling_note.md`. Gate 3 still open. Do not paste the note into the live manuscript.
 
 ## 0c. Canonical update — raise-and-stop (18 August)
 

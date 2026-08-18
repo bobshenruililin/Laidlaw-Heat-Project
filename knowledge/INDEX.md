@@ -20,6 +20,7 @@
 
 ## Current meeting record
 
+- [`2026-08-18_intern_ceiling_note.md`](2026-08-18_intern_ceiling_note.md) — intern note for Hogan/Bishai: peak of the monthly panel, public-file dead ends demonstrated, PI paths to break the ceiling; Gate 3 still open.
 - [`2026-08-18_raise_and_stop.md`](2026-08-18_raise_and_stop.md) — Fable 7.0 / Sol 6.5 stop; live-track SI assembled; loop closed; no 8; Gate 3 still open.
 - [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md) — Jin-adapted lab contract; first run; machine claim-ledger auditor; Gate 3 still open.
 - [`2026-08-15_cns_paper_team.md`](2026-08-15_cns_paper_team.md) — Fable/Opus/Sol identification paper; live paste pack; Environmental Research first target; Gate 3 still open.

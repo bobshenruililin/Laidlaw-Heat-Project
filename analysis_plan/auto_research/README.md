@@ -19,6 +19,8 @@ Jin-adapted virtual research institute for the heat–CHD/HF project. Method, no
 | [`sol_unlimited_time_2026-08-18.md`](sol_unlimited_time_2026-08-18.md) | Sol: how unlimited hours would be spent (question, not a score) |
 | [`fable_unlimited_time_2026-08-18.md`](fable_unlimited_time_2026-08-18.md) | Fable: MDE, pre-declared fragility atlas; not a score |
 | [`unlimited_time_2026-08-18.md`](unlimited_time_2026-08-18.md) | Parent synthesis of the three unlimited-time answers |
+| [`../../reports/ceiling_note_hogan_bishai_2026-08-18.md`](../../reports/ceiling_note_hogan_bishai_2026-08-18.md) | Intern meeting note: peak, diminishing returns, ceiling-breakers, what Hogan/Roro/Bishai can open |
+| [`../../scripts/52_public_outcome_ceiling_search.py`](../../scripts/52_public_outcome_ceiling_search.py) | Re-runnable public-file grain check (not a health finding) |
 | [`lab_run_2026-08-18.md`](lab_run_2026-08-18.md) | Parent adjudication and implemented intersection |
 | [`adversary_2026-08-16.md`](adversary_2026-08-16.md) | Independent kill/near-kill report |
 | [`opus_numeral_2026-08-16.md`](opus_numeral_2026-08-16.md) | Numeral and Hogan-thread audit |

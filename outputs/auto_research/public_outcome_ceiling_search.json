@@ -1,0 +1,330 @@
+{
+  "fetched_at_utc": "2026-08-18T18:40:26Z",
+  "script": "scripts/52_public_outcome_ceiling_search.py",
+  "provenance": "PUBLIC_WEB_FETCH — not HA microdata; not a health finding",
+  "verdict": {
+    "question": "Can a lab intern replace the governed monthly CHD/HF first-hospitalisation series among people with T2D and/or HTN using only public Hong Kong files?",
+    "answer": "No. Public files are annual or financial-year episode throughput, survey prevalence, or weather. They are not a 132-month first-event series in the T2D/HTN cohort, they do not carry admission cause, and they do not supply still-at-risk person-time.",
+    "what_intern_can_fetch": [
+      "HKO daily temperature (demonstrated for 2013)",
+      "HA financial-year discharges and beds by hospital/cluster/age-sex",
+      "DH annual ICD-chapter episode discharges",
+      "CHP annual heart-disease episode discharges and registered deaths",
+      "C&SD half-yearly/annual population by age-sex",
+      "CHP Health Behaviour Survey 2023 point prevalence (HTN 21.3%, DM 9.2% among persons aged 15+)"
+    ],
+    "what_requires_a_PI": [
+      "HA Central Panel Form A (expedited aggregates; typically HK$15,000+) or Form B (customised/patient-based; typically HK$60,000+)",
+      "EHPDCL DARE/EXPERT named-user access under an institutional agreement, ethics, and fees",
+      "A further governed extract from the existing collaboration (stroke file, ICD list, inpatient vs DAE, person-time, age bands)"
+    ]
+  },
+  "checks": [
+    {
+      "id": "HA_IPDPDD_JSON",
+      "needed_for": "monthly first-event CHD/HF among T2D/HTN",
+      "url": "https://www.ha.org.hk/opendata/ipdpdd-en.json",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 202936,
+      "error": null,
+      "content_type": "application/json",
+      "final_url": "https://www.ha.org.hk/opendata/ipdpdd-en.json",
+      "body_head": "[\n  {\n    \"Financial Year\": \"2008-09\",\n    \"Cluster\": \"Hong Kong East Cluster\",\n    \"Hospital\": \"Cheshire Home, Chung Hom Kok\",\n    \"IP Discharges and Deaths\": 246,\n    \"DP Discharges and Deaths\": null,\n    \"IP and DP Discharges and Deaths\": 246\n  },\n  {\n    \"Financial Year\": \"2008-09\",\n    \"Cluster\": \"Hong Kong East Cluster\",\n    \"Hospital\": \"Pamela Youde Nethersole Eastern Hospital\",\n    \"IP Dis",
+      "n_rows": 809,
+      "keys": [
+        "Cluster",
+        "DP Discharges and Deaths",
+        "Financial Year",
+        "Hospital",
+        "IP Discharges and Deaths",
+        "IP and DP Discharges and Deaths"
+      ],
+      "sample_row": {
+        "Financial Year": "2008-09",
+        "Cluster": "Hong Kong East Cluster",
+        "Hospital": "Cheshire Home, Chung Hom Kok",
+        "IP Discharges and Deaths": 246,
+        "DP Discharges and Deaths": null,
+        "IP and DP Discharges and Deaths": 246
+      },
+      "financial_years": [
+        "2008-09",
+        "2009-10",
+        "2010-11",
+        "2011-12",
+        "2012-13",
+        "2013-14",
+        "2014-15",
+        "2015-16",
+        "2016-17",
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25"
+      ],
+      "n_financial_years": 17,
+      "has_month_field": false,
+      "has_icd_field": false,
+      "grain": "financial year × cluster × hospital; inpatient/day-patient discharges and deaths; no ICD; no month; not a T2D/HTN first-event series",
+      "excerpt": "outputs/auto_research/public_ceiling_excerpts/ha_ipdpdd_en_head.json"
+    },
+    {
+      "id": "HA_IPDPDD_AGE_GENDER",
+      "url": "https://www.ha.org.hk/opendata/ipdpdd-age-gender-en.json",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 33612,
+      "error": null,
+      "content_type": "application/json",
+      "final_url": "https://www.ha.org.hk/opendata/ipdpdd-age-gender-en.json",
+      "body_head": "[\n  {\n    \"Financial Year\": \"2015-16\",\n    \"Age Group\": \"Aged below 18\",\n    \"Gender\": \"Female\",\n    \"IP Discharges and Deaths\": 59437,\n    \"DP Discharges and Deaths\": 16230,\n    \"IP and DP Discharges and Deaths\": 75667\n  },\n  {\n    \"Financial Year\": \"2015-16\",\n    \"Age Group\": \"Aged below 18\",\n    \"Gender\": \"Male\",\n    \"IP Discharges and Deaths\": 75154,\n    \"DP Discharges and Deaths\": 24679,\n    ",
+      "n_rows": 150,
+      "keys": [
+        "Age Group",
+        "DP Discharges and Deaths",
+        "Financial Year",
+        "Gender",
+        "IP Discharges and Deaths",
+        "IP and DP Discharges and Deaths"
+      ],
+      "sample_row": {
+        "Financial Year": "2015-16",
+        "Age Group": "Aged below 18",
+        "Gender": "Female",
+        "IP Discharges and Deaths": 59437,
+        "DP Discharges and Deaths": 16230,
+        "IP and DP Discharges and Deaths": 75667
+      },
+      "grain": "financial year × age group × gender; still no ICD, month, cohort, or first-event rule"
+    },
+    {
+      "id": "HA_DISEASE_GROUP_JSON_GUESS",
+      "url": "https://www.ha.org.hk/opendata/ipdpdd-disease-en.json",
+      "ok": false,
+      "http_status": 200,
+      "error": "HTTP 200 wrapping an HTML 404 page",
+      "note": "DATA.GOV.HK inpatient-throughput dataset lists beds/discharges/ALOS, not this filename. HA Major Statistics names a disease-group table; no matching public JSON was found at these guessed paths."
+    },
+    {
+      "id": "HA_DISEASE_GROUP_JSON_GUESS",
+      "url": "https://www.ha.org.hk/opendata/ipdp-disease-en.json",
+      "ok": false,
+      "http_status": 200,
+      "error": "HTTP 200 wrapping an HTML 404 page",
+      "note": "DATA.GOV.HK inpatient-throughput dataset lists beds/discharges/ALOS, not this filename. HA Major Statistics names a disease-group table; no matching public JSON was found at these guessed paths."
+    },
+    {
+      "id": "HA_DISEASE_GROUP_JSON_GUESS",
+      "url": "https://www.ha.org.hk/opendata/ipdpdd-diseasegroup-en.json",
+      "ok": false,
+      "http_status": 200,
+      "error": "HTTP 200 wrapping an HTML 404 page",
+      "note": "DATA.GOV.HK inpatient-throughput dataset lists beds/discharges/ALOS, not this filename. HA Major Statistics names a disease-group table; no matching public JSON was found at these guessed paths."
+    },
+    {
+      "id": "DH_2023_INPATIENT_BY_DISEASE",
+      "url": "https://www.dh.gov.hk/datagovhk/ncdd/Inpatient%20Discharges%20and%20Deaths%20in%20All%20Hospitals%20Classified%20by%20Disease%2C%202023%20%28EN%29.csv",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 1858,
+      "error": null,
+      "content_type": "text/csv",
+      "final_url": "https://www.dh.gov.hk/datagovhk/ncdd/Inpatient%20Discharges%20and%20Deaths%20in%20All%20Hospitals%20Classified%20by%20Disease%2C%202023%20%28EN%29.csv",
+      "body_head": "﻿\"Inpatient Discharges and Deaths in All Hospitals Classified by Disease, 2023\",,,\r\n,,,\r\nDetailed List No. ICD 10th Revision,Disease Classsification,Inpatient Discharges and Deaths,Percentage\r\nN00-N99,Diseases of the genitourinary system,320918,14.20%\r\nC00-D48,Neoplasms,328322,14.50%\r\nK00-K93,Diseases of the digestive system,218486,9.60%\r\nI00-I99,Diseases of the circulatory system,162691,7.20%\r\n",
+      "n_csv_rows": 28,
+      "header_block": [
+        [
+          "Inpatient Discharges and Deaths in All Hospitals Classified by Disease, 2023",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Detailed List No. ICD 10th Revision",
+          "Disease Classsification",
+          "Inpatient Discharges and Deaths",
+          "Percentage"
+        ],
+        [
+          "N00-N99",
+          "Diseases of the genitourinary system",
+          "320918",
+          "14.20%"
+        ]
+      ],
+      "circulatory_row": [
+        "I00-I99",
+        "Diseases of the circulatory system",
+        "162691",
+        "7.20%"
+      ],
+      "notes_row": [
+        "Notes :",
+        "",
+        "",
+        ""
+      ],
+      "has_month_column": false,
+      "grain": "one calendar year; ICD-10 chapter totals; episode basis including day inpatients; all hospitals; not first hospitalisation after first CHD/HF diagnosis; not restricted to T2D/HTN"
+    },
+    {
+      "id": "CKAN_INPATIENT_SEARCH",
+      "url": "https://data.gov.hk/en-data/api/3/action/package_search?q=inpatient%20OR%20hospitalisation%20OR%20hospitalization&rows=20",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 9449,
+      "error": null,
+      "content_type": "application/json;charset=utf-8",
+      "final_url": "https://data.gov.hk/en-data/api/3/action/package_search?q=inpatient%20OR%20hospitalisation%20OR%20hospitalization&rows=20",
+      "body_head": "{\"help\": \"https://data.gov.hk/en-data/api/3/action/help_show?name=package_search\", \"success\": true, \"result\": {\"count\": 1, \"facets\": {}, \"results\": [{\"author\": null, \"author_email\": null, \"creator_user_id\": \"77dc1126-bc02-45e6-a89b-bf2c5ae85737\", \"data_dictionary\": \"https://www.censtatd.gov.hk/datagovhk/WT_data_dict_en.pdf\", \"id\": \"eb4d57a5-4e3d-479a-93ad-bb817ca63f26\", \"isopen\": false, \"license_i",
+      "ckan_success": true,
+      "count": 1,
+      "packages": [
+        {
+          "title": "Health - Table 930-92087 : Hospital Authority - inpatient services",
+          "name": "hk-censtatd-tablechart-930-92087",
+          "org": "hk-censtatd",
+          "update_frequency": null
+        }
+      ],
+      "grain": "CKAN returned C&SD Table 930-92087 (HA inpatient services, quarterly throughput), not monthly ICD first-events in a chronic-disease cohort"
+    },
+    {
+      "id": "CKAN_DISEASE_GROUP_SEARCH",
+      "url": "https://data.gov.hk/en-data/api/3/action/package_search?q=disease%20group%20hospital%20authority&rows=10",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 219,
+      "error": null,
+      "content_type": "application/json;charset=utf-8",
+      "final_url": "https://data.gov.hk/en-data/api/3/action/package_search?q=disease%20group%20hospital%20authority&rows=10",
+      "body_head": "{\"help\": \"https://data.gov.hk/en-data/api/3/action/help_show?name=package_search\", \"success\": true, \"result\": {\"count\": 0, \"facets\": {}, \"results\": [], \"sort\": \"score desc, metadata_modified desc\", \"search_facets\": {}}}",
+      "count": 0,
+      "titles": []
+    },
+    {
+      "id": "HKO_DAILY_MEAN_2013",
+      "url": "https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=CLMTEMP&rformat=csv&station=HKO&year=2013",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 6477,
+      "error": null,
+      "content_type": "text/csv; charset=utf-8",
+      "final_url": "https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=CLMTEMP&rformat=csv&station=HKO&year=2013",
+      "body_head": "﻿\"﻿日平均氣溫(攝氏度) - 天文台\"\n\"Daily Mean Temperature (°C) at the Hong Kong Observatory\"\n年/Year,月/Month,日/Day,數值/Value,\"數據完整性/data Completeness\"\n2013,1,1,13.9,C\n2013,1,2,16.8,C\n2013,1,3,16.8,C\n2013,1,4,12.9,C\n2013,1,5,14.3,C\n2013,1,6,15.1,C\n2013,1,7,15.2,C\n2013,1,8,17.5,C\n2013,1,9,16.2,C\n2013,1,10,14.7,C\n2013,1,11,16.3,C\n2013,1,12,16.4,C\n2013,1,13,16.8,C\n2013,",
+      "n_daily_rows": 365,
+      "first_data_line": "2013,1,1,13.9,C",
+      "last_data_line": "2013,12,31,15.3,C",
+      "grain": "public daily mean temperature at HKO Headquarters; intern-accessible; does not supply outcomes or Hogan's encoding lock"
+    },
+    {
+      "id": "HKO_HOURLY_TEMP_WRONG_DATATYPE",
+      "url": "https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=HHOT&rformat=csv&station=HKO&year=2013&month=8",
+      "ok": true,
+      "http_status": 200,
+      "snippet": "Please include valid parameters in API request. For details, please refer to <a href=\"https://data.weather.gov.hk/weatherAPI/doc/HKO_Open_Data_API_Documentation.pdf\">Hong Kong Observatory Open Data API Documentation</a>.\r\n<br><br>\r\n請在�",
+      "note": "HHOT is hourly astronomical tides in the HKO Open Data API, not hourly air temperature. A 2013–2023 hourly temperature archive was not found on this endpoint."
+    },
+    {
+      "id": "HA_PROVISION_INDEX",
+      "url": "https://www3.ha.org.hk/data/Provision/Index/",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 652789,
+      "error": null,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "HA_APPLICATION_PROCEDURE",
+      "url": "https://www3.ha.org.hk/data/Provision/ApplicationProcedure",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 633133,
+      "error": null,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "HA_SUBMISSION",
+      "url": "https://www3.ha.org.hk/data/Provision/Submission",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 628040,
+      "error": null,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "HA_FORM_A_GN",
+      "url": "https://www3.ha.org.hk/Data/Home/File?path=%2FProvision+of+HA+data+for+Research%2FDRAF%28A%29_GN.pdf",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 215997,
+      "error": null,
+      "content_type": "application/pdf"
+    },
+    {
+      "id": "HA_STANDARD_PROCEDURES",
+      "url": "https://www3.ha.org.hk/Data/Home/File?path=%2FProvision+of+HA+data+for+Research%2FSP.pdf",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 90728,
+      "error": null,
+      "content_type": "application/pdf"
+    },
+    {
+      "id": "HA_UNDERTAKING",
+      "url": "https://www3.ha.org.hk/Data/Home/File?path=%2FProvision+of+HA+data+for+Research%2FUF.pdf",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 215762,
+      "error": null,
+      "content_type": "application/pdf"
+    },
+    {
+      "id": "EHPDCL_ACCESS",
+      "url": "https://ehpdigital.com/data-service/accessingdcl/",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 44225,
+      "error": null,
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "id": "HKU_EHPDCL",
+      "url": "https://www.med.hku.hk/en/research/facilities-and-services/hku-ehpdcl",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 42659,
+      "error": null,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "CHP_HEART_DISEASES",
+      "url": "https://www.chp.gov.hk/en/healthtopics/content/25/57.html",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 19708,
+      "error": null,
+      "content_type": "text/html"
+    },
+    {
+      "id": "HA_MAJOR_STATISTICS",
+      "url": "https://www3.ha.org.hk/Data/HAStatistics/MajorReport",
+      "ok": true,
+      "http_status": 200,
+      "bytes": 739948,
+      "error": null,
+      "content_type": "text/html; charset=utf-8"
+    }
+  ]
+}

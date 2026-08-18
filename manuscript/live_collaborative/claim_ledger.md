@@ -13,11 +13,12 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | Seasonal means | CHD Jan 1,386 / Sep 1,097; HF Jan 287 / Sep 196 | `outputs/tables/cvd_descriptive_seasonality_by_month.csv` (rounded) |
 | 2013 hot nights vs 1981–2010 normal | 10; about seven days below normal | REAL HKO Year’s Weather 2013 |
 | Cold days in DJF | 141 of 145 (Dec 40, Jan 54, Feb 47; Mar 4) | `outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv` |
-| EPD general-station means | NO₂ 53.7→32.1; PM2.5 30.8→14.6; O₃ 42.6→58.3 | `outputs/tables/pollution_annual_means_general_2013_2023.csv` |
+| EPD general-station means | NO₂ 53.7→32.1; PM2.5 30.8→14.6; O₃ 42.6→58.3 | `outputs/tables/pollution_annual_means_general_2013_2023.csv`; 2013–2023 only, not 2000–2009 |
 | Table 2 twelve contrasts | as displayed | `outputs/release_chd_hf/tables/table2_core_models.csv` |
 | HF Tmin NW6 upper bound includes 1 | 1.00004966 | table2 `rr_high` |
 | Table 3 ladder | as displayed; NW3 CHD hot nights 1.000253–1.043860 | `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv` |
 | All core *q* > 0.19 | min *q* = 0.192 | table2 `q_value_core_bh` |
+| BH rank-1 threshold vs smallest *p* | *p* ≤ 0.004167 for rank 1 at *q* < 0.05 (12 tests); smallest NW6 *p* = 0.031 (HF cold days) | `cvd_core_robust_estimates.csv` NeweyWest_lag6 `p_value`; 0.05/12 |
 | Joint CHD hot nights | 1.045 (1.015–1.075) | `cvd_single_vs_joint_estimates.csv` NW6 |
 | Joint HF cold days | 1.073 | same |
 | VIF Tmax/Tmin | 4.66 | `cvd_exposure_vif.csv` (4.658) |
@@ -36,17 +37,19 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | After max Cook | CHD 1.021 (1.001–1.040); HF 1.088 (1.034–1.144) | same |
 | M\|D gates | Type I 0.048–0.150; coverage 0.840; rel. bias 32.8; false-sign 0.808 | `md_calibration_gate_summary.csv` |
 | Flu coverage | 121/132 | CHP layer; P14 n_months |
-| Archive flu CHD | 1.673 (1.249–2.243) on 121 months | `combined_pathway_panel_estimates.csv` P14; **not** core-adjusted |
+| Archive flu CHD | 1.673 (1.249–2.243) on 121 months | `combined_pathway_panel_estimates.csv` P14; offset `population_x_days` (not core days-only); **not** core-adjusted |
 | Software | R 4.3.3; MASS 7.3-60.0.1; sandwich 3.1.3 | session on 12 Aug 2026 |
 | Goggins 2013 AMI | 3.7% per 1 °C below ~24 °C, lags 0–13; no significant heat in three cities | Goggins et al. *Int J Cardiol* 2013;168:243–249 [1] |
 | Goggins and Chan 2017 HF | cumulative RR 2.63 (2.43–2.84) for 11 °C vs 25 °C, lags to 23 days; daily public-hospital HF admissions 2002–2011 | Goggins and Chan *Int J Cardiol* 2017;228:537–542 [21] |
 | Guo 2024 official HNday28 | excess relative risk −0.2% (−1.2% to 0.7%) lag 0–4 after mean-temperature adjustment | Guo et al. *Lancet Reg Health West Pac* 2024;51:101168 [17], Table 3 |
 | Guo 2024 extreme HNe | +3.1% (1.5–4.8%) NCNE hospitalisation, 99th pct 28.9 °C·h vs 0 | same [17] |
 | Liu 2026 excess deaths | 1,455–3,238 across four heatwave definitions | Liu et al. medRxiv 2026 [13]; complementary mortality, not our ratios |
+| Liu 2020 AFs | 4.72% cold vs 0.16% heat; 4.25% moderate vs 0.63% extreme | Live wording is “for mortality” (abstract all-cause AFs inside a cause-specific paper) [12] |
+| 2023 HN/VHD/CD | 56 / 54 / 14 | HKO Year’s Weather 2023 [22]; not the open-data landing page |
 | Figure 1 | depletion vs 35+ population | `figures/live_identification/figure_B_first_event_depletion.png` from annual totals |
 | Figure 2 | cold-day year×month heatmap | `figures/live_identification/figure_A_cold_day_identification.png` from temperature panel |
-| Figure 3 | residual ACF | `figures/live_identification/figure_C_residual_acf.png` from pathway ACF tables |
-| Figure 4 | hot-night year×month heatmap | `figures/live_identification/figure_D_hot_night_identification.png` from the same temperature panel as Figure 2; vmax 25 |
+| Figure 3 | hot-night year×month heatmap | `figures/live_identification/figure_D_hot_night_identification.png` from the same temperature panel as Figure 2; vmax 25 |
+| Figure 4 | residual ACF | `figures/live_identification/figure_C_residual_acf.png` from pathway ACF tables |
 | June–Sep always ≥1 hot night | 11/11 years; July 2013 = 1; July 2022 = 25 | `outputs/live_identification/hot_nights_by_month_year.csv`; `outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv` |
 | ERA5 monthly mean Tmin vs HKO | r = 0.986; slope 1.032 | `outputs/monthly_bridge/monthly_station_grid_bridge.json` `era5_tmin_on_hko_tmin` (r 0.9861, slope 1.0324) |
 | ERA5 monthly 28 °C nights vs HKO | slope 0.045 (SE 0.007); 57 months vs 9 | same JSON `era5_hn_on_hko_hn` (slope 0.0453, se 0.0074); `month_flags` |

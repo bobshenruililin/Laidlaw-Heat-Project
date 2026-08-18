@@ -26,6 +26,7 @@ data_processed/synthetic_analysis_panel.csv
 data_processed/synthetic_ha_outcomes.csv
 data_processed/climate_daily_hko.csv
 data_processed/.cache/
+data_processed/*/cache/
 outputs/model_objects/*.rds
 
 # OS / editor

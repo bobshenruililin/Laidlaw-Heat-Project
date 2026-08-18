@@ -1,6 +1,6 @@
 # Context bootstrap — read first in every new chat
 
-**Canon date:** 16 August 2026. Read [`PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md), [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md), [`2026-08-15_cns_paper_team.md`](2026-08-15_cns_paper_team.md), and [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md) for living detail. Update this file whenever a human gate changes.
+**Canon date:** 18 August 2026. Read [`PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md) and [`2026-08-18_collab_draft_roundtable.md`](2026-08-18_collab_draft_roundtable.md), then the 16 / 15 / 10 August notes they point to. Update this file whenever a human gate changes.
 
 ## Scientific contract
 
@@ -69,7 +69,7 @@ The definition catalogue contains `HM01–HM50` and `CM01–CM48`. Core starters
 3. **Gate 3:** lead recommendation is explicit no confirmatory primary
    (Option A); freeze with the team only.
 4. **Hogan weather lock:** provisional HM/CM reference period is study-window only. Run [Playbook 01](../analysis_plan/playbooks/01_hogan_definition_lock.md) when locked.
-5. **Live manuscript:** 15 August CNS-register paste pack is in [`manuscript/live_collaborative/`](../manuscript/live_collaborative/). Shen Ruililin pastes from [`LIVE_DOC_EDITS.md`](../manuscript/live_collaborative/LIVE_DOC_EDITS.md) into Hogan’s shared file (do not email a parallel Word copy). Reply to his seven 28 July threads from [`hogan_comment_paste_replies.md`](../manuscript/live_collaborative/hogan_comment_paste_replies.md); do not resolve them until he has read the replies. Weather paragraph remains Hogan’s. Roro still owns health-data expansion. Figure 3 is trend/depletion sensitivity. Three surfaces: [`2026-08-13_three_manuscript_surfaces.md`](2026-08-13_three_manuscript_surfaces.md). Team merge: [`2026-08-15_cns_paper_team.md`](2026-08-15_cns_paper_team.md). Comment map: [`2026-08-15_hogan_live_comments.md`](2026-08-15_hogan_live_comments.md). [Playbook 04](../analysis_plan/playbooks/04_final_writeup.md) prose only — Gate 3 remains open.
+5. **Live manuscript:** 15 August paste pack in [`manuscript/live_collaborative/`](../manuscript/live_collaborative/). Paste from [`LIVE_DOC_EDITS.md`](../manuscript/live_collaborative/LIVE_DOC_EDITS.md); do not email a Word copy. Reply to Hogan’s seven 28 July threads from [`hogan_comment_paste_replies.md`](../manuscript/live_collaborative/hogan_comment_paste_replies.md); do not resolve them until he has read the replies. Weather paragraph remains Hogan’s. Roro owns health-data expansion. 18 August roundtable: Hogan paste yes; journal submission no ([`2026-08-18_collab_draft_roundtable.md`](2026-08-18_collab_draft_roundtable.md)). [Playbook 04](../analysis_plan/playbooks/04_final_writeup.md) prose only — Gate 3 remains open.
 6. **Submission gates:** written dissemination authority, PI IRB decision,
    ICD/inpatient semantics, authorship/order, and cohort risk-set decision.
 7. **Final packet:** integrated report in

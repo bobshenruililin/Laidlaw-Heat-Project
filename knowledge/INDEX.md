@@ -20,6 +20,7 @@
 
 ## Current meeting record
 
+- [`2026-08-18_collab_draft_roundtable.md`](2026-08-18_collab_draft_roundtable.md) — Fable/Opus/Sol caliber-and-strength call on the 15 August collab draft; Hogan paste yes; journal no; Kimi K3 unavailable.
 - [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md) — Jin-adapted lab contract; first run; machine claim-ledger auditor; Gate 3 still open.
 - [`2026-08-15_cns_paper_team.md`](2026-08-15_cns_paper_team.md) — Fable/Opus/Sol identification paper; live paste pack; Environmental Research first target; Gate 3 still open.
 - [`2026-08-15_hogan_live_comments.md`](2026-08-15_hogan_live_comments.md) — seven 28 July Hogan threads answered in the live paste pack; weather paragraph untouched.

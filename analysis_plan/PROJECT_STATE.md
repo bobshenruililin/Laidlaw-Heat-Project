@@ -1,11 +1,20 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-16
+**Last updated:** 2026-08-18
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0c. Canonical update — collab-draft roundtable (18 August)
+
+- Fable 5 / Opus 5 / Sol 5.6 independently scored `Heat_CVD_Manuscript_20260815_collab_draft`. Kimi K3 was requested and is not available here; no substitute was launched.
+- Parent call: caliber 8 as Hogan-register prose, 6 as a submission object; scientific strength 5/10. Strongest honest paper these monthly aggregates support. Not a discovery paper. Not a CNS venue.
+- Hogan paste: ship the 15 August pack; flag the Conclusion’s untested encoding comparison. Journal submission: not yet. Gate 3 still open. Live file not rewritten.
+- Venue revision: keep Environmental Research as first ambitious target; add *International Journal of Biometeorology* as realistic landing; downgrade EHP.
+- Two existing-table holes logged, not promoted: Table 3 omits HF Tmin’s model-based exclusion of 1; pre-2020 continuous-temperature panel is cold-dominant beyond the narrated hot-night null.
+- Durable: `knowledge/2026-08-18_collab_draft_roundtable.md`; `manuscript/cns_team/06_roundtable_2026-08-18.md`.
 
 ## 0b. Canonical update — auto-research lab (16 August)
 

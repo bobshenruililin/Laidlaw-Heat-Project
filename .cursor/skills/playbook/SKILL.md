@@ -20,6 +20,7 @@ If Bob supplies no number or workflow, ask which playbook to run. Do not infer a
 | `/playbook-04-final-writeup` | Gate 3, verified real results, diagnostics, and cleared tables are ready. |
 | `/playbook-05-auto-research` | Jin-adapted lab: adversarial audit and readiness packets; does not invent findings or freeze Gate 3. |
 | `/playbook-99-emergencies` | Source, scope, governance, definition, or provenance shocks interrupt normal work. |
+| `/goal-highest-reachable` | Not a numbered playbook. Grok 4.6 loops Fable 5 and Sol 5.6 on the live paper until the highest honest caliber/strength pair. Read `analysis_plan/prompts/GOAL_highest_reachable_live_paper.md`. |
 
 After Bob chooses, open the named skill and its linked playbook. Check preconditions before execution, preserve human-owned gates, and stop at the first unmet scientific or governance boundary.
 

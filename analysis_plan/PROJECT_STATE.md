@@ -15,6 +15,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Venue revision: keep Environmental Research as first ambitious target; add *International Journal of Biometeorology* as realistic landing; downgrade EHP.
 - Two existing-table holes logged, not promoted: Table 3 omits HF Tmin’s model-based exclusion of 1; pre-2020 continuous-temperature panel is cold-dominant beyond the narrated hot-night null.
 - Durable: `knowledge/2026-08-18_collab_draft_roundtable.md`; `manuscript/cns_team/06_roundtable_2026-08-18.md`.
+- Follow-on goal (not yet run): paste `analysis_plan/prompts/GOAL_highest_reachable_live_paper.md` into a Grok 4.6 agent, or `/goal-highest-reachable`. Parent loops Fable 5 and Sol 5.6 until they assign the highest honest pair. Question 0 is whether 8/8 is possible on present data.
 
 ## 0b. Canonical update — auto-research lab (16 August)
 

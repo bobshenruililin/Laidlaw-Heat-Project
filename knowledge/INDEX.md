@@ -20,6 +20,7 @@
 
 ## Current meeting record
 
+- [`../analysis_plan/prompts/GOAL_highest_reachable_live_paper.md`](../analysis_plan/prompts/GOAL_highest_reachable_live_paper.md) — paste-ready goal: Grok 4.6 parent loops Fable/Sol to the highest honest scores; `/goal-highest-reachable`.
 - [`2026-08-18_collab_draft_roundtable.md`](2026-08-18_collab_draft_roundtable.md) — Fable/Opus/Sol caliber-and-strength call on the 15 August collab draft; Hogan paste yes; journal no; Kimi K3 unavailable.
 - [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md) — Jin-adapted lab contract; first run; machine claim-ledger auditor; Gate 3 still open.
 - [`2026-08-15_cns_paper_team.md`](2026-08-15_cns_paper_team.md) — Fable/Opus/Sol identification paper; live paste pack; Environmental Research first target; Gate 3 still open.

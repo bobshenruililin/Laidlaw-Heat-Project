@@ -23,6 +23,7 @@ This folder is the **journal-track** paste pack for Hogan’s live shared file. 
 | `claim_ledger.yml` | Machine sibling; `python3 scripts/50_audit_live_claim_ledger.py` |
 | `supplement_inventory.md` | Live-pack S1 = residual ACF; S7 = archive flu; S9 = archive pollution |
 | `../cns_team/` | Architecture, drop-ins, venue note, parent synthesis; 18 Aug roundtable in `06_roundtable_2026-08-18.md` |
+| `../../analysis_plan/prompts/GOAL_highest_reachable_live_paper.md` | Paste-ready goal for a later Grok: loop Fable/Sol to the highest honest scores |
 
 **How to use**
 

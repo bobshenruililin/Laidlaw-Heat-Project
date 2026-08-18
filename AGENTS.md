@@ -169,6 +169,7 @@ Explicit playbook skills live under `.cursor/skills/` and do not self-trigger:
 | `/playbook-04-final-writeup` | Execute final writing and engage `cns-writing`. |
 | `/playbook-05-auto-research` | Jin-adapted lab: audit the live identification article; readiness packets only. |
 | `/playbook-99-emergencies` | Bound and document source, scope, governance, or provenance shocks. |
+| `/goal-highest-reachable` | Grok 4.6 parent loops Fable 5 and Sol 5.6 until the live paper hits the highest honest caliber/strength pair. Prompt: [`analysis_plan/prompts/GOAL_highest_reachable_live_paper.md`](analysis_plan/prompts/GOAL_highest_reachable_live_paper.md). |
 
 Writing commands:
 

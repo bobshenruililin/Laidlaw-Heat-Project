@@ -22,7 +22,7 @@ Demonstrated on 18 August 2026 UTC by `scripts/52_public_outcome_ceiling_search.
 - EHPDCL: CRADLE forbids output; DARE/EXPERT need institutional agreement, ethics, fees.
 - Guo et al. 2024: HA emergency admissions used under licence, not publicly available.
 
-Meeting file: [`reports/ceiling_note_hogan_bishai_2026-08-18.md`](../reports/ceiling_note_hogan_bishai_2026-08-18.md) and printable PDF. Fetch log: [`reports/public_data_ceiling_search_2026-08-18.md`](../reports/public_data_ceiling_search_2026-08-18.md).
+Meeting file: [`reports/ceiling_note_hogan_bishai_2026-08-18.md`](../reports/ceiling_note_hogan_bishai_2026-08-18.md) (long justification) and one-page card [`reports/ceiling_card_hogan_bishai_2026-08-18.md`](../reports/ceiling_card_hogan_bishai_2026-08-18.md). Fetch log: [`reports/public_data_ceiling_search_2026-08-18.md`](../reports/public_data_ceiling_search_2026-08-18.md).
 
 ## What remains open
 

@@ -3,7 +3,7 @@
 **A working note for Professor David Bishai and Hogan**
 **From:** Shen Ruililin (Bob), Laidlaw intern, Bishai Lab
 **Date:** 18 August 2026
-**Use:** a file you can print. Not a paste into the live manuscript. Not an Outlook dump.
+**Use:** if they will only open one sheet, print [`ceiling_card_hogan_bishai_2026-08-18.pdf`](ceiling_card_hogan_bishai_2026-08-18.pdf). This long note is the justification and the demonstrated search. Not a paste into the live manuscript. Not an Outlook dump.
 **Provenance:** the CHD/HF series is `HA_APPROVED_AGGREGATE`. Public-web checks are labelled below. I have not invented a stroke coefficient, a daily coefficient, or a person-time series.
 
 ---

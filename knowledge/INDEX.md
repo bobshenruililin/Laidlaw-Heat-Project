@@ -20,6 +20,8 @@
 
 ## Current meeting record
 
+- [`2026-08-20_bishai_form2a.md`](2026-08-20_bishai_form2a.md) — Decide: send form 2a Email A now; Hogan TV does not gate it. Pack: [`../analysis_plan/send_pack_2026-08-20/`](../analysis_plan/send_pack_2026-08-20/).
+- [`2026-08-20_stage3_vs_manuscripts.md`](2026-08-20_stage3_vs_manuscripts.md) — locked essay/poster vs live file vs parked 15 Aug Word vs Roro mortality PDF; programme-ready, do not rebuild.
 - [`2026-08-18_intern_ceiling_note.md`](2026-08-18_intern_ceiling_note.md) — intern note for Hogan/Bishai: peak of the monthly panel, public-file dead ends demonstrated, PI paths to break the ceiling; Gate 3 still open.
 - [`2026-08-18_raise_and_stop.md`](2026-08-18_raise_and_stop.md) — Fable 7.0 / Sol 6.5 stop; live-track SI assembled; loop closed; no 8; Gate 3 still open.
 - [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md) — Jin-adapted lab contract; first run; machine claim-ledger auditor; Gate 3 still open.
@@ -62,6 +64,7 @@
 - [`outputs/release_chd_hf/`](../outputs/release_chd_hf/) — disclosure-minimised 29-check release.
 - [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md) — reusable YES/NO decision table and live-manuscript workflow.
 - [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Start at `LIVE_DOC_EDITS.md`.
+- [`analysis_plan/send_pack_2026-08-20/`](../analysis_plan/send_pack_2026-08-20/) — Email A to Bishai: form 2a endorsement; Bob sends.
 - [`analysis_plan/send_pack_2026-08-12/`](../analysis_plan/send_pack_2026-08-12/) — one reply-all on Hogan’s 12 August thread; temperature panel for Roro.
 - [`manuscript/methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md) — earlier stroke-framed remainder; superseded for paste by the live_collaborative pack.
 - [`manuscript/introduction_revision_notes.md`](../manuscript/introduction_revision_notes.md) — Hogan comment-response process; paste the CHD/HF Introduction from the live pack, not any older stroke draft.

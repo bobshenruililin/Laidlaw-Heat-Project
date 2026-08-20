@@ -37,12 +37,12 @@ written lock. The live-paper end-game alone is not a reason to lift it.
 The repository does not prove that the administrative submission is complete.
 The report and poster files are ready and locked; remaining actions are human:
 
-1. obtain and complete the official HKU report form without inventing comments
-   or signatures;
-2. obtain Professor Bishai's endorsement and comments, and confirm authority to
+1. complete the official HKU report form from [`../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md`](../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md) without inventing comments
+   or signatures (template is Bob’s local copy as of 20 August 2026);
+2. send Email A ([`../analysis_plan/send_pack_2026-08-20/to_bishai.md`](../analysis_plan/send_pack_2026-08-20/to_bishai.md)), obtain Professor Bishai's endorsement and comments, and confirm authority to
    include the disclosure-minimised CHD/HF material;
 3. submit the endorsed form and fixed report through the stated HKU route;
-4. complete spreadsheet columns Q and R;
+4. complete spreadsheet columns Q and R from the paste draft after reading the sheet headers;
 5. compare the existing poster with the official sample when accessible and
    inspect or print the locked file at actual size before the showcase.
 

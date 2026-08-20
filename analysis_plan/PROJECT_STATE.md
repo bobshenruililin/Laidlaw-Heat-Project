@@ -1,11 +1,19 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-18
+**Last updated:** 2026-08-20
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0e. Canonical update — Email A to Bishai (20 August)
+
+- **Send now:** new programme note to Professor Bishai with form 2a + locked essay. Ask for the supervisor block by Friday 28 August. Report due 31 August; poster file 15 September (printed on the form). Optional poster attachment is for information only.
+- Hogan’s note that he is going through Bob’s work and will add “the TV” to the temperature data panel is weather-panel work. It does **not** delay Email A. Do not put the form on that thread.
+- Locked PDFs re-verified against the 20 August uploads (prefixes `6136e85a654502a0` / `4f7c1e408ae2d31f`). Do not rebuild.
+- Pack: [`send_pack_2026-08-20/`](send_pack_2026-08-20/). Decide note: [`../knowledge/2026-08-20_bishai_form2a.md`](../knowledge/2026-08-20_bishai_form2a.md). Surfaces: [`../knowledge/2026-08-20_stage3_vs_manuscripts.md`](../knowledge/2026-08-20_stage3_vs_manuscripts.md).
+- Agents draft; Bob fills, signs, and sends. Gate 3 still open.
 
 ## 0d. Canonical update — intern ceiling note (18 August)
 
@@ -183,8 +191,9 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
   `reports/poster/Laidlaw_Stage3_A0_portrait.pdf`; six required sections,
   26-point body type, reproducible poster-specific figures. The GEST landscape
   poster is legacy only.
-- HKU report form: pending an accessible copy of the official template plus
-  supervisor endorsement; spreadsheet Q/R — Bob.
+- HKU report form: official template is Bob’s local copy. Email A send pack
+  [`send_pack_2026-08-20/`](send_pack_2026-08-20/). Supervisor block still
+  blank. Spreadsheet Q/R — Bob pastes after reading the sheet headers.
 
 ---
 
@@ -214,7 +223,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 4. Confirm ICD/inpatient inclusion lists; ideally T2D/HTN cohort denominators
 5. **Bob live-file paste:** 13 August end-game pack in `manuscript/live_collaborative/LIVE_DOC_EDITS.md`; paste into Hogan’s shared file only; do not overwrite weather Methods; do not email a parallel Word copy. Send pack: `send_pack_2026-08-12/`
 6. Jasmine full PDF; Roro revised mortality manuscript diff
-7. PI governance confirmation for current aggregate use
+8. **Bob sends Email A** (`send_pack_2026-08-20/`): form 2a + locked essay to Bishai; supervisor block by Friday 28 August. Spreadsheet Q/R paste after reading headers.
 
 ### Done remotely (do not re-do without new evidence)
 - Pathway panel plumbing + HM/CM catalogue (50/48) + starters

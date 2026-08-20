@@ -1,11 +1,19 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-18
+**Last updated:** 2026-08-20
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0e. Canonical update — Jingjing Guo 2016 TV on the climate panel (20 August)
+
+- Jingjing asked the group to add Guo et al. 2016 temperature variability (PMID 27258598) to the temperature data panel, and said the number of TV dates in a month may be helpful.
+- **Not previously on the share panel, live core, or Stage 3.** Archived pathway P15 is monthly mean diurnal range (Tian/Qiu 2023), a different operator. Guo TV is the sample SD of daily Tmin and Tmax over lags 0–1 or 0–7. Guo does not define a TV date.
+- Shipped: `scripts/65_guo2016_tv_temperature_panel.py`; living panel `outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv`; thread pack `analysis_plan/send_pack_2026-08-21_tv/`. Official extreme-day columns unchanged (cold days 145; hot nights 449).
+- Convenience column `high_tv_guo2016_0_1_days` uses study-period p90 of daily TV0–1 (3.772 °C). Hogan owns whether that stays. No health model. Do not paste TV into the live weather paragraph. Do not rebuild Stage 3. Do not quote P15 IRRs as Guo findings.
+- Durable: `knowledge/2026-08-20_jingjing_guo2016_tv.md`. Gate 3 still open.
 
 ## 0d. Canonical update — intern ceiling note (18 August)
 
@@ -65,6 +73,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 | **Roro (Zhenyuan Liu)** | Governed HA outcome construction/transfer; regression mentorship; health-data Methods; excess heat-mortality baseline (medRxiv 2026) | Delivered CHD/HF first-event aggregates 6–7 Aug; stroke still missing; revised mortality PDF audited 10 Aug |
 | **Prof. David Bishai** | Dec 2025 plan; multi-method; teamwork (“go far together”); Jasmine null-pattern / extend-to-2023; ~10°C discussion prompt; concept lead on Roro excess-mortality paper | Jasmine identity resolved (Jingwen Liu 2020 SCS) |
 | **Bob Shen** | Analysis plumbing, pollution assembly, writing; Introduction revisions and non-weather Methods due 5 Aug | Work directly in the live manuscript; preserve Hogan’s weather section and Roro’s health-data ownership |
+| **Jingjing (Dr Jingjing Zhou)** | Assistance with first-diagnosis record construction; 20 Aug request to add Guo 2016 TV to the climate panel | Diagnosis-record help is Roro’s health-data lineage. TV columns are climate-panel joins, not a new weather co-investigator role |
 
 ---
 

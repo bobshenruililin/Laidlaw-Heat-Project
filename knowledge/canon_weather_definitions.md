@@ -115,6 +115,18 @@ These are monthly exposure candidates. “Touch” means that at least one event
 | `CM05` | At least one day in month with `Tmin ≤10°C` | Bishai discussion prompt; no source DOI | `proposed` severe-cold sensitivity only |
 | `CM30` | Lower-decile cold month plus influenza activity ≥ p75, with component main effects | Yang/Chong 2025 `10.1007/s00484-025-02870-2` motivates cold and influenza, not this exact monthly composite | `proposed` |
 
+## 7. Guo 2016 temperature-variability family
+
+Jingjing asked (20 August 2026) that Guo et al. 2016 TV join the temperature data panel ([PMID 27258598](https://pubmed.ncbi.nlm.nih.gov/27258598/), DOI [`10.1289/EHP149`](https://doi.org/10.1289/EHP149)).
+
+**Published operator.** Daily TV is the sample standard deviation of daily **Tmin and Tmax** over the exposure window. TV0–1 uses four values (min/max on day *d* and day *d*−1). TV0–7 uses sixteen values (lags 0–7). This is a continuous daily index. The paper does **not** define a “TV date.”
+
+**Project translation.** Monthly mean TV0–1 and TV0–7, plus the count of days with TV0–1 defined, now sit on the living climate share panel. A high-TV day count (TV0–1 ≥ 2013–2023 p90) is a labelled convenience column.
+
+**Not this family.** Pathway P15 `temp_variability_mean_range` is monthly mean diurnal range (Tmax − Tmin), motivated by Tian/Qiu 2023 *J Glob Health*. Within-month SD of daily mean temperature is a third proxy. Neither is Guo 2016.
+
+- **Status:** `locked` for the published daily operator; `proposed` for the monthly collapse; `pending Hogan` for any high-TV threshold and for whether TV enters the live weather Methods. Not a Gate 3 core exposure.
+
 ## Canonical decision rule
 
 Before substantive stroke-association results are inspected, freeze one hot and one cold co-primary, all reference distributions, percentile/tie methods, event-boundary rules, missing-day tolerance and the selected-month audit. Keep the remaining definitions as a labelled family. A definition becomes primary by written Gate 3 decision, never because it later gives the largest or most significant stroke estimate.

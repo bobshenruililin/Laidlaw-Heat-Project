@@ -20,6 +20,7 @@
 
 ## Current meeting record
 
+- [`2026-08-20_jingjing_guo2016_tv.md`](2026-08-20_jingjing_guo2016_tv.md) — Jingjing asked for Guo 2016 TV on the climate panel; not P15; not a health model; Hogan owns any “TV date” threshold.
 - [`2026-08-18_intern_ceiling_note.md`](2026-08-18_intern_ceiling_note.md) — intern note for Hogan/Bishai: peak of the monthly panel, public-file dead ends demonstrated, PI paths to break the ceiling; Gate 3 still open.
 - [`2026-08-18_raise_and_stop.md`](2026-08-18_raise_and_stop.md) — Fable 7.0 / Sol 6.5 stop; live-track SI assembled; loop closed; no 8; Gate 3 still open.
 - [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md) — Jin-adapted lab contract; first run; machine claim-ledger auditor; Gate 3 still open.
@@ -63,6 +64,7 @@
 - [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md) — reusable YES/NO decision table and live-manuscript workflow.
 - [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Start at `LIVE_DOC_EDITS.md`.
 - [`analysis_plan/send_pack_2026-08-12/`](../analysis_plan/send_pack_2026-08-12/) — one reply-all on Hogan’s 12 August thread; temperature panel for Roro.
+- [`analysis_plan/send_pack_2026-08-21_tv/`](../analysis_plan/send_pack_2026-08-21_tv/) — Guo 2016 TV columns on the climate panel for Jingjing’s thread; not Stage 3; not a health model.
 - [`manuscript/methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md) — earlier stroke-framed remainder; superseded for paste by the live_collaborative pack.
 - [`manuscript/introduction_revision_notes.md`](../manuscript/introduction_revision_notes.md) — Hogan comment-response process; paste the CHD/HF Introduction from the live pack, not any older stroke draft.
 - [`analysis_plan/hogan_aug2_ack_to_hogan.md`](../analysis_plan/hogan_aug2_ack_to_hogan.md) — short acknowledgement of the live file and ownership split.
@@ -76,8 +78,8 @@
 
 ## Living project canon
 
-- [`canon_weather_definitions.md`](canon_weather_definitions.md) — HKO, Wang/Ren, Jasmine, Hogan/Li, Roro and project HM/CM definition families, DOIs and lock status.
-- [`canon_people_and_roles.md`](canon_people_and_roles.md) — Hogan, Roro, Bishai, Bob, Jingwen/Jasmine and Chao Ren: contributions, ownership and meeting norms.
+- [`canon_weather_definitions.md`](canon_weather_definitions.md) — HKO, Wang/Ren, Jasmine, Hogan/Li, Roro, Guo 2016 TV, and project HM/CM definition families, DOIs and lock status.
+- [`canon_people_and_roles.md`](canon_people_and_roles.md) — Hogan, Roro, Bishai, Bob, Jingwen/Jasmine, Chao Ren, and Jingjing Zhou: contributions, ownership and meeting norms.
 - [`open_questions_log.md`](open_questions_log.md) — living source, weather, data, governance and Gate 3 questions with owners and closure evidence.
 - [`analysis_plan/PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md) — current science, people, tone, and human-gated work.
 - [`AGENTS.md`](../AGENTS.md) — collaboration protocol and scientific non-negotiables.

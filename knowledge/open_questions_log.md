@@ -2,7 +2,7 @@
 
 **Purpose:** living list of questions that must remain visible until a person, governed file or primary source closes them.
 
-**Last reviewed:** 18 August 2026.
+**Last reviewed:** 20 August 2026.
 
 Update a row by recording the decision, date and evidence link. Do not erase the old question or convert a working assumption into a fact without provenance.
 
@@ -20,6 +20,7 @@ Update a row by recording the decision, date and evidence link. Do not erase the
 | W08 | Does Hogan still endorse the “evolutionary comparison” framing after Goggins? | It is the current intellectual prompt, not a settled claim | Hogan | Tuesday wording on whether to retain, revise or drop “evolutionary” |
 | W09 | Should `CM05` remain in the first-wave panel? | Proposed as an any-day `Tmin ≤10°C` severe-cold sensitivity only | Hogan / Bishai | Written role; it must not be called a biological or genetic threshold |
 | W10 | Should the live paper’s night-heat exposure remain official monthly hot-night counts, given Guo et al. 2024 found `HNday28` null for daily emergency hospitalisation after mean-temperature adjustment while hourly `HNe` was associated? | Live draft keeps official counts and states they are coarser than intensity. No `HNe` reconstruction without a weather rewrite. | Hogan | Written encoding choice in the live weather Methods; do not substitute hourly excess heat in Bob’s processing paragraph |
+| W11 | Does Guo 2016 TV enter the live weather Methods, and is there a “TV date” threshold? | Jingjing asked for TV on the panel (PMID 27258598). Monthly TV0–1/TV0–7 means are built from public HKO. Guo defines a continuous SD, not a date. The p90 high-TV count is labelled convenience only. | Hogan | Written keep/move/drop of `high_tv_guo2016_0_1_days` and whether TV prose enters the live weather paragraph |
 
 ## Outcome data and governance
 

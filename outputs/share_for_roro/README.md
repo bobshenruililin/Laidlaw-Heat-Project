@@ -1,6 +1,6 @@
 # Temperature / exposure panel for Roro
 
-Prepared 7 August 2026; dictionary expanded 12 August 2026.
+Prepared 7 August 2026; dictionary expanded 12 August 2026; Guo 2016 TV columns added 20 August 2026.
 
 **Provenance:** `REAL` public Hong Kong Observatory / EPD / CHP-derived project layers.  
 **Not included:** Hospital Authority health outcomes, coefficients, or any merged HA columns.
@@ -9,7 +9,7 @@ Prepared 7 August 2026; dictionary expanded 12 August 2026.
 
 | File | Role |
 |---|---|
-| `temperature_monthly_panel_2013_2023.csv` | Canonical HKO Headquarters monthly means and official extreme-day counts |
+| `temperature_monthly_panel_2013_2023.csv` | Canonical HKO Headquarters monthly means, official extreme-day counts, and Guo 2016 TV columns |
 | `analysis_exposures_monthly_2013_2023.csv` | Analysis-ready companion: lags, pollution, flu, COVID phase |
 
 Bob provides this pack directly so Hogan need not forward it.
@@ -31,8 +31,13 @@ Bob provides this pack directly so Hogan need not forward it.
 | `extremely_hot_days` | Count of days with daily `Tmax ≥ 35°C` (HKO extremely hot day) |
 | `days_in_2d3n_window` | Count of calendar days belonging to a Wang/Ren-style 2D3N window: two consecutive very hot days with the three corresponding hot nights (`VHD[i:i+1]` and `HN[i:i+2]`); overlapping starts mark their days |
 | `station` | Always `HKO` (Headquarters) in this share |
+| `tv_guo2016_0_1_mean` | Monthly mean of Guo et al. 2016 TV0–1: sample SD of Tmin and Tmax on day *d* and day *d*−1 |
+| `tv_guo2016_0_7_mean` | Monthly mean of Guo et al. 2016 TV0–7 (lags 0–7) |
+| `tv_guo2016_0_1_days` | Count of days in the month with TV0–1 defined (January 2013 uses December 2012 lags) |
+| `high_tv_guo2016_0_1_days` | Convenience count of days with TV0–1 ≥ 2013–2023 p90 of daily TV0–1 (3.772 °C). **Not** in Guo 2016. Hogan may drop or move this |
+| `dtr_mean` | Monthly mean of Tmax − Tmin. Same family as archived pathway P15. Not Guo TV |
 
-Absolute daily thresholds follow HKO climatological conventions. Monthly counts are project exposures, not new HKO definitions. Cross-month spell assignment for manuscript weather Methods remains Hogan-owned where contested.
+Absolute daily thresholds follow HKO climatological conventions. Monthly counts are project exposures, not new HKO definitions. Cross-month spell assignment for manuscript weather Methods remains Hogan-owned where contested. Guo 2016 TV is a continuous daily SD of Tmin and Tmax, not a binary “TV date.” These columns are climate-panel joins only. They are not a new core health model and they do not enter Hogan’s live weather paragraph unless he writes them in. See `knowledge/2026-08-20_jingjing_guo2016_tv.md` and `analysis_plan/send_pack_2026-08-21_tv/`.
 
 ---
 
@@ -69,6 +74,7 @@ These cut-points are project conventions for sensitivity adjustment, not clinica
 3. Do not treat pollution, flu, or COVID columns as temperature data.
 4. Do not append HA outcome counts to this share folder or redistributed copies.
 5. If a column’s manuscript wording differs from Hogan’s live Weather Methods, Hogan’s live section governs operational weather prose.
+6. Guo 2016 TV columns are joinable climate fields. Do not treat them as P15 (mean diurnal range) or as a Gate 3 exposure.
 
 ## 4. Generation note
 

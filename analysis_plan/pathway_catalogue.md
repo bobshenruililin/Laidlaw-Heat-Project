@@ -40,10 +40,12 @@ Implementation: `scripts/20_fit_pathway_panel.R` reads `pathway_registry.yml`.
 |---|---|---|---|
 | P13 | IS vs HS split | Subtype in stroke file | Disabled until present |
 | P14 | Flu co-exposure | CHP Flu Express | Complete-case (early-2013 gap) |
-| P15 | Temperature variability | Daily diurnal-range mean | JoGH 2023 TV–hospitalisation |
+| P15 | Temperature variability | Daily diurnal-range mean | JoGH 2023 TV–hospitalisation. **Not** Guo et al. 2016 (*EHP*) TV0–1/TV0–7 |
 | P16 | Pre-COVID only | Drop 2020–2022 | Care-seeking sensitivity |
 | P17 | Sex interaction | Age×sex grain | Goggins HS sex pattern |
 | P18 | Cold-month (p05) | Built in exposures | Complements P08 |
+
+Jingjing (20 August 2026) asked for Guo et al. 2016 temperature variability on the **climate share panel**. That operator is the sample SD of daily Tmin and Tmax over lags 0–1 or 0–7. It now lives on `outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv`. It is **not** P15, is **not** in the twelve-contrast core, and is **not** a new pathway until Hogan and the team say so. Do not quote archived P15 IRRs as Guo 2016 findings.
 
 ---
 

@@ -84,6 +84,17 @@ Use her name and paper precisely; do not reduce her contribution to a remembered
 
 Credit the Ren/Wang heatwave lineage when those definitions are used. Keep source definitions, Roro’s later scenarios and the project’s monthly translations distinct rather than treating them as one unnamed “team method.”
 
+## Jingjing — Dr Jingjing Zhou
+
+**Contributions**
+
+- Assisted Roro with first-diagnosis record construction for the CHD/HF aggregates (named in the 6 August covering note).
+- On 20 August 2026 asked the group to add Guo et al. 2016 temperature variability to the temperature data panel, and suggested that the number of TV dates in a month may be helpful (PMID 27258598).
+
+**Meeting / thread norm**
+
+Answer with the climate CSV on the existing Outlook thread. Do not treat her TV ask as a new weather co-investigator role, a Stage 3 rewrite, or permission to paste TV into Hogan’s live weather paragraph. Guo 2016 does not define a TV date.
+
 ## Shared norms
 
 1. Name the lead before discussing the artifact: Hogan for weather; Roro for outcome timing and governed aggregates; Bishai for PI/concept decisions; Bob for reproducible implementation and record-keeping.

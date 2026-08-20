@@ -44,7 +44,7 @@ Provenance labels (`REAL`, `SYNTHETIC`, `HA_APPROVED_AGGREGATE`, …) travel wit
 | Structure | P09, P17 | Age band; sex stratum |
 | Confounding ladder | P10–P12, P14 | COVID/holidays; pollution staged; AH; flu |
 | Subtype | P13 | Enable only if IS/HS present |
-| Sensitivity | P15–P16 | Temperature variability proxy; pre-COVID window |
+| Sensitivity | P15–P16 | Temperature variability proxy (P15 = mean diurnal range, **not** Guo 2016 TV0–1); pre-COVID window |
 
 All estimates carry `pathway_id`. Report as one **panel**, not ten discoveries.
 

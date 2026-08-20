@@ -31,6 +31,7 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | HF cold pre-2020 | 1.113 (1.053–1.176) | `cvd_trend_depletion_sensitivity.csv` `pre_covid` |
 | CHD hot nights pre-2020 | 1.011 (0.991–1.032) | same `pre_covid`; interval includes 1 |
 | CHD hot nights COVID-phase | 1.013 (0.994–1.033) | same `covid_phase_adjusted`; interval includes 1 |
+| Pre-2020 NW6 exclusions | nine of twelve exclude 1; all six continuous contrasts inverse | `outputs/release_chd_hf/supplement/cvd_trend_depletion_sensitivity.csv` `pre_covid` rows |
 | CHD hot nights lag 1 | 1.010 (0.979–1.042) | `cvd_lag_sensitivity.csv` |
 | HF cold lag 1 / lag 2 | 1.073 (1.014–1.135); 1.053 (0.985–1.127) | same |
 | Influence months | CHD 2020-02; HF cold 2022-02 | `cvd_influence_sensitivity.csv` |
@@ -51,7 +52,7 @@ Every quantitative sentence in `Heat_CVD_Manuscript_live_update.md` traces to a 
 | Figure 1 | depletion vs 35+ population | `figures/live_identification/figure_B_first_event_depletion.png` from annual totals |
 | Figure 2 | cold-day year×month heatmap | `figures/live_identification/figure_A_cold_day_identification.png` from temperature panel |
 | Figure 3 | trend / window / COVID-phase sensitivity | `figures/live_identification/figure_D_trend_depletion_sensitivity.png` (= release `figure4_trend_depletion_sensitivity.png`) |
-| Supplementary Figure S1 | residual ACF (demoted) | `figures/live_identification/figure_C_residual_acf.png`. Live-pack list: `supplement_inventory.md`. |
+| Supplementary Figure S1 | residual ACF (demoted) | `figures/live_identification/figure_C_residual_acf.png`. Assembled SI: `supplement_live_track.md`. |
 
 Machine sibling: `claim_ledger.yml` (`python3 scripts/50_audit_live_claim_ledger.py`).
 

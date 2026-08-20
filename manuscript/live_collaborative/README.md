@@ -21,7 +21,9 @@ This folder is the **journal-track** paste pack for Hogan’s live shared file. 
 | `methods_remainder_paste.md` | Methods only, with Hogan’s weather paragraph left as a hole |
 | `claim_ledger.md` | Every number → source table (human) |
 | `claim_ledger.yml` | Machine sibling; `python3 scripts/50_audit_live_claim_ledger.py` |
-| `supplement_inventory.md` | Live-pack S1 = residual ACF; S7 = archive flu; S9 = archive pollution |
+| `supplement_inventory.md` | Live-pack S1 = residual ACF; S2 = pre-2020 panel; S7 = archive flu; S8 = calibration gates; S9 = archive pollution |
+| `supplement_live_track.md` | Assembled ER-takeable SI (rebuild: `python3 scripts/51_build_live_track_supplement.py`) |
+| `REPASTE_2026-08-18.md` | Short delta after the 15 August paste; do not re-paste the full pack |
 | `../cns_team/` | Architecture, drop-ins, venue note, parent synthesis |
 
 **How to use**

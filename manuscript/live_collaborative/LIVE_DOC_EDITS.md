@@ -84,3 +84,5 @@ Copy each block from `hogan_comment_paste_replies.md` into the matching thread. 
 This list is for you to edit in Hogan’s shared file. Do not email him a parallel Word copy; he asked the group to work in the live file.
 
 Venue recommendation (not for the scientific body): Environmental Research as first submission once human blockers close; EHP as one deliberate reach; IJE only if recast and cut; Lancet Planetary Health thematic not editorial; Nature Communications / Nature / Science / Cell not honest on these data. See `manuscript/cns_team/03_sol_journal_target.md` and `manuscript/cns_team/00_parent_synthesis.md`.
+
+If the 15 August pack is already in Hogan’s file, do not paste it again. Apply only [`REPASTE_2026-08-18.md`](REPASTE_2026-08-18.md) (G3 Results sentence; two Methods/Results SI citations) and attach [`supplement_live_track.md`](supplement_live_track.md). Leave the Abstract and the weather paragraph.

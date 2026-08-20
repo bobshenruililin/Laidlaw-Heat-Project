@@ -1,0 +1,28 @@
+﻿"Inpatient Discharges and Deaths in All Hospitals Classified by Disease, 2023",,,
+,,,
+Detailed List No. ICD 10th Revision,Disease Classsification,Inpatient Discharges and Deaths,Percentage
+N00-N99,Diseases of the genitourinary system,320918,14.20%
+C00-D48,Neoplasms,328322,14.50%
+K00-K93,Diseases of the digestive system,218486,9.60%
+I00-I99,Diseases of the circulatory system,162691,7.20%
+Z00-Z99,Factors influencing health status and contact with health services,120274,5.30%
+S00-T98,"Injury, poisoning and certain other consequences of external causes",121998,5.40%
+J00-J99,Diseases of the respiratory system,213301,9.40%
+M00-M99,Diseases of the musculoskeletal system  and connective tissue,96442,4.30%
+O00-O99,"Pregnancy, childbirth and the puerperium",67454,3.00%
+E00-E90,"Endocrine, nutritional and metabolic diseases",59009,2.60%
+A00-B99,Certain infectious and parasitic diseases,69164,3.10%
+H00-H59,Diseases of the eye and adnexa,50345,2.20%
+L00-L99,Diseases of the skin and subcutaneous tissue,44321,2.00%
+F00-F99,Mental and behavioural disorders,39703,1.80%
+G00-G99,Diseases of the nervous system,35665,1.60%
+D50-D89,Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism,35287,1.60%
+P00-P96,Certain conditions originating in the perinatal period,18709,0.80%
+H60-H95,Diseases of the ear and mastoid process,10017,0.40%
+Q00-Q99,"Congenital malformations, deformations  and chromosomal abnormalities",8559,0.40%
+R00-R99,"Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified ",244669,10.80%
+,Unknown diagnosis (refers to uncoded principal diagnosis),969,0.00%
+,Total,2266303,100.00%
+,,,
+Notes :,,,
+The figures refer to discharges and deaths on an episode basis including day inpatients.  Patients treated in nursing homes are excluded.,,,

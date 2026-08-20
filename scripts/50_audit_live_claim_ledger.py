@@ -152,6 +152,31 @@ def main(argv: list[str] | None = None) -> int:
                 else:
                     passes.append(f"{cid}:csv_value")
 
+        excl_spec = claim.get("csv_ci_excludes_one")
+        if excl_spec:
+            rows = csv_rows(ROOT / src)
+            subset = [r for r in rows if row_matches(r, excl_spec.get("match") or {})]
+            if excl_spec.get("n_rows_equals") is not None and len(subset) != int(
+                excl_spec["n_rows_equals"]
+            ):
+                failures.append(
+                    f"{cid}: ci subset {len(subset)} != {excl_spec['n_rows_equals']}"
+                )
+            lo_col = excl_spec.get("low_column", "rr_low")
+            hi_col = excl_spec.get("high_column", "rr_high")
+            n_excl = 0
+            for r in subset:
+                lo = as_float(r[lo_col])
+                hi = as_float(r[hi_col])
+                if lo > 1.0 or hi < 1.0:
+                    n_excl += 1
+            if n_excl != int(excl_spec["equals"]):
+                failures.append(
+                    f"{cid}: csv_ci_excludes_one got {n_excl} != {excl_spec['equals']}"
+                )
+            else:
+                passes.append(f"{cid}:csv_ci_excludes_one")
+
         count_spec = claim.get("csv_count_where")
         if count_spec:
             rows = csv_rows(ROOT / src)

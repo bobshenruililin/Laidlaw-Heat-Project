@@ -1,0 +1,26 @@
+[
+  {
+    "Financial Year": "2008-09",
+    "Cluster": "Hong Kong East Cluster",
+    "Hospital": "Cheshire Home, Chung Hom Kok",
+    "IP Discharges and Deaths": 246,
+    "DP Discharges and Deaths": null,
+    "IP and DP Discharges and Deaths": 246
+  },
+  {
+    "Financial Year": "2008-09",
+    "Cluster": "Hong Kong East Cluster",
+    "Hospital": "Pamela Youde Nethersole Eastern Hospital",
+    "IP Discharges and Deaths": 73645,
+    "DP Discharges and Deaths": 32270,
+    "IP and DP Discharges and Deaths": 105915
+  },
+  {
+    "Financial Year": "2008-09",
+    "Cluster": "Hong Kong East Cluster",
+    "Hospital": "Ruttonjee & Tang Shiu Kin Hospitals",
+    "IP Discharges and Deaths": 20877,
+    "DP Discharges and Deaths": 1986,
+    "IP and DP Discharges and Deaths": 22863
+  }
+]

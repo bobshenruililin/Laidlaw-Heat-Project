@@ -2,7 +2,7 @@
 
 **Purpose:** living list of questions that must remain visible until a person, governed file or primary source closes them.
 
-**Last reviewed:** 16 August 2026.
+**Last reviewed:** 18 August 2026.
 
 Update a row by recording the decision, date and evidence link. Do not erase the old question or convert a working assumption into a fact without provenance.
 
@@ -32,8 +32,9 @@ Update a row by recording the decision, date and evidence link. Do not erase the
 | D05 | Can ages 65–69 and 70–74 be reported separately under disclosure controls? | HA can support stratification in principle; the delivered aggregate grain and suppression rules remain unknown | Roro | Schema and release rules confirm reportable cells |
 | D06 | What do suppression and missing-value codes mean? | Unknown; suppressed values must never be treated as zero | Roro | Written code list and release rule |
 | D07 | What ethics/governance determination applies to the current aggregate use? | PI decision remains open | Bishai | Written PI/governance determination and any required protocol update |
-| D08 | What population universe matches the HA outcome denominator? | C&SD age–sex denominators are ready, but resident/eligibility alignment is unconfirmed | Roro / Bob | Outcome eligibility definition matched to a documented denominator construction |
+| D08 | What population universe matches the HA outcome denominator? | C&SD age–sex denominators are ready, but resident/eligibility alignment is unconfirmed. **18 Aug public search:** C&SD 110-01001 is half-yearly population; HBS 2023 HTN 21.3% / DM 9.2% are survey snapshots. Neither is monthly still-at-risk person-time in the HA T2D/HTN cohort. | Roro / Bob | Outcome eligibility definition matched to a documented denominator construction |
 | D09 | Is any valid AMI series available outside the general HA file? | General HA data lack reasons for admission; AMI is out of scope unless a separate series exists | Bishai / Roro | Separate governed AMI outcome definition and file, or explicit closure as out of scope |
+| D10 | Can public HA/DH/C&SD/CHP files replace the governed monthly first-event extract? | **Closed 18 Aug (no).** Demonstrated fetches: HA FY throughput JSON; DH annual ICD chapters; CKAN one quarterly throughput table; Guo 2024 admissions licensed. PI paths remain Form A/B and EHPDCL. | Intern search done; PI if a new extract is wanted | Keep closed unless a new public monthly first-event T2D/HTN series appears |
 
 ## Analysis and reporting
 

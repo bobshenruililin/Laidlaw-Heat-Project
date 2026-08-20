@@ -1,0 +1,49 @@
+outcome,exposure_label,se_method_label,rr,rr_low,rr_high,se_log,mde_rr_80pct,mde_pct_80pct,observed_excludes_1,data_status,result_class
+chd,"Mean temperature, per 1 C",Model,0.993055,0.977181,1.009187,0.008222,1.0233,2.33,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Mean temperature, per 1 C",HC1,0.993055,0.974455,1.012011,0.009647,1.0274,2.74,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Mean temperature, per 1 C",NW3,0.993055,0.975894,1.010518,0.008894,1.0252,2.52,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Mean temperature, per 1 C",NW6,0.993055,0.976249,1.010150,0.008708,1.0247,2.47,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Mean maximum temperature, per 1 C",Model,0.992938,0.978759,1.007323,0.007338,1.0208,2.08,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Mean maximum temperature, per 1 C",HC1,0.992938,0.976401,1.009755,0.008569,1.0243,2.43,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Mean maximum temperature, per 1 C",NW3,0.992938,0.978440,1.007651,0.007505,1.0212,2.12,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Mean maximum temperature, per 1 C",NW6,0.992938,0.979138,1.006932,0.007141,1.0202,2.02,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Mean minimum temperature, per 1 C",Model,0.994171,0.978786,1.009797,0.007957,1.0225,2.25,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Mean minimum temperature, per 1 C",HC1,0.994171,0.976279,1.012390,0.009266,1.0263,2.63,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Mean minimum temperature, per 1 C",NW3,0.994171,0.976755,1.011897,0.009017,1.0256,2.56,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Mean minimum temperature, per 1 C",NW6,0.994171,0.977068,1.011573,0.008854,1.0251,2.51,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Hot nights, per 5 days",Model,1.021824,0.994981,1.049392,0.013583,1.0388,3.88,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Hot nights, per 5 days",HC1,1.021824,0.997342,1.046908,0.012373,1.0353,3.53,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Hot nights, per 5 days",NW3,1.021824,1.000253,1.043860,0.010886,1.0310,3.10,true,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Hot nights, per 5 days",NW6,1.021824,1.001854,1.042193,0.010070,1.0286,2.86,true,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Cold days, per 5 days",Model,0.994631,0.953884,1.037119,0.021342,1.0616,6.16,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Cold days, per 5 days",HC1,0.994631,0.955541,1.035320,0.020456,1.0590,5.90,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Cold days, per 5 days",NW3,0.994631,0.949464,1.041948,0.023712,1.0687,6.87,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Cold days, per 5 days",NW6,0.994631,0.948784,1.042693,0.024077,1.0698,6.98,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Very hot days, per 5 days",Model,0.999390,0.974064,1.025375,0.013096,1.0374,3.74,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Very hot days, per 5 days",HC1,0.999390,0.974674,1.024733,0.012777,1.0364,3.64,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Very hot days, per 5 days",NW3,0.999390,0.973465,1.026005,0.013410,1.0383,3.83,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+chd,"Very hot days, per 5 days",NW6,0.999390,0.974352,1.025071,0.012945,1.0369,3.69,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Mean temperature, per 1 C",Model,0.974330,0.956124,0.992883,0.009624,1.0273,2.73,true,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Mean temperature, per 1 C",HC1,0.974330,0.949445,0.999866,0.013200,1.0377,3.77,true,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Mean temperature, per 1 C",NW3,0.974330,0.948739,1.000610,0.013580,1.0388,3.88,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Mean temperature, per 1 C",NW6,0.974330,0.947383,1.002042,0.014309,1.0409,4.09,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Mean maximum temperature, per 1 C",Model,0.981134,0.964491,0.998063,0.008729,1.0248,2.48,true,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Mean maximum temperature, per 1 C",HC1,0.981134,0.958393,1.004414,0.011965,1.0341,3.41,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Mean maximum temperature, per 1 C",NW3,0.981134,0.959264,1.003502,0.011501,1.0327,3.27,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Mean maximum temperature, per 1 C",NW6,0.981134,0.958263,1.004550,0.012034,1.0343,3.43,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Mean minimum temperature, per 1 C",Model,0.973095,0.955630,0.990880,0.009241,1.0262,2.62,true,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Mean minimum temperature, per 1 C",HC1,0.973095,0.950021,0.996730,0.012244,1.0349,3.49,true,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Mean minimum temperature, per 1 C",NW3,0.973095,0.948286,0.998554,0.013177,1.0376,3.76,true,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Mean minimum temperature, per 1 C",NW6,0.973095,0.946868,1.000050,0.013941,1.0398,3.98,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Hot nights, per 5 days",Model,1.003109,0.970175,1.037161,0.017032,1.0489,4.89,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Hot nights, per 5 days",HC1,1.003109,0.970615,1.036692,0.016801,1.0482,4.82,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Hot nights, per 5 days",NW3,1.003109,0.973910,1.033184,0.015072,1.0431,4.31,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Hot nights, per 5 days",NW6,1.003109,0.975920,1.031056,0.014020,1.0401,4.01,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Cold days, per 5 days",Model,1.072800,1.022725,1.125327,0.024389,1.0707,7.07,true,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Cold days, per 5 days",HC1,1.072800,1.011263,1.138081,0.030139,1.0881,8.81,true,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Cold days, per 5 days",NW3,1.072800,1.006572,1.143386,0.032512,1.0954,9.54,true,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Cold days, per 5 days",NW6,1.072800,1.006454,1.143520,0.032571,1.0955,9.55,true,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Very hot days, per 5 days",Model,0.995011,0.963683,1.027358,0.016323,1.0468,4.68,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Very hot days, per 5 days",HC1,0.995011,0.962898,1.028195,0.016738,1.0480,4.80,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Very hot days, per 5 days",NW3,0.995011,0.963705,1.027334,0.016311,1.0468,4.68,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary
+hf,"Very hot days, per 5 days",NW6,0.995011,0.963033,1.028051,0.016667,1.0478,4.78,false,HA_APPROVED_AGGREGATE,DERIVED_FROM_LADDER_SE — not a new model; not a primary

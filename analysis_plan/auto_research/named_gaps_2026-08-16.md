@@ -20,9 +20,11 @@ The Sol map now matches the live body (S1 = ACF). The 10 August `chd_hf_suppleme
 
 `python3 scripts/50_audit_live_claim_ledger.py` now traces all twelve Table 2 count-ratio displays, remaining Table 3 HF cells, COVID-phase 1.013, 132 territory-months, HF Tmin unrounded upper bound 1.00005, and NW3 unrounded 1.000253–1.043860. Still unarmed: individual *p*/*q* cells (they sit in Table 2 next to already-checked ratios). Auditor green is necessary, not a Gate 3 freeze.
 
-## G3. Pre-2020 window narration (owner: Bob, presentation only)
+## G3. Pre-2020 window narration — live pack closed 18 August
 
-In `pre_covid` (84 months), nine of twelve Newey–West lag-6 intervals exclude 1, including CHD cold days 1.036 (1.007–1.067) and HF hot nights 0.965 (0.937–0.994). The live Abstract/Results quote two of the nine. No multiplicity control is recomputed for that window. Narrating or leaving the rest on Figure 3 is a presentation choice. It is not a new primary and does not freeze Gate 3.
+In `pre_covid` (84 months), nine of twelve Newey–West lag-6 intervals exclude 1. The live Results now state that count, point at Figure 3 and Supplementary Table S2, and refuse a within-window multiplicity or a new primary. The Abstract still quotes only the two leading contrasts (CHD hot nights null; HF cold days stronger). That Abstract choice is the Sol/Fable landing: Abstract expansion does not land.
+
+**Still human:** paste the Results sentence into Hogan’s shared file (`REPASTE_2026-08-18.md`).
 
 ## G4. Process language in the scientific body (owners: Roro / Hogan / Bishai)
 

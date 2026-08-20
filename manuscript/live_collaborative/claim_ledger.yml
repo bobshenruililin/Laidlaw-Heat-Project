@@ -2,7 +2,7 @@
 # Auditor: python3 scripts/50_audit_live_claim_ledger.py
 # Provenance: HA_APPROVED_AGGREGATE, REAL, or cited_paper. Never invent.
 
-version: 2026-08-16
+version: 2026-08-18
 manuscript: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
 human_ledger: manuscript/live_collaborative/claim_ledger.md
 
@@ -448,16 +448,35 @@ claims:
       column: count_ratio_95CI
       equals_display: "0.995 (0.963-1.028)"
 
+  - id: pre2020_nw6_nine_of_twelve
+    display: "nine of the twelve Newey–West lag-6 intervals excluded 1"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/supplement/cvd_trend_depletion_sensitivity.csv
+    csv_ci_excludes_one:
+      match: {scenario: pre_covid}
+      n_rows_equals: 12
+      equals: 9
+
   - id: supp_fig_s1
     display: "Supplementary Figure S1"
     provenance: manuscript_meta
     source: manuscript/live_collaborative/supplement_inventory.md
     note: "Live-pack S1 is residual ACF, not the release heatmap filename."
 
+  - id: supp_table_s2
+    display: "Supplementary Table S2"
+    provenance: manuscript_meta
+    source: manuscript/live_collaborative/supplement_live_track.md
+
   - id: supp_table_s7
     display: "Supplementary Table S7"
     provenance: manuscript_meta
     source: manuscript/live_collaborative/supplement_inventory.md
+
+  - id: supp_table_s8
+    display: "Supplementary Table S8"
+    provenance: manuscript_meta
+    source: manuscript/live_collaborative/supplement_live_track.md
 
   - id: supp_table_s9
     display: "Supplementary Table S9"

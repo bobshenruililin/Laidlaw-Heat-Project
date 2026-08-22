@@ -16,7 +16,7 @@ Do not attach `NOTE.md`, `README.md`, or `analysis_exposures_monthly_2013_2023.c
 
 - The live-manuscript Word draft. Hogan asked the group to work in the shared file. Paste from `manuscript/live_collaborative/LIVE_DOC_EDITS.md` yourself.
 - Any Hospital Authority file, release CSV, or model table.
-- A programme report. That stays on our side for a later note to Professor Bishai.
+- A programme report. That later note is now [`send_pack_2026-08-20/`](../send_pack_2026-08-20/). Do not put it on this 12 August thread.
 
 ## After you send (if you have ten minutes)
 

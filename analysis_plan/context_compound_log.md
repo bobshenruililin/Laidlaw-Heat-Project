@@ -5,6 +5,7 @@
 
 | Date | Mode | Spur / question | What we tried or noticed | Keep / drop / park | Promoted to? |
 |---|---|---|---|---|---|
+| 2026-08-22 | Decide | How to get Bishai’s Stage 3 form 2a with Thursday 27 Aug as last talk before 31 Aug? | Essay/poster stay locked. Hogan’s live-file review does not gate the form. Dual path: email now + printed form Thursday. One-pager names the “most elevated” ranking so a rebuild is unnecessary. | Keep | `send_pack_2026-08-22/`; `knowledge/2026-08-22_stage3_endorsement.md` |
 | 2026-08-20 | Ship | Jingjing: add Guo 2016 TV to the temperature panel; “TV dates” in a month? | PMID 27258598 is continuous SD of Tmin/Tmax, not a binary date. Prior P15 was mean diurnal range. Built TV0–1/TV0–7 monthly means + a labelled p90 convenience count from public HKO. No health model. | Keep as climate-panel columns; park any “TV date” threshold for Hogan | `scripts/65_guo2016_tv_temperature_panel.py`; `send_pack_2026-08-21_tv/`; `knowledge/2026-08-20_jingjing_guo2016_tv.md` |
 | 2026-07-17 | Decide | General HA reasons for admission? | Confirmed unavailable in meeting | Keep as hard constraint | README + debrief + gates |
 | 2026-07-17 | Decide | One model vs ~10 methods? | Multi-method panel requested | Keep | pathway registry P01–P18 |
@@ -54,6 +55,7 @@
 | 2026-08-18 | Teach | If agents had unlimited time, how would parent/Fable/Sol spend it? | All three: cannot buy stroke, Gate 3, Hogan lock, or Nature. Split: parent keeps the ledger and waits on Hogan; Sol builds the ER packet after humans; Fable would do MDE + a pre-declared 98-encoding atlas (Explore only, nothing promoted). Human hour unchanged. | Keep | analysis_plan/auto_research/unlimited_time_2026-08-18.md |
 | 2026-08-18 | Ship | Can an intern find a public substitute for the governed CHD/HF first-event series? | Downloaded HA throughput JSON (FY × hospital, no ICD/month), DH 2023 ICD-chapter CSV (annual episodes), CKAN (one quarterly throughput table), public HKO daily T. Form A/B and EHPDCL exist and require a local PI. Wrote a printable intern note for Hogan and Bishai. Dead end for public outcomes; Keep as a demonstrated wall. | Keep | reports/ceiling_note_hogan_bishai_2026-08-18.md; scripts/52_public_outcome_ceiling_search.py; knowledge/2026-08-18_intern_ceiling_note.md |
 | 2026-08-18 | Ship | Intern-owned MDE from the existing covariance ladder | Wald 80% MDE from Table 4 intervals. Does not mint a primary. Permutation/negative-control still unrun. | Keep | scripts/53_mde_from_uncertainty_ladder.py; analysis_plan/auto_research/mde_from_ladder_2026-08-18.md |
+| 2026-08-20 | Decide | Contact Bishai now with Stage 3 essay + form 2a, ~10 days before 31 Aug? | Form 2a in hand; hashes match the lock; Hogan TV is weather-panel only. Send Email A (Bishai only) asking for the supervisor block by Friday 28 Aug. Do not rebuild PDFs; do not attach the parked Word draft or Roro’s private mortality PDF. | Keep | send_pack_2026-08-20/; knowledge/2026-08-20_bishai_form2a.md; 2026-08-20_stage3_vs_manuscripts.md |
 
 ---
 

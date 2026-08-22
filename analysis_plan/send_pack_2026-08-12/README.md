@@ -12,3 +12,5 @@ Hogan asked two things, by today: where Methods writing stands, and whether Shen
 How this team writes: `knowledge/correspondence_working_culture.md`.
 
 Do not send the earlier three-message drafts. Do not send `.md` as an attachment.
+
+The Laidlaw programme packet is a **separate** note: [`../send_pack_2026-08-20/`](../send_pack_2026-08-20/).

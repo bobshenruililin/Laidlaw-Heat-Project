@@ -7,8 +7,8 @@ Summer 2026 deliverables (HKU Laidlaw):
 | Research essay (accessible / academic; around 3,000 words) | **Submission copy:** [`laidlaw_research_report_2026.md`](laidlaw_research_report_2026.md) · [`Laidlaw_Research_Report_2026.pdf`](Laidlaw_Research_Report_2026.pdf) · [`../../outputs/Laidlaw_Stage3_Research_Report_Shen.pdf`](../../outputs/Laidlaw_Stage3_Research_Report_Shen.pdf). Main text ≈3,200 words; current CHD/HF results, three figures, references, and appendices. |
 | Pathway × literature map (multimedia) | [`pathway_literature_map.md`](pathway_literature_map.md) |
 | A0 portrait poster 841×1189 mm | Built: [`../poster/Laidlaw_Stage3_A0_portrait.pdf`](../poster/Laidlaw_Stage3_A0_portrait.pdf) · [TeX](../poster/Laidlaw_Stage3_A0_portrait.tex) · submission copy [`../../outputs/Laidlaw_Stage3_Poster_Shen.pdf`](../../outputs/Laidlaw_Stage3_Poster_Shen.pdf) (GEST landscape kept as legacy only) |
-| HKU report form + supervisor endorsement | **Pending.** Complete the official HKU template, then send the essay + form to Prof. Bishai for endorsement and comments before submission to `laidlaw@hku.hk`. The template itself is not yet available inside this repository. |
-| Spreadsheet columns Q, R | Bob |
+| HKU report form + supervisor endorsement | **Email A ready.** Official form is Bob’s local copy. Fill worksheet + sendable note: [`../../analysis_plan/send_pack_2026-08-20/`](../../analysis_plan/send_pack_2026-08-20/). Supervisor block stays blank. Due 31 Aug 2026; ask Bishai by Friday 28 Aug. |
+| Spreadsheet columns Q, R | Bob pastes from [`../../analysis_plan/send_pack_2026-08-20/spreadsheet_QR_paste.md`](../../analysis_plan/send_pack_2026-08-20/spreadsheet_QR_paste.md) after reading the sheet headers. |
 
 Submission sequence and scientific checks:
 [`submission_checklist.md`](submission_checklist.md).

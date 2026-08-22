@@ -1,3 +1,3 @@
 # Superseded — do not send
 
-Use the short “Dear Professor Bishai” paragraph inside [`reply_on_thread.md`](reply_on_thread.md). He is already on the thread. A programme report is for a later note, not this round.
+The 12 August copy-line remains inside [`reply_on_thread.md`](reply_on_thread.md). The programme packet is now [`../send_pack_2026-08-20/to_bishai.md`](../send_pack_2026-08-20/to_bishai.md).

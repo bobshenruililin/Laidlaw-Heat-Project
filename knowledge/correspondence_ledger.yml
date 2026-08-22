@@ -102,3 +102,18 @@ messages:
     open_asks:
       - guo2016_tv_on_temperature_panel
     note: Guo 2016 does not define a TV date; TV is a continuous daily SD of Tmin and Tmax. Climate CSV only; not Stage 3; not a health model.
+
+  - date: 2026-08-20
+    from: Hogan
+    to: [Jingjing]
+    gist: Thanks Jingjing. Currently going through Bob's work. Will add the TV to the temperature data panel as well. Weather-panel only; does not delay Laidlaw form 2a.
+
+  - date: 2026-08-20
+    from: planned_Bob
+    to: [Bishai]
+    gist: Email A drafted in send_pack_2026-08-20. Programme form 2a + locked essay; optional poster for information. Ask supervisor block by Friday 28 Aug. Not yet sent.
+
+  - date: 2026-08-22
+    from: planned_Bob
+    to: [Bishai]
+    gist: Updated Email A in send_pack_2026-08-22. Same locked essay/poster. Adds a one-page supervisor card and names Thursday 27 Aug as a paper-signature backup. Still not sent. Hogan live-file review does not gate this.

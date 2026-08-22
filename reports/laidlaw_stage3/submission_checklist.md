@@ -6,7 +6,7 @@
 
 | Requirement | Current artifact | Status |
 |---|---|---|
-| Research essay: 2,000–3,000 words; accessible academic paper | `ShenRuililin_Laidlaw_Stage3Report.pdf` / `outputs/ShenRuililin_Laidlaw_Stage3Report.pdf` | **Ready.** ≈2,900 main-text words. SHA-256 prefix `b8b4c63ca9d32dd3`. |
+| Research essay: **ca.** 2,000–3,000 words; accessible academic paper | `ShenRuililin_Laidlaw_Stage3Report.pdf` / `outputs/ShenRuililin_Laidlaw_Stage3Report.pdf` | **Ready to send after Bob fills form 2a blanks.** ≈3,175 main-text words. SHA-256 prefix `b8b4c63ca9d32dd3`. Not the live manuscript. |
 | Research poster: A0 portrait, 841 × 1189 mm | `../poster/ShenRuililin_Laidlaw_Stage3Poster.pdf` / `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` | **Ready.** One page, exact A0. Footer is the contact email only. SHA-256 prefix `b3f16ff27f76ea9b`. |
 | Poster content: title, introduction, objectives, methods, results, conclusions | Same poster | **Present.** Interpretation/limitations is included as an additional section. |
 | Official HKU report form | Official `2a. Laidlaw - Report Form (HKU).docx` (Bob’s local copy; not committed) | **Worksheet ready.** Fill from [`../../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md`](../../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md). |

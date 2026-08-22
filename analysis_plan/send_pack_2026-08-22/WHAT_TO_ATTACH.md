@@ -15,16 +15,17 @@ Attach PDFs and the official Word form. Do not attach markdown.
    Leave the supervisor rating, comments, name, signature, and date **blank**.  
    Do not commit this DOCX to git.
 
-3. `analysis_plan/send_pack_2026-08-22/supervisor_one_pager.pdf`  
-   One page. What the endorsement covers, plus optional comments he can paste.
+## Optional
 
-## Optional fourth file
+3. `analysis_plan/send_pack_2026-08-22/supervisor_one_pager.pdf`  
+   One page. What the endorsement covers, plus optional comments he can paste.  
+   Rewritten 22 August evening to match the rebuilt essay (not “most elevated”; not “predeclared”).  
+   Default Email A omits this; useful as a Thursday print sheet.
 
 4. `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`  
    SHA-256 prefix `b3f16ff27f76ea9b`.  
    For information only. Due 15 September. No signature needed now.  
-   The cover and the one-pager both say the poster is not a confirmatory claim.  
-   Drop this attachment if you want the tighter packet (essay + form + one-pager).
+   Drop this attachment if you want the tighter packet (essay + form).
 
 ## Do not attach
 

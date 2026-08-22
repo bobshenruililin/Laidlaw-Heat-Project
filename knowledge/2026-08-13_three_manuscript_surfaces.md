@@ -1,5 +1,7 @@
 # Three manuscript surfaces — 12–13 August 2026
 
+Byte locks in the table below are historical (12 August Sol copies). Current programme files and the send/don’t-substitute-the-live-file rule: [`2026-08-22_stage3_essay_vs_manuscript.md`](2026-08-22_stage3_essay_vs_manuscript.md).
+
 Do not mix these. Hogan’s shared file is the journal-track paper. The Laidlaw Stage 3 PDF is a programme essay. The repository `chd_hf_*` draft is a methods-heavy parallel, not the live file.
 
 | Surface | Path | Job | Touch tonight? |

@@ -1,8 +1,10 @@
 # Stage 3 surfaces versus the live paper and Roro — 20 August 2026
 
+Byte locks below are the 12 August Sol copies. The 22 August rebuild and send decision supersede them: [`2026-08-22_stage3_rebuild.md`](2026-08-22_stage3_rebuild.md), [`2026-08-22_stage3_essay_vs_manuscript.md`](2026-08-22_stage3_essay_vs_manuscript.md).
+
 **Mode:** Decide. Not a finding. Not a Gate 3 freeze.  
 **Question:** Are the locked Laidlaw essay and A0 poster fit for Professor Bishai to endorse, relative to the live journal file, the 15 August parked Word draft, and Roro’s revised heatwave-mortality manuscript?  
-**Answer:** Yes, for the programme. Do not rebuild. Do not attach the parked Word file or the private Roro PDF to Email A.
+**Answer (20 August):** Yes, for the programme. Do not attach the parked Word file or the private Roro PDF to Email A. **Answer (22 August evening):** still yes, on the rebuilt essay; do not attach the live manuscript either.
 
 Advisor briefs: Fable (send/wait) and Sol (quality audit). Neither found a signing-risk falsehood. Hogan adding “the TV” to the temperature panel does not change this (see [`2026-08-20_bishai_form2a.md`](2026-08-20_bishai_form2a.md)).
 

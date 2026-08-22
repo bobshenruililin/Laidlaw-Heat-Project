@@ -2,15 +2,15 @@
 
 **Mode:** Ship / Decide.  
 **Job:** obtain Professor Bishai’s form 2a supervisor block before the 31 August research-report deadline.  
-**Not this round:** Hogan’s live-file review; Jingjing / TV; Gate 3; stroke; maps; rebuilding the locked essay or poster.
+**Not this round:** Hogan’s live-file review; Jingjing / TV; Gate 3; stroke; maps; rebuilding the programme essay or poster.
 
-The 20 August Email A pack is still the origin of the worksheet and hash check. **Send from this folder.** The 20 August cover is superseded for sending because it did not name Thursday 27 August as a signature backup.
+The 20 August Email A pack is still the origin of the worksheet. **Send from this folder.**
 
 Bob sends. Agents do not send, sign, or submit.
 
 ## Play-safe rule
 
-The essay and poster are already programme-ready. Do **not** rebuild them this weekend to chase journal-file honesty. The defendable improvement is a one-page supervisor card that states the hedges in the locked PDFs, plus a dual path: email now, printed form on Thursday if needed.
+The rebuilt essay is the Stage 3 object. Do **not** attach Hogan’s live manuscript. Do **not** rebuild the essay this weekend to make it look more like the paper (Fable/Sol, 22 August evening). Default Email A is the essay PDF plus form 2a. The one-pager is an optional Thursday print sheet.
 
 ## Sequence
 
@@ -21,7 +21,7 @@ The essay and poster are already programme-ready. Do **not** rebuild them this w
 | **Wednesday 26 Aug** | Print the pack in `thursday_print_pack.md`. |
 | **Thursday 27 Aug** | Meeting: ten minutes on the form first. Science only after the supervisor block is done or scheduled. |
 | **Friday 28 Aug** | Last comfortable day for a remote signature before the 31 August deadline. |
-| **Monday 31 Aug** | Submit the endorsed form + locked essay to `laidlaw@hku.hk`. Poster file is 15 September. |
+| **Monday 31 Aug** | Submit the endorsed form + essay PDF to `laidlaw@hku.hk`. Poster file is 15 September. |
 
 ## Files
 
@@ -29,12 +29,12 @@ The essay and poster are already programme-ready. Do **not** rebuild them this w
 |---|---|
 | [`to_bishai.md`](to_bishai.md) | Email A. New message to Bishai only. |
 | [`to_bishai_nudge.md`](to_bishai_nudge.md) | Tuesday follow-up if silent. |
-| [`supervisor_one_pager.pdf`](supervisor_one_pager.pdf) | Attach. What he is signing, in one page. |
+| [`supervisor_one_pager.pdf`](supervisor_one_pager.pdf) | Optional. Thursday print aid; matches the rebuilt essay. |
 | [`suggested_supervisor_comments.md`](suggested_supervisor_comments.md) | Optional paste for his comments box. Also printed on the one-pager. |
-| [`WHAT_TO_ATTACH.md`](WHAT_TO_ATTACH.md) | Essay + form + one-pager; poster optional. |
+| [`WHAT_TO_ATTACH.md`](WHAT_TO_ATTACH.md) | Essay + form required; one-pager and poster optional. |
 | [`thursday_print_pack.md`](thursday_print_pack.md) | What to bring on 27 August. |
 | [`optional_hogan_one_liner.md`](optional_hogan_one_liner.md) | After Email A: one line on the science thread, no PDFs. |
 | [`../send_pack_2026-08-20/form_2a_fill_worksheet.md`](../send_pack_2026-08-20/form_2a_fill_worksheet.md) | Bob’s fields only. |
-| [`../send_pack_2026-08-20/HASH_VERIFY.md`](../send_pack_2026-08-20/HASH_VERIFY.md) | Locked PDF bytes. Re-checked 22 August. |
+| [`HASH_VERIFY.md`](HASH_VERIFY.md) | Essay/poster lock plus optional one-pager hash. |
 
 Do not put this packet on Hogan’s Outlook thread. Do not attach the live manuscript while Hogan is reviewing it.

@@ -17,7 +17,7 @@ Identical copies: `reports/laidlaw_stage3/ShenRuililin_Laidlaw_Stage3Report.pdf`
 
 **Poster.** Only the footer. The AI metadata block (ISO A0, collaborators, “machine-validated”) is gone. `\vfill` is retained so the bands do not shift. Contact line only: `shenrll@connect.hku.hk`. One page, 841 × 1189 mm. Required sections unchanged. Conclusion wording left as in the 12 August layout (an alternative sentence was considered and not applied).
 
-**Report.** TeX Gyre Termes, no contents list, running header, 11 pt, 1.15 spacing. Author line is Shen Ruililin. Main text (Summary through Conclusion) is about 2,900 words. Honesty aligned with the live manuscript without turning the essay into the journal paper:
+**Report.** TeX Gyre Termes, no contents list, running header, 11 pt, 1.15 spacing. Author line is Shen Ruililin. Main text (Summary through Conclusion) is about 3,175 words by `pdftotext` (form **ca.** 2000–3000). Honesty aligned with the live manuscript without turning the essay into the journal paper:
 
 - Newey–West lag 3 printed as 1.0003–1.0439
 - pre-2020 CHD hot nights 1.011 (0.991–1.032)

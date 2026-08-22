@@ -11,10 +11,12 @@ pdflatex -interaction=nonstopmode Laidlaw_Stage3_A0_portrait.tex
 - Output: `Laidlaw_Stage3_A0_portrait.pdf` (ISO **A0 portrait**, 841 × 1189 mm, single page)
 - Submission copy: `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` (also copied as `ShenRuililin_Laidlaw_Stage3Poster.pdf` in this folder)
 
-22 August 2026 (evening): compact REFERENCES strip added on Bob’s instruction.
-Fable GO. Six numbered entries at the bottom; four in-text superscripts; spare
-gutters cut to 10 mm. Footer remains `shenrll@connect.hku.hk` only. Do not
-restore the “machine-validated” metadata block. SHA-256 prefix `82c077d69c414d18`.
+22 August 2026 (night): roundtable fold-back. REFERENCES strip kept. Author line
+is `Shen Ruililin`. Callouts show pre-2020 CHD 1.011 (includes 1) vs HF 1.113
+(excludes 1), with unequal visual weight. Footer is one human line (Hogan,
+Zhenyuan Liu, Prof. David Bishai, email). Do not restore “machine-validated”
+or “privacy-protected Hospital Authority monthly aggregate counts”. SHA-256
+prefix `0ef58e0951bb2ffd`.
 
 ### Layout (readability redesign v2, Aug 2026)
 

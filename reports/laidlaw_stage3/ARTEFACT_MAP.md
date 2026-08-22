@@ -5,8 +5,8 @@
 
 | Surface | Audience | Status | Route |
 |---|---|---|---|
-| `ShenRuililin_Laidlaw_Stage3Report.pdf` | HKU Laidlaw | **Current lock** — SHA-256 `b8b4c63ca9d32dd3…` | Submit this essay. Rebuild only if Bob or Bishai requires a correction. |
-| `ShenRuililin_Laidlaw_Stage3Poster.pdf` | HKU Laidlaw events | **Current lock** — SHA-256 `82c077d69c414d18…` | One-page A0 portrait. Compact REFERENCES strip; footer is contact email only. |
+| `ShenRuililin_Laidlaw_Stage3Report.pdf` | HKU Laidlaw | **Current lock** — SHA-256 `c083d4096a0924b1…` | Submit this essay. Rebuild only if Bob or Bishai requires a correction. |
+| `ShenRuililin_Laidlaw_Stage3Poster.pdf` | HKU Laidlaw events | **Current lock** — SHA-256 `0ef58e0951bb2ffd…` | One-page A0 portrait. REFERENCES strip, pre-2020 callouts, human collaborator footer. |
 | `submission_checklist.md` | Bob, supervisor, HKU administration | Living status record | Update administrative completion only. Current send pack: `analysis_plan/send_pack_2026-08-22/`. |
 | `analysis_plan/send_pack_2026-08-22/` | Professor Bishai (programme) | **Current Email A — Bob sends** | Form 2a + locked essay + one-page supervisor card; Thursday 27 Aug print backup. Do not send from an agent account. |
 | `analysis_plan/send_pack_2026-08-20/` | Professor Bishai (programme) | Worksheet / hashes / Q/R | Origin of Email A. Superseded for sending. |

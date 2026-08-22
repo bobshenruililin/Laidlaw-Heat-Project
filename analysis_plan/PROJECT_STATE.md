@@ -7,6 +7,11 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0k. Canonical update — roundtable fold-back before Email A (22 August, night)
+
+- Independent Fable + Sol specs, then a merge: numbered limitations, Methods “How to read the estimates” gloss, Bishai paragraph moved to Acknowledgements, data-provider confirmation restored, Implications heading inside Discussion, Table 1/2/A1 caption-body glue, poster pre-2020 + human footer + unequal HF/CHD callouts. REFERENCES strip kept. Robotic “machine-validated” / “privacy-protected” footer lines not restored.
+- New SHA prefixes: essay `c083d4096a0924b1`, poster `0ef58e0951bb2ffd`. Introduction–Conclusion 2,575 words. Fable GO / Sol GO. Durable: `knowledge/2026-08-22_stage3_foldback.md`. Form 2a still Email A. Gate 3 still open.
+
 ## 0j. Canonical update — A0 poster REFERENCES strip (22 August, evening)
 
 - Bob asked for a compact reference section on the Stage 3 poster. Fable chose six numbered entries at the bottom, four in-text superscripts, and no citations in Results or the conclusion box.

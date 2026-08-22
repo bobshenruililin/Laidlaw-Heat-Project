@@ -20,7 +20,8 @@
 
 ## Current meeting record
 
-- [`2026-08-22_stage3_poster_refs.md`](2026-08-22_stage3_poster_refs.md) — A0 poster gained a six-item REFERENCES strip; Fable GO; SHA prefix `82c077d69c414d18`.
+- [`2026-08-22_stage3_foldback.md`](2026-08-22_stage3_foldback.md) — roundtable fold-back before Email A; Fable/Sol GO; SHA prefixes `c083d4096a0924b1` / `0ef58e0951bb2ffd`.
+- [`2026-08-22_stage3_poster_refs.md`](2026-08-22_stage3_poster_refs.md) — A0 poster gained a six-item REFERENCES strip; later the same night the human footer and pre-2020 callouts were added.
 - [`2026-08-22_stage3_word_pathway.md`](2026-08-22_stage3_word_pathway.md) — Bob-authorised cut to ≤3,000 words, Bishai credit, Word-register format; live manuscript still not the attachment.
 - [`2026-08-22_stage3_essay_vs_manuscript.md`](2026-08-22_stage3_essay_vs_manuscript.md) — Fable/Sol: send the accessible essay, not the live manuscript; no further format rebuild this weekend.
 - [`2026-08-22_stage3_rebuild.md`](2026-08-22_stage3_rebuild.md) — Bob-authorised replacement of the 12 August Sol PDFs; new names `ShenRuililin_Laidlaw_Stage3Report.pdf` / `ShenRuililin_Laidlaw_Stage3Poster.pdf`; Fable/Sol GO.
@@ -69,8 +70,8 @@
 - [`outputs/release_chd_hf/`](../outputs/release_chd_hf/) — disclosure-minimised 29-check release.
 - [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md) — reusable YES/NO decision table and live-manuscript workflow.
 - [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Start at `LIVE_DOC_EDITS.md`.
-- [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `8b71157e5178b589`).
-- [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) — current A0 portrait poster (SHA prefix `82c077d69c414d18`); REFERENCES strip + contact email.
+- [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `c083d4096a0924b1`).
+- [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) — current A0 portrait poster (SHA prefix `0ef58e0951bb2ffd`); REFERENCES strip, pre-2020 callouts, human collaborator footer.
 - [`analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/) — current Email A: form 2a + locked essay + supervisor one-pager; Thursday 27 Aug print backup. Bob sends.
 - [`analysis_plan/send_pack_2026-08-20/`](../analysis_plan/send_pack_2026-08-20/) — 20 August Email A origin (worksheet, hashes, Q/R). Superseded for sending.
 - [`analysis_plan/send_pack_2026-08-12/`](../analysis_plan/send_pack_2026-08-12/) — one reply-all on Hogan’s 12 August thread; temperature panel for Roro.

@@ -1,5 +1,7 @@
 # LOCKED IMPLEMENTATION SPEC — Stage 3 fold-back (22 August 2026, pre-Email-A)
 
+> **Implemented (same night).** Merged Fable/Sol specs are in the live report and poster. Round 2: Fable GO, Sol GO. New SHA prefixes essay `c083d4096a0924b1`, poster `0ef58e0951bb2ffd`. See [`../../knowledge/2026-08-22_stage3_foldback.md`](../../knowledge/2026-08-22_stage3_foldback.md).
+
 > **Round 2 verdict (Fable, 22 Aug 2026 evening): GO.** All four fold-back items verified in source and renders; honesty checks pass (pre-2020 shown on both callouts with includes/excludes-1 labels; unequal visual weight now favours the more coherent HF signal; Goggins 2013 cited as AMI evidence, never equated with the present CHD outcome). Accepted merged deviations from Round 1: "How to read the estimates" gloss in Methods rather than Results; "Implications and next study" as a subsection inside Discussion (word count 2,575, within band); unequal callout widths. Non-blocking nits logged in the review reply only. Implementer completes GO item 10 (SHA lock note + pointer updates).
 
 **Mode:** Decide → Ship. Roundtable verdict implemented as edits to the FINAL report and CURRENT poster.

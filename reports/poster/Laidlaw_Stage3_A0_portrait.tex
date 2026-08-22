@@ -65,9 +65,9 @@
   borderline south={3mm}{0mm}{Teal},before skip=0pt,after skip=0mm]
 \textcolor{white}{\TitleFont Heat, cold and first hospitalisation\\[2mm]after cardiovascular diagnosis in Hong Kong}\\[6mm]
 \textcolor{PaleTeal}{\SubtitleFont An exploratory monthly study, 2013--2023}\\[8mm]
-\textcolor{white}{\AuthorFont \textbf{Bob Shen Ruililin}\quad\textbar\quad Laidlaw Scholars Programme\quad\textbar\quad School of Public Health, The University of Hong Kong}
+\textcolor{white}{\AuthorFont \textbf{Shen Ruililin}\quad\textbar\quad Laidlaw Scholars Programme\quad\textbar\quad School of Public Health, The University of Hong Kong}
 \end{tcolorbox}
-\vspace{10mm}
+\vspace{7mm}
 % ================= TOP BAND: INTRODUCTION | OBJECTIVE + METHODS ==============
 \noindent\begin{minipage}[t]{0.40\textwidth}
 \sechead{INTRODUCTION}
@@ -125,12 +125,12 @@ heart failure (HF) diagnosis} in a high-risk Hong Kong cohort?\par
   \item \textbf{Window and weather:} 132 territory-months, Jan 2013 -- Dec 2023;
         daily records and official extreme-day definitions from the Hong Kong
         Observatory.
-  \item \textbf{Outcomes:} privacy-protected Hospital Authority monthly
-        aggregate counts of \emph{first hospitalisation after a first recorded
-        CHD or HF diagnosis} in people with type 2 diabetes and/or hypertension
-        --- 156{,}156 CHD and 29{,}681 HF events. Delivered columns are labelled
-        inpatient; admission cause is not recorded, and final event semantics
-        require data-provider confirmation.
+  \item \textbf{Outcomes:} Hospital Authority monthly counts of \emph{first
+        hospitalisation after a first recorded CHD or HF diagnosis} in people
+        with type 2 diabetes and/or hypertension --- 156{,}156 CHD and 29{,}681
+        HF events. Delivered columns are labelled inpatient; admission cause is
+        not recorded, and final event semantics require data-provider
+        confirmation.
   \item \textbf{Models:} 2 outcomes \texttimes{} 6 exposures = 12
         negative-binomial regressions with calendar-month indicators, a trend
         spline, and a days-in-month offset; the panel was specified after the
@@ -146,53 +146,52 @@ higher; cold day: minimum 12\,\textdegree C or lower (HKO
 definitions)\textsuperscript{[1]}. Estimates are count ratios per 5 extreme days
 or per 1\,\textdegree C.\par}
 \end{minipage}
-\vspace{10mm}
-% ================= RESULTS BAND (full width) ================================
+\vspace{7mm}
 
 \sechead{RESULTS}
 \body
 An exploratory panel of twelve models, specified after the outcome series was
-available --- two contrasts stand out.
+available --- two residual signals, with unequal robustness.
 
-\vspace{5mm}
-\noindent\begin{minipage}[t]{0.485\linewidth}
+\vspace{3mm}
+\noindent\begin{minipage}[t]{0.40\linewidth}
 \begin{callout}{HeatTint}
-\begin{minipage}[c]{0.30\linewidth}\centering
-{\color{Heat}\bfseries\fontsize{50}{56}\selectfont 1.022\par}
-\end{minipage}\hfill\begin{minipage}[c]{0.66\linewidth}
-{\fontsize{21}{26}\selectfont\textbf{CHD series \texttimes{} hot nights,} per 5 days\par}
-\vspace{1.5mm}
-{\fontsize{19}{24}\selectfont\color{Slate}95\% CI 1.002--1.042\quad \textit{p} = 0.032\quad \textit{q} = 0.192\par}
+\begin{minipage}[c]{0.28\linewidth}\centering
+{\color{Heat}\bfseries\fontsize{46}{52}\selectfont 1.022\par}
+\end{minipage}\hfill\begin{minipage}[c]{0.68\linewidth}
+{\fontsize{20}{25}\selectfont\textbf{CHD series \texttimes{} hot nights,} per 5 days\par}
+\vspace{1.2mm}
+{\fontsize{17.5}{22}\selectfont\color{Slate}Full window (NW6): 1.002--1.042\quad \textit{p} = 0.032\quad \textit{q} = 0.192\par}
+\vspace{0.8mm}
+{\fontsize{17.5}{22}\selectfont\color{Slate}2013--2019: 1.011 (0.991--1.032) --- includes 1\par}
 \end{minipage}
 \end{callout}
-\end{minipage}\hfill\begin{minipage}[t]{0.485\linewidth}
+\end{minipage}\hfill\begin{minipage}[t]{0.57\linewidth}
 \begin{callout}{ColdTint}
-\begin{minipage}[c]{0.30\linewidth}\centering
-{\color{Cold}\bfseries\fontsize{50}{56}\selectfont 1.073\par}
-\end{minipage}\hfill\begin{minipage}[c]{0.66\linewidth}
+\begin{minipage}[c]{0.26\linewidth}\centering
+{\color{Cold}\bfseries\fontsize{52}{58}\selectfont 1.073\par}
+\end{minipage}\hfill\begin{minipage}[c]{0.70\linewidth}
 {\fontsize{21}{26}\selectfont\textbf{HF series \texttimes{} cold days,} per 5 days\par}
-\vspace{1.5mm}
-{\fontsize{19}{24}\selectfont\color{Slate}95\% CI 1.006--1.144\quad \textit{p} = 0.031\quad \textit{q} = 0.192\par}
+\vspace{1.2mm}
+{\fontsize{18}{23}\selectfont\color{Slate}Full window (NW6): 1.006--1.144\quad \textit{p} = 0.031\quad \textit{q} = 0.192\par}
+\vspace{0.8mm}
+{\fontsize{18}{23}\selectfont\color{Slate}2013--2019: 1.113 (1.053--1.176) --- excludes 1\par}
 \end{minipage}
 \end{callout}
 \end{minipage}
 
-\vspace{4mm}
+\vspace{3mm}
 \body
 \begin{itemize}
-  \item \textbf{CHD series \texttimes{} hot nights:} about \textbf{2.2\% higher}
-        monthly first-hospitalisation count per five additional hot nights ---
-        but the interval \emph{includes 1} under two of four standard-error
-        methods, so the signal is uncertainty-sensitive.
-  \item \textbf{HF series \texttimes{} cold days:} about \textbf{7.3\% higher}
-        monthly first-hospitalisation count per five additional cold days ---
-        the interval excludes 1 under all four methods.
+  \item \textbf{Unequal coherence:} the HF cold-day interval excludes 1 under all
+        four standard-error methods and before 2020; the CHD hot-night interval
+        includes 1 under two methods and in 2013--2019.
   \item The other ten contrasts sit near 1. \textbf{All 12 Benjamini--Hochberg
         \textit{q}-values exceed 0.19}: after correction for 12 comparisons,
         both signals remain exploratory.
 \end{itemize}
 
-\vspace{4mm}
+\vspace{2mm}
 \noindent\begin{minipage}[t]{0.625\linewidth}
 \centering
 \raisebox{-\height}{\includegraphics[width=\linewidth]{figures/fig_poster_forest12.pdf}}\par
@@ -217,16 +216,16 @@ cold-day interval excludes 1 under all four. The main display uses NW6;
 methods were not chosen by interval position.}
 \end{flushleft}
 \end{minipage}
-\vspace{10mm}
-% ================= BOTTOM BAND ===============================================
+\vspace{7mm}
 \noindent\begin{minipage}[t]{0.485\linewidth}
 \sechead{INTERPRETATION / LIMITATIONS}
 \body
 \begin{itemize}
   \item All 12 \textit{q}-values exceed 0.19 --- these are \textbf{exploratory
         signals}, not confirmed effects.
-  \item The CHD hot-night estimate is \textbf{sensitive to how uncertainty is
-        computed}; the HF cold-day estimate is stable across methods.
+  \item The CHD hot-night estimate is \textbf{window-dependent and
+        uncertainty-sensitive}; the HF cold-day estimate is more coherent
+        across methods and before 2020, but not confirmed.
   \item Monthly, territory-level data with no recorded admission cause support
         \textbf{no causal or principal-diagnosis claim}\textsuperscript{[6]}.
 \end{itemize}
@@ -280,7 +279,8 @@ doi:10.1093/ije/18.1.269\par}
 \end{minipage}
 \end{tcolorbox}
 \vspace{2mm}
-% Footer: contact email only. Do not restore the machine-validated metadata block.
-{\fontsize{17.5}{22}\selectfont\color{Slate}\hfill
-shenrll@connect.hku.hk\par}
+% Footer: human credits, no machine-validated / privacy-protected stock phrases.
+{\fontsize{17.5}{22}\selectfont\color{Slate}Collaborators: Hogan (weather definitions)~\textperiodcentered~
+Zhenyuan Liu (Hospital Authority aggregates)~\textperiodcentered~
+Supervisor: Prof.~David Bishai\hfill shenrll@connect.hku.hk\par}
 \end{document}

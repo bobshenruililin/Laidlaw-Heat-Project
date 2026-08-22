@@ -1,0 +1,45 @@
+\usepackage{microtype}
+\usepackage{booktabs,array}
+\usepackage{caption}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period,
+  justification=raggedright,
+  singlelinecheck=false
+}
+\captionsetup[figure]{position=bottom,skip=6pt}
+\captionsetup[table]{position=top,skip=6pt}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.6em}{0.6em}
+\titlespacing*{\subsection}{0pt}{1.2em}{0.4em}
+\usepackage{titling}
+\setlength{\droptitle}{-2em}
+\pretitle{\begin{flushleft}\fontsize{20}{24}\selectfont\bfseries}
+\posttitle{\par\end{flushleft}\vspace{0.5em}}
+\preauthor{\begin{flushleft}\normalsize}
+\postauthor{\par\end{flushleft}\vspace{-0.5em}}
+\predate{\begin{flushleft}\small}
+\postdate{\par\end{flushleft}\vspace{0.7em}\hrule\vspace{1.1em}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize Thermal burden and first hospitalisation in Hong Kong}
+\fancyhead[R]{\footnotesize Shen Ruililin}
+\fancyfoot[C]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\footnotesize\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+\AtBeginDocument{\thispagestyle{plain}}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt}
+\renewcommand{\arraystretch}{1.08}
+\AtBeginDocument{\urlstyle{same}}
+\raggedbottom
+\emergencystretch=2em

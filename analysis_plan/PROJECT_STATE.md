@@ -7,9 +7,16 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0g. Canonical update — Stage 3 report and poster rebuilt (22 August)
+
+- Bob authorised a replacement of the 12 August Sol PDFs. New submission names: `outputs/ShenRuililin_Laidlaw_Stage3Report.pdf` and `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` (SHA-256 prefixes `b8b4c63ca9d32dd3` / `b3f16ff27f76ea9b`).
+- Poster change is surgical: the self-referential footer is deleted; only `shenrll@connect.hku.hk` remains. Layout, figures, and conclusion box are otherwise unchanged. Still one-page A0 portrait.
+- Report: TeX Gyre Termes, no contents list, ~2,900 main-text words, formal article layout. Honesty aligned with the live manuscript (unrounded NW3, pre-2020 CHD interval, ACF 0.508, no “most elevated”). Not a journal clone. Fable and Sol both GO.
+- Durable: `knowledge/2026-08-22_stage3_rebuild.md`. Form 2a is still Email A to Bishai. Gate 3 still open.
+
 ## 0f. Canonical update — obtain form 2a (22 August)
 
-- Remaining Stage 3 job is Bishai’s endorsement, not a new essay or poster. Locked PDFs re-verified (`6136e85a654502a0` / `4f7c1e408ae2d31f`). Do not rebuild.
+- Remaining Stage 3 job is Bishai’s endorsement. Programme PDFs were rebuilt the same day on Bob’s instruction (see 0g). Hogan reviewing the live file does **not** gate form 2a. He does not sign it. Do not put the form on his Outlook thread.
 - Hogan reviewing the live file does **not** gate form 2a. He does not sign it. Do not put the form on his Outlook thread.
 - Dual path: Email A tonight/Sunday (`send_pack_2026-08-22/`); printed form at Thursday 27 August if unsigned; last comfortable remote date Friday 28 August; submit to `laidlaw@hku.hk` on 31 August after signature.
 - Improvement without a rebuild: one-page supervisor card (`supervisor_one_pager.pdf`) plus optional comments paste. Names the exploratory hedges so the locked conclusion’s “most elevated” ranking is not a surprise.

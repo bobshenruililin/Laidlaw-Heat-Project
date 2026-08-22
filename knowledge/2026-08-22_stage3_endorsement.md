@@ -4,7 +4,7 @@
 
 ## The remaining Stage 3 job
 
-The locked essay and A0 poster are programme-ready (SHA prefixes `6136e85a654502a0` / `4f7c1e408ae2d31f`). Re-verified 22 August. Bob’s stated remaining need is the **endorsement form**. Hogan reviewing the live manuscript does **not** gate that form. Hogan does not sign form 2a.
+The programme essay and A0 poster were rebuilt the same day on Bob’s instruction ([`2026-08-22_stage3_rebuild.md`](2026-08-22_stage3_rebuild.md)). Hogan reviewing the live manuscript does **not** gate form 2a. Hogan does not sign form 2a.
 
 Printed on the form: research report **31 August 2026**; poster file **15 September 2026**. Next meeting: **Thursday 27 August**. Last comfortable remote signature: **Friday 28 August**.
 

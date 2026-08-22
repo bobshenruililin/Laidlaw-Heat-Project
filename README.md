@@ -162,7 +162,7 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 | How Bob + agents work | [`AGENTS.md`](AGENTS.md) · [`analysis_plan/human_agent_collaboration.md`](analysis_plan/human_agent_collaboration.md) |
 | Hogan writing / mentorship bar | [`analysis_plan/writing_standards_hogan.md`](analysis_plan/writing_standards_hogan.md) |
 | **Permanent knowledge base** | [`knowledge/README.md`](knowledge/README.md) · [`knowledge/INDEX.md`](knowledge/INDEX.md) |
-| **Laidlaw Stage 3 submission packet** | [`reports/laidlaw_stage3/Laidlaw_Research_Report_2026.pdf`](reports/laidlaw_stage3/Laidlaw_Research_Report_2026.pdf) · [`reports/poster/Laidlaw_Stage3_A0_portrait.pdf`](reports/poster/Laidlaw_Stage3_A0_portrait.pdf) · [`reports/laidlaw_stage3/README.md`](reports/laidlaw_stage3/README.md) |
+| **Laidlaw Stage 3 submission packet** | [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) · [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) · [`reports/laidlaw_stage3/README.md`](reports/laidlaw_stage3/README.md) |
 | **Laidlaw website blogs** (MIT Admissions-style) | [`reports/blog/`](reports/blog/) · [`knowledge/2026-07-26_laidlaw_blog_canon.md`](knowledge/2026-07-26_laidlaw_blog_canon.md) |
 | **Hogan Tuesday pack (28 Jul 2026)** | [`reports/hogan_tuesday/README.md`](reports/hogan_tuesday/README.md) |
 

@@ -7,7 +7,9 @@ Bob locked two GPT-5.6 Sol outputs as the Laidlaw Stage 3 submission copies:
 | `reports/laidlaw_stage3/Laidlaw_Research_Report_2026.pdf` (same bytes as `outputs/Laidlaw_Stage3_Research_Report_Shen.pdf`) | `6136e85a654502a0` | 715,033 |
 | `reports/poster/Laidlaw_Stage3_A0_portrait.pdf` (same bytes as `outputs/Laidlaw_Stage3_Poster_Shen.pdf`) | `4f7c1e408ae2d31f` | 92,744 |
 
-These match the files Bob uploaded on 12 August 2026. They are already on `main` (merged PR #39).
+These match the files Bob uploaded on 12 August 2026. They were on `main` (merged PR #39).
+
+**Superseded 22 August 2026.** Bob authorised a format/honesty rebuild. Current lock: [`2026-08-22_stage3_rebuild.md`](2026-08-22_stage3_rebuild.md). The 12 August bytes remain in git history.
 
 ## What later draft PRs would have changed
 
@@ -21,4 +23,4 @@ These match the files Bob uploaded on 12 August 2026. They are already on `main`
 
 ## Rule
 
-Do not rebuild `Laidlaw_Research_Report_2026.pdf` or `Laidlaw_Stage3_A0_portrait.pdf` unless Bob supplies a new locked copy. Journal and live-manuscript surfaces may still be edited.
+Do not rebuild `Laidlaw_Research_Report_2026.pdf` or `Laidlaw_Stage3_A0_portrait.pdf` unless Bob supplies a new locked copy. **22 August 2026:** he did. See [`2026-08-22_stage3_rebuild.md`](2026-08-22_stage3_rebuild.md).

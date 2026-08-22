@@ -20,7 +20,8 @@
 
 ## Current meeting record
 
-- [`2026-08-22_stage3_endorsement.md`](2026-08-22_stage3_endorsement.md) — remaining Stage 3 job is Bishai’s form 2a; send now; Thursday 27 Aug is signature backup; do not rebuild essay/poster. Pack: [`../analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/).
+- [`2026-08-22_stage3_rebuild.md`](2026-08-22_stage3_rebuild.md) — Bob-authorised replacement of the 12 August Sol PDFs; new names `ShenRuililin_Laidlaw_Stage3Report.pdf` / `ShenRuililin_Laidlaw_Stage3Poster.pdf`; Fable/Sol GO.
+- [`2026-08-22_stage3_endorsement.md`](2026-08-22_stage3_endorsement.md) — remaining Stage 3 job is Bishai’s form 2a; Thursday 27 Aug is signature backup. Pack: [`../analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/).
 - [`2026-08-20_bishai_form2a.md`](2026-08-20_bishai_form2a.md) — Decide: send form 2a Email A now; Hogan TV does not gate it. Pack: [`../analysis_plan/send_pack_2026-08-20/`](../analysis_plan/send_pack_2026-08-20/).
 - [`2026-08-20_stage3_vs_manuscripts.md`](2026-08-20_stage3_vs_manuscripts.md) — locked essay/poster vs live file vs parked 15 Aug Word vs Roro mortality PDF; programme-ready, do not rebuild.
 - [`2026-08-18_intern_ceiling_note.md`](2026-08-18_intern_ceiling_note.md) — intern note for Hogan/Bishai: peak of the monthly panel, public-file dead ends demonstrated, PI paths to break the ceiling; Gate 3 still open.
@@ -65,6 +66,8 @@
 - [`outputs/release_chd_hf/`](../outputs/release_chd_hf/) — disclosure-minimised 29-check release.
 - [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md) — reusable YES/NO decision table and live-manuscript workflow.
 - [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Start at `LIVE_DOC_EDITS.md`.
+- [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `b8b4c63ca9d32dd3`).
+- [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) — current A0 portrait poster; footer is the contact email only.
 - [`analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/) — current Email A: form 2a + locked essay + supervisor one-pager; Thursday 27 Aug print backup. Bob sends.
 - [`analysis_plan/send_pack_2026-08-20/`](../analysis_plan/send_pack_2026-08-20/) — 20 August Email A origin (worksheet, hashes, Q/R). Superseded for sending.
 - [`analysis_plan/send_pack_2026-08-12/`](../analysis_plan/send_pack_2026-08-12/) — one reply-all on Hogan’s 12 August thread; temperature panel for Roro.

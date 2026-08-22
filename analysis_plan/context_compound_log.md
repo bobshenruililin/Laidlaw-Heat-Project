@@ -5,6 +5,7 @@
 
 | Date | Mode | Spur / question | What we tried or noticed | Keep / drop / park | Promoted to? |
 |---|---|---|---|---|---|
+| 2026-08-22 | Ship | Rebuild Stage 3 essay/poster: drop AI poster footer; formal report type; live-manuscript honesty; HKU word limit | Fable/Sol GO. Poster: footer deleted, email only, A0 unchanged. Report: Termes, ~2,900 words, NW3 unrounded, pre-2020 CHD interval, no “most elevated”. Named `ShenRuililin_Laidlaw_Stage3Report.pdf` / `ShenRuililin_Laidlaw_Stage3Poster.pdf`. | Keep | `knowledge/2026-08-22_stage3_rebuild.md` |
 | 2026-08-22 | Decide | How to get Bishai’s Stage 3 form 2a with Thursday 27 Aug as last talk before 31 Aug? | Essay/poster stay locked. Hogan’s live-file review does not gate the form. Dual path: email now + printed form Thursday. One-pager names the “most elevated” ranking so a rebuild is unnecessary. | Keep | `send_pack_2026-08-22/`; `knowledge/2026-08-22_stage3_endorsement.md` |
 | 2026-07-17 | Decide | General HA reasons for admission? | Confirmed unavailable in meeting | Keep as hard constraint | README + debrief + gates |
 | 2026-07-17 | Decide | One model vs ~10 methods? | Multi-method panel requested | Keep | pathway registry P01–P18 |

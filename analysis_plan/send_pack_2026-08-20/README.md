@@ -1,5 +1,7 @@
 # Send pack — 20 August 2026 (Email A to Bishai)
 
+**Superseded for sending (22 August).** Use [`../send_pack_2026-08-22/`](../send_pack_2026-08-22/). Keep this folder for the form worksheet, hash check, and Q/R paste.
+
 **Mode:** Ship / Decide.  
 **Job:** one new programme note to Professor Bishai for Laidlaw Stage 3 form 2a endorsement.  
 **Not this round:** Hogan’s Jingjing / temperature-variability thread; journal paste; Gate 3; stroke; maps.

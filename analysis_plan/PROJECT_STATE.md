@@ -1,11 +1,19 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-20
+**Last updated:** 2026-08-22
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0f. Canonical update — obtain form 2a (22 August)
+
+- Remaining Stage 3 job is Bishai’s endorsement, not a new essay or poster. Locked PDFs re-verified (`6136e85a654502a0` / `4f7c1e408ae2d31f`). Do not rebuild.
+- Hogan reviewing the live file does **not** gate form 2a. He does not sign it. Do not put the form on his Outlook thread.
+- Dual path: Email A tonight/Sunday (`send_pack_2026-08-22/`); printed form at Thursday 27 August if unsigned; last comfortable remote date Friday 28 August; submit to `laidlaw@hku.hk` on 31 August after signature.
+- Improvement without a rebuild: one-page supervisor card (`supervisor_one_pager.pdf`) plus optional comments paste. Names the exploratory hedges so the locked conclusion’s “most elevated” ranking is not a surprise.
+- Durable: `knowledge/2026-08-22_stage3_endorsement.md`. Gate 3 still open.
 
 ## 0e. Canonical update — Email A to Bishai (20 August)
 

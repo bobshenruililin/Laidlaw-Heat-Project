@@ -20,7 +20,7 @@ these two files.
 | Research poster: A0 portrait, 841 × 1189 mm | `../poster/Laidlaw_Stage3_A0_portrait.pdf` / `outputs/Laidlaw_Stage3_Poster_Shen.pdf` | **Built and technically validated.** One page, exact A0 portrait dimensions. |
 | Poster content: title, introduction, objectives, methods, results, conclusions | Same poster | **Present.** Interpretation/limitations is included as an additional section. |
 | Official HKU report form | Official `2a. Laidlaw - Report Form (HKU).docx` (Bob’s local copy; not committed) | **Worksheet ready.** Fill from [`../../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md`](../../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md). Supervisor rating, comments, and signature stay blank. Printed deadlines: report 31 Aug 2026; poster 15 Sep 2026. |
-| Supervisor endorsement and comments | Prof. David Bishai | **Human action required.** Send Email A from [`../../analysis_plan/send_pack_2026-08-20/to_bishai.md`](../../analysis_plan/send_pack_2026-08-20/to_bishai.md). Ask for the supervisor block by Friday 28 August. |
+| Supervisor endorsement and comments | Prof. David Bishai | **Human action required.** Send Email A from [`../../analysis_plan/send_pack_2026-08-22/to_bishai.md`](../../analysis_plan/send_pack_2026-08-22/to_bishai.md). Ask for the supervisor block by Friday 28 August, or bring a printed copy on Thursday 27 August. |
 | Spreadsheet columns Q, R | Horizons Google sheet (not in repo) | **Paste draft only.** [`../../analysis_plan/send_pack_2026-08-20/spreadsheet_QR_paste.md`](../../analysis_plan/send_pack_2026-08-20/spreadsheet_QR_paste.md). Bob types into the sheet after reading the headers. |
 | Final submission | `laidlaw@hku.hk` | **Do only after supervisor endorsement.** |
 

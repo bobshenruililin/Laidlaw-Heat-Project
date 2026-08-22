@@ -104,3 +104,8 @@ messages:
     from: planned_Bob
     to: [Bishai]
     gist: Email A drafted in send_pack_2026-08-20. Programme form 2a + locked essay; optional poster for information. Ask supervisor block by Friday 28 Aug. Not yet sent.
+
+  - date: 2026-08-22
+    from: planned_Bob
+    to: [Bishai]
+    gist: Updated Email A in send_pack_2026-08-22. Same locked essay/poster. Adds a one-page supervisor card and names Thursday 27 Aug as a paper-signature backup. Still not sent. Hogan live-file review does not gate this.

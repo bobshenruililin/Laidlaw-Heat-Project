@@ -20,6 +20,7 @@
 
 ## Current meeting record
 
+- [`2026-08-22_stage3_word_pathway.md`](2026-08-22_stage3_word_pathway.md) — Bob-authorised cut to ≤3,000 words, Bishai credit, Word-register format; live manuscript still not the attachment.
 - [`2026-08-22_stage3_essay_vs_manuscript.md`](2026-08-22_stage3_essay_vs_manuscript.md) — Fable/Sol: send the accessible essay, not the live manuscript; no further format rebuild this weekend.
 - [`2026-08-22_stage3_rebuild.md`](2026-08-22_stage3_rebuild.md) — Bob-authorised replacement of the 12 August Sol PDFs; new names `ShenRuililin_Laidlaw_Stage3Report.pdf` / `ShenRuililin_Laidlaw_Stage3Poster.pdf`; Fable/Sol GO.
 - [`2026-08-22_stage3_endorsement.md`](2026-08-22_stage3_endorsement.md) — remaining Stage 3 job is Bishai’s form 2a; Thursday 27 Aug is signature backup. Pack: [`../analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/).

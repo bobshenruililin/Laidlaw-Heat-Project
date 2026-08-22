@@ -7,11 +7,18 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0i. Canonical update — Word-pathway Stage 3 cut (22 August, second pass)
+
+- Bob asked for stronger Bishai credit, a Table 1 that stays on the page, a hard 3,000-word cut, and the 15 August collab `.docx` as a **format** model. The live manuscript is still not the attachment.
+- Essay rebuilt: IMRD + structured Abstract (excluded from the count), numbered citations, footnotes, appendix ladder. Introduction–Conclusion ≈ 2,670 words. Supervisor line + Introduction + Acknowledgements name Professor David Makram Bishai.
+- Table 1 is four columns plus a note (no overflowing event-definition column). PDF is XeLaTeX. A Word copy is `outputs/ShenRuililin_Laidlaw_Stage3Report.docx` for opening in Microsoft Word; do not send the 15 August collab draft.
+- New PDF SHA-256 prefix `8b71157e5178b589`. Poster unchanged (`b3f16ff27f76ea9b`). Durable: `knowledge/2026-08-22_stage3_word_pathway.md`. Form 2a still Email A. Gate 3 still open.
+
 ## 0h. Canonical update — send the accessible essay, not the live manuscript (22 August evening)
 
-- Fable and Sol: **SEND AFTER HUMAN BLANKS**. Do not attach Hogan’s live file or the 15 August collab Word. Keep the slightly more accessible research essay. Do not rebuild it this weekend to look more like the paper.
-- Essay/poster hashes unchanged (`b8b4c63ca9d32dd3` / `b3f16ff27f76ea9b`). Main text is about 3,175 words (Summary–Conclusion); form says **ca.** 2000–3000.
-- Supervisor one-pager was stale against the rebuilt conclusion (“most elevated”, “predeclared”). Rewritten; now optional. Default Email A is essay + form 2a.
+- Fable and Sol: **SEND AFTER HUMAN BLANKS**. Do not attach Hogan’s live file or the 15 August collab Word. Keep the slightly more accessible research essay.
+- A later same-day rebuild (0i) cut words and added Bishai credit on Bob’s instruction. Do not attach the live manuscript.
+- Supervisor one-pager remains optional. Default Email A is essay PDF + form 2a.
 - Durable: `knowledge/2026-08-22_stage3_essay_vs_manuscript.md`. Gate 3 still open.
 
 ## 0g. Canonical update — Stage 3 report and poster rebuilt (22 August)

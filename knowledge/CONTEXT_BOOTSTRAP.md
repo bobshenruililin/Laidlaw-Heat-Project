@@ -34,7 +34,7 @@ may leave governance.
   remains a human step.
 - **Jingwen Liu (“Jasmine”):** first author of the confirmed mortality paper; do not confuse her with Roro.
 
-The manuscript now has one authority: the live file shared by Hogan with Bob and Roro. Stage 3 submits the accessible programme essay (`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`), not that live file. See [`2026-08-22_stage3_essay_vs_manuscript.md`](2026-08-22_stage3_essay_vs_manuscript.md).
+The manuscript now has one authority: the live file shared by Hogan with Bob and Roro. Stage 3 submits the accessible programme essay (`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`), not that live file. Same-day Word-pathway cut: [`2026-08-22_stage3_word_pathway.md`](2026-08-22_stage3_word_pathway.md).
 
 ## Evidence spine
 

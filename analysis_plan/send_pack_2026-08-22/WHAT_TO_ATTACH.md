@@ -8,7 +8,9 @@ Attach PDFs and the official Word form. Do not attach markdown.
 
 1. `outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`  
    Same bytes as `reports/laidlaw_stage3/ShenRuililin_Laidlaw_Stage3Report.pdf`.  
-   SHA-256 prefix `b8b4c63ca9d32dd3`.
+   SHA-256 prefix `8b71157e5178b589`.  
+   Do not attach the `.docx` unless Bishai asks; the official file is the PDF.  
+   Do not attach `Heat_CVD_Manuscript_20260815_collab_draft.docx`.
 
 2. Official `2a. Laidlaw - Report Form (HKU).docx`  
    Bob completes his own fields from [`../send_pack_2026-08-20/form_2a_fill_worksheet.md`](../send_pack_2026-08-20/form_2a_fill_worksheet.md).  

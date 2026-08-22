@@ -1,67 +1,96 @@
-# R
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-*.Rproj
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
 
-# LaTeX build artifacts
-*.aux
-*.log
-*.out
-*.toc
-*.fls
-*.fdb_latexmk
-*.synctex.gz
-*.nav
-*.snm
-*.vrb
+# Jupyter
+.ipynb_checkpoints/
 
-# Secrets / secure HA extracts (never commit real HA data)
-data_raw/ha_secure_placeholder/*
-!data_raw/ha_secure_placeholder/README.md
-
-# Large rebuildable processed artifacts (regenerate via pipeline)
-data_processed/synthetic_analysis_panel.csv
-data_processed/synthetic_ha_outcomes.csv
-data_processed/climate_daily_hko.csv
-data_processed/.cache/
-outputs/model_objects/*.rds
-
-# OS / editor
+# OS
 .DS_Store
 Thumbs.db
-*~
 
-# Python
-__pycache__/
-*.pyc
+# Virtual env
 .venv/
+venv/
+env/
 
-# Local correspondence and working drafts (do not commit)
-communications/
-memos/
-*_email*.md
-*email_to*
-*email_from*
-*email_reply*
-!analysis_plan/hogan_tuesday_email_draft.md
+# Local secrets / HA extracts (never commit)
+.env
+data/hospital_authority/
+data/ha_*.csv
+*.haextract
+
+# Large / local-only research files (keep locally, do not push)
+*.pdf
+*.docx
+*.pptx
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+*.tgz
+*.bz2
+*.xz
+outputs/figures/*.png
+outputs/figures/*.pdf
+outputs/tables/*.csv
+outputs/tables/*.xlsx
+outputs/share_for_roro/*.csv
+outputs/share_for_roro/*.xlsx
+outputs/share_for_roro/*.png
+outputs/share_for_roro/*.pdf
+analysis_plan/send_pack_*/
 !analysis_plan/send_pack_2026-08-12/
 !analysis_plan/send_pack_2026-08-20/
+!analysis_plan/send_pack_2026-08-21_tv/
 !analysis_plan/send_pack_2026-08-22/
-outputs/session_info_setup.txt
 
-# Rebuildable synthetic calibration internals (summaries/gates remain tracked)
-outputs/calibration_md/checkpoints/
-outputs/calibration_md/md_calibration_raw_metrics.csv
-outputs/calibration_md/md_calibration_*_pilot_10.csv
-outputs/calibration_md/md_calibration_*_core_500.csv
+# Keep generated CSVs that are part of the public pipeline demo
+!outputs/tables/.gitkeep
+!outputs/figures/.gitkeep
+!outputs/share_for_roro/.gitkeep
+!outputs/share_for_roro/README.md
+!outputs/share_for_roro/weather_daily_hko_2013_2023.csv
+!outputs/share_for_roro/weather_monthly_2013_2023.csv
+!outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv
+!outputs/share_for_roro/temperature_monthly_panel_dictionary.md
+!outputs/share_for_roro/README_for_roro.md
+!outputs/share_for_roro/t2d_htn_monthly_first_hosp_chd_hf.csv
+!outputs/share_for_roro/t2d_htn_monthly_first_hosp_chd_hf_dictionary.md
+!outputs/share_for_roro/t2d_htn_cohort_scope.md
+!outputs/share_for_roro/air_quality_daily_epd_2013_2023.csv
+!outputs/share_for_roro/air_quality_monthly_2013_2023.csv
+!outputs/share_for_roro/aqhi_daily_epd_2013_2023.csv
+!outputs/share_for_roro/aqhi_monthly_2013_2023.csv
+!outputs/share_for_roro/air_quality_coverage_audit.md
+!outputs/share_for_roro/air_quality_station_inventory.csv
+!outputs/share_for_roro/air_quality_no2_so2_o3_coverage_audit.md
+!outputs/share_for_roro/air_quality_no2_so2_o3_station_inventory.csv
+!outputs/share_for_roro/air_quality_no2_so2_o3_daily_epd_2013_2023.csv
+!outputs/share_for_roro/air_quality_no2_so2_o3_monthly_2013_2023.csv
+!outputs/share_for_roro/air_quality_no2_so2_o3_note_for_roro.md
+!outputs/share_for_roro/t2d_htn_monthly_first_hosp_chd_hf_with_weather.csv
+!outputs/share_for_roro/t2d_htn_monthly_first_hosp_chd_hf_with_weather_and_air.csv
+!outputs/share_for_roro/t2d_htn_monthly_first_hosp_chd_hf_with_weather_and_air_and_no2_so2_o3.csv
+!outputs/share_for_roro/analysis_ready_t2d_htn_chd_hf_with_climate.csv
+!outputs/share_for_roro/analysis_ready_t2d_htn_chd_hf_with_climate_dictionary.md
 
-# Month-grain HA count visualisations stay local; release uses indexed series.
-outputs/figures/descriptives/cvd_monthly_timeseries.png
-outputs/figures/descriptives/cvd_events_vs_mean_temp.png
+# R / Python local
+.Rproj.user/
+.Rhistory
+.RData
+*.Rproj
 
-# HA approved monthly aggregates and merged panels (never commit event counts)
-data_processed/*_aggregates_normalized.csv
-data_processed/*_analysis_panel.csv
-!data_processed/samples/
+# Editor
+.vscode/
+.idea/
+
+# Data dumps
+*.h5
+*.parquet
+*.feather
+*.pkl
+*.pickle

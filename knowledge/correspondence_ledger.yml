@@ -96,6 +96,14 @@ messages:
       - temperature_panel_by_2026-08-12
 
   - date: 2026-08-20
+    from: Jingjing
+    to: [Bob, Hogan, Roro, Bishai]
+    gist: Add Guo et al. 2016 temperature variability (PMID 27258598) to the temperature data panel. The number of TV dates in a month may be helpful.
+    open_asks:
+      - guo2016_tv_on_temperature_panel
+    note: Guo 2016 does not define a TV date; TV is a continuous daily SD of Tmin and Tmax. Climate CSV only; not Stage 3; not a health model.
+
+  - date: 2026-08-20
     from: Hogan
     to: [Jingjing]
     gist: Thanks Jingjing. Currently going through Bob's work. Will add the TV to the temperature data panel as well. Weather-panel only; does not delay Laidlaw form 2a.

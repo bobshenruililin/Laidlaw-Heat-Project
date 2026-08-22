@@ -35,7 +35,7 @@ Full post-meeting recalibration: [`reports/meeting_debrief_2026-07-17.md`](repor
 
 | Domain | Status |
 |---|---|
-| HKO weather (monthly panel + extremes / spells) | **Ready** — annual extremes validated 33/33 vs HKO *Year’s Weather* |
+| HKO weather (monthly panel + extremes / spells) | **Ready** — annual extremes validated 33/33 vs HKO *Year’s Weather*; Guo 2016 TV0–1/TV0–7 columns on the climate share panel (not a core health model) |
 | C&SD age–sex denominators | **Ready** (Table 110-01001 MDT) |
 | Air pollution | **Ready (EPD EPIC)** | Monthly NO₂, O₃, PM₂.₅, PM₁₀ — general-station means; roadside archived for sensitivity |
 | HA outcomes | **CHD + HF received 7 Aug 2026** (T2D/HTN cohort; first hosp. after first CVD dx). **Stroke file not attached.** |

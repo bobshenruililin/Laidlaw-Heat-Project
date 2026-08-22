@@ -50,7 +50,8 @@
 
 | Paper | Lesson | Pathway impact |
 |---|---|---|
-| Tian/Qiu et al. 2023 (*J Glob Health*) | Short-term TV associated with circulatory hospitalisations in HK; older adults more vulnerable | P15 monthly mean diurnal-range (from daily extracts) |
+| Tian/Qiu et al. 2023 (*J Glob Health*) | Short-term TV associated with circulatory hospitalisations in HK; older adults more vulnerable | P15 monthly mean diurnal-range (from daily extracts). **Not** Guo 2016 |
+| Guo et al. 2016 (*Environ Health Perspect*; PMID 27258598) | TV = sample SD of daily Tmin and Tmax over the lag window (TV0–1, TV0–7); continuous, not a “TV date”; multi-country **mortality** | Climate share panel columns only (20 Aug 2026). Not P15. Not a core CHD/HF exposure. Do not transport mortality TV RRs onto monthly first-hospitalisation counts |
 | Absolute humidity vs RH | RH entangled with temperature | Prefer AH (climate file) in P12 |
 | Frontiers 2024 TLOS cardiopulmonary HK | Non-optimal T raises total length of stay; cold dominates attributable fraction | Complements admission-count estimand; motivates reporting burden carefully |
 | Eco-Environ Saf 2025 cold circulatory costs | Cold attributable risk for emergency circulatory admissions + LOS/costs | Supports cold pathways as co-primary, not afterthought |
@@ -74,6 +75,7 @@ Canonical key notes (2026-08-10):
 - Prefer `yang2025coldflu` over the older `wang2025coldflu` alias (alias kept only for legacy cite keys).
 - Prefer `wang2019ehwe` (do not revive `wang2014hotspell`).
 - Roro public cite = `liu2026roro` (medRxiv preprint), never the private revised PDF.
+- Guo 2016 TV operator = `guo2016tv` (PMID 27258598). Climate-panel only; not P15.
 - Methods spine keys: `basagana2024md`, `basagana2026md`, `gasparrini2010`, `dunsmuir2015glarma`, `zhu2011nbingarch`, `lazarus2018har`, `politis1994bootstrap`, `simonsohn2020speccurve`, `tashman2000rolling`, `greenland1989ecological`, `li2025heatwaves`.
 
 ---

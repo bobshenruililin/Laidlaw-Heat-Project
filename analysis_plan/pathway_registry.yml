@@ -241,6 +241,8 @@ pathways:
     literature: [wang2025coldfluStroke]
   P15:
     title: Temperature variability proxy
+    # Mean diurnal range (Tmax-Tmin), Tian/Qiu 2023 JoGH. Not Guo 2016 TV0-1/TV0-7.
+    # Guo columns are on the climate share panel only; do not re-point this pathway.
     enabled: true
     grain: auto
     exposures: [temp_variability_mean_range]

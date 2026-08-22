@@ -6,6 +6,7 @@
 | Date | Mode | Spur / question | What we tried or noticed | Keep / drop / park | Promoted to? |
 |---|---|---|---|---|---|
 | 2026-08-22 | Decide | How to get Bishai’s Stage 3 form 2a with Thursday 27 Aug as last talk before 31 Aug? | Essay/poster stay locked. Hogan’s live-file review does not gate the form. Dual path: email now + printed form Thursday. One-pager names the “most elevated” ranking so a rebuild is unnecessary. | Keep | `send_pack_2026-08-22/`; `knowledge/2026-08-22_stage3_endorsement.md` |
+| 2026-08-20 | Ship | Jingjing: add Guo 2016 TV to the temperature panel; “TV dates” in a month? | PMID 27258598 is continuous SD of Tmin/Tmax, not a binary date. Prior P15 was mean diurnal range. Built TV0–1/TV0–7 monthly means + a labelled p90 convenience count from public HKO. No health model. | Keep as climate-panel columns; park any “TV date” threshold for Hogan | `scripts/65_guo2016_tv_temperature_panel.py`; `send_pack_2026-08-21_tv/`; `knowledge/2026-08-20_jingjing_guo2016_tv.md` |
 | 2026-07-17 | Decide | General HA reasons for admission? | Confirmed unavailable in meeting | Keep as hard constraint | README + debrief + gates |
 | 2026-07-17 | Decide | One model vs ~10 methods? | Multi-method panel requested | Keep | pathway registry P01–P18 |
 | 2026-07-21 | Explore | Is pollution placeholder still blocking P11? | Replaced with real EPD EPIC crawl | Keep | pollution monthly + P11 |

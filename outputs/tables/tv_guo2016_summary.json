@@ -1,0 +1,17 @@
+{
+  "built_at": "2026-08-20T23:49:49Z",
+  "source": "Guo et al. 2016 Environ Health Perspect 124:1554-1559; doi:10.1289/EHP149; PMID 27258598",
+  "operator": "sample SD of Tmin and Tmax over lags 0-k (Python statistics.stdev; same as R sd, n-1)",
+  "n_months": 132,
+  "n_days_tv01_defined": 4017,
+  "tv0_1_p90": 3.7721567659187594,
+  "tv0_1_mean_of_monthly_means": 2.8176496394205452,
+  "tv0_7_mean_of_monthly_means": 2.9329945432297766,
+  "high_tv_days_total": 403,
+  "hand_check_2013_01_02_tv0_1": 3.672419729097787,
+  "not_done": [
+    "no health model",
+    "not Guo binary TV dates (paper has none)",
+    "P15 mean diurnal range is a different proxy"
+  ]
+}

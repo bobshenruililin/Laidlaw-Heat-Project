@@ -1,16 +1,18 @@
-# Send pack — 22 August 2026 (get the Stage 3 endorsement)
+# Send pack — 22 August 2026 (get the Stage 3 form 2a)
 
 **Mode:** Ship / Decide.  
 **Job:** obtain Professor Bishai’s form 2a supervisor block before the 31 August research-report deadline.  
-**Not this round:** Hogan’s live-file review; Jingjing / TV; Gate 3; stroke; maps; rebuilding the locked essay or poster.
-
-The 20 August Email A pack is still the origin of the worksheet and hash check. **Send from this folder.** The 20 August cover is superseded for sending because it did not name Thursday 27 August as a signature backup.
+**Fable + Sol, 22 August afternoon:** send a human email; **do not** attach a briefing card; **do not** rebuild the locked essay or poster.
 
 Bob sends. Agents do not send, sign, or submit.
 
-## Play-safe rule
+## Ready?
 
-The essay and poster are already programme-ready. Do **not** rebuild them this weekend to chase journal-file honesty. The defendable improvement is a one-page supervisor card that states the hedges in the locked PDFs, plus a dual path: email now, printed form on Thursday if needed.
+| File | Ready? |
+|---|---|
+| Research report | **Yes.** Locked PDF, SHA prefix `6136e85a654502a0`. Sol: safe as-is for programme endorsement. Live manuscript is stricter journal language; do not borrow it into Stage 3 this weekend. |
+| A0 poster | **Yes.** Locked PDF, SHA prefix `4f7c1e408ae2d31f`. Done right. Attach; do not ask for poster endorsement. |
+| Form 2a | **Almost.** Known student fields filled in `2a_Laidlaw_Report_Form_HKU_bob_fields.docx`. Bob still adds Year of Study, Attachment Period, UID if any, signature, and date. Supervisor block blank. |
 
 ## Sequence
 
@@ -18,23 +20,22 @@ The essay and poster are already programme-ready. Do **not** rebuild them this w
 |---|---|
 | **Tonight / Sunday 23 Aug** | Send Email A (`to_bishai.md`). Do not wait for Hogan. |
 | **Tuesday 25 Aug, if no reply** | Send the nudge (`to_bishai_nudge.md`). |
-| **Wednesday 26 Aug** | Print the pack in `thursday_print_pack.md`. |
-| **Thursday 27 Aug** | Meeting: ten minutes on the form first. Science only after the supervisor block is done or scheduled. |
-| **Friday 28 Aug** | Last comfortable day for a remote signature before the 31 August deadline. |
-| **Monday 31 Aug** | Submit the endorsed form + locked essay to `laidlaw@hku.hk`. Poster file is 15 September. |
+| **Thursday 27 Aug** | If unsigned: printed form first. Science after. |
+| **Friday 28 Aug** | Last comfortable remote signature. |
+| **Monday 31 Aug** | Submit endorsed form + locked essay to `laidlaw@hku.hk`. |
 
 ## Files
 
 | File | Use |
 |---|---|
-| [`to_bishai.md`](to_bishai.md) | Email A. New message to Bishai only. |
+| [`to_bishai.md`](to_bishai.md) | Email A. Copy into a new message to Bishai only. |
 | [`to_bishai_nudge.md`](to_bishai_nudge.md) | Tuesday follow-up if silent. |
-| [`supervisor_one_pager.pdf`](supervisor_one_pager.pdf) | Attach. What he is signing, in one page. |
-| [`suggested_supervisor_comments.md`](suggested_supervisor_comments.md) | Optional paste for his comments box. Also printed on the one-pager. |
-| [`WHAT_TO_ATTACH.md`](WHAT_TO_ATTACH.md) | Essay + form + one-pager; poster optional. |
-| [`thursday_print_pack.md`](thursday_print_pack.md) | What to bring on 27 August. |
+| [`WHAT_TO_ATTACH.md`](WHAT_TO_ATTACH.md) | Report + form + poster. No briefing card. |
+| [`2a_Laidlaw_Report_Form_HKU_bob_fields.docx`](2a_Laidlaw_Report_Form_HKU_bob_fields.docx) | Bob finishes three blanks, signs, sends. Not for git. |
+| [`thursday_print_pack.md`](thursday_print_pack.md) | Printed backup. |
 | [`optional_hogan_one_liner.md`](optional_hogan_one_liner.md) | After Email A: one line on the science thread, no PDFs. |
-| [`../send_pack_2026-08-20/form_2a_fill_worksheet.md`](../send_pack_2026-08-20/form_2a_fill_worksheet.md) | Bob’s fields only. |
-| [`../send_pack_2026-08-20/HASH_VERIFY.md`](../send_pack_2026-08-20/HASH_VERIFY.md) | Locked PDF bytes. Re-checked 22 August. |
+| [`../send_pack_2026-08-20/form_2a_fill_worksheet.md`](../send_pack_2026-08-20/form_2a_fill_worksheet.md) | Field provenance. |
+
+`supervisor_one_pager.pdf` in this folder is **not for sending**. Fable: no student would attach it; the hedge lives in the email.
 
 Do not put this packet on Hogan’s Outlook thread. Do not attach the live manuscript while Hogan is reviewing it.

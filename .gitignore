@@ -49,6 +49,7 @@ memos/
 !analysis_plan/send_pack_2026-08-12/
 !analysis_plan/send_pack_2026-08-20/
 !analysis_plan/send_pack_2026-08-22/
+analysis_plan/send_pack_2026-08-22/*.docx
 outputs/session_info_setup.txt
 
 # Rebuildable synthetic calibration internals (summaries/gates remain tracked)

@@ -1,30 +1,28 @@
 # Email A — send this (Bob only)
 
+Fable 22 August (second pass). No one-page briefing. No poster-endorsement ask.
+
 **To:** Professor David Bishai  
 **Do not CC** Hogan, Roro, Jingjing, or the temperature-panel thread.  
-**Subject:** Laidlaw Stage 3 research report and HKU form for endorsement
+**Subject:** Laidlaw Stage 3: research report and supervisor form (report due 31 August)
 
 ---
 
 Dear Professor Bishai,
 
-I am preparing my HKU Laidlaw Stage 3 submission. The research report is due 31 August. I would be grateful if you could review the attached report and complete the supervisor block of the HKU form (rating, comments, signature) by Friday 28 August. I have left those fields blank.
+I hope you have been well. The past few weeks went mostly into the analysis and into the journal manuscript with Hogan, so I have been quiet — the Laidlaw side is now ready for you.
 
-I have also attached a one-page note of what the endorsement covers. The report presents the monthly CHD and HF first-hospitalisation panel as exploratory: after correction for twelve comparisons, all q-values exceed 0.19. I am not claiming a confirmatory result. Journal writing continues separately in Hogan's live file.
+Attached is my Stage 3 research report, written for general readers as the programme asks. It presents the temperature and first-hospitalisation findings as exploratory — patterns worth testing further rather than confirmed effects. Please let me know if you would like anything fixed, added, or edited; I am happy to revise before submission.
 
-If it is easier to sign when we meet on Thursday 27 August, I will bring a printed copy.
+I have also attached the HKU supervisor report form with my sections completed. Could you fill in the supervisor block — the satisfactory/unsatisfactory rating, comments, and your name, signature, and date? The report is due to the Laidlaw office on 31 August, so Friday 28 August would be ideal. If we meet on Thursday, I can bring a printed copy instead, whichever is easier.
 
-Your endorsement would also confirm that these disclosure-minimised aggregate results may go to laidlaw@hku.hk after any corrections you request.
+The A0 poster is attached too, so you can see the whole project on one page.
 
-I have attached the A0 poster for information only. It is due 15 September and does not need a signature now.
-
-Thank you very much for your supervision this summer.
+Once you are happy with the report, I will send it and the signed form to the Laidlaw office. Thank you for making this summer possible.
 
 Best regards,  
 Shen Ruililin
 
 ---
 
-If the poster is omitted, delete the paragraph that begins “I have attached the A0 poster.”
-
-Do not add Gate 3, authorship, stroke, person-time, weather lock, temperature variability, or a request that Hogan review this form.
+Bob still fills Year of Study, Attachment Period, and UID (if present) from Horizons / the student record, then signs and dates his own line. Do not type the supervisor block. Do not attach a briefing card. Do not mention Gate 3, stroke, q-values, TV, or poster endorsement.

@@ -1,34 +1,26 @@
-# What to attach — Email A (22 August 2026)
+# What to attach — Email A (22 August 2026, Fable rewrite)
 
 New message to Professor Bishai only. Do not reply-all on Hogan’s science thread.
 
-Attach PDFs and the official Word form. Do not attach markdown.
+Attach PDFs and the Word form. Do not attach markdown or a briefing card.
 
-## Required
+## Attach, in this order
 
 1. `outputs/Laidlaw_Stage3_Research_Report_Shen.pdf`  
-   Same bytes as `reports/laidlaw_stage3/Laidlaw_Research_Report_2026.pdf`.  
-   SHA-256 prefix `6136e85a654502a0` (re-verified 22 August 2026).
+   Same bytes as `reports/laidlaw_stage3/Laidlaw_Research_Report_2026.pdf` and as Bob’s upload.  
+   SHA-256 prefix `6136e85a654502a0`. Fable and Sol: **do not rebuild.**
 
-2. Official `2a. Laidlaw - Report Form (HKU).docx`  
-   Bob completes his own fields from [`../send_pack_2026-08-20/form_2a_fill_worksheet.md`](../send_pack_2026-08-20/form_2a_fill_worksheet.md).  
-   Leave the supervisor rating, comments, name, signature, and date **blank**.  
-   Do not commit this DOCX to git.
+2. `2a_Laidlaw_Report_Form_HKU_bob_fields.docx` (this folder)  
+   Known student fields filled. **You still type** Year of Study, Attachment Period, UID if the form has it, signature, and date.  
+   Supervisor rating, comments, name, signature, and date stay **blank**.  
+   Do not commit this DOCX.
 
-3. `analysis_plan/send_pack_2026-08-22/supervisor_one_pager.pdf`  
-   One page. What the endorsement covers, plus optional comments he can paste.
-
-## Optional fourth file
-
-4. `outputs/Laidlaw_Stage3_Poster_Shen.pdf`  
-   SHA-256 prefix `4f7c1e408ae2d31f`.  
-   For information only. Due 15 September. No signature needed now.  
-   The cover and the one-pager both say the poster is not a confirmatory claim.  
-   Drop this attachment if you want the tighter packet (essay + form + one-pager).
+3. `outputs/Laidlaw_Stage3_Poster_Shen.pdf`  
+   SHA-256 prefix `4f7c1e408ae2d31f`. Attach so he can see the project. Do not ask him to endorse or sign the poster. Form 2a is an examination of the **research report**.
 
 ## Do not attach
 
+- Any “endorsement one-page” / supervisor card (`supervisor_one_pager.pdf` is **not for sending**).
 - Hogan’s live manuscript, or `Heat_CVD_Manuscript_20260815_collab_draft.docx`.
-- Roro’s private revised mortality PDF. Public cite is medRxiv `10.64898/2026.03.05.26347683`.
-- The intern ceiling note, Gate 3 packet, maps, HA files, release CSVs, or `.md` files.
-- The Jingjing / Guo 2016 TV climate CSV.
+- Roro’s private revised mortality PDF.
+- Intern ceiling note, Gate 3 packet, maps, HA files, or `.md` files.

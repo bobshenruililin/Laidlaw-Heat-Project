@@ -7,6 +7,13 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0g. Canonical update — UK conference airfare (22 August)
+
+- Horizons circular: scholar buys the ticket; **up to HK$8,000**; Hong Kong – London Heathrow – Hong Kong; lowest economy only. Their later note approved a ~HK$6,900 15/23 October quote and full hotel cost for a single occupant.
+- That quote and the circular example are now sold out. Current economy fares are above the cap. Whether reimbursement is partial (A), a raised cap (B), or refused (C) is **undefined**. Do not buy until Horizons writes A, B, or C against a named screenshot.
+- Hotel block cut-off was 17 August; confirm the Copthorne Tara rate in the same email. Stage 3 form 2a is a separate deadline and still stands if Bob does not fly.
+- Pack: [`../reports/horizons_uk_conference_2026/`](../reports/horizons_uk_conference_2026/). Durable: [`../knowledge/2026-08-22_uk_conference_airfare.md`](../knowledge/2026-08-22_uk_conference_airfare.md).
+
 ## 0f. Canonical update — obtain form 2a (22 August)
 
 - Remaining Stage 3 job is Bishai’s endorsement, not a new essay or poster. Locked PDFs re-verified (`6136e85a654502a0` / `4f7c1e408ae2d31f`). Do not rebuild.

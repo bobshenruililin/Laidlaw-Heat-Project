@@ -8,7 +8,7 @@ This directory holds durable, dated project knowledge that should survive a meet
 owns the final CHD/HF reanalysis, manuscript/report package, negative M|D
 feasibility result, and open human decisions.
 
-**Current programme action:** [`2026-08-20_bishai_form2a.md`](2026-08-20_bishai_form2a.md) — Email A to Bishai for form 2a.
+**Current programme action:** [`2026-08-20_bishai_form2a.md`](2026-08-20_bishai_form2a.md) — Email A to Bishai for form 2a. **Parallel admin (not science):** [`2026-08-22_uk_conference_airfare.md`](2026-08-22_uk_conference_airfare.md) — do not buy a UK-conference ticket until Horizons writes how the HK$8,000 cap applies now that the July fare is gone.
 
 ## Structure
 

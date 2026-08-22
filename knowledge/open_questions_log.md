@@ -2,7 +2,7 @@
 
 **Purpose:** living list of questions that must remain visible until a person, governed file or primary source closes them.
 
-**Last reviewed:** 20 August 2026.
+**Last reviewed:** 22 August 2026.
 
 Update a row by recording the decision, date and evidence link. Do not erase the old question or convert a working assumption into a fact without provenance.
 
@@ -49,6 +49,13 @@ Update a row by recording the decision, date and evidence link. Do not erase the
 | A07 | Are pollution, humidity and influenza confounders, mediators or effect modifiers in each pathway? | Staged models are proposed; causal roles differ and 132 months limit interactions | Team | Pathway-specific adjustment rationale and model ladder frozen in the SAP |
 | A08 | What result, if any, would justify an adaptation discussion? | No stroke result exists; the design cannot identify genes or ancestry effects | Team | At most a carefully bounded discussion after real results, with non-genetic alternatives; no genetic inference from this study |
 | A09 | How should Supplementary Figure S1 (and Tables S7/S9) be numbered across the live paper, repo supplement, and Sol map? | **Live pack closed 16 Aug:** S1 = residual ACF; S7 = archive flu; S9 = archive pollution (`supplement_inventory.md`). 10 August supplement PDF still uses the heatmap filename and is not rebuilt. | Bob pastes; do not rebuild Stage 3/supplement PDFs | Hogan shared-file paste uses the live-pack list |
+
+## Programme administration
+
+| ID | Open question | Current state | Owner | What closes it |
+|---|---|---|---|---|
+| P01 | If the lowest economy HKG–LHR–HKG fare now exceeds HK$8,000, is reimbursement partial (cap), a raised cap, or refused in full? | Undefined. The 23 July circular says “up to HK$8,000” and “lowest economy.” The later “quotation is fine” note applied to a now-sold-out ~HK$6,900 15/23 October fare. | Horizons | Written Option A/B/C against a named screenshot before any purchase |
+| P02 | After the 17 August Copthorne Tara cut-off, is the group rate and the full-room single-occupant reimbursement still available? | Horizons confirmed full room cost for a single occupant while the block existed. Cut-off has passed. | Horizons | Written hotel instruction in the same airfare reply |
 
 ## Hard stop rules while questions remain open
 

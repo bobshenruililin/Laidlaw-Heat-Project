@@ -95,16 +95,16 @@ Window 14:00–22:00 after lunch/departure. Must **land 18 Oct**.
 | IB 09:40 → 13:35 | morning | 13:35 | Marginal for CX250 (need ~15:20 at T3 with bag) |
 | **BA409 20:15 → 21:40** | evening | **21:40** | **No** — you have already missed every 23 Oct long-haul |
 
-Google’s cheap VLC–LHR **US$72** is that **20:20–21:45** BA. It does not work. Pay for a **morning** VLC–LHR (~US$178–266) so you sit in Heathrow all afternoon, then CX250 or BA31.
+**CX254 22:15** (the 22 Aug named quote) leaves even later than BA31. A morning VLC→LHR still works; the evening BA 20:15–21:40 still does not.
 
-Terminals: CX long-haul is **T3**; BA31 is **T5**; BA Valencia often **T3**. Prefer **CX250** if inbound was CX, so you stay T3.
+Google’s cheap VLC–LHR **US$72** is that **20:20–21:45** BA. It does not work. Pay for a **morning** VLC–LHR so you sit in Heathrow, then the long-haul.
+
+Terminals: CX long-haul is **T3**. Prefer staying T3 if inbound from Valencia is also T3.
 
 ---
 
-## What to screenshot for Horizons (then send the email)
+## Named quote to attach (22 Aug, not purchased)
 
-1. **15–18 Oct** HKG–LHR–HKG cheapest economy including tax (likely the ~US$750 1-stop). This is the circular definition.  
-2. The **13–23 or 14–23 or 15–23** CX/BA nonstop you actually want, with 1×23 kg, including tax.  
-3. Do not attach Valencia.
+CX255 12 Oct 23:15 → 13 Oct 06:20; CX254 23 Oct 22:15 → 24 Oct 18:00; Economy Light with 1×23 kg; published HK$8,455; Miles Plus Cash HK$7,999 + 8,300 Asia Miles. Detail: [`cx_quote_2026-08-22.md`](cx_quote_2026-08-22.md).
 
-Ask them to choose: pay HK$8,000 of screenshot 2, or only screenshot 1, or refuse over-cap. Until they write it, treat screenshot 2 as **your** cost above whatever they name.
+Ask only whether **that itinerary** is okay to buy. Do not attach Valencia. Do not call it the lowest economy fare.

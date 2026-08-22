@@ -79,8 +79,9 @@ The definition catalogue contains `HM01–HM50` and `CM01–CM48`. Core starters
 9. **UK Scholar Conference airfare (22 Aug):** “lowest economy” to follow
    is cheapest bookable economy HKG–LHR–HKG, 15 Oct out, 18 Oct return after
    14:00, priced today — not any-dates covering the weekend. Cap is still
-   HK$8,000; over-cap is undefined. Do not buy until Horizons writes the
-   definition plus Option A/B/C. Pack:
+   HK$8,000; over-cap is undefined. Named CX quote is Miles Plus Cash
+   HK$7,999 (published HK$8,455), 12 Oct night / 23 Oct return. Send the
+   itinerary follow-up; do not buy until they write. Pack:
    [`reports/horizons_uk_conference_2026/`](../reports/horizons_uk_conference_2026/).
    Stage 3 form 2a is a separate deadline and still stands.
 

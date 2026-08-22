@@ -20,7 +20,7 @@
 
 ## Current meeting record
 
-- [`2026-08-22_uk_conference_airfare.md`](2026-08-22_uk_conference_airfare.md) — UK conference airfare cap is undefined above HK$8,000; lowest economy is 15/18 HKG–LHR after 14:00; actual trip is open-jaw via Valencia. Pack: [`../reports/horizons_uk_conference_2026/`](../reports/horizons_uk_conference_2026/).
+- [`2026-08-22_uk_conference_airfare.md`](2026-08-22_uk_conference_airfare.md) — UK conference airfare; named CX 12/23 Oct quote HK$7,999 Miles Plus Cash, not purchased. Pack: [`../reports/horizons_uk_conference_2026/`](../reports/horizons_uk_conference_2026/).
 - [`2026-08-22_stage3_endorsement.md`](2026-08-22_stage3_endorsement.md) — remaining Stage 3 job is Bishai’s form 2a; send now; Thursday 27 Aug is signature backup; do not rebuild essay/poster. Pack: [`../analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/).
 - [`2026-08-20_bishai_form2a.md`](2026-08-20_bishai_form2a.md) — Decide: send form 2a Email A now; Hogan TV does not gate it. Pack: [`../analysis_plan/send_pack_2026-08-20/`](../analysis_plan/send_pack_2026-08-20/).
 - [`2026-08-20_stage3_vs_manuscripts.md`](2026-08-20_stage3_vs_manuscripts.md) — locked essay/poster vs live file vs parked 15 Aug Word vs Roro mortality PDF; programme-ready, do not rebuild.

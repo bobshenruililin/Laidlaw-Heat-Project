@@ -24,10 +24,10 @@ Do not buy a Hong Kong–Heathrow **return** and throw away the way back. Horizo
 | 5 | **Must arrive Valencia on 18 Oct** | You | Land **before midnight 18 Oct**, not 00:15 on 19 Oct |  |
 | 6 | Valencia hotel **night 18 through checkout 23 Oct** (not the 23rd night; 24 Oct hotel is too expensive) | You | Five nights: 18, 19, 20, 21, 22. Fly **23 Oct** |  |
 | 7 | GEST itself is 19–21; 22 Oct is a free day in Valencia | Implied | 23 Oct evening departure is compatible |  |
-| 8 | HK Laidlaw event **12 Oct**; **depart HK after 12 Oct** | You | Earliest flight **13 Oct**. Say if a **12 Oct evening** departure after the event is allowed |  |
+| 8 | HK Laidlaw event **12 Oct**; **depart HK after 12 Oct** | You | CX255 at **23:15 on 12 Oct** is an evening departure after the event. Confirm you can reach HKG in time |  |
 | 9 | Rest after **10+ hours in economy before socialising** | You | Do **not** take an overnight that lands Friday 16 Oct morning and go to 17:00 registration. Land **13 or 14 Oct** (or 15 Oct by mid-afternoon at latest) |  |
-| 10 | Back in HK **on or before 24 Oct**; school **26 Oct**; want a rest day | You | 23 Oct evening → 24 Oct afternoon HK is the late edge. A 23 Oct morning departure that lands 24 Oct morning is kinder |  |
-| 11 | **One 23 kg checked bag** on every sector | You | No Ryanair/Vueling “no bag” fares. Long-haul: Economy **Essential**, not Light. Heathrow–Valencia: add the 23 kg bag if the base fare has none |  |
+| 10 | Back in HK **on or before 24 Oct**; school **26 Oct**; want a rest day | You | CX254 lands **24 Oct 18:00**. That is the late edge of the calendar day |  |
+| 11 | **One 23 kg checked bag** on every sector | You | The 22 Aug CX Light quote **includes 1×23 kg**. Do not assume every Light fare does. Heathrow–Valencia: add the 23 kg bag if the base fare has none |  |
 | 12 | Laidlaw can cover the **flight to Europe**; Valencia is **your money**; they do not know GEST | You | They do not need the word GEST. They **do** need to know the ticket is not a 15/18 Heathrow return, or the boarding passes will not match the circular. Ask them to pay `min(your long-haul, 15/18 lowest economy, HK$8,000)` |  |
 | 13 | Copthorne Tara block: **2 nights**, 16 and 17 Oct, checkout 18 Oct; full room for a single occupant already confirmed; cut-off **17 Aug** | Horizons | Extra London nights **13–15 Oct** are your money. If the Tara room is unbooked, that is still open |  |
 

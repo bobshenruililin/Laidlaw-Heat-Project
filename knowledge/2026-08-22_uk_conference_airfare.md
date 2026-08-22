@@ -20,11 +20,13 @@ Whether a current lowest-economy ticket **above HK$8,000** on the **15/18 after-
 
 Hotel after 17 August, and whether a 19 Oct return is acceptable, are the same email.
 
-**Actual trip overlay (22 Aug, revised):** Claim **HKG–LHR–HKG** out **13, 14 or 15 Oct**, back **23 Oct**. Valencia is a **separate** LHR–VLC (18 Oct) and VLC–LHR (**23 Oct morning**, not the evening BA) at own cost, then late CX250/BA31 to HKG. Hotel booked. 13/14/15–23 is the right *route*, not the circular *date* definition. HK$8,000 of an over-cap fare is unwritten (Option A). Comparator may still be 15/18 1-stop (~US$750). File: [`reports/horizons_uk_conference_2026/definition_13_23_and_self_transfer.md`](../reports/horizons_uk_conference_2026/definition_13_23_and_self_transfer.md).
+**Named quote (22 Aug afternoon, not purchased):** CX255 12 Oct 23:15 HKG → 13 Oct 06:20 LHR; CX254 23 Oct 22:15 LHR → 24 Oct 18:00 HKG; Economy Light, 1×23 kg; published HK$8,455; Miles Plus Cash **HK$7,999** + 8,300 Asia Miles. Cheapest Cathay nonstop Bob found. Circular comparator can still be a cheaper 15/18 1-stop. File: [`reports/horizons_uk_conference_2026/cx_quote_2026-08-22.md`](../reports/horizons_uk_conference_2026/cx_quote_2026-08-22.md).
+
+Valencia remains a **separate** LHR–VLC (18 Oct) and VLC–LHR (**23 Oct morning**) hop. CX254 at 22:15 still needs a morning VLC→LHR, not the evening BA.
 
 ## Who closes it
 
-Horizons Office (`laidlaw@hku.hk`). Bob **already sent** the numbered dates-and-cap note on 22 August morning. **Do not send** the unused friendlier follow-up (same questions; repetitive). Wait. A Monday one-line bump is allowed if they have not replied. Agents do not invent a Finance outcome.
+Horizons Office (`laidlaw@hku.hk`). Morning numbered note is already sent. **Send** the itinerary follow-up in [`reports/horizons_uk_conference_2026/to_horizons.md`](../reports/horizons_uk_conference_2026/to_horizons.md) with the Cathay screenshot. Do not buy until they write that this itinerary is okay. Agents do not invent a Finance outcome.
 
 ## Estimand / claim boundary
 

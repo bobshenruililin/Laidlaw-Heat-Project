@@ -1,5 +1,7 @@
 # LOCKED IMPLEMENTATION SPEC — Stage 3 fold-back (22 August 2026, pre-Email-A)
 
+> **Round 2 verdict (Fable, 22 Aug 2026 evening): GO.** All four fold-back items verified in source and renders; honesty checks pass (pre-2020 shown on both callouts with includes/excludes-1 labels; unequal visual weight now favours the more coherent HF signal; Goggins 2013 cited as AMI evidence, never equated with the present CHD outcome). Accepted merged deviations from Round 1: "How to read the estimates" gloss in Methods rather than Results; "Implications and next study" as a subsection inside Discussion (word count 2,575, within band); unequal callout widths. Non-blocking nits logged in the review reply only. Implementer completes GO item 10 (SHA lock note + pointer updates).
+
 **Mode:** Decide → Ship. Roundtable verdict implemented as edits to the FINAL report and CURRENT poster.
 Gate 3 open. No refits. No new numbers. Live manuscript not attached, not edited.
 Baseline artefacts: report PDF SHA `8b71157e5178b589`, poster PDF SHA `82c077d69c414d18`.

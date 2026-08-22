@@ -6,12 +6,11 @@ This is programme administration. It is not a scientific result and not a Stage 
 
 ## Read first
 
-1. [`lowest_economy_definition.md`](lowest_economy_definition.md) — the date/airport/cabin rule to search and buy against.
-2. [`trip_conditions_2026-10.md`](trip_conditions_2026-10.md) — London + Valencia constraints to confirm before buying.
-3. [`flight_research_2026-08-22.md`](flight_research_2026-08-22.md) — 22 August Google Flights search (USD; bags often extra).
-4. [`policy_definition.md`](policy_definition.md) — cap, hotel, and A/B/C if that fare is above HK$8,000.
-5. [`to_horizons.md`](to_horizons.md) — send-ready reply on the existing thread.
-6. [`screenshot_checklist.md`](screenshot_checklist.md) — attachments that make the email usable.
+1. [`lowest_economy_definition.md`](lowest_economy_definition.md) — circular date pair 15/18.
+2. [`definition_13_23_and_self_transfer.md`](definition_13_23_and_self_transfer.md) — 13/14/15–23 Oct Heathrow return vs the cap; Valencia is a separate self-funded hop.
+3. [`to_horizons.md`](to_horizons.md) — send-ready email (no Valencia; hotel already booked).
+4. [`trip_conditions_2026-10.md`](trip_conditions_2026-10.md) — constraints checklist.
+5. [`flight_research_2026-08-22.md`](flight_research_2026-08-22.md) — earlier open-jaw search; superseded for ticketing by the 13–23 note.
 
 Durable log: [`../../knowledge/2026-08-22_uk_conference_airfare.md`](../../knowledge/2026-08-22_uk_conference_airfare.md).
 

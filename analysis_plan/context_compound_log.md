@@ -5,7 +5,7 @@
 
 | Date | Mode | Spur / question | What we tried or noticed | Keep / drop / park | Promoted to? |
 |---|---|---|---|---|---|
-| 2026-08-22 | Decide | London Laidlaw 16–18 Oct plus GEST Valencia 19–21 Oct: what can actually be flown? | Agenda: close 13:00 Sunday, lunch/departure to 14:00. BA/Iberia LHR–VLC ~16:55–20:25 on 18 Oct. Open-jaw HKG–LHR + VLC–HKG; LHR–VLC self-funded. Horizons still uses 15/18 comparator. Do not hide routing. | Keep | `reports/horizons_uk_conference_2026/trip_conditions_2026-10.md`; `flight_research_2026-08-22.md` |
+| 2026-08-22 | Decide | Is HKG–LHR–HKG 13/14/15–23 Oct in the Laidlaw definition, and will they pay HK$8,000 of an over-cap fare? | Route yes; dates no (circular is 15/18; July approved 15/23 only while ~HK$6,900). Over-cap still Option A unwritten. CX nonstop 13–23 ~US$1,079; 15/18 1-stop ~US$750. Valencia is a separate hop; Friday BA VLC 21:40 misses the long-haul — use morning VLC–LHR then CX250 18:20 or BA31 19:20. | Keep | `definition_13_23_and_self_transfer.md`; `to_horizons.md` |
 | 2026-08-22 | Decide | How to get Bishai’s Stage 3 form 2a with Thursday 27 Aug as last talk before 31 Aug? | Essay/poster stay locked. Hogan’s live-file review does not gate the form. Dual path: email now + printed form Thursday. One-pager names the “most elevated” ranking so a rebuild is unnecessary. | Keep | `send_pack_2026-08-22/`; `knowledge/2026-08-22_stage3_endorsement.md` |
 | 2026-07-17 | Decide | General HA reasons for admission? | Confirmed unavailable in meeting | Keep as hard constraint | README + debrief + gates |
 | 2026-07-17 | Decide | One model vs ~10 methods? | Multi-method panel requested | Keep | pathway registry P01–P18 |

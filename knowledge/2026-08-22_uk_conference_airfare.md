@@ -20,7 +20,7 @@ Whether a current lowest-economy ticket **above HK$8,000** on the **15/18 after-
 
 Hotel after 17 August, and whether a 19 Oct return is acceptable, are the same email.
 
-**Actual trip overlay (22 Aug):** Laidlaw Imperial 16–18 Oct, then GEST Valencia 19–21 Oct. Land VLC **18 Oct**; last Valencia night **22 Oct**; fly **23 Oct**; land HKG **by 24 Oct**. One 23 kg bag. Depart HK **after 12 Oct**. Rest before Friday 17:00. Valencia is self-funded. Horizons reimburses the **15/18 comparator**, not the open-jaw. They need the true routing (boarding passes); they do not need the word GEST. Conditions: [`reports/horizons_uk_conference_2026/trip_conditions_2026-10.md`](../reports/horizons_uk_conference_2026/trip_conditions_2026-10.md).
+**Actual trip overlay (22 Aug, revised):** Claim **HKG–LHR–HKG** out **13, 14 or 15 Oct**, back **23 Oct**. Valencia is a **separate** LHR–VLC (18 Oct) and VLC–LHR (**23 Oct morning**, not the evening BA) at own cost, then late CX250/BA31 to HKG. Hotel booked. 13/14/15–23 is the right *route*, not the circular *date* definition. HK$8,000 of an over-cap fare is unwritten (Option A). Comparator may still be 15/18 1-stop (~US$750). File: [`reports/horizons_uk_conference_2026/definition_13_23_and_self_transfer.md`](../reports/horizons_uk_conference_2026/definition_13_23_and_self_transfer.md).
 
 ## Who closes it
 

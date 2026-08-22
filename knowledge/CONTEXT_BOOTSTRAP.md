@@ -76,10 +76,12 @@ The definition catalogue contains `HM01–HM50` and `CM01–CM48`. Core starters
    [`reports/bishai_integrated_report/`](../reports/bishai_integrated_report/);
    manuscript and supplement in [`manuscript/`](../manuscript/); validated
    release in [`outputs/release_chd_hf/`](../outputs/release_chd_hf/).
-9. **UK Scholar Conference airfare (22 Aug):** circular cap is HK$8,000
-   lowest economy HKG–LHR–HKG. The July “quotation is fine” note does not
-   cover today’s sold-out market. Do not buy until Horizons writes Option
-   A/B/C. Pack: [`reports/horizons_uk_conference_2026/`](../reports/horizons_uk_conference_2026/).
+9. **UK Scholar Conference airfare (22 Aug):** “lowest economy” to follow
+   is cheapest bookable economy HKG–LHR–HKG, 15 Oct out, 18 Oct return after
+   14:00, priced today — not any-dates covering the weekend. Cap is still
+   HK$8,000; over-cap is undefined. Do not buy until Horizons writes the
+   definition plus Option A/B/C. Pack:
+   [`reports/horizons_uk_conference_2026/`](../reports/horizons_uk_conference_2026/).
    Stage 3 form 2a is a separate deadline and still stands.
 
 Use the explicit slash skills `/playbook-01-hogan-lock`, `/playbook-02-ha-arrival`, `/playbook-03-full-analysis`, `/playbook-04-final-writeup`, `/playbook-05-auto-research`, or `/playbook-99-emergencies`; `/playbook` asks which one. Each skill reads the canonical playbook and cannot replace human evidence or gate ownership. See the [command contract](2026-07-26_commands_and_blog_auto.md). Auto-research lab: [`analysis_plan/playbooks/05_auto_research_lab.md`](../analysis_plan/playbooks/05_auto_research_lab.md) and [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md).

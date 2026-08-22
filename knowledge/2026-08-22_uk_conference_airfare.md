@@ -7,6 +7,7 @@
 ## Confirmed (provenance: Horizons circular 23 July 2026 + later reply)
 
 - Scholar buys the ticket. Reimbursement **up to HK$8,000** for Hong Kong – London Heathrow – Hong Kong, **lowest economy** only.
+- **Lowest economy to follow:** cheapest bookable economy HKG–LHR–HKG, out **15 Oct**, back **18 Oct after 14:00**, including tax, priced on the screenshot/purchase day. Not “cheapest ticket that covers the weekend.” Not 15/23 October as the search. File: [`reports/horizons_uk_conference_2026/lowest_economy_definition.md`](../reports/horizons_uk_conference_2026/lowest_economy_definition.md).
 - Example dates in the circular: depart HK 15 Oct, depart UK 18 Oct.
 - Non-attendance after purchase: claim not approved.
 - Claim after the event: report, poster, LSN blog, receipts, booking records, boarding passes both ways.
@@ -15,7 +16,7 @@
 
 ## Open (Horizons owns)
 
-Whether a current lowest-economy ticket **above HK$8,000** is (A) reimbursed at HK$8,000 with the scholar paying the rest, (B) approved at a raised cap, or (C) refused in full. Until they choose in writing, treat as (C) and **do not buy**.
+Whether a current lowest-economy ticket **above HK$8,000** on the **15/18 after-14:00** pair is (A) reimbursed at HK$8,000 with the scholar paying the rest, (B) approved at a raised cap, or (C) refused in full. If that pair is unusable, which return date they will name as the comparator. Until they choose in writing, treat as (C) and **do not buy**.
 
 Hotel after 17 August, and whether a 19 Oct return is acceptable, are the same email.
 

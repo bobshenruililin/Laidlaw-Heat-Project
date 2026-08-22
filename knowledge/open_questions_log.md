@@ -54,7 +54,7 @@ Update a row by recording the decision, date and evidence link. Do not erase the
 
 | ID | Open question | Current state | Owner | What closes it |
 |---|---|---|---|---|
-| P01 | If the lowest economy HKG–LHR–HKG fare now exceeds HK$8,000, is reimbursement partial (cap), a raised cap, or refused in full? | Undefined. The 23 July circular says “up to HK$8,000” and “lowest economy.” The later “quotation is fine” note applied to a now-sold-out ~HK$6,900 15/23 October fare. | Horizons | Written Option A/B/C against a named screenshot before any purchase |
+| P01 | If the lowest economy HKG–LHR–HKG fare on the circular’s **15 Oct / 18 Oct after 14:00** pair now exceeds HK$8,000, is reimbursement partial (cap), a raised cap, or refused in full? If that pair is unusable, which return date is the comparator? | Undefined. “Lowest economy” is not “cheapest ticket covering the weekend.” The later “quotation is fine” note applied to a now-sold-out ~HK$6,900 15/23 October fare. Definition to follow: [`reports/horizons_uk_conference_2026/lowest_economy_definition.md`](../reports/horizons_uk_conference_2026/lowest_economy_definition.md). | Horizons | Written confirmation of the 15/18 definition (or a named substitute pair) plus Option A/B/C before any purchase |
 | P02 | After the 17 August Copthorne Tara cut-off, is the group rate and the full-room single-occupant reimbursement still available? | Horizons confirmed full room cost for a single occupant while the block existed. Cut-off has passed. | Horizons | Written hotel instruction in the same airfare reply |
 
 ## Hard stop rules while questions remain open

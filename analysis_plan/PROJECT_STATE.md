@@ -10,7 +10,8 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 ## 0g. Canonical update — UK conference airfare (22 August)
 
 - Horizons circular: scholar buys the ticket; **up to HK$8,000**; Hong Kong – London Heathrow – Hong Kong; lowest economy only. Their later note approved a ~HK$6,900 15/23 October quote and full hotel cost for a single occupant.
-- That quote and the circular example are now sold out. Current economy fares are above the cap. Whether reimbursement is partial (A), a raised cap (B), or refused (C) is **undefined**. Do not buy until Horizons writes A, B, or C against a named screenshot.
+- **Lowest economy to follow:** cheapest bookable economy HKG–LHR–HKG, out **15 Oct**, back **18 Oct after 14:00**, including tax, priced today. Not “cheapest ticket covering the weekend.” Not 15/23 as the search. If that pair is unusable, Horizons names the comparator (propose 15/19). File: [`../reports/horizons_uk_conference_2026/lowest_economy_definition.md`](../reports/horizons_uk_conference_2026/lowest_economy_definition.md).
+- That 15/18 fare is now above the cap. Whether reimbursement is partial (A), a raised cap (B), or refused (C) is **undefined**. Do not buy until Horizons writes the definition plus A, B, or C against a named screenshot.
 - Hotel block cut-off was 17 August; confirm the Copthorne Tara rate in the same email. Stage 3 form 2a is a separate deadline and still stands if Bob does not fly.
 - Pack: [`../reports/horizons_uk_conference_2026/`](../reports/horizons_uk_conference_2026/). Durable: [`../knowledge/2026-08-22_uk_conference_airfare.md`](../knowledge/2026-08-22_uk_conference_airfare.md).
 

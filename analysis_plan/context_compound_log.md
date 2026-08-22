@@ -5,7 +5,7 @@
 
 | Date | Mode | Spur / question | What we tried or noticed | Keep / drop / park | Promoted to? |
 |---|---|---|---|---|---|
-| 2026-08-22 | Decide | UK conference flights sold out; current economy fares > HK$8,000. Will Horizons still reimburse? | Circular is “up to HK$8,000” + lowest economy; July “quotation is fine” attached to a now-unavailable ~HK$6,900 15/23 Oct fare. Over-cap case is undefined (partial / raised cap / refuse). Do not buy until they name A/B/C in writing. | Keep | `reports/horizons_uk_conference_2026/`; `knowledge/2026-08-22_uk_conference_airfare.md` |
+| 2026-08-22 | Decide | UK conference flights sold out; current economy fares > HK$8,000. What is “lowest economy”? | Circular names 15 Oct / 18 Oct HKG–LHR–HKG, not “cheapest ticket covering the weekend.” 15/23 was allowed in July only because it was cheaper. Over-cap still undefined (A/B/C). Do not buy until they confirm the date pair and name A/B/C. | Keep | `reports/horizons_uk_conference_2026/` (incl. `lowest_economy_definition.md`); `knowledge/2026-08-22_uk_conference_airfare.md` |
 | 2026-08-22 | Decide | How to get Bishai’s Stage 3 form 2a with Thursday 27 Aug as last talk before 31 Aug? | Essay/poster stay locked. Hogan’s live-file review does not gate the form. Dual path: email now + printed form Thursday. One-pager names the “most elevated” ranking so a rebuild is unnecessary. | Keep | `send_pack_2026-08-22/`; `knowledge/2026-08-22_stage3_endorsement.md` |
 | 2026-07-17 | Decide | General HA reasons for admission? | Confirmed unavailable in meeting | Keep as hard constraint | README + debrief + gates |
 | 2026-07-17 | Decide | One model vs ~10 methods? | Multi-method panel requested | Keep | pathway registry P01–P18 |

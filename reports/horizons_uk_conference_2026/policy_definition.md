@@ -3,9 +3,11 @@
 **Date:** 22 August 2026  
 **Mode:** Decide  
 **Owner:** Horizons Office (`laidlaw@hku.hk`) must close the over-cap rule in writing. Bob does not buy until they do.  
-**Send pack:** [`README.md`](README.md) · [`to_horizons.md`](to_horizons.md)
+**Send pack:** [`README.md`](README.md) · [`lowest_economy_definition.md`](lowest_economy_definition.md) · [`to_horizons.md`](to_horizons.md)
 
 This note restates the circular and their later reply. It does **not** invent a reimbursement outcome. The over-cap case is undefined. Treat it as unreimbursed until they write otherwise.
+
+**Definition to follow while you search:** cheapest bookable economy **HKG–LHR–HKG**, out **15 October**, back **18 October after 14:00**, total including tax, **today** — not “cheapest ticket that covers the conference weekend,” and not 15/23 October. Full rule: [`lowest_economy_definition.md`](lowest_economy_definition.md).
 
 ---
 
@@ -50,7 +52,25 @@ What that locks, and what it does not:
 
 ---
 
-## 3. The undefined point (why you must not buy today)
+## 3. Definition of “lowest economy” (follow this)
+
+The circular named the date pair. It did not say “lowest fare among any dates that cover 16–18 October.”
+
+| Axis | Follow | Do not follow |
+|---|---|---|
+| Dates | Out **15 Oct**, back **18 Oct**, LHR departure **after 14:00** | Any October pair that merely overlaps the conference; 15/23 as the search that defines lowest |
+| Airports | **HKG–LHR–HKG** | Other London airports |
+| Cabin | Economy, cheapest remaining bucket | Premium economy |
+| When priced | Day of the screenshot / purchase, **including tax** | The July HK$6,900 quote |
+| Bookable | A fare you can pay for | Sold-out example |
+
+If 15/18 after 14:00 is sold out or unusable, screenshot that, screenshot **15/19**, and ask Horizons to **name** the comparator. Do not name it yourself.
+
+If you later still want 23 October, reimbursement is `min(your ticket, named 15/18-or-15/19 lowest economy, HK$8,000)` unless they write otherwise.
+
+---
+
+## 4. The undefined point (why you must not buy today)
 
 Two rules sit next to each other and do not resolve the present market:
 
@@ -73,7 +93,7 @@ A third trap sits in the extra London days. HKU units commonly reimburse the **l
 
 ---
 
-## 4. HKU-typical practice (background only)
+## 5. HKU-typical practice (background only)
 
 This is **not** Horizons’ written rule for this conference. It is how other HKU travel schemes usually treat economy airfare, so you know what they might say. Do not treat it as a promise.
 
@@ -89,7 +109,7 @@ Sources for that background, not for this claim: Faculty of Arts reimbursement c
 
 ---
 
-## 5. Decision rule (use this, not hope)
+## 6. Decision rule (use this, not hope)
 
 **Do not buy this weekend.** Horizons will not be writing on Saturday 22 August. A ticket bought now is unsecured.
 
@@ -104,7 +124,7 @@ If they offer A and the excess is more than you will actually pay, refuse and ta
 
 ---
 
-## 6. Parallel gates (airfare is not the only blocker)
+## 7. Parallel gates (airfare is not the only blocker)
 
 Close these in the same Horizons reply, or they can still strand you.
 
@@ -114,7 +134,7 @@ Close these in the same Horizons reply, or they can still strand you.
 
 ---
 
-## 7. What “simply not go” does and does not mean
+## 8. What “simply not go” does and does not mean
 
 The circular funds scholars in this cohort to attend **one** of the 2026 Scholar Conferences and specifies the UK meeting. It does not say, in the text you have, that missing the UK meeting ends the scholarship. It also does not say it is optional. That is a Horizons question (Option C in the email).
 
@@ -122,7 +142,7 @@ Do not guess. Do not skip Stage 3 because the flight is expensive. Do not buy a 
 
 ---
 
-## 8. Provenance
+## 9. Provenance
 
 - Horizons circular, 23 July 2026, subject “Laidlaw annual Scholar Conferences 2026 - UK.”
 - Scholar email, 24 July 2026, asking (1) 15/23 October at ~HK$6,900 and (2) single-occupant hotel.

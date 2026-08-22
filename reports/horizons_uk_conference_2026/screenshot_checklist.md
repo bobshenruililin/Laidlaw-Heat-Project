@@ -15,10 +15,12 @@ Do not crop out the total. Do not send a fare that is a “from” banner withou
 
 ## Minimum set
 
-1. Cheapest economy **HKG–LHR–HKG** for the circular example: out 15 Oct, back **18 Oct** (evening if needed). If sold out, a screenshot of the sold-out / no-results / price-above-cap state is useful.
-2. Cheapest economy out 15 Oct, back **19 Oct** (Monday). This is the realistic post-conference return. Ask them in the email whether it is allowed.
-3. Cheapest economy out 15 Oct, back **23 Oct** (the itinerary they already called “fine” in July), so they can see it is no longer the cheap option.
-4. Optional: out **14 Oct**, back 18 or 19 Oct, if that is cheaper and still lands you in London before 17:00 on 16 Oct.
+1. **Definitional quote (required):** cheapest bookable economy **HKG–LHR–HKG**, out **15 Oct**, back **18 Oct**, return departing **after 14:00**. This is the circular’s date pair. If sold out or every return is before 14:00, screenshot that state.
+2. **Fallback only:** cheapest economy out 15 Oct, back **19 Oct**. Attach this so they can *name* a comparator if 18 Oct after 14:00 is unusable. Do not treat it as “lowest” until they name it.
+3. **Not the definition:** cheapest economy out 15 Oct, back **23 Oct**. Attach only to show it is no longer the cheap option.
+4. Optional: out **14 Oct**, back 18 Oct after 14:00, only if it is cheaper *and* you still keep the 15/18 screenshot as the comparator.
+
+Do not search “any dates covering 16–18 October” and take the minimum. That is not this circular.
 
 ## What not to attach
 

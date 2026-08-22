@@ -20,6 +20,8 @@ Whether a current lowest-economy ticket **above HK$8,000** on the **15/18 after-
 
 Hotel after 17 August, and whether a 19 Oct return is acceptable, are the same email.
 
+**Actual trip overlay (22 Aug):** Laidlaw Imperial 16–18 Oct, then GEST Valencia 19–21 Oct. Land VLC **18 Oct**; last Valencia night **22 Oct**; fly **23 Oct**; land HKG **by 24 Oct**. One 23 kg bag. Depart HK **after 12 Oct**. Rest before Friday 17:00. Valencia is self-funded. Horizons reimburses the **15/18 comparator**, not the open-jaw. They need the true routing (boarding passes); they do not need the word GEST. Conditions: [`reports/horizons_uk_conference_2026/trip_conditions_2026-10.md`](../reports/horizons_uk_conference_2026/trip_conditions_2026-10.md).
+
 ## Who closes it
 
 Horizons Office (`laidlaw@hku.hk`). Bob sends [`reports/horizons_uk_conference_2026/to_horizons.md`](../reports/horizons_uk_conference_2026/to_horizons.md) and waits for a named option. Agents do not invent a Finance outcome.

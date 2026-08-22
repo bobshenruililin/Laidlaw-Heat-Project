@@ -1,5 +1,7 @@
 # Draft — status report to Professor Bishai (Stage 3 + science)
 
+**Superseded for sending as Email A (20 August 2026).** This note packs three PI decisions. If Bishai answers one email this month it must be form 2a endorsement: [`send_pack_2026-08-20/to_bishai.md`](send_pack_2026-08-20/to_bishai.md). Keep this file as a crib for a later Email B after the form is back.
+
 **To:** Professor David Bishai  
 **Subject:** Laidlaw Stage 3 status, current analysis, and three decisions  
 **Attach:** `outputs/Laidlaw_Stage3_Research_Report_Shen.pdf`  
@@ -19,7 +21,7 @@ A method that tries to recover daily effects from monthly outcomes failed its si
 
 **What the counts themselves show, before any thermal model.** First-event totals fall by about half from 2013 to 2023 (CHD 23,830 → 12,323; HF 4,336 → 2,296), with a further dip in 2020. That is the expected shape of a first-hospitalisation construction, plus pandemic care-seeking. The C&SD age-35+ offset is ecological, not T2D/HTN person-time still at risk. I would rather keep calling these count ratios than incidence rates unless a cohort denominator can be released.
 
-**Stage 3.** The accessible research report and A0 portrait poster are built. I still need the official HKU report form, your comments/endorsement, and written confirmation that these disclosure-minimised aggregate results may be used in the Laidlaw submission. I will not complete supervisor fields myself.
+**Stage 3.** The accessible research report and A0 portrait poster are built. Form 2a endorsement is Email A (`send_pack_2026-08-20/`), not this note. Do not re-ask for the template.
 
 **Three decisions I would value:**
 

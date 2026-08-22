@@ -19,8 +19,9 @@ these two files.
 | Research essay: 2,000–3,000 words; accessible to a wide, non-specific audience or an academic research paper | `Laidlaw_Research_Report_2026.pdf` / `outputs/Laidlaw_Stage3_Research_Report_Shen.pdf` | **Ready for supervisor review.** ≈3,200 main-text words, plus figures, references, and appendices; slightly above the nominal range but within Bob's stated flexibility. |
 | Research poster: A0 portrait, 841 × 1189 mm | `../poster/Laidlaw_Stage3_A0_portrait.pdf` / `outputs/Laidlaw_Stage3_Poster_Shen.pdf` | **Built and technically validated.** One page, exact A0 portrait dimensions. |
 | Poster content: title, introduction, objectives, methods, results, conclusions | Same poster | **Present.** Interpretation/limitations is included as an additional section. |
-| Official HKU report form | Official `2a. Laidlaw - Report Form (HKU).docx` | **Pending.** The macOS desktop path supplied in chat is not accessible inside the cloud workspace; upload or copy the file into the workspace before completion. |
-| Supervisor endorsement and comments | Prof. David Bishai | **Human action required.** Send the completed HKU form and research essay together. |
+| Official HKU report form | Official `2a. Laidlaw - Report Form (HKU).docx` (Bob’s local copy; not committed) | **Worksheet ready.** Fill from [`../../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md`](../../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md). Supervisor rating, comments, and signature stay blank. Printed deadlines: report 31 Aug 2026; poster 15 Sep 2026. |
+| Supervisor endorsement and comments | Prof. David Bishai | **Human action required.** Send Email A from [`../../analysis_plan/send_pack_2026-08-22/to_bishai.md`](../../analysis_plan/send_pack_2026-08-22/to_bishai.md). Ask for the supervisor block by Friday 28 August, or bring a printed copy on Thursday 27 August. |
+| Spreadsheet columns Q, R | Horizons Google sheet (not in repo) | **Paste draft only.** [`../../analysis_plan/send_pack_2026-08-20/spreadsheet_QR_paste.md`](../../analysis_plan/send_pack_2026-08-20/spreadsheet_QR_paste.md). Bob types into the sheet after reading the headers. |
 | Final submission | `laidlaw@hku.hk` | **Do only after supervisor endorsement.** |
 
 ## Scientific review before sending
@@ -50,12 +51,17 @@ these two files.
 
 ## Administrative sequence
 
-1. Place the official HKU report-form DOCX in this repository's local,
-   non-sensitive working area or upload it as an accessible chat attachment.
+1. ~~Place the official HKU report-form DOCX in reach.~~ **Done 20 Aug 2026.** Worksheet extracted; binary stays with Bob.
 2. Complete the form without inventing supervisor comments or signatures.
-3. Send the form and `Laidlaw_Research_Report_2026.pdf` to Prof. Bishai for
-   endorsement and comments.
-4. Incorporate any required corrections.
+3. Send the form and `Laidlaw_Research_Report_2026.pdf` to Prof. Bishai
+   (Email A). Optional: attach the A0 poster for information only.
+4. Incorporate any required corrections. Do not rebuild the locked PDFs unless
+   Bishai requires a correction.
 5. Submit the endorsed form and essay to `laidlaw@hku.hk`.
-6. Retain `Laidlaw_Stage3_Poster_Shen.pdf` for the HKU Laidlaw Society event
-   in early November 2026 and the Annual Laidlaw Student Conference.
+6. Retain `Laidlaw_Stage3_Poster_Shen.pdf` for the 15 September file deadline,
+   the HKU Laidlaw Society event in early November 2026, and the Annual
+   Laidlaw Student Conference.
+
+Lock re-verified 20 August 2026: prefixes `6136e85a654502a0` and
+`4f7c1e408ae2d31f` match the uploads and the repository copies
+([`HASH_VERIFY.md`](../../analysis_plan/send_pack_2026-08-20/HASH_VERIFY.md)).

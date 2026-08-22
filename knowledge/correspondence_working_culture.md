@@ -26,7 +26,7 @@ Professor Bishai is copied. He reads the thread. A separate manifesto to him is 
 
 Do not pack weather locks, age-band extracts, person-time, stroke chasing, authorship, IRB, and a writing review into a single reply. Roro has already said he must prioritise other projects. Hogan asked two things on 12 August: where Methods writing stands, and whether Bob will send the temperature panel by that date.
 
-Do not attach a parallel Word draft of the live file. Do not put programme-report language in this thread. Do not dump model tables.
+Do not attach a parallel Word draft of the live file. Do not put programme-report language in this thread. Do not dump model tables. Form 2a is a **new** message to Bishai only (`analysis_plan/send_pack_2026-08-22/`).
 
 ## What “show work” means here
 

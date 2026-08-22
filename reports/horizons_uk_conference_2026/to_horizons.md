@@ -1,13 +1,14 @@
 # Email — send this (Bob only)
 
-**To:** HKU Laidlaw Programme (`laidlaw@hku.hk`)  
-**Do not CC** Hogan, Roro, or Professor Bishai. This is Horizons administration, not the research thread.  
-**Thread:** Reply on the existing “Laidlaw annual Scholar Conferences 2026 - UK” chain so their “airfare quotation is fine” note stays in view.  
-**Subject:** leave as the reply subject (Re: Laidlaw annual Scholar Conferences 2026 - UK).  
-**When:** Send **today** (22 August) so it is in their inbox on Monday. Do not buy a ticket while you wait.  
-**Monday if no reply:** phone Horizons Office, 2857 8539 (Room 136, 1/F, Main Building), and ask them to answer this email in writing. The phone call does not replace the written option.
+**To:** `laidlaw@hku.hk` (HKU Laidlaw Programme)  
+**Do not CC** Hogan, Roro, or Professor Bishai.  
+**Thread:** Reply on the existing “Laidlaw annual Scholar Conferences 2026 - UK” chain.  
+**Subject:** leave the reply subject as it is.  
+**When:** Send now. Do not buy while you wait. Monday, if no reply: 2857 8539, and ask them to answer **this email** in writing.
 
-**Before you hit send:** attach today’s 15 Oct → 18 Oct (return after 14:00) screenshot as the definitional quote. Attach 15 Oct → 19 Oct only as a fallback if 18 Oct after 14:00 is unusable. Attach 15 Oct → 23 Oct only to show it is no longer the cheap option. See [`screenshot_checklist.md`](screenshot_checklist.md) and [`lowest_economy_definition.md`](lowest_economy_definition.md).
+**Screenshots:** If you have them, attach the 15 Oct → 18 Oct (return after 14:00) quote and keep the sentence below that says they are attached. If you do not have them yet, **delete that one sentence** and send anyway. The definition still needs their written yes. Follow with screenshots on Monday if needed.
+
+Copy from “Dear Horizons Office” through the phone number.
 
 ---
 
@@ -15,15 +16,17 @@ Dear Horizons Office,
 
 Thank you for confirming that my earlier airfare quotation was fine, and that you will cover the full hotel cost since I will not room with anyone.
 
-I have not purchased a ticket. The circular’s example itinerary (depart Hong Kong 15 October; depart the UK 18 October) and the 15/23 October itinerary I sent on 24 July (about HK$6,900 including tax) are both now sold out.
+I have not purchased a ticket. I am writing to confirm the definition of “lowest economy airfare” I will follow for this claim.
 
-I will search and, if you confirm, purchase against this definition of “lowest economy airfare”:
+The circular names the route Hong Kong – London Heathrow – Hong Kong, the dates “Depart from HK: 15 Oct; Depart from UK: 18 Oct”, reimbursement up to HK$8,000, and that only the lowest economy airfare will be approved. I take “lowest economy airfare” to mean:
 
 the cheapest bookable economy-class Hong Kong – London Heathrow – Hong Kong return, including tax, outbound 15 October 2026 and return 18 October 2026 departing Heathrow after 14:00 (after the last session), as quoted on the day of purchase.
 
-That fare is now above the HK$8,000 cap. Screenshots of today’s quotations are attached.
+I will not treat “lowest” as the cheapest ticket among any dates that cover 16–18 October. I will not treat 15/23 October as the definition of lowest economy; that itinerary was quoted on 24 July only because it was then cheaper than the circular’s example.
 
-Please confirm in writing that the definition above is the one you will use for this claim. If no workable 18 October return after 14:00 exists, please name the return date that will be used as the comparator (I can attach a 15/19 October quote). I will not treat 15/23 October as the definition of lowest economy.
+Please confirm in writing that the definition above is the one you will use for this claim. If no workable 18 October return after 14:00 exists, please name the return date that will be used as the comparator (I can send a 15/19 October quote).
+
+The circular’s 15/18 example and my July 15/23 quote (about HK$6,900 including tax) are now sold out. On the definition above, the current fare is above HK$8,000. Screenshots of today’s 15 October / 18 October quotations (return after 14:00) are attached.
 
 I will not buy a ticket until I have your written confirmation of that definition and of how the HK$8,000 cap applies. Please also choose one of the following:
 
@@ -41,12 +44,12 @@ Thank you for your guidance.
 
 Best regards,
 
-Shen Ruililin  
-BASc in Global Health and Development  
-The University of Hong Kong  
-University No.: 3036484434  
+Shen Ruililin
+BASc in Global Health and Development
+The University of Hong Kong
+University No.: 3036484434
 +852 5573 6530
 
 ---
 
-Do not add prices that are not in a screenshot. Do not say you have already bought the ticket. Do not apologise at length. Do not mention Gate 3, Hogan, or the research results.
+Do not add prices that are not in a screenshot. Do not say you have already bought the ticket. Do not mention Gate 3, Hogan, or the research results.

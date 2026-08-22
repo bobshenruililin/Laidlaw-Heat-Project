@@ -25,7 +25,7 @@ Attach PDFs and the official Word form. Do not attach markdown.
    Default Email A omits this; useful as a Thursday print sheet.
 
 4. `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`  
-   SHA-256 prefix `b3f16ff27f76ea9b`.  
+   SHA-256 prefix `82c077d69c414d18`.  
    For information only. Due 15 September. No signature needed now.  
    Drop this attachment if you want the tighter packet (essay + form).
 

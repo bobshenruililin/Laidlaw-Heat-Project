@@ -30,7 +30,7 @@ Do not email `Heat_CVD_Manuscript_20260815_collab_draft.docx` to Bishai or to `l
 | `outputs/ShenRuililin_Laidlaw_Stage3Report.docx` | 355,772 | `56c09558f35ba1c76741e401bcdb52e9907be8388159647f4d5ef5841b35c5e2` |
 | `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` | 92,186 | `b3f16ff27f76ea9b244d27919a8319c676326ba47c31a92344892e43701443ac` |
 
-Poster bytes are unchanged from the morning rebuild.
+Poster bytes were unchanged at this pass. Later the same evening they gained a REFERENCES strip (`knowledge/2026-08-22_stage3_poster_refs.md`; SHA prefix `82c077d69c414d18`).
 
 ## Word count
 

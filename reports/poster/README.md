@@ -9,7 +9,9 @@ pdflatex -interaction=nonstopmode Laidlaw_Stage3_A0_portrait.tex
 
 - Primary TeX: `Laidlaw_Stage3_A0_portrait.tex`
 - Output: `Laidlaw_Stage3_A0_portrait.pdf` (ISO **A0 portrait**, 841 × 1189 mm, single page)
-- Submission copy: `outputs/Laidlaw_Stage3_Poster_Shen.pdf`
+- Submission copy: `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` (also copied as `ShenRuililin_Laidlaw_Stage3Poster.pdf` in this folder)
+
+22 August 2026: the self-referential footer was deleted on Bob’s instruction. `\vfill` is retained so the bands do not shift. The only remaining footer line is `shenrll@connect.hku.hk`. Do not restore the “machine-validated” metadata block.
 
 ### Layout (readability redesign v2, Aug 2026)
 

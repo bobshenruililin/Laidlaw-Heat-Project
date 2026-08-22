@@ -4,17 +4,17 @@
 
 ## The remaining Stage 3 job
 
-The locked essay and A0 poster are programme-ready (SHA prefixes `6136e85a654502a0` / `4f7c1e408ae2d31f`). Re-verified 22 August. Bob’s stated remaining need is the **endorsement form**. Hogan reviewing the live manuscript does **not** gate that form. Hogan does not sign form 2a.
+The programme essay and A0 poster were rebuilt the same day on Bob’s instruction ([`2026-08-22_stage3_rebuild.md`](2026-08-22_stage3_rebuild.md)). Hogan reviewing the live manuscript does **not** gate form 2a. Hogan does not sign form 2a.
 
 Printed on the form: research report **31 August 2026**; poster file **15 September 2026**. Next meeting: **Thursday 27 August**. Last comfortable remote signature: **Friday 28 August**.
 
-## Play-safe improvement (what we did instead of rebuilding)
+## Play-safe improvement (what we did instead of cloning the live file)
 
-Rebuilding the essay this weekend to match live-file ranking language would delay the signature and reopen a locked file. The 20 August quality audit already found no signing-risk falsehood.
+A further weekend rebuild to make the essay “look like the manuscript” would delay the signature. Fable and Sol (22 August evening) both forbade substituting the live file. See [`2026-08-22_stage3_essay_vs_manuscript.md`](2026-08-22_stage3_essay_vs_manuscript.md).
 
-The improvement is a **one-page supervisor card** plus a dual path:
+Default Email A is the rebuilt essay plus Bob-completed form 2a. The **one-page supervisor card** is optional (Thursday print). It was rewritten the same evening so it no longer quotes the old “most elevated” conclusion.
 
-1. Email A tonight/Sunday, with the locked essay, Bob-completed form 2a, and the one-pager.
+1. Email A tonight/Sunday, with the essay and form 2a.
 2. Printed form at Thursday’s meeting if the email has not come back.
 
 ## Emails (Bob sends)
@@ -36,4 +36,4 @@ Do not put form 2a on the Hogan / Jingjing Outlook thread.
 
 ## Do not do
 
-Rebuild Stage 3 PDFs. Attach the 15 August collab Word draft. Forward Roro’s private mortality PDF. Wait for Hogan’s journal comments. Wait for Thursday to send Email A.
+Rebuild Stage 3 essay/poster PDFs. Attach the live manuscript or the 15 August collab Word draft. Forward Roro’s private mortality PDF. Wait for Hogan’s journal comments. Wait for Thursday to send Email A.

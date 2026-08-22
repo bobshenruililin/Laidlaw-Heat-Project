@@ -6,25 +6,26 @@ Attach PDFs and the official Word form. Do not attach markdown.
 
 ## Required
 
-1. `outputs/Laidlaw_Stage3_Research_Report_Shen.pdf`  
-   Same bytes as `reports/laidlaw_stage3/Laidlaw_Research_Report_2026.pdf`.  
-   SHA-256 prefix `6136e85a654502a0` (re-verified 22 August 2026).
+1. `outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`  
+   Same bytes as `reports/laidlaw_stage3/ShenRuililin_Laidlaw_Stage3Report.pdf`.  
+   SHA-256 prefix `b8b4c63ca9d32dd3`.
 
 2. Official `2a. Laidlaw - Report Form (HKU).docx`  
    Bob completes his own fields from [`../send_pack_2026-08-20/form_2a_fill_worksheet.md`](../send_pack_2026-08-20/form_2a_fill_worksheet.md).  
    Leave the supervisor rating, comments, name, signature, and date **blank**.  
    Do not commit this DOCX to git.
 
+## Optional
+
 3. `analysis_plan/send_pack_2026-08-22/supervisor_one_pager.pdf`  
-   One page. What the endorsement covers, plus optional comments he can paste.
+   One page. What the endorsement covers, plus optional comments he can paste.  
+   Rewritten 22 August evening to match the rebuilt essay (not “most elevated”; not “predeclared”).  
+   Default Email A omits this; useful as a Thursday print sheet.
 
-## Optional fourth file
-
-4. `outputs/Laidlaw_Stage3_Poster_Shen.pdf`  
-   SHA-256 prefix `4f7c1e408ae2d31f`.  
+4. `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`  
+   SHA-256 prefix `b3f16ff27f76ea9b`.  
    For information only. Due 15 September. No signature needed now.  
-   The cover and the one-pager both say the poster is not a confirmatory claim.  
-   Drop this attachment if you want the tighter packet (essay + form + one-pager).
+   Drop this attachment if you want the tighter packet (essay + form).
 
 ## Do not attach
 

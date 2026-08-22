@@ -1,12 +1,12 @@
 # Thursday 27 August — print pack
 
-Bring paper. Do not use the meeting to reopen the locked essay unless he requires a correction.
+Bring paper. Do not use the meeting to reopen the essay unless he requires a correction. Do not bring the live manuscript as a substitute report.
 
 ## Print
 
 1. Form 2a with **Bob’s fields complete** and the supervisor block blank.
-2. `supervisor_one_pager.pdf` (one sheet).
-3. Title page plus conclusion of the locked essay, or the full essay if a stapler is easy.
+2. `supervisor_one_pager.pdf` (one sheet; matches the 22 August rebuilt conclusion).
+3. Title page plus conclusion of `ShenRuililin_Laidlaw_Stage3Report.pdf`, or the full essay if a stapler is easy.
 4. Optional: first page of the poster (or a reduced A4 proof). The official file remains A0.
 
 ## First ten minutes (the only programme ask)

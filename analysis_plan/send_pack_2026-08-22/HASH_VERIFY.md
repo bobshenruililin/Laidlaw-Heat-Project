@@ -1,11 +1,11 @@
-# Stage 3 lock check — 22 August 2026
+# Stage 3 lock check — 22 August 2026 (post-rebuild)
 
-Re-hash of the locked programme files. Do not rebuild either PDF.
+Bob-authorised replacement of the 12 August Sol copies. See [`../../../knowledge/2026-08-22_stage3_rebuild.md`](../../../knowledge/2026-08-22_stage3_rebuild.md). Essay versus live manuscript: [`../../../knowledge/2026-08-22_stage3_essay_vs_manuscript.md`](../../../knowledge/2026-08-22_stage3_essay_vs_manuscript.md).
 
 | File | Bytes | SHA-256 prefix | Match |
 |---|---:|---|---|
-| `outputs/Laidlaw_Stage3_Research_Report_Shen.pdf` | 715,033 | `6136e85a654502a0` | identical to `reports/laidlaw_stage3/Laidlaw_Research_Report_2026.pdf` |
-| `outputs/Laidlaw_Stage3_Poster_Shen.pdf` | 92,744 | `4f7c1e408ae2d31f` | identical to `reports/poster/Laidlaw_Stage3_A0_portrait.pdf` |
-| `supervisor_one_pager.pdf` | 47,288 | new 22 August card | one A4 page; not a replacement essay |
+| `outputs/ShenRuililin_Laidlaw_Stage3Report.pdf` | 708,248 | `b8b4c63ca9d32dd3` | identical to `reports/laidlaw_stage3/ShenRuililin_Laidlaw_Stage3Report.pdf` |
+| `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` | 92,186 | `b3f16ff27f76ea9b` | identical to `reports/poster/ShenRuililin_Laidlaw_Stage3Poster.pdf` |
+| `supervisor_one_pager.pdf` | 50,236 | `43f68850c6c3574a` | one A4 page; optional print aid; matches rebuilt conclusion |
 
-Full 20 August table: [`../send_pack_2026-08-20/HASH_VERIFY.md`](../send_pack_2026-08-20/HASH_VERIFY.md).
+Do not rebuild the essay or poster unless Bob or Bishai requires a correction. The one-pager may be regenerated from `supervisor_one_pager.html` if the print sheet needs a further factual fix.

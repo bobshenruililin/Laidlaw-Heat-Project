@@ -1,51 +1,38 @@
-# Email — send this (Bob only)
+# Horizons airfare emails
 
 **To:** `laidlaw@hku.hk`  
-**Do not CC** Hogan, Roro, or Professor Bishai.  
 **Thread:** existing “Laidlaw annual Scholar Conferences 2026 - UK”.  
-**Hotel:** already booked; do not re-ask.  
-**Do not mention Valencia or GEST.** The claim is HKG–LHR–HKG only.
+**Do not CC** Hogan, Roro, or Professor Bishai.  
+**Do not mention Valencia or GEST.**
 
-Copy from “Dear Horizons Office” through the phone number. Attach: (1) today’s cheapest **15 Oct / 18 Oct** HKG–LHR–HKG economy quote including tax; (2) the **13 or 14 or 15 Oct out / 23 Oct back** quote you intend to buy, including tax and a 23 kg bag if the site shows it.
+Bob already sent a numbered A/B note on 22 August. That can read like a demand. If a follow-up would help, send **Follow-up** below on the same thread. Do not send it if they have already replied kindly.
 
 ---
 
+## Follow-up (friendlier — send this)
+
 Dear Horizons Office,
 
-Thank you for confirming that my earlier airfare quotation was fine, and that you will cover the full hotel cost since I will not room with anyone. The hotel is now booked. I have not purchased an air ticket.
+Thank you again for confirming the hotel and for saying my earlier airfare quotation was fine.
 
-I am writing to confirm the airfare rule before I buy.
+I wrote this morning about dates and the HK$8,000 cap. I am sorry if that note felt too formal. I only wanted to check the rule before I buy, so I do not get the dates or the amount wrong.
 
-The circular names Hong Kong – London Heathrow – Hong Kong, “Depart from HK: 15 Oct; Depart from UK: 18 Oct”, reimbursement up to HK$8,000, and that only the lowest economy airfare will be approved.
+May I please ask two small things?
 
-I need to be in London in time for registration at 17:00 on Friday 16 October, and I would return from Heathrow on 23 October. You previously said a 15/23 October quotation at about HK$6,900 was fine. That fare is no longer available.
+The circular says the flight is Hong Kong – London Heathrow – Hong Kong, lowest economy, up to HK$8,000, with the example dates 15 October out and 18 October back. I need to be in London for registration at 17:00 on Friday 16 October, and I would return from Heathrow on 23 October. Outbound would be 13, 14 or 15 October. You had already said a 15/23 October quote was fine when it was about HK$6,900; that fare is no longer available.
 
-Please confirm in writing:
+Could you let me know whether that timeline still sits inside the lowest-economy rule, and whether reimbursement remains up to HK$8,000 if the cheapest economy fare on those dates is now a little over the cap? I am happy to pay any difference myself.
 
-1. That I may purchase a Hong Kong – London Heathrow – Hong Kong economy return with outbound 13, 14 or 15 October 2026 and return 23 October 2026, and still claim reimbursement, provided I attend the entire conference.
-
-2. How “lowest economy airfare” and the HK$8,000 cap apply when that ticket costs more than HK$8,000. Please choose one of the following:
-
-Option A. The HK$8,000 figure is a reimbursement ceiling. I may buy the attached Hong Kong – Heathrow – Hong Kong economy ticket (outbound 13/14/15 October, return 23 October) even if it exceeds HK$8,000. After I attend and submit the required documents, you will reimburse HK$8,000 and I will pay the difference.
-
-Option B. You will raise the cap to the attached fare. Please state the new maximum in Hong Kong dollars.
-
-Option C. A ticket above HK$8,000 cannot be reimbursed, even in part. In that case I will not purchase a ticket and will not attend. Please confirm that this will not affect my standing as a Laidlaw Scholar or my Stage 3 submission.
-
-3. Whether reimbursement is instead limited to the cheapest economy Hong Kong – Heathrow – Hong Kong fare on the circular’s 15/18 October dates (screenshot attached), even if I fly 13/14/15–23 October.
-
-I will not buy a ticket until I have your written reply.
-
-Thank you for your guidance.
+I have not bought a ticket. Thank you very much for your help.
 
 Best regards,
 
-Shen Ruililin
-BASc in Global Health and Development
-The University of Hong Kong
-University No.: 3036484434
+Shen Ruililin  
+BASc in Global Health and Development  
+The University of Hong Kong  
+University No.: 3036484434  
 +852 5573 6530
 
 ---
 
-Do not add Valencia. Do not add prices that are not in a screenshot. Do not say you have already bought the long-haul ticket.
+Do not attach Valencia. Do not list options A/B/C. Do not say you will not attend. A screenshot of a current HKG–LHR–HKG economy quote is enough if you have one; it is not required for this softening note.

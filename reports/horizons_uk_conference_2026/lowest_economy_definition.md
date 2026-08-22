@@ -58,4 +58,4 @@ Do not treat 15 / 23 October as the definition. If you still want those extra da
 5. Repeat **15 Oct → 23 Oct** only to show it is no longer the cheap option.
 6. Do not buy. Attach the screenshots to [`to_horizons.md`](to_horizons.md).
 
-That 15 / 18 number **is** “the lowest economy fare” under the circular. If it is above HK$8,000, the remaining question is only A / B / C (pay the excess / raise the cap / do not go).
+That 15 / 18 number **is** “the lowest economy fare” under the circular. If it is above HK$8,000, ask Horizons whether reimbursement is still **up to HK$8,000** (you pay the rest) or whether they will not reimburse an over-cap ticket.

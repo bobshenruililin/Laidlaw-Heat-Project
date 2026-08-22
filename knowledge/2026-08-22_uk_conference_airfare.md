@@ -24,7 +24,7 @@ Hotel after 17 August, and whether a 19 Oct return is acceptable, are the same e
 
 ## Who closes it
 
-Horizons Office (`laidlaw@hku.hk`). Bob sends [`reports/horizons_uk_conference_2026/to_horizons.md`](../reports/horizons_uk_conference_2026/to_horizons.md) and waits for a named option. Agents do not invent a Finance outcome.
+Horizons Office (`laidlaw@hku.hk`). Bob **already sent** the numbered dates-and-cap note on 22 August morning. **Do not send** the unused friendlier follow-up (same questions; repetitive). Wait. A Monday one-line bump is allowed if they have not replied. Agents do not invent a Finance outcome.
 
 ## Estimand / claim boundary
 

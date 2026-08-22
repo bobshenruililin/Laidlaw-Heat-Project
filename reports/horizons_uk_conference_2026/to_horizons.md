@@ -5,11 +5,19 @@
 **Do not CC** Hogan, Roro, or Professor Bishai.  
 **Do not mention Valencia or GEST.**
 
-Bob already sent a numbered A/B note on 22 August. That can read like a demand. If a follow-up would help, send **Follow-up** below on the same thread. Do not send it if they have already replied kindly.
+## Status (22 August, afternoon)
+
+Bob **already sent** the numbered dates-and-cap note on the morning of 22 August. That email is the live ask.
+
+**Do not send the friendlier follow-up.** It asks the same two questions (13/14/15–23 dates; how HK$8,000 works if the fare is a bit over). A second note the same day is repetitive and can look like he is walking the first one back.
+
+**Next:** wait for Horizons. Do not buy. If the inbox is still empty on **Monday**, a one-line bump is enough (“just checking you received Saturday’s note — no rush, I have not bought a ticket”). Do not rewrite the questions.
+
+The unused follow-up is kept below only so nobody drafts a third version.
 
 ---
 
-## Follow-up (friendlier — send this)
+## Unused — do not send
 
 Dear Horizons Office,
 
@@ -32,7 +40,3 @@ BASc in Global Health and Development
 The University of Hong Kong  
 University No.: 3036484434  
 +852 5573 6530
-
----
-
-Do not attach Valencia. Do not list options A/B/C. Do not say you will not attend. A screenshot of a current HKG–LHR–HKG economy quote is enough if you have one; it is not required for this softening note.

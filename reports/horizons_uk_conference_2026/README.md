@@ -8,7 +8,7 @@ This is programme administration. It is not a scientific result and not a Stage 
 
 1. [`lowest_economy_definition.md`](lowest_economy_definition.md) — circular date pair 15/18.
 2. [`definition_13_23_and_self_transfer.md`](definition_13_23_and_self_transfer.md) — 13/14/15–23 Oct Heathrow return vs the cap; Valencia is a separate self-funded hop.
-3. [`to_horizons.md`](to_horizons.md) — friendlier follow-up after the 22 August note already sent.
+3. [`to_horizons.md`](to_horizons.md) — morning note already sent; **do not** send the unused follow-up.
 4. [`trip_conditions_2026-10.md`](trip_conditions_2026-10.md) — constraints checklist.
 5. [`flight_research_2026-08-22.md`](flight_research_2026-08-22.md) — earlier open-jaw search; superseded for ticketing by the 13–23 note.
 
@@ -16,9 +16,9 @@ Durable log: [`../../knowledge/2026-08-22_uk_conference_airfare.md`](../../knowl
 
 ## This weekend
 
-1. If you want to soften this morning’s note, send the follow-up in [`to_horizons.md`](to_horizons.md) on the same thread. Skip it if they have already replied kindly.
+1. The morning email is already sent. **Do not** send the unused follow-up in [`to_horizons.md`](to_horizons.md).
 2. Do not buy until they write back.
-3. A screenshot of a current HKG–LHR–HKG economy quote is helpful if you have one; it is not required for the softening note.
+3. If still silent on Monday, one short “did you get Saturday’s note” bump — do not re-ask the questions.
 4. Do not treat the July “quotation is fine” line as covering a new, more expensive ticket.
 
 ## Not this pack

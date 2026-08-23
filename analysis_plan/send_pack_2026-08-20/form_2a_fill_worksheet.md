@@ -25,6 +25,8 @@ Research topic must not say AMI, stroke result, or a confirmatory thermal effect
 
 **23 August 2026:** Bob’s filled upload still had the 2026 application title (“Cold and Heat Risks for Myocardial Infarction and Stroke…”). That string is the Laidlaw commitment, not the delivered estimand. Replace it with the locked essay title before Email A. Supervisor field: **Professor David Bishai**, not “Dr. Bishai, David Makram”. Decide note: [`../../knowledge/2026-08-23_form2a_research_topic.md`](../../knowledge/2026-08-23_form2a_research_topic.md).
 
+**Same evening:** a later upload already uses title + subtitle (“Heat, cold and first hospitalisation after cardiovascular diagnosis in Hong Kong: An exploratory monthly study among people with diabetes or hypertension, 2013–2023”). AMI/stroke is gone. Title+subtitle is acceptable. Honorific and blank student signature remain optional nits, not Email A wait-blockers.
+
 ## Leave completely blank for Professor Bishai
 
 - “I have examined the research report and rate the student’s performance as satisfactory / unsatisfactory”

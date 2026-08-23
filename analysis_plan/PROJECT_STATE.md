@@ -7,12 +7,18 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0m. Canonical update — Email A SEND; form topic now matches title+subtitle (23 August, evening)
+
+- Evening form 2a re-verify: **Research Topic** is now the locked essay title + subtitle. AMI/stroke application title is gone. Not a wait-blocker.
+- **SEND** Email A today after dropping “preliminary poster” (the file is the locked Stage 3 A0). Dr. vs Professor and a blank student signature do not block. Agents do not send. To Bishai only; no live manuscript.
+- Durable: `knowledge/2026-08-23_form2a_research_topic.md` (evening re-verify). Gate 3 still open.
+
 ## 0l. Canonical update — Email A today; change form-2a topic (23 August)
 
 - Fable/Sol/repo: **send Email A today** after three student-owned form fixes. Do not wait for Hogan or Thursday. Agents do not send.
 - Form 2a **Research Topic** is the current essay title, **not** the 2026 application AMI/stroke title. Supervisor line: **Professor David Bishai**, not “Dr.”
 - Default attachments: locked essay PDF (`c083d4096a0924b1`) + corrected form 2a (supervisor block blank). Poster optional (`0ef58e0951bb2ffd`; due 15 September). No live manuscript.
-- Durable: `knowledge/2026-08-23_form2a_research_topic.md`. Pack: `analysis_plan/send_pack_2026-08-22/to_bishai.md`. Gate 3 still open.
+- Evening follow-up: the later upload already uses title+subtitle (see 0m). Durable: `knowledge/2026-08-23_form2a_research_topic.md`. Pack: `analysis_plan/send_pack_2026-08-22/to_bishai.md`. Gate 3 still open.
 
 ## 0k. Canonical update — roundtable fold-back before Email A (22 August, night)
 

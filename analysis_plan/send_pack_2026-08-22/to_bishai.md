@@ -29,7 +29,7 @@ Keeps Bob’s warmth and the Tung Ngai / GEST news. Puts the ask first. Adds the
 > Best regards,  
 > Shen Ruililin
 
-If the poster is attached, add this sentence after the exploratory paragraph: “I have also attached the A0 poster for information only. It is due 15 September and does not need a signature now.”
+If the poster is attached, add this sentence after the exploratory paragraph: “I have also attached the A0 poster for information only. It is due 15 September and does not need a signature now.” Do not call it a preliminary poster: the locked file is the Stage 3 A0.
 
 Default attachments remain the essay PDF and form 2a. The tighter packet is better for a signature request; the poster is optional.
 

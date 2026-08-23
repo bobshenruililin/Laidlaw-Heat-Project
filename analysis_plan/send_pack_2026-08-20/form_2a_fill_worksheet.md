@@ -23,6 +23,8 @@ Printed on the form: research report due **31 August 2026**; research poster due
 
 Research topic must not say AMI, stroke result, or a confirmatory thermal effect. Optional one-line gloss under the title, only if the form has space: “Exploratory monthly CHD/HF first-hospitalisation counts, 2013–2023; all twelve *q* > 0.19.”
 
+**23 August 2026:** Bob’s filled upload still had the 2026 application title (“Cold and Heat Risks for Myocardial Infarction and Stroke…”). That string is the Laidlaw commitment, not the delivered estimand. Replace it with the locked essay title before Email A. Supervisor field: **Professor David Bishai**, not “Dr. Bishai, David Makram”. Decide note: [`../../knowledge/2026-08-23_form2a_research_topic.md`](../../knowledge/2026-08-23_form2a_research_topic.md).
+
 ## Leave completely blank for Professor Bishai
 
 - “I have examined the research report and rate the student’s performance as satisfactory / unsatisfactory”

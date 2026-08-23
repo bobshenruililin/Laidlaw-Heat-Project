@@ -14,8 +14,9 @@ Attach PDFs and the official Word form. Do not attach markdown.
 
 2. Official `2a. Laidlaw - Report Form (HKU).docx`  
    Bob completes his own fields from [`../send_pack_2026-08-20/form_2a_fill_worksheet.md`](../send_pack_2026-08-20/form_2a_fill_worksheet.md).  
+   **Research Topic** must be the current essay title, not the application AMI/stroke title. Supervisor line: Professor David Bishai.  
    Leave the supervisor rating, comments, name, signature, and date **blank**.  
-   Do not commit this DOCX to git.
+   Do not commit this DOCX to git. A local topic-corrected copy may exist as gitignored `2a_Laidlaw_Report_Form_HKU_ready_for_emailA.docx`.
 
 ## Optional
 

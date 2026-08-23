@@ -49,6 +49,10 @@ memos/
 !analysis_plan/send_pack_2026-08-12/
 !analysis_plan/send_pack_2026-08-20/
 !analysis_plan/send_pack_2026-08-22/
+
+# Filled HKU Laidlaw form 2a (student fields / logos). Never commit.
+analysis_plan/**/2a_Laidlaw*.docx
+analysis_plan/**/2a._Laidlaw*.docx
 outputs/session_info_setup.txt
 
 # Rebuildable synthetic calibration internals (summaries/gates remain tracked)

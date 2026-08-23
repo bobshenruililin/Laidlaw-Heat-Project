@@ -30,6 +30,7 @@ Do not put form 2a on the Hogan / Jingjing Outlook thread.
 ## Other actions
 
 - Fill year of study, attachment period, and UID from Horizons / the student record before sending.
+- **23 August:** replace the application AMI/stroke Research Topic with the locked essay title before Email A ([`2026-08-23_form2a_research_topic.md`](2026-08-23_form2a_research_topic.md)).
 - Print pack: [`thursday_print_pack.md`](../analysis_plan/send_pack_2026-08-22/thursday_print_pack.md).
 - After signature: submit endorsed form + locked essay to `laidlaw@hku.hk`. Keep his wording.
 - Spreadsheet Q/R: still [`spreadsheet_QR_paste.md`](../analysis_plan/send_pack_2026-08-20/spreadsheet_QR_paste.md).

@@ -16,7 +16,7 @@ The rebuilt essay is the Stage 3 object. Do **not** attach Hogan’s live manusc
 
 | When | Action |
 |---|---|
-| **Tonight / Sunday 23 Aug** | Send Email A (`to_bishai.md`). Do not wait for Hogan. |
+| **Tonight / Sunday 23 Aug** | Fix form 2a Research Topic + supervisor honorific + student signature, then send Email A (`to_bishai.md`). Do not wait for Hogan. Do not keep the AMI/stroke application title on the form. |
 | **Tuesday 25 Aug, if no reply** | Send the nudge (`to_bishai_nudge.md`). |
 | **Wednesday 26 Aug** | Print the pack in `thursday_print_pack.md`. |
 | **Thursday 27 Aug** | Meeting: ten minutes on the form first. Science only after the supervisor block is done or scheduled. |

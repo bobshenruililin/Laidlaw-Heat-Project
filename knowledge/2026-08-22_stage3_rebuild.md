@@ -11,6 +11,8 @@ Bob lifted the 12 August Sol byte-lock. He asked to delete the poster’s self-r
 | `outputs/ShenRuililin_Laidlaw_Stage3Report.pdf` | 708,248 | `b8b4c63ca9d32dd37e5ba240cf2212071953b4d815c6b24ca957fa5414fdfd6b` |
 | `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` | 92,186 | `b3f16ff27f76ea9b244d27919a8319c676326ba47c31a92344892e43701443ac` |
 
+That morning poster lock is superseded the same evening by [`2026-08-22_stage3_poster_refs.md`](2026-08-22_stage3_poster_refs.md) (SHA prefix `82c077d69c414d18`). The essay later moved to the Word-pathway lock in [`2026-08-22_stage3_word_pathway.md`](2026-08-22_stage3_word_pathway.md).
+
 Identical copies: `reports/laidlaw_stage3/ShenRuililin_Laidlaw_Stage3Report.pdf`, `reports/poster/ShenRuililin_Laidlaw_Stage3Poster.pdf`, and the legacy names `Laidlaw_Research_Report_2026.pdf` / `Laidlaw_Stage3_A0_portrait.pdf` / `outputs/Laidlaw_Stage3_*_Shen.pdf`.
 
 ## What changed

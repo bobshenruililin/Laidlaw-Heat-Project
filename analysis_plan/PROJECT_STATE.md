@@ -7,12 +7,22 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0k. Canonical update — roundtable fold-back before Email A (22 August, night)
+
+- Independent Fable + Sol specs, then a merge: numbered limitations, Methods “How to read the estimates” gloss, Bishai paragraph moved to Acknowledgements, data-provider confirmation restored, Implications heading inside Discussion, Table 1/2/A1 caption-body glue, poster pre-2020 + human footer + unequal HF/CHD callouts. REFERENCES strip kept. Robotic “machine-validated” / “privacy-protected” footer lines not restored.
+- New SHA prefixes: essay `c083d4096a0924b1`, poster `0ef58e0951bb2ffd`. Introduction–Conclusion 2,575 words. Fable GO / Sol GO. Durable: `knowledge/2026-08-22_stage3_foldback.md`. Form 2a still Email A. Gate 3 still open.
+
+## 0j. Canonical update — A0 poster REFERENCES strip (22 August, evening)
+
+- Bob asked for a compact reference section on the Stage 3 poster. Fable chose six numbered entries at the bottom, four in-text superscripts, and no citations in Results or the conclusion box.
+- Poster SHA-256 prefix `82c077d69c414d18`. Still one-page ISO A0. Essay unchanged (`8b71157e5178b589`). Durable: `knowledge/2026-08-22_stage3_poster_refs.md`. Form 2a still Email A. Gate 3 still open.
+
 ## 0i. Canonical update — Word-pathway Stage 3 cut (22 August, second pass)
 
 - Bob asked for stronger Bishai credit, a Table 1 that stays on the page, a hard 3,000-word cut, and the 15 August collab `.docx` as a **format** model. The live manuscript is still not the attachment.
 - Essay rebuilt: IMRD + structured Abstract (excluded from the count), numbered citations, footnotes, appendix ladder. Introduction–Conclusion ≈ 2,670 words. Supervisor line + Introduction + Acknowledgements name Professor David Makram Bishai.
 - Table 1 is four columns plus a note (no overflowing event-definition column). PDF is XeLaTeX. A Word copy is `outputs/ShenRuililin_Laidlaw_Stage3Report.docx` for opening in Microsoft Word; do not send the 15 August collab draft.
-- New PDF SHA-256 prefix `8b71157e5178b589`. Poster unchanged (`b3f16ff27f76ea9b`). Durable: `knowledge/2026-08-22_stage3_word_pathway.md`. Form 2a still Email A. Gate 3 still open.
+- New PDF SHA-256 prefix `8b71157e5178b589`. Poster later gained a REFERENCES strip (`82c077d69c414d18`; see 0j). Durable: `knowledge/2026-08-22_stage3_word_pathway.md`. Form 2a still Email A. Gate 3 still open.
 
 ## 0h. Canonical update — send the accessible essay, not the live manuscript (22 August evening)
 

@@ -11,7 +11,12 @@ pdflatex -interaction=nonstopmode Laidlaw_Stage3_A0_portrait.tex
 - Output: `Laidlaw_Stage3_A0_portrait.pdf` (ISO **A0 portrait**, 841 × 1189 mm, single page)
 - Submission copy: `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` (also copied as `ShenRuililin_Laidlaw_Stage3Poster.pdf` in this folder)
 
-22 August 2026: the self-referential footer was deleted on Bob’s instruction. `\vfill` is retained so the bands do not shift. The only remaining footer line is `shenrll@connect.hku.hk`. Do not restore the “machine-validated” metadata block.
+22 August 2026 (night): roundtable fold-back. REFERENCES strip kept. Author line
+is `Shen Ruililin`. Callouts show pre-2020 CHD 1.011 (includes 1) vs HF 1.113
+(excludes 1), with unequal visual weight. Footer is one human line (Hogan,
+Zhenyuan Liu, Prof. David Bishai, email). Do not restore “machine-validated”
+or “privacy-protected Hospital Authority monthly aggregate counts”. SHA-256
+prefix `0ef58e0951bb2ffd`.
 
 ### Layout (readability redesign v2, Aug 2026)
 
@@ -27,13 +32,14 @@ unreadable at 1–2 m; v2 moves to a **band architecture** so the sheet is fille
    as two side-by-side outcome panels (CHD | HF) with the focused
    SE-uncertainty plot beside it.
 4. Bottom band: INTERPRETATION / LIMITATIONS | CONCLUSION (+ next-data note).
-5. Footer bottom-anchored with `\vfill`; band gutters are fixed (14/30/30 mm)
-   so spacing is deliberate, not stretched.
+5. Compact REFERENCES strip (six numbered entries, three columns) then the
+   contact-email footer. Band gutters are 10 mm. Do not put `\vfill` before
+   the strip — it ships the block to page 2.
 
 Type scale (actual printed sizes): title 74 pt, subtitle/author 30 pt, section
 headings 34 pt (uppercase), results sub-heading 26 pt, body 26 pt, callout
 numbers 50 pt, figure labels ≈21–25 pt, captions 18.5 pt, definitions note
-20 pt Ink, footer 17.5 pt. Roughly 650 poster words excluding labels, captions
+20 pt Ink, footer 17.5 pt, REFERENCES heading 22 pt / entries 17.5 pt. Roughly 650 poster words excluding labels, captions
 and footer (≈575 excluding the two small notes).
 
 Palette: deep ink/navy + teal on white; warm accent (#B84A2E) for heat, cool

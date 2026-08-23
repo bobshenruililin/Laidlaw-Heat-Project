@@ -140,6 +140,8 @@ def fix_table(table):
     # special-case 4-col core panel (outcome short, exposure long)
     first = table.rows[0].cells[0].text.strip()
     second = table.rows[0].cells[1].text.strip() if n > 1 else ""
+    if n == 4 and "Uncertainty" in second:
+        fracs = (0.36, 0.26, 0.14, 0.24)
     if n == 4 and "Exposure" in second:
         fracs = (0.12, 0.42, 0.32, 0.14)
     if n == 4 and first == "Outcome" and "Months" in table.rows[0].cells[1].text:

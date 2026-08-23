@@ -33,7 +33,9 @@ Keep several incompatible families alive through the round. Cross-pollinate only
 
 Use adversarial agents throughout: every candidate sentence must be checked for gaps, conditionals, handwavings, estimand mixing, and circular uses of an equivalent claim. Kill a family only with a table contradiction or a forbidden-claim hit.
 
-Forbidden-claim hits include: AMI / principal-diagnosis effects from this file; daily DLNM from 132 monthly sums; stroke coefficients; Gate 3 freeze; Hogan weather rewrite; numerical equality of 2.63 with 1.073 or of 3.1% with 1.022; sleep/BP mechanism as measured; health-econ Monte Carlo in the paper; calling CNS register a Nature/Science/Cell venue.
+Forbidden-claim hits include: AMI / principal-diagnosis effects from this file; daily DLNM from 132 monthly sums; stroke coefficients; Gate 3 freeze; Hogan weather rewrite; numerical equality of 2.63 with 1.073 or of 3.1% with 1.022; sleep/BP mechanism as measured; health-econ Monte Carlo in the paper; calling CNS register a Nature/Science/Cell venue; claiming a new identification theorem; treating aggregation-identifiability as more than an operational map for this extract; smuggling a refused estimand (daily trigger, AMI, stroke, excess-death mortality, cohort incidence, monetisation) into Results.
+
+The methodological contribution that auto-research may name is aggregation-identifiability plus calibrated refusal. It may not mint a confirmatory primary. It may not rebuild Stage 3 PDF or A0 poster.
 
 Require agents to return concrete lemmas: file paths, table cells, display strings, or counterexamples. Reject status reports, vague optimism, and claims that an unproved collaborator decision is “routine.”
 

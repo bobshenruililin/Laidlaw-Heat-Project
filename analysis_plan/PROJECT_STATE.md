@@ -1,11 +1,18 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-22
+**Last updated:** 2026-08-23
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0l. Canonical update — aggregation-identifiability (23 August)
+
+- Hogan line, reported by Bob, on the Stage 3 draft: make aggregation-identifiability and calibrated refusal the original methodological contribution.
+- Valid as a contribution *type* for this extract. Not a new theorem. Not a confirmatory primary. Does not freeze Gate 3.
+- Auto-research operationalised the map (memo + live contribution paragraph + `estimand_policy` tripwire). Weather paragraph untouched. Programme Stage 3 PDFs follow the 22 August lock on `main`, not this branch.
+- Durable: `knowledge/2026-08-23_aggregation_identifiability.md`; `analysis_plan/auto_research/aggregation_identifiability_calibrated_refusal_2026-08-23.md`.
 
 ## 0k. Canonical update — roundtable fold-back before Email A (22 August, night)
 

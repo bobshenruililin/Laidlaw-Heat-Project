@@ -2,7 +2,7 @@
 # Auditor: python3 scripts/50_audit_live_claim_ledger.py
 # Provenance: HA_APPROVED_AGGREGATE, REAL, or cited_paper. Never invent.
 
-version: 2026-08-18
+version: 2026-08-23
 manuscript: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
 human_ledger: manuscript/live_collaborative/claim_ledger.md
 
@@ -27,6 +27,24 @@ forbidden_in_manuscript:
   - "SYNTHETIC_THEORY"
   - "F1.1"
   - "F1.2"
+
+# Grain → estimand map for Playbook 05. Operational framework, not a theorem.
+# String tripwire only: required contribution phrases + forbidden smuggled-primary strings.
+# Not a semantic parser of every estimand.
+estimand_policy:
+  contribution_must_contain:
+    - "aggregation-identifiability"
+    - "calibrated refusal"
+  required_in_manuscript:
+    - "No real daily coefficient is reported."
+  must_not_appear:
+    - "new statistical theorem"
+    - "identification theorem"
+    - "daily DLNM coefficient from this series"
+    - "the stroke count ratio was"
+    - "AMI effect from this file"
+    - "monetised hospitalisation"
+    - "we estimate heatwave excess deaths"
 
 claims:
   - id: chd_n

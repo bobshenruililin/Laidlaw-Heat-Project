@@ -104,6 +104,23 @@ def main(argv: list[str] | None = None) -> int:
         else:
             passes.append(f"forbidden_absent:{phrase}")
 
+    policy = spec.get("estimand_policy") or {}
+    for phrase in policy.get("contribution_must_contain", []):
+        if phrase not in body:
+            failures.append(f"CONTRIBUTION phrase missing: {phrase!r}")
+        else:
+            passes.append(f"contribution_present:{phrase}")
+    for phrase in policy.get("required_in_manuscript", []):
+        if phrase not in body:
+            failures.append(f"REQUIRED refusal missing: {phrase!r}")
+        else:
+            passes.append(f"required_present:{phrase[:40]}")
+    for phrase in policy.get("must_not_appear", []):
+        if phrase.lower() in low:
+            failures.append(f"SMUGGLED estimand phrase present: {phrase!r}")
+        else:
+            passes.append(f"smuggled_absent:{phrase}")
+
     for claim in spec.get("claims", []):
         cid = claim["id"]
         displays = [claim["display"]]

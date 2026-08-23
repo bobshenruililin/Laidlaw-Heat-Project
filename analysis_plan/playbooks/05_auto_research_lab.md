@@ -58,8 +58,11 @@ Partial scientific progress is allowed only as a **named gap**, never as a coeff
 - `analysis_plan/auto_research/stroke_person_time_idle_checklist.md` when receipt rules change
 - `analysis_plan/context_compound_log.md`
 - `knowledge/CONTEXT_BOOTSTRAP.md`, `knowledge/INDEX.md`, and a dated knowledge entry
-- `manuscript/live_collaborative/claim_ledger.yml` only when a verified numeral or source path changes
+- `manuscript/live_collaborative/claim_ledger.yml` only when a verified numeral, source path, or `estimand_policy` rule changes
+- `analysis_plan/auto_research/aggregation_identifiability_calibrated_refusal_2026-08-23.md` when the grain → estimand map is named or bounded
 
 ## Claim boundaries
 
 This playbook audits and prepares. It does not freeze Gate 3, lock Hogan weather definitions, invent undelivered HA fields, or promote any core contrast to a primary result. The live collaborative pack remains the journal-track authority; paste remains a human step.
+
+The named methodological contribution is **aggregation-identifiability and calibrated refusal**: a grain → estimand map for this monthly extract, with refusal when a named check fails. That is an operational framework, not a new theorem. Daily DLNM, AMI/principal-diagnosis, stroke, heatwave excess-death, cohort incidence, and health-econ claims are calibrated refusals. `estimand_policy` in `claim_ledger.yml` is a **string tripwire**, not a semantic map. Programme Stage 3 PDFs follow the lock on `main`. Gate 3 stays open.

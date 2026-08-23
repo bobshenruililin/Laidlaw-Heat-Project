@@ -4,7 +4,7 @@
 # Do not collapse incompatible families into one attractive incomplete story.
 
 lab: heat_chd_hf_auto_research
-updated: 2026-08-16
+updated: 2026-08-23
 stop_rule: identification_article_survives_audit_and_gaps_are_human_owned
 do_not_copy_from_crouzeix:
   - assume_complete_affirmative_proof_exists
@@ -15,8 +15,8 @@ families:
   identification:
     id: F01
     status: alive
-    job: "Show where monthly first-event information comes from: DJF concentration of official cold days, first-event depletion vs C&SD 35+, Newey–West ladder, pre-2020 window."
-    must_not_collapse_into: "A discovery headline or a protected primary contrast."
+    job: "Keep the aggregation-identifiability map and calibrated-refusal rule visible: DJF concentration of official cold days, first-event depletion vs C&SD 35+, Newey–West ladder, pre-2020 window, F1.2 daily-recovery refusal, q-bar. Name the framework; do not invent a theorem."
+    must_not_collapse_into: "A discovery headline, a protected primary contrast, or a claim of statistical priority over Basagaña–Ballester."
     kill_only_with:
       - table_contradiction
       - forbidden_claim_hit

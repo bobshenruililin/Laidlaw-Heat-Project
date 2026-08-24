@@ -36,4 +36,4 @@ Contract tests: `tests/test_hogan_methods_rewrite.py`.
 - Hogan’s HKO paragraph stays his. Averaging-vs-total rainfall is a Word comment, not a body overwrite.
 - Model 3 is specified weather; it does not winter-peak like Hogan’s TV series.
 
-Gate 3 remains open. No AMI, stroke result, or confirmatory thermal headline. Stage 3 PDFs remain byte-locked (`c083d4096a0924b1` / `0ef58e0951bb2ffd`).
+Gate 3 remains open. No AMI, stroke result, or confirmatory thermal headline. Stage 3 programme PDFs were rebuilt separately on 24 August (Hogan Model 1/2/3 language; send pack `analysis_plan/send_pack_2026-08-24/`).

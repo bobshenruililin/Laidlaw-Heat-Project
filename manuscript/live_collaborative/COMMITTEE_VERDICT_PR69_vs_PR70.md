@@ -52,7 +52,7 @@ Do not email a competing copy. Paste `Heat_CVD_Manuscript_20260824_hogan.docx` i
 4. “core panel” / “twelve core contrasts”.
 5. Results in Methods (141 of 145 cold days; VIF; calibration failure).
 6. Jingjing TV-day counts.
-7. Rebuild of Stage 3 PDFs (byte-lock prefixes `c083d4096a0924b1` / `0ef58e0951bb2ffd`).
+7. Using this Methods paste as the Laidlaw Stage 3 programme essay. Stage 3 is a separate 24 August programme rebuild.
 8. Citing Goggins and Chan 2017 [21] as the rainfall paper.
 
 ---

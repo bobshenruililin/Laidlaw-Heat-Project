@@ -1,20 +1,17 @@
 """Contract checks for the 24 Aug Hogan Methods rewrite (merged Model 1/2/3).
 
 Does not fit health models. Does not read governed HA panels.
-Does not rebuild Stage 3 PDFs.
+Stage 3 programme PDFs are rebuilt on a separate branch; this file does not freeze their hashes.
 """
 from __future__ import annotations
 
 import csv
-import hashlib
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MS = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_live_update.md"
 CLIM = ROOT / "data_processed" / "hogan_abnormal_day_counts_2013_2023.csv"
-STAGE3_REPORT = ROOT / "outputs" / "ShenRuililin_Laidlaw_Stage3Report.pdf"
-STAGE3_POSTER = ROOT / "outputs" / "ShenRuililin_Laidlaw_Stage3Poster.pdf"
 DOCX = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_20260824_hogan.docx"
 PDF = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_20260824_hogan.pdf"
 
@@ -164,12 +161,6 @@ def test_climatology_series_is_weather_only():
     assert 10 < cool < 20
 
 
-def test_stage3_pdfs_not_rebuilt():
-    report = hashlib.sha256(STAGE3_REPORT.read_bytes()).hexdigest()
-    poster = hashlib.sha256(STAGE3_POSTER.read_bytes()).hexdigest()
-    assert report.startswith("c083d4096a0924b1")
-    assert poster.startswith("0ef58e0951bb2ffd")
-
 
 def test_final_docx_and_pdf_exist_when_built():
     """Builder writes both files. Skip-not: they must exist after script 64."""
@@ -211,7 +202,6 @@ if __name__ == "__main__":
         test_results_heading_is_model_1,
         test_stroke_limitation_does_not_name_correspondence,
         test_climatology_series_is_weather_only,
-        test_stage3_pdfs_not_rebuilt,
         test_final_docx_and_pdf_exist_when_built,
     ]
     for fn in tests:

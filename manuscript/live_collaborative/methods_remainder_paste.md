@@ -79,7 +79,13 @@ Analyses were conducted in R 4.3.3 (2024-02-29). Negative-binomial models used M
 - Acknowledgements that name co-authors (KW19)
 - Data-availability sentence that only says “external submission requires team confirmation” (KW20 → GitHub link + HA/IRB sentence)
 
-### Table 2 (Word comment, not body text)
+### Table 2 and Abstract (Word comments, not body text)
+
+Methods now include monthly mean relative humidity and monthly total rainfall in Models 1–12. The current Table 2 numbers are from the earlier specification **without** those two covariates. **Refit on the governed panel before leaving Table 2 uncommented.** Do not invent new coefficients. This checkout does not contain the governed analysis panel.
+
+If Hogan’s Abstract Methods still mentions the daily-recovery calibration failure, delete that sentence. It stays in Results.
+
+Suggested Word comments: copy from `hogan_20260824_paste_replies.md` (Table 2 and Abstract).
 
 Methods now include monthly mean relative humidity and monthly total rainfall in Models 1–12. The current Table 2 numbers are from the earlier specification **without** those two covariates. **Refit on the governed panel before leaving Table 2 uncommented.** Do not invent new coefficients. This checkout does not contain the governed analysis panel.
 

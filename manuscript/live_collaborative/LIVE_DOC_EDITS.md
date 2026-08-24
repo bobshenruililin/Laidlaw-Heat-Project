@@ -9,9 +9,10 @@ This is the **journal-track** shared file, not the Laidlaw Stage 3 report. Do no
 
 1. Leave Hogan’s *Weather and pollutants data* HKO paragraph as he rewrote it (including “All monthly data were derived by taking the average of daily data in each calendar month.”). Paste around it from `methods_remainder_paste.md`. Do **not** paste model specification or the December–February cold-day sentence under Weather.
 2. Replace the rest of Methods from the live_update: Data sources (health, then weather processing) → Statistical analysis (equation + symbol table + Models 1–12) → Sensitivity analysis → Software. Keep his ethics sentence with `UW XX-XXX`. Author-order confirmation is a comment, not body text.
-3. Reply in the KW balloons from `hogan_20260824_paste_replies.md`. Do not resolve until he has read them.
-4. Put the Table 2 Word comment from that replies file on the table. On a machine **with** the governed panel, run `Rscript scripts/53_hogan_models_rh_rain.R` and replace Table 2 from `outputs/tables/table2_models_1_12_rh_rain.csv`. This checkout cannot refit (panel absent; blocker in `outputs/tables/hogan_models_rh_rain_blocker.csv`). Do not invent coefficients.
-5. Day-of-year warmer/cooler counts are a sensitivity (`scripts/52_hogan_abnormal_day_counts.py`), not a replacement for official HKO hot nights / cold days, and not Jingjing TV-day counts.
+3. In Hogan’s **Abstract Methods**, delete the sentence about the simulated daily-recovery method failing calibration (or “was not applied to the health series”). That result stays in Results and Discussion only. If the 15 August pack is already in the file, this deletion is still required even when you do not re-paste the whole Abstract.
+4. Reply in the KW balloons from `hogan_20260824_paste_replies.md`. Do not resolve until he has read them.
+5. Put the Table 2 **and Abstract** Word comments from that replies file on those objects. On a machine **with** the governed panel, run `Rscript scripts/53_hogan_models_rh_rain.R` and replace Table 2 from `outputs/tables/table2_models_1_12_rh_rain.csv`. This checkout cannot refit (panel absent; blocker in `outputs/tables/hogan_models_rh_rain_blocker.csv`). Do not invent coefficients.
+6. Day-of-year warmer/cooler counts are a sensitivity (`scripts/52_hogan_abnormal_day_counts.py`), not a replacement for official HKO hot nights / cold days, and not Jingjing TV-day counts.
 
 ## Do not touch
 
@@ -43,7 +44,7 @@ Copy each block from `hogan_comment_paste_replies.md` into the matching thread. 
 
 ## Paste / replace (in order)
 
-**If Hogan’s file already has the 15 August paste:** do **not** re-paste the whole 15 August pack. Do the **24 August — do this first** block, then rename Results “Core panel” → “Models 1–12”, replace remaining “core panel” / “twelve core contrasts” wording, and add the Table 2 Word comment. Leave his HKO weather paragraph.
+**If Hogan’s file already has the 15 August paste:** do **not** re-paste the whole 15 August pack. Do the **24 August — do this first** block (including deleting the daily-recovery sentence from Abstract Methods, and the Abstract Word comment), then rename Results “Core panel” → “Models 1–12”, replace remaining “core panel” / “twelve core contrasts” wording, and add the Table 2 Word comment. Leave his HKO weather paragraph.
 
 **If the live file is still the 28 July skeleton:** paste in this order from `Heat_CVD_Manuscript_live_update.md` / `methods_remainder_paste.md`.
 

@@ -50,7 +50,7 @@ Live-file comment on your averaging sentence: in our pipeline rainfall is a mont
 
 **KW15 — five days vs three vs one**
 
-Primary models keep per five days. Sensitivity: per 1 day and per 3 days (same refit).
+Primary models keep per five days so the coefficient is a five-day contrast rather than a single extreme day. The term is linear on the log mean, so the per-1-day count ratio is the per-5-day ratio to the power 1/5 (confidence limits transformed the same way); per 3 days is the 3/5 power. I will still report the refitted per-1-day and per-3-day numbers as a software check of that identity.
 
 ---
 
@@ -94,7 +94,7 @@ Methods are now: Data sources (health, then weather) → Statistical analysis (e
 
 Not used. TV is an index without a threshold, so I have not counted “TV days” per month.
 
-Instead, as you suggested: for each day of the year I took the historical average of daily mean, max, and min temperature, then counted how many days in each calendar month sat above or below that same-day average (`scripts/52_hogan_abnormal_day_counts.py`; `data_processed/hogan_abnormal_day_counts_2013_2023.csv`). I used a leave-one-year-out average so that 15 January 2018 is not judged against a mean that already includes 15 January 2018. Ties count as neither.
+Instead, as you suggested: for each day of the year I took the historical average of daily mean, max, and min temperature, then counted how many days in each calendar month sat above or below that same-day average (`scripts/52_hogan_abnormal_day_counts.py`; `data_processed/hogan_abnormal_day_counts_2013_2023.csv`). I used a leave-one-year-out average so that 15 January 2018 is not judged against a mean that already includes 15 January 2018. Ties count as neither. If you instead meant days above the historical record maximum or below the record minimum for that calendar date, say so and I will recode.
 
 This is a sensitivity only. Models 1–12 still use the official HKO thresholds. These counts will not winter-peak the way your TV lag 0–1 series does: about half the days in both January and July sit below the day-of-year mean (January mean 12.7 days below; July mean 12.1). That is expected for a day-of-year anomaly count. It is not a TV replicate, and I will not sell it as one.
 
@@ -112,8 +112,14 @@ Removed from the body. Author-order confirmation with Professor Bishai is a live
 
 ---
 
-**Table 2 (not a KW balloon)**
+**Table 2 and Abstract (not KW balloons)**
 
-Word comment on the table:
+Word comment on Table 2:
 
 > These count ratios are from Models 1–12 before monthly mean relative humidity and monthly total rainfall were entered. They will be replaced after the governed panel is refit. No new coefficients have been typed by hand.
+
+Word comment on the Abstract (and, if space, Tables 3 and Figure 3):
+
+> The Methods now enter monthly mean relative humidity and monthly total rainfall in Models 1–12. The Abstract Methods sentence and all count ratios in the Abstract, Tables 2–3, and Figure 3 are from the earlier specification without those covariates, and will be updated together after the governed panel is refit (`scripts/53_hogan_models_rh_rain.R`). No new coefficients have been typed by hand.
+
+Also delete the daily-recovery failure sentence from Abstract Methods if it is still there from the 15 August paste. That result stays in Results.

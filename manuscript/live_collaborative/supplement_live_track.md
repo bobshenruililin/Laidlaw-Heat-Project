@@ -4,17 +4,17 @@
 **Not** the 10 August `manuscript/chd_hf_supplement.pdf` (do not rebuild).  
 **Not** Hogan’s shared Word/Google file (Bob pastes; agents do not).
 
-This file is the journal-takeable supplement for Environmental Research. Every numeral is transcribed from an existing `HA_APPROVED_AGGREGATE`, `REAL`, or `SYNTHETIC_CALIBRATION` table. No new health model was fitted. Archive influenza and pollution models are **not** adjusted versions of the twelve-contrast core panel. No confirmatory primary is declared.
+This file is the journal-takeable supplement for Environmental Research. Every numeral is transcribed from an existing `HA_APPROVED_AGGREGATE`, `REAL`, or `SYNTHETIC_CALIBRATION` table. No new health model was fitted. Archive influenza and pollution models are **not** adjusted versions of Models 1–12. No confirmatory primary is declared.
 
 Numbering matches the live body: Supplementary Figure S1 is residual ACF; Supplementary Tables S7 and S9 are archive influenza and archive pollution. The release heatmap filename `figureS1_exposure_correlation.png` is Supplementary Figure **S4** here.
 
-## Supplementary Figure S1. Residual autocorrelation in two displayed exploratory core models
+## Supplementary Figure S1. Residual autocorrelation in two displayed exploratory models
 
 ![Supplementary Figure S1](../../figures/live_identification/figure_C_residual_acf.png)
 
-Bars show the Pearson residual autocorrelation function for the separate-exposure negative-binomial CHD hot-night and HF cold-day models. Dashed lines mark ±1.96/√132. Lag-1 residual autocorrelation was 0.508 for CHD hot nights and 0.146 for HF cold days. These diagnostics motivate reporting more than one covariance estimator; they do not establish that a particular estimator is correct, protect either contrast from multiplicity, or identify a causal thermal effect. Source: residuals from the governed aggregate core models.
+Bars show the Pearson residual autocorrelation function for the separate-exposure negative-binomial CHD hot-night and HF cold-day models. Dashed lines mark ±1.96/√132. Lag-1 residual autocorrelation was 0.508 for CHD hot nights and 0.146 for HF cold days. These diagnostics motivate reporting more than one covariance estimator; they do not establish that a particular estimator is correct, protect either contrast from multiplicity, or identify a causal thermal effect. Source: residuals from the governed aggregate models.
 
-## Supplementary Table S1. Uncertainty ladder for the twelve core contrasts
+## Supplementary Table S1. Uncertainty ladder for Models 1–12
 
 Count ratios use the days-in-month offset. Intervals are model-based, HC1, Newey–West lag 3, and Newey–West lag 6. No interval was selected because it excluded 1. Display strings are those in `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv`.
 
@@ -39,7 +39,7 @@ Count ratios use the days-in-month offset. Intervals are model-based, HC1, Newey
 
 The figure displays the same four constructions as Table 3 of the main paper. Concordance across constructions is not multiplicity protection. Source: `outputs/release_chd_hf/figures/figure5_se_method_ladder.png`.
 
-## Supplementary Table S2. Twelve core contrasts in the pre-2020 window (Newey–West lag-6)
+## Supplementary Table S2. Models 1–12 in the pre-2020 window (Newey–West lag-6)
 
 January 2013–December 2019; 84 months. Nine of twelve intervals exclude 1. All six continuous temperature contrasts are inverse. No multiplicity control was computed within this window, and no pre-2020 estimate is promoted beyond a sensitivity. Source: `pre_covid` rows of `outputs/release_chd_hf/supplement/cvd_trend_depletion_sensitivity.csv`. The nine-scenario visual summary remains main-text Figure 3.
 
@@ -135,7 +135,7 @@ Joint Newey–West lag-6 estimates (diagnostics, not preferred):
 | HF | Cold days / 5 days | 1.073 (1.006–1.144) |
 | HF | Very hot days / 5 days | 0.986 (0.946–1.028) |
 
-## Supplementary Table S6. Residual diagnostics for the twelve core models
+## Supplementary Table S6. Residual diagnostics for Models 1–12
 
 | Outcome | Core exposure | Pearson ACF lag 1 | Ljung–Box p, lag 6 | Ljung–Box p, lag 12 |
 |:--|--:|--:|--:|--:|
@@ -156,7 +156,7 @@ Source: `outputs/release_chd_hf/supplement/chd_pathway_core_diagnostics.csv` and
 
 ## Supplementary Table S7. Archive influenza co-exposure (pathway P14; 121 months)
 
-Missing influenza months were not zero-filled. This model uses a general-population × days offset and is not an adjusted version of the core panel. The live manuscript reports the CHD direction only.
+Missing influenza months were not zero-filled. This model uses a general-population × days offset and is not an adjusted version of Models 1–12. The live manuscript reports the CHD direction only.
 
 | Outcome | Term | Count ratio (95% CI) | Months |
 |:--|:--|--:|--:|
@@ -210,4 +210,4 @@ Nitrogen dioxide retains a positive coefficient in the CHD and HF archive fits. 
 
 ## Scope of this supplement
 
-This supplement does not contain stroke results, principal-diagnosis or AMI claims, cohort incidence, a real daily-recovery coefficient, a confounding-adjusted version of the separate core panel, or a health-economic result. Hogan weather reference rules remain unlocked; provisional hot-month and cold-month estimates are ineligible as a primary claim.
+This supplement does not contain stroke results, principal-diagnosis or AMI claims, cohort incidence, a real daily-recovery coefficient, a confounding-adjusted version of Models 1–12, or a health-economic result. Hogan weather reference rules remain unlocked; provisional hot-month and cold-month estimates are ineligible as a primary claim.

@@ -10,7 +10,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 ## 0m. Canonical update — Stage 3 Hogan alignment for Bishai (24 August)
 
 - Hogan’s 24 August comments asked for nested Model 1 / Model 2 / Model 3, not “core panel.” The 22 August programme essay still used twelve-model panel language. Bob authorised a Stage 3 rebuild. Science unchanged: all twelve Model 1 *q* > 0.19. Model 2/3 specified, not fitted. No invented health coefficients.
-- Programme essay and A0 poster rebuilt. Essay SHA prefix `605cd8db43072cb5`; poster `a972206e61932650`. Introduction–Conclusion 2,773 words. Email A pack: [`send_pack_2026-08-24/`](send_pack_2026-08-24/). Do not attach the live manuscript. Form 2a supervisor block stays blank. Optional Hogan one-liner after the Bishai mail; paste remains human.
+- Programme essay and A0 poster rebuilt. Essay SHA prefix `605cd8db43072cb5`; poster `a972206e61932650`. Introduction–Conclusion 2,773 words. Fable GO / Sol GO. Email A pack: [`send_pack_2026-08-24/`](send_pack_2026-08-24/). Do not attach the live manuscript. Form 2a supervisor block stays blank. Optional Hogan one-liner after the Bishai mail; paste remains human.
 - Durable: [`knowledge/2026-08-24_stage3_hogan_align.md`](../knowledge/2026-08-24_stage3_hogan_align.md). Gate 3 still open.
 
 ## 0k. Canonical update — roundtable fold-back before Email A (22 August, night)

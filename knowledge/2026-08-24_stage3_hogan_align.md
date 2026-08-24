@@ -50,5 +50,5 @@ Gmail was not available in this environment. The comment set is the 24 August fl
 | `outputs/ShenRuililin_Laidlaw_Stage3Report.pdf` | 408,186 | `605cd8db43072cb5` |
 | `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` | 94,273 | `a972206e61932650` |
 
-Introduction–Conclusion is 2,773 words (Abstract excluded). Poster is one ISO A0 page.
+Introduction–Conclusion is 2,773 words (Abstract excluded). Poster is one ISO A0 page. Fable GO / Sol GO on the 24 August renders.
 

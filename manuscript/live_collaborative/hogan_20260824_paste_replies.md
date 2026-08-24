@@ -42,7 +42,7 @@ January–October 2013 are missing. Influenza is a sensitivity on the 121 months
 
 **KW14 and email — relative humidity and rainfall**
 
-Monthly mean RH and monthly total rainfall now enter every one of Models 1–12, following Goggins and Chan 2017. The daily series were already in the HKO dailyExtract files; monthly mean RH and monthly total rainfall are in `data_processed/climate_monthly_2013_2023.csv`. Table 2 still needs a refit on the governed panel; I will not type new coefficients by hand. I have left a Word comment on Table 2 to that effect.
+Monthly mean RH and monthly total rainfall now enter every one of Models 1–12, following Goggins and Chan 2017. The daily series were already in the HKO dailyExtract files; monthly mean RH and monthly total rainfall are in `data_processed/climate_monthly_2013_2023.csv`. Table 2 still needs a refit: on a machine with the governed panel, `Rscript scripts/53_hogan_models_rh_rain.R` writes `outputs/tables/table2_models_1_12_rh_rain.csv`. I will not type new coefficients by hand. I have left a Word comment on Table 2 to that effect.
 
 Live-file comment on your averaging sentence: in our pipeline rainfall is a monthly total (mm), extreme days are counts, and humidity is a monthly mean. I have not overwritten your sentence.
 

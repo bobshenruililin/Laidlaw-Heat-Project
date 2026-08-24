@@ -38,6 +38,8 @@ CONTROL_TERM_MAP <- list(
   PM25 = "PM25",
   flu_indicator = "flu_indicator",
   O3 = "O3",
+  relative_humidity = "relative_humidity",
+  rainfall = "rainfall",
   frozen_exposure = NA_character_
 )
 
@@ -429,6 +431,8 @@ apply_scenario <- function(dat, scenario, pathway_id, exposure_spec,
   if ("PM25" %in% controls) ctrl_vars <- c(ctrl_vars, "PM25")
   if ("O3" %in% controls) ctrl_vars <- c(ctrl_vars, "O3")
   if ("flu_indicator" %in% controls) ctrl_vars <- c(ctrl_vars, "flu_indicator")
+  if ("relative_humidity" %in% controls) ctrl_vars <- c(ctrl_vars, "relative_humidity")
+  if ("rainfall" %in% controls) ctrl_vars <- c(ctrl_vars, "rainfall")
   if (length(ctrl_vars)) {
     miss_cols <- setdiff(ctrl_vars, names(d))
     if (length(miss_cols)) {

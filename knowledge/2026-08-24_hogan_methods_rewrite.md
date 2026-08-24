@@ -18,7 +18,7 @@ Weather-only abnormal-day counts (132 months, RH/rain match `climate_monthly`): 
 
 - Paste into the shared live file (do not email a parallel Word copy).
 - @Roro: IRB number; ICD/timing if they differ.
-- Refit Table 2 with RH and rainfall on the governed panel. **Not done here** (panel absent). Do not invent coefficients.
+- Refit Table 2 with RH and rainfall on the governed panel: `Rscript scripts/53_hogan_models_rh_rain.R`. **Not done here** (panel absent; `outputs/tables/hogan_models_rh_rain_blocker.csv`). Do not invent coefficients.
 - Hogan’s HKO paragraph stays his. Averaging-vs-total rainfall is a live-file comment, not a body overwrite.
 - Day-of-year warmer/cooler counts are sensitivity weather only; they do not winter-peak like Hogan’s TV series.
 

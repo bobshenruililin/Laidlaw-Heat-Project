@@ -22,7 +22,7 @@ This is the **journal-track** shared file, not the Laidlaw Stage 3 report. Do no
 | Any stroke coefficients or ICD lists | Roro has not delivered them |
 | Table 2 numbers until the RH/rainfall refit | Would mix two specifications |
 
-When copying from the 15 August Word file, **skip** Methods; that file is stale for Methods. Use the 24 August live_update instead.
+When copying from the 15 August Word file, **skip** Methods **and** the Abstract Methods sentence about daily-recovery failure. Use the 24 August `Heat_CVD_Manuscript_live_update.md` instead.
 
 ## Comment bubbles first (28 July threads)
 
@@ -43,13 +43,17 @@ Copy each block from `hogan_comment_paste_replies.md` into the matching thread. 
 
 ## Paste / replace (in order)
 
+**If Hogan’s file already has the 15 August paste:** do **not** re-paste the whole 15 August pack. Do the **24 August — do this first** block, then rename Results “Core panel” → “Models 1–12”, replace remaining “core panel” / “twelve core contrasts” wording, and add the Table 2 Word comment. Leave his HKO weather paragraph.
+
+**If the live file is still the 28 July skeleton:** paste in this order from `Heat_CVD_Manuscript_live_update.md` / `methods_remainder_paste.md`.
+
 1. **Title.** Keep: *Thermal extremes and first hospitalisation after coronary heart disease or heart failure diagnosis in Hong Kong, 2013–2023*. Add the running title under it. Do not switch to a methods-forward title in this file.
-2. **Abstract.** Replace with the 15 August Abstract. It now carries the pre-2020 CHD hot-night null (1.011, 0.991–1.032), the stronger pre-2020 HF cold-day interval, and the simulated daily-recovery refusal. Residual ACF values are no longer in the Abstract.
+2. **Abstract.** Replace with the 24 August Abstract in the live_update (Models 1–12; no daily-recovery failure in Abstract Methods; Table 2 numbers unchanged until the RH/rainfall refit).
 3. **Introduction.** Replace. Sentence one cites [9] only. Housing, behavioural adaptation, air-conditioning, and medication are not mentioned. [6] is on the 2023 cold-day count. Pollution paragraph reports 2013–2023 EPD means and states they are not Goggins 2000–2009. Closing paragraph is one sentence (estimand + reporting).
 4. **Health data.** Paste from `methods_remainder_paste.md`. Leave a Word comment that Roro should replace ICD, timing, and inpatient versus DAE. Influenza stays under Health data. Do not put confirmation-WIP in the body.
 5. **Weather.** Leave his HKO paragraph. Paste only the **processing** paragraph after it (75% completeness; general stations; roadside not used; PM2.5 for sensitivity). Do not paste model lists or the December–February cold-day observation under Weather.
 6. **Statistical analysis, sensitivity, software.** Paste from `methods_remainder_paste.md` / the live_update. One ethics sentence at the top of Methods (already in the opening). No separate Ethics WIP section.
-7. **Results.** Replace. Tables 1–3 stay. Figures: 1 depletion, 2 DJF heatmap, **3 trend/depletion sensitivity** (not residual ACF). Ljung–Box lag 6 is now *p* < 10^−7^ for every CHD core model (the live 13 August “*p* < 10^−8^” was false for the hot-night model by a hair).
+7. **Results.** Replace from the live_update. Heading is **Models 1–12**, not “Core panel”. Tables 1–3 stay (Table 2 numbers unchanged until refit; add the Word comment). Figures: 1 depletion, 2 DJF heatmap, **3 trend/depletion sensitivity** (not residual ACF). Ljung–Box lag 6 is *p* < 10^−7^ for every CHD model among Models 1–6 (the live 13 August “*p* < 10^−8^” was false for the hot-night model by a hair).
 8. **Figures (insert as images, then delete the markdown path lines if any remain).**
    - Figure 1 — first-event depletion vs C&SD 35+: `figures/live_identification/figure_B_first_event_depletion.png`
    - Figure 2 — cold-day year × month heatmap: `figures/live_identification/figure_A_cold_day_identification.png`
@@ -68,7 +72,7 @@ Copy each block from `hogan_comment_paste_replies.md` into the matching thread. 
 | Ljung–Box *p* < 10^−7^ | Largest CHD core lag-6 *p* is 1.17 × 10^−8^ |
 | Flu numeral out of Discussion | Largest CI-bearing archive effect; not core-adjusted |
 | 2021 hot-night record cited to [4] | “At that time,” not an unsourced full-record superlative |
-| Daily-recovery sentence restored to Abstract Methods | Fable must-say; still a refusal, not a coefficient |
+| Daily-recovery failure stays in Results, not Abstract Methods | Hogan: no Results in Methods; calibration refusal is a result |
 | Running title + one-sentence thesis | Hogan comments 0 and 9 |
 | Housing / behaviour / medication omitted | Hogan comment 4; none of those variables is in the monthly aggregates |
 | Pollution paragraph scoped to 2013–2023 | Hogan comment 8; not a reconstruction of Goggins 2000–2009 |
@@ -91,4 +95,4 @@ This list is for you to edit in Hogan’s shared file. Do not email him a parall
 
 Venue recommendation (not for the scientific body): Environmental Research as first submission once human blockers close; EHP as one deliberate reach; IJE only if recast and cut; Lancet Planetary Health thematic not editorial; Nature Communications / Nature / Science / Cell not honest on these data. See `manuscript/cns_team/03_sol_journal_target.md` and `manuscript/cns_team/00_parent_synthesis.md`.
 
-If the 15 August pack is already in Hogan’s file, do not paste it again. Apply only [`REPASTE_2026-08-18.md`](REPASTE_2026-08-18.md) (G3 Results sentence; two Methods/Results SI citations) and attach [`supplement_live_track.md`](supplement_live_track.md). Leave the Abstract and the weather paragraph.
+If the 15 August pack is already in Hogan’s file, do not paste that pack again. Still apply the **24 August — do this first** block (Methods rewrite, KW replies, Table 2 comment). Do not stop at [`REPASTE_2026-08-18.md`](REPASTE_2026-08-18.md) alone. Leave the HKO weather paragraph.

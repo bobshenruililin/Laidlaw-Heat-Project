@@ -74,7 +74,7 @@ After this paper, the following objects remain loadable:
 | Knowledge base | `knowledge/` + assumption ledger + this tree | yes |
 | Human gates | `blocked_human` nodes with owners | yes — still unfilled |
 
-Playbook 05 remains the Jin-shaped *round* (families, adversary, dated `lab_run_*.md`). Playbook 06 is the *compounding layer*: every 05 round, and any standalone search cycle, must update the tree and memory rather than starting from zero.
+Playbook 05 remains the Jin-shaped *round* (families, adversary, dated `lab_run_*.md`). Playbook 06 is the *compounding layer*: every 05 round, and any standalone search cycle, must update the tree and memory rather than starting from zero. The harness fails a cycle if a killed or closed node disappears.
 
 The next paper — stroke file if it arrives, a later daily extract if a new governed grain is delivered, a Hogan-locked HM/CM panel — **loads this tree first**. It does not re-discover that public HA throughput cannot replace monthly first-event CHD/HF, or that F1.2 failed, or that all twelve q > 0.19.
 

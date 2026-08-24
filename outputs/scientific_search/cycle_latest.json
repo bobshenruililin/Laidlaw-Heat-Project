@@ -1,0 +1,102 @@
+{
+  "date": "2026-08-24",
+  "ok": true,
+  "failures": [],
+  "metrics": {
+    "alive_families": [
+      "F01",
+      "F02",
+      "F03",
+      "F06"
+    ],
+    "n_alive_families": 4,
+    "n_queued_frontier": 3,
+    "queued_frontier_ids": [
+      "P-keep-families",
+      "P-permutation-park",
+      "P-next-paper-load"
+    ],
+    "blocked_human": [
+      "F04",
+      "F05"
+    ],
+    "killed": [
+      "F01-daily-recovery",
+      "F01-confirmatory-primary",
+      "F02-pick-ci",
+      "F03-rescale",
+      "F06-public-outcome-substitute",
+      "F06-health-econ-in-paper"
+    ],
+    "closed_lemma": [
+      "F01-framework",
+      "F01-winter-support",
+      "F02-q-bar"
+    ],
+    "width": 7,
+    "depth": 2,
+    "n_inheritable_lemmas": 12,
+    "n_inheritable_constraints": 21,
+    "search_power_proxy": 294,
+    "notes": "proxy is width \u00d7 depth \u00d7 inheritable constraints; never a p-value"
+  },
+  "auditor": {
+    "ok": true,
+    "skipped": false,
+    "stdout_tail": "CLAIM LEDGER AUDIT PASSED\n171 checks\nwrote /workspace/outputs/auto_research/claim_ledger_audit.json\n",
+    "stderr_tail": ""
+  },
+  "proposals": [
+    {
+      "id": "P-keep-families",
+      "family": "F01",
+      "status": "queued",
+      "owner": null,
+      "job": "Keep F01\u2013F03 alive and incompatible. Do not collapse into a discovery headline."
+    },
+    {
+      "id": "P-hogan-readiness",
+      "family": "F04",
+      "status": "blocked_human",
+      "owner": "Hogan",
+      "job": "Refresh Hogan-lock readiness only. Do not lock definitions."
+    },
+    {
+      "id": "P-stroke-idle",
+      "family": "F05",
+      "status": "blocked_human",
+      "owner": "Roro",
+      "job": "Refresh stroke/person-time idle checklist only. Do not invent rows."
+    },
+    {
+      "id": "P-bob-paste",
+      "family": "F06",
+      "status": "blocked_human",
+      "owner": "Bob",
+      "job": "Paste into Hogan's shared live file remains human. Do not email Outlook. Do not rebuild Stage 3 PDFs."
+    },
+    {
+      "id": "P-permutation-park",
+      "family": "F01",
+      "status": "queued",
+      "owner": null,
+      "job": "Park permutation / future-month negative-control as a later calibrated-refusal display. Not a primary. Do not run as a hunt for a significant heat effect."
+    },
+    {
+      "id": "P-next-paper-load",
+      "family": "ROOT",
+      "status": "queued",
+      "owner": null,
+      "job": "Next paper or next extract loads this tree and memory first. Do not reset killed nodes."
+    }
+  ],
+  "rails": {
+    "gate_3": "open",
+    "contribution_type": "aggregation_identifiability_calibrated_refusal",
+    "hogan_weather_must_contain": "Meteorological data was obtained from the HKO.",
+    "stage3_pdfs": "byte_locked_on_main",
+    "auditor": "scripts/50_audit_live_claim_ledger.py"
+  },
+  "objective": "identification_defensibility",
+  "not_objective": "found_significant_heat_effect"
+}

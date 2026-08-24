@@ -152,7 +152,8 @@ Executable workflow index:
 3. [`03_full_analysis_run.md`](analysis_plan/playbooks/03_full_analysis_run.md) — complete panel → team Gate 3 → manuscript tables.
 4. [`04_final_writeup.md`](analysis_plan/playbooks/04_final_writeup.md) — verified real estimates → CNS Results/Discussion.
 5. [`05_auto_research_lab.md`](analysis_plan/playbooks/05_auto_research_lab.md) — Jin-adapted lab: adversarial audit and readiness packets; does not invent findings or freeze Gate 3.
-6. [`99_emergencies.md`](analysis_plan/playbooks/99_emergencies.md) — source, scope, governance, or provenance shocks.
+6. [`06_scientific_search.md`](analysis_plan/playbooks/06_scientific_search.md) — compounding scientific search: persistent tree, memory, eval, cycle harness; does not invent findings or freeze Gate 3.
+7. [`99_emergencies.md`](analysis_plan/playbooks/99_emergencies.md) — source, scope, governance, or provenance shocks.
 
 ---
 
@@ -168,6 +169,7 @@ Explicit playbook skills live under `.cursor/skills/` and do not self-trigger:
 | `/playbook-03-full-analysis` | Execute the complete real-data panel after Gates 1–2. |
 | `/playbook-04-final-writeup` | Execute final writing and engage `cns-writing`. |
 | `/playbook-05-auto-research` | Jin-adapted lab: audit the live identification article; readiness packets only. |
+| `/playbook-06-scientific-search` | Compounding scientific-search cycle; tree/memory persist across papers. |
 | `/playbook-99-emergencies` | Bound and document source, scope, governance, or provenance shocks. |
 
 Writing commands:

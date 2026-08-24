@@ -12,6 +12,7 @@
 | `/playbook-03-full-analysis` | Complete real-data analysis panel | Explicit only |
 | `/playbook-04-final-writeup` | Final write-up plus CNS-writing | Explicit only |
 | `/playbook-05-auto-research` | Jin-adapted lab (audit + readiness; no invented findings) | Explicit only |
+| `/playbook-06-scientific-search` | Compounding scientific-search cycle (tree/memory persist; no invented findings) | Explicit only |
 | `/playbook-99-emergencies` | Source/scope/governance/provenance shock | Explicit only |
 | `/laidlaw-blog` | Draft or revise a public Laidlaw post | Explicit only |
 | `/blog-from-deck` | Draft from a named progress deck | Explicit or deck-change suggestion |

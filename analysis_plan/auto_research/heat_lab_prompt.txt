@@ -46,3 +46,5 @@ Return a complete lab-run note if the identification article survives audit and 
 Do not return merely because current approaches fail or agents report human-owned gates.
 
 Do not paste into Hogan’s shared live file. Do not email the Outlook thread. Do not rebuild Stage 3 PDF or A0 poster. Do not start a parallel manuscript.
+
+After a lab round, deposit killed paths and lemmas into `analysis_plan/scientific_search/` (Playbook 06). Do not reset the search tree when the paper ends. Do not score a thermal discovery.

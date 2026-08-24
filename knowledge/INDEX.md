@@ -10,16 +10,18 @@
 
 - [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md) — publication-register scholarly writing mode.
 - [Slash-command and blog-drafting contract](2026-07-26_commands_and_blog_auto.md) — command inventory, deck trigger, and human publication gate.
-- [Playbook skill router](../.cursor/skills/playbook/SKILL.md) — explicit `/playbook` selection across `01–05` and `99`.
+- [Playbook skill router](../.cursor/skills/playbook/SKILL.md) — explicit `/playbook` selection across `01–06` and `99`.
 - [Playbook 01: Hogan definition lock](../analysis_plan/playbooks/01_hogan_definition_lock.md)
 - [Playbook 02: HA data arrival](../analysis_plan/playbooks/02_ha_data_arrival.md)
 - [Playbook 03: full analysis run](../analysis_plan/playbooks/03_full_analysis_run.md)
 - [Playbook 04: final write-up](../analysis_plan/playbooks/04_final_writeup.md)
 - [Playbook 05: auto-research lab](../analysis_plan/playbooks/05_auto_research_lab.md)
+- [Playbook 06: compounding scientific search](../analysis_plan/playbooks/06_scientific_search.md)
 - [Playbook 99: emergencies](../analysis_plan/playbooks/99_emergencies.md)
 
 ## Current meeting record
 
+- [`2026-08-24_scientific_search.md`](2026-08-24_scientific_search.md) — compounding scientific-search system (tree, memory, eval, Playbook 06); Gate 3 still open.
 - [`2026-08-23_aggregation_identifiability.md`](2026-08-23_aggregation_identifiability.md) — Hogan contribution line operationalised; originality bound; Gate 3 still open.
 - [`2026-08-22_stage3_foldback.md`](2026-08-22_stage3_foldback.md) — roundtable fold-back before Email A; Fable/Sol GO; SHA prefixes `c083d4096a0924b1` / `0ef58e0951bb2ffd`.
 - [`2026-08-22_stage3_poster_refs.md`](2026-08-22_stage3_poster_refs.md) — A0 poster gained a six-item REFERENCES strip; later the same night the human footer and pre-2020 callouts were added.

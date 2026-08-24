@@ -10,6 +10,7 @@ Jin-adapted virtual research institute for the heat–CHD/HF project. Method, no
 | [`hogan_lock_readiness.md`](hogan_lock_readiness.md) | Playbook 01 packet: pending vs already in registry |
 | [`stroke_person_time_idle_checklist.md`](stroke_person_time_idle_checklist.md) | First hour after a governed file arrives |
 | [`aggregation_identifiability_calibrated_refusal_2026-08-23.md`](aggregation_identifiability_calibrated_refusal_2026-08-23.md) | Grain → estimand map; originality bound; Hogan contribution line |
+| [`../scientific_search/`](../scientific_search/) | Compounding layer (Playbook 06): constitution, tree, memory, eval, cycle harness. Does not reset when a 05 round ends. |
 | `lab_run_YYYY-MM-DD.md` | Dated residue of a lab round |
 | [`named_gaps_2026-08-16.md`](named_gaps_2026-08-16.md) | Bookkeeping and presentation gaps; not coefficients |
 | [`frozen_rubric_2026-08-18.md`](frozen_rubric_2026-08-18.md) | Locked 1–10 bar for the raise-and-stop loop; do not revise after scores |

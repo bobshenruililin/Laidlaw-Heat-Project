@@ -60,6 +60,7 @@ Partial scientific progress is allowed only as a **named gap**, never as a coeff
 - `knowledge/CONTEXT_BOOTSTRAP.md`, `knowledge/INDEX.md`, and a dated knowledge entry
 - `manuscript/live_collaborative/claim_ledger.yml` only when a verified numeral, source path, or `estimand_policy` rule changes
 - `analysis_plan/auto_research/aggregation_identifiability_calibrated_refusal_2026-08-23.md` when the grain → estimand map is named or bounded
+- After a 05 round, run Playbook 06 (`analysis_plan/playbooks/06_scientific_search.md`) so killed paths and lemmas land in the persistent tree rather than dying in the dated lab note
 
 ## Claim boundaries
 

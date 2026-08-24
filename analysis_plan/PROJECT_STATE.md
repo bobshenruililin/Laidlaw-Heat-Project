@@ -13,7 +13,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Live Methods rewritten in `manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md`. Paste pack: `LIVE_DOC_EDITS.md`, `methods_remainder_paste.md`, `Heat_CVD_Methods_20260824_paste.docx`.
 - Climatology day counts (weather only): `data_processed/hogan_climatology_day_counts_2013_2023.csv`. Mean warmer days/month 16.7; cooler 13.6.
 - Model 2/3 **not** fitted here: governed CHD/HF panels gitignored and absent. No invented coefficients. Table 2 remains Model 1 until Bob refits on the analysis machine (`scripts/62_fit_hogan_model2_model3.py`).
-- Weather lock: Hogan’s 24 Aug monthly paragraph is copied verbatim; rainfall-as-sum and official counts are extra sentences, not a rewrite of his opening.
+- Weather lock: Hogan’s 24 Aug monthly paragraph is copied verbatim; rainfall-as-sum and official counts are extra sentences, not a rewrite of his opening. Model 2 cites Goggins and Chan 2017 [21] for **humidity only** (verified). Rainfall is in Model 2 because Hogan listed it and KW14 asked to use it, not because we claim Goggins entered rainfall. Five-day vs three-day official counts are the same Model 1 coefficient rescaled.
 - Gate 3 still open. Stage 3 PDFs still byte-locked. Do not email a parallel Word file.
 
 ## 0k. Canonical update — roundtable fold-back before Email A (22 August, night)

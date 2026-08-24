@@ -35,7 +35,7 @@ Reply in the live file; do not resolve until Hogan has read them. Short replies:
 | KW10–11 | One approval sentence. Roro: please insert the UW number. |
 | KW12–13 | Influenza is under Health data. Jan–Oct 2013 missing because Flu Express had no usable monthly series; not coded as zero. |
 | KW14 | Model 2 includes monthly rainfall and relative humidity. |
-| KW15 | Model 1 also run per 3 days and per 1 day. |
+| KW15 | Five days is a scale, not a new model. Per 3 days and per 1 day are the same Model 1 coefficient rescaled: if the five-day ratio is R, the three-day ratio is R^(3/5). |
 | KW16 | Moved to Results/limitations. Winter-only fit is a sensitivity. |
 | KW17 | Now “Roadside monitors were not used.” |
 | KW19 | Acknowledgements are empty. |

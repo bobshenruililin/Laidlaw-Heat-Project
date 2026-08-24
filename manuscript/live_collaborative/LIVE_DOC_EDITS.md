@@ -15,7 +15,7 @@ Also paste, same sitting:
 
 **Roro comment (do not put in the body):** insert the real HKU/HA West IRB number into the one ethics sentence.
 
-**Do not paste Model 2/3 coefficients.** Governed panels are not on this machine. Climatology day counts are in `data_processed/hogan_climatology_day_counts_2013_2023.csv`.
+**Do not paste Model 2/3 coefficients.** Governed panels are not on this machine. Climatology day counts are in `data_processed/hogan_climatology_day_counts_2013_2023.csv`. Five-day vs three-day vs one-day official counts are the same Model 1 coefficient rescaled, not new fits.
 
 The 15 August Word file is no longer the Methods paste source.
 

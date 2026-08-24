@@ -2,7 +2,11 @@
 """Build the 15 August paste Word file for Hogan's live collaborative manuscript.
 
 Do not email this file. Paste into the shared live document.
-Hogan's weather paragraph is copied from the 28 July Word file, not rewritten.
+
+24 August 2026: this builder is provenance for the 15 August full-manuscript
+Word copy. It is NOT the Methods paste source. Hogan's 24 August Methods live
+in Heat_CVD_Manuscript_live_update.md and Heat_CVD_Methods_20260824_paste.docx
+(scripts/63_hogan_methods_docx.py). Do not use this script to replace those Methods.
 """
 from __future__ import annotations
 

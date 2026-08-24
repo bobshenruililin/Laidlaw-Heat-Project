@@ -196,6 +196,13 @@ def build_docx() -> None:
     tabs.append(tab)
     hp._p.get_or_add_pPr().append(tabs)
 
+    cover = doc.add_paragraph()
+    set_paragraph_format(cover, first_line=False, space_after=10)
+    cr = cover.add_run(
+        "Paste into the shared live document; do not circulate this file as a separate version."
+    )
+    set_run_font(cr, italic=True, size=10, color=RGBColor(0x66, 0x33, 0x00))
+
     t = doc.add_paragraph()
     set_paragraph_format(t, first_line=False, space_after=6, align="center")
     tr = t.add_run(
@@ -266,14 +273,13 @@ def build_docx() -> None:
                 "We analysed 132 territory-months (2013–2023) of monthly counts of first "
                 "hospitalisation after a first diagnosis of coronary heart disease (CHD; 156,156 events) "
                 "or heart failure (HF; 29,681 events) among people with type 2 diabetes and/or hypertension. "
-                "Admission cause was not recorded. Model 1 is a separate negative-binomial model for each of "
-                "three continuous temperature measures and the official counts of hot nights, very hot days, "
-                "and cold days, with calendar-month indicators, a 4-df time spline, and an offset for the "
-                "number of days in the month. Model 2 adds monthly total rainfall and mean relative humidity. "
-                "Model 3 replaces official extreme-day counts with days warmer or cooler than the historical "
-                "same-calendar-day mean. Intervals used model-based, HC1, and Newey–West lag-3 and lag-6 "
-                "constructions. Benjamini–Hochberg q-values covered the twelve Model 1 fits. "
-                "Table 2 reports Model 1.",
+                "Admission cause was not recorded. Each temperature measure entered a separate "
+                "negative-binomial model (Model 1), with calendar-month indicators, a 4-df time spline, "
+                "and an offset for the number of days in the month. Model 2 added relative humidity and "
+                "rainfall. Model 3 used counts of days warmer or cooler than the day-of-year historical "
+                "average. Reported estimates are from Model 1. Intervals used model-based, HC1, and "
+                "Newey–West lag-3 and lag-6 constructions. Benjamini–Hochberg q-values covered the "
+                "twelve Model 1 fits.",
                 {},
             ),
         ],
@@ -473,11 +479,11 @@ def build_docx() -> None:
     )
     body(
         doc,
-        "Model 2 adds monthly total rainfall and monthly mean relative humidity to Model 1. Goggins and Chan included humidity among meteorological predictors of daily heart-failure admissions in Hong Kong [21]. Rainfall is entered because it is in the monthly weather list.",
+        "Model 2 additionally included monthly mean relative humidity [21] and monthly total rainfall [22], both previously used as meteorological predictors of hospital admissions in Hong Kong. Humidity was associated with daily heart-failure admissions [21]. Chan et al. entered daily rainfall on the hypothesis that heavy rain deters hospital attendance [22].",
     )
     body(
         doc,
-        "Model 3 uses the same structure as Model 1, but replaces official hot-night, very-hot-day, and cold-day counts with monthly counts of days warmer or cooler than the historical average for that same calendar date. For each month-day (for example 15 January), the historical average of daily mean, maximum, and minimum temperature was the leave-one-year-out mean of that month-day across Hong Kong Observatory daily records for 2012–2023. Each day in 2013–2023 was then classified as above or below that average. Equal values were counted as neither. Those six monthly counts were computed for each calendar month. Model 3 is specified and is not reported in Table 2.",
+        "Model 3 counted, for each month, the days whose daily mean temperature was above or below the historical average for that day of the year. For each month-day (for example 15 January), that historical average was the leave-one-year-out mean of daily mean temperature across Hong Kong Observatory daily records for 2012–2023. Equal values were counted as neither. The same counts based on daily maximum and minimum temperature were examined in sensitivity analyses. Model 3 is specified and is not reported in Table 2.",
     )
 
     heading(doc, "Sensitivity analysis", level=2)
@@ -495,7 +501,7 @@ def build_docx() -> None:
             (" and the count ratio per one day is ", {}),
             ("R", {"italic": True}),
             ("1/5", {"superscript": True}),
-            (". Those are the same coefficient on a different scale, not a new model.", {}),
+            (". Those are the same coefficient on a different scale, not a new model. The maximum- and minimum-temperature versions of the Model 3 day counts are sensitivities; they do not replace the daily-mean counts in Model 3.", {}),
         ],
     )
     body(
@@ -683,7 +689,7 @@ def build_docx() -> None:
         [
             ("Limitations. ", {"bold": True}),
             (
-                "Admission cause was not recorded, so an event is a first hospitalisation after a first diagnosis and not a cardiac-caused admission. Monthly counts of people still at risk of a first event were unavailable, so the estimates are count ratios rather than incidence-rate ratios [14]. The design is ecological and monthly, so individual-level and daily-triggering interpretations are not identified [14]. Age, sex, and disease-subtype strata were not delivered. Residual serial correlation remains material for CHD, with lag-1 Pearson autocorrelation of 0.508 in the hot-night model. Official cold days are concentrated in December–February, and only 29 of 132 months carry any official cold day, so the HF cold-day estimate rests on differences between winters. The CHD hot-night estimate is not stable across analysis windows, and is compatible with 1 before 2020. Official hot-night counts are not hourly nighttime excess heat [17]. All exposures were measured at a single Observatory station and applied territory-wide. Influenza is missing for January–October 2013. Confounding by pollution, humidity, rainfall, and influenza is unresolved in Model 1. A stroke series was not available, and no stroke result is reported.",
+                "Admission cause was not recorded, so an event is a first hospitalisation after a first diagnosis and not a cardiac-caused admission. Monthly counts of people still at risk of a first event were unavailable, so the estimates are count ratios rather than incidence-rate ratios [14]. The design is ecological and monthly, so individual-level and daily-triggering interpretations are not identified [14]. Age, sex, and disease-subtype strata were not delivered. Residual serial correlation remains material for CHD, with lag-1 Pearson autocorrelation of 0.508 in the hot-night model. Official cold days are concentrated in December–February, and only 29 of 132 months carry any official cold day, so the HF cold-day estimate rests on differences between winters. The CHD hot-night estimate is not stable across analysis windows, and is compatible with 1 before 2020. Official hot-night counts are not hourly nighttime excess heat [17]. All exposures were measured at a single Observatory station and applied territory-wide. Influenza is missing for January–October 2013. Confounding by pollution, humidity, rainfall, and influenza is unresolved in Model 1. A corresponding stroke series was not available for this analysis.",
                 {},
             ),
         ],
@@ -727,6 +733,7 @@ def build_docx() -> None:
         "19. Newey WK, West KD. A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent covariance matrix. Econometrica. 1987;55(3):703-708. doi:10.2307/1913610",
         "20. Benjamini Y, Hochberg Y. Controlling the false discovery rate: a practical and powerful approach to multiple testing. J R Stat Soc Series B. 1995;57(1):289-300. doi:10.1111/j.2517-6161.1995.tb02031.x",
         "21. Goggins WB, Chan EYY. A study of the short-term associations between hospital admissions and mortality from heart failure and meteorological variables in Hong Kong. Int J Cardiol. 2017;228:537-542. doi:10.1016/j.ijcard.2016.11.106",
+        "22. Chan EYY, Goggins WB, Yue JSK, Lee P. Hospital admissions as a function of temperature, other weather phenomena and pollution levels in an urban setting in China. Bull World Health Organ. 2013;91(8):576-584. doi:10.2471/BLT.12.113035",
     ]
     for rtext in refs:
         p = doc.add_paragraph()

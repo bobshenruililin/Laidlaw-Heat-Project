@@ -67,20 +67,20 @@ def test_numbered_models_and_equation_symbols():
     assert "relative humidity" in methods
     assert "[21]" in methods
     assert "historical" in methods.lower()
-    assert ("same calendar date" in methods) or ("same-calendar-day" in methods)
+    assert "day of the year" in methods.lower()
     # Model 1 equation must not already contain RH/rain (those are Model 2).
-    eq = methods.split("Model 2 adds", 1)[0]
+    eq = methods.split("Model 2 additionally", 1)[0]
     assert "RH_t" not in eq and r"\mathrm{RH}" not in eq
     assert "Rain_t" not in eq and r"\mathrm{Rain}" not in eq
 
 
 def test_goggins_citation_is_humidity_only():
     methods = _methods()
-    assert "Goggins and Chan included humidity" in methods
+    assert "relative humidity [21]" in methods
+    assert "rainfall [22]" in methods
     assert "Goggins and Chan included rainfall" not in methods
-    assert "rainfall–attendance" not in methods.lower()
-    # No new [22] unless a human lock adds Chan 2013.
-    assert "[22]" not in _full()
+    assert "12.113035" in _full()
+    assert "Bull World Health Organ" in _full()
 
 
 def test_no_results_or_wip_in_methods():
@@ -109,7 +109,7 @@ def test_acknowledgements_ethics_and_code_url():
 def test_abstract_methods_names_models_without_calibration_failure():
     am = _abstract_methods()
     assert "Model 1" in am and "Model 2" in am and "Model 3" in am
-    assert "Table 2 reports Model 1" in am
+    assert "Reported estimates are from Model 1" in am
     assert "failed" not in am.lower()
     assert "calibration" not in am.lower()
     assert "not applied to the health series" not in am.lower()
@@ -127,7 +127,7 @@ def test_results_heading_is_model_1():
 
 def test_stroke_limitation_does_not_name_correspondence():
     lim = _full().split("**Limitations.**", 1)[1]
-    assert "A stroke series was not available" in lim
+    assert "A corresponding stroke series was not available" in lim
     assert "named in correspondence" not in lim.lower()
 
 
@@ -178,6 +178,9 @@ def test_final_docx_and_pdf_exist_when_built():
     assert "authors will determine" not in texts.lower()
     assert "141 of 145" not in texts.split("Results", 1)[0]
     assert "Table 2 reports Model 1" in texts
+    assert "Paste into the shared live document" in texts
+    assert "[22]" in texts
+    assert "daily mean temperature" in texts
     assert "failed simulation calibration" not in texts.split("Results", 1)[0]
     comments = list(d.comments)
     assert len(comments) >= 4

@@ -44,9 +44,7 @@ January–October 2013 are missing. Influenza is a sensitivity on the 121 months
 
 **KW14 and email — relative humidity and rainfall**
 
-Both are in the monthly weather list you wrote. Model 2 adds monthly mean relative humidity and monthly total rainfall to Model 1. Table 2 reports Model 1 (the thermal fits you already have). I have not typed Model 2 coefficients by hand.
-
-Goggins and Chan 2017 [21] entered humidity (with temperature and wind speed) for daily heart-failure admissions. I cite [21] for humidity only. Rainfall is in Model 2 because it is in your monthly list, not because that 2017 paper used rainfall.
+Both are in the monthly weather list you wrote. Model 2 adds monthly mean relative humidity [21] and monthly total rainfall [22]. I cite Goggins and Chan 2017 for humidity, not rainfall. Chan, Goggins et al. 2013 (*Bull World Health Organ*) entered daily rainfall on the hypothesis that heavy rain deters hospital attendance; that is [22]. Table 2 still reports Model 1. I have not typed Model 2 coefficients by hand.
 
 Live-file comment on your averaging sentence: in our pipeline rainfall is a monthly total (mm), extreme days are counts, and humidity is a monthly mean. I have not overwritten your sentence.
 

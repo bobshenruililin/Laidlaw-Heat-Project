@@ -13,8 +13,8 @@ Same-day email: simplify Methods; numbered models a high-school reader can follo
 Nested **Model 1 / Model 2 / Model 3**, not Models 1–12 as primary names.
 
 - **Model 1:** twelve thermal fits already in Table 2 (no RH/rain in the equation). Table 2 reports Model 1.
-- **Model 2:** Model 1 + monthly total rainfall + monthly mean RH. Cite [21] for humidity only. Rainfall is in the model because Hogan listed it, not because Goggins and Chan 2017 used rainfall. Not fitted here (governed panel absent).
-- **Model 3:** replace official extreme-day counts with leave-one-year-out same-calendar-day warmer/cooler counts of mean, max, and min temperature (six monthly series). Specified; not fitted.
+- **Model 2:** Model 1 + monthly total rainfall + monthly mean RH. Cite [21] for humidity; cite Chan, Goggins et al. 2013 (*Bull World Health Organ*) as [22] for rainfall as a hypothesized attendance deterrent. Not fitted here (governed panel absent).
+- **Model 3:** primary encoding is leave-one-year-out same-calendar-day warmer/cooler counts of **daily mean** temperature. Maximum- and minimum-temperature versions are sensitivities. Specified; not fitted.
 
 KW15 is a rescaling of the Model 1 extreme-day coefficient (*R*^(3/5), *R*^(1/5)), not a fourth model.
 

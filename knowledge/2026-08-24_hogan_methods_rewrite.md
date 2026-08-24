@@ -22,4 +22,4 @@ Weather-only abnormal-day counts (132 months, RH/rain match `climate_monthly`): 
 - Hogan’s HKO paragraph stays his. Averaging-vs-total rainfall is a live-file comment, not a body overwrite.
 - Day-of-year warmer/cooler counts are sensitivity weather only; they do not winter-peak like Hogan’s TV series.
 
-Gate 3 remains open. No AMI, stroke result, or confirmatory thermal headline.
+Fable GO / Sol GO on the paste pack. Table 2 refit remains human (governed panel). Gate 3 remains open. No AMI, stroke result, or confirmatory thermal headline.

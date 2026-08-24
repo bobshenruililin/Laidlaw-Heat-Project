@@ -286,6 +286,21 @@ class SearchCycleTests(unittest.TestCase):
         self.assertEqual(m["width"], 3)
         self.assertIn("F06", m["alive_families"])
 
+    def test_cycle_log_replaces_same_date_row(self):
+        old = (
+            "# Scientific-search cycle log\n\n"
+            "| Date | Metrics |\n|---|---|\n"
+            "| 2026-08-24 | width=7 depth=1 proxy=147 auditor=PASS ok=True |\n"
+            "| 2026-08-24-owners | width=4 depth=2 proxy=176 auditor=PASS ok=True |\n"
+        )
+        new_row = "| 2026-08-24 | width=3 depth=2 proxy=132 auditor=PASS ok=True |\n"
+        out = MOD.upsert_log_row(old, "2026-08-24", new_row)
+        self.assertIn("| 2026-08-24 | width=3 depth=2 proxy=132 auditor=PASS ok=True |", out)
+        self.assertNotIn("width=7", out)
+        self.assertIn("2026-08-24-owners", out)
+        again = MOD.upsert_log_row(out, "2026-08-25", "| 2026-08-25 | width=3 |\n")
+        self.assertIn("| 2026-08-25 | width=3 |", again)
+
 
 if __name__ == "__main__":
     unittest.main()

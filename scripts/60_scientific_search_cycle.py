@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 from datetime import date
@@ -246,9 +247,9 @@ def validate_memory(memory: dict, *, root: Path = ROOT) -> list[str]:
     dids = [d.get("id") for d in (memory.get("dead_ends") or [])]
     if len(dids) != len(set(dids)):
         failures.append("duplicate dead_end ids")
-    if not (memory.get("dead_ends") or memory.get("dead_ends") or []):
+    if not (memory.get("dead_ends") or []):
         failures.append("memory has no dead_ends; compounding requires killed paths")
-    if not (memory.get("human_gates") or memory.get("human_gates") or []):
+    if not (memory.get("human_gates") or []):
         failures.append("memory has no human_gates")
     return failures
 
@@ -497,14 +498,28 @@ def write_cycle(payload: dict, when: str) -> tuple[Path, Path]:
     )
     if log.exists():
         text = log.read_text(encoding="utf-8")
-        if when not in text:
-            log.write_text(text.rstrip() + "\n" + row, encoding="utf-8")
+        log.write_text(upsert_log_row(text, when, row), encoding="utf-8")
     else:
         log.write_text(
             "# Scientific-search cycle log\n\n| Date | Metrics |\n|---|---|\n" + row,
             encoding="utf-8",
         )
     return md, JSON_OUT
+
+
+def upsert_log_row(text: str, when: str, row: str) -> str:
+    """Replace the same-date log row instead of skipping it.
+
+    Earlier same-calendar-day numbers stay only if they used a different date key
+    (e.g. 2026-08-24-first). A second run with the same `when` overwrites that row.
+    """
+    line = row if row.endswith("\n") else row + "\n"
+    pattern = re.compile(rf"^\| {re.escape(when)} \|.*\n?", re.MULTILINE)
+    if pattern.search(text):
+        return pattern.sub(line, text, count=1)
+    if text and not text.endswith("\n"):
+        text += "\n"
+    return text + line
 
 
 

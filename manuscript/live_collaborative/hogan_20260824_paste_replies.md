@@ -120,6 +120,6 @@ Word comment on Table 2:
 
 Word comment on the Abstract (and, if space, Tables 3 and Figure 3):
 
-> The Methods now enter monthly mean relative humidity and monthly total rainfall in Models 1–12. The Abstract Methods sentence and all count ratios in the Abstract, Tables 2–3, and Figure 3 are from the earlier specification without those covariates, and will be updated together after the governed panel is refit (`scripts/53_hogan_models_rh_rain.R`). No new coefficients have been typed by hand.
+> All count ratios in this document — Abstract, Tables 2–3, Figure 3, and the sensitivity text — are from Models 1–12 before monthly mean relative humidity and monthly total rainfall were entered. The Abstract Methods sentence still describes that earlier specification. Everything will be replaced together after the governed panel is refit (`scripts/53_hogan_models_rh_rain.R`). No new coefficients have been typed by hand.
 
 Also delete the daily-recovery failure sentence from Abstract Methods if it is still there from the 15 August paste. That result stays in Results.

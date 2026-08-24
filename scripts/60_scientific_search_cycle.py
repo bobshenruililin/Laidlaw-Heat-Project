@@ -330,6 +330,20 @@ def write_cycle(payload: dict, when: str) -> tuple[Path, Path]:
     return md, JSON_OUT
 
 
+
+def compounding_invariants(previous: dict | None, metrics: dict) -> list[str]:
+    """Killed and closed nodes must not vanish. That is the no-reset rule."""
+    if not previous:
+        return []
+    old = previous.get("metrics") or {}
+    fails = []
+    for key, label in (("killed", "killed"), ("closed_lemma", "closed")):
+        vanished = set(old.get(key) or []) - set(metrics.get(key) or [])
+        if vanished:
+            fails.append(f"{label} nodes vanished (reset forbidden): {sorted(vanished)}")
+    return fails
+
+
 def run_cycle(
     *,
     tree_path: Path = DEFAULT_TREE,
@@ -349,6 +363,13 @@ def run_cycle(
     failures.extend(validate_memory(memory, root=root))
     failures.extend(rails_checks(tree, live_text))
     m = compute_metrics(tree, memory)
+    previous = None
+    if JSON_OUT.exists():
+        try:
+            previous = json.loads(JSON_OUT.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            previous = None
+    failures.extend(compounding_invariants(previous, m))
     if m["n_alive_families"] < 3:
         failures.append(
             f"width collapse: only {m['n_alive_families']} alive families; keep incompatible families"

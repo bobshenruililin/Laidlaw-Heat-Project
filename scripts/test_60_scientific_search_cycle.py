@@ -182,6 +182,17 @@ class SearchCycleTests(unittest.TestCase):
             )
             self.assertFalse(payload["ok"])
 
+    def test_killed_nodes_cannot_vanish(self):
+        prev = {"metrics": {"killed": ["F01-k"], "closed_lemma": ["L"]}}
+        ok = MOD.compounding_invariants(
+            prev, {"killed": ["F01-k"], "closed_lemma": ["L"]}
+        )
+        self.assertEqual(ok, [])
+        bad = MOD.compounding_invariants(
+            prev, {"killed": [], "closed_lemma": ["L"]}
+        )
+        self.assertTrue(any("vanished" in f for f in bad))
+
 
 if __name__ == "__main__":
     unittest.main()

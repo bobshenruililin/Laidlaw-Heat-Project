@@ -17,6 +17,7 @@ This folder is the **journal-track** paste pack for Hogan’s live shared file. 
 | `hogan_20260824_comment_inventory.md` | Every readable balloon from the 24 Aug PDF |
 | `hogan_20260824_paste_replies.md` | Copy these KW/email replies into the live-file bubbles |
 | `Heat_CVD_Manuscript_live_update.md` | Full draft (Markdown) — **wording authority** |
+| `COMMITTEE_REVIEW_PR69_vs_PR70.md` | Why this pack kept or rejected PR 70 choices (for the PR 70 editor and committee) |
 | `Heat_CVD_Manuscript_20260824_hogan.docx` | **Paste this** into the shared live file (24 Aug Methods; Hogan weather verbatim) |
 | `Heat_CVD_Manuscript_20260824_hogan.pdf` | PDF export of that Word file |
 | `Heat_CVD_Manuscript_20260815_collab_draft.docx` | Stale for Methods; figures only |

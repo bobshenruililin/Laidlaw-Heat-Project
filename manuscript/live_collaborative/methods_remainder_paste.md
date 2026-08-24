@@ -87,8 +87,3 @@ If Hogan’s Abstract Methods still mentions the daily-recovery calibration fail
 
 Suggested Word comments: copy from `hogan_20260824_paste_replies.md` (Table 2 and Abstract).
 
-Methods now include monthly mean relative humidity and monthly total rainfall in Models 1–12. The current Table 2 numbers are from the earlier specification **without** those two covariates. **Refit on the governed panel before leaving Table 2 uncommented.** Do not invent new coefficients. This checkout does not contain the governed analysis panel.
-
-Suggested Word comment on Table 2:
-
-> These count ratios are from Models 1–12 before monthly mean relative humidity and monthly total rainfall were entered. They will be replaced after the governed panel is refit. No new coefficients have been typed by hand.

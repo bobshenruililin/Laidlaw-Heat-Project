@@ -1,25 +1,31 @@
 # Things to edit in Hogan’s live document
 
-This is the **journal-track** shared file, not the Laidlaw Stage 3 report. Do not paste Laidlaw-essay language into it. Do not overwrite Hogan’s weather paragraph. Do not email him a parallel Word copy.
+This is the **journal-track** shared file, not the Laidlaw Stage 3 report. Do not email him a parallel Word copy. Continue in the shared document.
 
 **Wording authority:** Markdown `Heat_CVD_Manuscript_live_update.md`.  
-**Formatted paste source (15 August):** `Heat_CVD_Manuscript_20260815_collab_draft.docx` (figures embedded; weather paragraph identical to the 28 July text).  
-**Comment-bubble replies:** `hogan_comment_paste_replies.md`.  
-The 13 August Word copy is **stale**. The 28 July commented original is archived as `Heat_CVD_Manuscript_20260728_hogan_comments.docx` (provenance only; do not paste it back).
+**24 August 2026:** Hogan’s commented PDF is `Commented_Heat_CVD_Manuscript_20260824.pdf`. Comment table: `hogan_20260824_comment_inventory.md`. Paste replies: `hogan_20260824_paste_replies.md`. Methods paste around his weather paragraph: `methods_remainder_paste.md`.
 
-Work **in** Hogan’s shared file. His seven unread threads stay on that file. Paste around them, then reply in the bubbles. Do not resolve the threads until he has read the replies.
+## 24 August — do this first
+
+1. Leave Hogan’s *Weather and pollutants data* HKO paragraph as he rewrote it (including “All monthly data were derived by taking the average of daily data in each calendar month.”). Paste around it from `methods_remainder_paste.md`. Do **not** paste model specification or the December–February cold-day sentence under Weather.
+2. Replace the rest of Methods from the live_update: Data sources (health, then weather processing) → Statistical analysis (equation + symbol table + Models 1–12) → Sensitivity analysis → Software. Keep his ethics sentence with `UW XX-XXX`. Author-order confirmation is a comment, not body text.
+3. Reply in the KW balloons from `hogan_20260824_paste_replies.md`. Do not resolve until he has read them.
+4. Put the Table 2 Word comment from that replies file on the table. Refit Table 2 on the governed panel **with** monthly mean RH and monthly total rainfall before those Methods and Table 2 sit together without a comment. This checkout cannot refit (panel absent). Do not invent coefficients.
+5. Day-of-year warmer/cooler counts are a sensitivity (`scripts/52_hogan_abnormal_day_counts.py`), not a replacement for official HKO hot nights / cold days, and not Jingjing TV-day counts.
 
 ## Do not touch
 
 | Place | Why |
 |---|---|
-| Hogan’s *Weather and pollutants data* paragraph, including “Meteorological data was obtained” | His Methods. The 15 August Word file copies it verbatim; leave the live-file paragraph in place rather than duplicating it. |
+| Hogan’s HKO weather paragraph, including “Meteorological data was obtained from the HKO.” | His Methods (24 Aug rewrite). |
 | Author 2–4 placeholders | Bishai/Hogan decision |
 | Any stroke coefficients or ICD lists | Roro has not delivered them |
+| Table 2 numbers until the RH/rainfall refit | Would mix two specifications |
 
-When copying from the 15 August Word file, **skip** the brown instruction note at the top and the italic weather-lock note under Methods.
+When copying from the 15 August Word file, **skip** Methods; that file is stale for Methods. Use the 24 August live_update instead.
 
 ## Comment bubbles first (28 July threads)
+
 
 Copy each block from `hogan_comment_paste_replies.md` into the matching thread. Do not invent further comments.
 
@@ -40,9 +46,9 @@ Copy each block from `hogan_comment_paste_replies.md` into the matching thread. 
 1. **Title.** Keep: *Thermal extremes and first hospitalisation after coronary heart disease or heart failure diagnosis in Hong Kong, 2013–2023*. Add the running title under it. Do not switch to a methods-forward title in this file.
 2. **Abstract.** Replace with the 15 August Abstract. It now carries the pre-2020 CHD hot-night null (1.011, 0.991–1.032), the stronger pre-2020 HF cold-day interval, and the simulated daily-recovery refusal. Residual ACF values are no longer in the Abstract.
 3. **Introduction.** Replace. Sentence one cites [9] only. Housing, behavioural adaptation, air-conditioning, and medication are not mentioned. [6] is on the 2023 cold-day count. Pollution paragraph reports 2013–2023 EPD means and states they are not Goggins 2000–2009. Closing paragraph is one sentence (estimand + reporting).
-4. **Health data.** Paste the bridge paragraph. Leave a visible note that Roro should replace ICD, timing, and inpatient versus DAE.
-5. **Weather.** Leave his paragraph. Paste the **processing** paragraph immediately after it. New identification sentence: 29 of 132 months carried at least one official cold day (REAL HKO monthly flags).
-6. **Influenza, denominators, statistical analysis, daily-recovery, software, ethics.** Paste in full from the draft.
+4. **Health data.** Paste from `methods_remainder_paste.md`. Leave a Word comment that Roro should replace ICD, timing, and inpatient versus DAE. Influenza stays under Health data. Do not put confirmation-WIP in the body.
+5. **Weather.** Leave his HKO paragraph. Paste only the **processing** paragraph after it (75% completeness; general stations; roadside not used; PM2.5 for sensitivity). Do not paste model lists or the December–February cold-day observation under Weather.
+6. **Statistical analysis, sensitivity, software.** Paste from `methods_remainder_paste.md` / the live_update. One ethics sentence at the top of Methods (already in the opening). No separate Ethics WIP section.
 7. **Results.** Replace. Tables 1–3 stay. Figures: 1 depletion, 2 DJF heatmap, **3 trend/depletion sensitivity** (not residual ACF). Ljung–Box lag 6 is now *p* < 10^−7^ for every CHD core model (the live 13 August “*p* < 10^−8^” was false for the hot-night model by a hair).
 8. **Figures (insert as images, then delete the markdown path lines if any remain).**
    - Figure 1 — first-event depletion vs C&SD 35+: `figures/live_identification/figure_B_first_event_depletion.png`

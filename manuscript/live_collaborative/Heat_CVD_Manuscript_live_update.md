@@ -6,13 +6,11 @@ Bob Ruililin Shen^1^, Author 2^1^, Author 3^1^, Author 4^1^, David Makram Bishai
 
 ^1^ School of Public Health, Li Ka Shing Faculty of Medicine, The University of Hong Kong, Hong Kong SAR, China
 
-*Author order after the first and last positions remains to be confirmed with the supervising investigator. Scientific roles are recorded in the Acknowledgements.*
-
 ## Abstract
 
 **Background.** Hong Kong records more hot nights than a decade ago, while cold days persist. Whether the cold-dominant pattern of earlier daily cardiac-admission studies extends to monthly first-hospitalisation counts is untested.
 
-**Methods.** We analysed 132 territory-months (2013–2023) of monthly counts of first hospitalisation after a first diagnosis of coronary heart disease (CHD; 156,156 events) or heart failure (HF; 29,681 events) among people with type 2 diabetes and/or hypertension. Admission cause was not recorded. Three continuous temperature measures and official counts of hot nights, very hot days, and cold days each entered a separate negative-binomial model with calendar-month indicators, a 4-df time spline, and a days-in-month offset. Intervals used model-based, HC1, and Newey–West lag-3 and lag-6 constructions. Benjamini–Hochberg *q*-values covered the twelve exploratory contrasts. A method for recovering daily exposure coefficients from monthly sums failed simulation calibration and was not applied to the health series.
+**Methods.** We analysed 132 territory-months (2013–2023) of monthly counts of first hospitalisation after a first diagnosis of coronary heart disease (CHD; 156,156 events) or heart failure (HF; 29,681 events) among people with type 2 diabetes and/or hypertension. Admission cause was not recorded. Three continuous temperature measures and official counts of hot nights, very hot days, and cold days each entered a separate negative-binomial model with calendar-month indicators, a 4-df time spline, and an offset for the number of days in the month. Intervals used model-based, HC1, and Newey–West lag-3 and lag-6 constructions. Benjamini–Hochberg *q*-values covered Models 1–12.
 
 **Results.** Under Newey–West lag-6 reporting, the count ratio was 1.022 (1.002–1.042) per five hot nights for CHD and 1.073 (1.006–1.144) per five cold days for HF, both with *q* = 0.192; all twelve *q*-values exceeded 0.19. For CHD hot nights, model-based and HC1 intervals included 1, as did the pre-2020 estimate (1.011, 0.991–1.032). For HF cold days, all four constructions excluded 1, and the pre-2020 estimate was stronger (1.113, 1.053–1.176). Official cold days fell almost entirely in December–February (141 of 145), identifying that contrast between winters.
 
@@ -32,61 +30,88 @@ Air pollution also changed during the present study window. At general monitorin
 
 Daily mortality studies in Hong Kong answer a further, distinct question. Liu et al. (2020) reported a cold-dominant attributable fraction for cause-specific mortality during 2006–2016 (4.72% for cold versus 0.16% for heat), and a larger fraction for moderate non-optimum temperatures than for extremes (4.25% versus 0.63%) [12]. Liu et al. (2026) estimated 1,455 to 3,238 model-based excess heat deaths for 2014–2023, the range reflecting which local heatwave definition was applied [13]. Attributable fractions and modelled excess deaths are mortality burden quantities. They cannot be rescaled into monthly morbidity count ratios.
 
-This study estimates associations between specified monthly thermal-exposure contrasts and monthly counts of first hospitalisation after first CHD or HF diagnosis among people with type 2 diabetes and/or hypertension in Hong Kong from January 2013 through December 2023, carrying heat and cold in parallel and reporting the complete twelve-contrast panel in place of a single protected claim.
+This study estimates associations between specified monthly thermal-exposure contrasts and monthly counts of first hospitalisation after first CHD or HF diagnosis among people with type 2 diabetes and/or hypertension in Hong Kong from January 2013 through December 2023, carrying heat and cold in parallel and reporting Models 1–12 in full rather than a single protected claim.
 
 ## Methods
 
-### Study design
+The study is an ecological territory-month time series for January 2013 through December 2023 (132 months). It cannot show effects for individual people, the cause of any admission, or day-level triggering [14]. In line with ethical requirements, the study was approved by the Institutional Review Board (IRB) of the HKU/Hospital Authority HK West Cluster (IRB reference number: UW XX-XXX).
 
-The design is an ecological territory-month time series covering January 2013 through December 2023 (132 months). For each single-exposure model, the target quantity is a count ratio associated with a 1 °C or five-day exposure contrast, conditional on calendar month and a smooth function of time. Individual causal effects, principal-diagnosis CHD or HF, acute myocardial infarction, and daily triggering are not identified [14]. Monthly counts of cohort members still at risk of a first event were unavailable, so the offset is days in month and the estimates are monthly count ratios rather than cohort incidence-rate ratios [14]. The twelve-contrast model set was specified after the outcome series were available and is exploratory. We refer to the twelve separate single-exposure models as the core panel.
+### Data sources
 
-### Health data
+#### Health data
 
-Governed monthly aggregates were constructed and released by the outcome co-investigator. The cohort comprised people diagnosed with type 2 diabetes and/or hypertension during 2013–2023. For each outcome, the event was the first recorded hospitalisation after the patient’s first diagnosis record for CHD or for HF. Diagnosis-record construction was assisted by a clinical collaborator. Admission cause was not recorded. Delivered columns were labelled `chd_inpatient` and `hf_inpatient` at territory × calendar-month grain. Inpatient-only semantics are inferred from those labels and remain subject to confirmation. Age–sex strata were not included. A stroke series was named in correspondence but was not attached, and no stroke analysis is reported. Field-level ICD lists and the executable timing rule remain with the outcome co-investigator and should replace this paragraph where they differ from it.
+The cohort is people diagnosed with type 2 diabetes and/or hypertension in Hong Kong during 2013–2023. For each person, the event is the first recorded hospitalisation after the first diagnosis of coronary heart disease (CHD) or of heart failure (HF). Admission cause was not recorded. Monthly counts were supplied from Hospital Authority records. Age and sex strata were not included. CHD is the dependent variable in Models 1–6; HF is the dependent variable in Models 7–12.
 
-### Weather and pollutants data
+Monthly influenza activity from November 2013 through December 2023 was obtained from Centre for Health Protection Flu Express summaries. January–October 2013 had no influenza values. Those months were left missing and were not coded as zero. Influenza was therefore not entered in Models 1–12; it is a sensitivity on the 121 months with data.
 
-Meteorological data was obtained from the HKO. The variables included: daily temperature (mean, minimum, maximum), daily relative humidity, daily total rainfall, the number of hot nights (T~min~ ≥ 28°C), the number of very hot days (T~max~ ≥ 33°C), the number of extremely hot days (T~max~ ≥ 35°C), and the number of cold days (T~min~ ≤ 12°C). Daily mean pollutant levels for nitrogen dioxide (NO~2~), sulfur dioxide (SO~2~), and ozone (O~3~) were obtained from the Hong Kong Environmental Protection Department (EPD).
+Mid-year age- and sex-specific population estimates from the Census and Statistics Department (Table 110-01001) were interpolated to month mid-points [8]. Those figures describe the general population, not the diabetes or hypertension group still at risk of a first CHD or HF hospitalisation. They are not the offset in Models 1–12.
 
-Daily Headquarters series were aggregated to calendar months for analysis. Core exposures were monthly mean temperature, the monthly means of daily maximum and minimum temperature, and official counts of hot nights, very hot days, and cold days. The three counts were scaled per five days, so that a coefficient corresponds to a five-day contrast rather than to a single extreme day. Official cold days were concentrated in December–February (Results, Figure 2), so with calendar-month indicators in the model the remaining cold-day variation is a difference between years within winter months. A winter-only restriction is a labelled sensitivity, and not a remedy for that identification. Extremely hot days, relative humidity, rainfall, and sulfur dioxide were assembled with the weather series but did not enter the core panel. Fine particulate matter (PM2.5) from general EPD stations was assembled for staged pollution sensitivities. A station-month contributed to a pollutant mean only when at least 75% of expected observations were available, and missing measurements were not coded as zero. Territory-wide monthly concentrations were unweighted means across eligible general stations. Roadside stations were reserved. Nitrogen dioxide and particulate matter were specified to enter before ozone, because ozone is coupled with hot, sunny conditions. Staged pollution models exist in the archive; they are not adjusted versions of the core panel, and they were not used to claim that confounding is resolved. Operational heatwave-spell and hot-month rules beyond the official daily thresholds remain with the weather co-investigator, and provisional monthly-tail indicators were not used as confirmatory exposures.
+#### Weather and pollutants data
 
-### Influenza
+Meteorological data was obtained from the HKO. The monthly variables included: temperature (mean, minimum, maximum), relative humidity, total rainfall, the number of hot nights (T~min~ ≥ 28°C), the number of very hot days (T~max~ ≥ 33°C), the number of extremely hot days (T~max~ ≥ 35°C), and the number of cold days (T~min~ ≤ 12°C). Monthly mean pollutant levels for nitrogen dioxide (NO~2~), sulfur dioxide (SO~2~), and ozone (O~3~) were obtained from the Hong Kong Environmental Protection Department (EPD). All monthly data were derived by taking the average of daily data in each calendar month.
 
-Monthly influenza activity was obtained from Centre for Health Protection Flu Express summaries. Coverage was 121 of 132 months, with the gap in early 2013. Missing influenza months were left missing and were never coded as zero. Influenza did not enter the core panel.
-
-### Population denominators and offsets
-
-Age- and sex-specific mid-year population estimates from the Census and Statistics Department (Table 110-01001) were linearly interpolated to calendar-month midpoints [8]. Those denominators describe the general population, and not the diabetes or hypertension cohort still at risk of a first CHD or HF hospitalisation. Core models therefore used a days-in-month offset, \(\log(d_t)\), and are interpreted as monthly count ratios [14]. A general-population × days offset was retained only as a sensitivity. It does not convert the estimand into cohort incidence.
+A station-month entered a pollutant mean only when at least 75% of expected observations were present. Missing measurements were not coded as zero. Territory-wide monthly pollutant concentrations are unweighted means of general EPD stations. Roadside stations were not used for those means. Fine particulate matter (PM~2.5~) from the same general stations was assembled for sensitivity analysis only.
 
 ### Statistical analysis
 
-Let \(Y_t\) be the monthly count in month \(t\). Core models used a negative-binomial likelihood [10],
+The dependent variable \(Y_t\) is the monthly number of first hospitalisations in month \(t\). For each outcome we fitted six models. Each model included one temperature measure: monthly mean temperature, mean daily maximum temperature, mean daily minimum temperature, hot nights, very hot days, or cold days. Extreme-day counts were expressed per five days. Every model also included monthly mean relative humidity and monthly total rainfall [21]. The official count of extremely hot days (T~max~ ≥ 35°C) was obtained with the other monthly weather variables and was not used as a temperature variable in Models 1–12.
+
+Models 1–12 use a negative-binomial likelihood [10]:
 
 \[
-\log \mathrm{E}(Y_t) = \log(d_t) + \alpha + \beta X_t + \sum_{m=2}^{12} \gamma_m I(\mathrm{month}_t = m) + s(t; 4~\mathrm{df}),
+\log \mathrm{E}(Y_t) = \log(d_t) + \alpha + \beta X_t + \delta_1 \mathrm{RH}_t + \delta_2 \mathrm{Rain}_t + \sum_{m=2}^{12} \gamma_m I(\mathrm{month}_t = m) + s(t; 4~\mathrm{df}).
 \]
 
-where \(d_t\) is days in month, \(X_t\) is a single exposure, and \(s(t; 4~\mathrm{df})\) is a natural cubic spline of month index. Each core model entered one exposure at a time: mean temperature, mean maximum temperature, mean minimum temperature, hot nights, cold days, or very hot days, for CHD and for HF. That set defines the twelve core contrasts. Quasi-Poisson models were a family sensitivity. Negative binomial was preferred because monthly counts were overdispersed relative to Poisson.
+| Symbol | Meaning |
+|:--|:--|
+| \(Y_t\) | Monthly first-hospitalisation count (CHD in Models 1–6; HF in Models 7–12) |
+| \(d_t\) | Number of days in month \(t\) (offset). Estimates are monthly count ratios, not cohort incidence-rate ratios [14] |
+| \(\alpha\) | Intercept |
+| \(X_t\) | One temperature variable, listed below |
+| \(\beta\) | Coefficient on \(X_t\). \(\exp(\beta)\) is the count ratio |
+| \(\mathrm{RH}_t\) | Monthly mean relative humidity (%) |
+| \(\mathrm{Rain}_t\) | Monthly total rainfall (mm) |
+| \(\delta_1, \delta_2\) | Coefficients on humidity and rainfall |
+| \(I(\mathrm{month}_t = m)\) | Calendar-month indicator (January is the reference month) |
+| \(\gamma_m\) | Coefficient for calendar month \(m\) |
+| \(s(t; 4~\mathrm{df})\) | Natural cubic spline of month index (long-term trend) |
 
-Core intervals used Newey–West standard errors with lag 6 [19], reported together with model-based, HC1, and Newey–West lag-3 intervals, treating the fitted negative-binomial score equations as estimating equations. Lag 6 was the core reporting choice because residual serial dependence is expected in monthly counts and is material for CHD. Robust intervals are not automatically wider than model-based intervals, and the four-construction ladder is reported for that reason. No interval was selected because it excluded 1.
+| Model | Dependent variable | Temperature variable \(X_t\) |
+|---:|:--|:--|
+| 1 | CHD | Mean temperature (per 1 °C) |
+| 2 | CHD | Mean maximum temperature (per 1 °C) |
+| 3 | CHD | Mean minimum temperature (per 1 °C) |
+| 4 | CHD | Hot nights (per 5 days) |
+| 5 | CHD | Cold days (per 5 days) |
+| 6 | CHD | Very hot days (per 5 days) |
+| 7 | HF | Mean temperature (per 1 °C) |
+| 8 | HF | Mean maximum temperature (per 1 °C) |
+| 9 | HF | Mean minimum temperature (per 1 °C) |
+| 10 | HF | Hot nights (per 5 days) |
+| 11 | HF | Cold days (per 5 days) |
+| 12 | HF | Very hot days (per 5 days) |
 
-Joint models that entered maximum and minimum temperature together, or the three official extreme-day counts together, were retained as collinearity diagnostics. Variance inflation factors were computed after residualising on calendar month and the trend spline.
+Each model contains one temperature variable. Temperature terms are not entered together in Models 1–12. We used negative-binomial regression, which allows monthly counts to vary more than a Poisson model permits. Quasi-Poisson regression was examined in sensitivity analysis.
 
-Robustness analyses comprised alternative trend smooths (3, 6, and 8 df), year fixed effects, exclusion of the first 12 or 24 months, a pre-2020 window (January 2013–December 2019; 84 months), COVID-phase adjustment, lag-0, lag-1, and lag-2 month exposures, and exclusion of the month with largest Cook’s distance. COVID phases were pre-COVID (through January 2020), early COVID (February 2020–December 2021), fifth wave (January–April 2022), late 2022 (May–December 2022), and post-reopening (from January 2023). Pearson residual autocorrelation and Ljung–Box tests at lags 6 and 12 were inspected. Benjamini–Hochberg *q*-values were computed across the twelve core contrasts [20]. The covariance ladder, the pre-2020 twelve-contrast panel, lag, influence, collinearity, and residual diagnostics are reported as Supplementary Tables S1–S6.
+We report 95% confidence intervals in four ways: the model’s own standard errors, HC1, Newey–West with a lag of 3 months, and Newey–West with a lag of 6 months [19]. The main reported interval is Newey–West with lag 6. A *q*-value is a *p*-value adjusted for testing Models 1–12 together [20].
 
-Archive models that entered pollution, humidity, or influenza are not adjusted versions of the core panel. They were not used to claim that confounding is resolved.
+### Sensitivity analysis
 
-### Constrained daily-exposure recovery
+We repeated Models 4–6 and 10–12 with official extreme-day counts entered per 1 day and per 3 days, not only per 5 days.
 
-A constrained method for recovering daily exposure coefficients from monthly sums was evaluated in simulation against Hong Kong weather, following the Basagaña–Ballester aggregation framework [15,16]. Implementation was from the published estimating equation. Public code without a repository licence was not copied. Synthetic daily outcomes were matched to the disclosure-minimised seasonality, scale, overdispersion, and residual dependence of the monthly series. Admission of any real daily coefficient required all frozen calibration criteria to pass, including Type I error, coverage, relative bias, and sign recovery. A 500-replicate calibration against Hong Kong weather failed those requirements. A subsequent worst-cell re-summary of the same fits did not reverse that decision. No daily health coefficient was produced. This is a project-specific calibration result, and it does not show that the Basagaña–Ballester method fails in general. A full daily distributed-lag non-linear model is not identified from 132 monthly sums.
+We also checked the time trend (3, 6, or 8 degrees of freedom, or year indicators); the study window (dropping the first 12 or 24 months, or stopping at December 2019); COVID-period indicators; temperature one or two months earlier; and dropping the most influential month.
+
+Further checks used general-population × days as the offset (this is still a count ratio, not cohort incidence); maximum and minimum temperature in one model, or the three official extreme-day counts in one model; influenza on the 121 months with data; and nitrogen dioxide or PM2.5.
+
+We also counted, in each calendar month, how many days were warmer or cooler than the historical average for that same day of the year. For each month-day (for example 15 January), the historical average of daily mean, maximum, and minimum temperature was the leave-one-year-out mean of that month-day across HKO daily records for 2012–2023. Each day in 2013–2023 was then classified as above or below that average. Equal values were counted as neither. This encoding does not replace the official HKO thresholds in Models 1–12.
+
+Residual correlation was inspected with Pearson autocorrelation and Ljung–Box tests at lags 6 and 12.
+
+Separately, we tested a published method for estimating daily temperature effects from monthly outcomes using simulated Hong Kong weather [15,16].
 
 ### Software
 
 Analyses were conducted in R 4.3.3 (2024-02-29). Negative-binomial models used `MASS::glm.nb` (MASS 7.3-60.0.1). Newey–West and HC1 standard errors used `sandwich` 3.1.3. Natural cubic splines used `splines::ns`.
-
-### Ethics and governance
-
-Analyses used governed Hospital Authority monthly aggregates supplied under existing collaborative arrangements. Source monthly counts and merged panels are not redistributed. Aggregation reduces re-identification risk, but does not grant external-publication authority. Written confirmation from the outcome and supervising investigators remains required before journal submission. Whether the institutional review protocol requires amendment for this work remains a decision for the supervising investigator.
 
 ## Results
 
@@ -113,11 +138,11 @@ At HKO Headquarters, hot nights rose from 10 in 2013 to 61 in 2021 and 56 in 202
 
 ![Figure 2](../../figures/live_identification/figure_A_cold_day_identification.png)
 
-### Core panel
+### Models 1–12
 
-Table 2 reports the twelve separate-exposure count ratios under the days-in-month offset and Newey–West lag-6 intervals.
+Table 2 reports Models 1–12 under the offset for the number of days in the month and Newey–West lag-6 intervals.
 
-**Table 2. Separate negative-binomial models with days-in-month offset and Newey–West lag-6 intervals.**
+**Table 2. Models 1–12: negative-binomial models with an offset for the number of days in the month and Newey–West lag-6 intervals.**
 
 | Outcome | Exposure contrast | Count ratio (95% CI) | *p* | BH *q* |
 |:--|:--|--:|--:|--:|
@@ -134,7 +159,7 @@ Table 2 reports the twelve separate-exposure count ratios under the days-in-mont
 | HF | Cold days / 5 days | 1.073 (1.006–1.144) | 0.031 | 0.192 |
 | HF | Very hot days / 5 days | 0.995 (0.963–1.028) | 0.764 | 0.900 |
 
-All twelve *q*-values exceeded 0.19, with a minimum of 0.192. No contrast meets a multiplicity-protected confirmatory threshold in this exploratory panel. The HF mean-minimum-temperature interval narrowly included 1, with an unrounded upper bound of 1.00005.
+All twelve *q*-values exceeded 0.19, with a minimum of 0.192. No model meets a multiplicity-protected confirmatory threshold. The HF mean-minimum-temperature interval (Model 9) narrowly included 1, with an unrounded upper bound of 1.00005.
 
 For CHD, the continuous monthly temperature estimates were near null, between 0.993 and 0.994, whereas the official hot-night count estimate was larger under Newey–West lag-6 reporting. These encodings describe different monthly thermal questions. The contrast does not imply that a hot-night effect was missed by the means, and it is not a test of hourly nighttime excess heat [17]. For HF, the continuous temperature estimates were weakly inverse, and the cold-day count estimate was positive.
 
@@ -153,13 +178,13 @@ For CHD hot nights, the model-based and HC1 intervals included 1, while both New
 
 After month and trend residualisation, maximum and minimum temperature retained a variance inflation factor of 4.66 when entered jointly. Hot nights and very hot days retained variance inflation factors near 1.96. In the joint extreme-day model, the CHD hot-night count ratio was 1.045 (1.015–1.075), compared with 1.022 in the separate model. The HF cold-day estimate was the same in the joint and separate models, at 1.073. Joint coefficients are diagnostics, and not preferred estimates.
 
-Pearson residual autocorrelation at lag 1 was 0.508 in the CHD hot-night model and 0.146 in the HF cold-day model (Supplementary Figure S1). Ljung–Box tests at lag 6 gave *p* < 10^−7^ for every CHD core model and *p* > 0.3 for every HF core model. Serial dependence is part of the inferential problem for CHD, which is why the four-construction ladder is shown rather than a single interval.
+Pearson residual autocorrelation at lag 1 was 0.508 in the CHD hot-night model and 0.146 in the HF cold-day model (Supplementary Figure S1). Ljung–Box tests at lag 6 gave *p* < 10^−7^ for every CHD model among Models 1–6 and *p* > 0.3 for every HF model among Models 7–12. Serial dependence is part of the inferential problem for CHD, which is why the four-construction ladder is shown rather than a single interval.
 
 ### Sensitivity analyses
 
-Offset choice changed the core count ratios only trivially. Across trend, window, and COVID-phase specifications, the CHD hot-night ratio ranged from 1.011 to 1.025, and the HF cold-day ratio from 1.043 to 1.113 (Figure 3). The HF cold-day association was strongest before 2020 (1.113, 1.053–1.176). The CHD hot-night association was weaker and compatible with 1 in the pre-2020 window (1.011, 0.991–1.032) and under COVID-phase adjustment (1.013, 0.994–1.033). The pre-2020 window moved more than those two contrasts: nine of the twelve Newey–West lag-6 intervals excluded 1 in that 84-month window, including inverse associations for all six continuous temperature contrasts (Figure 3; Supplementary Table S2). No multiplicity control was computed within that window, and no pre-2020 estimate is promoted beyond a sensitivity. The decline in first events and the rise in hot nights are both strong trends across this window, and the same 4-df spline absorbs both. Lag-1 month models attenuated the CHD hot-night association toward 1 (1.010, 0.979–1.042). The HF cold-day association remained elevated at lag 1 (1.073, 1.014–1.135) and was weaker at lag 2 (1.053, 0.985–1.127). Lag-one month is a labelled sensitivity, and it is not a daily lag curve. The months with largest Cook’s distance were February 2020 for CHD and February 2022 for HF cold days. Excluding the most influential month left both exploratory directions unchanged (CHD hot nights 1.021, 1.001–1.040; HF cold days 1.088, 1.034–1.144).
+Offset choice changed the count ratios in Models 1–12 only trivially. Across trend, window, and COVID-phase specifications, the CHD hot-night ratio ranged from 1.011 to 1.025, and the HF cold-day ratio from 1.043 to 1.113 (Figure 3). The HF cold-day association was strongest before 2020 (1.113, 1.053–1.176). The CHD hot-night association was weaker and compatible with 1 in the pre-2020 window (1.011, 0.991–1.032) and under COVID-phase adjustment (1.013, 0.994–1.033). The pre-2020 window moved more than those two contrasts: nine of the twelve Newey–West lag-6 intervals excluded 1 in that 84-month window, including inverse associations for all six continuous temperature contrasts (Figure 3; Supplementary Table S2). No multiplicity control was computed within that window, and no pre-2020 estimate is promoted beyond a sensitivity. The decline in first events and the rise in hot nights are both strong trends across this window, and the same 4-df spline absorbs both. Lag-1 month models attenuated the CHD hot-night association toward 1 (1.010, 0.979–1.042). The HF cold-day association remained elevated at lag 1 (1.073, 1.014–1.135) and was weaker at lag 2 (1.053, 0.985–1.127). Lag-one month is a labelled sensitivity, and it is not a daily lag curve. The months with largest Cook’s distance were February 2020 for CHD and February 2022 for HF cold days. Excluding the most influential month left both exploratory directions unchanged (CHD hot nights 1.021, 1.001–1.040; HF cold days 1.088, 1.034–1.144).
 
-**Figure 3. Core count ratios across trend, window, and COVID-phase specifications (Newey–West lag-6 intervals).** All twelve core contrasts are shown across nine specifications. The pre-2020 CHD hot-night interval includes 1, while the pre-2020 HF cold-day interval strengthens. Source: sensitivity estimates computed from the governed aggregate series (trend and depletion sensitivity table).
+**Figure 3. Count ratios across trend, window, and COVID-period specifications (Newey–West lag-6 intervals).** Models 1–12 are shown across nine specifications.
 
 ![Figure 3](../../figures/live_identification/figure_D_trend_depletion_sensitivity.png)
 
@@ -167,9 +192,9 @@ The simulated daily-recovery method failed its worst-cell criteria: null Type I 
 
 ## Discussion
 
-These data do not support a multiplicity-protected differential thermal claim for CHD relative to HF. Under Newey–West lag-6 reporting for the core panel, CHD first-hospitalisation counts were more closely associated with official hot-night burden than with mean temperature or cold days. HF counts were more closely associated with cold-day burden than with hot nights. Both patterns sit inside a twelve-contrast family in which every *q*-value exceeds 0.19. The complete panel is therefore reported, and no contrast is promoted to a primary result.
+These data do not support a multiplicity-protected differential thermal claim for CHD relative to HF. Under Newey–West lag-6 reporting for Models 1–12, CHD first-hospitalisation counts were more closely associated with official hot-night burden than with mean temperature or cold days. HF counts were more closely associated with cold-day burden than with hot nights. Both patterns sit inside Models 1–12, in which every *q*-value exceeds 0.19. The complete set is therefore reported, and no model is promoted to a primary result.
 
-The HF cold-day association is the more coherent of the two residual signals. It is concordant across all four standard-error constructions. It survives exclusion of the most influential pandemic month. It is not produced by entering correlated heat metrics jointly. It is strongest in the pre-2020 window, before pandemic disruption of care-seeking. It nevertheless remains unprotected by its *q*-value. Because official cold days fall almost entirely in December–February, and because only 29 of 132 months carry any official cold day, the association is identified from differences between winters rather than from a summer-versus-winter contrast.
+The HF cold-day association is the more coherent of the two residual signals. It is concordant across all four standard-error constructions. It survives exclusion of the most influential pandemic month. It is not produced by entering correlated heat metrics jointly. It is strongest in the pre-2020 window, before pandemic disruption of care-seeking. It nevertheless remains unprotected by its *q*-value. Because official cold days fall almost entirely in December–February, and because only 29 of 132 months carry any official cold day, the association is identified from differences between winters rather than from a summer-versus-winter contrast. That is a limit of matching monthly hospital counts to monthly weather, not a reason to drop the cold-day series.
 
 The CHD hot-night association is smaller, depends on the uncertainty method, and was not evident in the pre-2020 window. Model-based and HC1 intervals include 1, whereas the Newey–West intervals exclude 1 on the unrounded scale (lag 3: 1.000253 to 1.043860). Pearson residual autocorrelation at lag 1 is 0.508 in that model, so inference for the CHD series depends on how serial dependence is handled. For this contrast the Newey–West intervals were narrower than the model-based interval, which is atypical under positive residual autocorrelation; the exclusion of 1 therefore rests on the smaller robust variance estimate, and is a reason for caution rather than confirmation. No interval construction was chosen because it excluded 1. The estimate is also confined to specifications that include 2020–2023, which are the years in which hot nights peaked and in which care-seeking changed. Hot-night burden and the decline in first events both trend strongly across the window, and both are controlled by the same trend spline, so the hot-night contrast carries the harder identification problem of the two.
 
@@ -177,35 +202,31 @@ The direction of the HF cold-day residual is consistent with earlier daily evide
 
 Liu et al. (2020, 2026) remain complementary mortality baselines [12,13]. Their attributable fractions and excess-death totals cannot be rescaled into the present count ratios. The failed daily-recovery calibration is the corresponding methods limit: monthly sums do not automatically yield daily trigger estimates [15,16]. That refusal is specific to this series, this implementation, and this calibration standard. It is not evidence that recovery of daily effects from aggregated outcomes fails in general.
 
-Pollution and influenza are scientifically motivated in this setting [1,18]. Archive models that entered nitrogen dioxide, fine particulate matter, or ozone used a general-population offset and joint maximum and minimum temperature, so they are not adjusted versions of the separate core panel (Supplementary Table S9). On a monthly grain they cannot separate confounding from mediation for ozone, and no staged estimate was used to revise Table 2. On the 121 months with influenza data, an archive model associated higher influenza activity with higher CHD counts (Supplementary Table S7); that model is not an adjusted version of the core panel and does not adjust Table 2. Confounding by infection, ozone, or nitrogen dioxide is therefore unresolved. Absent cohort person-time, even a stable count ratio remains a count ratio [14].
+Pollution and influenza remain scientifically motivated in this setting [1,18]. Models that entered nitrogen dioxide or fine particulate matter are sensitivities, not replacements for Models 1–12. On a monthly grain they cannot separate confounding from mediation for ozone. On the 121 months with influenza data, an archive model associated higher influenza activity with higher CHD counts (Supplementary Table S7); that model is not an adjusted version of Models 1–12. Confounding by infection or ozone is therefore unresolved. Absent cohort person-time, even a stable count ratio remains a count ratio [14].
 
-The contribution of this analysis is identification rather than estimation. A monthly aggregate series of first events can be reported in a way that shows where its information comes from. Four displays do that work here: which months carry the exposure contrast, whether the outcome decline is compatible with risk-set depletion, how far each interval moves across standard-error constructions, and which specifications each estimate depends on. A protected primary claim would have required a predeclared confirmatory contrast, multiplicity control that survives the twelve-contrast family, uncertainty constructions that are not chosen for null exclusion, and residual diagnostics that leave no substantial CHD serial correlation unaddressed. This analysis does not meet that bar. We report the complete panel and the refusals.
+The contribution of this analysis is identification rather than estimation. A monthly aggregate series of first events can be reported in a way that shows where its information comes from. Four displays do that work here: which months carry the exposure contrast, whether the outcome decline is compatible with risk-set depletion, how far each interval moves across standard-error constructions, and which specifications each estimate depends on. A protected primary claim would have required a predeclared confirmatory contrast, multiplicity control that survives Models 1–12, uncertainty constructions that are not chosen for null exclusion, and residual diagnostics that leave no substantial CHD serial correlation unaddressed. This analysis does not meet that bar. We report Models 1–12 and the refusals.
 
 ## Conclusion
 
-Between 2013 and 2023, hot nights in Hong Kong increased while cold days persisted. In governed monthly aggregates for people with type 2 diabetes and/or hypertension, CHD first hospitalisations were more closely associated with hot nights, and HF first hospitalisations with cold days, than with the other thermal encodings examined. Neither association survived correction across the twelve comparisons. The CHD estimate additionally depended on the treatment of uncertainty and on the inclusion of 2020–2023. This analysis therefore contributes a set of hypotheses, and an explicit account of what monthly aggregate counts cannot settle. Better-denominated and more finely resolved data are required before a thermal effect on cardiac hospitalisation in this cohort can be estimated.
+Between 2013 and 2023, hot nights in Hong Kong increased while cold days persisted. In monthly Hospital Authority counts for people with type 2 diabetes and/or hypertension, CHD first hospitalisations were more closely associated with hot nights, and HF first hospitalisations with cold days, than with the other thermal encodings examined. Neither association survived correction across Models 1–12. The CHD estimate additionally depended on the treatment of uncertainty and on the inclusion of 2020–2023. This analysis therefore contributes a set of hypotheses, and an explicit account of what monthly aggregate counts cannot settle. Better-denominated and more finely resolved data are required before a thermal effect on cardiac hospitalisation in this cohort can be estimated.
 
 ## Strengths and limitations
 
-**Strengths.** The twelve-contrast panel is reported in full, rather than filtered to its largest estimates. Uncertainty is shown as an explicit four-construction ladder rather than as a single interval. Extreme-day exposures use published official thresholds. Identification displays show the sources of cold-day variation, the first-event decline, and the dependence of each estimate on the analysis window. The daily-recovery analysis is reported as a refusal rather than as a coefficient.
+**Strengths.** Models 1–12 are reported in full, rather than filtered to the largest estimates. Uncertainty is shown as an explicit four-construction ladder rather than as a single interval. Extreme-day exposures use published official thresholds. Identification displays show the sources of cold-day variation, the first-event decline, and the dependence of each estimate on the analysis window. The daily-recovery analysis is reported as a refusal rather than as a coefficient.
 
-**Limitations.** Admission cause was not recorded, so an event is a first hospitalisation after a first diagnosis and not a cardiac-caused admission. Inpatient-only semantics are inferred from the delivered column labels and are not yet confirmed. Monthly counts of cohort members still at risk of a first event were unavailable, so the estimates are count ratios rather than incidence-rate ratios [14]. The design is ecological and monthly, so individual-level and daily-triggering interpretations are not identified [14]. Age, sex, and disease-subtype strata were not delivered. Residual serial correlation remains material for CHD, with lag-1 Pearson autocorrelation of 0.508 in the hot-night model. Official cold days are concentrated in December–February, and only 29 of 132 months carry any official cold day, so the HF cold-day estimate rests on differences between winters. The CHD hot-night estimate is not stable across analysis windows, and is compatible with 1 before 2020. Official hot-night counts are not hourly nighttime excess heat [17]. All exposures were measured at a single Observatory station and applied territory-wide, and within-territory exposure variation was not modelled. Reference rules for monthly hot-tail and cold-tail indicators are not yet fixed, and no such indicator was used as a confirmatory exposure. Confounding by pollution, humidity, and influenza is unresolved in the core panel. A stroke series was named in correspondence but was not delivered, and no stroke result is reported. External dissemination of the governed aggregates requires confirmation from the outcome and supervising investigators.
+**Limitations.** Admission cause was not recorded, so an event is a first hospitalisation after a first diagnosis and not a cardiac-caused admission. Monthly counts of people still at risk of a first event were unavailable, so the estimates are count ratios rather than incidence-rate ratios [14]. The design is ecological and monthly, so individual-level and daily-triggering interpretations are not identified [14]. Age, sex, and disease-subtype strata were not delivered. Residual serial correlation remains material for CHD, with lag-1 Pearson autocorrelation of 0.508 in the hot-night model. Official cold days are concentrated in December–February, and only 29 of 132 months carry any official cold day, so the HF cold-day estimate rests on differences between winters. The CHD hot-night estimate is not stable across analysis windows, and is compatible with 1 before 2020. Official hot-night counts are not hourly nighttime excess heat [17]. All exposures were measured at a single Observatory station and applied territory-wide. Influenza is missing for January–October 2013. A stroke series was named in correspondence but was not delivered, and no stroke result is reported.
 
 ## Declaration on the use of AI
 
-AI-assisted tools were used for code scaffolding, methodological brainstorming, and review of potential data and modelling issues. Scientific claims, numerical results, and collaborator-owned Methods text were checked against governed outputs and the live weather paragraph.
+AI-assisted tools were used for code scaffolding, methodological brainstorming, and review of potential data and modelling issues. Scientific claims and numerical results were checked against Hospital Authority monthly counts and the live weather paragraph.
 
 ## Declaration of competing interest
 
 The authors declare no competing interests.
 
-## Acknowledgements
-
-We thank the weather co-investigator for the live weather Methods, thermal-definition guidance, and comments on the Introduction; Zhenyuan Liu for constructing and releasing the governed Hospital Authority aggregates and for regression mentorship; Professor David Bishai for supervision; and Dr Jingjing Zhou for assistance with diagnosis-record construction. Author order and any co-first designation remain to be confirmed.
-
 ## Data and code availability
 
-A disclosure-minimised release of tables, figures, and machine-readable checks accompanies the analysis. Source monthly health counts and merged panels are governed and are not redistributed. External submission requires team confirmation.
+Code is at https://github.com/bobshenruililin/Laidlaw-Heat-Project. Access to Hospital Authority data is governed by the data-sharing agreement and ethics approval.
 
 ## References
 

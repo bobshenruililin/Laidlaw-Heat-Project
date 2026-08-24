@@ -1,6 +1,8 @@
 # Scientific memory. Load this before walking the tree again.
 # Lemmas are constraints, not findings to advertise.
 # Dead ends stay dead. Human gates stay human.
+# rewalk_markers are lowercase substring tripwires, negation-blind.
+# A marker hit is a stop-and-look, not a semantic verdict.
 
 updated: 2026-08-24
 paper: heat_chd_hf_monthly_first_hospitalisation
@@ -13,7 +15,7 @@ lemmas:
     evidence: outputs/release_chd_hf/tables/table2_core_models.csv
     next_paper: inherit
   - id: L02
-    text: "F1.2 clean-room daily-recovery calibration failed. No real daily coefficient is admitted from this monthly file. This is a failed calibration here, not a proof that daily lag is unidentifiable from monthly sums in general."
+    text: "F1.2 clean-room daily-recovery calibration failed. No real daily coefficient is admitted from this monthly file. This is a failed calibration here, not a proof that daily lag is unidentifiable from monthly sums in general. Two true statements must stay un-merged: an unconstrained full daily DLNM is dimensionally unidentified from 132 monthly sums; constrained recovery in the Basagaña–Ballester family is possible in principle and failed pre-specified calibration here. Neither is general impossibility."
     status: closed
     evidence: knowledge/2026-08-10_cns_final_reanalysis.md
     next_paper: inherit
@@ -67,32 +69,67 @@ lemmas:
     status: closed
     evidence: analysis_plan/auto_research/mde_from_ladder_2026-08-18.md
     next_paper: inherit
+  - id: L13
+    text: "Operating contract for this extract (CONSTITUTION §0, §9 — not an empirical lemma, not a general theory of science): research is treated as search here; after agents, low efficiency on agent-owned search is a harness problem. Human-owned gates and refusal-solutions (all q > 0.19; F1.2 failed here) are not harness failures. Searching harder for a significant heat effect is illegal."
+    status: closed
+    evidence: analysis_plan/scientific_search/CONSTITUTION.md
+    next_paper: inherit
 
 dead_ends:
   - id: D01
     text: "Retune daily recovery after failed F1.2."
     why: "Would admit a coefficient the calibration refused."
+    rewalk_markers:
+      - "retune f1.2"
+      - "recover a real daily"
+      - "daily dlnm coefficient"
   - id: D02
     text: "Public-file outcome substitute."
     why: "Wrong grain; 18 Aug ceiling search."
+    rewalk_markers:
+      - "public ha throughput"
+      - "substitute a public"
   - id: D03
     text: "Pick the CI that excludes 1."
     why: "A54; ladder discordance is the result."
+    rewalk_markers:
+      - "interval that excludes 1"
+      - "pick the se method"
   - id: D04
     text: "Rescale Goggins / Guo / Liu onto 1.022 or 1.073."
     why: "Estimand mixing."
+    rewalk_markers:
+      - "rescale goggins"
+      - "rescale onto this monthly"
   - id: D05
     text: "Health-econ Monte Carlo in the journal-track file."
     why: "SYNTHETIC_THEORY stays out of the paper."
+    rewalk_markers:
+      - "health-econ monte carlo"
   - id: D06
     text: "Treat CNS register as a Nature/Science/Cell venue."
     why: "Register ≠ venue."
+    rewalk_markers:
+      - "cns venue"
   - id: D07
     text: "Rebuild Stage 3 PDF or A0 poster from this search system."
     why: "22 Aug lock on main."
+    rewalk_markers:
+      - "rebuild stage 3"
   - id: D08
     text: "Reset the search tree when the paper ends."
     why: "This constitution exists to forbid that reset."
+    rewalk_markers:
+      - "reset the search tree"
+      - "start from zero"
+  - id: D09
+    text: "Treat all q > 0.19 as a failed search and hunt until significance."
+    why: "Refusal is the solution on this extract. Calling that a harness failure is p-hacking."
+    rewalk_markers:
+      - "until significant"
+      - "until q < 0.05"
+      - "harness failed because q"
+      - "search harder until"
 
 human_gates:
   - id: H-hogan-weather

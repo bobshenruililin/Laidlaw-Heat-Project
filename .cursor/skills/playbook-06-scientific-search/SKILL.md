@@ -18,6 +18,7 @@ disable-model-invocation: true
 - [ ] CONTEXT_BOOTSTRAP and the scientific-search constitution have been read.
 - [ ] Gate 3 is treated as open. This command does not close it.
 - [ ] The objective is identification defensibility and compounding residue, not a protected thermal finding.
+- [ ] Agent-owned inefficiency is harness debt. Human gates and refusal-solutions (including all core *q* > 0.19) are not.
 
 ## Execution
 

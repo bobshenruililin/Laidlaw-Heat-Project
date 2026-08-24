@@ -42,8 +42,10 @@ FORBIDDEN_METRIC_TOKENS = (
     "filled_human_gate",
     "smaller_p_or_q",
     "found_heat_effect",
+    "harness_failed_because_q_above_0.19",
 )
-HUMAN_OWNERS = {"Hogan", "Roro", "Bishai", "Bob", "Bob"}
+HUMAN_OWNERS = {"Hogan", "Roro", "Bishai", "Bob"}
+ALLOWED_SEARCH_CLASS = {"agent_owned", "human_owned", "refusal_solution"}
 
 
 def load_yaml(path: Path) -> dict:
@@ -98,17 +100,20 @@ def validate_tree(tree: dict, *, root: Path = ROOT) -> list[str]:
                 failures.append("ROOT parent must be null")
         elif parent not in by_id:
             failures.append(f"{nid}: missing parent {parent!r}")
+        elif by_id[parent].get("status") == "killed":
+            failures.append(f"{nid}: child of killed node {parent} — do not extend a dead path")
         if status == "killed":
             if not str(node.get("kill_reason") or "").strip():
                 failures.append(f"{nid}: killed node missing kill_reason")
             if node.get("kill_with") not in {
                 "table_contradiction",
                 "forbidden_claim_hit",
-                None,
             }:
                 failures.append(
                     f"{nid}: kill_with must be table_contradiction or forbidden_claim_hit"
                 )
+            if not (node.get("evidence") or []):
+                failures.append(f"{nid}: killed node missing evidence")
         if status == "blocked_human":
             if node.get("owner") not in HUMAN_OWNERS:
                 failures.append(
@@ -116,6 +121,22 @@ def validate_tree(tree: dict, *, root: Path = ROOT) -> list[str]:
                 )
             if not str(node.get("blocked_reason") or "").strip():
                 failures.append(f"{nid}: blocked_human missing blocked_reason")
+        sc = node.get("search_class")
+        require_class = bool((tree.get("rails") or {}).get("require_search_class"))
+        if require_class and sc not in ALLOWED_SEARCH_CLASS:
+            failures.append(f"{nid}: missing or illegal search_class {sc!r}")
+        if sc and sc not in ALLOWED_SEARCH_CLASS:
+            failures.append(f"{nid}: illegal search_class {sc!r}")
+        if status == "blocked_human" and sc and sc != "human_owned":
+            failures.append(f"{nid}: blocked_human must be search_class human_owned")
+        if status == "alive" and sc == "refusal_solution":
+            failures.append(
+                f"{nid}: refusal_solution still alive; that is a hunt, not a closed refusal"
+            )
+        if sc == "human_owned" and status != "blocked_human":
+            failures.append(
+                f"{nid}: human_owned node must stay blocked_human (agents do not fill human gates)"
+            )
         for ev in node.get("evidence") or []:
             if ev and not (root / ev).exists():
                 failures.append(f"{nid}: missing evidence {ev}")
@@ -132,6 +153,21 @@ def validate_tree(tree: dict, *, root: Path = ROOT) -> list[str]:
             failures.append(f"frontier {fid}: blocked_human missing owner")
         if st not in ALLOWED_STATUS:
             failures.append(f"frontier {fid}: bad status {st!r}")
+        fsc = item.get("search_class")
+        require_class = bool((tree.get("rails") or {}).get("require_search_class"))
+        if require_class and fsc not in ALLOWED_SEARCH_CLASS:
+            failures.append(f"frontier {fid}: missing or illegal search_class {fsc!r}")
+        if fsc and fsc not in ALLOWED_SEARCH_CLASS:
+            failures.append(f"frontier {fid}: illegal search_class {fsc!r}")
+        if st == "blocked_human" and fsc and fsc != "human_owned":
+            failures.append(f"frontier {fid}: blocked_human must be search_class human_owned")
+        if fsc == "human_owned" and st != "blocked_human":
+            failures.append(
+                f"frontier {fid}: human_owned frontier must stay blocked_human"
+            )
+    fids = [item.get("id") for item in (tree.get("frontier") or [])]
+    if len(fids) != len(set(fids)):
+        failures.append("duplicate frontier ids")
     return failures
 
 
@@ -192,13 +228,23 @@ def compute_metrics(tree: dict, memory: dict) -> dict:
         for L in (memory.get("lemmas") or [])
         if L.get("next_paper") == "inherit"
     ]
-    width = len(alive_families) + len(queued_frontier)
+    queued_families = {
+        f.get("family")
+        for f in queued_frontier
+        if f.get("family") not in {None, "ROOT"}
+    }
+    width = len(set(alive_families) | queued_families)
     depth = depth_killed_or_closed(by_id)
     n_constraints = len(killed) + len(closed) + len(lemmas)
+    class_counts = {"agent_owned": 0, "human_owned": 0, "refusal_solution": 0}
+    for n in by_id.values():
+        sc = n.get("search_class")
+        if sc in class_counts:
+            class_counts[sc] += 1
     return {
         "alive_families": alive_families,
-        "n_alive_families": len(alive_families), "n_alive_families": len(alive_families),
-        "n_queued_frontier": len(queued_frontier), "n_queued_frontier": len(queued_frontier),
+        "n_alive_families": len(alive_families),
+        "n_queued_frontier": len(queued_frontier),
         "queued_frontier_ids": [f.get("id") for f in queued_frontier],
         "blocked_human": blocked_human,
         "killed": killed,
@@ -207,9 +253,53 @@ def compute_metrics(tree: dict, memory: dict) -> dict:
         "depth": depth,
         "n_inheritable_lemmas": len(lemmas),
         "n_inheritable_constraints": n_constraints,
+        "n_agent_owned": class_counts["agent_owned"],
+        "n_human_owned": class_counts["human_owned"],
+        "n_refusal_solution": class_counts["refusal_solution"],
         "search_power_proxy": width * depth * n_constraints,
-        "notes": "proxy is width × depth × inheritable constraints; never a p-value",
+        "notes": (
+            "proxy is unique-family width × depth × inheritable constraints; "
+            "never a p-value and never a target to maximise"
+        ),
+        "q_above_0.19_is_not_harness_failure": True,
+        "human_gates_remaining_open_is_not_harness_failure": True,
     }
+
+
+def harness_debt(tree: dict, memory: dict) -> list[str]:
+    """Agent-owned inefficiency. Human gates and refusal-solutions are not debt."""
+    debt: list[str] = []
+    by_id = node_map(tree)
+    markers: list[tuple[str, str]] = []
+    for dead in memory.get("dead_ends") or []:
+        did = str(dead.get("id") or "?")
+        for mk in dead.get("rewalk_markers") or []:
+            markers.append((did, str(mk).lower()))
+    for nid, node in by_id.items():
+        if node.get("status") == "alive" and node.get("search_class") == "refusal_solution":
+            debt.append(f"{nid}: refusal_solution kept alive (significance hunt)")
+        if node.get("status") == "blocked_human" and node.get("search_class") == "agent_owned":
+            debt.append(f"{nid}: human gate treated as agent-owned search")
+        blob = " ".join(
+            str(node.get(k) or "") for k in ("title", "note", "job", "kill_reason")
+        ).lower()
+        if node.get("status") in {"alive", "queued"}:
+            for did, mk in markers:
+                if mk and mk in blob:
+                    debt.append(f"{nid} rewalks {did} via {mk!r}")
+    for item in tree.get("frontier") or []:
+        if item.get("status") != "queued":
+            continue
+        job = str(item.get("job") or "").lower()
+        fid = item.get("id", "?")
+        for did, mk in markers:
+            if mk and mk in job:
+                debt.append(f"frontier {fid} rewalks {did} via {mk!r}")
+        if item.get("search_class") == "refusal_solution":
+            debt.append(
+                f"frontier {fid}: queues a refusal_solution (searching past a found constraint)"
+            )
+    return debt
 
 
 def rails_checks(tree: dict, live_text: str) -> list[str]:
@@ -269,14 +359,15 @@ def write_cycle(payload: dict, when: str) -> tuple[Path, Path]:
     CYCLE_DIR.mkdir(parents=True, exist_ok=True)
     JSON_OUT.parent.mkdir(parents=True, exist_ok=True)
     md = CYCLE_DIR / f"{when}.md"
-    JSON_OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    if payload.get("ok"):
+        JSON_OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     m = payload["metrics"]
     lines = [
         f"# Scientific-search cycle {when}",
         "",
         "Playbook 06. Not a Gate 3 freeze. Not a confirmatory primary. Not a heat finding.",
         "",
-        f"- Auditor: {'PASSED' if payload['auditor']['ok'] else 'FAILED'}",
+        f"- Auditor: {'SKIPPED' if payload['auditor'].get('skipped') else ('PASSED' if payload['auditor']['ok'] else 'FAILED')}",
         f"- Tree/memory/rails: {'PASSED' if payload['ok'] else 'FAILED'}",
         f"- Width: {m['width']} (alive families {m['n_alive_families']} + queued frontier {m['n_queued_frontier']})",
         f"- Depth (killed/closed path): {m['depth']}",
@@ -285,6 +376,8 @@ def write_cycle(payload: dict, when: str) -> tuple[Path, Path]:
         f"- Alive families: {', '.join(m['alive_families'])}",
         f"- Blocked human: {', '.join(m['blocked_human'])}",
         f"- Killed: {', '.join(m['killed'])}",
+        f"- Search class: agent_owned={m.get('n_agent_owned', 0)} human_owned={m.get('n_human_owned', 0)} refusal_solution={m.get('n_refusal_solution', 0)}",
+        f"- Harness debt: {payload.get('harness_debt_n', 0)} (rewalks/mislabelled gates; not 'q > 0.19')",
         "",
         "## Frontier (do not fill human jobs)",
         "",
@@ -315,7 +408,7 @@ def write_cycle(payload: dict, when: str) -> tuple[Path, Path]:
     log = ROOT / "analysis_plan/scientific_search/CYCLE_LOG.md"
     row = (
         f"| {when} | width={m['width']} depth={m['depth']} "
-        f"proxy={m['search_power_proxy']} auditor={'PASS' if payload['auditor']['ok'] else 'FAIL'} "
+        f"proxy={m['search_power_proxy']} auditor={'SKIP' if payload['auditor'].get('skipped') else ('PASS' if payload['auditor']['ok'] else 'FAIL')} "
         f"ok={payload['ok']} |\n"
     )
     if log.exists():
@@ -331,7 +424,9 @@ def write_cycle(payload: dict, when: str) -> tuple[Path, Path]:
 
 
 
-def compounding_invariants(previous: dict | None, metrics: dict) -> list[str]:
+def compounding_invariants(
+    previous: dict | None, metrics: dict, by_id: dict | None = None
+) -> list[str]:
     """Killed and closed nodes must not vanish. That is the no-reset rule."""
     if not previous:
         return []
@@ -341,6 +436,13 @@ def compounding_invariants(previous: dict | None, metrics: dict) -> list[str]:
         vanished = set(old.get(key) or []) - set(metrics.get(key) or [])
         if vanished:
             fails.append(f"{label} nodes vanished (reset forbidden): {sorted(vanished)}")
+    gates_left = set(old.get("blocked_human") or []) - set(metrics.get("blocked_human") or [])
+    for nid in sorted(gates_left):
+        node = (by_id or {}).get(nid) or {}
+        if not str(node.get("owner_event") or "").strip():
+            fails.append(
+                f"{nid}: left blocked_human without owner_event (agents do not fill human gates)"
+            )
     return fails
 
 
@@ -369,7 +471,9 @@ def run_cycle(
             previous = json.loads(JSON_OUT.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             previous = None
-    failures.extend(compounding_invariants(previous, m))
+    failures.extend(compounding_invariants(previous, m, node_map(tree)))
+    debt = harness_debt(tree, memory)
+    failures.extend(debt)
     if m["n_alive_families"] < 3:
         failures.append(
             f"width collapse: only {m['n_alive_families']} alive families; keep incompatible families"
@@ -397,6 +501,8 @@ def run_cycle(
         "rails": tree.get("rails"),
         "objective": "identification_defensibility",
         "not_objective": "found_significant_heat_effect",
+        "harness_debt": debt,
+        "harness_debt_n": len(debt),
     }
     if write:
         write_cycle(payload, when)
@@ -429,7 +535,8 @@ def main(argv: list[str] | None = None) -> int:
     print(
         f"width={m['width']} depth={m['depth']} "
         f"constraints={m['n_inheritable_constraints']} "
-        f"proxy={m['search_power_proxy']}"
+        f"proxy={m['search_power_proxy']} "
+        f"harness_debt={payload.get('harness_debt_n', 0)}"
     )
     print("alive_families:", ", ".join(m["alive_families"]))
     if payload["failures"]:

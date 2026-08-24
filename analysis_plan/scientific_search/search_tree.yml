@@ -15,6 +15,7 @@ rails:
   hogan_weather_must_contain: "Meteorological data was obtained from the HKO."
   stage3_pdfs: byte_locked_on_main
   auditor: scripts/50_audit_live_claim_ledger.py
+  require_search_class: true
 
 forbidden_success_metrics:
   - found_significant_heat_effect
@@ -27,6 +28,7 @@ forbidden_success_metrics:
   - gate_3_frozen_by_agent
   - hogan_weather_rewritten
   - filled_human_gate
+  - harness_failed_because_q_above_0.19
 
 human_owned_never_fill:
   - gate_3_freeze
@@ -39,6 +41,7 @@ human_owned_never_fill:
 
 nodes:
   - id: ROOT
+    search_class: agent_owned
     parent: null
     family: ROOT
     title: Monthly CHD/HF first-hospitalisation panel, Hong Kong, Jan 2013–Dec 2023 (132 months)
@@ -51,6 +54,7 @@ nodes:
     note: "Admission cause absent. Stroke named, not delivered. Gate 3 open. Option A."
 
   - id: F01
+    search_class: agent_owned
     parent: ROOT
     family: F01
     title: Identification — aggregation-identifiability and calibrated refusal
@@ -63,6 +67,7 @@ nodes:
     note: "Operational map for this extract. Not a theorem. No priority over Basagaña–Ballester."
 
   - id: F01-framework
+    search_class: agent_owned
     parent: F01
     family: F01
     title: Named grain → estimand map plus calibrated refusal
@@ -76,6 +81,7 @@ nodes:
     note: "estimand_policy is a string tripwire, not a semantic parser."
 
   - id: F01-daily-recovery
+    search_class: refusal_solution
     parent: F01
     family: F01
     title: Recover a real daily DLNM coefficient from 132 monthly sums
@@ -88,6 +94,7 @@ nodes:
     next_paper_inherits: true
 
   - id: F01-confirmatory-primary
+    search_class: refusal_solution
     parent: F01
     family: F01
     title: Promote a core contrast to a confirmatory primary
@@ -100,6 +107,7 @@ nodes:
     next_paper_inherits: true
 
   - id: F01-winter-support
+    search_class: agent_owned
     parent: F01
     family: F01
     title: DJF concentration of official cold days as identification display
@@ -110,6 +118,7 @@ nodes:
     next_paper_inherits: true
 
   - id: F02
+    search_class: agent_owned
     parent: ROOT
     family: F02
     title: Multiplicity / uncertainty ladder
@@ -122,6 +131,7 @@ nodes:
     note: "Report Model, HC1, NW3, NW6. Do not select the interval because it excludes 1."
 
   - id: F02-pick-ci
+    search_class: refusal_solution
     parent: F02
     family: F02
     title: Select the SE method whose interval excludes 1
@@ -135,6 +145,7 @@ nodes:
     next_paper_inherits: true
 
   - id: F02-q-bar
+    search_class: refusal_solution
     parent: F02
     family: F02
     title: Twelve-contrast family; all core q > 0.19
@@ -145,6 +156,7 @@ nodes:
     next_paper_inherits: true
 
   - id: F03
+    search_class: agent_owned
     parent: ROOT
     family: F03
     title: Local daily history as distinct estimands
@@ -156,6 +168,7 @@ nodes:
     note: "Goggins AMI/HF, Guo official vs hourly hot nights, Liu 2020 AF, Liu 2026 excess deaths. Do not rescale onto this panel's 1.022 / 1.073."
 
   - id: F03-rescale
+    search_class: refusal_solution
     parent: F03
     family: F03
     title: Rescale Goggins / Guo / Liu numerals onto this monthly panel
@@ -168,6 +181,7 @@ nodes:
     next_paper_inherits: true
 
   - id: F04
+    search_class: human_owned
     parent: ROOT
     family: F04
     title: Hogan weather-definition lock
@@ -181,6 +195,7 @@ nodes:
     note: "Agents may refresh the readiness packet only."
 
   - id: F05
+    search_class: human_owned
     parent: ROOT
     family: F05
     title: Stroke file and still-at-risk person-time
@@ -194,6 +209,7 @@ nodes:
     note: "Agents may refresh the idle checklist only. No invented rows."
 
   - id: F06
+    search_class: agent_owned
     parent: ROOT
     family: F06
     title: Public surfaces (blog / LSN / Stage 3 PDFs)
@@ -206,6 +222,7 @@ nodes:
     note: "Stage 3 PDFs byte-locked 22 Aug on main. Bob owns voice, privacy, posting, paste."
 
   - id: F06-public-outcome-substitute
+    search_class: refusal_solution
     parent: F06
     family: F06
     title: Substitute a public HA/DH file for governed monthly first-event CHD/HF
@@ -219,6 +236,7 @@ nodes:
     next_paper_inherits: true
 
   - id: F06-health-econ-in-paper
+    search_class: refusal_solution
     parent: F06
     family: F06
     title: Write health-econ Monte Carlo into the journal-track live file
@@ -232,34 +250,40 @@ nodes:
 
 frontier:
   - id: P-keep-families
+    search_class: agent_owned
     family: F01
     status: queued
     job: "Keep F01–F03 alive and incompatible. Do not collapse into a discovery headline."
     success_metric: family_diversity
   - id: P-hogan-readiness
+    search_class: human_owned
     family: F04
     status: blocked_human
     owner: Hogan
     job: "Refresh Hogan-lock readiness only. Do not lock definitions."
     success_metric: rails_intact
   - id: P-stroke-idle
+    search_class: human_owned
     family: F05
     status: blocked_human
     owner: Roro
     job: "Refresh stroke/person-time idle checklist only. Do not invent rows."
     success_metric: rails_intact
   - id: P-bob-paste
+    search_class: human_owned
     family: F06
     status: blocked_human
     owner: Bob
     job: "Paste into Hogan's shared live file remains human. Do not email Outlook. Do not rebuild Stage 3 PDFs."
     success_metric: rails_intact
   - id: P-permutation-park
+    search_class: agent_owned
     family: F01
     status: queued
     job: "Park permutation / future-month negative-control as a later calibrated-refusal display. Not a primary. Do not run as a hunt for a significant heat effect."
     success_metric: cycle_shortening
   - id: P-next-paper-load
+    search_class: agent_owned
     family: ROOT
     status: queued
     job: "Next paper or next extract loads this tree and memory first. Do not reset killed nodes."

@@ -154,6 +154,7 @@ class SearchCycleTests(unittest.TestCase):
     def test_width_and_depth(self):
         m = MOD.compute_metrics(mini_tree(), mini_memory())
         self.assertGreaterEqual(m["n_alive_families"], 3)
+        self.assertEqual(m["width"], 3)
         self.assertEqual(m["depth"], 2)
         self.assertNotIn("p", m["notes"].lower()[:1] and "")
         self.assertIn("never a p-value", m["notes"])
@@ -192,6 +193,56 @@ class SearchCycleTests(unittest.TestCase):
             prev, {"killed": [], "closed_lemma": ["L"]}
         )
         self.assertTrue(any("vanished" in f for f in bad))
+
+    def test_human_gate_cannot_close_without_owner_event(self):
+        prev = {"metrics": {"killed": ["F01-k"], "closed_lemma": [], "blocked_human": ["F04"]}}
+        bad = MOD.compounding_invariants(
+            prev,
+            {"killed": ["F01-k"], "closed_lemma": [], "blocked_human": []},
+            {"F04": {"status": "alive", "search_class": "agent_owned"}},
+        )
+        self.assertTrue(any("owner_event" in f for f in bad))
+
+    def test_require_search_class_rejects_missing_label(self):
+        tree = mini_tree()
+        tree["rails"]["require_search_class"] = True
+        fails = MOD.validate_tree(tree)
+        self.assertTrue(any("search_class" in f for f in fails))
+
+    def test_harness_debt_rewalk_is_debt(self):
+        tree = mini_tree()
+        tree["frontier"][0]["job"] = "retune F1.2 until q < 0.05"
+        memory = mini_memory()
+        memory["dead_ends"][0]["rewalk_markers"] = ["retune f1.2", "until q < 0.05"]
+        debt = MOD.harness_debt(tree, memory)
+        self.assertTrue(any("rewalks" in d for d in debt))
+
+    def test_q_bar_and_open_human_gate_are_not_debt(self):
+        tree = MOD.load_yaml(MOD.DEFAULT_TREE)
+        memory = MOD.load_yaml(MOD.DEFAULT_MEMORY)
+        debt = MOD.harness_debt(tree, memory)
+        self.assertEqual(debt, [])
+        blob = " ".join(debt).lower()
+        self.assertNotIn("q > 0.19", blob)
+        self.assertNotIn("q_above", blob)
+        m = MOD.compute_metrics(tree, memory)
+        self.assertTrue(m.get("q_above_0.19_is_not_harness_failure"))
+        self.assertTrue(m.get("human_gates_remaining_open_is_not_harness_failure"))
+        self.assertIn("F04", m["blocked_human"])
+        self.assertGreaterEqual(m["n_refusal_solution"], 1)
+
+    def test_refusal_kept_alive_is_debt(self):
+        tree = mini_tree()
+        tree["nodes"][1]["search_class"] = "refusal_solution"
+        tree["nodes"][1]["status"] = "alive"
+        debt = MOD.harness_debt(tree, mini_memory())
+        self.assertTrue(any("refusal_solution kept alive" in d for d in debt))
+
+    def test_human_gate_labelled_agent_owned_is_debt(self):
+        tree = mini_tree()
+        tree["nodes"][5]["search_class"] = "agent_owned"
+        debt = MOD.harness_debt(tree, mini_memory())
+        self.assertTrue(any("human gate treated as agent-owned" in d for d in debt))
 
 
 if __name__ == "__main__":

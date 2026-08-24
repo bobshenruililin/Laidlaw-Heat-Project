@@ -8,6 +8,9 @@ Playbook 05 is a Jin-shaped *round*. This directory is what must not return to z
 | [`search_tree.yml`](search_tree.yml) | Persistent nodes: alive / blocked_human / killed / closed_lemma |
 | [`memory.yml`](memory.yml) | Lemmas, dead ends, human gates the next paper loads first |
 | [`eval_rubric.yml`](eval_rubric.yml) | Scores identification defensibility, never “found a heat effect” |
+| [`fable_unaided_live_read_2026-08-24.md`](fable_unaided_live_read_2026-08-24.md) | Fable isolation read (thesis withheld) |
+| [`fable_critique_2026-08-24.md`](fable_critique_2026-08-24.md) | Fable numbered kills of this harness |
+| [`sol_critique_2026-08-24.md`](sol_critique_2026-08-24.md) | Sol 5.6 numbered kills of this harness |
 | [`cycles/`](cycles/) | Dated cycle notes written by the harness |
 | [`../playbooks/06_scientific_search.md`](../playbooks/06_scientific_search.md) | Canonical playbook |
 | [`../../scripts/60_scientific_search_cycle.py`](../../scripts/60_scientific_search_cycle.py) | Validator + metrics + auditor hard gate |

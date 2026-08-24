@@ -26,6 +26,18 @@ On this extract, R is identification defensibility × named gaps closed without 
 
 Search power ≈ width × depth × (1 / cycle length), subject to the constitution rails. The harness reports a **proxy** (`width × depth × inheritable constraints`). That proxy is not a p-value and not a health finding.
 
+## Three owners (do not mix)
+
+Research is search. After agents, low efficiency on **agent-owned** search is a harness problem. That sentence is false if the buckets are mixed.
+
+| Bucket | On this extract | If “unsolved” |
+|---|---|---|
+| **Agent-owned search** | Keep incompatible families; record kills; do not re-walk dead ends; deposit residue; run the auditor | Harness / this playbook |
+| **Human-owned gate** | Hogan weather lock; Roro stroke/person-time/ICD; Bishai Gate 3/IRB; Bob paste | Not harness failure. Readiness packets only. |
+| **Refusal is the solution** | All twelve core *q* > 0.19; F1.2 failed *here*; public files cannot replace the governed series; CI-picking is illegal | Found constraint. “Search harder” is illegal. |
+
+The searchable object is a **defensible identification article plus calibrated refusal**, not a significant heat coefficient.
+
 ## Steps
 
 1. Read the constitution. If a step would raise R only by minting a confirmatory primary, a daily/stroke/AMI/excess-death/monetisation coefficient, a Gate 3 freeze, or a Hogan weather rewrite, stop.
@@ -49,6 +61,7 @@ Search power ≈ width × depth × (1 / cycle length), subject to the constituti
 
 - Treating token-maxxing or compute-maxxing as a hunt for a Nature finding or a confirmatory primary.
 - Scoring “found a significant heat effect.”
+- Treating all core *q* > 0.19, or an open Hogan/Roro/Bishai/Bob gate, as harness failure.
 - Resetting `search_tree.yml` / `memory.yml` at paper end.
 - Filling Hogan / Roro / Bishai / Bob gates from defaults.
 - Declaring daily lag impossible at month grain (contradicts Basagaña–Ballester). Daily recovery **failed here** after F1.2 calibration; no real daily coefficient is admitted.

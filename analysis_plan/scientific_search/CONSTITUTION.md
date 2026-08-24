@@ -13,6 +13,20 @@ The scarce design object is **scientific search**, not another overnight coeffic
 
 This constitution exists so that **width × depth × shorter cycles** raise identification defensibility on this monthly extract, and so that token-maxxing / compute-maxxing cannot quietly become a hunt for a protected thermal finding.
 
+## 0. Research is search — with three owners
+
+Scientific work is a search for a solution. Before agents, paper-count was a noisy KPI: heuristic search can miss a solution that exists. After agents, the team *can* design a search algorithm. Then **low efficiency on agent-owned search is a harness problem**.
+
+That claim is true only after a three-way split. Mixing the buckets is how this project would mint a fake primary.
+
+| Bucket | What it is on this extract | Whose problem if “unsolved” |
+|---|---|---|
+| **Agent-owned search** | Keeping incompatible families, recording kills with table contradictions, not re-walking dead ends, depositing residue, running the auditor | Harness / Playbook 06 |
+| **Human-owned gate** | Hogan weather lock, Roro stroke/person-time/ICD, Bishai Gate 3/IRB, Bob paste | Not a harness failure. Readiness packets only. |
+| **Refusal is the solution** | All twelve core *q* > 0.19; F1.2 failed *here*; public files cannot replace the governed series; CI-picking is illegal | A found constraint. Treating it as “search harder” is illegal. |
+
+The solution this harness is allowed to search for is a **defensible identification article plus calibrated refusal**, not a significant heat coefficient. “We did not find a protected thermal effect” is not evidence that the harness is weak. “We re-walked F1.2,” “we collapsed six families into one story,” or “we reset the tree at paper end” *is* evidence that the harness is weak.
+
 ## 1. What R is allowed to mean
 
 On this project, a higher R is a more defensible identification article, a sharper named gap, a shorter honest cycle, and residue the next paper can load without re-deriving the killed paths.
@@ -57,7 +71,7 @@ The product we want:
 search_power ≈ width × depth × (1 / cycle_length)
 ```
 
-subject to the rails in §5. The evaluator scores that product. It does **not** score “found a significant heat effect.”
+subject to the rails in §5. The evaluator checks those rails. The numeric proxy is **descriptive residue, never a target**: a cycle is not better because the proxy rose, and a proxy raised by minted lemmas, chained kills, or queue-stuffing is harness debt. The evaluator does **not** score “found a significant heat effect.”
 
 ## 4. Compounding contract (must not reset)
 
@@ -105,6 +119,8 @@ A node that “finds” a thermal effect, promotes a core contrast to a primary,
 
 The machine claim-ledger auditor is a **hard gate**, not the whole evaluator. Green auditor + illegal success metric = failed cycle.
 
+`harness_debt` scores only **agent-owned** inefficiency (rewalking a named dead end, mis-labelling a human gate as agent-owned, keeping a `refusal_solution` alive). All core *q* > 0.19 is not debt. A Hogan/Roro/Bishai/Bob gate that remains open is not debt.
+
 ## 7. Token-maxxing and compute-maxxing, legal form
 
 Legal:
@@ -128,7 +144,7 @@ Illegal:
 A cycle may stop only when:
 
 1. `python3 scripts/50_audit_live_claim_ledger.py` is green, or every red item has a named source-file contradiction,
-2. the tree validator is green (`python3 scripts/60_scientific_search_cycle.py`),
+2. the tree validator is green (`python3 scripts/60_scientific_search_cycle.py`) and `harness_debt` is empty,
 3. every remaining hole on the frontier is `blocked_human` with an owner, or `queued` with a job that does not invent data,
 4. no agent filled a hole by invention.
 

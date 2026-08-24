@@ -63,9 +63,10 @@ dimensions:
 
 metrics:
   width:
-    definition: count of distinct families with at least one alive or queued node, plus queued frontier jobs that are not blocked_human
+    definition: count of distinct families still alive or queued, excluding ROOT bookkeeping
     higher_is_better: true
-    do_not_raise_by: collapsing_families_into_one_story
+    do_not_raise_by: queue_stuffing_jobs_within_one_family
+    never_target: false
   depth:
     definition: longest path from ROOT through killed or closed_lemma nodes
     higher_is_better: true
@@ -75,8 +76,27 @@ metrics:
     higher_is_better: false
     proxy_in_harness: n_inheritable_lemmas_plus_killed_nodes
   search_power_proxy:
-    definition: width * depth * n_inheritable_constraints
+    definition: unique-family width * depth * n_inheritable_constraints
     never_include: p_values
+    never_target: true
+    do_not_raise_by: minted_lemmas_chained_kills_or_queue_stuffing
+
+harness_debt:
+  definition: >
+    Agent-owned inefficiency: frontier jobs that re-walk a named dead end,
+    missing search_class labels, or treating a refusal_solution as an open hunt.
+  higher_is_better: false
+  not_debt:
+    - blocked_human remaining open
+    - all_core_q_above_0.19
+    - F1.2_failed_here
+  is_debt:
+    - rewalking_killed_path
+    - collapsing_families
+    - resetting_tree
+    - scoring_null_as_harness_failure
+    - hunting_significance_after_q_bar
+    - inflating_proxy_by_minted_lemmas_chained_kills_or_queue_stuffing
 
 illegal_cycle_claims:
   - "we found a heat effect"
@@ -85,3 +105,5 @@ illegal_cycle_claims:
   - "stroke RR ="
   - "Gate 3 closed"
   - "rewrote Hogan weather"
+  - "harness failed because q > 0.19"
+  - "search harder until significant"

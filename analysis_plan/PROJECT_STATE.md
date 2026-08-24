@@ -11,6 +11,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 - Bob: research output ≈ R = f(compute, token budget, agent capability, search harness, human mind). The gap is better scientific search (width × depth × shorter cycles) that does not reset at paper end.
 - Applied as intern-owned infrastructure, not a new science theory and not a confirmatory primary. Playbook 06 + constitution + persistent tree/memory/eval + `scripts/60_scientific_search_cycle.py`.
+- Three owners: agent-owned inefficiency is harness debt; Hogan/Roro/Bishai/Bob gates remaining open are not; all core *q* > 0.19 is a refusal-solution, not a failed search.
 - Evaluator scores identification defensibility, named gaps, residue, rails, family diversity. Never “found a heat effect.” Auditor remains a hard gate.
 - Durable: `knowledge/2026-08-24_scientific_search.md`; `analysis_plan/scientific_search/`. Gate 3 still open. Hogan weather untouched. Stage 3 PDFs still byte-locked on `main`.
 

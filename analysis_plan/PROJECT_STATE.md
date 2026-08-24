@@ -9,12 +9,12 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ## 0l. Canonical update — Hogan Methods rewrite (24 August)
 
-- Hogan: Methods too complex; use Model 1/2/3; no Results in Methods; no WIP (ethics number, protocol amendment). Jingjing KW7–20 on the flattened PDF. Email: rainfall/RH in models (Goggins and Chan 2017); do not threshold TV; count days vs leave-one-year-out same-calendar-day climatology.
-- Live Methods rewritten in `manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md`. Paste pack: `LIVE_DOC_EDITS.md`, `methods_remainder_paste.md`, `Heat_CVD_Methods_20260824_paste.docx`.
-- Climatology day counts (weather only): `data_processed/hogan_climatology_day_counts_2013_2023.csv`. Mean warmer days/month 16.7; cooler 13.6.
-- Model 2/3 **not** fitted here: governed CHD/HF panels gitignored and absent. No invented coefficients. Table 2 remains Model 1 until Bob refits on the analysis machine (`scripts/62_fit_hogan_model2_model3.py`).
-- Weather lock: Hogan’s 24 Aug monthly paragraph is copied verbatim; rainfall-as-sum and official counts are extra sentences, not a rewrite of his opening. Model 2 cites Goggins and Chan 2017 [21] for **humidity only** (verified). Rainfall is in Model 2 because Hogan listed it and KW14 asked to use it, not because we claim Goggins entered rainfall. Five-day vs three-day official counts are the same Model 1 coefficient rescaled.
-- Gate 3 still open. Stage 3 PDFs still byte-locked. Do not email a parallel Word file.
+- Commented PDF `Commented_Heat_CVD_Manuscript_20260824.pdf` read via `pdftotext` (no Acrobat balloons). Inventory: `manuscript/live_collaborative/hogan_20260824_comment_inventory.md`.
+- Committee (Fable 5, Opus 5, Grok 4.6, Sol 5.6): **PR 69 base + PR 70 grafts**. Verdict: `manuscript/live_collaborative/COMMITTEE_VERDICT_PR69_vs_PR70.md`. Hogan-facing files: `Heat_CVD_Manuscript_20260824_hogan.docx` / `.pdf`.
+- Live Methods: Hogan’s order; nested **Model 1 / Model 2 / Model 3**; equation **(1)** with every symbol named; present-tense Model 2/3; Table 2 = Model 1. No “core panel”. No Results in Methods. Acknowledgements `None.`
+- **Model 1** = twelve thermal fits (Table 2). **Model 2** = Model 1 + monthly mean RH + monthly total rainfall ([21] humidity, both tails, modest; [22] Chan 2013 rainfall as attendance hypothesis). **Model 3** = leave-one-year-out same-calendar-day warmer/cooler **mean** counts (15 July 2018 example). Max/min counts are sensitivities. Model 2/3 health coefficients are **not** invented.
+- Hogan’s HKO weather paragraph kept verbatim, including the averaging sentence. Rainfall-as-total is a Word comment, not a body overwrite. `UW XX-XXX` stays at the start of Methods.
+- Data availability: GitHub URL; counts not posted; no invented data-sharing agreement. Contract tests: `tests/test_hogan_methods_rewrite.py`. Gate 3 still open. Stage 3 PDFs still byte-locked.
 
 ## 0k. Canonical update — roundtable fold-back before Email A (22 August, night)
 

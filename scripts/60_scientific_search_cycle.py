@@ -46,6 +46,20 @@ FORBIDDEN_METRIC_TOKENS = (
 )
 HUMAN_OWNERS = {"Hogan", "Roro", "Bishai", "Bob"}
 ALLOWED_SEARCH_CLASS = {"agent_owned", "human_owned", "refusal_solution"}
+REQUIRED_WEATHER = "Meteorological data was obtained from the HKO."
+SCIENTIFIC_FAMILIES = {"F01", "F02", "F03"}
+PINNED_HUMAN_GATES = {
+    "F04": "Hogan",
+    "F05": "Roro",
+    "F07": "Bishai",
+}
+HEAT_HUNT_MARKERS = (
+    "until significant",
+    "until q < 0.05",
+    "search harder until",
+    "harness failed because q",
+)
+KILLED_REGISTRY = ROOT / "analysis_plan/scientific_search/killed_registry.yml"
 
 
 def load_yaml(path: Path) -> dict:
@@ -168,6 +182,52 @@ def validate_tree(tree: dict, *, root: Path = ROOT) -> list[str]:
     fids = [item.get("id") for item in (tree.get("frontier") or [])]
     if len(fids) != len(set(fids)):
         failures.append("duplicate frontier ids")
+    for item in tree.get("frontier") or []:
+        job = str(item.get("job") or "").lower()
+        fid = item.get("id", "?")
+        for mk in HEAT_HUNT_MARKERS:
+            if mk in job:
+                failures.append(f"frontier {fid}: heat-hunt job {mk!r}")
+    seen_kills: dict[tuple[str, tuple[str, ...]], str] = {}
+    for nid, node in by_id.items():
+        if node.get("status") != "killed":
+            continue
+        key = (
+            str(node.get("kill_reason") or "").strip().lower(),
+            tuple(node.get("evidence") or []),
+        )
+        if key[0] and key in seen_kills:
+            failures.append(
+                f"{nid}: restates kill {seen_kills[key]} (do not mint depth)"
+            )
+        elif key[0]:
+            seen_kills[key] = str(nid)
+    for nid, owner in PINNED_HUMAN_GATES.items():
+        if nid not in by_id:
+            if "F01-daily-recovery" in by_id:
+                failures.append(f"missing pinned human gate {nid} ({owner})")
+            continue
+        node = by_id[nid]
+        if node.get("status") != "blocked_human" or node.get("owner") != owner:
+            if not str(node.get("owner_event") or "").strip():
+                failures.append(
+                    f"{nid}: pinned human gate must stay blocked_human owner={owner}"
+                )
+    if KILLED_REGISTRY.exists():
+        try:
+            import yaml  # type: ignore
+
+            reg = yaml.safe_load(KILLED_REGISTRY.read_text(encoding="utf-8")) or {}
+        except Exception:
+            reg = {}
+        for nid in reg.get("killed") or []:
+            node = by_id.get(nid)
+            if not node or node.get("status") != "killed":
+                failures.append(f"killed registry: {nid} missing or not killed")
+        for nid in reg.get("closed_lemma") or []:
+            node = by_id.get(nid)
+            if not node or not str(node.get("status") or "").startswith("closed"):
+                failures.append(f"killed registry: {nid} missing or not closed")
     return failures
 
 
@@ -180,6 +240,12 @@ def validate_memory(memory: dict, *, root: Path = ROOT) -> list[str]:
             failures.append(f"{lid}: missing evidence {ev}")
         if not str(lemma.get("text") or "").strip():
             failures.append(f"{lid}: empty lemma")
+    lids = [L.get("id") for L in (memory.get("lemmas") or [])]
+    if len(lids) != len(set(lids)):
+        failures.append("duplicate lemma ids")
+    dids = [d.get("id") for d in (memory.get("dead_ends") or [])]
+    if len(dids) != len(set(dids)):
+        failures.append("duplicate dead_end ids")
     if not (memory.get("dead_ends") or memory.get("dead_ends") or []):
         failures.append("memory has no dead_ends; compounding requires killed paths")
     if not (memory.get("human_gates") or memory.get("human_gates") or []):
@@ -218,6 +284,9 @@ def compute_metrics(tree: dict, memory: dict) -> dict:
     queued_frontier = [
         f for f in (tree.get("frontier") or []) if f.get("status") == "queued"
     ]
+    scientific_alive = [f for f in alive_families if f in SCIENTIFIC_FAMILIES]
+    width = len(scientific_alive)
+    depth = depth_killed_or_closed(by_id)
     blocked_human = [
         n["id"] for n in by_id.values() if n.get("status") == "blocked_human"
     ]
@@ -228,13 +297,6 @@ def compute_metrics(tree: dict, memory: dict) -> dict:
         for L in (memory.get("lemmas") or [])
         if L.get("next_paper") == "inherit"
     ]
-    queued_families = {
-        f.get("family")
-        for f in queued_frontier
-        if f.get("family") not in {None, "ROOT"}
-    }
-    width = len(set(alive_families) | queued_families)
-    depth = depth_killed_or_closed(by_id)
     n_constraints = len(killed) + len(closed) + len(lemmas)
     class_counts = {"agent_owned": 0, "human_owned": 0, "refusal_solution": 0}
     for n in by_id.values():
@@ -243,7 +305,9 @@ def compute_metrics(tree: dict, memory: dict) -> dict:
             class_counts[sc] += 1
     return {
         "alive_families": alive_families,
+        "scientific_alive_families": scientific_alive,
         "n_alive_families": len(alive_families),
+        "n_scientific_alive_families": len(scientific_alive),
         "n_queued_frontier": len(queued_frontier),
         "queued_frontier_ids": [f.get("id") for f in queued_frontier],
         "blocked_human": blocked_human,
@@ -305,8 +369,28 @@ def harness_debt(tree: dict, memory: dict) -> list[str]:
 def rails_checks(tree: dict, live_text: str) -> list[str]:
     failures: list[str] = []
     rails = tree.get("rails") or {}
-    if rails.get("gate_3") != "open":
-        failures.append("rails.gate_3 must be open")
+    if rails.get("hogan_weather_must_contain") != REQUIRED_WEATHER:
+        failures.append(
+            f"rails.hogan_weather_must_contain must equal {REQUIRED_WEATHER!r}"
+        )
+    if REQUIRED_WEATHER not in live_text:
+        failures.append(f"Hogan weather start string missing from live file: {REQUIRED_WEATHER!r}")
+    g3 = rails.get("gate_3")
+    if g3 == "open":
+        pass
+    elif (
+        isinstance(g3, dict)
+        and g3.get("state") == "frozen"
+        and g3.get("by") == "team"
+        and g3.get("artifact")
+        and (ROOT / str(g3.get("artifact"))).exists()
+    ):
+        pass
+    else:
+        failures.append(
+            "rails.gate_3 must be open, or frozen by team with an existing artifact "
+            "(agents do not freeze Gate 3)"
+        )
     contrib = rails.get("contribution_type")
     expected_contrib = 'aggregation_identifiability_calibrated_refusal'
     if contrib != expected_contrib:
@@ -316,8 +400,8 @@ def rails_checks(tree: dict, live_text: str) -> list[str]:
         if "weather" in k or "hogan" in k:
             if isinstance(v, str) and "Meteorological" in v:
                 weather = v
-    if weather and weather not in live_text:
-        failures.append(f"Hogan weather start string missing from live file: {weather!r}")
+    if weather and weather != REQUIRED_WEATHER:
+        failures.append(f"Hogan weather rail drifted: {weather!r}")
     stage = rails.get("stage3_pdfs")
     expected_stage = 'byte_locked_on_main'
     if stage != expected_stage:
@@ -474,12 +558,13 @@ def run_cycle(
     failures.extend(compounding_invariants(previous, m, node_map(tree)))
     debt = harness_debt(tree, memory)
     failures.extend(debt)
-    if m["n_alive_families"] < 3:
+    if m.get("n_scientific_alive_families", m["n_alive_families"]) < 3:
         failures.append(
-            f"width collapse: only {m['n_alive_families']} alive families; keep incompatible families"
+            f"width collapse: only {m.get('n_scientific_alive_families', m['n_alive_families'])} scientific families alive; keep F01–F03"
         )
     if skip_auditor:
-        auditor = {"ok": True, "skipped": True, "stdout": "", "stderr": ""}
+        auditor = {"ok": False, "skipped": True, "stdout": "", "stderr": ""}
+        failures.append("auditor skipped; cycle is not green")
     else:
         auditor = run_auditor()
         if not auditor["ok"]:
@@ -543,7 +628,8 @@ def main(argv: list[str] | None = None) -> int:
         for fail in payload["failures"]:
             print(" -", fail)
         return 1
-    print(f"wrote {JSON_OUT}")
+    if not args.no_write:
+        print(f"wrote {JSON_OUT}")
     return 0
 
 

@@ -9,7 +9,13 @@
       "F03",
       "F06"
     ],
+    "scientific_alive_families": [
+      "F01",
+      "F02",
+      "F03"
+    ],
     "n_alive_families": 4,
+    "n_scientific_alive_families": 3,
     "n_queued_frontier": 3,
     "queued_frontier_ids": [
       "P-keep-families",
@@ -18,7 +24,8 @@
     ],
     "blocked_human": [
       "F04",
-      "F05"
+      "F05",
+      "F07"
     ],
     "killed": [
       "F01-daily-recovery",
@@ -33,14 +40,14 @@
       "F01-winter-support",
       "F02-q-bar"
     ],
-    "width": 4,
+    "width": 3,
     "depth": 2,
     "n_inheritable_lemmas": 13,
     "n_inheritable_constraints": 22,
     "n_agent_owned": 7,
-    "n_human_owned": 2,
+    "n_human_owned": 3,
     "n_refusal_solution": 7,
-    "search_power_proxy": 176,
+    "search_power_proxy": 132,
     "notes": "proxy is unique-family width \u00d7 depth \u00d7 inheritable constraints; never a p-value and never a target to maximise",
     "q_above_0.19_is_not_harness_failure": true,
     "human_gates_remaining_open_is_not_harness_failure": true

@@ -1,6 +1,8 @@
 # Evaluator for scientific search — this extract.
-# Scores search quality and identification defensibility.
+# STATUS: human-read rubric. Machine-enforced subset lives in
+# scripts/60_scientific_search_cycle.py. Weighted dimensions are not scored.
 # Never scores "found a significant heat effect."
+# search_power_proxy is diagnostic residue, never a target.
 
 updated: 2026-08-24
 objective: identification_defensibility

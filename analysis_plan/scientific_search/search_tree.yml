@@ -208,6 +208,20 @@ nodes:
     next_paper_inherits: true
     note: "Agents may refresh the idle checklist only. No invented rows."
 
+  - id: F07
+    search_class: human_owned
+    parent: ROOT
+    family: F07
+    title: Gate 3 freeze, IRB, dissemination, authorship
+    status: blocked_human
+    owner: Bishai
+    success_metric: rails_intact
+    blocked_reason: "Gate 3 remains open. IRB, authorship, and dissemination are PI-owned."
+    evidence:
+      - analysis_plan/decision_gates.md
+    next_paper_inherits: true
+    note: "Agents do not freeze Gate 3."
+
   - id: F06
     search_class: agent_owned
     parent: ROOT

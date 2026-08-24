@@ -146,6 +146,8 @@ human_gates:
     hole: Paste into the shared live file; public blog/LSN voice; Stage 3 send
 
 next_paper_load_order:
+  # Builder seats only. Independent adversary seats read
+  # manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md unaided FIRST.
   - analysis_plan/scientific_search/CONSTITUTION.md
   - analysis_plan/scientific_search/memory.yml
   - analysis_plan/scientific_search/search_tree.yml

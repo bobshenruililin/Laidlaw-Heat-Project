@@ -50,7 +50,7 @@ The searchable object is a **defensible identification article plus calibrated r
 ## Done when
 
 - A cycle note exists under `analysis_plan/scientific_search/cycles/`.
-- The harness is green (or every red item is a named source-file contradiction).
+- The harness is green **with the auditor actually executed**. `--skip-auditor` runs are not done.
 - The claim-ledger auditor has been run.
 - Remaining holes are `blocked_human` with owners.
 - Hogan weather is unchanged.

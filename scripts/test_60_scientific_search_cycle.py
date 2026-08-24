@@ -244,6 +244,48 @@ class SearchCycleTests(unittest.TestCase):
         debt = MOD.harness_debt(tree, mini_memory())
         self.assertTrue(any("human gate treated as agent-owned" in d for d in debt))
 
+    def test_skipped_auditor_is_not_green(self):
+        tree = mini_tree()
+        memory = mini_memory()
+        with tempfile.TemporaryDirectory() as td:
+            td = Path(td)
+            tpath = td / "tree.yml"
+            mpath = td / "mem.yml"
+            live = td / "live.md"
+            dump_yaml(tpath, tree)
+            dump_yaml(mpath, memory)
+            live.write_text(
+                "Meteorological data was obtained from the HKO.\n", encoding="utf-8"
+            )
+            payload = MOD.run_cycle(
+                tree_path=tpath,
+                memory_path=mpath,
+                live_path=live,
+                skip_auditor=True,
+                when="2099-01-02",
+                root=td,
+                write=False,
+            )
+            self.assertFalse(payload["ok"])
+            self.assertTrue(any("auditor skipped" in f for f in payload["failures"]))
+
+    def test_pinned_human_gate_cannot_close(self):
+        tree = MOD.load_yaml(MOD.DEFAULT_TREE)
+        for node in tree["nodes"]:
+            if node["id"] == "F04":
+                node["status"] = "closed_lemma"
+                node.pop("owner", None)
+        fails = MOD.validate_tree(tree)
+        self.assertTrue(any("F04" in f and "pinned" in f for f in fails))
+
+    def test_scientific_width_excludes_public_surfaces(self):
+        tree = MOD.load_yaml(MOD.DEFAULT_TREE)
+        memory = MOD.load_yaml(MOD.DEFAULT_MEMORY)
+        m = MOD.compute_metrics(tree, memory)
+        self.assertEqual(m["scientific_alive_families"], ["F01", "F02", "F03"])
+        self.assertEqual(m["width"], 3)
+        self.assertIn("F06", m["alive_families"])
+
 
 if __name__ == "__main__":
     unittest.main()

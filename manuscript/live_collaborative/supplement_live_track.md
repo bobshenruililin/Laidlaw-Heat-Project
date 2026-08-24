@@ -4,7 +4,7 @@
 **Not** the 10 August `manuscript/chd_hf_supplement.pdf` (do not rebuild).  
 **Not** Hogan’s shared Word/Google file (Bob pastes; agents do not).
 
-This file is the journal-takeable supplement for Environmental Research. Every numeral is transcribed from an existing `HA_APPROVED_AGGREGATE`, `REAL`, or `SYNTHETIC_CALIBRATION` table. No new health model was fitted. Archive influenza and pollution models are **not** adjusted versions of Models 1–12. No confirmatory primary is declared.
+This file is the journal-takeable supplement for Environmental Research. Every numeral is transcribed from an existing `HA_APPROVED_AGGREGATE`, `REAL`, or `SYNTHETIC_CALIBRATION` table. No new health model was fitted. In the live manuscript, the twelve thermal fits are **Model 1**; “Models 1–12” in this supplement means those twelve Model 1 fits. Archive influenza and pollution models are **not** adjusted versions of Model 1. No confirmatory primary is declared.
 
 Numbering matches the live body: Supplementary Figure S1 is residual ACF; Supplementary Tables S7 and S9 are archive influenza and archive pollution. The release heatmap filename `figureS1_exposure_correlation.png` is Supplementary Figure **S4** here.
 

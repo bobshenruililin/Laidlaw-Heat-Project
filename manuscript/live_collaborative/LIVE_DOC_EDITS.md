@@ -8,11 +8,13 @@ This is the **journal-track** shared file, not the Laidlaw Stage 3 report. Do no
 ## 24 August — do this first
 
 1. Leave Hogan’s *Weather and pollutants data* HKO paragraph as he rewrote it (including “All monthly data were derived by taking the average of daily data in each calendar month.”). Paste around it from `methods_remainder_paste.md`. Do **not** paste model specification or the December–February cold-day sentence under Weather.
-2. Replace the rest of Methods from the live_update: Data sources (health, then weather processing) → Statistical analysis (equation + symbol table + Models 1–12) → Sensitivity analysis → Software. Keep his ethics sentence with `UW XX-XXX`. Author-order confirmation is a comment, not body text.
-3. In Hogan’s **Abstract Methods**, delete the sentence about the simulated daily-recovery method failing calibration (or “was not applied to the health series”). That result stays in Results and Discussion only. If the 15 August pack is already in the file, this deletion is still required even when you do not re-paste the whole Abstract.
+2. Replace the rest of Methods from the live_update: Data sources (health, weather processing, population) → Statistical analysis (Model 1 equation **without** RH/rain, then Model 2, then Model 3) → Sensitivity analysis → Software. Keep his ethics sentence with `UW XX-XXX`. Author-order confirmation is a comment, not body text. Acknowledgements = `None.`
+3. In Hogan’s **Abstract Methods**, name Model 1 / Model 2 / Model 3 and keep **Table 2 reports Model 1**. Delete any sentence about the simulated daily-recovery method failing calibration. That result stays in Results only.
 4. Reply in the KW balloons from `hogan_20260824_paste_replies.md`. Do not resolve until he has read them.
-5. Put the Table 2 **and Abstract** Word comments from that replies file on those objects. On a machine **with** the governed panel, run `Rscript scripts/53_hogan_models_rh_rain.R` and replace Table 2 from `outputs/tables/table2_models_1_12_rh_rain.csv`. This checkout cannot refit (panel absent; blocker in `outputs/tables/hogan_models_rh_rain_blocker.csv`). Do not invent coefficients.
-6. Day-of-year warmer/cooler counts are a sensitivity (`scripts/52_hogan_abnormal_day_counts.py`), not a replacement for official HKO hot nights / cold days, and not Jingjing TV-day counts.
+5. Put the Table 2 **and Abstract** Word comments from that replies file on those objects. On a machine **with** the governed panel, run `Rscript scripts/53_hogan_models_rh_rain.R` and add **Model 2** beside Table 2. This checkout cannot fit Model 2 (panel absent; blocker in `outputs/tables/hogan_models_rh_rain_blocker.csv`). Do not invent coefficients.
+6. Day-of-year warmer/cooler counts are **Model 3** (`scripts/52_hogan_abnormal_day_counts.py`), not a replacement for official HKO hot nights / cold days in Table 2, and not Jingjing TV-day counts.
+
+**Word/PDF to paste:** `Heat_CVD_Manuscript_20260824_hogan.docx` and `.pdf`, built by `python3 scripts/64_hogan_20260824_manuscript_docx.py`. Prefer pasting that file over reconstructing from markdown. Do not email a competing copy unless Hogan asks for the file.
 
 ## Do not touch
 
@@ -44,17 +46,17 @@ Copy each block from `hogan_comment_paste_replies.md` into the matching thread. 
 
 ## Paste / replace (in order)
 
-**If Hogan’s file already has the 15 August paste:** do **not** re-paste the whole 15 August pack. Do the **24 August — do this first** block (including deleting the daily-recovery sentence from Abstract Methods, and the Abstract Word comment), then rename Results “Core panel” → “Models 1–12”, replace remaining “core panel” / “twelve core contrasts” wording, and add the Table 2 Word comment. Leave his HKO weather paragraph.
+**If Hogan’s file already has the 15 August paste:** do **not** re-paste the whole 15 August pack. Do the **24 August — do this first** block, or replace the shared file from `Heat_CVD_Manuscript_20260824_hogan.docx`. Rename Results “Core panel” / “Models 1–12” → “Model 1”. Leave his HKO weather paragraph.
 
 **If the live file is still the 28 July skeleton:** paste in this order from `Heat_CVD_Manuscript_live_update.md` / `methods_remainder_paste.md`.
 
 1. **Title.** Keep: *Thermal extremes and first hospitalisation after coronary heart disease or heart failure diagnosis in Hong Kong, 2013–2023*. Add the running title under it. Do not switch to a methods-forward title in this file.
-2. **Abstract.** Replace with the 24 August Abstract in the live_update (Models 1–12; no daily-recovery failure in Abstract Methods; Table 2 numbers unchanged until the RH/rainfall refit).
+2. **Abstract.** Replace with the 24 August Abstract in the live_update (Model 1 / Model 2 / Model 3; Table 2 reports Model 1; no daily-recovery failure in Abstract Methods; Table 2 numbers unchanged until Model 2 is fitted).
 3. **Introduction.** Replace. Sentence one cites [9] only. Housing, behavioural adaptation, air-conditioning, and medication are not mentioned. [6] is on the 2023 cold-day count. Pollution paragraph reports 2013–2023 EPD means and states they are not Goggins 2000–2009. Closing paragraph is one sentence (estimand + reporting).
 4. **Health data.** Paste from `methods_remainder_paste.md`. Leave a Word comment that Roro should replace ICD, timing, and inpatient versus DAE. Influenza stays under Health data. Do not put confirmation-WIP in the body.
 5. **Weather.** Leave his HKO paragraph. Paste only the **processing** paragraph after it (75% completeness; general stations; roadside not used; PM2.5 for sensitivity). Do not paste model lists or the December–February cold-day observation under Weather.
 6. **Statistical analysis, sensitivity, software.** Paste from `methods_remainder_paste.md` / the live_update. One ethics sentence at the top of Methods (already in the opening). No separate Ethics WIP section.
-7. **Results.** Replace from the live_update. Heading is **Models 1–12**, not “Core panel”. Tables 1–3 stay (Table 2 numbers unchanged until refit; add the Word comment). Figures: 1 depletion, 2 DJF heatmap, **3 trend/depletion sensitivity** (not residual ACF). Ljung–Box lag 6 is *p* < 10^−7^ for every CHD model among Models 1–6 (the live 13 August “*p* < 10^−8^” was false for the hot-night model by a hair).
+7. **Results.** Replace from the live_update. Heading is **Model 1**, not “Core panel” and not “Models 1–12”. Tables 1–3 stay (Table 2 numbers unchanged until Model 2 is fitted; add the Word comment). Figures: 1 depletion, 2 DJF heatmap, **3 trend/depletion sensitivity** (not residual ACF). Ljung–Box lag 6 is *p* < 10^−7^ for every CHD Model 1 fit.
 8. **Figures (insert as images, then delete the markdown path lines if any remain).**
    - Figure 1 — first-event depletion vs C&SD 35+: `figures/live_identification/figure_B_first_event_depletion.png`
    - Figure 2 — cold-day year × month heatmap: `figures/live_identification/figure_A_cold_day_identification.png`

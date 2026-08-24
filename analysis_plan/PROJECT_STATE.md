@@ -10,10 +10,10 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 ## 0l. Canonical update — Hogan Methods rewrite (24 August)
 
 - Commented PDF `Commented_Heat_CVD_Manuscript_20260824.pdf` read via `pdftotext` (no Acrobat balloons). Inventory: `manuscript/live_collaborative/hogan_20260824_comment_inventory.md`.
-- Live Methods rewritten to Hogan’s order: data sources, numbered Models 1–12 with equation, sensitivity. No “core panel”. No Results in Methods. No co-author Acknowledgements. Code GitHub link.
-- Monthly mean RH and total rainfall enter Models 1–12 (already in `climate_monthly_2013_2023.csv`). Table 2 not refit: governed panel absent in this checkout. Do not invent new coefficients.
-- Jingjing TV-day counts not used. Hogan alternative: leave-one-year-out day-of-year warmer/cooler counts (`scripts/52_hogan_abnormal_day_counts.py`). Sensitivity only.
-- Leave Hogan’s HKO weather paragraph. Fable GO / Sol GO on the paste pack. Gate 3 still open.
+- Live Methods rewritten to Hogan’s order: data sources, nested **Model 1 / Model 2 / Model 3**, equation in words, sensitivity. No “core panel”. No Results in Methods. Acknowledgements `None.` Code GitHub link.
+- **Model 1** = twelve thermal fits (Table 2). **Model 2** = Model 1 + monthly mean RH + monthly total rainfall ([21] on humidity only). **Model 3** = leave-one-year-out same-calendar-day warmer/cooler counts (six series; not Jingjing TV). Model 2/3 health coefficients are **not** invented; governed panel absent.
+- Hogan’s HKO weather paragraph kept verbatim, including the averaging sentence. Rainfall-as-total is a Word comment, not a body overwrite.
+- Final paste files: `manuscript/live_collaborative/Heat_CVD_Manuscript_20260824_hogan.docx` and `.pdf` (`scripts/64_hogan_20260824_manuscript_docx.py`). Contract tests: `tests/test_hogan_methods_rewrite.py`. Fable HOGAN_GO on the 24 Aug body. Gate 3 still open. Stage 3 PDFs still byte-locked.
 
 ## 0k. Canonical update — roundtable fold-back before Email A (22 August, night)
 

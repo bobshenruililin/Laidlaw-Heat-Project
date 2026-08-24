@@ -26,12 +26,12 @@ Live-file comment only (not body text): rainfall in our pipeline is a **monthly 
 | KW11 | IRB number | @Roro: input the IRB reference number. | Live-file comment only. Leave `UW XX-XXX` if Hogan already typed it; we do not invent a number. | SATISFIED (placeholder kept; number is Roro’s) |
 | KW12 | Influenza | Moved into Health data and rewritten. | Keep influenza under Health data. | SATISFIED |
 | KW13 | Influenza not in the main models | Brief justification needed. | One sentence: influenza is missing for Jan–Oct 2013, so it is a sensitivity, not a primary covariate. | SATISFIED |
-| KW14 | RH and rainfall in the weather list | Include / take this data as well. | Obtain monthly mean RH and monthly total rainfall; **enter both in Models 1–12** (email + Goggins and Chan 2017). | SPECIFICATION SATISFIED; TABLE 2 REFIT BLOCKED (no governed panel; run `scripts/53_hogan_models_rh_rain.R`) |
-| KW15 | Per-five-day scale | Why five days and not three? How do values differ for a single extreme day? Sensitivity. | Primary: per 5 days. Sensitivity: per 1 day and per 3 days. Script 53 writes those rows when the panel exists. Do not invent those coefficients here. | SATISFIED as specification |
+| KW14 | RH and rainfall in the weather list | Include / take this data as well. | Model 2 adds monthly mean RH and monthly total rainfall to Model 1. Cite [21] for humidity only. Table 2 reports Model 1. | SPECIFICATION SATISFIED; MODEL 2 REFIT BLOCKED (no governed panel; run `scripts/53_hogan_models_rh_rain.R`) |
+| KW15 | Per-five-day scale | Why five days and not three? How do values differ for a single extreme day? Sensitivity. | Model 1 stays per 5 days. Per 1 and per 3 are the same coefficient rescaled: *R*^(1/5) and *R*^(3/5). Not a new model. | SATISFIED |
 | KW16 | Cold days in DJF in Methods | Remove. This is an observation → Results. | Move to Results (already there). Methods stay silent on 141/145. | SATISFIED |
 | KW17 | “Roadside stations were reserved” | Reserved for what? | Rewrite: roadside stations were **not used** for the territory-wide monthly mean. | SATISFIED |
 | KW18 | Software | Good. | Keep. | SATISFIED |
-| KW19 | Acknowledgements | Do not list co-authors. Section is for people who helped without intellectual contribution. At the moment, nobody to acknowledge. | Drop named co-author thanks. | SATISFIED |
+| KW19 | Acknowledgements | Do not list co-authors. Section is for people who helped without intellectual contribution. At the moment, nobody to acknowledge. | Section reads `None.` | SATISFIED |
 | KW20 | Data and code | Code: GitHub link. Data: check with Roro / IRB what can be shared. | Rewrite. No “external submission requires team confirmation” as body WIP. | SATISFIED |
 | H21 | Goggins 2013 | Yang C-Y → Yang CY | Keep Yang CY. | SATISFIED |
 
@@ -39,18 +39,18 @@ Live-file comment only (not body text): rainfall in our pipeline is a **monthly 
 
 | Ask | Status |
 |---|---|
-| Rewrite Methods lines 108–175; high-school reader | SATISFIED in `Heat_CVD_Manuscript_live_update.md` (Fable/Sol still to confirm GO) |
-| Numbered Model 1, 2, 3… not “core panel” | SATISFIED in live_update Methods/Results/Abstract |
+| Rewrite Methods lines 108–175; high-school reader | SATISFIED in live_update + `Heat_CVD_Manuscript_20260824_hogan.docx` / `.pdf` |
+| Numbered Model 1, 2, 3… not “core panel” | SATISFIED: nested Model 1 / Model 2 / Model 3. Table 2 = Model 1 |
 | No Results in Methods | SATISFIED (141/145, VIF, daily-recovery failure stay in Results) |
 | Order: data sources → equation → sensitivity | SATISFIED |
-| No WIP in the body | SATISFIED (ethics one sentence; author order is a comment) |
-| Keep editing the shared live file | SATISFIED as paste pack; Bob pastes |
+| No WIP in the body | SATISFIED (ethics one sentence; author order is a comment; Acknowledgements `None.`) |
+| Keep editing the shared live file | SATISFIED: Word/PDF is the paste source, not a competing emailed manuscript |
 | Cold-day winter identification is a limitation | SATISFIED in Discussion |
-| Monthly RH and rainfall in the models | SPECIFICATION SATISFIED; Table 2 refit blocked |
-| No TV-day counts; day-of-year historical averages | SATISFIED (`scripts/52_hogan_abnormal_day_counts.py`; 132 months; RH/rain match climate_monthly) |
+| Monthly RH and rainfall in the models | SPECIFICATION SATISFIED as Model 2; Table 2 remains Model 1 until governed-panel refit |
+| No TV-day counts; day-of-year historical averages | SATISFIED as Model 3 specification (`scripts/52_hogan_abnormal_day_counts.py`; 132 months; six counts) |
 
 **Cannot read:** no other balloons. Line-108–175 complexity is the email, not a balloon.
 
-**Governed panel:** not in this checkout. Abnormal-day weather counts can be built from HKO daily files. Models 1–12 **with** RH and rainfall cannot be refit here. Do not invent new Table 2 numbers. Paste Methods as the specification Hogan asked for; Word-comment that Table 2 must be replaced after Bob refits on the governed panel.
+**Governed panel:** not in this checkout. Abnormal-day weather counts can be built from HKO daily files. **Model 2** (RH and rainfall) cannot be fitted here. Do not invent Model 2 or Model 3 health coefficients. Table 2 stays Model 1. Word-comment that Model 2 is fitted with `scripts/53_hogan_models_rh_rain.R` when the panel exists.
 
 **Not done in this pass:** Jingjing TV-day counts (Hogan rejected). AMI/stroke/principal-dx claims. Overwriting Hogan’s HKO weather sentence.

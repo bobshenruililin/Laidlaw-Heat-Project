@@ -1,10 +1,12 @@
 #!/usr/bin/env Rscript
 # 53_hogan_models_rh_rain.R
-# Hogan 24 Aug 2026: Models 1–12 with monthly mean RH and monthly total rainfall.
-# Primary extreme-day scale is per 5 days; also writes per-1-day and per-3-day
-# sensitivities (KW15). Does not invent coefficients when the governed panel is
-# absent. Does not overwrite outputs/release_chd_hf/tables/table2_core_models.csv
-# (that file is the 10 Aug specification without RH/rainfall).
+# Hogan 24 Aug 2026: fit Model 2 (Model 1 thermal specification plus monthly
+# mean RH and monthly total rainfall). Table 2 in the live file reports Model 1
+# and must not be overwritten with invented numbers. Primary extreme-day scale
+# is per 5 days; also writes per-1-day and per-3-day sensitivities (KW15:
+# those are the same coefficient rescaled). Does not invent coefficients when
+# the governed panel is absent. Does not overwrite
+# outputs/release_chd_hf/tables/table2_core_models.csv (Model 1, no RH/rainfall).
 
 source(file.path("scripts", "utils.R"))
 source(file.path("scripts", "final_model_helpers.R"))

@@ -3,7 +3,7 @@
 This folder is the **journal-track** paste pack for Hogan’s live shared file. It is **not** the Laidlaw Stage 3 report. The Stage 3 report and A0 poster stay byte-locked (`knowledge/2026-08-12_sol_stage3_outputs_lock.md`). Do not paste Laidlaw-essay voice, Gate 3 jargon, or F1.1/F1.2 labels into Hogan’s document.
 
 **Source file:** `Heat_CVD_Manuscript_20260728.docx` (Hogan skeleton, 28 July 2026), archived here as `Heat_CVD_Manuscript_20260728_hogan_comments.docx`.  
-**This update:** 24 August 2026 Hogan Methods rewrite (numbered Models 1–12; RH and rainfall in every model; no Results in Methods). Leave his HKO weather paragraph. Health-data ICD/timing remain Roro’s. Author order remains a Bishai/team decision (live-file comment, not a body sentence). Table 2 still needs a governed-panel refit with RH and rainfall.
+**This update:** 24 August 2026 Hogan Methods rewrite (nested Model 1 / Model 2 / Model 3; Table 2 = Model 1; RH and rainfall specified as Model 2; climatology day counts as Model 3; no Results in Methods). Leave his HKO weather paragraph. Health-data ICD/timing remain Roro’s. Author order remains a Bishai/team decision (live-file comment, not a body sentence). Table 2 still needs a governed-panel Model 2 fit. Final paste file: `Heat_CVD_Manuscript_20260824_hogan.docx` / `.pdf`.
 
 **Paste:** use [`LIVE_DOC_EDITS.md`](LIVE_DOC_EDITS.md). 24 Aug comment replies: [`hogan_20260824_paste_replies.md`](hogan_20260824_paste_replies.md). Do **not** email a Word copy. Do not overwrite “Meteorological data was obtained from the HKO.” The 15 August `.docx` is **stale for Methods**.
 
@@ -17,6 +17,8 @@ This folder is the **journal-track** paste pack for Hogan’s live shared file. 
 | `hogan_20260824_comment_inventory.md` | Every readable balloon from the 24 Aug PDF |
 | `hogan_20260824_paste_replies.md` | Copy these KW/email replies into the live-file bubbles |
 | `Heat_CVD_Manuscript_live_update.md` | Full draft (Markdown) — **wording authority** |
+| `Heat_CVD_Manuscript_20260824_hogan.docx` | **Paste this** into the shared live file (24 Aug Methods; Hogan weather verbatim) |
+| `Heat_CVD_Manuscript_20260824_hogan.pdf` | PDF export of that Word file |
 | `Heat_CVD_Manuscript_20260815_collab_draft.docx` | Stale for Methods; figures only |
 | `Heat_CVD_Manuscript_20260728_hogan_comments.docx` | Commented 28 July original (provenance) |
 | `Heat_CVD_Manuscript_20260813_collab_draft.docx` | Stale 13 Aug Word copy; do not paste over the 15 Aug text |

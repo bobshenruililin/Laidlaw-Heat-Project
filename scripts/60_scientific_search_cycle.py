@@ -369,7 +369,7 @@ def write_cycle(payload: dict, when: str) -> tuple[Path, Path]:
         "",
         f"- Auditor: {'SKIPPED' if payload['auditor'].get('skipped') else ('PASSED' if payload['auditor']['ok'] else 'FAILED')}",
         f"- Tree/memory/rails: {'PASSED' if payload['ok'] else 'FAILED'}",
-        f"- Width: {m['width']} (alive families {m['n_alive_families']} + queued frontier {m['n_queued_frontier']})",
+        f"- Width (unique families): {m['width']} (alive {m['n_alive_families']}; queued jobs {m['n_queued_frontier']} not added to width)",
         f"- Depth (killed/closed path): {m['depth']}",
         f"- Inheritable constraints: {m['n_inheritable_constraints']}",
         f"- Search-power proxy (not a p-value): {m['search_power_proxy']}",

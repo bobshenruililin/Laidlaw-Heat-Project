@@ -33,12 +33,17 @@
       "F01-winter-support",
       "F02-q-bar"
     ],
-    "width": 7,
+    "width": 4,
     "depth": 2,
-    "n_inheritable_lemmas": 12,
-    "n_inheritable_constraints": 21,
-    "search_power_proxy": 294,
-    "notes": "proxy is width \u00d7 depth \u00d7 inheritable constraints; never a p-value"
+    "n_inheritable_lemmas": 13,
+    "n_inheritable_constraints": 22,
+    "n_agent_owned": 7,
+    "n_human_owned": 2,
+    "n_refusal_solution": 7,
+    "search_power_proxy": 176,
+    "notes": "proxy is unique-family width \u00d7 depth \u00d7 inheritable constraints; never a p-value and never a target to maximise",
+    "q_above_0.19_is_not_harness_failure": true,
+    "human_gates_remaining_open_is_not_harness_failure": true
   },
   "auditor": {
     "ok": true,
@@ -95,8 +100,11 @@
     "contribution_type": "aggregation_identifiability_calibrated_refusal",
     "hogan_weather_must_contain": "Meteorological data was obtained from the HKO.",
     "stage3_pdfs": "byte_locked_on_main",
-    "auditor": "scripts/50_audit_live_claim_ledger.py"
+    "auditor": "scripts/50_audit_live_claim_ledger.py",
+    "require_search_class": true
   },
   "objective": "identification_defensibility",
-  "not_objective": "found_significant_heat_effect"
+  "not_objective": "found_significant_heat_effect",
+  "harness_debt": [],
+  "harness_debt_n": 0
 }

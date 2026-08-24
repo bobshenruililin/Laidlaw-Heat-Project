@@ -1,0 +1,2 @@
+n_months,climatology,study_window,jan_mean_tmean_below,jul_mean_tmean_below,provenance
+132,2012-2023 leave-one-year-out,2013-01 to 2023-12,12.727,12.091,REAL_HKO_DAILY

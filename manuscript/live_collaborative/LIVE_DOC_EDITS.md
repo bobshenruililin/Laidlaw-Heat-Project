@@ -1,6 +1,27 @@
 # Things to edit in Hogan’s live document
 
-This is the **journal-track** shared file, not the Laidlaw Stage 3 report. Do not paste Laidlaw-essay language into it. Do not overwrite Hogan’s weather paragraph. Do not email him a parallel Word copy.
+## 24 August 2026 — Hogan PDF + email (do this now)
+
+Commented PDF: repo root `Commented_Heat_CVD_Manuscript_20260824.pdf`. Comment map: `knowledge/2026-08-24_hogan_pdf_comments.md`. Wording authority remains `Heat_CVD_Manuscript_live_update.md`. Methods-only Word: `Heat_CVD_Methods_20260824_paste.docx` (after `python3 scripts/63_hogan_methods_docx.py`).
+
+**Paste Methods in full** from the live Markdown. Hogan already rewrote the weather paragraph in the PDF; the live Markdown copies that paragraph and then says rainfall is a sum and extremes are counts. Do not put the July daily-variables paragraph back.
+
+Also paste, same sitting:
+
+1. Introduction (PDF still has AMI/stroke, age 35, and “environmental context has evolved”).
+2. Acknowledgements → `None.`
+3. Data/code availability (GitHub for code; no public hospital counts).
+4. Bubble replies in `methods_remainder_paste.md`. Do not resolve threads until Hogan has read them.
+
+**Roro comment (do not put in the body):** insert the real HKU/HA West IRB number into the one ethics sentence.
+
+**Do not paste Model 2/3 coefficients.** Governed panels are not on this machine. Climatology day counts are in `data_processed/hogan_climatology_day_counts_2013_2023.csv`.
+
+The 15 August Word file is no longer the Methods paste source.
+
+---
+
+This is the **journal-track** shared file, not the Laidlaw Stage 3 report. Do not paste Laidlaw-essay language into it. Do not email him a parallel Word copy.
 
 **Wording authority:** Markdown `Heat_CVD_Manuscript_live_update.md`.  
 **Formatted paste source (15 August):** `Heat_CVD_Manuscript_20260815_collab_draft.docx` (figures embedded; weather paragraph identical to the 28 July text).  

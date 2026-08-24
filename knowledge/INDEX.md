@@ -20,6 +20,7 @@
 
 ## Current meeting record
 
+- [`2026-08-24_hogan_pdf_comments.md`](2026-08-24_hogan_pdf_comments.md) — Hogan/Jingjing 24 Aug PDF + email: Methods rewrite, Model 1/2/3, rainfall/RH, climatology-relative days; Gate 3 still open.
 - [`2026-08-22_stage3_foldback.md`](2026-08-22_stage3_foldback.md) — roundtable fold-back before Email A; Fable/Sol GO; SHA prefixes `c083d4096a0924b1` / `0ef58e0951bb2ffd`.
 - [`2026-08-22_stage3_poster_refs.md`](2026-08-22_stage3_poster_refs.md) — A0 poster gained a six-item REFERENCES strip; later the same night the human footer and pre-2020 callouts were added.
 - [`2026-08-22_stage3_word_pathway.md`](2026-08-22_stage3_word_pathway.md) — Bob-authorised cut to ≤3,000 words, Bishai credit, Word-register format; live manuscript still not the attachment.

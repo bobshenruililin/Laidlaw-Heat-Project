@@ -1,11 +1,20 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-22
+**Last updated:** 2026-08-24
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0l. Canonical update — Hogan Methods rewrite (24 August)
+
+- Hogan: Methods too complex; use Model 1/2/3; no Results in Methods; no WIP (ethics number, protocol amendment). Jingjing KW7–20 on the flattened PDF. Email: rainfall/RH in models (Goggins and Chan 2017); do not threshold TV; count days vs leave-one-year-out same-calendar-day climatology.
+- Live Methods rewritten in `manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md`. Paste pack: `LIVE_DOC_EDITS.md`, `methods_remainder_paste.md`, `Heat_CVD_Methods_20260824_paste.docx`.
+- Climatology day counts (weather only): `data_processed/hogan_climatology_day_counts_2013_2023.csv`. Mean warmer days/month 16.7; cooler 13.6.
+- Model 2/3 **not** fitted here: governed CHD/HF panels gitignored and absent. No invented coefficients. Table 2 remains Model 1 until Bob refits on the analysis machine (`scripts/62_fit_hogan_model2_model3.py`).
+- Weather lock: Hogan’s 24 Aug monthly paragraph is copied verbatim; rainfall-as-sum and official counts are extra sentences, not a rewrite of his opening.
+- Gate 3 still open. Stage 3 PDFs still byte-locked. Do not email a parallel Word file.
 
 ## 0k. Canonical update — roundtable fold-back before Email A (22 August, night)
 

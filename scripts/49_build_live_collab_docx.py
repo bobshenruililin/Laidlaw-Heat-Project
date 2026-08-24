@@ -23,12 +23,13 @@ FIGS = {
 }
 
 HOGAN_WEATHER = (
-    "Meteorological data was obtained from the HKO. The variables included: "
-    "daily temperature (mean, minimum, maximum), daily relative humidity, daily total rainfall, "
+    "Meteorological data was obtained from the HKO. The monthly variables included: "
+    "temperature (mean, minimum, maximum), relative humidity, total rainfall, "
     "the number of hot nights (Tmin ≥ 28°C), the number of very hot days (Tmax ≥ 33°C), "
     "the number of extremely hot days (Tmax ≥ 35°C), and the number of cold days (Tmin ≤ 12°C). "
-    "Daily mean pollutant levels for nitrogen dioxide (NO2), sulfur dioxide (SO2), and ozone (O3) "
-    "were obtained from the Hong Kong Environmental Protection Department (EPD)."
+    "Monthly mean pollutant levels for nitrogen dioxide (NO2), sulfur dioxide (SO2), and ozone (O3) "
+    "were obtained from the Hong Kong Environmental Protection Department (EPD). "
+    "All monthly data were derived by taking the average of daily data in each calendar month."
 )
 
 

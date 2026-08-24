@@ -11,29 +11,43 @@
 
 Live-file comment only (not body text): rainfall in our pipeline is a **monthly total (mm)**; extreme days are **counts**; humidity is a **monthly mean**.
 
-| ID | Locus in PDF | His text (verbatim sense) | Action |
-|---|---|---|---|
-| H1 | Title / running title | Running title proposed by Bob. Will need to be amended once results have been generated. | Keep running title now that CHD/HF results exist. |
-| H2 | Authors | To be determined after discussion with Dr. Bishai. | Leave Author 2–4 placeholders. |
-| H3 | Intro AMI/stroke sentence | Remove now since the scope of the study has changed? | Already removed as our endpoint in the 15 Aug Introduction. |
-| H4 | Housing / behaviour / pollution | Cite the papers. If we don’t have housing and behavioural adaptation data, do not mention them; consider medication instead. Do not raise an uncontrolled factor. | Housing/behaviour/medication stay out. Cite only handled factors. |
-| H5 | “environmental context has also evolved” | Sounds as if pollutants changed after Goggins 2009. If not, remove or rewrite. | 15 Aug pollution paragraph already rewrites this as 2013–2023 EPD means, not Goggins 2000–2009. |
-| H6 | Thesis paragraph | Combine into one sentence after Results. | 15 Aug close is one sentence. |
-| KW7 | Study design “target quantity” | Prefer “dependent variable.” | Use “dependent variable.” |
-| KW8 | “days in month” | Do you mean “the number of days in a month”? | Yes; write it that way. |
-| KW9 | “specified after the outcome series were available” | Once the outcome series is available, remove this sentence. | Delete. |
-| KW10 | Ethics | One sentence that the study has ethics approval. Other stuff deleted. | One sentence. Do not paste the old “authors will determine” paragraph. Do not invent the IRB number. |
-| KW11 | IRB number | @Roro: input the IRB reference number. | Live-file comment only. Leave `UW XX-XXX` if Hogan already typed it; we do not invent a number. |
-| KW12 | Influenza | Moved into Health data and rewritten. | Keep influenza under Health data. |
-| KW13 | Influenza not in the main models | Brief justification needed. | One sentence: influenza is missing for Jan–Oct 2013, so it is a sensitivity, not a primary covariate. |
-| KW14 | RH and rainfall in the weather list | Include / take this data as well. | Obtain monthly mean RH and monthly total rainfall; **enter both in Models 1–12** (email + Goggins and Chan 2017). |
-| KW15 | Per-five-day scale | Why five days and not three? How do values differ for a single extreme day? Sensitivity. | Primary: per 5 days. Sensitivity: per 1 day and per 3 days. Do not invent those coefficients until the governed panel is refit. |
-| KW16 | Cold days in DJF in Methods | Remove. This is an observation → Results. | Move to Results (already there). Methods stay silent on 141/145. |
-| KW17 | “Roadside stations were reserved” | Reserved for what? | Rewrite: roadside stations were **not used** for the territory-wide monthly mean. |
-| KW18 | Software | Good. | Keep. |
-| KW19 | Acknowledgements | Do not list co-authors. Section is for people who helped without intellectual contribution. At the moment, nobody to acknowledge. | Drop named co-author thanks. |
-| KW20 | Data and code | Code: GitHub link. Data: check with Roro / IRB what can be shared. | Rewrite. No “external submission requires team confirmation” as body WIP. |
-| H21 | Goggins 2013 | Yang C-Y → Yang CY | Keep Yang CY. |
+| ID | Locus in PDF | His text (verbatim sense) | Action | Status now |
+|---|---|---|---|---|
+| H1 | Title / running title | Running title proposed by Bob. Will need to be amended once results have been generated. | Keep running title now that CHD/HF results exist. | SATISFIED |
+| H2 | Authors | To be determined after discussion with Dr. Bishai. | Leave Author 2–4 placeholders. Author-order confirmation is a live-file comment, not body WIP. | SATISFIED |
+| H3 | Intro AMI/stroke sentence | Remove now since the scope of the study has changed? | Already removed as our endpoint in the 15 Aug Introduction. | SATISFIED |
+| H4 | Housing / behaviour / pollution | Cite the papers. If we don’t have housing and behavioural adaptation data, do not mention them; consider medication instead. Do not raise an uncontrolled factor. | Housing/behaviour/medication stay out. Cite only handled factors. | SATISFIED |
+| H5 | “environmental context has also evolved” | Sounds as if pollutants changed after Goggins 2009. If not, remove or rewrite. | 15 Aug pollution paragraph already rewrites this as 2013–2023 EPD means, not Goggins 2000–2009. | SATISFIED |
+| H6 | Thesis paragraph | Combine into one sentence after Results. | 15 Aug close is one sentence. | SATISFIED |
+| KW7 | Study design “target quantity” | Prefer “dependent variable.” | Use “dependent variable.” | SATISFIED |
+| KW8 | “days in month” | Do you mean “the number of days in a month”? | Yes; write it that way. | SATISFIED |
+| KW9 | “specified after the outcome series were available” | Once the outcome series is available, remove this sentence. | Delete. | SATISFIED |
+| KW10 | Ethics | One sentence that the study has ethics approval. Other stuff deleted. | One sentence. Do not paste the old “authors will determine” paragraph. Do not invent the IRB number. | SATISFIED |
+| KW11 | IRB number | @Roro: input the IRB reference number. | Live-file comment only. Leave `UW XX-XXX` if Hogan already typed it; we do not invent a number. | SATISFIED (placeholder kept; number is Roro’s) |
+| KW12 | Influenza | Moved into Health data and rewritten. | Keep influenza under Health data. | SATISFIED |
+| KW13 | Influenza not in the main models | Brief justification needed. | One sentence: influenza is missing for Jan–Oct 2013, so it is a sensitivity, not a primary covariate. | SATISFIED |
+| KW14 | RH and rainfall in the weather list | Include / take this data as well. | Obtain monthly mean RH and monthly total rainfall; **enter both in Models 1–12** (email + Goggins and Chan 2017). | SPECIFICATION SATISFIED; TABLE 2 REFIT BLOCKED (no governed panel; run `scripts/53_hogan_models_rh_rain.R`) |
+| KW15 | Per-five-day scale | Why five days and not three? How do values differ for a single extreme day? Sensitivity. | Primary: per 5 days. Sensitivity: per 1 day and per 3 days. Script 53 writes those rows when the panel exists. Do not invent those coefficients here. | SATISFIED as specification |
+| KW16 | Cold days in DJF in Methods | Remove. This is an observation → Results. | Move to Results (already there). Methods stay silent on 141/145. | SATISFIED |
+| KW17 | “Roadside stations were reserved” | Reserved for what? | Rewrite: roadside stations were **not used** for the territory-wide monthly mean. | SATISFIED |
+| KW18 | Software | Good. | Keep. | SATISFIED |
+| KW19 | Acknowledgements | Do not list co-authors. Section is for people who helped without intellectual contribution. At the moment, nobody to acknowledge. | Drop named co-author thanks. | SATISFIED |
+| KW20 | Data and code | Code: GitHub link. Data: check with Roro / IRB what can be shared. | Rewrite. No “external submission requires team confirmation” as body WIP. | SATISFIED |
+| H21 | Goggins 2013 | Yang C-Y → Yang CY | Keep Yang CY. | SATISFIED |
+
+**Email asks (not balloons)**
+
+| Ask | Status |
+|---|---|
+| Rewrite Methods lines 108–175; high-school reader | SATISFIED in `Heat_CVD_Manuscript_live_update.md` (Fable/Sol still to confirm GO) |
+| Numbered Model 1, 2, 3… not “core panel” | SATISFIED in live_update Methods/Results/Abstract |
+| No Results in Methods | SATISFIED (141/145, VIF, daily-recovery failure stay in Results) |
+| Order: data sources → equation → sensitivity | SATISFIED |
+| No WIP in the body | SATISFIED (ethics one sentence; author order is a comment) |
+| Keep editing the shared live file | SATISFIED as paste pack; Bob pastes |
+| Cold-day winter identification is a limitation | SATISFIED in Discussion |
+| Monthly RH and rainfall in the models | SPECIFICATION SATISFIED; Table 2 refit blocked |
+| No TV-day counts; day-of-year historical averages | SATISFIED (`scripts/52_hogan_abnormal_day_counts.py`; 132 months; RH/rain match climate_monthly) |
 
 **Cannot read:** no other balloons. Line-108–175 complexity is the email, not a balloon.
 

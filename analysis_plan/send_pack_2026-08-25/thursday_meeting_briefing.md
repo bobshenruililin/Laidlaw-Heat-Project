@@ -5,7 +5,7 @@ Bring paper. Do not use the meeting to reopen the essay unless he requires a cor
 ## Before you sit down
 
 - Form 2a: **your** fields complete (name, curriculum, institution, supervisor name, research topic, your signature, date). Year of Study / Attachment Period / UID from Horizons, not from memory. Supervisor rating, comments, name, signature, date **blank**.
-- Essay in hand is the **24 August** PDF (`ShenRuililin_Laidlaw_Stage3Report.pdf`, SHA prefix `605cd8db43072cb5`), not the 22 August file.
+- Essay in hand is the **24 August** PDF (`ShenRuililin_Laidlaw_Stage3Report.pdf`, SHA prefix `605cd8db43072cb5`), not the 22 August file. The four-page table stack is the copy to put in front of him if the full staple is bulky.
 - One-pager for him is optional. Pocket card is **yours only**.
 
 ## Likelihood, in one sentence

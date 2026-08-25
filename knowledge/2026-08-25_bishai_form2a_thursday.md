@@ -53,7 +53,7 @@ Do not add Roro’s excess-death totals, daily DLNM language, AMI/stroke finding
 1. If Email A with the **24 August** PDF has not gone, send it now. Use [`to_bishai.md`](../analysis_plan/send_pack_2026-08-24/to_bishai.md). Do not send a nudge instead.
 2. If that mail has gone and there is no reply, send the Tuesday nudge ([`to_bishai_nudge.md`](../analysis_plan/send_pack_2026-08-25/to_bishai_nudge.md)). Reply on the same thread. Do not re-attach unless it bounced.
 3. Fill Year of Study, Attachment Period, and UID from Horizons / the student record. Do not guess from the repo. Worksheet: [`form_2a_fill_worksheet.md`](../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md).
-4. Print the Thursday pack ([`print_checklist.md`](../analysis_plan/send_pack_2026-08-25/print_checklist.md)). Supervisor block stays blank.
+4. Print the Thursday pack ([`print_checklist.md`](../analysis_plan/send_pack_2026-08-25/print_checklist.md)). Put [`thursday_table_stack.pdf`](../analysis_plan/send_pack_2026-08-25/thursday_table_stack.pdf) on the table for him. Pocket card stays in your bag. Supervisor block stays blank.
 5. Read the ten-minute script once ([`thursday_meeting_briefing.md`](../analysis_plan/send_pack_2026-08-25/thursday_meeting_briefing.md)).
 
 **Do not do before Thursday (does not help the signature):**

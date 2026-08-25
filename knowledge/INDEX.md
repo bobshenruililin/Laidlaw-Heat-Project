@@ -20,7 +20,7 @@
 
 ## Current meeting record
 
-- [`2026-08-25_bishai_form2a_thursday.md`](2026-08-25_bishai_form2a_thursday.md) — Hogan review is not the form 2a gate. Endorsement-ready for the Laidlaw bar; Thursday 27 Aug paper backup. Pack: [`../analysis_plan/send_pack_2026-08-25/`](../analysis_plan/send_pack_2026-08-25/).
+- [`2026-08-25_bishai_form2a_thursday.md`](2026-08-25_bishai_form2a_thursday.md) — Hogan review is not the form 2a gate. Endorsement-ready for the Laidlaw bar; Thursday 27 Aug paper backup. Start: [`../analysis_plan/send_pack_2026-08-25/START_HERE.md`](../analysis_plan/send_pack_2026-08-25/START_HERE.md).
 - [`2026-08-24_stage3_hogan_align.md`](2026-08-24_stage3_hogan_align.md) — Hogan comments vs Stage 3; Bishai gets the 24 August programme PDF; send pack `analysis_plan/send_pack_2026-08-24/`. Gate 3 open.
 - [`2026-08-24_orchestration_failure_modes.md`](2026-08-24_orchestration_failure_modes.md) — Hogan comments ≠ LLM failure modes; this run’s tunnel/least-resistance/phantom/bikeshed were agent-side. Bottleneck remains paste + Bishai send.
 - [`2026-08-22_stage3_foldback.md`](2026-08-22_stage3_foldback.md) — roundtable fold-back before Email A; Fable/Sol GO; SHA prefixes `c083d4096a0924b1` / `0ef58e0951bb2ffd`. Superceded for sending by the 24 Aug pack.

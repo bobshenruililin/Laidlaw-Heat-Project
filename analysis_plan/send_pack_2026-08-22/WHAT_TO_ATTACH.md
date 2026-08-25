@@ -1,6 +1,6 @@
 # What to attach — Email A (22 August 2026)
 
-New message to Professor Bishai only. Do not reply-all on Hogan’s science thread.
+New message to Professor Bishai only. Do not reply-all on Hogan’s science thread. If Email A has not gone by Tuesday 25 August, send it that day.
 
 Attach PDFs and the official Word form. Do not attach markdown.
 

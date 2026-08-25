@@ -10,3 +10,5 @@ Bob-authorised replacement of the 12 August Sol copies. See [`../../../knowledge
 | `supervisor_one_pager.pdf` | 50,236 | `43f68850c6c3574a` | one A4 page; optional print aid; matches rebuilt conclusion |
 
 Do not rebuild the essay or poster unless Bob or Bishai requires a correction. The one-pager may be regenerated from `supervisor_one_pager.html` if the print sheet needs a further factual fix.
+
+25 August: Hogan not reviewing again does not change these hashes. Signature likelihood: [`../../../knowledge/2026-08-25_bishai_form2a_signature.md`](../../../knowledge/2026-08-25_bishai_form2a_signature.md).

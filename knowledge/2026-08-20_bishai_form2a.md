@@ -34,6 +34,8 @@ Bob may send the official form with his own fields completed. One optional PI li
 
 **22 August update:** send from [`../analysis_plan/send_pack_2026-08-22/to_bishai.md`](../analysis_plan/send_pack_2026-08-22/to_bishai.md) with the one-page supervisor card. Thursday 27 August is a printed-form backup, not a reason to delay Email A. Details: [`2026-08-22_stage3_endorsement.md`](2026-08-22_stage3_endorsement.md).
 
+**25 August update:** Hogan not reviewing again still does not block the sheet. Likelihood, comment text, and Tuesday–Thursday list: [`2026-08-25_bishai_form2a_signature.md`](2026-08-25_bishai_form2a_signature.md). If Email A never went, send it today.
+
 Bob fills form 2a from the worksheet. Agents do not send it.
 
 ## Estimand and claim boundary

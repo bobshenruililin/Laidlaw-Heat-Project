@@ -8,7 +8,7 @@ This directory holds durable, dated project knowledge that should survive a meet
 owns the final CHD/HF reanalysis, manuscript/report package, negative M|D
 feasibility result, and open human decisions.
 
-**Current programme action:** [`2026-08-20_bishai_form2a.md`](2026-08-20_bishai_form2a.md) — Email A to Bishai for form 2a.
+**Current programme action:** [`2026-08-25_bishai_form2a_signature.md`](2026-08-25_bishai_form2a_signature.md) — Bishai can sign form 2a without another Hogan review; Email A today if unsent; printed backup Thursday 27 August.
 
 ## Structure
 

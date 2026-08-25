@@ -1,5 +1,7 @@
 # Nudge — Tuesday 25 August, only if Email A had no reply
 
+If Email A was never sent, send [`to_bishai.md`](to_bishai.md) instead of this follow-up.
+
 **To:** Professor David Bishai  
 **Subject:** Re: Laidlaw Stage 3 research report and HKU form for endorsement  
 Reply on the same thread as Email A.

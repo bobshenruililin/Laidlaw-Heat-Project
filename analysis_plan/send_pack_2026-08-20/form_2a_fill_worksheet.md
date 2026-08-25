@@ -31,6 +31,15 @@ Research topic must not say AMI, stroke result, or a confirmatory thermal effect
 
 No coefficient, row count, or *q*-value belongs in an administrative field.
 
+## Local copies seen 25 August (not in git)
+
+Untracked files in `analysis_plan/send_pack_2026-08-22/` (do not commit):
+
+- `2a_Laidlaw_Report_Form_HKU_bob_fields.docx` — name/curriculum/institution/supervisor/topic filled; Year of Study and Attachment Period still empty; signature blank.
+- `2a_Laidlaw_Report_Form_HKU_ready_for_emailA.docx` — Year of Study **Year 2**; Attachment Period **4 July 2026 to 14 August 2026**; Date of Submission **23 August 2026**; signature still blank. Those three values are local only. Confirm against Horizons before sending or printing. Change the date if Email A did not go on 23 August.
+
+This template has **no UID box**. Supervisor comments are not pre-filled on either copy. Print `ready_for_emailA` only after Bob signs and the date is true.
+
 ## After Bishai returns the form
 
 Keep his wording. Do not tidy supervisor comments. Submit the endorsed form and the locked essay PDF to `laidlaw@hku.hk`. Do not rebuild the essay unless he requires a correction.

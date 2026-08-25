@@ -7,13 +7,13 @@ Agents cannot edit Audrey’s Google sheet. The sheet was not uploaded. Headers 
 **Q (essay)**
 
 ```
-Laidlaw_Research_Report_2026.pdf ready. Sent to Prof. Bishai for form 2a endorsement [DATE]. HKU due 31 Aug 2026. SHA prefix 6136e85a654502a0.
+ShenRuililin_Laidlaw_Stage3Report.pdf ready. Sent to Prof. Bishai for form 2a endorsement [DATE]. HKU due 31 Aug 2026. SHA prefix c083d4096a0924b1.
 ```
 
 **R (poster)**
 
 ```
-Laidlaw_Stage3_A0_portrait.pdf ready (A0 portrait). File due 15 Sep 2026; HKU Laidlaw Society showcase early Nov 2026. SHA prefix 4f7c1e408ae2d31f. Not yet posted to the Network University room.
+ShenRuililin_Laidlaw_Stage3Poster.pdf ready (A0 portrait). File due 15 Sep 2026; HKU Laidlaw Society showcase early Nov 2026. SHA prefix 0ef58e0951bb2ffd. Not yet posted to the Network University room.
 ```
 
 Replace `[DATE]` with the day Email A actually went.

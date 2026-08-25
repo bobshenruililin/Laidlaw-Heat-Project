@@ -2,6 +2,8 @@
 
 Bring paper. Do not use the meeting to reopen the essay unless he requires a correction. Do not bring the live manuscript as a substitute report.
 
+Spoken ten minutes: [`meeting_ten_minutes.md`](meeting_ten_minutes.md). Pre-meeting list: [`pre_thursday_checklist.md`](pre_thursday_checklist.md). Signature likelihood: [`../../knowledge/2026-08-25_bishai_form2a_signature.md`](../../knowledge/2026-08-25_bishai_form2a_signature.md).
+
 ## Print
 
 1. Form 2a with **Bob’s fields complete** and the supervisor block blank.
@@ -12,9 +14,9 @@ Bring paper. Do not use the meeting to reopen the essay unless he requires a cor
 ## First ten minutes (the only programme ask)
 
 - This is the HKU Laidlaw research-report form, due 31 August.
-- Rating / comments / signature. Optional paste is on the one-pager.
+- Rating / comments / signature. Optional paste is on the one-pager (handwritten version in `suggested_supervisor_comments.md`).
 - Poster is 15 September; no signature today.
-- Journal review with Hogan is a separate file.
+- Journal review with Hogan is a separate file. Hogan does not sign this form.
 
 ## After the form (if there is time)
 

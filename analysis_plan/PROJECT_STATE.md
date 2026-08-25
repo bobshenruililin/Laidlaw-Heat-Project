@@ -1,11 +1,18 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-22
+**Last updated:** 2026-08-25
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0m. Canonical update — Bishai form 2a without another Hogan review (25 August)
+
+- Hogan is unlikely to review the live manuscript again before 31 August. That **does not** block form 2a. Hogan does not sign it.
+- **Programme signature:** likely yes if the Thursday ask stays the locked exploratory essay (`c083d4096a0924b1`). Not a Gate 3 freeze. Not a journal headline. In-room signature on 27 August is possible, not the base case, if Email A never went (send status unknown; Gmail not readable here).
+- What he can write, and Tuesday–Thursday work: [`../knowledge/2026-08-25_bishai_form2a_signature.md`](../knowledge/2026-08-25_bishai_form2a_signature.md); [`send_pack_2026-08-22/pre_thursday_checklist.md`](send_pack_2026-08-22/pre_thursday_checklist.md); [`send_pack_2026-08-22/meeting_ten_minutes.md`](send_pack_2026-08-22/meeting_ten_minutes.md).
+- Do not rebuild Stage 3 PDFs. Do not attach the live manuscript. Bob still signs his own line and checks Year 2 / 4 Jul–14 Aug against Horizons. Gate 3 still open.
 
 ## 0k. Canonical update — roundtable fold-back before Email A (22 August, night)
 
@@ -262,7 +269,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 4. Confirm ICD/inpatient inclusion lists; ideally T2D/HTN cohort denominators
 5. **Bob live-file paste:** 13 August end-game pack in `manuscript/live_collaborative/LIVE_DOC_EDITS.md`; paste into Hogan’s shared file only; do not overwrite weather Methods; do not email a parallel Word copy. Send pack: `send_pack_2026-08-12/`
 6. Jasmine full PDF; Roro revised mortality manuscript diff
-8. **Bob sends Email A** (`send_pack_2026-08-20/`): form 2a + locked essay to Bishai; supervisor block by Friday 28 August. Spreadsheet Q/R paste after reading headers.
+8. **Bob sends Email A if it has not gone** (`send_pack_2026-08-22/`): form 2a + locked essay to Bishai; printed backup Thursday 27 August; supervisor block by Friday 28 August. Hogan review does not gate this. Spreadsheet Q/R paste after reading headers (SHA prefixes `c083d4096a0924b1` / `0ef58e0951bb2ffd`).
 
 ### Done remotely (do not re-do without new evidence)
 - Pathway panel plumbing + HM/CM catalogue (50/48) + starters

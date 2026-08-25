@@ -20,6 +20,7 @@
 
 ## Current meeting record
 
+- [`2026-08-25_bishai_form2a_signature.md`](2026-08-25_bishai_form2a_signature.md) — Hogan not reviewing again does not block form 2a; Bishai can sign the programme sheet; Tuesday–Thursday list.
 - [`2026-08-22_stage3_foldback.md`](2026-08-22_stage3_foldback.md) — roundtable fold-back before Email A; Fable/Sol GO; SHA prefixes `c083d4096a0924b1` / `0ef58e0951bb2ffd`.
 - [`2026-08-22_stage3_poster_refs.md`](2026-08-22_stage3_poster_refs.md) — A0 poster gained a six-item REFERENCES strip; later the same night the human footer and pre-2020 callouts were added.
 - [`2026-08-22_stage3_word_pathway.md`](2026-08-22_stage3_word_pathway.md) — Bob-authorised cut to ≤3,000 words, Bishai credit, Word-register format; live manuscript still not the attachment.
@@ -72,7 +73,7 @@
 - [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Start at `LIVE_DOC_EDITS.md`.
 - [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `c083d4096a0924b1`).
 - [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) — current A0 portrait poster (SHA prefix `0ef58e0951bb2ffd`); REFERENCES strip, pre-2020 callouts, human collaborator footer.
-- [`analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/) — current Email A: form 2a + locked essay + supervisor one-pager; Thursday 27 Aug print backup. Bob sends.
+- [`analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/) — current Email A: form 2a + locked essay; Tuesday–Thursday checklist and ten-minute script; print backup 27 Aug. Bob sends.
 - [`analysis_plan/send_pack_2026-08-20/`](../analysis_plan/send_pack_2026-08-20/) — 20 August Email A origin (worksheet, hashes, Q/R). Superseded for sending.
 - [`analysis_plan/send_pack_2026-08-12/`](../analysis_plan/send_pack_2026-08-12/) — one reply-all on Hogan’s 12 August thread; temperature panel for Roro.
 - [`manuscript/methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md) — earlier stroke-framed remainder; superseded for paste by the live_collaborative pack.

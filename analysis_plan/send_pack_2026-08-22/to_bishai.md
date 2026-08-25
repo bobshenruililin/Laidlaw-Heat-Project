@@ -30,3 +30,5 @@ If the optional one-page endorsement note is attached, add this sentence after t
 If the poster is attached, add: “I have attached the A0 poster for information only. It is due 15 September and does not need a signature now.”
 
 Do not add Gate 3, authorship, stroke, person-time, weather lock, temperature variability, or a request that Hogan review this form.
+
+If this message has not gone by Tuesday 25 August, send it that day. Do not wait for Thursday.

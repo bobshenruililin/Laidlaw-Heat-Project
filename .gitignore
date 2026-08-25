@@ -65,3 +65,7 @@ outputs/figures/descriptives/cvd_events_vs_mean_temp.png
 data_processed/*_aggregates_normalized.csv
 data_processed/*_analysis_panel.csv
 !data_processed/samples/
+
+# Official HKU Laidlaw form 2a (Bob’s local copy; never commit)
+analysis_plan/send_pack_*/2a_Laidlaw*.docx
+analysis_plan/send_pack_*/2a. Laidlaw*.docx

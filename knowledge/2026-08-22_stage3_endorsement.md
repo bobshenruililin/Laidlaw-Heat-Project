@@ -37,3 +37,7 @@ Do not put form 2a on the Hogan / Jingjing Outlook thread.
 ## Do not do
 
 Rebuild Stage 3 essay/poster PDFs. Attach the live manuscript or the 15 August collab Word draft. Forward Roro’s private mortality PDF. Wait for Hogan’s journal comments. Wait for Thursday to send Email A.
+
+## 25 August follow-up
+
+Send status of Email A is still unknown in-repo. Hogan not reviewing again still does not block the sheet. Likelihood, comment text, and Tuesday–Thursday list: [`2026-08-25_bishai_form2a_signature.md`](2026-08-25_bishai_form2a_signature.md). If Email A never went, send it today from [`../analysis_plan/send_pack_2026-08-22/to_bishai.md`](../analysis_plan/send_pack_2026-08-22/to_bishai.md), not the nudge.

@@ -20,7 +20,9 @@
 
 ## Current meeting record
 
-- [`2026-08-24_stage3_hogan_align.md`](2026-08-24_stage3_hogan_align.md) — Hogan comments vs Stage 3; Bishai gets the 24 Aug programme PDF; send pack `analysis_plan/send_pack_2026-08-24/`. Gate 3 open.
+- [`2026-08-25_bishai_form2a_thursday.md`](2026-08-25_bishai_form2a_thursday.md) — Hogan review is not the form 2a gate. Endorsement-ready for the Laidlaw bar; Thursday 27 Aug paper backup. Pack: [`../analysis_plan/send_pack_2026-08-25/`](../analysis_plan/send_pack_2026-08-25/).
+- [`2026-08-24_stage3_hogan_align.md`](2026-08-24_stage3_hogan_align.md) — Hogan comments vs Stage 3; Bishai gets the 24 August programme PDF; send pack `analysis_plan/send_pack_2026-08-24/`. Gate 3 open.
+- [`2026-08-24_orchestration_failure_modes.md`](2026-08-24_orchestration_failure_modes.md) — Hogan comments ≠ LLM failure modes; this run’s tunnel/least-resistance/phantom/bikeshed were agent-side. Bottleneck remains paste + Bishai send.
 - [`2026-08-22_stage3_foldback.md`](2026-08-22_stage3_foldback.md) — roundtable fold-back before Email A; Fable/Sol GO; SHA prefixes `c083d4096a0924b1` / `0ef58e0951bb2ffd`. Superceded for sending by the 24 Aug pack.
 - [`2026-08-22_stage3_poster_refs.md`](2026-08-22_stage3_poster_refs.md) — A0 poster gained a six-item REFERENCES strip; later the same night the human footer and pre-2020 callouts were added.
 - [`2026-08-22_stage3_word_pathway.md`](2026-08-22_stage3_word_pathway.md) — Bob-authorised cut to ≤3,000 words, Bishai credit, Word-register format; live manuscript still not the attachment.
@@ -71,9 +73,11 @@
 - [`outputs/release_chd_hf/`](../outputs/release_chd_hf/) — disclosure-minimised 29-check release.
 - [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md) — reusable YES/NO decision table and live-manuscript workflow.
 - [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Start at `LIVE_DOC_EDITS.md`.
-- [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `c083d4096a0924b1`).
-- [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) — current A0 portrait poster (SHA prefix `0ef58e0951bb2ffd`); REFERENCES strip, pre-2020 callouts, human collaborator footer.
-- [`analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/) — current Email A: form 2a + locked essay + supervisor one-pager; Thursday 27 Aug print backup. Bob sends.
+- [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `605cd8db43072cb5`).
+- [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) — current A0 portrait poster (SHA prefix `a972206e61932650`); Model 1 shown; Models 2–3 specified, not fitted.
+- [`analysis_plan/send_pack_2026-08-25/`](../analysis_plan/send_pack_2026-08-25/) — Thursday 27 Aug meeting overlay: likelihood, supervisor paste, print checklist, Tuesday email tree. Bob sends; agents do not.
+- [`analysis_plan/send_pack_2026-08-24/`](../analysis_plan/send_pack_2026-08-24/) — current Email A: 24 August essay + form 2a. Replaces the 22 August PDFs for sending.
+- [`analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/) — 22 August Email A origin. Superceded for sending.
 - [`analysis_plan/send_pack_2026-08-20/`](../analysis_plan/send_pack_2026-08-20/) — 20 August Email A origin (worksheet, hashes, Q/R). Superseded for sending.
 - [`analysis_plan/send_pack_2026-08-12/`](../analysis_plan/send_pack_2026-08-12/) — one reply-all on Hogan’s 12 August thread; temperature panel for Roro.
 - [`manuscript/methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md) — earlier stroke-framed remainder; superseded for paste by the live_collaborative pack.

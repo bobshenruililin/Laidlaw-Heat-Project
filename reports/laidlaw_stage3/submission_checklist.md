@@ -10,7 +10,7 @@
 | Research poster: A0 portrait, 841 × 1189 mm | `../poster/ShenRuililin_Laidlaw_Stage3Poster.pdf` / `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` | **Ready.** One page, exact A0. REFERENCES strip, pre-2020 callouts, human collaborator footer. 24 August Hogan-aligned rebuild. |
 | Poster content: title, introduction, objectives, methods, results, conclusions | Same poster | **Present.** Interpretation/limitations is included as an additional section. |
 | Official HKU report form | Official `2a. Laidlaw - Report Form (HKU).docx` (Bob’s local copy; not committed) | **Worksheet ready.** Fill from [`../../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md`](../../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md). |
-| Supervisor endorsement and comments | Prof. David Bishai | **Human action required.** Send Email A from [`../../analysis_plan/send_pack_2026-08-24/to_bishai.md`](../../analysis_plan/send_pack_2026-08-24/to_bishai.md). |
+| Supervisor endorsement and comments | Prof. David Bishai | **Human action required.** Hogan does not sign. Send Email A from [`../../analysis_plan/send_pack_2026-08-24/to_bishai.md`](../../analysis_plan/send_pack_2026-08-24/to_bishai.md). Thursday overlay: [`../../analysis_plan/send_pack_2026-08-25/`](../../analysis_plan/send_pack_2026-08-25/). |
 | Spreadsheet columns Q, R | Horizons Google sheet (not in repo) | **Paste draft only.** |
 | Final submission | `laidlaw@hku.hk` | **Do only after supervisor endorsement.** |
 
@@ -30,4 +30,4 @@
 4. Submit the endorsed form and essay to `laidlaw@hku.hk`.
 5. Retain `ShenRuililin_Laidlaw_Stage3Poster.pdf` for the 15 September file deadline and later showcase.
 
-Current lock: [`../../knowledge/2026-08-24_stage3_hogan_align.md`](../../knowledge/2026-08-24_stage3_hogan_align.md).
+Current lock: [`../../knowledge/2026-08-24_stage3_hogan_align.md`](../../knowledge/2026-08-24_stage3_hogan_align.md). Form 2a without another Hogan review: [`../../knowledge/2026-08-25_bishai_form2a_thursday.md`](../../knowledge/2026-08-25_bishai_form2a_thursday.md).

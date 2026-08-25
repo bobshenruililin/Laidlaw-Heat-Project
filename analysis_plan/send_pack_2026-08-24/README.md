@@ -18,8 +18,8 @@ Hogan’s 24 August comments asked for numbered **Model 1 / Model 2 / Model 3**,
 |---|---|
 | **Tonight (24 Aug)** | Send Email A (`to_bishai.md`) with the new essay PDF + form 2a. Optional poster. |
 | **After that mail has gone** | Optional Hogan one-liner (`to_hogan.md`). No attachments. |
-| **Tuesday 25 Aug, if no reply** | Nudge still in [`../send_pack_2026-08-22/to_bishai_nudge.md`](../send_pack_2026-08-22/to_bishai_nudge.md), naming this 24 August PDF. |
-| **Thursday 27 Aug** | Print pack. Ten minutes on the form first. |
+| **Tuesday 25 Aug, if no reply** | Decision tree and nudge: [`../send_pack_2026-08-25/`](../send_pack_2026-08-25/). If Email A never went, send Email A today, not a nudge. |
+| **Thursday 27 Aug** | Paper backup. Hogan review is not required. Briefing: [`../send_pack_2026-08-25/thursday_meeting_briefing.md`](../send_pack_2026-08-25/thursday_meeting_briefing.md). |
 | **Friday 28 Aug** | Last comfortable remote signature. |
 | **Monday 31 Aug** | Submit endorsed form + essay to `laidlaw@hku.hk`. Poster file 15 September. |
 

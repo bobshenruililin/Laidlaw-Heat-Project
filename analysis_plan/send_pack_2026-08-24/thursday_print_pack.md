@@ -1,5 +1,7 @@
 # Thursday 27 August — print pack
 
+**25 August overlay:** use [`../send_pack_2026-08-25/print_checklist.md`](../send_pack_2026-08-25/print_checklist.md) and [`../send_pack_2026-08-25/thursday_meeting_briefing.md`](../send_pack_2026-08-25/thursday_meeting_briefing.md). Hogan review is not required for this signature.
+
 Bring paper. Do not use the meeting to reopen the essay unless he requires a correction. Do not bring the live manuscript as a substitute report.
 
 ## Print

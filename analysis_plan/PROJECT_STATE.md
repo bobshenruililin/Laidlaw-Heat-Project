@@ -1,11 +1,18 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-24
+**Last updated:** 2026-08-25
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0n. Canonical update — form 2a without another Hogan review (25 August)
+
+- Hogan probably has no time for another review. That does **not** stall form 2a. He does not sign it. Do not put the form on his Outlook thread.
+- The 24 August programme essay is endorsement-ready for the Laidlaw bar. That is not a prediction that Professor Bishai will sign. Thursday 27 August is the paper backup; Friday 28 August is the last comfortable remote date; report due 31 August.
+- If Email A with the 24 August PDF has not gone, send it today. Do not send a nudge in place of Email A. Do not attach the live manuscript.
+- Room pack: [`send_pack_2026-08-25/`](send_pack_2026-08-25/). Verdict: [`../knowledge/2026-08-25_bishai_form2a_thursday.md`](../knowledge/2026-08-25_bishai_form2a_thursday.md). Gate 3 still open.
 
 ## 0m. Canonical update — Stage 3 Hogan alignment for Bishai (24 August)
 
@@ -268,7 +275,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 4. Confirm ICD/inpatient inclusion lists; ideally T2D/HTN cohort denominators
 5. **Bob live-file paste:** 13 August end-game pack in `manuscript/live_collaborative/LIVE_DOC_EDITS.md`; paste into Hogan’s shared file only; do not overwrite weather Methods; do not email a parallel Word copy. Send pack: `send_pack_2026-08-12/`
 6. Jasmine full PDF; Roro revised mortality manuscript diff
-8. **Bob sends Email A** (`send_pack_2026-08-20/`): form 2a + locked essay to Bishai; supervisor block by Friday 28 August. Spreadsheet Q/R paste after reading headers.
+8. **Bob sends Email A** (`send_pack_2026-08-24/`): 24 August essay + form 2a to Bishai. If it has not gone, send it today. Thursday 27 August paper backup: `send_pack_2026-08-25/`. Hogan review does not gate the form. Supervisor block by Friday 28 August. Spreadsheet Q/R from `send_pack_2026-08-25/spreadsheet_QR_paste.md`.
 
 ### Done remotely (do not re-do without new evidence)
 - Pathway panel plumbing + HM/CM catalogue (50/48) + starters

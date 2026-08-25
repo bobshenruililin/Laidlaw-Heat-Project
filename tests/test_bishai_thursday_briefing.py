@@ -54,13 +54,15 @@ def test_hogan_does_not_gate_or_sign():
 
 def test_supervisor_paste_is_exploratory_model1():
     text = _read(COMMENTS)
-    assert "Model 1" in text
-    assert "q-values exceed 0.19" in text or "*q*-values exceed 0.19" in text
-    assert "does not claim a confirmatory thermal effect" in text
-    assert "stroke data were not delivered" in text
-    assert "I rate the student’s performance as satisfactory" in text
+    short = text.split("## Slightly longer", 1)[0]
+    assert "Model 1" in short
+    assert "q-values exceed 0.19" in short or "*q*-values exceed 0.19" in short
+    assert "does not claim a confirmatory thermal effect" in short
+    assert "stroke data were not delivered" in short
+    assert "I rate the student’s performance as satisfactory" in short
     assert "1,455" not in text
-    assert "AMI" not in text
+    assert "Do not add Roro’s excess-death totals" in text
+    assert "AMI/stroke findings" in text
 
 
 def test_email_tree_forbids_nudge_instead_of_email_a():

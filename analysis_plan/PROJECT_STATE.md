@@ -7,6 +7,13 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0o. Canonical update — Bishai Figure 3 comments (27 August)
+
+- After looking at live-manuscript Figure 3 (trend/window/COVID forest; release `figure4_trend_depletion_sensitivity`), Bishai asked about pre-COVID, 8/6/5-day splits, a 6-df spline above 1, a 5-day rule, and heat-health action plans.
+- Mapping: “8/6/5 days” = spline **df** 8/6/3 fused with the **per 5 days** reporting scale. Not heatwave duration. The pre-COVID interval that excludes 1 is **HF cold days 1.113 (1.053–1.176)**; CHD hot nights pre-2020 **includes 1**. Physiology of consecutive hot nights is hypothesis; this panel cannot set a warning threshold.
+- Hong Kong has an HKO/DH/Labour **bundle**, not one WHO-branded municipal HHAP evaluated here. Gate 3 still open. Form 2a unchanged.
+- Durable: [`knowledge/2026-08-27_bishai_forest_precovid_duration_hhap.md`](../knowledge/2026-08-27_bishai_forest_precovid_duration_hhap.md). Talking points: [`reports/bishai_forest_hhap_2026-08-27/`](../reports/bishai_forest_hhap_2026-08-27/). Debrief: [`reports/meeting_debrief_2026-08-27.md`](../reports/meeting_debrief_2026-08-27.md).
+
 ## 0n. Canonical update — print Hogan PDF for Bishai (27 August)
 
 - Bob is printing the 24 August live manuscript for Bishai’s review. Circulation banner removed. Tables 1–3 each stay on one page; figures and major IMRD sections start new pages. 21 A4 pages. SHA prefix `436fb4ff1b278ec8`.

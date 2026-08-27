@@ -20,6 +20,7 @@
 
 ## Current meeting record
 
+- [`2026-08-27_bishai_forest_precovid_duration_hhap.md`](2026-08-27_bishai_forest_precovid_duration_hhap.md) — Bishai on Figure 3: pre-COVID = 2013–2019; the CI away from 1 is HF cold days 1.113; 8/6/5 are spline df + per-5-day scale, not duration; HHAP routing against HKO/DH instruments. Gate 3 open. Form 2a unchanged.
 - [`2026-08-27_hogan_print_for_bishai.md`](2026-08-27_hogan_print_for_bishai.md) — print copy of the Hogan PDF for Bishai: banner removed; tables unsplit; SHA prefix `436fb4ff1b278ec8`. Gate 3 open. Form 2a still the Stage 3 essay.
 - [`2026-08-24_hogan_methods_rewrite.md`](2026-08-24_hogan_methods_rewrite.md) — Hogan 24 Aug Methods: nested Model 1/2/3; Table 2 = Model 1; Word+PDF paste file. Committee merge of PR 69/70: [`COMMITTEE_VERDICT_PR69_vs_PR70.md`](../manuscript/live_collaborative/COMMITTEE_VERDICT_PR69_vs_PR70.md).
 - [`2026-08-24_stage3_hogan_align.md`](2026-08-24_stage3_hogan_align.md) — Hogan comments vs Stage 3; Bishai gets the 24 Aug programme PDF; send pack `analysis_plan/send_pack_2026-08-24/`. Gate 3 open.

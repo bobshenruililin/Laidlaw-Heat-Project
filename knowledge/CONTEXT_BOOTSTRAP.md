@@ -76,6 +76,7 @@ The definition catalogue contains `HM01–HM50` and `CM01–CM48`. Core starters
    [`reports/bishai_integrated_report/`](../reports/bishai_integrated_report/);
    manuscript and supplement in [`manuscript/`](../manuscript/); validated
    release in [`outputs/release_chd_hf/`](../outputs/release_chd_hf/).
+9. **Bishai Figure 3 comments (27 Aug):** pre-COVID away from 1 is HF cold days, not CHD hot nights. “8/6/5 days” on that graph are spline df plus the per-5-day reporting scale. Memo: [`2026-08-27_bishai_forest_precovid_duration_hhap.md`](2026-08-27_bishai_forest_precovid_duration_hhap.md). Gate 3 remains open.
 
 Use the explicit slash skills `/playbook-01-hogan-lock`, `/playbook-02-ha-arrival`, `/playbook-03-full-analysis`, `/playbook-04-final-writeup`, `/playbook-05-auto-research`, or `/playbook-99-emergencies`; `/playbook` asks which one. Each skill reads the canonical playbook and cannot replace human evidence or gate ownership. See the [command contract](2026-07-26_commands_and_blog_auto.md). Auto-research lab: [`analysis_plan/playbooks/05_auto_research_lab.md`](../analysis_plan/playbooks/05_auto_research_lab.md) and [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md).
 

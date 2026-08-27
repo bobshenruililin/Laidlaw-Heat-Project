@@ -110,7 +110,7 @@ heart failure (HF) diagnosis} in a high-risk Hong Kong cohort?\par
 \node[flownode,text width=0.20\linewidth] (panel) at (0.25\linewidth,-18mm)
   {\textbf{Monthly panel}\\132 months,\\2013--2023};
 \node[flownode,text width=0.20\linewidth] (models) at (0.50\linewidth,-18mm)
-  {12 negative-binomial\\models:\\2 outcomes \texttimes{} 6 exposures};
+  {\textbf{Model 1:}\\12 thermal fits\\(2 outcomes \texttimes{} 6 exposures)};
 \node[flownode,text width=0.215\linewidth] (checks) at (0.765\linewidth,-18mm)
   {Season + trend control;\\4 standard-error methods;\\Benjamini--Hochberg \textit{q}};
 \draw[flowarrow] (wx.east) -- (panel.west |- wx.east);
@@ -131,10 +131,12 @@ heart failure (HF) diagnosis} in a high-risk Hong Kong cohort?\par
         HF events. Delivered columns are labelled inpatient; admission cause is
         not recorded, and final event semantics require data-provider
         confirmation.
-  \item \textbf{Models:} 2 outcomes \texttimes{} 6 exposures = 12
-        negative-binomial regressions with calendar-month indicators, a trend
-        spline, and a days-in-month offset; the panel was specified after the
-        outcome series was available.
+  \item \textbf{Model 1 (shown):} 2 outcomes \texttimes{} 6 thermal exposures
+        = 12 negative-binomial regressions with calendar-month indicators, a
+        trend spline, and a days-in-month offset, specified after the outcome
+        series was available. \textbf{Model 2} adds monthly humidity and
+        rainfall; \textbf{Model 3} counts days above or below the historical
+        same-calendar-day mean. Models 2 and 3 are specified, not shown.
   \item \textbf{Uncertainty:} four standard-error methods per contrast;
         Benjamini--Hochberg \textit{q} across all 12 comparisons.
 \end{itemize}
@@ -150,7 +152,7 @@ or per 1\,\textdegree C.\par}
 
 \sechead{RESULTS}
 \body
-An exploratory panel of twelve models, specified after the outcome series was
+Model 1: twelve thermal fits, specified after the outcome series was
 available --- two residual signals, with unequal robustness.
 
 \vspace{3mm}
@@ -197,11 +199,12 @@ available --- two residual signals, with unequal robustness.
 \raisebox{-\height}{\includegraphics[width=\linewidth]{figures/fig_poster_forest12.pdf}}\par
 \vspace{2.5mm}
 \begin{flushleft}
-\captext{The twelve-model exploratory panel: count ratios from single-exposure
+\captext{The twelve Model 1 thermal fits: count ratios from single-exposure
 negative-binomial models (days-in-month offset); 95\% intervals with
 Newey--West lag-6 standard errors. Values right of 1 mean more first
 hospitalisations following recorded diagnosis in months with higher exposure.
-All 12 Benjamini--Hochberg \textit{q} > 0.19.}
+All 12 Benjamini--Hochberg \textit{q} > 0.19. Models 2 and 3 are specified,
+not shown.}
 \end{flushleft}
 \end{minipage}\hfill\begin{minipage}[t]{0.345\linewidth}
 \subhead{How robust are the two signals?}
@@ -235,10 +238,11 @@ methods were not chosen by interval position.}
 \fontsize{27}{34.5}\selectfont
 Monthly data suggest \textbf{different thermal patterns} in the CHD and HF
 series --- hot nights for CHD, cold days for HF --- but the evidence is
-\textbf{exploratory, not confirmatory}: no contrast survived correction for
-twelve comparisons. The project leaves a \textbf{reproducible monthly
-framework} and a clear next requirement: \textbf{daily or cohort data with
-recorded admission cause}.\par
+\textbf{exploratory, not confirmatory}: no Model 1 contrast survived
+correction for twelve comparisons. Models 2--3 are specified, not shown.
+The project leaves a \textbf{reproducible monthly framework} and a clear
+next requirement: \textbf{daily or cohort data with recorded admission
+cause}.\par
 \end{takeawaybox}
 
 \vspace{3mm}
@@ -279,7 +283,7 @@ doi:10.1093/ije/18.1.269\par}
 \end{minipage}
 \end{tcolorbox}
 \vspace{2mm}
-% Footer: human credits, no machine-validated / privacy-protected stock phrases.
+% Footer: human credits; do not restore robotic stock phrases.
 {\fontsize{17.5}{22}\selectfont\color{Slate}Collaborators: Hogan (weather definitions)~\textperiodcentered~
 Zhenyuan Liu (Hospital Authority aggregates)~\textperiodcentered~
 Supervisor: Prof.~David Bishai\hfill shenrll@connect.hku.hk\par}

@@ -7,6 +7,12 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0m. Canonical update — Stage 3 Hogan alignment for Bishai (24 August)
+
+- Hogan’s 24 August comments asked for nested Model 1 / Model 2 / Model 3, not “core panel.” The 22 August programme essay still used twelve-model panel language. Bob authorised a Stage 3 rebuild. Science unchanged: all twelve Model 1 *q* > 0.19. Model 2/3 specified, not fitted. No invented health coefficients.
+- Programme essay and A0 poster rebuilt. Essay SHA prefix `605cd8db43072cb5`; poster `a972206e61932650`. Introduction–Conclusion 2,773 words. Fable GO / Sol GO. Email A pack: [`send_pack_2026-08-24/`](send_pack_2026-08-24/). Do not attach the live manuscript. Form 2a supervisor block stays blank. Optional Hogan one-liner after the Bishai mail; paste remains human.
+- Durable: [`knowledge/2026-08-24_stage3_hogan_align.md`](../knowledge/2026-08-24_stage3_hogan_align.md). Gate 3 still open.
+
 ## 0l. Canonical update — Hogan Methods rewrite (24 August)
 
 - Commented PDF `Commented_Heat_CVD_Manuscript_20260824.pdf` read via `pdftotext` (no Acrobat balloons). Inventory: `manuscript/live_collaborative/hogan_20260824_comment_inventory.md`.
@@ -14,7 +20,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Live Methods: Hogan’s order; nested **Model 1 / Model 2 / Model 3**; equation **(1)** with every symbol named; present-tense Model 2/3; Table 2 = Model 1. No “core panel”. No Results in Methods. Acknowledgements `None.`
 - **Model 1** = twelve thermal fits (Table 2). **Model 2** = Model 1 + monthly mean RH + monthly total rainfall ([21] humidity, both tails, modest; [22] Chan 2013 rainfall as attendance hypothesis). **Model 3** = leave-one-year-out same-calendar-day warmer/cooler **mean** counts (15 July 2018 example). Max/min counts are sensitivities. Model 2/3 health coefficients are **not** invented.
 - Hogan’s HKO weather paragraph kept verbatim, including the averaging sentence. Rainfall-as-total is a Word comment, not a body overwrite. `UW XX-XXX` stays at the start of Methods.
-- Data availability: GitHub URL; counts not posted; no invented data-sharing agreement. Contract tests: `tests/test_hogan_methods_rewrite.py`. Gate 3 still open. Stage 3 PDFs still byte-locked.
+- Data availability: GitHub URL; counts not posted; no invented data-sharing agreement. Contract tests: `tests/test_hogan_methods_rewrite.py`. Gate 3 still open. Programme Stage 3 PDFs live on the 24 August Hogan-align rebuild (`605cd8db43072cb5` / `a972206e61932650`); this track owns the live-manuscript paste pack only.
 
 ## 0k. Canonical update — roundtable fold-back before Email A (22 August, night)
 

@@ -14,9 +14,12 @@ pdflatex -interaction=nonstopmode Laidlaw_Stage3_A0_portrait.tex
 22 August 2026 (night): roundtable fold-back. REFERENCES strip kept. Author line
 is `Shen Ruililin`. Callouts show pre-2020 CHD 1.011 (includes 1) vs HF 1.113
 (excludes 1), with unequal visual weight. Footer is one human line (Hogan,
-Zhenyuan Liu, Prof. David Bishai, email). Do not restore “machine-validated”
-or “privacy-protected Hospital Authority monthly aggregate counts”. SHA-256
-prefix `0ef58e0951bb2ffd`.
+Zhenyuan Liu, Prof. David Bishai, email). Do not restore robotic footer stock
+phrases.
+
+24 August 2026: Hogan-aligned Model 1 / Model 2 / Model 3 language. Model 1 is
+the twelve thermal fits shown. Models 2 and 3 are specified, not shown. SHA
+prefixes are in `analysis_plan/send_pack_2026-08-24/HASH_VERIFY.md`.
 
 ### Layout (readability redesign v2, Aug 2026)
 

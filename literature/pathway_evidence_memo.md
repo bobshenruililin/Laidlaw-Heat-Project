@@ -3,7 +3,7 @@
 **Purpose:** Tie each pathway to published evidence so the multi-method panel is scientifically motivated, not ad hoc.  
 **Scope:** Hong Kong and closely related subtropical / methodological work.  
 **Honesty:** Daily DLNM coefficients and monthly burden coefficients are **not interchangeable**.  
-**Updated:** 2026-08-10 (final methods spine + claim-class firewall; see `final_methods_evidence_map.md`).
+**Updated:** 2026-08-27 (consecutive-night physiology addendum; see `knowledge/2026-08-27_crown_df_physiology_policy.md`). Prior spine 2026-08-10.
 
 ---
 
@@ -94,3 +94,7 @@ Emails and private PDFs are provenance, not references.
 ## 10. Dry-run / real-panel status
 
 Synthetic plumbing checks and any real CHD/HF panel outputs live under `outputs/`. Coefficients remain labelled by provenance (`SYNTHETIC`, `HA_APPROVED_AGGREGATE`, etc.). See the living state file rather than treating this memo as a results ledger.
+
+## 11. Consecutive nights vs spline df (27 August 2026)
+
+Local **mortality** papers give an empirical reason to watch ≥5 consecutive hot nights (Wang et al. 2019; Ho et al. 2017). Sleep and overnight core-temperature physiology support nights and non-recovery (Chevance et al. 2024; Ioannou et al. 2024; O’Connor et al. 2025). Those sources do **not** identify a 5- vs 6- vs 8-day myocardial threshold, and they are not this project's monthly first-event estimand. Durable: [`knowledge/2026-08-27_crown_df_physiology_policy.md`](../knowledge/2026-08-27_crown_df_physiology_policy.md). P05/HM15 remain Explore motivation for daily data, not Table 2.

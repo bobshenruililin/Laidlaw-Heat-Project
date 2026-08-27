@@ -1,0 +1,11 @@
+{
+  "year_2018_official_hot_nights": 26,
+  "year_2018_days_in_hn_spell_ge5": 0,
+  "period_2013_2023_hot_nights": 449,
+  "period_2013_2023_days_in_hn_spell_ge5": 195,
+  "share_hn_in_spell_ge5": 0.43429844097995546,
+  "period_2013_2023_very_hot_days": 421,
+  "period_2013_2023_days_in_vhd_spell_ge5": 183,
+  "share_vhd_in_spell_ge5": 0.4346793349168646,
+  "note": "2018 had 26 official hot nights and zero days inside a \u22655 consecutive-night spell. Monthly count \u2260 consecutive duration."
+}

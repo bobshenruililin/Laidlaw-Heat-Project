@@ -47,3 +47,24 @@
 ## 5. Next executable step that does not invent missing data
 
 Walk Bishai (or Hogan) through the rebuilt live Figure 3 and [`bishai_forest_hhap_2026-08-27/TALKING_POINTS.md`](bishai_forest_hhap_2026-08-27/TALKING_POINTS.md). Do not refit Model 1. Do not change Stage 3 PDFs. Rebuild Hogan Word/PDF with `python3 scripts/64_hogan_20260824_manuscript_docx.py` after Figure 3 edits.
+
+---
+
+## Addendum — crown among 5 / 6 / 8 (same night)
+
+Bishai then asked to crown one of 5, 6, 8, with physiology and social-impact routing.
+
+| Before | After |
+|:--|:--|
+| “Do not crown df 6” as a paper specification | Crown **6-df as the named robustness check** only. Table 2 stays 4 df |
+| 5, 6, 8 still fused in conversation | Scored separately: 5 = reporting scale; 6/8 = spline df; no 5-df spline exists |
+| 8-df kept as a co-named flexible check | 8-df **opens HF cold days onto 1**; do not crown it |
+| Physiology as overnight-recovery hypothesis | Same hypothesis, now with Wang/Ho (mortality consecutive-5), Chevance, Ioannou, O’Connor; no 6-day cliff |
+
+**Now out of scope:** moving Table 2 to 6-df; a 5-day HKO trigger from this panel; admissions averted.
+
+**Newly allowed:** tell Bishai “crown 6 as robustness”; use [`crown_df_physiology_2026-08-27/TALKING_POINTS.md`](crown_df_physiology_2026-08-27/TALKING_POINTS.md).
+
+**Open questions still human:** whether he accepts that robustness crown; whether daily cause-recorded data are requested to test consecutive nights; Gate 3.
+
+**Next step:** walk the diagnostic figure in `reports/crown_df_physiology_2026-08-27/`. Do not freeze Gate 3.

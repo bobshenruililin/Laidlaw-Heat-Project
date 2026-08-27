@@ -8,6 +8,8 @@
 
 Peer audit (this session): Fable 5 (claim kill-list), Opus 5 (physiology register), Sol 5.6 (HHAP routing). Condensed in [`reports/bishai_forest_hhap_2026-08-27/peer_briefs.md`](../reports/bishai_forest_hhap_2026-08-27/peer_briefs.md).
 
+**Later the same night:** Bishai asked to crown one of 5, 6, 8. That forced choice is scored in [`2026-08-27_crown_df_physiology_policy.md`](2026-08-27_crown_df_physiology_policy.md): 6-df is the named **robustness** check; Table 2 stays 4-df; 8-df is not crowned. The sentence below, “Do not crown df 6,” meant “do not replace Table 2.” That limit still holds.
+
 ---
 
 ## 1. Which forest he was looking at

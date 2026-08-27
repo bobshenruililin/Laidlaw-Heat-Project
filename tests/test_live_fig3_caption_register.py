@@ -107,6 +107,7 @@ def test_spline_paragraph_reports_inclusion_of_one_correctly() -> None:
     assert "No trend specification is preferred" not in SPLINE  # that sentence lives in Results
     results = _between("### Sensitivity analyses", "**Figure 3. Model 1 count ratios")
     assert "No trend specification is preferred over the 4-df spline in Model 1." in results
+    assert "Among specifications more flexible than Model 1, only the 6-df spline keeps both residual intervals away from 1." in results
     assert "the 6-df interval excludes 1" not in results
 
 
@@ -115,6 +116,8 @@ def test_spline_paragraph_refuses_a_duration_reading() -> None:
     assert "5-, 6-, or 8-day" not in SPLINE
     for word in ("threshold", "trigger", "heatwave"):
         assert word not in SPLINE.lower()
+    assert "If a single more-flexible robustness check is named, it is the 6-df spline" in SPLINE
+    assert "identification property of the time smooth" in SPLINE
 
 
 def test_consecutive_night_recovery_stays_a_hypothesis() -> None:

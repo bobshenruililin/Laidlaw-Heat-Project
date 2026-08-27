@@ -1,0 +1,38 @@
+{
+  "paper_specification": "Model 1 4-df time-trend spline; Table 2 unchanged",
+  "robustness_crown_among_more_flexible_splines": "trend_ns6",
+  "robustness_crown_label": "Time-trend spline, 6 df",
+  "do_not_crown": [
+    "trend_ns3",
+    "trend_ns8",
+    "year_fixed_effects"
+  ],
+  "five_is_not_a_spline": true,
+  "five_is_reporting_scale": "I(count/5)",
+  "joint_headline_preserved_scenarios": [
+    "baseline_ns4",
+    "trend_ns6"
+  ],
+  "model1_chd_hot_nights": "1.022 (1.002\u20131.042)",
+  "model1_hf_cold_days": "1.073 (1.006\u20131.144)",
+  "ns6_chd_hot_nights": "1.024 (1.005\u20131.044)",
+  "ns6_hf_cold_days": "1.072 (1.005\u20131.143)",
+  "ns8_hf_cold_days": "1.062 (0.994\u20131.135)",
+  "ns8_hf_cold_days_includes_1": true,
+  "gate3_open": true,
+  "not_physiology": true,
+  "not_confirmatory": true,
+  "not_a_6_day_heatwave": true,
+  "spell_2018": {
+    "year_2018_official_hot_nights": 26,
+    "year_2018_days_in_hn_spell_ge5": 0,
+    "period_2013_2023_hot_nights": 449,
+    "period_2013_2023_days_in_hn_spell_ge5": 195,
+    "share_hn_in_spell_ge5": 0.43429844097995546,
+    "period_2013_2023_very_hot_days": 421,
+    "period_2013_2023_days_in_vhd_spell_ge5": 183,
+    "share_vhd_in_spell_ge5": 0.4346793349168646,
+    "note": "2018 had 26 official hot nights and zero days inside a \u22655 consecutive-night spell. Monthly count \u2260 consecutive duration."
+  },
+  "q_minimum": 0.192
+}

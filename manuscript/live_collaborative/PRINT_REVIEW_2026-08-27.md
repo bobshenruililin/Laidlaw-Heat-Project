@@ -1,10 +1,10 @@
 # Print review — Hogan live manuscript after Figure 3 rebuild (27 August 2026)
 
 **File:** `Heat_CVD_Manuscript_20260824_hogan.pdf`  
-**SHA-256 prefix:** `fb01f23fe3d908c4`  
+**SHA-256 prefix:** `a40e115732ce35dd`  
 **Pages:** 22 (A4). Builder: `scripts/64_hogan_20260824_manuscript_docx.py`.
 
-Verdict: **print this PDF** if Bishai is looking at Figure 3. Banner still absent. Tables unsplit. Figure 3 is a portrait official-count forest. Gate 3 still open.
+Verdict: **print this PDF** if Bishai is looking at Figure 3 or asking which of 5/6/8 to crown. Banner still absent. Tables unsplit. Figure 3 is a portrait official-count forest. Results now name 6-df as the only more-flexible spline that keeps both residual intervals; Table 2 remains 4-df. Gate 3 still open.
 
 The earlier banner-off print (`436fb4ff1b278ec8`, 21 pages) used the unreadable 15×8 landscape forest. Do not hand that copy if the question is spline df vs duration.
 

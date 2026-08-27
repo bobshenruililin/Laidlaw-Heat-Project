@@ -12,10 +12,10 @@
 
 ## Locked numerals (unchanged)
 
-CHD hot nights / 5 days **1.022 (1.002–1.042)**; HF cold days / 5 days **1.073 (1.006–1.144)**; all twelve Model 1 *q* > 0.19. Pre-2020 HF cold **1.113 (1.053–1.176)** excludes 1; CHD hot nights pre-2020 **includes 1**. Year-indicator CHD hot nights **1.025 (0.9998–1.050)** includes 1; do not crown df 6.
+CHD hot nights / 5 days **1.022 (1.002–1.042)**; HF cold days / 5 days **1.073 (1.006–1.144)**; all twelve Model 1 *q* > 0.19. Pre-2020 HF cold **1.113 (1.053–1.176)** excludes 1; CHD hot nights pre-2020 **includes 1**. Year-indicator CHD hot nights **1.025 (0.9998–1.050)** includes 1. Do not replace Table 2 with 6-df. A later same-night memo crowns **6-df as robustness only** (the unique more-flexible spline that still keeps both headlines). See [`2026-08-27_crown_df_physiology_policy.md`](2026-08-27_crown_df_physiology_policy.md).
 
 ## What this is not
 
 Not a Gate 3 freeze. Not an evaluated municipal heat-health action plan. Not a consecutive-day warning rule. Stage 3 hashes remain `605cd8db43072cb5` / `a972206e61932650`. Form 2a still uses the essay.
 
-Paste file: rebuild with `python3 scripts/64_hogan_20260824_manuscript_docx.py`. Current Hogan PDF SHA-256 prefix `fb01f23fe3d908c4` (22 A4 pages; Figure 3 on p. 15).
+Paste file: rebuild with `python3 scripts/64_hogan_20260824_manuscript_docx.py`. Current Hogan PDF SHA-256 prefix `a40e115732ce35dd` (22 A4 pages; Figure 3 on p. 15). Same-night Results sentence names 6-df as the only more-flexible spline that keeps both residual intervals; Table 2 remains 4-df.

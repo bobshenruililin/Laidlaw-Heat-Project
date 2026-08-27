@@ -7,6 +7,13 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0q. Canonical update — crown 6-df as robustness, not Table 2 (27 August, night)
+
+- Bishai asked to crown one of 5, 6, 8, with physiology and social-impact routing. Those numbers are still three objects: **5 = reporting scale** `I(count/5)` (no 5-df spline exists); **6 and 8 = time-trend spline df**.
+- Joint-score on the existing sensitivity table: only Model 1 (4 df) and **6 df** keep both headlines away from 1. **8 df opens HF cold days onto 1** (1.062, 0.994–1.135). Crown **6-df as the named robustness check**. Table 2 stays 4 df. All twelve *q* > 0.19. Gate 3 open.
+- Physiology (Wang/Ho mortality consecutive-5; Chevance sleep; Ioannou consecutive nights; O’Connor bedroom HRV) supports **nights and non-recovery**, not a 6-day cliff. 2018: 26 official hot nights, zero ≥5-night spell days.
+- Durable: [`knowledge/2026-08-27_crown_df_physiology_policy.md`](../knowledge/2026-08-27_crown_df_physiology_policy.md). Talking points: [`reports/crown_df_physiology_2026-08-27/`](../reports/crown_df_physiology_2026-08-27/). Hogan PDF SHA prefix `a40e115732ce35dd`. Form 2a unchanged.
+
 ## 0p. Canonical update — live Figure 3 rebuilt (27 August)
 
 - Bishai’s comments were applied to the live manuscript. The matplotlib teaching forest was rejected. Live Figure 3 is now a portrait official-count forest (`figure_D_trend_depletion_sensitivity.png`); it is not a copy of release figure 4.

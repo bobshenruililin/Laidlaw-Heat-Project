@@ -29,7 +29,7 @@
 
 ## 3. Newly allowed (Explore register)
 
-- Teach Bishai the two-axis reading of Figure 3 with the relabelled teaching plot.
+- Teach Bishai the two-axis reading of Figure 3 from the rebuilt live figure (`figures/live_identification/figure_D_trend_depletion_sensitivity.png`). The matplotlib teaching plot was rejected as a paper figure.
 - Take three **untested** policy hypotheses to Hogan/HKO/DH: overnight-heat information; prolonged hot-night outreach; linked heat-and-cold preparedness.
 - Keep P05 / HM15 as motivation for **daily** HA data, not as Table 2.
 
@@ -46,4 +46,4 @@
 
 ## 5. Next executable step that does not invent missing data
 
-Walk Bishai (or Hogan) through [`bishai_forest_hhap_2026-08-27/TALKING_POINTS.md`](bishai_forest_hhap_2026-08-27/TALKING_POINTS.md) and the teaching figure. Do not refit Model 1. Do not change Stage 3 PDFs.
+Walk Bishai (or Hogan) through the rebuilt live Figure 3 and [`bishai_forest_hhap_2026-08-27/TALKING_POINTS.md`](bishai_forest_hhap_2026-08-27/TALKING_POINTS.md). Do not refit Model 1. Do not change Stage 3 PDFs. Rebuild Hogan Word/PDF with `python3 scripts/64_hogan_20260824_manuscript_docx.py` after Figure 3 edits.

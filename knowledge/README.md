@@ -8,7 +8,7 @@ This directory holds durable, dated project knowledge that should survive a meet
 owns the final CHD/HF reanalysis, manuscript/report package, negative M|D
 feasibility result, and open human decisions.
 
-**Current programme action:** form 2a still uses the Stage 3 essay (`2026-08-20_bishai_form2a.md`). The 27 August print object for Bishai is the Hogan PDF: [`2026-08-27_hogan_print_for_bishai.md`](2026-08-27_hogan_print_for_bishai.md). Figure 3 comments: [`2026-08-27_bishai_forest_precovid_duration_hhap.md`](2026-08-27_bishai_forest_precovid_duration_hhap.md).
+**Current programme action:** form 2a still uses the Stage 3 essay (`2026-08-20_bishai_form2a.md`). The 27 August print object for Bishai is the Hogan PDF: [`2026-08-27_hogan_print_for_bishai.md`](2026-08-27_hogan_print_for_bishai.md). Figure 3 comments: [`2026-08-27_bishai_forest_precovid_duration_hhap.md`](2026-08-27_bishai_forest_precovid_duration_hhap.md). Live Figure 3 rebuild: [`2026-08-27_live_figure3_relabel.md`](2026-08-27_live_figure3_relabel.md).
 
 ## Structure
 

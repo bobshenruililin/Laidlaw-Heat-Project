@@ -78,6 +78,7 @@ def test_spline_paragraph_numerals_match_the_approved_aggregate() -> None:
     quoted = {
         ("chd", "hot_nights", "trend_ns3"): "1.011, 0.990–1.032",
         ("chd", "hot_nights", "trend_ns6"): "1.024, 1.005–1.044",
+        ("chd", "hot_nights", "trend_ns8"): "1.023, 1.005–1.042",
         ("hf", "cold_days", "trend_ns8"): "1.062, 0.994–1.135",
     }
     for (outcome, exposure, scenario), display in quoted.items():
@@ -86,18 +87,27 @@ def test_spline_paragraph_numerals_match_the_approved_aggregate() -> None:
         rr, lo, hi = float(rec["rr"]), float(rec["rr_low"]), float(rec["rr_high"])
         assert display == f"{rr:.3f}, {lo:.3f}–{hi:.3f}"
         assert f"({display})" in SPLINE
+    year = _row("chd", "hot_nights", "year_fixed_effects")
+    assert float(year["rr_low"]) < 1.0 < float(year["rr_high"])
+    assert "1.025, 0.9998–1.050" in SPLINE
 
 
 def test_spline_paragraph_reports_inclusion_of_one_correctly() -> None:
     ns3 = _row("chd", "hot_nights", "trend_ns3")
     ns6 = _row("chd", "hot_nights", "trend_ns6")
+    ns8_chd = _row("chd", "hot_nights", "trend_ns8")
     ns8 = _row("hf", "cold_days", "trend_ns8")
     assert float(ns3["rr_low"]) < 1.0 < float(ns3["rr_high"])
     assert float(ns6["rr_low"]) > 1.0
+    assert float(ns8_chd["rr_low"]) > 1.0
     assert float(ns8["rr_low"]) < 1.0 < float(ns8["rr_high"])
     assert "includes 1 under a stiffer 3-df spline" in SPLINE
-    assert "excludes 1 under a more flexible 6-df spline" in SPLINE
+    assert "excludes 1 under the 6-df and 8-df splines" in SPLINE
     assert "includes 1 under the most flexible 8-df spline" in SPLINE
+    assert "No trend specification is preferred" not in SPLINE  # that sentence lives in Results
+    results = _between("### Sensitivity analyses", "**Figure 3. Model 1 count ratios")
+    assert "No trend specification is preferred over the 4-df spline in Model 1." in results
+    assert "the 6-df interval excludes 1" not in results
 
 
 def test_spline_paragraph_refuses_a_duration_reading() -> None:

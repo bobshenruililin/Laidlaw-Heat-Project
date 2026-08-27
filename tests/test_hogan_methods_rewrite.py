@@ -232,6 +232,11 @@ def test_print_pdf_has_no_banner_and_keeps_tables_on_one_page():
     assert "CHD hot nights" in pages[t3]
     assert "HF cold days" in pages[t3]
     assert len({t1, t2, t3, f1, f2, f3}) == 6
+    assert "five additional such days" in pages[f3]
+    assert "spline degrees of freedom" in pages[f3]
+    assert "Supplementary Figure S6" in pages[f3]
+    assert "Spline df 6" not in full
+    assert "All twelve Model 1 fits are shown across nine specifications." not in full
 
 
 if __name__ == "__main__":

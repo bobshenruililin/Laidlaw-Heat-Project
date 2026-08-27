@@ -25,7 +25,7 @@ Panel titles: **Hot nights, per 5 days** and **Cold days, per 5 days**.
 
 Those two facts explain the comment. “8 / 6 / 5 days splits” is a fusion of spline **degrees of freedom** 8 / 6 / 3 with the **per 5 days** reporting unit printed on every extreme-day panel. “6 spline above count ratio 1” is the 6-df time-trend sensitivity, not a six-day heatwave.
 
-A relabelled teaching read (same numbers, new axis language) is [`reports/bishai_forest_hhap_2026-08-27/figure_teaching_spline_df_not_duration.png`](../reports/bishai_forest_hhap_2026-08-27/figure_teaching_spline_df_not_duration.png). It is an Explore figure. It does not replace Hogan’s live Figure 3.
+A relabelled teaching read (same numbers, new axis language) is [`reports/bishai_forest_hhap_2026-08-27/figure_teaching_spline_df_not_duration.png`](../reports/bishai_forest_hhap_2026-08-27/figure_teaching_spline_df_not_duration.png). It is an Explore figure. It was rejected as live Figure 3. The paper figure is the portrait rebuild [`figures/live_identification/figure_D_trend_depletion_sensitivity.png`](../figures/live_identification/figure_D_trend_depletion_sensitivity.png). See [`2026-08-27_live_figure3_relabel.md`](2026-08-27_live_figure3_relabel.md).
 
 ---
 

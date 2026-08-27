@@ -15,6 +15,7 @@ The live body cites these supplementary objects. They resolve in `supplement_liv
 | **Supplementary Figure S2** | SE-method ladder plot | `outputs/release_chd_hf/figures/figure5_se_method_ladder.png` | `HA_APPROVED_AGGREGATE` |
 | **Supplementary Figure S3** | Core forest | `outputs/release_chd_hf/figures/figure3_core_forest.png` | `HA_APPROVED_AGGREGATE` |
 | **Supplementary Figure S4** | Exposure-correlation heatmap | `outputs/release_chd_hf/supplement/figureS1_exposure_correlation.png` | `REAL` exposures; **not** live S1 |
+| **Supplementary Figure S6** | Continuous-temperature trend/window forest (same nine specs as Figure 3) | `figures/live_identification/figure_E_continuous_temperature_sensitivity.png` | `HA_APPROVED_AGGREGATE`; not a copy of release figure 4 |
 | **Supplementary Tables S3–S6** | Lag, influence, VIF/joint, residual diagnostics | release supplement CSVs | `HA_APPROVED_AGGREGATE` |
 | **Supplementary Table S7** | Archive influenza co-exposure (P14; 121 months); CHD 1.673 (1.249–2.243) stays in the supplement | `outputs/release_chd_hf/supplement/combined_pathway_panel_estimates.csv` | `HA_APPROVED_AGGREGATE`; **not** core-adjusted |
 | **Supplementary Table S8** | Daily-recovery calibration gates | `outputs/release_chd_hf/supplement/methods_feasibility/md_calibration_gate_summary.csv` | `SYNTHETIC_CALIBRATION`; not a health finding |

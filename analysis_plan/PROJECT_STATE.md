@@ -7,6 +7,13 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0p. Canonical update — live Figure 3 rebuilt (27 August)
+
+- Bishai’s comments were applied to the live manuscript. The matplotlib teaching forest was rejected. Live Figure 3 is now a portrait official-count forest (`figure_D_trend_depletion_sensitivity.png`); it is not a copy of release figure 4.
+- Y-axis names time-trend spline df. Strips name five more official hot nights / very hot days / cold days. Continuous temperature is Supplementary Figure S6. Caption, Results, and Discussion refuse a duration reading and do not evaluate Hong Kong’s warnings.
+- Table 2, Abstract, and Hogan’s HKO paragraph unchanged. Gate 3 open. Form 2a unchanged.
+- Durable: [`knowledge/2026-08-27_live_figure3_relabel.md`](../knowledge/2026-08-27_live_figure3_relabel.md). Mapping memo remains [`knowledge/2026-08-27_bishai_forest_precovid_duration_hhap.md`](../knowledge/2026-08-27_bishai_forest_precovid_duration_hhap.md).
+
 ## 0o. Canonical update — Bishai Figure 3 comments (27 August)
 
 - After looking at live-manuscript Figure 3 (trend/window/COVID forest; release `figure4_trend_depletion_sensitivity`), Bishai asked about pre-COVID, 8/6/5-day splits, a 6-df spline above 1, a 5-day rule, and heat-health action plans.

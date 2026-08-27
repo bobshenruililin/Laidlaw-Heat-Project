@@ -57,9 +57,9 @@ SCENARIOS: list[tuple[str, str]] = [
 ]
 
 OFFICIAL = [
-    ("hot_nights", "Hot nights", "per 5 extra days in month"),
-    ("very_hot_days", "Very hot days", "per 5 extra days in month"),
-    ("cold_days", "Cold days", "per 5 extra days in month"),
+    ("hot_nights", "Hot nights", "per 5 more official hot nights"),
+    ("very_hot_days", "Very hot days", "per 5 more official very hot days"),
+    ("cold_days", "Cold days", "per 5 more official cold days"),
 ]
 CONTINUOUS = [
     ("mean_temp", "Mean temperature", "per 1 °C"),
@@ -171,7 +171,7 @@ def _draw_strip(ax, title: str, scale: str, title_size: float = 7.6) -> None:
         1.055,
         scale,
         transform=ax.transAxes,
-        fontsize=6.6,
+        fontsize=6.2,
         color=SUB,
         va="center",
         ha="left",
@@ -321,7 +321,11 @@ def write_contract(official_png: Path, supp_png: Path) -> None:
             "Model 1 (time-trend spline, 4 df)",
             "Pre-2020 (Jan 2013–Dec 2019)",
         ],
-        "required_in_official_columns": ["per 5 extra days in month"],
+        "required_in_official_columns": [
+            "per 5 more official hot nights",
+            "per 5 more official very hot days",
+            "per 5 more official cold days",
+        ],
         "forbidden_labels": list(FORBIDDEN_LABELS),
         "note": "Live Figure 3 is not a copy of release figure4_trend_depletion_sensitivity.",
     }

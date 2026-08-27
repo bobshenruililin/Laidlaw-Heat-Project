@@ -1,11 +1,18 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-24
+**Last updated:** 2026-08-27
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0n. Canonical update — Thursday lab talk (27 August)
+
+- Zoom spine is [`reports/lab_talk_2026-08-27/slides.html`](../reports/lab_talk_2026-08-27/slides.html) (17 slides, 16:9), not the 11-page essay PDF. Speaker notes: [`SPEAKER_NOTES.md`](../reports/lab_talk_2026-08-27/SPEAKER_NOTES.md).
+- Form 2a is named in the opening 90 seconds and asked on the last slide. Hogan does not sign it. Live manuscript is a later section, not a reason to delay the signature.
+- Science numbers unchanged: CHD 156,156; HF 29,681; 132 months; all twelve *q* > 0.19; CHD hot nights 1.022 (1.002–1.042) *q* = 0.192; HF cold days 1.073 (1.006–1.144) *q* = 0.192. Stroke not delivered. No invented Model 2/3 health coefficients. Gate 3 open.
+- Durable: [`knowledge/2026-08-27_lab_talk.md`](../knowledge/2026-08-27_lab_talk.md).
 
 ## 0m. Canonical update — Stage 3 Hogan alignment for Bishai (24 August)
 

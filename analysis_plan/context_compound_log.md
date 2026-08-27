@@ -3,6 +3,7 @@
 **Purpose:** Make productive wandering accumulate.  
 **Rule:** Every Explore-mode session adds at least one row. Ship-mode may add rows when something surprising appears.
 
+| 2026-08-27 | Ship | Thursday lab talk deck for Bishai (Zoom, in-meeting) | HTML 16:9 slides + speaker notes. Not the 11-page PDF as spine. Form 2a named at start, asked at end. Numbers unchanged; all twelve *q* > 0.19. Gate 3 open. | Keep | `reports/lab_talk_2026-08-27/`; `knowledge/2026-08-27_lab_talk.md` |
 | 2026-08-24 | Ship | Hogan comments vs Stage 3; update Bishai pack | 22 Aug essay lacked Model 1/2/3 names. Rebuilt programme essay/poster. Science unchanged. Send pack `send_pack_2026-08-24/`. Live manuscript still not attached. Gate 3 open. | Keep | `knowledge/2026-08-24_stage3_hogan_align.md` |
 | 2026-08-24 | Decide | PR 69 vs PR 70 for Hogan’s 24 Aug Methods | Committee (Fable 5, Opus 5, Grok 4.6, Sol 5.6): PR 69 base + PR 70 grafts (present-tense Model 2/3; equation (1); no invented DUA). Ethics `UW XX-XXX` stays. Final Hogan PDF rebuilt. Gate 3 still open. | Keep | `manuscript/live_collaborative/COMMITTEE_VERDICT_PR69_vs_PR70.md`; `Heat_CVD_Manuscript_20260824_hogan.pdf` |
 | 2026-08-24 | Ship | Hogan: rewrite Methods; include RH/rainfall; no TV-day counts; produce Word+PDF | Nested Model 1/2/3 so Table 2 stays Model 1. Hogan HKO paragraph kept. Model 2/3 specified, not invented. Word+PDF: `Heat_CVD_Manuscript_20260824_hogan.docx`. | Keep | `knowledge/2026-08-24_hogan_methods_rewrite.md`; `manuscript/live_collaborative/` |

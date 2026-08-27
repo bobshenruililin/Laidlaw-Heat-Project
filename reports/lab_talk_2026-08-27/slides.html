@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab talk · 27 August 2026 · Shen Ruililin</title>
+<style>
+  :root {
+    --navy: #1B2A41;
+    --teal: #3D6B6E;
+    --rust: #A85A3A;
+    --gray: #E8EAED;
+    --text: #2C2C2C;
+    --soft: #F4F6F8;
+    --white: #ffffff;
+    --chd: #A85A3A;
+    --hf: #3D6B6E;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: #0e1620;
+    color: var(--text);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow: hidden;
+  }
+  #fit {
+    position: fixed; inset: 0;
+  }
+  #deck {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 1920px; height: 1080px;
+    transform-origin: center center;
+    background: var(--white);
+    overflow: hidden;
+  }
+  .slide {
+    display: none;
+    position: absolute;
+    inset: 0;
+    padding: 64px 80px 88px;
+    flex-direction: column;
+  }
+  .slide.active { display: flex; }
+  .slide.dark {
+    background: var(--navy);
+    color: #f4f6f8;
+  }
+  .kicker {
+    font-size: 22px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 700;
+    margin: 0 0 18px;
+  }
+  .slide.dark .kicker { color: #9ec4c6; }
+  h1 {
+    font-size: 52px;
+    line-height: 1.15;
+    color: var(--navy);
+    margin: 0 0 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .slide.dark h1 { color: #fff; }
+  p, li {
+    font-size: 32px;
+    line-height: 1.35;
+    margin: 0 0 14px;
+  }
+  ul { margin: 0 0 12px; padding-left: 1.15em; }
+  li { margin-bottom: 10px; }
+  .lead {
+    font-size: 36px;
+    line-height: 1.3;
+    max-width: 28ch;
+  }
+  .sub {
+    font-size: 28px;
+    color: #5a6570;
+    margin-top: 8px;
+  }
+  .slide.dark .sub { color: #c5ced6; }
+  .rule {
+    width: 88px; height: 5px;
+    background: var(--teal);
+    margin: 0 0 28px;
+    border: 0;
+  }
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .grid3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 22px;
+    flex: 1;
+    min-height: 0;
+  }
+  .card {
+    background: var(--soft);
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    padding: 24px 26px;
+  }
+  .card h2 {
+    margin: 0 0 10px;
+    font-size: 26px;
+    color: var(--teal);
+    letter-spacing: 0.02em;
+  }
+  .card p, .card li { font-size: 26px; margin-bottom: 8px; }
+  .card .not { color: #6a7380; font-size: 24px; }
+  .callout {
+    background: var(--soft);
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    padding: 18px 22px;
+    font-size: 30px;
+    line-height: 1.35;
+    margin-top: 18px;
+  }
+  .callout.strong {
+    border-left: 8px solid var(--rust);
+    background: #fbf6f3;
+  }
+  .statrow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 8px 0 22px;
+  }
+  .stat {
+    background: var(--soft);
+    border-radius: 10px;
+    padding: 22px 24px;
+  }
+  .stat b {
+    display: block;
+    font-size: 48px;
+    color: var(--navy);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+  .stat span { font-size: 22px; color: #5a6570; }
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .est {
+    border-radius: 12px;
+    padding: 26px 28px;
+    border: 1px solid var(--gray);
+    background: var(--soft);
+  }
+  .est.chd { border-top: 8px solid var(--chd); }
+  .est.hf { border-top: 8px solid var(--hf); }
+  .est .who {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+  }
+  .est.chd .who { color: var(--chd); }
+  .est.hf .who { color: var(--hf); }
+  .est .num {
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 6px;
+  }
+  .est .ci { font-size: 28px; color: #3a4450; margin: 0 0 14px; }
+  .est li, .est p { font-size: 24px; }
+  .figwrap {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .figwrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .caption {
+    font-size: 22px;
+    color: #5a6570;
+    margin: 10px 0 0;
+  }
+  table.family {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 26px;
+  }
+  table.family th {
+    text-align: left;
+    color: var(--teal);
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0 16px 12px 0;
+    border-bottom: 2px solid var(--gray);
+  }
+  table.family td {
+    padding: 16px 16px 16px 0;
+    vertical-align: top;
+    border-bottom: 1px solid var(--gray);
+    font-size: 26px;
+    line-height: 1.3;
+  }
+  .muted { color: #5a6570; }
+  .foot {
+    position: absolute;
+    left: 80px; right: 80px; bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: #7a8490;
+    letter-spacing: 0.04em;
+  }
+  .slide.dark .foot { color: #9aa7b3; }
+  .progress {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 6px;
+    background: #d9dee4;
+  }
+  .progress > i {
+    display: block;
+    height: 100%;
+    background: var(--teal);
+    width: 0%;
+  }
+  .hint {
+    position: absolute;
+    right: 80px; top: 28px;
+    font-size: 16px;
+    color: #8b95a0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .slide.dark .hint { color: #8fa3b0; }
+  .ask {
+    font-size: 34px;
+    line-height: 1.35;
+    max-width: 32ch;
+    margin-top: 12px;
+  }
+  .tiny { font-size: 22px; color: #5a6570; }
+  .checks li { font-size: 30px; }
+  #help {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(27,42,65,0.92);
+    color: #fff;
+    z-index: 5;
+    padding: 120px 160px;
+  }
+  #help.show { display: block; }
+  #help h2 { font-size: 40px; margin: 0 0 20px; }
+  #help li { font-size: 28px; }
+  @media print {
+    html, body { background: #fff; overflow: visible; height: auto; }
+    #fit, #deck { position: static; transform: none !important; width: auto; height: auto; }
+    .slide { display: flex; page-break-after: always; position: relative; height: 1080px; width: 1920px; }
+    .hint, #help { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<div id="fit">
+<div id="deck">
+  <div class="hint">← → click · F11 · ?</div>
+
+  <!-- 1 Title -->
+  <section class="slide dark active" data-id="title">
+    <p class="kicker">Bishai Lab · Thursday 27 August 2026</p>
+    <hr class="rule">
+    <h1 style="font-size:58px;max-width:18ch;">Heat, cold, and first hospitalisation after CHD or HF diagnosis</h1>
+    <p class="lead">Hong Kong, 2013–2023. A lab introduction and the Laidlaw Stage 3 report.</p>
+    <p class="sub">Shen Ruililin (Bob) · Laidlaw Scholar intern</p>
+    <div class="foot"><span>Do not screenshare the 11-page PDF as the talk</span><span class="count"></span></div>
+  </section>
+
+  <!-- 2 Two jobs -->
+  <section class="slide" data-id="two-jobs">
+    <p class="kicker">Before the science</p>
+    <h1>Two jobs today</h1>
+    <div class="grid2">
+      <div class="card">
+        <h2>1 · Lab introduction</h2>
+        <p>What we asked. What file arrived. What we can and cannot claim.</p>
+      </div>
+      <div class="card">
+        <h2>2 · Form 2a</h2>
+        <p>This is the Laidlaw Stage 3 research report, due 31 August. At the end I will ask Professor Bishai for the supervisor block.</p>
+      </div>
+    </div>
+    <div class="callout">The journal file with Hogan is a separate document. I am not asking anyone to sign that today. Hogan does not sign form 2a.</div>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 3 Lab family -->
+  <section class="slide" data-id="lab-family">
+    <p class="kicker">Part A · Where this sits</p>
+    <h1>Three lab objects. Three estimands.</h1>
+    <table class="family">
+      <thead>
+        <tr><th>Lab object</th><th>Estimand</th><th>What it is not</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jingwen Liu et al., 2020<br><span class="muted">Jasmine</span></td>
+          <td>Daily mortality attributable fraction, Hong Kong, 2006–2016</td>
+          <td>Not hospitalisation; not our CHD/HF counts</td>
+        </tr>
+        <tr>
+          <td>Zhenyuan Liu et al., 2026<br><span class="muted">Roro</span></td>
+          <td>Modelled heatwave excess deaths, 2014–2023</td>
+          <td>Not our first-event counts. Do not quote that paper’s death totals as this study.</td>
+        </tr>
+        <tr>
+          <td>This intern project</td>
+          <td>Monthly CHD and HF <strong>first hospitalisation after first diagnosis</strong>, T2D/HTN, 2013–2023</td>
+          <td>Not AMI; not principal-diagnosis; not daily DLNM; not stroke</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 4 Cannot substitute -->
+  <section class="slide" data-id="cannot-substitute">
+    <p class="kicker">Part A · Direction</p>
+    <h1>These numbers do not travel.</h1>
+    <p class="lead" style="max-width:28ch;">A mortality attributable fraction, a modelled excess-death total, and a monthly count ratio cannot be substituted for one another.</p>
+    <div class="callout">Professor Bishai’s direction: complete heat <em>and</em> cold in one panel; report every comparison; do not hunt a single confirmatory association.</div>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 5 Summer arc -->
+  <section class="slide" data-id="summer-arc">
+    <p class="kicker">Part B · How the summer ran</p>
+    <h1>Process, not a hero narrative</h1>
+    <ul>
+      <li><strong>July.</strong> General HA extract has no admission cause. No AMI / principal-diagnosis panel from that file. Stroke was named as the intended morbidity layer.</li>
+      <li><strong>Weather with Hogan.</strong> Official HKO thresholds; hot-night and cold-day counts. His live weather paragraph is primary.</li>
+      <li><strong>6–7 August.</strong> Roro delivered CHD and HF first-event monthly aggregates. Stroke was not attached. No stroke coefficient exists.</li>
+    </ul>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 6 After the file -->
+  <section class="slide" data-id="what-arrived">
+    <p class="kicker">Part B · The governed file</p>
+    <h1>What arrived</h1>
+    <div class="statrow">
+      <div class="stat"><b>156,156</b><span>CHD first-event counts</span></div>
+      <div class="stat"><b>29,681</b><span>HF first-event counts</span></div>
+      <div class="stat"><b>132</b><span>months, 2013–2023</span></div>
+    </div>
+    <div class="pair" style="flex:1;">
+      <div>
+        <p>Monthly means 1,183.0 (CHD) and 224.9 (HF).</p>
+        <p>Indexed first-event counts fell across the decade. Without still-at-risk person-time these are not incidence.</p>
+        <p class="tiny">Stroke remains undelivered. Gate 3 is open.</p>
+      </div>
+      <div class="figwrap">
+        <img src="figures/series.png" alt="Indexed monthly first-hospitalisation series for CHD and HF, 2013–2023.">
+      </div>
+    </div>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 7 Estimand -->
+  <section class="slide" data-id="estimand">
+    <p class="kicker">Part C · The Stage 3 paper</p>
+    <h1>Question and estimand</h1>
+    <div class="card" style="margin-bottom:22px;">
+      <p>Are monthly thermal contrasts associated with monthly first-hospitalisation counts in this cohort?</p>
+    </div>
+    <ul>
+      <li>Ecological <strong>count ratio</strong>, not incidence.</li>
+      <li>No person-time. No admission cause.</li>
+      <li>First hospitalisation after first CHD or HF diagnosis — not “a heat-caused AMI.”</li>
+    </ul>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 8 Twelve-comparison design -->
+  <section class="slide" data-id="design">
+    <p class="kicker">Part C · Methods in one breath</p>
+    <h1>Twelve comparisons</h1>
+    <p>CHD and HF, each against six thermal measures:</p>
+    <div class="statrow" style="grid-template-columns:repeat(6,1fr);">
+      <div class="stat"><b style="font-size:28px;">Mean T</b><span>per 1 °C</span></div>
+      <div class="stat"><b style="font-size:28px;">Mean Tmax</b><span>per 1 °C</span></div>
+      <div class="stat"><b style="font-size:28px;">Mean Tmin</b><span>per 1 °C</span></div>
+      <div class="stat"><b style="font-size:28px;">Hot nights</b><span>per 5 days</span></div>
+      <div class="stat"><b style="font-size:28px;">Cold days</b><span>per 5 days</span></div>
+      <div class="stat"><b style="font-size:28px;">Very hot days</b><span>per 5 days</span></div>
+    </div>
+    <ul>
+      <li>Separate negative binomial; calendar month + smooth trend + days-in-month offset.</li>
+      <li>Intervals: model-based, HC1, Newey–West lag 3 and lag 6. Display is lag 6.</li>
+      <li>Benjamini–Hochberg across twelve.</li>
+    </ul>
+    <p class="tiny">If the 24 August PDF is open, these twelve fits are Model 1. If the 22 August PDF is open, stay with “twelve comparisons.” Model 2 and Model 3 are specified, not fitted. No invented health coefficients.</p>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 9 Forest -->
+  <section class="slide" data-id="forest">
+    <p class="kicker">Part C · Results</p>
+    <h1>Most intervals include 1</h1>
+    <div class="figwrap">
+      <img src="figures/forest.png" alt="Forest plot of twelve monthly count ratios for CHD and HF under Newey–West lag-6 intervals.">
+    </div>
+    <p class="caption">Twelve comparisons, Newey–West lag 6. All <em>q</em> &gt; 0.19. If the figure title still says “core,” say Model 1 / twelve comparisons.</p>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 10 Two leading estimates -->
+  <section class="slide" data-id="leading">
+    <p class="kicker">Part C · Two largest estimates</p>
+    <h1>Both have <em>q</em> = 0.192</h1>
+    <div class="pair">
+      <div class="est chd">
+        <p class="who">CHD · hot nights / 5 days</p>
+        <p class="num">1.022</p>
+        <p class="ci">(1.002–1.042) · <em>q</em> = 0.192</p>
+        <ul>
+          <li>Two of four SE methods include 1.</li>
+          <li>Pre-2020: 1.011 (0.991–1.032).</li>
+          <li>Lag-1 residual ACF 0.508.</li>
+          <li>SE-sensitive; pandemic-period-sensitive.</li>
+        </ul>
+      </div>
+      <div class="est hf">
+        <p class="who">HF · cold days / 5 days</p>
+        <p class="num">1.073</p>
+        <p class="ci">(1.006–1.144) · <em>q</em> = 0.192</p>
+        <ul>
+          <li>Concordant across four SE methods.</li>
+          <li>Pre-2020 stronger: 1.113 (1.053–1.176).</li>
+          <li>Official cold days: 141 of 145 in December–February.</li>
+          <li>Identified between winters, not summer vs winter.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 11 Finding -->
+  <section class="slide" data-id="finding">
+    <p class="kicker">Part C · The line that must be said in full</p>
+    <h1>The finding is the limit, not a thermal proof.</h1>
+    <div class="callout strong">
+      After correction, every <em>q</em>-value exceeded 0.19. The panel provides no confirmed association.
+    </div>
+    <p style="margin-top:28px;">What remains: a defined first-event outcome, a complete twelve-comparison panel, four uncertainty methods, and a documented refusal of daily coefficients.</p>
+    <p class="tiny">If asked “so what did you find?”: we found the limits of this extract, and two residual signals that do not survive correction. Gate 3 remains open.</p>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 12 Novelty -->
+  <section class="slide" data-id="novelty">
+    <p class="kicker">Part D · Expectation</p>
+    <h1>Worthy as an honest programme paper</h1>
+    <p>Not because it discovers a new thermal effect.</p>
+    <p>What is new <em>for this extract</em>:</p>
+    <ul>
+      <li>A governed monthly first-event CHD/HF construction in a T2D/HTN cohort, with heat and cold carried together.</li>
+      <li>A complete panel rather than a selected headline.</li>
+      <li>An explicit grain → estimand map: monthly counts cannot support daily triggering claims.</li>
+    </ul>
+    <p class="tiny">Aggregation-identifiability is a contribution <em>type</em> for the journal file. It is not Gate 3. Basagaña and Ballester already treat aggregated outcomes.</p>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 13 Daily refusal -->
+  <section class="slide" data-id="daily-refusal">
+    <p class="kicker">Part D · Daily extension</p>
+    <h1>A refusal, not a missing appendix</h1>
+    <ul>
+      <li>We tried a monthly-outcome / daily-exposure recovery.</li>
+      <li>Calibration failed.</li>
+      <li>No real daily coefficient was applied.</li>
+    </ul>
+    <div class="callout strong">Fake novelty would be promoting 1.022 or 1.073 to a confirmatory result; importing another paper’s excess-death totals; or talking as if stroke had arrived.</div>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 14 Two documents -->
+  <section class="slide" data-id="two-documents">
+    <p class="kicker">Part E · Two files</p>
+    <h1>Stage 3 is not the live manuscript</h1>
+    <div class="grid2">
+      <div class="card">
+        <h2>Stage 3 essay</h2>
+        <p>Programme report. Sole-author, about 2,000–3,000 words.</p>
+        <p>Due 31 August. Form 2a is for this file.</p>
+        <p class="not">Poster is 15 September. No signature on the poster today.</p>
+      </div>
+      <div class="card">
+        <h2>Hogan’s live shared file</h2>
+        <p>Journal manuscript. He writes weather Methods.</p>
+        <p>Bob pastes. Do not email a competing Word copy.</p>
+        <p class="not">His review does not decide form 2a.</p>
+      </div>
+    </div>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 15 Hogan comments -->
+  <section class="slide" data-id="hogan-comments">
+    <p class="kicker">Part E · Hogan</p>
+    <h1>Comments already in the paste pack</h1>
+    <div class="grid2">
+      <div class="card">
+        <h2>28 July threads</h2>
+        <ul>
+          <li>Running title.</li>
+          <li>AMI / stroke are not our endpoint.</li>
+          <li>Housing, behaviour, AC out.</li>
+          <li>Pollution is 2013–2023 EPD, not Goggins 2000–2009.</li>
+          <li>Introduction closes in one sentence.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>24 August, if raised</h2>
+        <ul>
+          <li>Numbered Model 1 ⊂ 2 ⊂ 3, not “core panel.”</li>
+          <li>Methods a reader can follow; no Results in Methods.</li>
+          <li>Monthly humidity and rainfall: specified, <strong>not fitted</strong>.</li>
+          <li>Do not count temperature-variability days.</li>
+          <li>One ethics sentence. Keep editing the shared file.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">Hogan’s review improves the journal paper. It does not decide form 2a.</div>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 16 Still human -->
+  <section class="slide" data-id="still-human">
+    <p class="kicker">Part E · Not this signature</p>
+    <h1>Still human, after the form</h1>
+    <ul class="checks">
+      <li>Paste into the live file.</li>
+      <li>Hogan weather lock (HM23 reference period).</li>
+      <li>Roro IRB number — do not invent one.</li>
+      <li>Authorship 2–4.</li>
+      <li>Gate 3 freeze.</li>
+      <li>Stroke file.</li>
+    </ul>
+    <p class="tiny">Park these after the form, or for a later slot. They are real. They are not the Laidlaw bar.</p>
+    <div class="foot"><span>Shen · 27 August 2026</span><span class="count"></span></div>
+  </section>
+
+  <!-- 17 Signature ask -->
+  <section class="slide dark" data-id="ask">
+    <p class="kicker">Part F · The ask</p>
+    <hr class="rule">
+    <h1>Form 2a is a programme endorsement</h1>
+    <p>Not journal acceptance. The report matches the direction you set; states the missing stroke file and the missing admission cause; does not overclaim (every <em>q</em> &gt; 0.19); and exists as a PDF a programme reader can follow.</p>
+    <p class="ask">I would be grateful if you would complete the supervisor block — rating, comments, signature — on the Laidlaw form. I have left those fields blank. The poster is 15 September and does not need a signature today.</p>
+    <p class="sub">If you want to take it away: Friday 28 August. Report due 31 August.</p>
+    <div class="foot"><span>Then stop talking</span><span class="count"></span></div>
+  </section>
+
+  <div class="progress"><i id="bar"></i></div>
+  <div id="help">
+    <h2>Keys</h2>
+    <ul>
+      <li>Right / Space / click right: next</li>
+      <li>Left / click left: previous</li>
+      <li>Home / End: first / last</li>
+      <li>F11 or F: fullscreen</li>
+      <li>? : this panel</li>
+    </ul>
+  </div>
+</div>
+</div>
+<script>
+(function () {
+  const deck = document.getElementById('deck');
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const bar = document.getElementById('bar');
+  const help = document.getElementById('help');
+  const n = slides.length;
+  let i = 0;
+
+  function fit() {
+    const s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    deck.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+  }
+  function show(k) {
+    i = Math.max(0, Math.min(n - 1, k));
+    slides.forEach(function (el, j) { el.classList.toggle('active', j === i); });
+    bar.style.width = ((i + 1) / n * 100) + '%';
+    slides.forEach(function (el) {
+      const c = el.querySelector('.count');
+      if (c) c.textContent = (i + 1) + ' / ' + n;
+    });
+    if (location.hash !== '#' + (i + 1)) {
+      history.replaceState(null, '', '#' + (i + 1));
+    }
+  }
+  function fromHash() {
+    const k = parseInt((location.hash || '#1').slice(1), 10);
+    show(isNaN(k) ? 0 : k - 1);
+  }
+  window.addEventListener('resize', fit);
+  window.addEventListener('hashchange', fromHash);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === '?' || (e.key === '/' && e.shiftKey)) {
+      help.classList.toggle('show');
+      return;
+    }
+    if (help.classList.contains('show') && e.key === 'Escape') {
+      help.classList.remove('show');
+      return;
+    }
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+      e.preventDefault(); show(i + 1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'Backspace') {
+      e.preventDefault(); show(i - 1);
+    } else if (e.key === 'Home') {
+      show(0);
+    } else if (e.key === 'End') {
+      show(n - 1);
+    } else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+  deck.addEventListener('click', function (e) {
+    if (help.classList.contains('show')) { help.classList.remove('show'); return; }
+    const r = deck.getBoundingClientRect();
+    if (e.clientX < r.left + r.width * 0.22) show(i - 1);
+    else show(i + 1);
+  });
+  fit();
+  fromHash();
+})();
+</script>
+</body>
+</html>

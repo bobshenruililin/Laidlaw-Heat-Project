@@ -20,6 +20,7 @@
 
 ## Current meeting record
 
+- [`2026-08-24_hogan_methods_rewrite.md`](2026-08-24_hogan_methods_rewrite.md) — Hogan 24 Aug Methods: nested Model 1/2/3; Table 2 = Model 1; Word+PDF paste file. Committee merge of PR 69/70: [`COMMITTEE_VERDICT_PR69_vs_PR70.md`](../manuscript/live_collaborative/COMMITTEE_VERDICT_PR69_vs_PR70.md).
 - [`2026-08-24_stage3_hogan_align.md`](2026-08-24_stage3_hogan_align.md) — Hogan comments vs Stage 3; Bishai gets the 24 Aug programme PDF; send pack `analysis_plan/send_pack_2026-08-24/`. Gate 3 open.
 - [`2026-08-22_stage3_foldback.md`](2026-08-22_stage3_foldback.md) — roundtable fold-back before Email A; Fable/Sol GO; SHA prefixes `c083d4096a0924b1` / `0ef58e0951bb2ffd`. Superceded for sending by the 24 Aug pack.
 - [`2026-08-22_stage3_poster_refs.md`](2026-08-22_stage3_poster_refs.md) — A0 poster gained a six-item REFERENCES strip; later the same night the human footer and pre-2020 callouts were added.
@@ -70,10 +71,11 @@
 - [`manuscript/chd_hf_supplement.pdf`](../manuscript/chd_hf_supplement.pdf) — complete supplement and methods-feasibility audit.
 - [`outputs/release_chd_hf/`](../outputs/release_chd_hf/) — disclosure-minimised 29-check release.
 - [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md) — reusable YES/NO decision table and live-manuscript workflow.
-- [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Start at `LIVE_DOC_EDITS.md`.
-- [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `c083d4096a0924b1`).
-- [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) — current A0 portrait poster (SHA prefix `0ef58e0951bb2ffd`); REFERENCES strip, pre-2020 callouts, human collaborator footer.
-- [`analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/) — current Email A: form 2a + locked essay + supervisor one-pager; Thursday 27 Aug print backup. Bob sends.
+- [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Present from `Heat_CVD_Manuscript_20260824_hogan.pdf` / `.docx`.
+- [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `605cd8db43072cb5`).
+- [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) — current A0 portrait poster (SHA prefix `a972206e61932650`); Model 1 shown; Models 2–3 specified, not fitted.
+- [`analysis_plan/send_pack_2026-08-24/`](../analysis_plan/send_pack_2026-08-24/) — current Email A: 24 August essay + form 2a. Replaces the 22 August PDFs for sending.
+- [`analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/) — 22 August Email A origin. Superceded for sending.
 - [`analysis_plan/send_pack_2026-08-20/`](../analysis_plan/send_pack_2026-08-20/) — 20 August Email A origin (worksheet, hashes, Q/R). Superseded for sending.
 - [`analysis_plan/send_pack_2026-08-12/`](../analysis_plan/send_pack_2026-08-12/) — one reply-all on Hogan’s 12 August thread; temperature panel for Roro.
 - [`manuscript/methods_remainder_bob_aug5.md`](../manuscript/methods_remainder_bob_aug5.md) — earlier stroke-framed remainder; superseded for paste by the live_collaborative pack.

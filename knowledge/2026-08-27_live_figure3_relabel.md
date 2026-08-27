@@ -18,4 +18,4 @@ CHD hot nights / 5 days **1.022 (1.002–1.042)**; HF cold days / 5 days **1.073
 
 Not a Gate 3 freeze. Not an evaluated municipal heat-health action plan. Not a consecutive-day warning rule. Stage 3 hashes remain `605cd8db43072cb5` / `a972206e61932650`. Form 2a still uses the essay.
 
-Paste file: rebuild with `python3 scripts/64_hogan_20260824_manuscript_docx.py`.
+Paste file: rebuild with `python3 scripts/64_hogan_20260824_manuscript_docx.py`. Current Hogan PDF SHA-256 prefix `fb01f23fe3d908c4` (22 A4 pages; Figure 3 on p. 15).

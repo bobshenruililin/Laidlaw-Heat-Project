@@ -5,7 +5,7 @@
 ## Confirmed
 
 - Print files: `manuscript/live_collaborative/Heat_CVD_Manuscript_20260824_hogan.pdf` / `.docx`.
-- PDF SHA-256 prefix `436fb4ff1b278ec8`. 21 A4 pages.
+- A later 27 Aug rebuild replaced Figure 3 with the portrait official-count forest. PDF SHA-256 prefix `fb01f23fe3d908c4`. 22 A4 pages. Figure 3 still starts on p. 15. See [`2026-08-27_live_figure3_relabel.md`](2026-08-27_live_figure3_relabel.md). The banner-off layout SHA `436fb4ff1b278ec8` is the 21-page copy with the old landscape forest; do not hand that copy if the question is spline df vs duration.
 - Banner gone: no “Paste into the shared live document; do not circulate this file as a separate version.”
 - Tables 1–3 each sit on a single page (pp. 7, 11, 13). Figures 1–3 each start a new page (pp. 8, 10, 15).
 - Hogan HKO sentences remain verbatim, including the averaging sentence.

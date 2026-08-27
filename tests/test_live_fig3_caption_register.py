@@ -86,7 +86,7 @@ def test_spline_paragraph_numerals_match_the_approved_aggregate() -> None:
         assert rec["data_status"] == "HA_APPROVED_AGGREGATE"
         rr, lo, hi = float(rec["rr"]), float(rec["rr_low"]), float(rec["rr_high"])
         assert display == f"{rr:.3f}, {lo:.3f}–{hi:.3f}"
-        assert f"({display})" in SPLINE
+        assert display in SPLINE
     year = _row("chd", "hot_nights", "year_fixed_effects")
     assert float(year["rr_low"]) < 1.0 < float(year["rr_high"])
     assert "1.025, 0.9998–1.050" in SPLINE

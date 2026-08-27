@@ -20,6 +20,7 @@
 
 ## Current meeting record
 
+- [`2026-08-27_hogan_print_for_bishai.md`](2026-08-27_hogan_print_for_bishai.md) — print copy of the Hogan PDF for Bishai: banner removed; tables unsplit; SHA prefix `436fb4ff1b278ec8`. Gate 3 open. Form 2a still the Stage 3 essay.
 - [`2026-08-24_hogan_methods_rewrite.md`](2026-08-24_hogan_methods_rewrite.md) — Hogan 24 Aug Methods: nested Model 1/2/3; Table 2 = Model 1; Word+PDF paste file. Committee merge of PR 69/70: [`COMMITTEE_VERDICT_PR69_vs_PR70.md`](../manuscript/live_collaborative/COMMITTEE_VERDICT_PR69_vs_PR70.md).
 - [`2026-08-24_stage3_hogan_align.md`](2026-08-24_stage3_hogan_align.md) — Hogan comments vs Stage 3; Bishai gets the 24 Aug programme PDF; send pack `analysis_plan/send_pack_2026-08-24/`. Gate 3 open.
 - [`2026-08-22_stage3_foldback.md`](2026-08-22_stage3_foldback.md) — roundtable fold-back before Email A; Fable/Sol GO; SHA prefixes `c083d4096a0924b1` / `0ef58e0951bb2ffd`. Superceded for sending by the 24 Aug pack.

@@ -3,7 +3,7 @@
 
 Wording authority: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
 Hogan's 24 August weather paragraph is copied verbatim, including the averaging sentence.
-Do not email a competing copy; paste into the shared live file.
+Print copy for committee review: no circulation-banner on the first page.
 Does not invent HA coefficients or an IRB number.
 Does not rebuild Stage 3 PDFs.
 """
@@ -16,7 +16,7 @@ from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_LINE_SPACING
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-from docx.shared import Cm, Inches, Pt, RGBColor
+from docx.shared import Cm, Inches, Mm, Pt, RGBColor
 
 ROOT = Path("/workspace")
 OUT_DOCX = ROOT / "manuscript/live_collaborative/Heat_CVD_Manuscript_20260824_hogan.docx"
@@ -86,11 +86,18 @@ def set_paragraph_format(
         p.alignment = WD_ALIGN_PARAGRAPH.LEFT
 
 
-def heading(doc, text, level=1):
+def heading(doc, text, level=1, *, new_page=False, keep_with_next=False):
     p = doc.add_paragraph()
     set_paragraph_format(
-        p, first_line=False, space_before=12 if level == 1 else 8, space_after=6
+        p,
+        first_line=False,
+        space_before=0 if new_page else (12 if level == 1 else 8),
+        space_after=6,
     )
+    if new_page:
+        p.paragraph_format.page_break_before = True
+    if keep_with_next:
+        p.paragraph_format.keep_with_next = True
     run = p.add_run(text)
     if level == 1:
         set_run_font(run, bold=True, size=14)
@@ -101,9 +108,25 @@ def heading(doc, text, level=1):
     return p
 
 
-def body(doc, text, *, first_line=True, italic=False, bold=False, size=12, space_after=8):
+def body(
+    doc,
+    text,
+    *,
+    first_line=True,
+    italic=False,
+    bold=False,
+    size=12,
+    space_after=8,
+    new_page=False,
+    keep_with_next=False,
+):
     p = doc.add_paragraph()
     set_paragraph_format(p, first_line=first_line, space_after=space_after, align="justify")
+    if new_page:
+        p.paragraph_format.page_break_before = True
+        p.paragraph_format.space_before = Pt(0)
+    if keep_with_next:
+        p.paragraph_format.keep_with_next = True
     run = p.add_run(text)
     set_run_font(run, italic=italic, bold=bold, size=size)
     return p, run
@@ -120,44 +143,117 @@ def mixed_body(doc, parts, *, first_line=True, space_after=8, align="justify"):
     return p, runs
 
 
-def caption(doc, text):
+def caption(doc, text, *, new_page=False, keep_with_next=True):
     p = doc.add_paragraph()
-    set_paragraph_format(p, first_line=False, space_before=6, space_after=10)
+    set_paragraph_format(
+        p,
+        first_line=False,
+        space_before=0 if new_page else 6,
+        space_after=10,
+    )
+    p.paragraph_format.keep_together = True
+    p.paragraph_format.keep_with_next = keep_with_next
+    if new_page:
+        p.paragraph_format.page_break_before = True
     run = p.add_run(text)
     set_run_font(run, italic=True, size=11)
     return p, run
 
 
-def add_table(doc, headers, rows, col_widths=None):
+def _set_cell_margins(cell, top=40, bottom=40, left=60, right=60):
+    tc_pr = cell._tc.get_or_add_tcPr()
+    tc_mar = OxmlElement("w:tcMar")
+    for edge, val in (("top", top), ("left", left), ("bottom", bottom), ("right", right)):
+        node = OxmlElement(f"w:{edge}")
+        node.set(qn("w:w"), str(val))
+        node.set(qn("w:type"), "dxa")
+        tc_mar.append(node)
+    tc_pr.append(tc_mar)
+
+
+def _row_cant_split(row):
+    tr_pr = row._tr.get_or_add_trPr()
+    el = OxmlElement("w:cantSplit")
+    tr_pr.append(el)
+
+
+def _row_repeat_header(row):
+    tr_pr = row._tr.get_or_add_trPr()
+    el = OxmlElement("w:tblHeader")
+    tr_pr.append(el)
+
+
+def add_table(doc, headers, rows, col_widths=None, font_size=10):
+    """Insert a grid table that Word/LibreOffice should keep on one page."""
     table = doc.add_table(rows=1 + len(rows), cols=len(headers))
     table.style = "Table Grid"
-    hdr = table.rows[0].cells
-    for i, h in enumerate(headers):
-        hdr[i].text = ""
-        p = hdr[i].paragraphs[0]
-        set_paragraph_format(p, first_line=False, space_after=2, space_before=2)
-        run = p.add_run(h)
-        set_run_font(run, bold=True, size=10)
-    for r_i, row in enumerate(rows):
-        cells = table.rows[r_i + 1].cells
-        for c_i, val in enumerate(row):
-            cells[c_i].text = ""
-            p = cells[c_i].paragraphs[0]
+    table.autofit = False
+    tbl_pr = table._tbl.tblPr
+    for child in list(tbl_pr):
+        if child.tag == qn("w:tblW"):
+            tbl_pr.remove(child)
+    tbl_w = OxmlElement("w:tblW")
+    tbl_w.set(qn("w:w"), "5000")
+    tbl_w.set(qn("w:type"), "pct")
+    tbl_pr.append(tbl_w)
+    layout = OxmlElement("w:tblLayout")
+    layout.set(qn("w:type"), "fixed")
+    tbl_pr.append(layout)
+
+    n_rows = 1 + len(rows)
+    for r_i, row in enumerate(table.rows):
+        _row_cant_split(row)
+        if r_i == 0:
+            _row_repeat_header(row)
+        last = r_i == n_rows - 1
+        vals = headers if r_i == 0 else rows[r_i - 1]
+        for c_i, val in enumerate(vals):
+            cell = row.cells[c_i]
+            cell.text = ""
+            _set_cell_margins(cell)
+            p = cell.paragraphs[0]
             set_paragraph_format(p, first_line=False, space_after=1, space_before=1)
+            p.paragraph_format.keep_together = True
+            if not last:
+                p.paragraph_format.keep_with_next = True
             run = p.add_run(str(val))
-            set_run_font(run, size=10)
+            set_run_font(run, bold=(r_i == 0), size=font_size)
+    tbl = table._tbl
     if col_widths:
+        existing = tbl.find(qn("w:tblGrid"))
+        if existing is not None:
+            tbl.remove(existing)
+        grid = OxmlElement("w:tblGrid")
+        for w in col_widths:
+            col = OxmlElement("w:gridCol")
+            col.set(qn("w:w"), str(int(w * 1440)))
+            grid.append(col)
+        tbl.tblPr.addnext(grid)
         for row in table.rows:
             for i, w in enumerate(col_widths):
                 row.cells[i].width = Inches(w)
-    doc.add_paragraph()
+    spacer = doc.add_paragraph()
+    set_paragraph_format(spacer, first_line=False, space_after=6, space_before=0)
 
 
-def add_picture(doc, path, width_in=6.2):
+def add_picture(doc, path, width_in=6.2, *, new_page=False, max_height_in=7.6):
+    from PIL import Image
+
+    with Image.open(path) as im:
+        px_w, px_h = im.size
+    height_in = width_in * (px_h / px_w)
+    if height_in > max_height_in:
+        width_in = max_height_in * (px_w / px_h)
     p = doc.add_paragraph()
     set_paragraph_format(p, first_line=False, space_after=4, align="center")
+    p.paragraph_format.keep_with_next = True
+    p.paragraph_format.keep_together = True
+    if new_page:
+        p.paragraph_format.page_break_before = True
+        p.paragraph_format.space_before = Pt(0)
     run = p.add_run()
     run.add_picture(str(path), width=Inches(width_in))
+    return p
 
 
 def comment(doc, run, text):
@@ -174,10 +270,14 @@ def build_docx() -> None:
 
     doc = Document()
     section = doc.sections[0]
+    section.page_width = Mm(210)
+    section.page_height = Mm(297)
     section.top_margin = Cm(2.54)
     section.bottom_margin = Cm(2.54)
     section.left_margin = Cm(2.54)
     section.right_margin = Cm(2.54)
+    section.header_distance = Cm(1.25)
+    section.footer_distance = Cm(1.25)
 
     header = section.header
     header.is_linked_to_previous = False
@@ -195,13 +295,6 @@ def build_docx() -> None:
     tab.set(qn("w:pos"), "9360")
     tabs.append(tab)
     hp._p.get_or_add_pPr().append(tabs)
-
-    cover = doc.add_paragraph()
-    set_paragraph_format(cover, first_line=False, space_after=10)
-    cr = cover.add_run(
-        "Paste into the shared live document; do not circulate this file as a separate version."
-    )
-    set_run_font(cr, italic=True, size=10, color=RGBColor(0x66, 0x33, 0x00))
 
     t = doc.add_paragraph()
     set_paragraph_format(t, first_line=False, space_after=6, align="center")
@@ -334,7 +427,7 @@ def build_docx() -> None:
         first_line=False,
     )
 
-    heading(doc, "Introduction")
+    heading(doc, "Introduction", new_page=True)
     body(
         doc,
         "Temperature-related cardiovascular morbidity remains a concern in subtropical cities, where intense humid heat coexists with episodic cold [9]. Hong Kong is a dense, ageing city whose thermal profile shifted within a single decade. At the Hong Kong Observatory (HKO), hot nights increased from 10 in 2013 to 61 in 2021, and very hot days from 17 to 54 in the same comparison [2,4]. Cold days persisted across the period: 14 in 2013, 13 in 2021, and 14 in 2023 [2,4,6]. A contemporary local analysis therefore has to hold heat and cold in one design.",
@@ -535,13 +628,13 @@ def build_docx() -> None:
         "Analyses were conducted in R 4.3.3 (2024-02-29). Negative-binomial models used MASS::glm.nb (MASS 7.3-60.0.1). Newey–West and HC1 standard errors used sandwich 3.1.3. Natural cubic splines used splines::ns.",
     )
 
-    heading(doc, "Results")
+    heading(doc, "Results", new_page=True)
     heading(doc, "Outcome series", level=2)
     body(
         doc,
         "CHD contributed 156,156 first recorded hospitalisations over 132 months, a mean of 1,183.0 per month. HF contributed 29,681, a mean of 224.9 per month (Table 1). Annual totals fell by about half from 2013 to 2023 (CHD 23,830 to 12,323; HF 4,336 to 2,296), with a further dip in 2020 (CHD 10,237; HF 1,964). Over the same years, the interpolated Census and Statistics Department population aged 35 years or older rose by 17%. Figure 1 indexes both series to 2013. The decline in first-event counts is compatible with depletion of the at-risk set in a 2013–2023 diagnosis window, together with pandemic changes in care-seeking. It is not a measure of falling incidence in the territory, and it does not quantify the share attributable to depletion without monthly still-at-risk person-time. Mean monthly HF counts were highest in January (287) and lowest in September (196). CHD showed a milder winter elevation (January 1,386; September 1,097). After calendar-month indicators, the thermal estimates ask whether a given January or July differs from a typical January or July, and not whether winter counts exceed summer counts.",
     )
-    caption(doc, "Table 1. Outcome summary.")
+    caption(doc, "Table 1. Outcome summary.", new_page=True)
     add_table(
         doc,
         ["Outcome", "Period", "Months", "Total events", "Mean per month", "Event construction"],
@@ -549,28 +642,33 @@ def build_docx() -> None:
             ["Coronary heart disease", "2013–2023", "132", "156,156", "1,183.0", "First recorded hospitalisation after first CHD diagnosis"],
             ["Heart failure", "2013–2023", "132", "29,681", "224.9", "First recorded hospitalisation after first HF diagnosis"],
         ],
+        col_widths=[1.45, 0.78, 0.55, 0.85, 0.95, 1.68],
+        font_size=9,
     )
-    add_picture(doc, FIGS[1])
+    add_picture(doc, FIGS[1], new_page=True)
     caption(
         doc,
         "Figure 1. First-event counts fell while the general population aged 35 years or older rose. Index = 1 in 2013. CHD 23,830 → 12,323; HF 4,336 → 2,296. Source: governed Hospital Authority aggregate annual totals; Census and Statistics Department mid-year population aged 35 years or older.",
+        keep_with_next=False,
     )
 
-    heading(doc, "Exposure context", level=2)
+    heading(doc, "Exposure context", level=2, new_page=True)
     body(
         doc,
         "At HKO Headquarters, hot nights rose from 10 in 2013 to 61 in 2021 and 56 in 2023 [6]. The 2013 count was about seven days below the 1981–2010 normal [2]. The 2021 count was the highest annual number of hot nights in the Observatory record at that time [4]. Very hot days rose from 17 to 54 over the same 2013–2021 comparison, and were 54 in 2023 [6]. Cold days were 14 in 2013 and 14 in 2023, with 1 in 2019 and 13 in 2021 [6]. These are exposure counts, and not health effects. Figure 2 shows official cold days by year and month. Of 145 cold days in 2013–2023, 141 fell in December–February (December 40, January 54, February 47), and 4 fell in March. Twenty-nine of 132 months carried at least one official cold day. The year 2019 contributed a single cold day. After calendar-month indicators, the remaining cold-day variation is between-year winter variation, and not a summer-versus-winter contrast.",
     )
-    add_picture(doc, FIGS[2])
+    add_picture(doc, FIGS[2], new_page=True)
     caption(
         doc,
         "Figure 2. Official cold days by year and month, Hong Kong Observatory Headquarters, 2013–2023. Source: Hong Kong Observatory official daily cold-day flags (Tmin ≤ 12 °C), aggregated to calendar months.",
+        keep_with_next=False,
     )
 
-    heading(doc, "Model 1", level=2)
+    heading(doc, "Model 1", level=2, new_page=True, keep_with_next=True)
     body(
         doc,
         "Table 2 reports the twelve separate-exposure count ratios under the offset for the number of days in the month and Newey–West lag-6 intervals.",
+        keep_with_next=True,
     )
     _, t2_run = caption(
         doc,
@@ -602,17 +700,19 @@ def build_docx() -> None:
             ["HF", "Cold days / 5 days", "1.073 (1.006–1.144)", "0.031", "0.192"],
             ["HF", "Very hot days / 5 days", "0.995 (0.963–1.028)", "0.764", "0.900"],
         ],
+        col_widths=[0.78, 2.05, 2.08, 0.55, 0.80],
     )
     body(
         doc,
         "All twelve q-values exceeded 0.19, with a minimum of 0.192. No model meets a multiplicity-protected confirmatory threshold. The HF mean-minimum-temperature interval narrowly included 1, with an unrounded upper bound of 1.00005.",
+        new_page=True,
     )
     body(
         doc,
         "For CHD, the continuous monthly temperature estimates were near null, between 0.993 and 0.994, whereas the official hot-night count estimate was larger under Newey–West lag-6 reporting. These encodings describe different monthly thermal questions. The contrast does not imply that a hot-night effect was missed by the means, and it is not a test of hourly nighttime excess heat [17]. For HF, the continuous temperature estimates were weakly inverse, and the cold-day count estimate was positive.",
     )
 
-    heading(doc, "Uncertainty ladder", level=2)
+    heading(doc, "Uncertainty ladder", level=2, new_page=True, keep_with_next=True)
     caption(doc, "Table 3. Uncertainty ladder for the two leading exploratory contrasts.")
     add_table(
         doc,
@@ -621,10 +721,13 @@ def build_docx() -> None:
             ["CHD hot nights / 5 days", "1.022 (0.995–1.049)", "1.022 (0.997–1.047)", "1.022 (1.0003–1.0439)", "1.022 (1.002–1.042)"],
             ["HF cold days / 5 days", "1.073 (1.023–1.125)", "1.073 (1.011–1.138)", "1.073 (1.007–1.143)", "1.073 (1.006–1.144)"],
         ],
+        col_widths=[1.50, 1.19, 1.19, 1.19, 1.19],
+        font_size=9,
     )
     body(
         doc,
         "For CHD hot nights, the model-based and HC1 intervals included 1, while both Newey–West intervals excluded 1 on the unrounded scale (lag 3: 1.000253 to 1.043860). The ladder narrowed from the model-based interval to the Newey–West intervals for that contrast. Robust intervals are not automatically wider, and the direction of that change is itself informative. For HF cold days, all four constructions excluded 1, and q remained 0.192. Concordance across standard-error methods does not create multiplicity protection.",
+        new_page=True,
     )
 
     heading(doc, "Joint models and residual diagnostics", level=2)
@@ -653,17 +756,18 @@ def build_docx() -> None:
         doc,
         "Offset choice changed the Model 1 count ratios only trivially. Across trend, window, and COVID-phase specifications, the CHD hot-night ratio ranged from 1.011 to 1.025, and the HF cold-day ratio from 1.043 to 1.113 (Figure 3). The HF cold-day association was strongest before 2020 (1.113, 1.053–1.176). The CHD hot-night association was weaker and compatible with 1 in the pre-2020 window (1.011, 0.991–1.032) and under COVID-phase adjustment (1.013, 0.994–1.033). The pre-2020 window moved more than those two contrasts: nine of the twelve Newey–West lag-6 intervals excluded 1 in that 84-month window, including inverse associations for all six continuous temperature contrasts (Figure 3; Supplementary Table S2). No multiplicity control was computed within that window, and no pre-2020 estimate is promoted beyond a sensitivity. The decline in first events and the rise in hot nights are both strong trends across this window, and the same 4-df spline absorbs both. Lag-1 month models attenuated the CHD hot-night association toward 1 (1.010, 0.979–1.042). The HF cold-day association remained elevated at lag 1 (1.073, 1.014–1.135) and was weaker at lag 2 (1.053, 0.985–1.127). Lag-one month is a labelled sensitivity, and it is not a daily lag curve. The months with largest Cook’s distance were February 2020 for CHD and February 2022 for HF cold days. Excluding the most influential month left both exploratory directions unchanged (CHD hot nights 1.021, 1.001–1.040; HF cold days 1.088, 1.034–1.144).",
     )
-    add_picture(doc, FIGS[3])
+    add_picture(doc, FIGS[3], new_page=True)
     caption(
         doc,
         "Figure 3. Model 1 count ratios across trend, window, and COVID-period specifications (Newey–West lag-6 intervals). All twelve Model 1 fits are shown across nine specifications.",
+        keep_with_next=False,
     )
     body(
         doc,
         "The simulated daily-recovery method failed its worst-cell criteria: null Type I error ranged from 0.048 to 0.150, minimum coverage was 0.840, maximum non-null relative bias was 32.8, and the maximum moderate false-sign rate was 0.808 (Supplementary Table S8). No real daily coefficient is reported. That refusal is specific to this monthly series and this implementation.",
     )
 
-    heading(doc, "Discussion")
+    heading(doc, "Discussion", new_page=True)
     for para in [
         "These data do not support a multiplicity-protected differential thermal claim for CHD relative to HF. Under Newey–West lag-6 reporting for Model 1, CHD first-hospitalisation counts were more closely associated with official hot-night burden than with mean temperature or cold days. HF counts were more closely associated with cold-day burden than with hot nights. Both patterns sit inside twelve Model 1 fits in which every q-value exceeds 0.19. The complete set is therefore reported, and no model is promoted to a primary result.",
         "The HF cold-day association is the more coherent of the two residual signals. It is concordant across all four standard-error constructions. It survives exclusion of the most influential pandemic month. It is not produced by entering correlated heat metrics jointly. It is strongest in the pre-2020 window, before pandemic disruption of care-seeking. It nevertheless remains unprotected by its q-value. Because official cold days fall almost entirely in December–February, and because only 29 of 132 months carry any official cold day, the association is identified from differences between winters rather than from a summer-versus-winter contrast. That is a limit of matching monthly hospital counts to monthly weather, not a reason to drop the cold-day series.",
@@ -675,13 +779,13 @@ def build_docx() -> None:
     ]:
         body(doc, para)
 
-    heading(doc, "Conclusion")
+    heading(doc, "Conclusion", new_page=True)
     body(
         doc,
         "Between 2013 and 2023, hot nights in Hong Kong increased while cold days persisted. In monthly Hospital Authority counts for people with type 2 diabetes and/or hypertension, CHD first hospitalisations were more closely associated with hot nights, and HF first hospitalisations with cold days, than with the other thermal encodings examined. Neither association survived correction across the twelve Model 1 fits. The CHD estimate additionally depended on the treatment of uncertainty and on the inclusion of 2020–2023. This analysis therefore contributes a set of hypotheses, and an explicit account of what monthly aggregate counts cannot settle. Better-denominated and more finely resolved data are required before a thermal effect on cardiac hospitalisation in this cohort can be estimated.",
     )
 
-    heading(doc, "Strengths and limitations")
+    heading(doc, "Strengths and limitations", new_page=True)
     mixed_body(
         doc,
         [
@@ -718,7 +822,7 @@ def build_docx() -> None:
         "Code is at https://github.com/bobshenruililin/Laidlaw-Heat-Project. Monthly hospital counts are not posted. What may be shared later depends on ethics approval.",
     )
 
-    heading(doc, "References")
+    heading(doc, "References", new_page=True)
     refs = [
         "1. Goggins WB, Chan EYY, Yang CY. Weather, pollution, and acute myocardial infarction in Hong Kong and Taiwan. Int J Cardiol. 2013;168(1):243-249. doi:10.1016/j.ijcard.2012.09.087",
         "2. Hong Kong Observatory. The Year's Weather — 2013. https://www.hko.gov.hk/en/wxinfo/pastwx/ywx2013.htm",
@@ -767,6 +871,8 @@ def build_docx() -> None:
     assert "141 of 145" not in methods_bit
     assert "failed simulation calibration" not in methods_bit
     assert "None." in texts
+    assert "Paste into the shared live document" not in texts
+    assert "do not circulate this file" not in texts.lower()
     assert "Yang CY" in texts
     assert texts.lower().count("medication") == 0
     assert "housing" not in texts.lower()
@@ -790,6 +896,62 @@ def convert_pdf() -> None:
     print(f"wrote {OUT_PDF} ({OUT_PDF.stat().st_size} bytes)")
 
 
+def _page_with(pages, needle: str) -> int:
+    hits = [i for i, text in enumerate(pages) if needle in text]
+    if not hits:
+        raise SystemExit(f"PDF missing {needle!r}")
+    return hits[0]
+
+
+def _norm_pdf(text: str) -> str:
+    collapsed = " ".join(text.replace("\u00ad", "").split())
+    return collapsed.replace("–", "-").replace("—", "-")
+
+
+def review_pdf() -> None:
+    """Print-layout checks. Science numbers are unchanged; this is pagination only."""
+    import pymupdf
+
+    pdf = pymupdf.open(OUT_PDF)
+    pages = [_norm_pdf(page.get_text()) for page in pdf]
+    full = "\n".join(pages)
+    if "Paste into the shared live document" in full:
+        raise SystemExit("circulation banner still present")
+    if "do not circulate this file" in full.lower():
+        raise SystemExit("circulation banner still present")
+    if HOGAN_OPEN not in full or HOGAN_AVG not in full:
+        raise SystemExit("Hogan weather sentences missing from PDF")
+    t1 = _page_with(pages, "Table 1. Outcome summary")
+    t2 = _page_with(pages, "Table 2. Model 1:")
+    t3 = _page_with(pages, "Table 3. Uncertainty ladder")
+    f1 = _page_with(pages, "Figure 1. First-event")
+    f2 = _page_with(pages, "Figure 2. Official cold days")
+    f3 = _page_with(pages, "Figure 3. Model 1 count ratios")
+    if "Coronary heart disease" not in pages[t1] or "Heart failure" not in pages[t1]:
+        raise SystemExit(f"Table 1 split or incomplete on page {t1 + 1}")
+    for label in (
+        "Hot nights / 5 days",
+        "Cold days / 5 days",
+        "Very hot days / 5 days",
+        "1.022 (1.002-1.042)",
+        "1.073 (1.006-1.144)",
+    ):
+        if label not in pages[t2]:
+            raise SystemExit(f"Table 2 missing {label!r} on page {t2 + 1}")
+    if pages[t2].count("CHD") < 6 or "HF" not in pages[t2]:
+        raise SystemExit(f"Table 2 split on page {t2 + 1}")
+    if "CHD hot nights" not in pages[t3] or "HF cold days" not in pages[t3]:
+        raise SystemExit(f"Table 3 split on page {t3 + 1}")
+    caps = (t1, t2, t3, f1, f2, f3)
+    if len(set(caps)) != 6:
+        raise SystemExit(f"tables/figures share pages: {caps}")
+    print(
+        f"pdf layout ok: {len(pages)} pages; "
+        f"T1 p{t1+1} T2 p{t2+1} T3 p{t3+1} F1 p{f1+1} F2 p{f2+1} F3 p{f3+1}"
+    )
+
+
 if __name__ == "__main__":
     build_docx()
     convert_pdf()
+    review_pdf()

@@ -179,7 +179,8 @@ def test_final_docx_and_pdf_exist_when_built():
     assert "authors will determine" not in texts.lower()
     assert "141 of 145" not in texts.split("Results", 1)[0]
     assert "Table 2 reports Model 1" in texts
-    assert "Paste into the shared live document" in texts
+    assert "Paste into the shared live document" not in texts
+    assert "do not circulate this file" not in texts.lower()
     assert "[22]" in texts
     assert "daily mean temperature" in texts
     assert "failed simulation calibration" not in texts.split("Results", 1)[0]
@@ -189,6 +190,48 @@ def test_final_docx_and_pdf_exist_when_built():
     assert "UW XX-XXX" in joined or "IRB" in joined
     assert "Model 2" in joined
     assert "rainfall" in joined.lower()
+
+
+def _norm(text: str) -> str:
+    collapsed = " ".join(text.replace("\u00ad", "").split())
+    return collapsed.replace("–", "-").replace("—", "-")
+
+
+def test_print_pdf_has_no_banner_and_keeps_tables_on_one_page():
+    import pymupdf
+
+    assert PDF.is_file(), f"missing {PDF}"
+    pdf = pymupdf.open(PDF)
+    pages = [_norm(page.get_text()) for page in pdf]
+    full = "\n".join(pages)
+    assert "Paste into the shared live document" not in full
+    assert "do not circulate this file" not in full.lower()
+    assert HOGAN_OPEN in full
+    assert HOGAN_AVG in full
+    assert "UW XX-XXX" in full
+    assert "1.022 (1.002-1.042)" in full
+    assert "1.073 (1.006-1.144)" in full
+
+    def page_with(needle: str) -> int:
+        hits = [i for i, text in enumerate(pages) if needle in text]
+        assert hits, f"PDF missing {needle!r}"
+        return hits[0]
+
+    t1 = page_with("Table 1. Outcome summary")
+    t2 = page_with("Table 2. Model 1:")
+    t3 = page_with("Table 3. Uncertainty ladder")
+    f1 = page_with("Figure 1. First-event")
+    f2 = page_with("Figure 2. Official cold days")
+    f3 = page_with("Figure 3. Model 1 count ratios")
+    assert "Coronary heart disease" in pages[t1]
+    assert "Heart failure" in pages[t1]
+    assert "Hot nights / 5 days" in pages[t2]
+    assert "Very hot days / 5 days" in pages[t2]
+    assert pages[t2].count("CHD") >= 6
+    assert "HF" in pages[t2]
+    assert "CHD hot nights" in pages[t3]
+    assert "HF cold days" in pages[t3]
+    assert len({t1, t2, t3, f1, f2, f3}) == 6
 
 
 if __name__ == "__main__":
@@ -203,6 +246,7 @@ if __name__ == "__main__":
         test_stroke_limitation_does_not_name_correspondence,
         test_climatology_series_is_weather_only,
         test_final_docx_and_pdf_exist_when_built,
+        test_print_pdf_has_no_banner_and_keeps_tables_on_one_page,
     ]
     for fn in tests:
         fn()

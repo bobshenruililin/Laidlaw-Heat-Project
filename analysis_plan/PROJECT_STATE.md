@@ -1,11 +1,17 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-24
+**Last updated:** 2026-08-27
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0n. Canonical update — print Hogan PDF for Bishai (27 August)
+
+- Bob is printing the 24 August live manuscript for Bishai’s review. Circulation banner removed. Tables 1–3 each stay on one page; figures and major IMRD sections start new pages. 21 A4 pages. SHA prefix `436fb4ff1b278ec8`.
+- Science unchanged: Model 1 only in Table 2; all twelve *q* > 0.19; Hogan HKO sentences verbatim; `UW XX-XXX`; Acknowledgements `None.` Gate 3 still open.
+- Form 2a still uses the Stage 3 essay, not this file. Print: `manuscript/live_collaborative/Heat_CVD_Manuscript_20260824_hogan.pdf`. Review: `manuscript/live_collaborative/PRINT_REVIEW_2026-08-27.md`. Durable: [`knowledge/2026-08-27_hogan_print_for_bishai.md`](../knowledge/2026-08-27_hogan_print_for_bishai.md).
 
 ## 0m. Canonical update — Stage 3 Hogan alignment for Bishai (24 August)
 

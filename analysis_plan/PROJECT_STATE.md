@@ -1,11 +1,18 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-27
+**Last updated:** 2026-08-28
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0o. Canonical update — Fukuda / Tung Ngai pitch scoped from the repo (28 August)
+
+- Gansu, Medellín, Nordics, Berlin/London field notes are **not in this repository**. Do not invent them for Fukuda.
+- Honest 12-week object: a health-security **policy brief** translating the exploratory HK thermal–CHD/HF identification work. Not a second journal paper. Not Gate 3.
+- Tung Ngai ESF is publicly GBA/Mainland, ceiling HK$100,000. Laidlaw LiA is a separate 6-week second summer. Pack: `reports/fukuda_pitch/`. Audit: [`../knowledge/2026-08-28_portfolio_audit_fukuda.md`](../knowledge/2026-08-28_portfolio_audit_fukuda.md).
+- Do not rebuild Stage 3 PDFs. Do not email Fukuda from an agent account. Gate 3 still open.
 
 ## 0n. Canonical update — print Hogan PDF for Bishai (27 August)
 

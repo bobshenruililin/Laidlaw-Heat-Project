@@ -12,5 +12,9 @@ If any of these are on your laptop or in email, uploading or pasting them would 
 | 6 | Official sample poster PDF (the Desktop path was not mounted in cloud) | Poster QA only |
 | 7 | Jasmine 2020 full PDF + supplement | Literature completeness; not Stage 3 blocking |
 | 8 | Exact Stage 3 deadline date if it is not “~3 weeks from 12 Aug” | Calendar |
+| 9 | Tung Ngai Endeavour Support Fund circular / award letter (eligible lines, duration, GBA definition) | Required before telling Fukuda the brief is fully funded |
+| 10 | Horizons note on LiA year (2027 vs any academic-year variant) | 12-week Sep–Nov is not the published 6-week LiA |
+| 11 | Any Gansu / Medellín / Nordics / Berlin / London notebooks | Not in this repo; cannot be cited until deposited |
+| 12 | Biochemistry / PPA enrolment evidence if that bridge is to be claimed | Degree in-repo is BASc GHD only |
 
 Not needed tonight: HA microdata, daily admissions, medication/BMI extracts, CNS journal strategy.

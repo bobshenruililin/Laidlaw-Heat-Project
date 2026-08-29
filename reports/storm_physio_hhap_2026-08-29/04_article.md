@@ -12,7 +12,7 @@ Candidate mechanisms for a night residual sit outside this design. Ambient heat 
 
 ## Cold / HF (hypothesis)
 
-A corresponding hypothesis for HF is haemodynamic rather than nocturnal. Cold exposure can raise sympathetic outflow, peripheral resistance, and afterload; a failing left ventricle has little reserve against that load [27,28]. Goggins and Chan’s daily Hong Kong HF series remains the local epidemiological neighbour, not a magnitude to import [21]. Influenza, indoor conditions, and care-seeking remain unseparated on a monthly grain [18]. The present counts do not measure afterload, blood pressure, or infection. The hypothesis is that official cold-day burden marks winters in which those loads are more frequent. A heat-only reading of this file would miss the more coherent residual.
+A corresponding hypothesis for HF is haemodynamic rather than nocturnal. Cold exposure can raise sympathetic outflow, peripheral resistance, and afterload; a failing heart has little reserve against that load [27,28]. Goggins and Chan’s daily Hong Kong HF series remains the local epidemiological neighbour, not a magnitude to import [21]. Influenza, indoor conditions, and care-seeking remain unseparated on a monthly grain [18]. The present counts do not measure afterload, blood pressure, or infection. The hypothesis is that official cold-day burden marks winters in which those loads are more frequent. A heat-only reading of this analysis would miss the more coherent residual.
 
 ## WHO eight elements × Hong Kong bundle (inform; do not evaluate)
 

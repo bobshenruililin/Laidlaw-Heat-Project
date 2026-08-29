@@ -30,3 +30,4 @@ These are month-count associations after a linear reporting scale `I(count/5)`. 
 5. `05_hhap_crosswalk.md` — WHO eight elements × HK bundle × this panel.
 6. `06_kill_list.md` — banned sentences.
 7. `07_peer_review.md` — Fable-5 Max / Opus 5 Max / Sol 5.6 Max personas (Cloud Agent quota exhausted; local pass).
+8. `08_sol_live.md` — live Sol HHAP-routing and Stage-3 GO/NO-GO (quota-blocked model; same seat).

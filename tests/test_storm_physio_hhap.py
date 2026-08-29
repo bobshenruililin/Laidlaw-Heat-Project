@@ -44,6 +44,7 @@ def test_storm_packet_exists():
         "05_hhap_crosswalk.md",
         "06_kill_list.md",
         "07_peer_review.md",
+        "08_sol_live.md",
     ):
         assert (STORM / name).is_file(), name
 

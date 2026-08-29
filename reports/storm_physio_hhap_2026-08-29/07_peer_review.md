@@ -21,4 +21,6 @@
 
 **GO after PDF rebuild.** WHO eight elements are named from the 2026 second edition. Hong Kong is described as a warning / communication / shelter **bundle**, not a missing municipal HHAP and not an evaluated one. Table A2 (Laidlaw appendix) has can/cannot cells for all eight elements plus a cold-weather counterpart. Stage 3 keeps Model 1/2/3 language, “have not been fitted,” “no health coefficients are invented,” no “core panel,” no Gate 3. Introduction–Conclusion 2,989 words (band 2,000–3,000). Essay SHA prefix `f55f8f14f214bc92`. If a supervisor block was already signed against `605cd8db43072cb5`, Bob must decide whether to send the new file.
 
+**Live pass:** [`08_sol_live.md`](08_sol_live.md) (GO; no Stage 3 or live HHAP prose fix).
+
 **Cannot inform (stated):** consecutive-day trigger; admissions averted; warning performance; indoor temperature; element 5 (health-system resilience) operations; element 7 near-real-time surveillance.

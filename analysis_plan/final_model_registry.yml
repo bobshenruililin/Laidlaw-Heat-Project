@@ -21,6 +21,32 @@ estimand:
     - attributable_fraction
     - excess_deaths
 
+model3_exposures:
+  M3W:
+    variable: days_warmer_than_climatology
+    contrast: 5
+    unit: days
+    pole: heat
+    encoding: leave_one_year_out_same_calendar_day_mean_2012_2023
+  M3C:
+    variable: days_cooler_than_climatology
+    contrast: 5
+    unit: days
+    pole: cold
+    encoding: leave_one_year_out_same_calendar_day_mean_2012_2023
+  M3W_tmax:
+    variable: days_tmax_above_climatology
+    contrast: 5
+    unit: days
+    pole: heat
+    role: sensitivity
+  M3C_tmin:
+    variable: days_tmin_below_climatology
+    contrast: 5
+    unit: days
+    pole: cold
+    role: sensitivity
+
 core_exposures:
   P01A:
     variable: mean_temp
@@ -113,6 +139,10 @@ robustness_scenarios:
   - scenario_id: R08_pre_covid
     controls: [calendar_month_factor, ns_time_df4]
     restriction: "year < 2020"
+  - scenario_id: Hogan_RH_rain
+    controls: [calendar_month_factor, ns_time_df4, relative_humidity, rainfall]
+    role: model_2_specified
+    note: "Hogan 24 Aug Model 2. Monthly mean RH and monthly total rainfall. Not a replacement for Table 2 Model 1."
   - scenario_id: R09_absolute_humidity
     controls: [calendar_month_factor, ns_time_df4, absolute_humidity]
   - scenario_id: R10_NO2

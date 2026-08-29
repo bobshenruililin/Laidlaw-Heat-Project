@@ -226,6 +226,11 @@ I thank Hogan for guidance on weather definitions and on academic writing, and Z
 
 **Daily-exposure calibration.** The constrained monthly-outcome, daily-exposure estimator was evaluated in a 500-replicate simulation matched to Hong Kong weather and to the overdispersion and residual dependence of the monthly series [@basagana2024md; @basagana2026md]. In the most difficult cells, false-positive rates reached 0.150, confidence-interval coverage fell to 0.840, and sign recovery was poor for moderate effects. Admission of any real daily coefficient required all frozen calibration criteria to pass. They did not. This is a project-specific calibration result, not a general indictment of the method. A full daily distributed-lag non-linear model is not identified from 132 monthly sums.
 
+```{=latex}
+\clearpage
+\Needspace{18\baselineskip}
+```
+
 **Table A2.** WHO 2026 heat–health action-plan elements, Hong Kong instruments, and what this panel can inform. This table is a mapping, not an evaluation.
 
 | WHO element | Hong Kong instrument | This panel can inform | This panel cannot inform |

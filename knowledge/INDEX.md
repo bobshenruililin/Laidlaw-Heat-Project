@@ -20,7 +20,7 @@
 
 ## Current meeting record
 
-- [`2026-08-29_storm_physio_hhap.md`](2026-08-29_storm_physio_hhap.md) — STORM write: night/CHD and cold/HF hypotheses; WHO 2026 eight elements × HK bundle in the live manuscript and Laidlaw Appendix A2. Mapping, not evaluation. Gate 3 open. Stage 3 rebuild authorised.
+- [`2026-08-29_storm_physio_hhap.md`](2026-08-29_storm_physio_hhap.md) — STORM write: night/CHD and cold/HF hypotheses; WHO 2026 eight elements × HK bundle. Mapping, not evaluation. Live Opus physiology-register: GO after two clauses (`reports/storm_physio_hhap_2026-08-29/08_opus_live.md`). Gate 3 open.
 - [`2026-08-27_crown_df_physiology_policy.md`](2026-08-27_crown_df_physiology_policy.md) — Bishai: crown one of 5/6/8. Crown **6-df as robustness** (only more-flexible spline that keeps both headlines). 5 is the reporting scale, not a spline. 8 opens HF cold days onto 1. Physiology ≠ 6-day cliff. Gate 3 open. Table 2 unchanged.
 - [`2026-08-27_live_figure3_relabel.md`](2026-08-27_live_figure3_relabel.md) — live Figure 3 rebuilt as a portrait official-count forest; S6 holds continuous temperature. Teaching matplotlib plot rejected. Gate 3 open.
 - [`2026-08-27_bishai_forest_precovid_duration_hhap.md`](2026-08-27_bishai_forest_precovid_duration_hhap.md) — Bishai on Figure 3: pre-COVID = 2013–2019; the CI away from 1 is HF cold days 1.113; 8/6/5 are spline df + per-5-day scale, not duration; HHAP routing against HKO/DH instruments. Gate 3 open. Form 2a unchanged.

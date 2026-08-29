@@ -22,3 +22,5 @@ Laidlaw Stage 3: same science in the accessible register; Appendix Table A2 (exc
 All twelve Model 1 *q* > 0.19. 6-df remains named robustness only. `I(count/5)` remains a reporting scale. Gate 3 open. Stroke undelivered. Models 2–3 unfitted.
 
 Packet: [`reports/storm_physio_hhap_2026-08-29/`](../reports/storm_physio_hhap_2026-08-29/). Tests: `tests/test_storm_physio_hhap.py`.
+
+Live Opus physiology-register (quota-blocked model): **GO after two clauses** in the cold/HF paragraph (`failing left ventricle` → `failing heart`; `this file` → `this analysis`). Night/CHD sources remain hypothesis. Record: [`reports/storm_physio_hhap_2026-08-29/08_opus_live.md`](../reports/storm_physio_hhap_2026-08-29/08_opus_live.md). Hogan PDF not rebuilt.

@@ -44,6 +44,8 @@ def test_storm_packet_exists():
         "05_hhap_crosswalk.md",
         "06_kill_list.md",
         "07_peer_review.md",
+        "08_fable_live.md",
+        "08_opus_live.md",
         "08_sol_live.md",
     ):
         assert (STORM / name).is_file(), name
@@ -75,6 +77,10 @@ def test_cold_physiology_is_hypothesis_not_goggins_import():
     assert "corresponding hypothesis for HF" in COLD
     assert "not a magnitude to import" in COLD
     assert "do not measure afterload" in COLD
+    assert "failing heart" in COLD
+    assert "failing left ventricle" not in COLD
+    assert "this file" not in COLD
+    assert "this analysis would miss" in COLD
     assert "[27,28]" in COLD or "[27, 28]" in COLD
     assert "[21]" in COLD
     assert "2.63" not in COLD

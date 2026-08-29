@@ -1,11 +1,19 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-27
+**Last updated:** 2026-08-29
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0r. Canonical update — STORM physiology + HHAP (29 August)
+
+- Bishai’s recommendation (physiological reason behind the two residuals; inform heat–health action-plan elements) is now in the live Discussion and the Laidlaw report. STORM packet: [`reports/storm_physio_hhap_2026-08-29/`](../reports/storm_physio_hhap_2026-08-29/). Durable: [`knowledge/2026-08-29_storm_physio_hhap.md`](../knowledge/2026-08-29_storm_physio_hhap.md).
+- Physiology is **hypothesis** (Chevance; Ioannou DOI `10.1139/apnm-2024-0105`; O’Connor; Ashe mixed BP; Ikäheimo; Li 2026). HHAP is **mapping** onto WHO 2026 eight elements and the HKO/DH/HAD bundle, not an evaluation. Prolonged Heat already names hot nights. CHP already names heart disease and high blood pressure. Indoor temperature unmeasured. Heat-only reading would miss HF × cold days.
+- Table 2, Abstract, Hogan HKO weather paragraph, `UW XX-XXX`, Acknowledgements `None.` unchanged. All twelve *q* > 0.19. 6-df remains named robustness only. Gate 3 open. Stage 3 authorised to rebuild (24 August hash superseded for the programme PDF; form 2a is a human decision if already signed).
+- Cloud-agent Fable/Opus/Sol quota exhausted; local persona pass in `07_peer_review.md`.
+
 
 ## 0q. Canonical update — crown 6-df as robustness, not Table 2 (27 August, night)
 

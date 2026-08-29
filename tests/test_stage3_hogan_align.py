@@ -17,7 +17,7 @@ REPORT_COPY = ROOT / "reports" / "laidlaw_stage3" / "ShenRuililin_Laidlaw_Stage3
 POSTER_COPY = ROOT / "reports" / "poster" / "ShenRuililin_Laidlaw_Stage3Poster.pdf"
 
 # Filled after the 24 Aug rebuild. Update if Bob authorises another rebuild.
-REPORT_SHA_PREFIX = "f55f8f14f214bc92"
+REPORT_SHA_PREFIX = "1200082a9e7c9caa"
 POSTER_SHA_PREFIX = "a972206e61932650"
 
 BANNED = (

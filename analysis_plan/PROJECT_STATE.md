@@ -7,6 +7,13 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0s. Canonical update — objective audit; Model 2/3 plumbing; Gate 3 still open (29 August)
+
+- Three inherit auditors scored the long physiology/HHAP insert **WORSE** (Fable, Opus) or **MIXED** (Sol) against the shorter Discussion. The live Discussion was cut. Table A2 no longer pairs residuals with alerts. Audit: [`reports/objective_audit_physio_hhap_2026-08-29.md`](../reports/objective_audit_physio_hhap_2026-08-29.md).
+- Gate 3 remains **OPEN**. Confirmatory freeze forbidden (*q* > 0.19). Team request only: [`reports/gate3_option_a_team_request_2026-08-29.md`](../reports/gate3_option_a_team_request_2026-08-29.md).
+- Model 2/3 still unfitted: governed panels absent. `CONTROL_TERM_MAP` now accepts RH and rainfall. Model 3 fitter: `scripts/68_hogan_model3_climatology.R`. Drop-in: [`send_pack_2026-08-29/MODEL2_MODEL3_DROPIN.md`](send_pack_2026-08-29/MODEL2_MODEL3_DROPIN.md).
+- Table 2, Abstract, Hogan weather, poster unchanged. Hogan PDF SHA prefix `346f2174cb7cc603`. Stage 3 essay SHA prefix `1200082a9e7c9caa`. Do not reconstruct counts from Figure 1.
+
 ## 0r. Canonical update — STORM physiology + HHAP (29 August)
 
 - Bishai’s recommendation (physiological reason behind the two residuals; inform heat–health action-plan elements) is now in the live Discussion and the Laidlaw report. STORM packet: [`reports/storm_physio_hhap_2026-08-29/`](../reports/storm_physio_hhap_2026-08-29/). Durable: [`knowledge/2026-08-29_storm_physio_hhap.md`](../knowledge/2026-08-29_storm_physio_hhap.md).

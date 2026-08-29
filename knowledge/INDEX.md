@@ -20,6 +20,7 @@
 
 ## Current meeting record
 
+- [`2026-08-29_objective_audit_model23.md`](2026-08-29_objective_audit_model23.md) — inherit auditors: long insert WORSE/MIXED; Discussion cut; Gate 3 still open; Model 2/3 unfitted; RH/rain map and Model 3 fitter ready for drop-in.
 - [`2026-08-29_storm_physio_hhap.md`](2026-08-29_storm_physio_hhap.md) — STORM write: night/CHD and cold/HF hypotheses; WHO 2026 eight elements × HK bundle. Mapping, not evaluation. Live Opus physiology-register: GO after two clauses (`reports/storm_physio_hhap_2026-08-29/08_opus_live.md`). Gate 3 open.
 - [`2026-08-27_crown_df_physiology_policy.md`](2026-08-27_crown_df_physiology_policy.md) — Bishai: crown one of 5/6/8. Crown **6-df as robustness** (only more-flexible spline that keeps both headlines). 5 is the reporting scale, not a spline. 8 opens HF cold days onto 1. Physiology ≠ 6-day cliff. Gate 3 open. Table 2 unchanged.
 - [`2026-08-27_live_figure3_relabel.md`](2026-08-27_live_figure3_relabel.md) — live Figure 3 rebuilt as a portrait official-count forest; S6 holds continuous temperature. Teaching matplotlib plot rejected. Gate 3 open.
@@ -77,7 +78,7 @@
 - [`outputs/release_chd_hf/`](../outputs/release_chd_hf/) — disclosure-minimised 29-check release.
 - [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md) — reusable YES/NO decision table and live-manuscript workflow.
 - [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Present from `Heat_CVD_Manuscript_20260824_hogan.pdf` / `.docx`.
-- [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `f55f8f14f214bc92`, 29 Aug physiology/HHAP rebuild).
+- [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `1200082a9e7c9caa`, 29 Aug objective-audit cut).
 - [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) — current A0 portrait poster (SHA prefix `a972206e61932650`); Model 1 shown; Models 2–3 specified, not fitted.
 - [`analysis_plan/send_pack_2026-08-24/`](../analysis_plan/send_pack_2026-08-24/) — current Email A: 24 August essay + form 2a. Replaces the 22 August PDFs for sending.
 - [`analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/) — 22 August Email A origin. Superceded for sending.

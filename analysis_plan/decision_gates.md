@@ -73,6 +73,8 @@ Owners and dates use placeholders where still open.
 universe, simulation gates, and claim tiers. This improves transparency but
 does **not** close Gate 3 or convert A1 into a confirmatory analysis.
 
+**29 Aug 2026:** Bob asked an agent to close Gate 3 and fit Models 2/3. **Still OPEN.** Confirmatory freeze remains false (all twelve *q* > 0.19). Team request: `reports/gate3_option_a_team_request_2026-08-29.md`. Models 2/3 remain unfitted (panels absent).
+
 ---
 
 ## Gate 4 — Multi-method association runs

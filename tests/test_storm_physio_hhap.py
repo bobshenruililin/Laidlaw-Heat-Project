@@ -31,7 +31,7 @@ def _between(text: str, start: str, end: str) -> str:
 WARNINGS = _paragraph(MS_TEXT, "A monthly official-day total")
 NIGHTS = _paragraph(MS_TEXT, "Candidate mechanisms for a night residual")
 COLD = _paragraph(MS_TEXT, "A corresponding hypothesis for HF")
-HHAP = _paragraph(MS_TEXT, "The World Health Organization")
+HHAP = _paragraph(MS_TEXT, "Hong Kong already issues a Very Hot Weather Warning")
 
 
 def test_storm_packet_exists():
@@ -62,15 +62,15 @@ def test_consecutive_paragraph_still_refuses_evaluation():
 
 
 def test_night_physiology_is_hypothesis_not_identification():
-    assert "physiological claim is therefore a hypothesis" in NIGHTS
+    assert "The hypothesis is that a hot-night count can differ" in NIGHTS
     assert "This panel does not identify that pathway." in NIGHTS
     assert "do not measure first CHD hospitalisation" in NIGHTS
     assert "do not measure indoor temperature" in NIGHTS
-    assert "blood-pressure findings were mixed" in NIGHTS
-    assert "none demonstrated sleep as a mediator" in NIGHTS
-    assert "26.3" in NIGHTS and "0.2" in NIGHTS
+    assert "mixed blood-pressure findings" in NIGHTS
+    assert "no demonstration of sleep as a mediator" in NIGHTS
+    assert "seven men" in NIGHTS
     assert "[23]" in NIGHTS and "[24]" in NIGHTS and "[25]" in NIGHTS and "[26]" in NIGHTS
-    assert "[17]" in NIGHTS
+    assert "autonomic tone can fail" not in NIGHTS
 
 
 def test_cold_physiology_is_hypothesis_not_goggins_import():
@@ -103,12 +103,15 @@ def test_hhap_maps_who_eight_and_hk_bundle_without_evaluation():
     assert "hot nights" in HHAP
     assert "heart disease or high blood pressure" in HHAP
     assert "Cold Weather Warning" in HHAP
-    assert "cannot evaluate any of them" in HHAP
-    assert "That overlap is a mapping, not a test of the alert." in HHAP
+    assert "They are not a test of any alert" in HHAP
+    assert "do not use the Model 1 residuals as evidence" in HHAP
     assert "do not set a five-day trigger" in HHAP
     assert "do not count admissions averted" in HHAP
     assert "do not say whether existing warnings work" in HHAP
-    assert "[29]" in HHAP and "[32]" in HHAP and "[31,33]" in HHAP
+    assert "can inform four" not in HHAP
+    assert "sits with official" not in HHAP
+    assert "[29]" in HHAP and "[32]" in HHAP
+    assert "[30,31,33]" in HHAP or ("[31,33]" in HHAP)
 
 
 def test_kill_list_absent_from_manuscript_body():
@@ -142,8 +145,8 @@ def test_builder_and_live_discussion_stay_in_sync():
     for needle in (
         "Candidate mechanisms for a night residual sit outside this design.",
         "A corresponding hypothesis for HF is haemodynamic rather than nocturnal.",
-        "This panel can inform four of those elements and cannot evaluate any of them.",
-        "That overlap is a mapping, not a test of the alert.",
+        "They are not a test of any alert",
+        "do not use the Model 1 residuals as evidence",
         "Chevance G, Minor K, Vielma C",
         "Ioannou LG, Tsoutsoubi L, Mantzios K",
         "9789289062930",

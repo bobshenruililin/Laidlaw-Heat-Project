@@ -15,7 +15,7 @@ Live Discussion keeps the test-locked consecutive-days paragraph, then adds:
 
 Hogan PDF builder paragraphs were updated in lockstep. Table 2, Abstract, Hogan HKO weather sentences, `UW XX-XXX`, Acknowledgements `None.` unchanged.
 
-Laidlaw Stage 3: same science in the accessible register; Appendix Table A2 (excluded from the word count); Introduction–Conclusion 2,989 words. Bob authorised this rebuild (the 24 August freeze is superseded for the programme PDF). If form 2a was already signed against SHA prefix `605cd8db43072cb5`, that is a human decision.
+Laidlaw Stage 3: same science in the accessible register; Appendix Table A2 (excluded from the word count); Introduction–Conclusion 2,989 words. Essay SHA prefix `0b359b1f8527d7a7`. Poster unchanged `a972206e61932650`. Hogan PDF SHA prefix `2805bce9bf7bd825` (23 A4 pages). If form 2a was already signed against SHA prefix `605cd8db43072cb5`, that is a human decision.
 
 ## Rails that still hold
 

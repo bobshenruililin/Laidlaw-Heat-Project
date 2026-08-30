@@ -10,7 +10,7 @@ Bob asked to automate prior scientific-honesty advice (objective audit, Gate 3 s
 
 1. This extract’s identification is ecological monthly negative-binomial count ratios with a Newey–West ladder, not staggered DiD. Generic TWFE / Callaway / Medicaid / QALY defaults would be a category error in the live Methods.
 2. DUA zero-ingestion is now in `.cursorignore` (governed `*_analysis_panel.csv`, HA placeholder, `*.dta`). Pipeline mocking uses `data_processed/samples/SYNTHETIC_chd_hf_schema.csv` (8 rows, `data_status = SYNTHETIC`).
-3. Playbook 07 + `scripts/69_pr_board.py` classify open PRs. Close rule: policy `CLOSE_SUPERSEDED` **and** zero unique files versus `origin/cursor/model23-gate3-b75b`. Living science PR is **#82**.
+3. Playbook 07 + `scripts/69_pr_board.py` classify open PRs. Close rule: policy `CLOSE_SUPERSEDED` **and** zero unique files versus `origin/cursor/model23-gate3-b75b`. Living science PR is **#82**. Closed this session (not merged): #81, #79, #78, #77, #69 (already in `main` via #71). Open stack is 13.
 4. Playbook 08 + DAG sketch + identification prompt revive the *idea* of closed PR 54 without dumping Monte Carlo into the journal track.
 5. `/objective-audit` + `scripts/71_objective_audit_tripwires.py` encode WORSE-allowed inherit audit. Forbidden Discussion phrases remain absent (`can inform four`, `sits with official`).
 6. Gate 3 is still OPEN. Table 2 numbers are unchanged. Governed panels remain absent.

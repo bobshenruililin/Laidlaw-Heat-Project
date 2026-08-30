@@ -1,0 +1,9 @@
+month_id,year,month,time_index,n_events,data_status,days_in_month,mean_temp,mean_tmax,mean_tmin,hot_nights,cold_days,very_hot_days,relative_humidity,rainfall,notes
+2013-01,2013,1,1,101,SYNTHETIC,31,16.2,19.1,14.0,0,8,0,78.0,24.5,SYNTHETIC mock schema — not HA counts
+2013-02,2013,2,2,98,SYNTHETIC,28,17.4,20.3,15.1,0,4,0,80.0,31.0,SYNTHETIC mock schema — not HA counts
+2013-03,2013,3,3,104,SYNTHETIC,31,20.1,23.0,17.8,0,0,0,82.0,45.2,SYNTHETIC mock schema — not HA counts
+2013-04,2013,4,4,99,SYNTHETIC,30,24.0,26.8,21.5,1,0,0,83.0,90.1,SYNTHETIC mock schema — not HA counts
+2013-05,2013,5,5,107,SYNTHETIC,31,27.2,29.8,25.1,4,0,1,84.0,120.0,SYNTHETIC mock schema — not HA counts
+2013-06,2013,6,6,110,SYNTHETIC,30,28.8,31.2,26.9,8,0,2,82.0,350.0,SYNTHETIC mock schema — not HA counts
+2013-07,2013,7,7,108,SYNTHETIC,31,29.1,31.5,27.2,10,0,3,81.0,280.0,SYNTHETIC mock schema — not HA counts
+2013-08,2013,8,8,105,SYNTHETIC,31,28.9,31.4,27.0,9,0,2,81.0,260.0,SYNTHETIC mock schema — not HA counts

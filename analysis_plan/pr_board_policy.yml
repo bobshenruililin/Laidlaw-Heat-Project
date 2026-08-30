@@ -1,0 +1,90 @@
+# Standing classification for Playbook 07.
+# Unique work is never closed by number convenience.
+# living_science_ref is the branch that currently contains the journal-track tip.
+
+living_science_pr: 82
+living_science_ref: origin/cursor/model23-gate3-b75b
+base_branch: main
+board_title: "Open PR board — Laidlaw Heat Project"
+
+classified:
+  - number: 82
+    action: KEEP_LIVING_SCIENCE
+    note: "Living journal-track tip (audit cut, Model 2/3 plumbing, Cursor workflow). Update this PR; do not open a parallel science PR."
+
+  - number: 81
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Long STORM insert; unique files vs living tip = 0. WORSE audit cut lives on #82."
+
+  - number: 79
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Crown 6-df robustness; unique files vs living tip = 0."
+
+  - number: 78
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Live Figure 3 rebuild; unique files vs living tip = 0."
+
+  - number: 77
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Bishai forest/HHAP mapping; unique files vs living tip = 0."
+
+  - number: 69
+    action: CLOSE_SUPERSEDED
+    superseded_by: 71
+    note: "Hogan Methods Word/PDF. Already merged via PR 71 (2026-08-27). Close as duplicate of merged work."
+
+  - number: 80
+    action: KEEP_UNIQUE
+    note: "Fukuda pitch pack. MERGEABLE. Not science-stack. Do not fold into #82."
+
+  - number: 75
+    action: KEEP_UNIQUE
+    note: "27 Aug lab-talk slides. CONFLICTING. Event passed; unique HTML/notes remain on the branch. Port before close."
+
+  - number: 74
+    action: KEEP_UNIQUE
+    note: "Thursday form 2a print pack. CONFLICTING. Unique send_pack_2026-08-25. Supersedes the meeting overlay of #73 but does not contain #73's four unique files."
+
+  - number: 73
+    action: KEEP_UNIQUE
+    note: "Form 2a signature memo. CONFLICTING. Four unique files not in #74. Do not close as a duplicate of #74."
+
+  - number: 68
+    action: KEEP_UNIQUE
+    note: "Playbook 06 scientific-search harness. CONFLICTING. Unique analysis_plan/scientific_search/. Do not reuse number 06 in this branch."
+
+  - number: 67
+    action: KEEP_UNIQUE
+    note: "Aggregation-identifiability contribution. DRAFT + CONFLICTING. Three unique memos."
+
+  - number: 66
+    action: KEEP_UNIQUE
+    note: "Email A form 2a topic off AMI/stroke. DRAFT + CONFLICTING. One unique knowledge file."
+
+  - number: 62
+    action: KEEP_ADMIN
+    note: "UK conference airfare / Horizons. Not science. CONFLICTING. Unique reports/horizons_uk_conference_2026/."
+
+  - number: 61
+    action: KEEP_DEAD_PENDING_HUMAN
+    note: "Guo 2016 TV climate panel. Hogan refused TV-day counts in the live weather Methods. Unique scripts/CSV remain. Do not merge until Hogan accepts; do not delete the climate work."
+
+  - number: 58
+    action: KEEP_UNIQUE
+    note: "18 Aug collab-draft roundtable. DRAFT + CONFLICTING. Unique knowledge + goal prompt."
+
+  - number: 53
+    action: KEEP_UNIQUE
+    note: "Identification crucible. DRAFT + CONFLICTING. Unique outputs/identification_crucible/. Still the licensed-paragraph record."
+
+  - number: 46
+    action: KEEP_UNIQUE
+    note: "Week 4–6 Laidlaw blogs. DRAFT + CONFLICTING. Unique reports/blog/week4–6."
+
+default_action: KEEP_REVIEW
+do_not_merge: true
+do_not_freeze_gate3: true

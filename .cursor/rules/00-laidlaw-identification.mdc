@@ -1,0 +1,24 @@
+---
+description: Default identification for this Hong Kong monthly CHD/HF extract — not generic TWFE/DiD.
+alwaysApply: true
+---
+
+# Identification for this repository
+
+Assume **non-experimental, ecological, territory-month** data unless a file is labelled otherwise.
+
+**Licensed estimand.** Separate negative-binomial models of monthly first-hospitalisation counts (CHD, HF) among people with T2D and/or HTN, Hong Kong, January 2013–December 2023 (132 months), with calendar-month factors, a 4-df time-trend spline, and a days-in-month offset. Report count ratios. Official hot nights / very hot days / cold days are interpreted **per five additional days in a month** (`I(count/5)`). That is a linear reporting scale, not a consecutive-day trigger.
+
+**Uncertainty.** Always display the ladder: model-based, HC1, Newey–West lag-3, Newey–West lag-6. Clustered “state/hospital/market” SEs are the wrong analogy. Do not choose an SE method because its interval excludes 1.
+
+**What this is not.** Cohort incidence, principal-diagnosis CHD/HF, AMI, individual causality, daily DLNM, mortality attributable fraction, excess-death model, or a staggered policy DiD. Stroke remains undelivered. Admission cause is absent.
+
+**Gate 3.** Open. Confirmatory freeze is false while all twelve Model 1 *q* > 0.19. Only Hogan, Roro, Bishai, and Bob can freeze. Agents may write a team request, never a freeze.
+
+**Hogan weather.** The live HKO paragraph (`HOGAN_OPEN` / `HOGAN_AVG`) is verbatim. Do not rewrite averaging, stations, or definitions.
+
+**Provenance labels.** `REAL`, `SYNTHETIC`, `HA_APPROVED_AGGREGATE`. Never invent HA row counts, ICD lists, IRB numbers, or Model 2/3 health coefficients when panels are absent.
+
+**Generic US health-econ defaults are out of scope for the journal track.** Do not reach for TWFE, Callaway & Sant'Anna, Sun & Abraham, did2s, synthdid, Medicaid expansion DiD, or QALY/CEA simulations when editing `manuscript/live_collaborative/` or Stage 3. Those tools belong only in Playbook 08 (Explore, synthetic).
+
+**Code defaults when writing estimators for this extract.** R (`MASS::glm.nb`, `splines`, project helpers in `scripts/final_model_helpers.R`), not `fixest` TWFE. Tables already export CSV for the Hogan builder (`scripts/64_hogan_20260824_manuscript_docx.py`) and Laidlaw Quarto/R path.

@@ -1,0 +1,27 @@
+# Forbidden phrases and honesty tripwires for inherit-only objective audit.
+# Named Fable/Opus/Sol Max seats are optional. WORSE is an allowed verdict.
+# This file does not freeze Gate 3.
+
+live_discussion_forbidden:
+  - "can inform four"
+  - "sits with official"
+  - "continued attention"
+
+essay_forbidden:
+  - "can inform four"
+
+never_claim:
+  - "we evaluated VHWW"
+  - "admissions averted"
+  - "Gate 3 is closed"
+  - "Gate 3 closed"
+
+hogan_builder_forbidden_substrings:
+  - "housing"
+
+require_in_decision_gates:
+  - "Gate 3 **OPEN**"
+
+require_absent_panels:
+  - "data_processed/chd_analysis_panel.csv"
+  - "data_processed/hf_analysis_panel.csv"

@@ -1,0 +1,18 @@
+---
+description: Data-use-agreement zero-ingestion pattern for Hospital Authority and other restricted files.
+alwaysApply: true
+---
+
+# DUA / zero ingestion
+
+Do not read, index, commit, or paste governed patient-level or approved-aggregate files.
+
+**Never open or summarise** `data_processed/chd_analysis_panel.csv`, `data_processed/hf_analysis_panel.csv`, files under `data_raw/ha_secure_placeholder/` except its README, `*.dta`, `*.sas7bdat`, or anything labelled confidential/restricted.
+
+**Do not reconstruct** 132 monthly counts from Figure 1, SVG paths, or annual totals.
+
+**May use** `data_processed/samples/` (SYNTHETIC schemas, 5–10 mock rows or labelled synthetic series) and public HKO/EPD climate files that are already in git.
+
+When writing cleaning or estimation code, bind to **column names and types** from the synthetic schema (`data_processed/samples/SYNTHETIC_chd_hf_schema.csv`) or from `scripts/final_model_helpers.R` (`.panel_required_columns`). Label every mock output `SYNTHETIC`.
+
+Playbook 02 remains the only path for a real HA arrival. Playbook 08 may use synthetic schemas only.

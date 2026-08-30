@@ -1,11 +1,19 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-29
+**Last updated:** 2026-08-30
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0t. Canonical update — Cursor health-econ rails + PR board (30 August)
+
+- Generic US health-econ Cursor advice (TWFE, Callaway & Sant'Anna, Medicaid DiD, QALY/CEA) is **not** this paper’s default. Always-on rules: [`.cursorrules`](../.cursorrules), [`.cursor/rules/`](../.cursor/rules/). DUA ignore: [`.cursorignore`](../.cursorignore). Synthetic 8-row schema: [`data_processed/samples/SYNTHETIC_chd_hf_schema.csv`](../data_processed/samples/SYNTHETIC_chd_hf_schema.csv).
+- Playbook **07** classifies open PRs and closes only superseded zero-unique science PRs. Living science PR remains **#82**. Playbook **06** stays on PR #68.
+- Playbook **08** is the Explore identification/HTA lab (synthetic only). Closed PR 54 is prior residue, not a manuscript section. `/objective-audit` automates the WORSE-allowed inherit audit without named Max seats.
+- Gate 3 remains **OPEN**. Table 2 unchanged. Model 2/3 still unfitted. Do not reconstruct counts from Figure 1.
+- Durable: [`knowledge/2026-08-30_health_econ_cursor_pr_board.md`](../knowledge/2026-08-30_health_econ_cursor_pr_board.md). Board: [`reports/pr_board_latest.md`](../reports/pr_board_latest.md).
 
 ## 0s. Canonical update — objective audit; Model 2/3 plumbing; Gate 3 still open (29 August)
 

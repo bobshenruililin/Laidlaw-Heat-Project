@@ -1,0 +1,31 @@
+# Generic "Cursor for a health-econ PhD" checklist → this repository
+# Agents must not copy the left-hand column into the live manuscript.
+
+items:
+  - generic: "Default to Callaway & Sant'Anna / Sun & Abraham / did2s / synthdid; avoid naive TWFE"
+    this_repo: "Forbidden default. Estimand is monthly NB count ratio with month factors and ns(time, 4)."
+    playbook: 8
+
+  - generic: "Cluster SEs at state / hospital / market"
+    this_repo: "Use the project ladder: Model, HC1, Newey-West lag-3, Newey-West lag-6."
+    playbook: 8
+
+  - generic: "DAG, collider bias, bad controls, IV, RDD, donut hole, pre-trends"
+    this_repo: "Teach against this extract. No running variable, no instrument, no staggered adoption."
+    playbook: 8
+
+  - generic: "Zero-ingestion DUA; .cursorignore; synthetic 5-10 row schema"
+    this_repo: "Required. See .cursorignore and data_processed/samples/SYNTHETIC_chd_hf_schema.csv."
+    playbook: 8
+
+  - generic: "Markov / PSA / CEAC / tornado / QALY"
+    this_repo: "Explore synthetic only under analysis_plan/health_econ/. Never live Discussion."
+    playbook: 8
+
+  - generic: "Quarto / modelsummary / etable / estout into LaTeX"
+    this_repo: "Journal PDF path is scripts/64_hogan_20260824_manuscript_docx.py. Do not overwrite Hogan HKO text."
+    playbook: 8
+
+  - generic: "R fixest / Python econml as default"
+    this_repo: "This extract uses MASS::glm.nb via scripts/final_model_helpers.R."
+    playbook: 8

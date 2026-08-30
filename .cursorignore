@@ -1,0 +1,26 @@
+# DUA / governed health data — never index or upload these into Cursor.
+# Aligns with .gitignore. Synthetic schemas under data_processed/samples/ stay visible.
+
+data_raw/ha_secure_placeholder/**
+!data_raw/ha_secure_placeholder/README.md
+
+data_processed/*_aggregates_normalized.csv
+data_processed/*_analysis_panel.csv
+data_processed/synthetic_analysis_panel.csv
+data_processed/synthetic_ha_outcomes.csv
+data_processed/.cache/
+
+# Restricted-access extracts (CMS, HCUP, Optum, HA microdata, Stata dumps)
+*.dta
+*.sas7bdat
+*.xpt
+data/raw/
+data/confidential/
+data/restricted/
+**/ha_microdata/**
+**/cms_claims/**
+**/hcup/**
+
+# Keep SYNTHETIC mock schemas indexable so agents can write pipelines without real rows
+!data_processed/samples/
+!data_processed/samples/**

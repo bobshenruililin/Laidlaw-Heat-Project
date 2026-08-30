@@ -10,16 +10,20 @@
 
 - [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md) — publication-register scholarly writing mode.
 - [Slash-command and blog-drafting contract](2026-07-26_commands_and_blog_auto.md) — command inventory, deck trigger, and human publication gate.
-- [Playbook skill router](../.cursor/skills/playbook/SKILL.md) — explicit `/playbook` selection across `01–05` and `99`.
+- [Playbook skill router](../.cursor/skills/playbook/SKILL.md) — explicit `/playbook` selection across `01–05`, `07–08`, `99` (Playbook 06 lives on PR #68).
 - [Playbook 01: Hogan definition lock](../analysis_plan/playbooks/01_hogan_definition_lock.md)
 - [Playbook 02: HA data arrival](../analysis_plan/playbooks/02_ha_data_arrival.md)
 - [Playbook 03: full analysis run](../analysis_plan/playbooks/03_full_analysis_run.md)
 - [Playbook 04: final write-up](../analysis_plan/playbooks/04_final_writeup.md)
 - [Playbook 05: auto-research lab](../analysis_plan/playbooks/05_auto_research_lab.md)
+- [Playbook 07: PR board](../analysis_plan/playbooks/07_pr_board.md)
+- [Playbook 08: health-econ identification lab](../analysis_plan/playbooks/08_health_econ_identification_lab.md)
+- [Objective audit](../.cursor/skills/objective-audit/SKILL.md) — inherit BETTER/WORSE/MIXED; WORSE allowed.
 - [Playbook 99: emergencies](../analysis_plan/playbooks/99_emergencies.md)
 
 ## Current meeting record
 
+- [`2026-08-30_health_econ_cursor_pr_board.md`](2026-08-30_health_econ_cursor_pr_board.md) — adapted Cursor/Grok 4.6 health-econ rails (not generic TWFE); DUA ignore; Playbooks 07–08; living science PR #82; Gate 3 still open.
 - [`2026-08-29_objective_audit_model23.md`](2026-08-29_objective_audit_model23.md) — inherit auditors: long insert WORSE/MIXED; Discussion cut; Gate 3 still open; Model 2/3 unfitted; RH/rain map and Model 3 fitter ready for drop-in.
 - [`2026-08-29_storm_physio_hhap.md`](2026-08-29_storm_physio_hhap.md) — STORM write: night/CHD and cold/HF hypotheses; WHO 2026 eight elements × HK bundle. Mapping, not evaluation. Live Opus physiology-register: GO after two clauses (`reports/storm_physio_hhap_2026-08-29/08_opus_live.md`). Gate 3 open.
 - [`2026-08-27_crown_df_physiology_policy.md`](2026-08-27_crown_df_physiology_policy.md) — Bishai: crown one of 5/6/8. Crown **6-df as robustness** (only more-flexible spline that keeps both headlines). 5 is the reporting scale, not a spline. 8 opens HF cold days onto 1. Physiology ≠ 6-day cliff. Gate 3 open. Table 2 unchanged.

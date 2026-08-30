@@ -7,6 +7,12 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0v. Canonical update — Stage 3 send pack for Bishai (30 August)
+
+- Laidlaw form 2a packet is the current essay (`1200082a9e7c9caa`) plus a blank-supervisor HKU form. Do not attach the Hogan live manuscript. Send pack: [`send_pack_2026-08-30/`](send_pack_2026-08-30/).
+- If form 2a was already signed against `605cd8db43072cb5` or `c083d4096a0924b1`, that is a human decision.
+- Gate 3 remains **OPEN**. Poster remains optional (`a972206e61932650`).
+
 ## 0u. Canonical update — HHAP / 5-day are not the core paper (30 August)
 
 - Core analysis remains Table 2 Model 1 (twelve contrasts; all *q* > 0.19). Bishai’s physiology and HHAP asks are **interpretation**: short hypotheses + instruments-only WHO/HK map. `I(count/5)` is a reporting scale, not a consecutive 5-day trigger. Durable: [`knowledge/2026-08-30_grok_cursor_hhap_core.md`](../knowledge/2026-08-30_grok_cursor_hhap_core.md).

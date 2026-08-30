@@ -23,6 +23,7 @@
 
 ## Current meeting record
 
+- [`2026-08-30_grok_cursor_hhap_core.md`](2026-08-30_grok_cursor_hhap_core.md) — HHAP and 5-day physiology are interpretation, not the core panel. Canonical hashes: Hogan `346f2174cb7cc603`, essay `1200082a9e7c9caa`, poster `a972206e61932650` (poster still 24 Aug). Desktop copies not readable here.
 - [`2026-08-30_health_econ_cursor_pr_board.md`](2026-08-30_health_econ_cursor_pr_board.md) — adapted Cursor/Grok 4.6 health-econ rails (not generic TWFE); DUA ignore; Playbooks 07–08; living science PR #82; Gate 3 still open.
 - [`2026-08-29_objective_audit_model23.md`](2026-08-29_objective_audit_model23.md) — inherit auditors: long insert WORSE/MIXED; Discussion cut; Gate 3 still open; Model 2/3 unfitted; RH/rain map and Model 3 fitter ready for drop-in.
 - [`2026-08-29_storm_physio_hhap.md`](2026-08-29_storm_physio_hhap.md) — STORM write: night/CHD and cold/HF hypotheses; WHO 2026 eight elements × HK bundle. Mapping, not evaluation. Live Opus physiology-register: GO after two clauses (`reports/storm_physio_hhap_2026-08-29/08_opus_live.md`). Gate 3 open.

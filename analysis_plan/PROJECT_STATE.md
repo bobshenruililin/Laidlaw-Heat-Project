@@ -7,6 +7,12 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ---
 
+## 0u. Canonical update — HHAP / 5-day are not the core paper (30 August)
+
+- Core analysis remains Table 2 Model 1 (twelve contrasts; all *q* > 0.19). Bishai’s physiology and HHAP asks are **interpretation**: short hypotheses + instruments-only WHO/HK map. `I(count/5)` is a reporting scale, not a consecutive 5-day trigger. Durable: [`knowledge/2026-08-30_grok_cursor_hhap_core.md`](../knowledge/2026-08-30_grok_cursor_hhap_core.md).
+- Canonical PDFs in this checkout: Hogan `346f2174cb7cc603` (23 A4); Stage 3 essay `1200082a9e7c9caa` (13 A4, 2,987 words); poster `a972206e61932650` (A0, still 24 August Hogan-align). Desktop copies are not readable here.
+- Gate 3 remains **OPEN**.
+
 ## 0t. Canonical update — Cursor health-econ rails + PR board (30 August)
 
 - Generic US health-econ Cursor advice (TWFE, Callaway & Sant'Anna, Medicaid DiD, QALY/CEA) is **not** this paper’s default. Always-on rules: [`.cursorrules`](../.cursorrules), [`.cursor/rules/`](../.cursor/rules/). DUA ignore: [`.cursorignore`](../.cursorignore). Synthetic 8-row schema: [`data_processed/samples/SYNTHETIC_chd_hf_schema.csv`](../data_processed/samples/SYNTHETIC_chd_hf_schema.csv).

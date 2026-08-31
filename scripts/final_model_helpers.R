@@ -34,6 +34,8 @@ CONTROL_TERM_MAP <- list(
   year_factor = "year_f",
   covid_phase = "covid_phase_f",
   absolute_humidity = "absolute_humidity",
+  relative_humidity = "relative_humidity",
+  rainfall = "rainfall",
   NO2 = "NO2",
   PM25 = "PM25",
   flu_indicator = "flu_indicator",

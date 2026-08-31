@@ -10,16 +10,28 @@
 
 - [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md) — publication-register scholarly writing mode.
 - [Slash-command and blog-drafting contract](2026-07-26_commands_and_blog_auto.md) — command inventory, deck trigger, and human publication gate.
-- [Playbook skill router](../.cursor/skills/playbook/SKILL.md) — explicit `/playbook` selection across `01–05` and `99`.
+- [Playbook skill router](../.cursor/skills/playbook/SKILL.md) — explicit `/playbook` selection across `01–05`, `07–08`, `99` (Playbook 06 lives on PR #68).
 - [Playbook 01: Hogan definition lock](../analysis_plan/playbooks/01_hogan_definition_lock.md)
 - [Playbook 02: HA data arrival](../analysis_plan/playbooks/02_ha_data_arrival.md)
 - [Playbook 03: full analysis run](../analysis_plan/playbooks/03_full_analysis_run.md)
 - [Playbook 04: final write-up](../analysis_plan/playbooks/04_final_writeup.md)
 - [Playbook 05: auto-research lab](../analysis_plan/playbooks/05_auto_research_lab.md)
+- [Playbook 07: PR board](../analysis_plan/playbooks/07_pr_board.md)
+- [Playbook 08: health-econ identification lab](../analysis_plan/playbooks/08_health_econ_identification_lab.md)
+- [Objective audit](../.cursor/skills/objective-audit/SKILL.md) — inherit BETTER/WORSE/MIXED; WORSE allowed.
 - [Playbook 99: emergencies](../analysis_plan/playbooks/99_emergencies.md)
 
 ## Current meeting record
 
+- [`2026-08-31_hogan_exceeds_snapshot.md`](2026-08-31_hogan_exceeds_snapshot.md) — Hogan Word+PDF exceed Desktop 24 August snapshot (`b172ed31659d6cd6`). Current PDF `96b69b7b7ba38513`, Word `852702ded2c4e968`. Gate 3 still open.
+- [`2026-08-30_grok_cursor_hhap_core.md`](2026-08-30_grok_cursor_hhap_core.md) — HHAP and 5-day physiology are interpretation, not the core panel. Essay `1200082a9e7c9caa`, poster `a972206e61932650` (poster still 24 Aug). Hogan hash superseded 31 August.
+- [`2026-08-30_health_econ_cursor_pr_board.md`](2026-08-30_health_econ_cursor_pr_board.md) — adapted Cursor/Grok 4.6 health-econ rails (not generic TWFE); DUA ignore; Playbooks 07–08; living science PR #82; Gate 3 still open.
+- [`analysis_plan/send_pack_2026-08-30/`](../analysis_plan/send_pack_2026-08-30/) — Bishai Stage 3 Email A: current essay `1200082a9e7c9caa`, form 2a, do not attach Hogan live file.
+- [`2026-08-29_objective_audit_model23.md`](2026-08-29_objective_audit_model23.md) — inherit auditors: long insert WORSE/MIXED; Discussion cut; Gate 3 still open; Model 2/3 unfitted; RH/rain map and Model 3 fitter ready for drop-in.
+- [`2026-08-29_storm_physio_hhap.md`](2026-08-29_storm_physio_hhap.md) — STORM write: night/CHD and cold/HF hypotheses; WHO 2026 eight elements × HK bundle. Mapping, not evaluation. Live Opus physiology-register: GO after two clauses (`reports/storm_physio_hhap_2026-08-29/08_opus_live.md`). Gate 3 open.
+- [`2026-08-27_crown_df_physiology_policy.md`](2026-08-27_crown_df_physiology_policy.md) — Bishai: crown one of 5/6/8. Crown **6-df as robustness** (only more-flexible spline that keeps both headlines). 5 is the reporting scale, not a spline. 8 opens HF cold days onto 1. Physiology ≠ 6-day cliff. Gate 3 open. Table 2 unchanged.
+- [`2026-08-27_live_figure3_relabel.md`](2026-08-27_live_figure3_relabel.md) — live Figure 3 rebuilt as a portrait official-count forest; S6 holds continuous temperature. Teaching matplotlib plot rejected. Gate 3 open.
+- [`2026-08-27_bishai_forest_precovid_duration_hhap.md`](2026-08-27_bishai_forest_precovid_duration_hhap.md) — Bishai on Figure 3: pre-COVID = 2013–2019; the CI away from 1 is HF cold days 1.113; 8/6/5 are spline df + per-5-day scale, not duration; HHAP routing against HKO/DH instruments. Gate 3 open. Form 2a unchanged.
 - [`2026-08-27_hogan_print_for_bishai.md`](2026-08-27_hogan_print_for_bishai.md) — print copy of the Hogan PDF for Bishai: banner removed; tables unsplit; SHA prefix `436fb4ff1b278ec8`. Gate 3 open. Form 2a still the Stage 3 essay.
 - [`2026-08-24_hogan_methods_rewrite.md`](2026-08-24_hogan_methods_rewrite.md) — Hogan 24 Aug Methods: nested Model 1/2/3; Table 2 = Model 1; Word+PDF paste file. Committee merge of PR 69/70: [`COMMITTEE_VERDICT_PR69_vs_PR70.md`](../manuscript/live_collaborative/COMMITTEE_VERDICT_PR69_vs_PR70.md).
 - [`2026-08-24_stage3_hogan_align.md`](2026-08-24_stage3_hogan_align.md) — Hogan comments vs Stage 3; Bishai gets the 24 Aug programme PDF; send pack `analysis_plan/send_pack_2026-08-24/`. Gate 3 open.
@@ -73,7 +85,7 @@
 - [`outputs/release_chd_hf/`](../outputs/release_chd_hf/) — disclosure-minimised 29-check release.
 - [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md) — reusable YES/NO decision table and live-manuscript workflow.
 - [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Present from `Heat_CVD_Manuscript_20260824_hogan.pdf` / `.docx`.
-- [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `605cd8db43072cb5`).
+- [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `1200082a9e7c9caa`, 29 Aug objective-audit cut).
 - [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) — current A0 portrait poster (SHA prefix `a972206e61932650`); Model 1 shown; Models 2–3 specified, not fitted.
 - [`analysis_plan/send_pack_2026-08-24/`](../analysis_plan/send_pack_2026-08-24/) — current Email A: 24 August essay + form 2a. Replaces the 22 August PDFs for sending.
 - [`analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/) — 22 August Email A origin. Superceded for sending.

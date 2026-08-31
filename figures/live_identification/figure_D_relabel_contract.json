@@ -1,0 +1,50 @@
+{
+  "figure3_png": "figures/live_identification/figure_D_trend_depletion_sensitivity.png",
+  "figure_s6_png": "figures/live_identification/figure_E_continuous_temperature_sensitivity.png",
+  "width_in": 6.2,
+  "height_in": 7.35,
+  "dpi": 320,
+  "y_labels": [
+    "Model 1 (time-trend spline, 4 df)",
+    "Time-trend spline, 3 df",
+    "Time-trend spline, 6 df",
+    "Time-trend spline, 8 df",
+    "Year indicators",
+    "Pre-2020 (Jan 2013\u2013Dec 2019)",
+    "COVID-period indicators",
+    "Drop first 12 months",
+    "Drop first 24 months"
+  ],
+  "official_column_titles": [
+    "Hot nights / per 5 more official hot nights",
+    "Very hot days / per 5 more official very hot days",
+    "Cold days / per 5 more official cold days"
+  ],
+  "continuous_column_titles": [
+    "Mean temperature / per 1 \u00b0C",
+    "Mean maximum temperature / per 1 \u00b0C",
+    "Mean minimum temperature / per 1 \u00b0C"
+  ],
+  "required_in_y_labels": [
+    "Time-trend spline, 6 df",
+    "Time-trend spline, 8 df",
+    "Time-trend spline, 3 df",
+    "Model 1 (time-trend spline, 4 df)",
+    "Pre-2020 (Jan 2013\u2013Dec 2019)"
+  ],
+  "required_in_official_columns": [
+    "per 5 more official hot nights",
+    "per 5 more official very hot days",
+    "per 5 more official cold days"
+  ],
+  "forbidden_labels": [
+    "Spline df 3",
+    "Spline df 6",
+    "Spline df 8",
+    "Spline df",
+    "Pre-COVID",
+    "per 5 days",
+    "Baseline: spline df 4"
+  ],
+  "note": "Live Figure 3 is not a copy of release figure4_trend_depletion_sensitivity."
+}

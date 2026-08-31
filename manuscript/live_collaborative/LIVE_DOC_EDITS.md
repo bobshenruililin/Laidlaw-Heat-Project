@@ -60,8 +60,8 @@ Copy each block from `hogan_comment_paste_replies.md` into the matching thread. 
 8. **Figures (insert as images, then delete the markdown path lines if any remain).**
    - Figure 1 — first-event depletion vs C&SD 35+: `figures/live_identification/figure_B_first_event_depletion.png`
    - Figure 2 — cold-day year × month heatmap: `figures/live_identification/figure_A_cold_day_identification.png`
-   - Figure 3 — trend / window / COVID-phase sensitivity: `figures/live_identification/figure_D_trend_depletion_sensitivity.png` (copy of `outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.png`)
-   - **Supplement only:** residual ACF `figures/live_identification/figure_C_residual_acf.png` — this is **Supplementary Figure S1** in the live body. Bindings: `supplement_inventory.md`. Optional extras: `outputs/release_chd_hf/figures/figure3_core_forest.svg`, `figure5_se_method_ladder.svg`. Do not insert the release heatmap `figureS1_exposure_correlation.png` as S1.
+   - Figure 3 — official-count trend / window / COVID-phase sensitivity: `figures/live_identification/figure_D_trend_depletion_sensitivity.png` (portrait rebuild; **not** a copy of `outputs/release_chd_hf/figures/figure4_trend_depletion_sensitivity.png`)
+   - **Supplement only:** residual ACF `figures/live_identification/figure_C_residual_acf.png` — this is **Supplementary Figure S1** in the live body. Continuous-temperature forest is **Supplementary Figure S6**: `figures/live_identification/figure_E_continuous_temperature_sensitivity.png`. Bindings: `supplement_inventory.md`. Optional extras: `outputs/release_chd_hf/figures/figure3_core_forest.svg`, `figure5_se_method_ladder.svg`. Do not insert the release heatmap `figureS1_exposure_correlation.png` as S1.
 9. **Discussion / Conclusion / limitations.** Replace. Flu numeral 1.673 is out of the body (direction only; numeral in the release). CHD hot-night window dependence and spline entanglement are explicit. Conclusion remains comparative, not superlative.
 10. **References.** Keep 1–21. Flag to Hogan: [3] (2017 yearbook) and [5] (2024 yearbook) are uncited in the body; prune or attach. Do not delete his block unilaterally. Yang CY stays.
 
@@ -70,6 +70,7 @@ Copy each block from `hogan_comment_paste_replies.md` into the matching thread. 
 | Taken | Why |
 |---|---|
 | Figure 3 = trend/depletion sensitivity; ACF demoted | Identification work vs two numbers already in Results |
+| Live Figure 3 rebuilt (portrait official-count forest; S6 for continuous T) | Bishai fused “Spline df 8/6/3” with “per 5 days”; teaching matplotlib plot rejected |
 | Pre-2020 CHD hot nights in the Abstract | Stops Abstract-vs-Results asymmetry |
 | 29 of 132 months with ≥1 official cold day | Verified REAL count; effective information for the HF cold-day contrast |
 | Ljung–Box *p* < 10^−7^ | Largest CHD core lag-6 *p* is 1.17 × 10^−8^ |

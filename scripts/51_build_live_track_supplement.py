@@ -354,9 +354,15 @@ The figure displays the same four constructions as Table 3 of the main paper. Co
 
 ## Supplementary Table S2. Twelve core contrasts in the pre-2020 window (Newey–West lag-6)
 
-January 2013–December 2019; 84 months. Nine of twelve intervals exclude 1. All six continuous temperature contrasts are inverse. No multiplicity control was computed within this window, and no pre-2020 estimate is promoted beyond a sensitivity. Source: `pre_covid` rows of `outputs/release_chd_hf/supplement/cvd_trend_depletion_sensitivity.csv`. The nine-scenario visual summary remains main-text Figure 3.
+January 2013–December 2019; 84 months. Nine of twelve intervals exclude 1. All six continuous temperature contrasts are inverse. No multiplicity control was computed within this window, and no pre-2020 estimate is promoted beyond a sensitivity. Source: `pre_covid` rows of `outputs/release_chd_hf/supplement/cvd_trend_depletion_sensitivity.csv`. Main-text Figure 3 shows the six official-count fits. Continuous-temperature fits for the same nine specifications are Supplementary Figure S6.
 
 {table_s2()}
+
+## Supplementary Figure S6. Continuous-temperature Model 1 estimates across the same checks
+
+![Supplementary Figure S6](../../figures/live_identification/figure_E_continuous_temperature_sensitivity.png)
+
+Same nine trend, window, and COVID-period specifications as main-text Figure 3. Each estimate is per 1 °C. Pre-2020 inverse associations for mean, maximum, and minimum temperature are in this panel. Rows labelled 3, 6, or 8 df change the time-trend spline, not heatwave length. Source: `outputs/tables/cvd_trend_depletion_sensitivity.csv` (`HA_APPROVED_AGGREGATE`). No new health model.
 
 ## Supplementary Figure S3. Complete twelve-contrast core forest (Newey–West lag-6)
 

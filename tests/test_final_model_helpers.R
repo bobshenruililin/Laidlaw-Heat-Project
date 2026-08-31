@@ -73,6 +73,10 @@ make_synthetic_panel <- function(outcome = "chd", seed = 1L, mean_level = 80) {
     hot_nights = as.numeric(hot_nights),
     cold_days = as.numeric(cold_days),
     very_hot_days = as.numeric(very_hot_days),
+    relative_humidity = 75 + 8 * sin(2 * pi * grid$month / 12) + stats::rnorm(n, 0, 2),
+    rainfall = pmax(0, 120 + 80 * sin(2 * pi * (grid$month - 5) / 12) + stats::rnorm(n, 0, 20)),
+    days_warmer_than_climatology = pmax(0, round(15 + 4 * sin(2 * pi * grid$month / 12) + stats::rpois(n, 1))),
+    days_cooler_than_climatology = pmax(0, round(15 - 4 * sin(2 * pi * grid$month / 12) + stats::rpois(n, 1))),
     absolute_humidity = 15 + 5 * sin(2 * pi * grid$month / 12) + stats::rnorm(n, 0, 0.5),
     NO2 = 40 + stats::rnorm(n, 0, 5),
     PM25 = 20 + stats::rnorm(n, 0, 3),
@@ -123,6 +127,19 @@ expect_true(
 # Term naming
 expect_equal(exposure_term_name("mean_temp", 1), "mean_temp", "term scale 1")
 expect_equal(exposure_term_name("hot_nights", 5), "I(hot_nights/5)", "term scale 5")
+expect_equal(
+  control_terms_from_registry(c("relative_humidity", "rainfall")),
+  c("relative_humidity", "rainfall"),
+  "Hogan Model 2 RH and rainfall map"
+)
+expect_true(
+  "Hogan_RH_rain" %in% names(scenarios),
+  "Hogan_RH_rain is a named robustness scenario"
+)
+expect_true(
+  !is.null(registry$model3_exposures$M3W$variable),
+  "Model 3 warmer exposure is in the registry"
+)
 
 # ---- NB SE ladder ------------------------------------------------------------
 if (has_sandwich) {
@@ -257,6 +274,39 @@ if (has_sandwich) {
   )
   expect_equal(length(tiny$max_stats), 2L, "max-stat length")
   expect_true(nrow(tiny$status) == 2L, "max-stat status rows")
+}
+
+# ---- Hogan Model 2 (RH+rain) and Model 3 (climatology) on synthetic fixtures --
+if (has_sandwich) {
+  hogan2 <- scenarios[["Hogan_RH_rain"]]
+  fit_m2 <- fit_scenario_nb(
+    chd, "P04A", specs[["P04A"]], hogan2, registry,
+    data_status = SYNTHETIC_PROVENANCE,
+    result_class = "SYNTHETIC_TEST"
+  )
+  expect_true(isTRUE(fit_m2$ok), "Model 2 RH+rain synthetic fit OK")
+  expect_true(
+    !identical(fit_m2$status$status, "NOT_RUN_MISSING_GOVERNED_PANEL"),
+    "synthetic Model 2 is not a missing-panel blocker"
+  )
+
+  m3_spec <- list(
+    pathway_id = "M3W",
+    variable = "days_warmer_than_climatology",
+    contrast = 5,
+    unit = "days",
+    pole = "heat"
+  )
+  m3_scenario <- list(
+    scenario_id = "Model3_climatology",
+    controls = c("calendar_month_factor", "ns_time_df4")
+  )
+  fit_m3 <- fit_scenario_nb(
+    chd, "M3W", m3_spec, m3_scenario, registry,
+    data_status = SYNTHETIC_PROVENANCE,
+    result_class = "SYNTHETIC_TEST"
+  )
+  expect_true(isTRUE(fit_m3$ok), "Model 3 climatology synthetic fit OK")
 }
 
 # ---- GLARMA helper (if available) --------------------------------------------

@@ -168,7 +168,7 @@ These data do not support a multiplicity-protected differential thermal claim. U
 
 The HF cold-day association is the more coherent of the two residual signals. It is concordant across all four standard-error constructions, survives exclusion of the most influential month, and is strongest before 2020. It nevertheless remains unprotected by its *q*-value. Because official cold days fall almost entirely in December–February, and because only 29 of 132 months carry any official cold day, the association is identified from differences between winters rather than from a summer-versus-winter contrast. The direction is consistent with earlier daily evidence that lower temperature was associated with higher heart-failure admissions in Hong Kong [@goggins2017hf]. The comparison is between questions, not magnitudes: a cumulative daily relative risk is not a monthly count ratio per five official cold days, and the present event is a first hospitalisation after a first HF diagnosis without recorded admission cause.
 
-The CHD hot-night association is smaller, depends on the uncertainty method, and was not evident before 2020. It should be read against Guo et al. rather than as a replication of that study [@guo2024hotnights]. A difference between monthly mean temperature and monthly official hot-night counts does not identify an hourly nighttime-heat mechanism. Liu et al. remain complementary mortality baselines [@liu2020jasmine; @liu2026roro]; their attributable fractions and excess-death totals cannot be rescaled into the present count ratios.
+The CHD hot-night association is smaller, depends on the uncertainty method, and was not evident before 2020. It should be read against Guo et al. rather than as a replication of that study [@guo2024hotnights]. A difference between monthly mean temperature and monthly official hot-night counts does not identify an hourly nighttime-heat mechanism. Interrupted overnight recovery is one hypothesis for why a hot-night count could differ from monthly mean temperature; the monthly design cannot test it. Five additional official days is a reporting scale, not a consecutive-day trigger. Ambient heat is associated with shorter sleep [@chevance2024sleep]. A confinement study of seven men reported higher nocturnal core temperature after hot nights [@ioannou2024heatwave]. Bedroom temperatures above 24 °C were associated with lower heart-rate variability in older adults [@oconnor2025bedroom]. Those papers do not measure first CHD hospitalisation here, and a scoping review found mixed blood-pressure findings and no demonstration of sleep as a mediator of hospitalisation [@ashe2025ehe]. Cold can raise afterload; heart failure has little reserve against that load [@ikaheimo2018cold; @li2026cold]. None of these pathways is identified in 132 monthly counts. Liu et al. remain complementary mortality baselines [@liu2020jasmine; @liu2026roro]; their attributable fractions and excess-death totals cannot be rescaled into the present count ratios.
 
 **Strengths.** The twelve Model 1 comparisons are reported in full. Uncertainty is shown as an explicit four-construction ladder. Extreme-day exposures use published official thresholds. Weather definitions were source-checked against Observatory summaries. The daily-recovery analysis is reported as a refusal rather than as a coefficient.
 
@@ -186,13 +186,17 @@ The CHD hot-night association is smaller, depends on the uncertainty method, and
 
 ## Implications and next study
 
-Null or uncertain findings can be useful when they close off weak claims. The data cannot identify within-month timing, individual exposure, or the cause of admission. The failed daily-exposure calibration is an empirical reason not to present a daily coefficient. The present findings do not justify disease-specific warning thresholds. They do support continued attention to both overnight heat and winter cold, and they motivate a governed design with dated, cause-recorded admissions, cohort person-time, and daily or weekly outcome resolution. Those next hypotheses—whether repeated hot nights precede CHD-related admissions, and whether cold days precede HF-related admissions in this cohort—should be declared in advance, with heat and cold retained and the full uncertainty display preserved.
+The data cannot identify within-month timing, individual exposure, or the cause of admission. The failed daily-exposure calibration is an empirical reason not to present a daily coefficient. The present findings do not justify disease-specific warning thresholds, a consecutive-day trigger, or an evaluation of Hong Kong’s existing warnings.
+
+WHO heat–health action-plan guidance lists eight core elements [@who2026hhap]. Hong Kong already has a warning, communication and shelter bundle, including a Prolonged Heat Special Alert that names a few days of very hot days or hot nights [@chong2023hko; @hko_vhw]. Department of Health advice already names heart disease and high blood pressure [@chp2025heatstroke]. Appendix Table A2 maps each WHO element to that bundle. The table does not use the Model 1 residuals as a test of any alert. I do not count admissions averted.
+
+The next study needs dated, cause-recorded admissions, cohort person-time, and daily or weekly outcome resolution. Those next hypotheses—whether repeated hot nights precede CHD-related admissions, and whether cold days precede HF-related admissions in this cohort—should be declared in advance, with heat and cold retained and the full uncertainty display preserved.
 
 # Conclusion
 
 Between 2013 and 2023, Hong Kong experienced increasing hot-night burden while cold days persisted. In governed monthly data for people with diabetes and/or hypertension, CHD first-hospitalisation counts were more closely associated with hot nights, and HF counts with cold days, than with the other thermal measures examined. Neither association survived correction across twelve comparisons, and the CHD estimate depended on the uncertainty method and on including the pandemic years.
 
-The study therefore offers hypotheses, not proof of thermal effects. What it leaves behind is a precisely defined first-event outcome, a complete twelve-comparison Model 1 panel, uncertainty shown under four methods, and a documented refusal to produce daily coefficients that monthly counts cannot support.
+The study therefore offers hypotheses, not proof of thermal effects. Physiological accounts of overnight recovery and cold-related afterload, and a mapping onto published heat–health action-plan elements, are interpretation, not identification. What it leaves behind is a precisely defined first-event outcome, a complete twelve-comparison Model 1 panel, uncertainty shown under four methods, and a documented refusal to produce daily coefficients that monthly counts cannot support.
 
 # Acknowledgements
 
@@ -221,3 +225,23 @@ I thank Hogan for guidance on weather definitions and on academic writing, and Z
 | HF cold days / 5 days   | Newey–West lag 6   |       1.073 |     1.006–1.144 |
 
 **Daily-exposure calibration.** The constrained monthly-outcome, daily-exposure estimator was evaluated in a 500-replicate simulation matched to Hong Kong weather and to the overdispersion and residual dependence of the monthly series [@basagana2024md; @basagana2026md]. In the most difficult cells, false-positive rates reached 0.150, confidence-interval coverage fell to 0.840, and sign recovery was poor for moderate effects. Admission of any real daily coefficient required all frozen calibration criteria to pass. They did not. This is a project-specific calibration result, not a general indictment of the method. A full daily distributed-lag non-linear model is not identified from 132 monthly sums.
+
+```{=latex}
+\clearpage
+\Needspace{18\baselineskip}
+```
+
+**Table A2.** WHO 2026 heat–health action-plan elements, Hong Kong instruments, and what this panel can inform. This table is a mapping, not an evaluation.
+
+| WHO element | Hong Kong instrument | This panel can inform | This panel cannot inform |
+|:--|:--|:--|:--|
+| 1. Governance | Multi-agency bundle (HKO, DH/CHP, Labour, HAD) | Heat and cold already have separate warning authorities | Whether coordination is adequate |
+| 2. Warning system | VHWW; Hot Weather Special Advisory; Prolonged Heat Special Alert (a few days of very hot days or hot nights); Extremely Hot Weather ~35 °C; HKHI | Prolonged Heat already names official hot nights beside very hot days | A new consecutive-day trigger; whether warnings work |
+| 3. Populations at increased risk | CHP names heart disease and high blood pressure among at-risk groups | This cohort’s diagnoses are already inside that named group | A new named group; age or subtype targeting |
+| 4. Communication | HKO, CHP, and Labour public advice | Heat and cold both have public advice channels | Message-testing or behaviour change |
+| 5. Health-system resilience | Hospital Authority operations (not studied) | Monthly first-event counts are not a surge dashboard | Staffing or ward cooling |
+| 6. Reducing heat exposure | Indoor ventilation or air-conditioning advice; HAD temporary heat shelters | Indoor night temperature was not measured here | Indoor temperature or shelter use in this series |
+| 7. Surveillance | No near-real-time first-event CHD/HF feed | Why monthly aggregates cannot guide activation | Event-day surveillance beyond needing dated, cause-recorded admissions |
+| 8. Monitoring, evaluation and learning | Not performed here | Honest evaluation would need daily cause-recorded data and a predeclared contrast | This report as an evaluation of warnings |
+
+Cold-weather counterpart (not a WHO heat element): Cold Weather Warning and HAD temporary cold shelters. Mapping the instruments does not evaluate them.

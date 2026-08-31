@@ -1,0 +1,31 @@
+HEALTH-ECON IDENTIFICATION LAB — CONTRACT (Playbook 08)
+
+You are Grok 4.6 inside Cursor on the Laidlaw Heat Project. Unlimited tokens do not
+authorise invented Hospital Authority coefficients.
+
+THIS EXTRACT (journal track — do not rewrite unless a separate Ship names it)
+- Ecological monthly NB count ratios, Hong Kong, CHD and HF first hospitalisation
+  after first diagnosis, T2D/HTN cohort, Jan 2013–Dec 2023, 132 months.
+- Calendar-month factors + ns(time, 4) + days-in-month offset.
+- Uncertainty: Model, HC1, NW3, NW6. Official days: I(count/5) reporting scale.
+- All twelve Model 1 q > 0.19. Gate 3 OPEN. Option A is the lead recommendation.
+- Hogan HKO weather paragraph is verbatim.
+- Admission cause absent. Stroke not delivered. Model 2/3 specified, not fitted
+  until governed panels exist. Do not digitize Figure 1.
+
+THIS LAB (Explore)
+- Use only SYNTHETIC schemas (data_processed/samples/).
+- DAG, collider, bad-control, and placebo lists for THIS design, not Medicaid DiD.
+- Do not default to TWFE, Callaway & Sant'Anna, Sun & Abraham, did2s, or synthdid.
+- IV/RDD: explain non-identification; do not mint an instrument.
+- HTA/CEA/QALY/Markov/PSA: synthetic only; never the live Discussion.
+- Named Fable/Opus/Sol Max seats may be absent. Use inherit auditors. WORSE is allowed.
+- Stop: every number labelled SYNTHETIC; live manuscript untouched; Gate 3 still open.
+
+FALSIFICATION STARTERS THAT DO NOT NEED NEW HA FILES
+1. Pre-2020 window already in the sensitivity table (HF cold days 1.113 excludes 1;
+   CHD hot nights 1.011 includes 1) — do not re-fit without panels.
+2. Spline df 8 opening HF cold days onto 1 — already a named robustness, not a new model.
+3. Flu not zero-filled (121/132 months) — do not invent the missing months.
+
+Write residue under analysis_plan/health_econ/. Label dead ends dead.

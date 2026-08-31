@@ -38,7 +38,7 @@ This folder is the **journal-track** paste pack for Hogan’s live shared file. 
 2. Reply to the seven 28 July threads from `hogan_comment_paste_replies.md`.
 3. If Hogan’s *Weather and pollutants data* paragraph is unchanged, paste scientific sections from the Markdown or the 15 August Word file around it. If he has edited weather, paste from `methods_remainder_paste.md` around his current paragraph.
 4. Ask Roro to replace or expand *Health data*.
-5. **Figures.** Insert Figure 1 depletion, Figure 2 DJF heatmap, Figure 3 trend/depletion sensitivity from `figures/live_identification/`. Residual ACF is supplement only.
+5. **Figures.** Insert Figure 1 depletion, Figure 2 DJF heatmap, Figure 3 official-count trend/window forest from `figures/live_identification/figure_D_trend_depletion_sensitivity.png` (portrait rebuild; not a copy of release figure 4). Residual ACF is S1. Continuous-temperature forest is S6.
 
 **What changed scientifically since 13 August**
 

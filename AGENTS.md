@@ -152,7 +152,10 @@ Executable workflow index:
 3. [`03_full_analysis_run.md`](analysis_plan/playbooks/03_full_analysis_run.md) — complete panel → team Gate 3 → manuscript tables.
 4. [`04_final_writeup.md`](analysis_plan/playbooks/04_final_writeup.md) — verified real estimates → CNS Results/Discussion.
 5. [`05_auto_research_lab.md`](analysis_plan/playbooks/05_auto_research_lab.md) — Jin-adapted lab: adversarial audit and readiness packets; does not invent findings or freeze Gate 3.
-6. [`99_emergencies.md`](analysis_plan/playbooks/99_emergencies.md) — source, scope, governance, or provenance shocks.
+6. Playbook 06 (scientific-search harness) lives on PR #68; do not reuse the number on this branch.
+7. [`07_pr_board.md`](analysis_plan/playbooks/07_pr_board.md) — classify open PRs; close only superseded zero-unique science PRs; do not merge.
+8. [`08_health_econ_identification_lab.md`](analysis_plan/playbooks/08_health_econ_identification_lab.md) — Explore health-econ practice on synthetic schemas; never the live manuscript.
+9. [`99_emergencies.md`](analysis_plan/playbooks/99_emergencies.md) — source, scope, governance, or provenance shocks.
 
 ---
 
@@ -168,6 +171,10 @@ Explicit playbook skills live under `.cursor/skills/` and do not self-trigger:
 | `/playbook-03-full-analysis` | Execute the complete real-data panel after Gates 1–2. |
 | `/playbook-04-final-writeup` | Execute final writing and engage `cns-writing`. |
 | `/playbook-05-auto-research` | Jin-adapted lab: audit the live identification article; readiness packets only. |
+| `/playbook-07-pr-board` | Open-PR board; close superseded zero-unique science PRs only. |
+| `/playbook-08-health-econ-lab` | Synthetic identification/HTA lab. Not TWFE. Not the live file. |
+| `/objective-audit` | Inherit BETTER/WORSE/MIXED. WORSE allowed. |
+| `/identification-review` | DAG/placebo review of **this** monthly NB extract. |
 | `/playbook-99-emergencies` | Bound and document source, scope, governance, or provenance shocks. |
 
 Writing commands:

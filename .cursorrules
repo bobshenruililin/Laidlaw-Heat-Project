@@ -1,0 +1,28 @@
+# Laidlaw Heat Project — identification and DUA (not generic US health-econ)
+
+This is an ecological monthly Hong Kong first-hospitalisation panel, not a staggered
+policy DiD. Full always-on rules: `.cursor/rules/`. Playbooks: `analysis_plan/playbooks/`.
+
+## This paper's default identification
+
+- Observational territory-month counts (CHD, HF) among T2D/HTN, Jan 2013–Dec 2023 (132 months).
+- Estimand: negative-binomial count ratio with calendar-month factors, `ns(time, 4)`, days-in-month offset.
+- Uncertainty ladder: Model / HC1 / Newey–West lag-3 / Newey–West lag-6. Do not pick an SE because its CI excludes 1.
+- Official-day exposures use `I(count/5)` as a **reporting scale**, not consecutive duration.
+- Admission cause is absent. Stroke is named, not delivered. Do not invent HA rows or coefficients.
+- Gate 3 is human-owned and currently **OPEN**. All twelve Model 1 *q* > 0.19. Do not freeze it.
+- Hogan's HKO weather paragraph is verbatim. Do not overwrite it.
+
+## Forbidden defaults (generic PhD advice that does **not** apply here)
+
+- Do **not** default to TWFE, Callaway & Sant'Anna, Sun & Abraham, did2s, synthdid, or state-clustered SEs.
+- Do **not** write Medicaid/Medicare reform DiD, hospital-market FE, or QALY/CEA Monte Carlo into the live manuscript.
+- Do **not** treat synthetic coefficients, health-econ night-engine output, or Playbook 08 lab stats as findings.
+
+## Where health-econ methods belong
+
+Playbook 08 (`analysis_plan/playbooks/08_health_econ_identification_lab.md`): Explore, synthetic schema only, never the journal-track live file. Closed PR 54 is prior residue, not a manuscript section.
+
+## DUA
+
+Zero ingestion of governed panels. Use `data_processed/samples/` only. See `.cursorignore`.

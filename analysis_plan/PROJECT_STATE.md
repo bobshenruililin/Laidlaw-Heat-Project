@@ -1,11 +1,73 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-27
+**Last updated:** 2026-08-31
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0w. Canonical update — Hogan Word+PDF exceed 24 August snapshot (31 August)
+
+- Attachable Hogan files: PDF SHA prefix `96b69b7b7ba38513` (22 A4); Word `852702ded2c4e968`. Snapshot to beat was Desktop `Heat_CVD_Manuscript_20260824_hogan.pdf` (`b172ed31659d6cd6`, 14 pages). Scorecard: [`reports/hogan_exceeds_20260824_snapshot.md`](../reports/hogan_exceeds_20260824_snapshot.md).
+- Wins: own-page tables/figures; official-count Figure 3 with five-day scale and spline-df labels; 6-df named robustness; consecutive-days guardrail; short physiology; WHO×HK mapping; send-ready Word comments (no paste/pipeline). Locked Model 1 numbers and Hogan weather unchanged.
+- Gate 3 remains **OPEN**. Model 2/3 unfitted. Do not attach this live file to Stage 3 form 2a.
+
+## 0v. Canonical update — Stage 3 send pack for Bishai (30 August)
+
+- Laidlaw form 2a packet is the current essay (`1200082a9e7c9caa`) plus a blank-supervisor HKU form. Do not attach the Hogan live manuscript. Send pack: [`send_pack_2026-08-30/`](send_pack_2026-08-30/).
+- If form 2a was already signed against `605cd8db43072cb5` or `c083d4096a0924b1`, that is a human decision.
+- Gate 3 remains **OPEN**. Poster remains optional (`a972206e61932650`).
+
+## 0u. Canonical update — HHAP / 5-day are not the core paper (30 August)
+
+- Core analysis remains Table 2 Model 1 (twelve contrasts; all *q* > 0.19). Bishai’s physiology and HHAP asks are **interpretation**: short hypotheses + instruments-only WHO/HK map. `I(count/5)` is a reporting scale, not a consecutive 5-day trigger. Durable: [`knowledge/2026-08-30_grok_cursor_hhap_core.md`](../knowledge/2026-08-30_grok_cursor_hhap_core.md).
+- Canonical PDFs in this checkout: Hogan `96b69b7b7ba38513` (22 A4); Stage 3 essay `1200082a9e7c9caa` (13 A4, 2,987 words); poster `a972206e61932650` (A0, still 24 August Hogan-align). Desktop 24 August Hogan snapshot was `b172ed31659d6cd6` (14 pages) and is now exceeded.
+- Gate 3 remains **OPEN**.
+
+## 0t. Canonical update — Cursor health-econ rails + PR board (30 August)
+
+- Generic US health-econ Cursor advice (TWFE, Callaway & Sant'Anna, Medicaid DiD, QALY/CEA) is **not** this paper’s default. Always-on rules: [`.cursorrules`](../.cursorrules), [`.cursor/rules/`](../.cursor/rules/). DUA ignore: [`.cursorignore`](../.cursorignore). Synthetic 8-row schema: [`data_processed/samples/SYNTHETIC_chd_hf_schema.csv`](../data_processed/samples/SYNTHETIC_chd_hf_schema.csv).
+- Playbook **07** classifies open PRs and closes only superseded zero-unique science PRs. Living science PR remains **#82**. Playbook **06** stays on PR #68.
+- Playbook **08** is the Explore identification/HTA lab (synthetic only). Closed PR 54 is prior residue, not a manuscript section. `/objective-audit` automates the WORSE-allowed inherit audit without named Max seats.
+- Gate 3 remains **OPEN**. Table 2 unchanged. Model 2/3 still unfitted. Do not reconstruct counts from Figure 1.
+- Durable: [`knowledge/2026-08-30_health_econ_cursor_pr_board.md`](../knowledge/2026-08-30_health_econ_cursor_pr_board.md). Board: [`reports/pr_board_latest.md`](../reports/pr_board_latest.md).
+
+## 0s. Canonical update — objective audit; Model 2/3 plumbing; Gate 3 still open (29 August)
+
+- Three inherit auditors scored the long physiology/HHAP insert **WORSE** (Fable, Opus) or **MIXED** (Sol) against the shorter Discussion. The live Discussion was cut. Table A2 no longer pairs residuals with alerts. Audit: [`reports/objective_audit_physio_hhap_2026-08-29.md`](../reports/objective_audit_physio_hhap_2026-08-29.md).
+- Gate 3 remains **OPEN**. Confirmatory freeze forbidden (*q* > 0.19). Team request only: [`reports/gate3_option_a_team_request_2026-08-29.md`](../reports/gate3_option_a_team_request_2026-08-29.md).
+- Model 2/3 still unfitted: governed panels absent. `CONTROL_TERM_MAP` now accepts RH and rainfall. Model 3 fitter: `scripts/68_hogan_model3_climatology.R`. Drop-in: [`send_pack_2026-08-29/MODEL2_MODEL3_DROPIN.md`](send_pack_2026-08-29/MODEL2_MODEL3_DROPIN.md).
+- Table 2, Abstract, Hogan weather, poster unchanged. Hogan PDF SHA prefix `346f2174cb7cc603`. Stage 3 essay SHA prefix `1200082a9e7c9caa`. Do not reconstruct counts from Figure 1.
+
+## 0r. Canonical update — STORM physiology + HHAP (29 August)
+
+- Bishai’s recommendation (physiological reason behind the two residuals; inform heat–health action-plan elements) is now in the live Discussion and the Laidlaw report. STORM packet: [`reports/storm_physio_hhap_2026-08-29/`](../reports/storm_physio_hhap_2026-08-29/). Durable: [`knowledge/2026-08-29_storm_physio_hhap.md`](../knowledge/2026-08-29_storm_physio_hhap.md).
+- Physiology is **hypothesis** (Chevance; Ioannou DOI `10.1139/apnm-2024-0105`; O’Connor; Ashe mixed BP; Ikäheimo; Li 2026). HHAP is **mapping** onto WHO 2026 eight elements and the HKO/DH/HAD bundle, not an evaluation. Prolonged Heat already names hot nights. CHP already names heart disease and high blood pressure. Indoor temperature unmeasured. Heat-only reading would miss HF × cold days.
+- Table 2, Abstract, Hogan HKO weather paragraph, `UW XX-XXX`, Acknowledgements `None.` unchanged. All twelve *q* > 0.19. 6-df remains named robustness only. Gate 3 open. Stage 3 authorised to rebuild (24 August hash superseded for the programme PDF; form 2a is a human decision if already signed).
+- Cloud-agent Fable/Opus/Sol quota exhausted; local persona pass in `07_peer_review.md`. Live seats: Fable `08_fable_live.md` (GO, no edit); Opus `08_opus_live.md` (GO after two clauses: failing heart; this analysis); Sol `08_sol_live.md` (GO, no edit). Hogan PDF SHA prefix `ee12629d2dd8b6bb` (23 A4 pages). Stage 3 essay SHA prefix `f55f8f14f214bc92`; poster unchanged `a972206e61932650`.
+
+
+## 0q. Canonical update — crown 6-df as robustness, not Table 2 (27 August, night)
+
+- Bishai asked to crown one of 5, 6, 8, with physiology and social-impact routing. Those numbers are still three objects: **5 = reporting scale** `I(count/5)` (no 5-df spline exists); **6 and 8 = time-trend spline df**.
+- Joint-score on the existing sensitivity table: only Model 1 (4 df) and **6 df** keep both headlines away from 1. **8 df opens HF cold days onto 1** (1.062, 0.994–1.135). Crown **6-df as the named robustness check**. Table 2 stays 4 df. All twelve *q* > 0.19. Gate 3 open.
+- Physiology (Wang/Ho mortality consecutive-5; Chevance sleep; Ioannou consecutive nights; O’Connor bedroom HRV) supports **nights and non-recovery**, not a 6-day cliff. 2018: 26 official hot nights, zero ≥5-night spell days.
+- Durable: [`knowledge/2026-08-27_crown_df_physiology_policy.md`](../knowledge/2026-08-27_crown_df_physiology_policy.md). Talking points: [`reports/crown_df_physiology_2026-08-27/`](../reports/crown_df_physiology_2026-08-27/). Hogan PDF SHA prefix `a40e115732ce35dd`. Form 2a unchanged.
+
+## 0p. Canonical update — live Figure 3 rebuilt (27 August)
+
+- Bishai’s comments were applied to the live manuscript. The matplotlib teaching forest was rejected. Live Figure 3 is now a portrait official-count forest (`figure_D_trend_depletion_sensitivity.png`); it is not a copy of release figure 4.
+- Y-axis names time-trend spline df. Strips name five more official hot nights / very hot days / cold days. Continuous temperature is Supplementary Figure S6. Caption, Results, and Discussion refuse a duration reading and do not evaluate Hong Kong’s warnings.
+- Table 2, Abstract, and Hogan’s HKO paragraph unchanged. Gate 3 open. Form 2a unchanged.
+- Durable: [`knowledge/2026-08-27_live_figure3_relabel.md`](../knowledge/2026-08-27_live_figure3_relabel.md). Mapping memo remains [`knowledge/2026-08-27_bishai_forest_precovid_duration_hhap.md`](../knowledge/2026-08-27_bishai_forest_precovid_duration_hhap.md).
+
+## 0o. Canonical update — Bishai Figure 3 comments (27 August)
+
+- After looking at live-manuscript Figure 3 (trend/window/COVID forest; release `figure4_trend_depletion_sensitivity`), Bishai asked about pre-COVID, 8/6/5-day splits, a 6-df spline above 1, a 5-day rule, and heat-health action plans.
+- Mapping: “8/6/5 days” = spline **df** 8/6/3 fused with the **per 5 days** reporting scale. Not heatwave duration. The pre-COVID interval that excludes 1 is **HF cold days 1.113 (1.053–1.176)**; CHD hot nights pre-2020 **includes 1**. Physiology of consecutive hot nights is hypothesis; this panel cannot set a warning threshold.
+- Hong Kong has an HKO/DH/Labour **bundle**, not one WHO-branded municipal HHAP evaluated here. Gate 3 still open. Form 2a unchanged.
+- Durable: [`knowledge/2026-08-27_bishai_forest_precovid_duration_hhap.md`](../knowledge/2026-08-27_bishai_forest_precovid_duration_hhap.md). Talking points: [`reports/bishai_forest_hhap_2026-08-27/`](../reports/bishai_forest_hhap_2026-08-27/). Debrief: [`reports/meeting_debrief_2026-08-27.md`](../reports/meeting_debrief_2026-08-27.md).
 
 ## 0n. Canonical update — print Hogan PDF for Bishai (27 August)
 

@@ -8,7 +8,7 @@ This directory holds durable, dated project knowledge that should survive a meet
 owns the final CHD/HF reanalysis, manuscript/report package, negative M|D
 feasibility result, and open human decisions.
 
-**Current programme action:** form 2a still uses the Stage 3 essay (`2026-08-20_bishai_form2a.md`). The 27 August print object for Bishai is the Hogan PDF: [`2026-08-27_hogan_print_for_bishai.md`](2026-08-27_hogan_print_for_bishai.md).
+**Current programme action:** form 2a still uses the Stage 3 essay (`2026-08-20_bishai_form2a.md`). The 27 August print object for Bishai is the Hogan PDF: [`2026-08-27_hogan_print_for_bishai.md`](2026-08-27_hogan_print_for_bishai.md). Figure 3 comments: [`2026-08-27_bishai_forest_precovid_duration_hhap.md`](2026-08-27_bishai_forest_precovid_duration_hhap.md). Live Figure 3 rebuild: [`2026-08-27_live_figure3_relabel.md`](2026-08-27_live_figure3_relabel.md).
 
 ## Structure
 
@@ -18,7 +18,7 @@ feasibility result, and open human decisions.
 - `YYYY-MM-DD_topic.md`: meeting preparation, decision records, literature syntheses, and other dated context worth preserving.
 - Existing methods, registries, and source deep-reads remain in `analysis_plan/` and `literature/`; the index links to them rather than copying them.
 
-Re-engage work through the [`analysis_plan/playbooks/`](../analysis_plan/playbooks/) index: [Hogan lock](../analysis_plan/playbooks/01_hogan_definition_lock.md), [HA arrival](../analysis_plan/playbooks/02_ha_data_arrival.md), [full analysis](../analysis_plan/playbooks/03_full_analysis_run.md), [final write-up](../analysis_plan/playbooks/04_final_writeup.md), and [emergencies](../analysis_plan/playbooks/99_emergencies.md). Publication-register prose uses the [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md).
+Re-engage work through the [`analysis_plan/playbooks/`](../analysis_plan/playbooks/) index: [Hogan lock](../analysis_plan/playbooks/01_hogan_definition_lock.md), [HA arrival](../analysis_plan/playbooks/02_ha_data_arrival.md), [full analysis](../analysis_plan/playbooks/03_full_analysis_run.md), [final write-up](../analysis_plan/playbooks/04_final_writeup.md), [auto-research](../analysis_plan/playbooks/05_auto_research_lab.md), [PR board](../analysis_plan/playbooks/07_pr_board.md), [health-econ lab](../analysis_plan/playbooks/08_health_econ_identification_lab.md), and [emergencies](../analysis_plan/playbooks/99_emergencies.md). Publication-register prose uses the [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md).
 
 ## What belongs here
 

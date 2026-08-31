@@ -33,4 +33,6 @@ No coefficient, row count, or *q*-value belongs in an administrative field.
 
 ## After Bishai returns the form
 
-Keep his wording. Do not tidy supervisor comments. Submit the endorsed form and the locked essay PDF to `laidlaw@hku.hk`. Do not rebuild the essay unless he requires a correction.
+**Returned 31 August 2026.** Satisfactory circled. Keep his wording. Do not tidy supervisor comments. Submit the endorsed form and the **examined** essay (22 August foldback, SHA prefix `c083d4096a0924b1`) to `laidlaw@hku.hk`. Do not rebuild the essay. Do not substitute the 24 August Hogan-aligned PDF. Do not commit the signed PDF.
+
+Do not quote the comments-box sentence about “5 days of very hot nights and cardiovascular disease” on LSN, blogs, or the live manuscript. The signed essay refuses that claim. Review: [`reports/laidlaw_stage3/caliber_review_bishai_form2a_2026-08-31.md`](../../reports/laidlaw_stage3/caliber_review_bishai_form2a_2026-08-31.md).

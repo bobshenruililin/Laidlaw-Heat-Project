@@ -6,13 +6,13 @@
 
 | Requirement | Current artifact | Status |
 |---|---|---|
-| Research essay: **ca.** 2,000–3,000 words; accessible academic paper | `ShenRuililin_Laidlaw_Stage3Report.pdf` / `outputs/ShenRuililin_Laidlaw_Stage3Report.pdf` | **Ready after Bob fills form 2a blanks.** Abstract excluded. 24 August Hogan-aligned rebuild. Hashes: `analysis_plan/send_pack_2026-08-24/HASH_VERIFY.md`. Word copy for opening in Microsoft Word only. Not the live manuscript. |
-| Research poster: A0 portrait, 841 × 1189 mm | `../poster/ShenRuililin_Laidlaw_Stage3Poster.pdf` / `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` | **Ready.** One page, exact A0. REFERENCES strip, pre-2020 callouts, human collaborator footer. 24 August Hogan-aligned rebuild. |
+| Research essay: **ca.** 2,000–3,000 words; accessible academic paper | **Submit the 22 August foldback PDF Bishai examined** (SHA prefix `c083d4096a0924b1`). Do not substitute the 24 August Hogan-aligned file in `outputs/` (`605cd8db43072cb5`) unless he re-reads it. | **Endorsed.** Introduction–Conclusion ≈ 2,560 words. Not the live manuscript. |
+| Research poster: A0 portrait, 841 × 1189 mm | Matching 22 August foldback (`0ef58e0951bb2ffd`) is what sat with the signed packet. 24 August Hogan-aligned file remains in `outputs/` for the 15 September showcase if Bob chooses it. | **Ready.** File deadline 15 September. |
 | Poster content: title, introduction, objectives, methods, results, conclusions | Same poster | **Present.** Interpretation/limitations is included as an additional section. |
-| Official HKU report form | Official `2a. Laidlaw - Report Form (HKU).docx` (Bob’s local copy; not committed) | **Worksheet ready.** Fill from [`../../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md`](../../analysis_plan/send_pack_2026-08-20/form_2a_fill_worksheet.md). |
-| Supervisor endorsement and comments | Prof. David Bishai | **Human action required.** Send Email A from [`../../analysis_plan/send_pack_2026-08-24/to_bishai.md`](../../analysis_plan/send_pack_2026-08-24/to_bishai.md). |
+| Official HKU report form | Bob’s local signed copy (not committed) | **Signed.** Satisfactory circled; comments typed; 31 August 2026. Do not commit the signature image. |
+| Supervisor endorsement and comments | Prof. David Bishai | **Received.** Keep wording. Do not quote the “very hot nights and cardiovascular disease” sentence elsewhere. Review: [`caliber_review_bishai_form2a_2026-08-31.md`](caliber_review_bishai_form2a_2026-08-31.md). |
 | Spreadsheet columns Q, R | Horizons Google sheet (not in repo) | **Paste draft only.** |
-| Final submission | `laidlaw@hku.hk` | **Do only after supervisor endorsement.** |
+| Final submission | `laidlaw@hku.hk` | **Human action:** send endorsed form + examined foldback essay today. |
 
 ## Scientific review before sending
 
@@ -24,10 +24,10 @@
 
 ## Administrative sequence
 
-1. Complete the form without inventing supervisor comments or signatures.
-2. Send the form and `ShenRuililin_Laidlaw_Stage3Report.pdf` to Prof. Bishai (Email A). Optional: attach the A0 poster for information only.
-3. Incorporate any required corrections.
-4. Submit the endorsed form and essay to `laidlaw@hku.hk`.
-5. Retain `ShenRuililin_Laidlaw_Stage3Poster.pdf` for the 15 September file deadline and later showcase.
+1. Complete the form without inventing supervisor comments or signatures. **Done (23 Aug).**
+2. Send the form and essay to Prof. Bishai (Email A). **Done; he signed 31 Aug.**
+3. Incorporate any required corrections. **None requested. Do not rebuild.**
+4. **Now:** submit the endorsed form and the examined 22 August foldback essay (`c083d4096a0924b1`) to `laidlaw@hku.hk`.
+5. Retain the A0 poster for the 15 September file deadline and later showcase.
 
-Current lock: [`../../knowledge/2026-08-24_stage3_hogan_align.md`](../../knowledge/2026-08-24_stage3_hogan_align.md).
+Signed-object lock: [`../../knowledge/2026-08-31_bishai_form2a_signed.md`](../../knowledge/2026-08-31_bishai_form2a_signed.md). 24 August Hogan-language files remain in `outputs/` and are not the Horizons attachment.

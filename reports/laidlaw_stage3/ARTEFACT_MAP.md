@@ -1,15 +1,17 @@
 # Laidlaw artefact map
 
-**Updated:** 24 August 2026
+**Updated:** 31 August 2026
 **Purpose:** Route edits to the correct audience without changing locked files.
 
 | Surface | Audience | Status | Route |
 |---|---|---|---|
-| `ShenRuililin_Laidlaw_Stage3Report.pdf` | HKU Laidlaw | **Current lock** — 24 Aug Hogan-aligned rebuild | Submit this essay. Hashes in `analysis_plan/send_pack_2026-08-24/HASH_VERIFY.md`. |
-| `ShenRuililin_Laidlaw_Stage3Poster.pdf` | HKU Laidlaw events | **Current lock** — 24 Aug Hogan-aligned rebuild | One-page A0 portrait. REFERENCES strip, pre-2020 callouts, human collaborator footer. |
-| `submission_checklist.md` | Bob, supervisor, HKU administration | Living status record | Update administrative completion only. Current send pack: `analysis_plan/send_pack_2026-08-24/`. |
-| `analysis_plan/send_pack_2026-08-24/` | Professor Bishai (programme) | **Current Email A — Bob sends** | Form 2a + 24 Aug essay + optional poster; Thursday 27 Aug print backup. Do not send from an agent account. |
-| `analysis_plan/send_pack_2026-08-22/` | Professor Bishai (programme) | Superseded for sending | 22 August pack. Keep as history. |
+| 22 Aug foldback `ShenRuililin_Laidlaw_Stage3Report.pdf` (`c083d4096a0924b1`) | HKU Laidlaw | **Signed object** | Submit this essay with form 2a. Bishai examined it. |
+| 24 Aug Hogan-aligned essay in `outputs/` (`605cd8db43072cb5`) | Repo / Hogan language | Not the signed object | Do not send to Horizons unless Bishai re-examines it. |
+| Matching 22 Aug poster (`0ef58e0951bb2ffd`) | HKU Laidlaw events | Sat with the signed packet | Optional today; file deadline 15 September. |
+| `submission_checklist.md` | Bob, supervisor, HKU administration | Living status record | Endorsed; remaining job is `laidlaw@hku.hk`. |
+| `caliber_review_bishai_form2a_2026-08-31.md` | Bob / future agents | Done | Independent triangulation of comments vs essay. |
+| `analysis_plan/send_pack_2026-08-24/` | Professor Bishai (programme) | Rebuild that was not the signed file | Keep as Hogan-language pack. |
+| `analysis_plan/send_pack_2026-08-22/` | Professor Bishai (programme) | Origin of the signed hashes | Foldback lock. |
 | `analysis_plan/send_pack_2026-08-20/` | Professor Bishai (programme) | Worksheet / hashes / Q/R | Origin of Email A. Superseded for sending. |
 | `reports/lsn/research_project_summary.md` and `docs/lsn/` | Laidlaw Scholar Network | Draft rewritten 13 Aug to CHD/HF; still no coefficients on the public page | Bob’s voice/privacy pass before posting. Do not use the 5 August stroke pack. |
 | `reports/blog/` | Laidlaw website readers | Drafts | Write about process. Bob completes the voice, privacy, and publishing pass. |

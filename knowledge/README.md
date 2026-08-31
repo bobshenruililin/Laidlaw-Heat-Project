@@ -8,7 +8,7 @@ This directory holds durable, dated project knowledge that should survive a meet
 owns the final CHD/HF reanalysis, manuscript/report package, negative M|D
 feasibility result, and open human decisions.
 
-**Current programme action:** form 2a still uses the Stage 3 essay (`2026-08-20_bishai_form2a.md`). The 27 August print object for Bishai is the Hogan PDF: [`2026-08-27_hogan_print_for_bishai.md`](2026-08-27_hogan_print_for_bishai.md).
+**Current programme action:** form 2a is signed (31 Aug) on the 22 August foldback essay. Submit that PDF, not the 24 August Hogan-aligned file, unless Bishai re-examines it. [`2026-08-31_bishai_form2a_signed.md`](2026-08-31_bishai_form2a_signed.md). The 27 August print object for the journal track remains the Hogan PDF: [`2026-08-27_hogan_print_for_bishai.md`](2026-08-27_hogan_print_for_bishai.md).
 
 ## Structure
 

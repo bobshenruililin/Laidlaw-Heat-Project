@@ -1,11 +1,19 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-27
+**Last updated:** 2026-08-31
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0o. Canonical update — Bishai signed form 2a (31 August)
+
+- Professor Bishai circled **satisfactory**, signed, and dated the supervisor block 31 August 2026. Bob’s form is dated 23 August.
+- He examined the **22 August foldback** essay/poster (`c083d4096a0924b1` / `0ef58e0951bb2ffd`), not the 24 August Hogan-aligned rebuild. Submit those hashes to `laidlaw@hku.hk`. Do not swap in `605cd8db43072cb5`.
+- Comments praise technical level and partnership, then over-claim: “association between 5 days of very hot nights and cardiovascular disease.” Keep his wording on the form. Do not quote that sentence on LSN, blogs, or the live manuscript. The signed essay still refuses a multiplicity-protected thermal claim.
+- This is programme endorsement only. Gate 3, IRB, ICD/timing, stroke, and Model 2/3 fits remain open.
+- Durable: [`knowledge/2026-08-31_bishai_form2a_signed.md`](../knowledge/2026-08-31_bishai_form2a_signed.md). Review: [`reports/laidlaw_stage3/caliber_review_bishai_form2a_2026-08-31.md`](../reports/laidlaw_stage3/caliber_review_bishai_form2a_2026-08-31.md). Do not commit the signed PDF.
 
 ## 0n. Canonical update — print Hogan PDF for Bishai (27 August)
 

@@ -527,8 +527,8 @@ def build_docx() -> None:
     comment(
         doc,
         weather_runs[-1],
-        "Your averaging sentence is left verbatim. In our pipeline, rainfall is a monthly total (mm), "
-        "official extreme days are counts, and humidity is a monthly mean. We have not overwritten the sentence.",
+        "Your averaging sentence is left verbatim. Rainfall is a monthly total (mm), "
+        "official extreme days are counts, and humidity is a monthly mean. The sentence was not overwritten.",
     )
     body(
         doc,
@@ -580,7 +580,7 @@ def build_docx() -> None:
     comment(
         doc,
         m2_run,
-        "Model 2 is specified here and has not been fitted on the governed panel. "
+        "Model 2 is specified here and has not been fitted on the Hospital Authority monthly counts in this file. "
         "Table 2 remains Model 1. Do not type Model 2 coefficients by hand.",
     )
     body(
@@ -680,8 +680,7 @@ def build_docx() -> None:
         t2_run,
         "Table 2 reports Model 1 (thermal variables only; no monthly rainfall or humidity). "
         "Model 2 adds those two covariates and is specified in Methods. "
-        "On a machine with the governed panel, run Rscript scripts/53_hogan_models_rh_rain.R "
-        "and paste Model 2 beside or after Table 2. No new coefficients have been typed by hand. "
+        "Model 2 has not been fitted in this file; no coefficients have been typed by hand. "
         "Model 3 (climatology day counts) is also specified and not fitted here.",
     )
     add_table(
@@ -755,17 +754,18 @@ def build_docx() -> None:
     heading(doc, "Sensitivity analyses", level=2)
     body(
         doc,
-        "Offset choice changed the Model 1 count ratios only trivially. Across trend, window, and COVID-phase specifications, the CHD hot-night ratio ranged from 1.011 to 1.025, and the HF cold-day ratio from 1.043 to 1.113 (Figure 3). The HF cold-day association was strongest before 2020 (1.113, 1.053–1.176). The CHD hot-night association was weaker and compatible with 1 in the pre-2020 window (1.011, 0.991–1.032) and under COVID-phase adjustment (1.013, 0.994–1.033). Figure 3 shows the three official day counts for each outcome under nine trend, window, and COVID-period specifications. For CHD hot nights, the 6-df and 8-df intervals exclude 1 (1.024, 1.005–1.044; 1.023, 1.005–1.042). The 3-df interval includes 1 (1.011, 0.990–1.032). The year-indicator interval has the highest point estimate of the trend checks and includes 1 (1.025, 0.9998–1.050). No trend specification is preferred over the 4-df spline in Model 1. Among specifications more flexible than Model 1, only the 6-df spline keeps both residual intervals away from 1. For HF cold days, the 8-df interval includes 1 (1.062, 0.994–1.135). The pre-2020 window moved more than those two contrasts: nine of the twelve Newey–West lag-6 intervals excluded 1 in that 84-month window, including inverse associations for all six continuous temperature contrasts (Supplementary Figure S6; Supplementary Table S2). No multiplicity control was computed within that window, and no pre-2020 estimate is promoted beyond a sensitivity. The decline in first events and the rise in hot nights are both strong trends across this window, and the same 4-df spline absorbs both. Lag-1 month models attenuated the CHD hot-night association toward 1 (1.010, 0.979–1.042). The HF cold-day association remained elevated at lag 1 (1.073, 1.014–1.135) and was weaker at lag 2 (1.053, 0.985–1.127). Lag-one month is a labelled sensitivity, and it is not a daily lag curve. The months with largest Cook’s distance were February 2020 for CHD and February 2022 for HF cold days. Excluding the most influential month left both exploratory directions unchanged (CHD hot nights 1.021, 1.001–1.040; HF cold days 1.088, 1.034–1.144).",
+        "Offset choice changed the Model 1 count ratios only trivially. Across trend, window, and COVID-phase specifications, the CHD hot-night ratio ranged from 1.011 to 1.025, and the HF cold-day ratio from 1.043 to 1.113 (Figure 3). The HF cold-day association was strongest before 2020 (1.113, 1.053–1.176). The CHD hot-night association was weaker and compatible with 1 in the pre-2020 window (1.011, 0.991–1.032) and under COVID-phase adjustment (1.013, 0.994–1.033). Figure 3 shows the three official day counts for each outcome under nine trend, window, and COVID-period specifications. For CHD hot nights, the 6-df and 8-df intervals exclude 1 (1.024, 1.005–1.044; 1.023, 1.005–1.042). The 3-df interval includes 1 (1.011, 0.990–1.032). The year-indicator interval has the highest point estimate of the trend checks and includes 1 (1.025, 0.9998–1.050). No trend specification is preferred over the 4-df spline in Model 1. Among specifications more flexible than Model 1, only the 6-df spline keeps both residual intervals away from 1. For HF cold days, the 8-df interval includes 1 (1.062, 0.994–1.135).",
     )
-    add_picture(doc, FIGS[3], new_page=True)
+    body(
+        doc,
+        "The pre-2020 window moved more than those two contrasts: nine of the twelve Newey–West lag-6 intervals excluded 1 in that 84-month window, including inverse associations for all six continuous temperature contrasts (Supplementary Figure S6; Supplementary Table S2). No multiplicity control was computed within that window, and no pre-2020 estimate is promoted beyond a sensitivity. The decline in first events and the rise in hot nights are both strong trends across this window, and the same 4-df spline absorbs both. Lag-1 month models attenuated the CHD hot-night association toward 1 (1.010, 0.979–1.042). The HF cold-day association remained elevated at lag 1 (1.073, 1.014–1.135) and was weaker at lag 2 (1.053, 0.985–1.127). Lag-one month is a labelled sensitivity, and it is not a daily lag curve. The months with largest Cook’s distance were February 2020 for CHD and February 2022 for HF cold days. Excluding the most influential month left both exploratory directions unchanged (CHD hot nights 1.021, 1.001–1.040; HF cold days 1.088, 1.034–1.144). The simulated daily-recovery method failed its worst-cell criteria: null Type I error ranged from 0.048 to 0.150, minimum coverage was 0.840, maximum non-null relative bias was 32.8, and the maximum moderate false-sign rate was 0.808 (Supplementary Table S8). No real daily coefficient is reported. That refusal is specific to this monthly series and this implementation.",
+        new_page=True,
+    )
+    add_picture(doc, FIGS[3], new_page=True, max_height_in=6.0)
     caption(
         doc,
         "Figure 3. Model 1 count ratios for official day counts across time-trend, window, and COVID-period specifications (Newey–West lag-6 intervals). The exposure is the monthly official day count divided by five, so each estimate is the count ratio per five additional such days in that month. Rows labelled 3, 6, or 8 df replace the 4-df time-trend spline of Model 1. Neither the five-day scale nor the spline degrees of freedom refers to consecutive days. Pre-2020 is January 2013–December 2019 (84 months). Continuous-temperature fits for the same specifications are shown in Supplementary Figure S6.",
         keep_with_next=False,
-    )
-    body(
-        doc,
-        "The simulated daily-recovery method failed its worst-cell criteria: null Type I error ranged from 0.048 to 0.150, minimum coverage was 0.840, maximum non-null relative bias was 32.8, and the maximum moderate false-sign rate was 0.808 (Supplementary Table S8). No real daily coefficient is reported. That refusal is specific to this monthly series and this implementation.",
     )
 
     heading(doc, "Discussion", new_page=True)
@@ -785,7 +785,7 @@ def build_docx() -> None:
     ]:
         body(doc, para)
 
-    heading(doc, "Conclusion", new_page=True)
+    heading(doc, "Conclusion")
     body(
         doc,
         "Between 2013 and 2023, hot nights in Hong Kong increased while cold days persisted. In monthly Hospital Authority counts for people with type 2 diabetes and/or hypertension, CHD first hospitalisations were more closely associated with hot nights, and HF first hospitalisations with cold days, than with the other thermal encodings examined. Neither association survived correction across the twelve Model 1 fits. The CHD estimate additionally depended on the treatment of uncertainty and on the inclusion of 2020–2023. This analysis therefore contributes a set of hypotheses, and an explicit account of what monthly aggregate counts cannot settle. Physiological accounts of overnight recovery and cold-related afterload, and a mapping onto published heat-health action-plan elements, are interpretation. They are not identified effects and not an evaluation of Hong Kong's warnings. Better-denominated and more finely resolved data are required before a thermal effect on cardiac hospitalisation in this cohort can be estimated.",
@@ -893,7 +893,20 @@ def build_docx() -> None:
     assert "Yang CY" in texts
     assert texts.lower().count("medication") == 0
     assert "housing" not in texts.lower()
-    assert len(list(d.comments)) >= 4
+    comments = list(d.comments)
+    assert len(comments) >= 4
+    joined = " ".join(c.text for c in comments).lower()
+    for banned in (
+        "paste",
+        "circulate",
+        "shared live",
+        "pipeline",
+        "gate 3",
+        "core panel",
+        "rscript",
+    ):
+        if banned in joined:
+            raise AssertionError(f"Hogan-facing comment still contains {banned!r}")
     print("docx checks passed")
 
 
@@ -968,6 +981,31 @@ def review_pdf() -> None:
         raise SystemExit("Figure 3 caption missing spline-df guardrail")
     if "Supplementary Figure S6" not in pages[f3]:
         raise SystemExit("Figure 3 caption missing S6 cross-reference")
+    for needle in (
+        "Prolonged Heat Special Alert",
+        "do not count admissions averted",
+        "Liu et al. (2020, 2026)",
+        "Pollution and influenza",
+        "The contribution of this analysis",
+        "Candidate mechanisms for a night residual",
+        "corresponding hypothesis for HF",
+        "reporting scale rather than a consecutive-day trigger",
+        "6-df spline",
+        "Between 2013 and 2023, hot nights",
+    ):
+        if needle not in full:
+            raise SystemExit(f"PDF incomplete: missing {needle!r}")
+    float_needles = (
+        "Table 1. Outcome summary",
+        "Table 2. Model 1:",
+        "Table 3. Uncertainty ladder",
+        "Figure 1. First-event",
+        "Figure 2. Official cold days",
+        "Figure 3. Model 1 count ratios",
+    )
+    for i, text in enumerate(pages):
+        if len(text) < 220 and not any(n in text for n in float_needles):
+            raise SystemExit(f"orphan page {i + 1}: {text[:120]!r}")
     print(
         f"pdf layout ok: {len(pages)} pages; "
         f"T1 p{t1+1} T2 p{t2+1} T3 p{t3+1} F1 p{f1+1} F2 p{f2+1} F3 p{f3+1}"

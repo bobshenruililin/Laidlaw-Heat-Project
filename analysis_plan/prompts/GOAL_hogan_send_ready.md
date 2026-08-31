@@ -11,7 +11,7 @@ Paste this entire file as the user message. Do not add “paste into the shared 
 3. **Same graphs:** Figure 1 `figure_B_first_event_depletion.png`; Figure 2 `figure_A_cold_day_identification.png`; Figure 3 `figure_D_trend_depletion_sensitivity.png` (portrait official-count forest). Not release figure 4. S6 stays supplement.
 4. **Same page contract:** A4; circulation banner absent; Tables 1–3 each on one page; Figure 3 on its own page; Hogan HKO sentences verbatim (`HOGAN_OPEN`, `HOGAN_AVG`); Table 2 = Model 1 numbers unchanged; `housing` absent; `medication` count 0; no Gate 3 / pipeline / “core panel” in the scientific body.
 5. **No “paste” / “circulate” / “shared live document”** in PDF body text **or** Word comments. Rewrite the Table 2 comment so it does not say “paste Model 2”.
-6. Print `sha256` prefixes and page count. Run `tests/test_hogan_methods_rewrite.py`, `tests/test_storm_physio_hhap.py`, `python3 scripts/71_objective_audit_tripwires.py`.
+6. Print `sha256` prefixes and page count. Run `tests/test_hogan_methods_rewrite.py`, `tests/test_storm_physio_hhap.py`, `tests/test_hogan_exceeds_20260824_snapshot.py`, `python3 scripts/71_objective_audit_tripwires.py`.
 7. Optional: one **email body** in `analysis_plan/send_pack_* /to_hogan.md` that Bob sends himself. Agents do not send Outlook.
 
 ## Stop (do not spend the hour on these)

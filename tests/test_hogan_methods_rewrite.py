@@ -187,9 +187,20 @@ def test_final_docx_and_pdf_exist_when_built():
     comments = list(d.comments)
     assert len(comments) >= 4
     joined = " ".join(c.text for c in comments)
+    joined_low = joined.lower()
     assert "UW XX-XXX" in joined or "IRB" in joined
     assert "Model 2" in joined
     assert "rainfall" in joined.lower()
+    for banned in (
+        "paste",
+        "circulate",
+        "shared live",
+        "pipeline",
+        "gate 3",
+        "core panel",
+        "rscript",
+    ):
+        assert banned not in joined_low, banned
 
 
 def _norm(text: str) -> str:
@@ -237,6 +248,28 @@ def test_print_pdf_has_no_banner_and_keeps_tables_on_one_page():
     assert "Supplementary Figure S6" in pages[f3]
     assert "Spline df 6" not in full
     assert "All twelve Model 1 fits are shown across nine specifications." not in full
+    for needle in (
+        "Prolonged Heat Special Alert",
+        "do not count admissions averted",
+        "Liu et al. (2020, 2026)",
+        "Pollution and influenza",
+        "Candidate mechanisms for a night residual",
+        "corresponding hypothesis for HF",
+        "reporting scale rather than a consecutive-day trigger",
+        "6-df spline",
+    ):
+        assert needle in full, needle
+    float_needles = (
+        "Table 1. Outcome summary",
+        "Table 2. Model 1:",
+        "Table 3. Uncertainty ladder",
+        "Figure 1. First-event",
+        "Figure 2. Official cold days",
+        "Figure 3. Model 1 count ratios",
+    )
+    for i, text in enumerate(pages):
+        if len(text) < 220:
+            assert any(n in text for n in float_needles), f"orphan page {i + 1}"
 
 
 if __name__ == "__main__":

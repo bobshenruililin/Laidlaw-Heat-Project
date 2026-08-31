@@ -1,11 +1,17 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-30
+**Last updated:** 2026-08-31
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0w. Canonical update — Hogan Word+PDF exceed 24 August snapshot (31 August)
+
+- Attachable Hogan files: PDF SHA prefix `96b69b7b7ba38513` (22 A4); Word `852702ded2c4e968`. Snapshot to beat was Desktop `Heat_CVD_Manuscript_20260824_hogan.pdf` (`b172ed31659d6cd6`, 14 pages). Scorecard: [`reports/hogan_exceeds_20260824_snapshot.md`](../reports/hogan_exceeds_20260824_snapshot.md).
+- Wins: own-page tables/figures; official-count Figure 3 with five-day scale and spline-df labels; 6-df named robustness; consecutive-days guardrail; short physiology; WHO×HK mapping; send-ready Word comments (no paste/pipeline). Locked Model 1 numbers and Hogan weather unchanged.
+- Gate 3 remains **OPEN**. Model 2/3 unfitted. Do not attach this live file to Stage 3 form 2a.
 
 ## 0v. Canonical update — Stage 3 send pack for Bishai (30 August)
 
@@ -16,7 +22,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 ## 0u. Canonical update — HHAP / 5-day are not the core paper (30 August)
 
 - Core analysis remains Table 2 Model 1 (twelve contrasts; all *q* > 0.19). Bishai’s physiology and HHAP asks are **interpretation**: short hypotheses + instruments-only WHO/HK map. `I(count/5)` is a reporting scale, not a consecutive 5-day trigger. Durable: [`knowledge/2026-08-30_grok_cursor_hhap_core.md`](../knowledge/2026-08-30_grok_cursor_hhap_core.md).
-- Canonical PDFs in this checkout: Hogan `346f2174cb7cc603` (23 A4); Stage 3 essay `1200082a9e7c9caa` (13 A4, 2,987 words); poster `a972206e61932650` (A0, still 24 August Hogan-align). Desktop copies are not readable here.
+- Canonical PDFs in this checkout: Hogan `96b69b7b7ba38513` (22 A4); Stage 3 essay `1200082a9e7c9caa` (13 A4, 2,987 words); poster `a972206e61932650` (A0, still 24 August Hogan-align). Desktop 24 August Hogan snapshot was `b172ed31659d6cd6` (14 pages) and is now exceeded.
 - Gate 3 remains **OPEN**.
 
 ## 0t. Canonical update — Cursor health-econ rails + PR board (30 August)

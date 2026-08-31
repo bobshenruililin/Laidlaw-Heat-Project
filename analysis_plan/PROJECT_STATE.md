@@ -1,11 +1,18 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-27
+**Last updated:** 2026-08-31
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0p. Canonical update — Stage 3 to Horizons (31 August)
+
+- Professor Bishai circled **satisfactory**, wrote comments, signed, and dated **31 August 2026**. Keep his wording. Do not tidy it. Do not commit the signed form PDF.
+- Bob sends form + essay to `laidlaw@hku.hk` today. Poster may go with that mail (file due 15 September). Pack: [`send_pack_2026-08-31/`](send_pack_2026-08-31/). Durable: [`../knowledge/2026-08-31_stage3_horizons_submit.md`](../knowledge/2026-08-31_stage3_horizons_submit.md).
+- Horizons object is the **22 August** essay/poster Bob uploaded with the form (`c083d4096a0924b1` / `0ef58e0951bb2ffd`), matching the 23 August student date. Do not attach `Heat_CVD_Manuscript_20260824_hogan.pdf`. Do not swap in the 24 August rebuild on `main` unless he said he examined that PDF.
+- F1000Research showcasing is not implied by this form. Gate 3 still open. Science unchanged: all twelve Model 1 *q* > 0.19.
 
 ## 0n. Canonical update — print Hogan PDF for Bishai (27 August)
 

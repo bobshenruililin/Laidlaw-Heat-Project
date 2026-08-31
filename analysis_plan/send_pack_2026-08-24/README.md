@@ -1,5 +1,7 @@
 # Send pack — 24 August 2026 (updated Stage 3 files)
 
+**31 August:** Horizons submit is [`../send_pack_2026-08-31/`](../send_pack_2026-08-31/). The signed form travelled with the **22 August** essay/poster Bob uploaded, not these 24 August hashes, unless Bishai said he examined this PDF.
+
 **Mode:** Ship.  
 **Job:** send Professor Bishai the Hogan-aligned programme essay and poster for form 2a.  
 **Not this round:** Hogan live-file paste (human); Gate 3 freeze; Model 2/3 health coefficients; stroke.

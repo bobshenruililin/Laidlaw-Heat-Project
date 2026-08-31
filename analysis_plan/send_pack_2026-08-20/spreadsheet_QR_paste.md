@@ -1,8 +1,10 @@
 # Spreadsheet columns Q and R — paste draft
 
+**31 August 2026:** for the Horizons send, use [`../send_pack_2026-08-31/spreadsheet_QR_paste.md`](../send_pack_2026-08-31/spreadsheet_QR_paste.md). The block below is the 20 August “ready / sent to Bishai” text. Do not paste it after the report has gone to `laidlaw@hku.hk`.
+
 Agents cannot edit Audrey’s Google sheet. The sheet was not uploaded. Headers are not recorded in this repository. Bob opens the sheet, checks the column titles, and pastes.
 
-## If Q and R are status / notes cells
+## If Q and R are status / notes cells (20 August — historical)
 
 **Q (essay)**
 

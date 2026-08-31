@@ -34,3 +34,5 @@ No coefficient, row count, or *q*-value belongs in an administrative field.
 ## After Bishai returns the form
 
 Keep his wording. Do not tidy supervisor comments. Submit the endorsed form and the locked essay PDF to `laidlaw@hku.hk`. Do not rebuild the essay unless he requires a correction.
+
+**Done 31 August 2026.** Satisfactory circled; comments kept verbatim in [`../send_pack_2026-08-31/comments_verbatim.md`](../send_pack_2026-08-31/comments_verbatim.md). Horizons email: [`../send_pack_2026-08-31/to_laidlaw.md`](../send_pack_2026-08-31/to_laidlaw.md). Do not commit the signed PDF.

@@ -41,6 +41,7 @@ Full post-meeting recalibration: [`reports/meeting_debrief_2026-07-17.md`](repor
 | HA outcomes | **CHD + HF received 7 Aug 2026** (T2D/HTN cohort; first hosp. after first CVD dx). **Stroke file not attached.** |
 | Multi-pathway analysis | **REAL panel complete for CHD & HF** (`run_cvd_full_analysis.R`); Gate 3 open |
 | Association estimates | **Panel estimates exist for CHD/HF** — not a team-frozen headline; stroke none |
+| Laidlaw Stage 3 (programme) | **Endorsed form 2a 31 Aug 2026.** Horizons send: [`analysis_plan/send_pack_2026-08-31/`](analysis_plan/send_pack_2026-08-31/). Essay/poster object is the 22 Aug lock, not the Hogan live file. |
 | Final publication package | **Ready for team decision** — integrated report + manuscript + supplement PDFs; release checks 29/29 |
 | Daily-effect recovery | **Rejected for this dataset** — 500-replicate M\|D calibration failed strict gates; no real daily coefficient |
 
@@ -162,7 +163,7 @@ Monthly spell / combined day–night metrics (including 2D3N-style windows) are 
 | How Bob + agents work | [`AGENTS.md`](AGENTS.md) · [`analysis_plan/human_agent_collaboration.md`](analysis_plan/human_agent_collaboration.md) |
 | Hogan writing / mentorship bar | [`analysis_plan/writing_standards_hogan.md`](analysis_plan/writing_standards_hogan.md) |
 | **Permanent knowledge base** | [`knowledge/README.md`](knowledge/README.md) · [`knowledge/INDEX.md`](knowledge/INDEX.md) |
-| **Laidlaw Stage 3 submission packet** | [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) · [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) · [`reports/laidlaw_stage3/README.md`](reports/laidlaw_stage3/README.md) |
+| **Laidlaw Stage 3 submission packet** | Horizons send: [`analysis_plan/send_pack_2026-08-31/`](analysis_plan/send_pack_2026-08-31/) · repo essay/poster still in [`outputs/`](outputs/) (24 Aug rebuild) · [`reports/laidlaw_stage3/README.md`](reports/laidlaw_stage3/README.md) |
 | **Laidlaw website blogs** (MIT Admissions-style) | [`reports/blog/`](reports/blog/) · [`knowledge/2026-07-26_laidlaw_blog_canon.md`](knowledge/2026-07-26_laidlaw_blog_canon.md) |
 | **Hogan Tuesday pack (28 Jul 2026)** | [`reports/hogan_tuesday/README.md`](reports/hogan_tuesday/README.md) |
 

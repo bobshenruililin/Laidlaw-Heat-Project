@@ -1,15 +1,15 @@
 # Hogan Word+PDF vs 24 August snapshot
 
-**Date:** 31 August 2026.  
+**Date:** 2 September 2026 (S9 restore). First exceed recorded 31 August 2026.  
 **Snapshot:** Bob Desktop `Heat_CVD_Manuscript_20260824_hogan.pdf` (upload SHA-256 prefix `b172ed31659d6cd6`, 14 pages, 679 857 bytes).  
 **Current attachable files:**
 
 | File | SHA-256 prefix | Size | Pages |
 |---|---|---|---|
-| `manuscript/live_collaborative/Heat_CVD_Manuscript_20260824_hogan.pdf` | `96b69b7b7ba38513` | 868 327 | 22 |
-| `manuscript/live_collaborative/Heat_CVD_Manuscript_20260824_hogan.docx` | `852702ded2c4e968` | 792 167 | — |
+| `manuscript/live_collaborative/Heat_CVD_Manuscript_20260824_hogan.pdf` | `306e084824de6b0e` | 868 629 | 22 |
+| `manuscript/live_collaborative/Heat_CVD_Manuscript_20260824_hogan.docx` | `afff1fcc7b079e1f` | 792 210 | — |
 
-Verified by `tests/test_hogan_exceeds_20260824_snapshot.py`, `tests/test_hogan_methods_rewrite.py`, `tests/test_storm_physio_hhap.py`, and `scripts/71_objective_audit_tripwires.py`.
+Verified by `tests/test_hogan_exceeds_20260824_snapshot.py`, `tests/test_hogan_methods_rewrite.py`, `tests/test_storm_physio_hhap.py`, `tests/test_hhap_companion_2026-09-02.py`, and `scripts/71_objective_audit_tripwires.py`. Claim-ledger auditor 161/0.
 
 This is not a Gate 3 freeze. Model 2/3 remain specified and unfitted. Table 2 remains Model 1.
 
@@ -30,6 +30,7 @@ This is not a Gate 3 freeze. Model 2/3 remain specified and unfitted. Table 2 re
 | Night/CHD physiology | Absent | Hypothesis; indoor T unmeasured | Exceeds |
 | HF/cold physiology | Absent | Haemodynamic hypothesis; Goggins neighbour not imported | Exceeds |
 | WHO 2026 × HK instruments | Absent | Mapping only; Prolonged Heat Special Alert; no admissions averted | Exceeds |
+| Supplementary Table S9 in Discussion | Absent from 24 Aug snapshot body | Restored 2 Sep (archive P11; not core-adjusted) | Exceeds |
 | Discussion close (Liu, pollution, contribution, Conclusion) | Complete on 14 pages | Complete on 22 pages (no truncated Discussion) | Exceeds |
 | References 23–33 (Chevance through HAD shelters) | Absent | Present | Exceeds |
 | Hogan-facing Word comments | Not scored on the PDF | No paste / circulate / pipeline / Rscript | Exceeds |

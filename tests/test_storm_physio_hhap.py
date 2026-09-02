@@ -153,6 +153,8 @@ def test_builder_and_live_discussion_stay_in_sync():
     ):
         assert needle in MS_TEXT
         assert needle in BUILDER_TEXT
+    assert "Supplementary Table S9" in MS_TEXT
+    assert "Supplementary Table S9" in BUILDER_TEXT
 
 
 def test_laidlaw_report_carries_the_same_science():

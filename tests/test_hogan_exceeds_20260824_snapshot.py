@@ -108,6 +108,7 @@ def test_discussion_wins_over_snapshot():
         assert needle in full, needle
     assert "do not count admissions averted" in full
     assert "They are not a test of any alert" in full
+    assert "Supplementary Table S9" in full
 
 
 def test_word_comments_are_send_ready():

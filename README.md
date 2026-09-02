@@ -42,6 +42,7 @@ Full post-meeting recalibration: [`reports/meeting_debrief_2026-07-17.md`](repor
 | Multi-pathway analysis | **REAL panel complete for CHD & HF** (`run_cvd_full_analysis.R`); Gate 3 open |
 | Association estimates | **Panel estimates exist for CHD/HF** — not a team-frozen headline; stroke none |
 | Final publication package | **Ready for team decision** — integrated report + manuscript + supplement PDFs; release checks 29/29 |
+| HHAP companion (Bishai) | **Mapping paper ready** — `manuscript/hhap/who2026_hong_kong_instrument_map.pdf`; not an evaluation of warnings |
 | Daily-effect recovery | **Rejected for this dataset** — 500-replicate M\|D calibration failed strict gates; no real daily coefficient |
 
 Do not treat synthetic practice runs as results. Do not treat open-Gate-3 panel coefficients as the primary manuscript claim.

@@ -4,7 +4,7 @@
 # Do not collapse incompatible families into one attractive incomplete story.
 
 lab: heat_chd_hf_auto_research
-updated: 2026-08-16
+updated: 2026-09-02
 stop_rule: identification_article_survives_audit_and_gaps_are_human_owned
 do_not_copy_from_crouzeix:
   - assume_complete_affirmative_proof_exists
@@ -99,6 +99,20 @@ families:
       - knowledge/2026-07-26_laidlaw_blog_canon.md
       - reports/blog/
       - reports/lsn/research_project_summary.md
+
+  hhap_mapping:
+    id: F07
+    status: alive
+    job: "Map WHO 2026 eight outputs onto named Hong Kong instruments. Companion paper only. Do not evaluate VHWW. Do not paste a long HHAP catalogue into the identification Discussion."
+    must_not_collapse_into: "An evaluation of warnings, admissions averted, or a 5-day trigger from monthly counts."
+    kill_only_with:
+      - table_contradiction
+      - forbidden_claim_hit
+    owner: Bishai
+    primary_files:
+      - manuscript/hhap/who2026_hong_kong_instrument_map.md
+      - reports/storm_physio_hhap_2026-08-29/05_hhap_crosswalk.md
+      - reports/storm_physio_hhap_2026-08-29/06_kill_list.md
 
 human_owned_never_fill:
   - gate_3_freeze

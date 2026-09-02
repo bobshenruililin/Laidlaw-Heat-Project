@@ -1,0 +1,36 @@
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs,array,tabularx,longtable}
+\usepackage{float,needspace}
+\usepackage{caption}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  justification=raggedright,
+  singlelinecheck=false
+}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\setcounter{secnumdepth}{1}
+\usepackage{titling}
+\setlength{\droptitle}{-1.2em}
+\pretitle{\begin{flushleft}\fontsize{16}{20}\selectfont\bfseries}
+\posttitle{\par\end{flushleft}\vspace{0.35em}}
+\preauthor{\begin{flushleft}\normalsize}
+\postauthor{\par\end{flushleft}}
+\predate{\begin{flushleft}\small}
+\postdate{\par\end{flushleft}\vspace{0.4em}\hrule\vspace{0.7em}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize Hong Kong instruments and WHO 2026 HHAP elements}
+\fancyhead[R]{\footnotesize Shen and Bishai}
+\fancyfoot[C]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\AtBeginDocument{\urlstyle{same}}
+\raggedbottom
+\emergencystretch=2em
+\AtBeginEnvironment{longtable}{\footnotesize}

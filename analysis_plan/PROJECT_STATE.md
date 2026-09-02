@@ -1,11 +1,18 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-31
+**Last updated:** 2026-09-02
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0x. Canonical update — HHAP companion paper; S9 restored (2 September)
+
+- Bishai-facing companion: [`manuscript/hhap/who2026_hong_kong_instrument_map.md`](../manuscript/hhap/who2026_hong_kong_instrument_map.md). PDF SHA prefix `71b1073ab3b93ee9` (5 A4). Maps WHO 2026 eight *outputs* onto named HKO/DH/HAD instruments. **Mapping, not evaluation.** Law et al. 2026 is a neighbouring daily mortality/calls paper, not this panel. Heat-only reading refused (HF × cold days is the more coherent residual).
+- Live identification article: Supplementary Table S9 citation restored. Claim-ledger auditor **161/0**. Hogan PDF `306e084824de6b0e` (22 A4); Word `afff1fcc7b079e1f`. Table 2, Abstract, Hogan weather unchanged. Ceiling remains band 6–7. Family **F07** in the approach registry.
+- Do not paste the companion back into the identification Discussion (29 Aug inherit audit: long insert WORSE).
+- Gate 3 remains **OPEN**. Durable: [`knowledge/2026-09-02_autoresearch_hhap_paper.md`](../knowledge/2026-09-02_autoresearch_hhap_paper.md).
 
 ## 0w. Canonical update — Hogan Word+PDF exceed 24 August snapshot (31 August)
 

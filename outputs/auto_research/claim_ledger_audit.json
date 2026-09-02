@@ -1,7 +1,7 @@
 {
   "manuscript": "manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md",
-  "n_pass": 161,
-  "n_fail": 0,
+  "n_pass": 160,
+  "n_fail": 1,
   "passes": [
     "hogan_weather_start",
     "hogan_weather:the number of hot nights",
@@ -160,11 +160,12 @@
     "supp_table_s7:source_exists",
     "supp_table_s8:display",
     "supp_table_s8:source_exists",
-    "supp_table_s9:display",
     "supp_table_s9:source_exists",
     "running_title:display",
     "running_title:source_exists"
   ],
-  "failures": [],
-  "ok": true
+  "failures": [
+    "supp_table_s9: display not in manuscript ['Supplementary Table S9']"
+  ],
+  "ok": false
 }

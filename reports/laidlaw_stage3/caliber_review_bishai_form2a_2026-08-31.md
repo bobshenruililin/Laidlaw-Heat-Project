@@ -12,7 +12,7 @@
 | `ShenRuililin_Laidlaw_Stage3Poster.pdf` | 93,978 | `0ef58e0951bb2ffd` | 22 Aug 2026 17:34 (pdfTeX) |
 | `2a. Laidlaw - Report Form (HKU).pdf` | 335,946 | `722ba1f70f246c2d` | Word → macOS Quartz; modified 31 Aug 2026 08:49 |
 
-These hashes are the **22 August night foldback** ([`knowledge/2026-08-22_stage3_foldback.md`](../../knowledge/2026-08-22_stage3_foldback.md)). They are **not** the 24 August Hogan-aligned rebuild in `outputs/` (`605cd8db43072cb5` / `a972206e61932650`). Science (the twelve count ratios) is the same. The signed essay still says “core panel”; the 24 August files name nested Model 1 / 2 / 3.
+These hashes are the **22 August night foldback** ([`knowledge/2026-08-22_stage3_foldback.md`](../../knowledge/2026-08-22_stage3_foldback.md)). They are **not** the later `outputs/` essay on `main` (`1200082a9e7c9caa`) and **not** the 24 August Hogan-aligned essay (`605cd8db43072cb5`). Hash table: [`knowledge/2026-08-31_bishai_form2a_signed.md`](../../knowledge/2026-08-31_bishai_form2a_signed.md). Science (the twelve count ratios) is the same. The signed essay still says “core panel”; the 24 August files name nested Model 1 / 2 / 3.
 
 Form date of submission: **23 August 2026**. Supervisor date: **31 August 2026**. That order is consistent with Email A going out on the foldback PDFs, then Hogan’s 24 August comments prompting a repo rebuild that Bishai did not re-sign.
 

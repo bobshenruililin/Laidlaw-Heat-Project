@@ -14,6 +14,7 @@ Bob’s form is dated 23 August. The attached essay and poster hashes match the 
 | A0 poster he examined | `0ef58e0951bb2ffd` | same |
 | 24 Aug essay (not signed against) | `605cd8db43072cb5` | [`2026-08-24_stage3_hogan_align.md`](2026-08-24_stage3_hogan_align.md) |
 | `outputs/` essay on `main` (later cut; not what he signed) | `1200082a9e7c9caa` | [`../analysis_plan/send_pack_2026-08-30/`](../analysis_plan/send_pack_2026-08-30/) |
+| Poster on `main` before the logo CL | `a972206e61932650` | Pre-logo; not what he signed |
 
 Do not replace `outputs/ShenRuililin_Laidlaw_Stage3Report.pdf` with the foldback or the 24 August file. Horizons programme send uses the examined foldback; the later `outputs/` cut stays on trunk.
 

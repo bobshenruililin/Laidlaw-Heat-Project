@@ -1,6 +1,6 @@
 # Agent-owned SHORTEN — Ioannou n=7 and bedroom temperature
 
-**Not a Hogan vote.** Evidence hygiene, not prose taste. Do not edit the live manuscript today unless Hogan asks.
+**Not a Hogan vote.** Evidence hygiene, not prose taste. Hogan’s 4 Sep rule: tell him beforehand, as bullets. Do not edit the live manuscript until he has seen [`MECHANISM_BULLETS.md`](MECHANISM_BULLETS.md).
 
 ## Recommendation
 

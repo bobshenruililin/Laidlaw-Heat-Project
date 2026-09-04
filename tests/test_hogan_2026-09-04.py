@@ -21,7 +21,15 @@ def _words(text: str) -> list[str]:
 
 
 def test_pack_files_exist():
-    for p in (BRIEF, TALK, SCORE, SHORT, PACK / "APPENDIX_NEIGHBOURS.md", PACK / "DEBRIEF_TEMPLATE.md"):
+    for p in (
+        BRIEF,
+        TALK,
+        SCORE,
+        SHORT,
+        PACK / "APPENDIX_NEIGHBOURS.md",
+        PACK / "DEBRIEF_TEMPLATE.md",
+        PACK / "MECHANISM_BULLETS.md",
+    ):
         assert p.is_file(), p
 
 
@@ -86,6 +94,24 @@ def test_live_file_not_expanded_today():
     assert "They are not a test of any alert" in live
 
 
+def test_mechanism_bullets_are_short_and_hogan_facing():
+    text = (PACK / "MECHANISM_BULLETS.md").read_text(encoding="utf-8")
+    n = len(_words(text))
+    assert n <= 120, n
+    low = text.lower()
+    assert "overnight recovery" in low
+    assert "afterload" in low
+    assert "seven-person" in low or "confinement" in low
+    assert "bedroom" in low
+    assert "nothing new is proposed" in low
+    assert "1.022" not in text
+    assert "gate 3" not in low
+    assert "ioannou" not in low
+    debrief = (PACK / "DEBRIEF_TEMPLATE.md").read_text(encoding="utf-8")
+    assert "let me know beforehand about which mechanisms" in debrief
+    assert "Locked something? No." in debrief
+
+
 if __name__ == "__main__":
     for fn in (
         test_pack_files_exist,
@@ -95,6 +121,7 @@ if __name__ == "__main__":
         test_scorecard_and_shorten_stay_in_appendix,
         test_scorecard_treats_h4_as_a_clause,
         test_live_file_not_expanded_today,
+        test_mechanism_bullets_are_short_and_hogan_facing,
     ):
         fn()
         print("ok", fn.__name__)

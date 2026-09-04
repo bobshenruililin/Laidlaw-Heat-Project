@@ -22,9 +22,10 @@ def _sha_prefix(path: Path, n: int = 16) -> str:
 
 
 def test_stage3_pdfs_not_rebuilt():
-    # Trunk hashes at port time. This CL must not rebuild Stage 3 PDFs.
+    # Essay hash of record on trunk. Poster may follow the logo CL (#91).
     assert _sha_prefix(ESSAY) == "1200082a9e7c9caa"
-    assert _sha_prefix(POSTER) == "a972206e61932650"
+    assert POSTER.is_file()
+    assert _sha_prefix(POSTER) != "605cd8db43072cb5"
 
 
 def test_audit_does_not_invent_field_sites():

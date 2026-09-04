@@ -60,14 +60,24 @@
   flowarrow/.style={-{Stealth[length=7mm,width=6mm]},line width=2.4pt,draw=Navy}}
 \begin{document}
 % ==================== HEADER (band aligned with columns) =====================
+% Logos sit on Navy, not a white plate: wordmarks reversed to white; crests stay
+% in colour. Stack is vertical because both lockups are horizontal.
 \begin{tcolorbox}[enhanced,colback=Navy,colframe=Navy,boxrule=0pt,arc=0pt,
   width=\linewidth,left=10mm,right=10mm,top=11mm,bottom=11mm,
   borderline south={3mm}{0mm}{Teal},before skip=0pt,after skip=0mm]
+\noindent\begin{minipage}[c]{0.74\linewidth}
+\raggedright
 \textcolor{white}{\TitleFont Heat, cold and first hospitalisation\\[2mm]after cardiovascular diagnosis in Hong Kong}\\[6mm]
 \textcolor{PaleTeal}{\SubtitleFont An exploratory monthly study, 2013--2023}\\[8mm]
 \textcolor{white}{\AuthorFont \textbf{Shen Ruililin}\quad\textbar\quad Laidlaw Scholars Programme\quad\textbar\quad School of Public Health, The University of Hong Kong}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.24\linewidth}
+\centering
+\includegraphics[width=0.88\linewidth]{assets/hku_logo.png}\\[5.5mm]
+\includegraphics[width=0.88\linewidth]{assets/laidlaw_logo.png}
+\end{minipage}
 \end{tcolorbox}
-\vspace{7mm}
+\vspace{6mm}
 % ================= TOP BAND: INTRODUCTION | OBJECTIVE + METHODS ==============
 \noindent\begin{minipage}[t]{0.40\textwidth}
 \sechead{INTRODUCTION}
@@ -148,7 +158,7 @@ higher; cold day: minimum 12\,\textdegree C or lower (HKO
 definitions)\textsuperscript{[1]}. Estimates are count ratios per 5 extreme days
 or per 1\,\textdegree C.\par}
 \end{minipage}
-\vspace{7mm}
+\vspace{4mm}
 
 \sechead{RESULTS}
 \body

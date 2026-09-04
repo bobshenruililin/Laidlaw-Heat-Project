@@ -25,6 +25,7 @@
 ## Current meeting record
 
 - [`2026-09-02_autoresearch_hhap_paper.md`](2026-09-02_autoresearch_hhap_paper.md) — WHO 2026 × HK instrument map. Mapping, not evaluation. Hogan live file not overwritten. Gate 3 open.
+- [`2026-08-25_bishai_form2a_thursday.md`](2026-08-25_bishai_form2a_thursday.md) — Thursday form 2a print pack (history). Do not swap trunk essay `1200082a`.
 - [`2026-08-31_hogan_exceeds_snapshot.md`](2026-08-31_hogan_exceeds_snapshot.md) — Hogan Word+PDF exceed Desktop 24 August snapshot (`b172ed31659d6cd6`). Current PDF `96b69b7b7ba38513`, Word `852702ded2c4e968`. Gate 3 still open.
 - [`2026-09-04_laidlaw_conference_abstract.md`](2026-09-04_laidlaw_conference_abstract.md) — Laidlaw Conference 2026 abstract pack (`reports/laidlaw_conference_2026/`).
 - [`2026-09-04_hogan_physiology_briefing.md`](2026-09-04_hogan_physiology_briefing.md) — Hogan 4 Sep briefing (`reports/hogan_2026-09-04/BRIEFING.md`). Not a weather lock.

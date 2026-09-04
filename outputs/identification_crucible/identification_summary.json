@@ -1,0 +1,35 @@
+{
+  "problem": "What claims are logically licensed by a 132-month first-event count panel after calendar-month FE + ns(time,4)?",
+  "n_months": 132,
+  "control_rank_full": 16,
+  "df_residual_full": 116,
+  "bh_tests": 12,
+  "min_p": 0.0309646706542344,
+  "p_needed_rank1_for_q05": 0.004166666666666667,
+  "p_needed_rank2_for_q05": 0.008333333333333333,
+  "min_p_over_rank1_threshold": 7.4315209570162555,
+  "all_q_gt_019": true,
+  "geography": {
+    "cold_days_total": 145.0,
+    "cold_days_djf_share": 0.9724137931034482,
+    "cold_days_nonzero_months": 29,
+    "hot_nights_total": 449.0,
+    "hot_nights_jja_share": 0.7728285077951003,
+    "hot_nights_nonzero_months": 57,
+    "very_hot_days_total": 421.0,
+    "very_hot_days_jja_share": 0.7387173396674585,
+    "july_hot_nights_min": 1.0,
+    "july_hot_nights_max": 25.0,
+    "july_hot_nights_mean": 13.545454545454545,
+    "january_cold_days_min": 0.0,
+    "january_cold_days_max": 11.0,
+    "january_cold_days_mean": 4.909090909090909,
+    "data_status": "REAL"
+  },
+  "provenance": {
+    "climate": "REAL",
+    "coefficients": "HA_APPROVED_AGGREGATE",
+    "new_health_models": false,
+    "governed_counts_read": false
+  }
+}

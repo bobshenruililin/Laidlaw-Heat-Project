@@ -1,0 +1,50 @@
+# Copy-paste block — Laidlaw Conference 2026 Research form
+
+Paste these fields as written. Do not add Model 1 count ratios. Do not tick Pace.
+
+## 8. Presentation topic
+
+Heat, cold, and first cardiac hospitalisation in Hong Kong: ambition as refusal.
+
+## 9. Categories
+
+Applied Health and Medicine
+Climate and Sustainability
+Technology and Mathematical Sciences
+
+## 10. SDGs
+
+3 Good Health and Wellbeing
+11 Sustainable Cities and Communities
+13 Climate Action
+
+## 11. Ambitious ticks
+
+PASSION
+RESILIENCE
+POSSIBILITY
+VALUE-DRIVEN
+COLLECTIVITY
+RESISTING AND REFORMING
+SCALE
+VISION
+
+(Do not tick PACE. RESISTING AND REFORMING means refusing a confirmatory headline from unprotected monthly counts, not reforming Hong Kong’s warnings.)
+
+## 12. Conference theme “Ambitious” (50–100 words)
+
+Hong Kong’s official hot-night counts increased while official cold days persisted. A complete monthly panel of first coronary heart disease and heart failure hospitalisations among people with diabetes or hypertension was built at that scale, then not promoted to a protected thermal claim. Ambition here is finishing the identification: every contrast, every refusal, and a future warning-evaluation design the present analysis cannot run, rather than extracting a headline the twelve *q*-values do not support.
+
+## 13. Presentation title
+
+Hot nights rose. Cold days stayed. The first heart admission did not settle the argument.
+
+## 14. Abstract (200–300 words)
+
+Hong Kong’s official hot-night counts increased between 2013 and 2023, while official cold days persisted. This presentation asks what a monthly hospital series can and cannot settle about heat, cold, and a first cardiac admission in that decade.
+
+The analysis uses 132 territory-months of Hospital Authority counts of first hospitalisation after a first diagnosis of coronary heart disease (156,156 events) or heart failure (29,681 events) among people with type 2 diabetes and/or hypertension. Admission cause was not recorded. Separate negative-binomial models related those monthly counts to official hot nights, very hot days, and cold days, and to monthly mean temperatures. Twelve Model 1 fits were reported together.
+
+All twelve multiplicity-adjusted *q*-values exceeded 0.19. Heart failure with official cold days is the more coherent residual. The coronary disease contrast with official hot nights is smaller, depends on how uncertainty is handled, and is not a twin confirmatory finding. A monthly total of official days does not distinguish consecutive nights from days scattered through a month. It does not measure indoor temperature. It does not recover daily triggering. It does not evaluate Hong Kong’s heat or cold warnings.
+
+Overnight recovery and cold-related afterload remain labelled hypotheses, not identified pathways. A mapping of World Health Organization 2026 heat–health action-plan outputs onto named Hong Kong instruments is a companion map, not an evaluation. Better claims would need daily, cause-recorded, warning-day data.

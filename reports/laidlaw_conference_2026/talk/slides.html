@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hot nights rose. Cold days stayed. The first heart admission did not settle the argument.</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
+<style>
+  :root {
+    --navy: #1B2A41;
+    --teal: #3D6B6E;
+    --rust: #A85A3A;
+    --gray: #E8EAED;
+    --text: #2C2C2C;
+    --soft: #F4F6F8;
+    --white: #ffffff;
+    --chd: #A85A3A;
+    --hf: #3D6B6E;
+    --dim: #9aa3ad;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: #0e1620;
+    color: var(--text);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow: hidden;
+  }
+  #fit { position: fixed; inset: 0; }
+  #deck {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 1920px; height: 1080px;
+    transform-origin: center center;
+    background: var(--white);
+    overflow: hidden;
+  }
+  .slide {
+    display: none;
+    position: absolute;
+    inset: 0;
+    padding: 64px 80px 88px;
+    flex-direction: column;
+  }
+  .slide.active { display: flex; }
+  .slide.dark {
+    background: var(--navy);
+    color: #f4f6f8;
+  }
+  .kicker {
+    font-size: 22px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 700;
+    margin: 0 0 18px;
+  }
+  .slide.dark .kicker { color: #9ec4c6; }
+  h1 {
+    font-size: 48px;
+    line-height: 1.15;
+    color: var(--navy);
+    margin: 0 0 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .slide.dark h1 { color: #fff; font-size: 58px; max-width: 18ch; }
+  p, li { font-size: 30px; line-height: 1.35; margin: 0 0 12px; }
+  .caption {
+    font-size: 24px;
+    color: #5a6570;
+    font-style: italic;
+    margin-top: 8px;
+  }
+  .slide.dark .caption { color: #9aa7b3; font-style: italic; }
+  .rule {
+    width: 88px; height: 5px;
+    background: var(--teal);
+    margin: 0 0 28px;
+    border: 0;
+  }
+  .statrow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 8px 0 22px;
+  }
+  .stat {
+    background: var(--soft);
+    border-radius: 10px;
+    padding: 22px 24px;
+  }
+  .stat b {
+    display: block;
+    font-size: 48px;
+    color: var(--navy);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+  .stat span { font-size: 22px; color: #5a6570; }
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+    min-height: 0;
+  }
+  .est {
+    border-radius: 12px;
+    padding: 26px 28px;
+    border: 1px solid var(--gray);
+    background: var(--soft);
+  }
+  .est.chd { border-top: 8px solid var(--chd); }
+  .est.hf { border-top: 8px solid var(--hf); }
+  .est .who {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+  }
+  .est.chd .who { color: var(--chd); }
+  .est.hf .who { color: var(--hf); }
+  .est .num {
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 6px;
+  }
+  .est .ci { font-size: 26px; color: #3a4450; margin: 0 0 12px; }
+  .est li, .est p { font-size: 24px; }
+  .board {
+    display: grid;
+    grid-template-columns: 140px repeat(6, 1fr);
+    gap: 10px;
+    flex: 1;
+    align-content: center;
+  }
+  .board .hd, .board .cell, .board .lab {
+    padding: 16px 10px;
+    text-align: center;
+    font-size: 22px;
+    border-radius: 8px;
+  }
+  .board .hd { color: var(--teal); font-weight: 700; font-size: 20px; letter-spacing: 0.04em; }
+  .board .lab {
+    text-align: left;
+    font-weight: 700;
+    font-size: 24px;
+    padding-left: 8px;
+  }
+  .board .lab.chd { color: var(--chd); }
+  .board .lab.hf { color: var(--hf); }
+  .board .cell {
+    background: var(--soft);
+    border: 1px solid var(--gray);
+    font-size: 20px;
+  }
+  .can-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+  }
+  .can-grid h2 {
+    margin: 0 0 14px;
+    font-size: 28px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .can-grid .yes { color: var(--teal); }
+  .can-grid .no { color: var(--rust); }
+  .can-grid li { font-size: 28px; }
+  .card {
+    background: var(--soft);
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+    padding: 24px 26px;
+  }
+  .eq-stage {
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--soft);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 8px 0 18px;
+  }
+  .eq-step { display: none; font-size: 34px; }
+  .eq-step.on { display: block; }
+  .eq-note {
+    display: none;
+    font-size: 28px;
+    color: #3a4450;
+    min-height: 2.4em;
+  }
+  .eq-note.on { display: block; }
+  .foot {
+    position: absolute;
+    left: 80px; right: 80px; bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    color: #7a8490;
+    letter-spacing: 0.04em;
+  }
+  .slide.dark .foot { color: #9aa7b3; }
+  .progress {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 6px;
+    background: #d9dee4;
+  }
+  .progress > i {
+    display: block;
+    height: 100%;
+    background: var(--teal);
+    width: 11%;
+  }
+  .hint {
+    position: absolute;
+    right: 80px; top: 28px;
+    font-size: 16px;
+    color: #8b95a0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .slide.dark .hint { color: #8fa3b0; }
+  .sub { font-size: 28px; color: #c5ced6; margin-top: 8px; }
+  .lead { font-size: 34px; line-height: 1.3; max-width: 32ch; }
+  #help {
+    display: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(27,42,65,0.92);
+    color: #fff;
+    z-index: 5;
+    padding: 120px 160px;
+  }
+  #help.show { display: block; }
+  #help h2 { font-size: 40px; margin: 0 0 20px; }
+  #help li { font-size: 28px; }
+  @media print {
+    html, body { background: #fff; overflow: visible; height: auto; }
+    #fit, #deck { position: static; transform: none !important; width: auto; height: auto; }
+    .slide { display: flex; page-break-after: always; position: relative; height: 1080px; width: 1920px; }
+    .hint, #help { display: none !important; }
+    .eq-step, .eq-note { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div id="fit">
+<div id="deck">
+  <div class="hint">← → space · F11 · ?</div>
+
+  <section class="slide dark active" data-id="title">
+    <p class="kicker">Laidlaw Scholars Conference 2026</p>
+    <hr class="rule">
+    <h1>Hot nights rose. Cold days stayed. The first heart admission did not settle the argument.</h1>
+    <p class="sub">Shen Ruililin · The University of Hong Kong</p>
+    <div class="foot"><span>Hong Kong · 2013–2023</span><span class="count"></span></div>
+  </section>
+
+  <section class="slide" data-id="weather-scale">
+    <p class="kicker">Weather, then the file</p>
+    <h1>Official hot nights increased. Official cold days persisted.</h1>
+    <p class="caption">weather.</p>
+    <div class="statrow">
+      <div class="stat"><b>156,156</b><span>CHD first hospitalisations</span></div>
+      <div class="stat"><b>29,681</b><span>HF first hospitalisations</span></div>
+      <div class="stat"><b>132</b><span>territory-months, 2013–2023</span></div>
+    </div>
+    <p>First hospitalisation after a first diagnosis of coronary heart disease or heart failure, among people with type 2 diabetes and/or hypertension. Admission cause was not recorded.</p>
+    <p class="caption">people leave the pool. this is not incidence.</p>
+    <div class="foot"><span>Shen Ruililin · Laidlaw Conference 2026</span><span class="count"></span></div>
+  </section>
+
+  <section class="slide" data-id="equation">
+    <p class="kicker">Equation (1) · Model 1</p>
+    <h1>One weather variable. Four moving parts.</h1>
+    <div class="eq-stage">
+      <div class="eq-step on" data-frag-eq="0" data-tex="\log\mathrm{E}(Y_t)=\log(d_t)+\alpha+\beta X_t+\sum_{m=2}^{12}\gamma_m I(\mathrm{month}_t=m)+s(t;4~\mathrm{df})"></div>
+      <div class="eq-step" data-frag-eq="1" data-tex="\log\mathrm{E}(Y_t)=\color{#A85A3A}{\log(d_t)}+\alpha+\beta X_t+\sum_{m=2}^{12}\gamma_m I(\mathrm{month}_t=m)+s(t;4~\mathrm{df})"></div>
+      <div class="eq-step" data-frag-eq="2" data-tex="\log\mathrm{E}(Y_t)=\log(d_t)+\alpha+\beta X_t+\color{#A85A3A}{\sum_{m=2}^{12}\gamma_m I(\mathrm{month}_t=m)}+s(t;4~\mathrm{df})"></div>
+      <div class="eq-step" data-frag-eq="3" data-tex="\log\mathrm{E}(Y_t)=\log(d_t)+\alpha+\beta X_t+\sum_{m=2}^{12}\gamma_m I(\mathrm{month}_t=m)+\color{#A85A3A}{s(t;4~\mathrm{df})}"></div>
+      <div class="eq-step" data-frag-eq="4" data-tex="\log\mathrm{E}(Y_t)=\log(d_t)+\alpha+\color{#A85A3A}{\beta X_t}+\sum_{m=2}^{12}\gamma_m I(\mathrm{month}_t=m)+s(t;4~\mathrm{df})"></div>
+    </div>
+    <p class="eq-note on" data-frag-eq="0">Negative binomial. Calendar month plus a 4-df time spline. Days-in-month offset.</p>
+    <p class="eq-note" data-frag-eq="1">Offset: days in the month. Not a population. Not still-at-risk person-time.</p>
+    <p class="eq-note" data-frag-eq="2">Season: January is the reference month. This is not the weather.</p>
+    <p class="eq-note" data-frag-eq="3">Slow drift across eleven years. Four degrees of freedom. Not a heatwave length.</p>
+    <p class="eq-note" data-frag-eq="4">The number we report is \(e^{\beta}\): a monthly count ratio. One \(X_t\) per fit.</p>
+    <p class="caption">one weather variable per fit.</p>
+    <div class="tex-source" hidden>\log \mathrm{E}(Y_t) = \log(d_t) + \alpha + \beta X_t + \sum_{m=2}^{12} \gamma_m I(\mathrm{month}_t = m) + s(t; 4~\mathrm{df})</div>
+    <div class="foot"><span>Shen Ruililin · Laidlaw Conference 2026</span><span class="count"></span></div>
+  </section>
+
+  <section class="slide" data-id="daily">
+    <p class="kicker">The extension that did not ship</p>
+    <h1>Why not daily?</h1>
+    <div class="card">
+      <p>A clean-room recovery of daily effects from monthly counts and daily weather was run against 500 simulated replicates.</p>
+      <p>It failed the calibration gate. No real daily coefficient is admitted from that method.</p>
+    </div>
+    <p class="caption">the clever extension did not earn a number.</p>
+    <div class="foot"><span>Shen Ruililin · Laidlaw Conference 2026</span><span class="count"></span></div>
+  </section>
+
+  <section class="slide" data-id="board">
+    <p class="kicker">Twelve Model 1 fits</p>
+    <h1>The board</h1>
+    <div class="board">
+      <div></div>
+      <div class="hd">Mean T</div>
+      <div class="hd">Mean Tmax</div>
+      <div class="hd">Mean Tmin</div>
+      <div class="hd">Hot nights</div>
+      <div class="hd">Very hot days</div>
+      <div class="hd">Cold days</div>
+      <div class="lab chd">CHD</div>
+      <div class="cell">1 °C</div>
+      <div class="cell">1 °C</div>
+      <div class="cell">1 °C</div>
+      <div class="cell">per 5 days</div>
+      <div class="cell">per 5 days</div>
+      <div class="cell">per 5 days</div>
+      <div class="lab hf">HF</div>
+      <div class="cell">1 °C</div>
+      <div class="cell">1 °C</div>
+      <div class="cell">1 °C</div>
+      <div class="cell">per 5 days</div>
+      <div class="cell">per 5 days</div>
+      <div class="cell">per 5 days</div>
+    </div>
+    <p class="caption">we report the whole board.</p>
+    <div class="foot"><span>Shen Ruililin · Laidlaw Conference 2026</span><span class="count"></span></div>
+  </section>
+
+  <section class="slide" data-id="residuals-fence">
+    <p class="kicker">Two residuals · the fence</p>
+    <h1>All twelve <em>q</em>-values exceeded 0.19</h1>
+    <div class="pair">
+      <div class="est chd">
+        <p class="who">CHD · official hot nights / 5 days</p>
+        <p class="num">1.022</p>
+        <p class="ci">(1.002–1.042) · <em>q</em> = 0.192</p>
+        <ul>
+          <li>Smaller. Depends on the uncertainty method.</li>
+          <li>Pre-2020 includes 1.</li>
+        </ul>
+      </div>
+      <div class="est hf">
+        <p class="who">HF · official cold days / 5 days</p>
+        <p class="num">1.073</p>
+        <p class="ci">(1.006–1.144) · <em>q</em> = 0.192</p>
+        <ul>
+          <li>The more coherent residual.</li>
+          <li>Pre-2020: 1.113 (1.053–1.176), excludes 1.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="caption">both <em>q</em> = 0.192. they are not twins.</p>
+    <div class="foot"><span>Newey–West lag 6 · twelve Model 1 fits</span><span class="count"></span></div>
+  </section>
+
+  <section class="slide" data-id="ruler">
+    <p class="kicker">Reporting scale</p>
+    <h1>Five is a ruler, not a heatwave</h1>
+    <div class="card">
+      <p>Official day counts enter as \(I(\mathrm{count}/5)\). That is five extra such days in the month, not five consecutive nights.</p>
+      <p>2018: 26 official hot nights. Zero days in spells of five or more consecutive hot nights.</p>
+    </div>
+    <p class="caption">a ruler, not a trigger.</p>
+    <div class="foot"><span>Shen Ruililin · Laidlaw Conference 2026</span><span class="count"></span></div>
+  </section>
+
+  <section class="slide" data-id="can-cannot">
+    <p class="kicker">Identification</p>
+    <h1>What a month can settle</h1>
+    <div class="can-grid">
+      <div>
+        <h2 class="yes">Can</h2>
+        <ul>
+          <li>Monthly count ratios</li>
+          <li>The twelve-fit fence</li>
+          <li>Which residual is more coherent</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="no">Cannot</h2>
+        <ul>
+          <li>Consecutive duration</li>
+          <li>Indoor temperature</li>
+          <li>Daily triggering</li>
+          <li>Warning performance</li>
+          <li>HHAP evaluation</li>
+        </ul>
+      </div>
+    </div>
+    <p class="caption">a map of instruments is not an evaluation.</p>
+    <div class="foot"><span>Shen Ruililin · Laidlaw Conference 2026</span><span class="count"></span></div>
+  </section>
+
+  <section class="slide dark" data-id="close">
+    <p class="kicker">Laidlaw Scholars Conference 2026</p>
+    <hr class="rule">
+    <h1>Hot nights rose. Cold days stayed. The first heart admission did not settle the argument.</h1>
+    <p class="lead">Better claims need daily, cause-recorded, warning-day data.</p>
+    <p class="sub">Weather co-investigator. Outcome co-investigator. Supervisor.</p>
+    <div class="foot"><span>Shen Ruililin · The University of Hong Kong</span><span class="count"></span></div>
+  </section>
+
+  <div class="progress"><i id="bar"></i></div>
+  <div id="help">
+    <h2>Keys</h2>
+    <ul>
+      <li>Right / Space / click right: next build or next slide</li>
+      <li>Left / click left: previous</li>
+      <li>Home / End: first / last</li>
+      <li>F11 or F: fullscreen</li>
+      <li>?: this panel</li>
+    </ul>
+  </div>
+</div>
+</div>
+<script>
+(function () {
+  const deck = document.getElementById('deck');
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const bar = document.getElementById('bar');
+  const help = document.getElementById('help');
+  const n = slides.length;
+  let i = 0;
+  let f = 0;
+
+  function fit() {
+    const s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    deck.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+  }
+  function maxFrag(slide) {
+    let m = 0;
+    slide.querySelectorAll('[data-frag-eq]').forEach(function (el) {
+      m = Math.max(m, parseInt(el.getAttribute('data-frag-eq'), 10) || 0);
+    });
+    return m;
+  }
+  function applyFrag() {
+    const slide = slides[i];
+    const m = maxFrag(slide);
+    f = Math.max(0, Math.min(f, m));
+    slide.querySelectorAll('[data-frag-eq]').forEach(function (el) {
+      el.classList.toggle('on', parseInt(el.getAttribute('data-frag-eq'), 10) === f);
+    });
+  }
+  function show(k, frag) {
+    i = Math.max(0, Math.min(n - 1, k));
+    f = (typeof frag === 'number') ? frag : 0;
+    slides.forEach(function (el, j) { el.classList.toggle('active', j === i); });
+    bar.style.width = ((i + 1) / n * 100) + '%';
+    slides.forEach(function (el) {
+      const c = el.querySelector('.count');
+      if (c) c.textContent = (i + 1) + ' / ' + n;
+    });
+    applyFrag();
+    if (location.hash !== '#' + (i + 1)) {
+      history.replaceState(null, '', '#' + (i + 1));
+    }
+  }
+  function next() {
+    const m = maxFrag(slides[i]);
+    if (f < m) { f += 1; applyFrag(); return; }
+    show(i + 1, 0);
+  }
+  function prev() {
+    if (f > 0) { f -= 1; applyFrag(); return; }
+    const ni = Math.max(0, i - 1);
+    show(ni, maxFrag(slides[ni]));
+  }
+  function fromHash() {
+    const k = parseInt((location.hash || '#1').slice(1), 10);
+    show(isNaN(k) ? 0 : k - 1, 0);
+  }
+  function renderTex() {
+    if (typeof katex === 'undefined') return;
+    document.querySelectorAll('[data-tex]').forEach(function (el) {
+      katex.render(el.getAttribute('data-tex'), el, { throwOnError: false, displayMode: true });
+    });
+    document.querySelectorAll('.eq-note').forEach(function (el) {
+      el.innerHTML = el.innerHTML.replace(/\\\((.+?)\\\)/g, function (_, tex) {
+        return katex.renderToString(tex, { throwOnError: false, displayMode: false });
+      });
+    });
+    document.querySelectorAll('.card p').forEach(function (el) {
+      el.innerHTML = el.innerHTML.replace(/\\\((.+?)\\\)/g, function (_, tex) {
+        return katex.renderToString(tex, { throwOnError: false, displayMode: false });
+      });
+    });
+  }
+  window.addEventListener('resize', fit);
+  window.addEventListener('hashchange', fromHash);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === '?' || (e.key === '/' && e.shiftKey)) {
+      help.classList.toggle('show');
+      return;
+    }
+    if (help.classList.contains('show') && e.key === 'Escape') {
+      help.classList.remove('show');
+      return;
+    }
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+      e.preventDefault(); next();
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'Backspace') {
+      e.preventDefault(); prev();
+    } else if (e.key === 'Home') {
+      show(0, 0);
+    } else if (e.key === 'End') {
+      show(n - 1, 0);
+    } else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+  deck.addEventListener('click', function (e) {
+    if (help.classList.contains('show')) { help.classList.remove('show'); return; }
+    const r = deck.getBoundingClientRect();
+    if (e.clientX < r.left + r.width * 0.22) prev();
+    else next();
+  });
+  function boot() {
+    renderTex();
+    fit();
+    fromHash();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+  window.addEventListener('load', function () { renderTex(); fit(); });
+})();
+</script>
+</body>
+</html>

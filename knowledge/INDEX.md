@@ -24,6 +24,8 @@
 ## Current meeting record
 
 - [`2026-08-31_hogan_exceeds_snapshot.md`](2026-08-31_hogan_exceeds_snapshot.md) — Hogan Word+PDF exceed Desktop 24 August snapshot (`b172ed31659d6cd6`). Current PDF `96b69b7b7ba38513`, Word `852702ded2c4e968`. Gate 3 still open.
+- [`2026-09-04_laidlaw_conference_abstract.md`](2026-09-04_laidlaw_conference_abstract.md) — Laidlaw Conference 2026 abstract pack (`reports/laidlaw_conference_2026/`).
+- [`2026-09-04_hogan_physiology_briefing.md`](2026-09-04_hogan_physiology_briefing.md) — Hogan 4 Sep briefing (`reports/hogan_2026-09-04/BRIEFING.md`). Not a weather lock.
 - [`2026-08-30_grok_cursor_hhap_core.md`](2026-08-30_grok_cursor_hhap_core.md) — HHAP and 5-day physiology are interpretation, not the core panel. Essay `1200082a9e7c9caa`, poster `a972206e61932650` (poster still 24 Aug). Hogan hash superseded 31 August.
 - [`2026-08-30_health_econ_cursor_pr_board.md`](2026-08-30_health_econ_cursor_pr_board.md) — adapted Cursor/Grok 4.6 health-econ rails (not generic TWFE); DUA ignore; Playbooks 07–08; living science PR #82; Gate 3 still open.
 - [`analysis_plan/send_pack_2026-08-30/`](../analysis_plan/send_pack_2026-08-30/) — Bishai Stage 3 Email A: current essay `1200082a9e7c9caa`, form 2a, do not attach Hogan live file.

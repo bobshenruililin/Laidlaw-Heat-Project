@@ -11,56 +11,68 @@ board_title: "Open PR board — Laidlaw Heat Project"
 classified:
 
   - number: 94
-    action: KEEP_UNIQUE
-    note: "CL train: Playbook 06 harness onto main. No live-manuscript hunks. Successor of #68 unique tree."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Merged 4 Sep 2026 into main (Playbook 06 harness)."
 
   - number: 93
-    action: KEEP_UNIQUE
-    note: "CL train: Fukuda pack onto main. Successor of #80 unique files."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Merged 4 Sep 2026 into main (Fukuda pack)."
 
   - number: 92
-    action: KEEP_UNIQUE
-    note: "CL train: Laidlaw Conference 2026 + Hogan 4 Sep briefing onto main. Successor of #86 unique packs."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Merged 4 Sep 2026 into main (conference + Hogan 4 Sep)."
 
   - number: 91
-    action: KEEP_UNIQUE
-    note: "CL train: Stage 3 poster logos onto main. Fresh port from #87; does not carry #84."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Merged 4 Sep 2026 into main (poster logos)."
 
   - number: 90
-    action: KEEP_UNIQUE
-    note: "CL train: Horizons 31 Aug send pack onto main. Successor of #83 unique files."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Merged 4 Sep 2026 into main (Horizons 31 Aug pack)."
 
   - number: 89
-    action: KEEP_UNIQUE
-    note: "CL train: form 2a signed memos onto main. Hash table of record. Successor of #84 unique files."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Merged 4 Sep 2026 into main (form 2a signed hash table)."
 
   - number: 88
-    action: KEEP_UNIQUE
-    note: "CL train car 0: Playbook 07 board. Living tip origin/main. Does not merge unique science."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Merged 4 Sep 2026 into main (Playbook 07 board)."
 
   - number: 87
-    action: KEEP_UNIQUE
-    note: "Stage 3 poster logos (HKU + Laidlaw). Port as its own CL vs main. Do not merge the caliber-review head. Navy lockups; equal width; centred."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 91
+    note: "Unique logos on main via #91. Closed 4 Sep 2026."
 
   - number: 86
-    action: KEEP_UNIQUE
-    note: "Laidlaw Conference 2026 abstract/talk. MERGEABLE. Port as its own CL. Not journal-track."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 92
+    note: "Unique packs on main via #92. Durable mash test excluded. Closed 4 Sep 2026."
 
   - number: 85
-    action: KEEP_REVIEW
-    note: "WHO 2026 × HK HHAP companion plus Hogan Word/PDF rebuild. Park the Hogan binaries and S9 live-file rewrite. Not in the Stage 3 CL train."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "HHAP companion ported to main. Hogan live binaries / S9 rewrite not taken. Closed 4 Sep 2026."
 
   - number: 84
-    action: KEEP_UNIQUE
-    note: "Bishai form 2a signed (31 Aug) + caliber review. CONFLICTING vs main. Port memos only; do not swap Stage 3 essay PDFs."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 89
+    note: "Unique memos on main via #89. Closed 4 Sep 2026."
 
   - number: 83
-    action: KEEP_UNIQUE
-    note: "Horizons Stage 3 send pack 31 Aug. Port send_pack_2026-08-31/ as its own CL. Keep dated 30 Aug pack on main."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 90
+    note: "Unique send_pack_2026-08-31 on main via #90. Closed 4 Sep 2026."
 
   - number: 82
     action: KEEP_LIVING_SCIENCE
-    note: "Merged 31 Aug 2026 into main. Living journal-track tip is origin/main. Do not open a parallel science PR."
+    note: "Merged 31 Aug 2026 into main. Living journal-track tip is origin/main. Open-PR count is 0 as of 4 Sep 2026."
 
   - number: 81
     action: CLOSE_SUPERSEDED
@@ -88,52 +100,64 @@ classified:
     note: "Hogan Methods Word/PDF. Already merged via PR 71 (2026-08-27). Close as duplicate of merged work."
 
   - number: 80
-    action: KEEP_UNIQUE
-    note: "Fukuda pitch pack. MERGEABLE. Port as its own CL. Not journal-track."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 93
+    note: "Unique Fukuda pack on main via #93. Closed 4 Sep 2026."
 
   - number: 75
-    action: KEEP_UNIQUE
-    note: "27 Aug lab-talk slides. CONFLICTING. Event passed; unique HTML/notes remain. Park; not in this CL train."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Lab-talk archive ported to main. Closed 4 Sep 2026."
 
   - number: 74
-    action: KEEP_UNIQUE
-    note: "Thursday form 2a print pack. CONFLICTING. Unique send_pack_2026-08-25. Do not merge: regresses Stage 3 essay PDF. Park."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Thursday pack ported; trunk essay stays 1200082a. Closed 4 Sep 2026."
 
   - number: 73
-    action: KEEP_UNIQUE
-    note: "Form 2a signature memo (pre-sign). CONFLICTING. Four unique files not in #74. Park; #84 is the signed record."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 89
+    note: "Pre-sign memo ported. Signed record is #89. Closed 4 Sep 2026."
 
   - number: 68
-    action: KEEP_UNIQUE
-    note: "Playbook 06 scientific-search harness. CONFLICTING. Port harness only as a later CL; do not take live-manuscript hunks. Do not reuse number 06."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 94
+    note: "Playbook 06 harness on main via #94. Live-ms hunks not taken. Closed 4 Sep 2026."
 
   - number: 67
-    action: KEEP_UNIQUE
-    note: "Aggregation-identifiability memos also live on #68. Close only after a Playbook 06 CL lands those files on main."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 94
+    note: "Aggregation memos on main via #94. Closed 4 Sep 2026."
 
   - number: 66
-    action: KEEP_UNIQUE
-    note: "Email A form 2a topic off AMI/stroke. Worksheet topic already on main. Park the leftover knowledge file."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Leftover topic memo ported. Closed 4 Sep 2026."
 
   - number: 62
-    action: KEEP_ADMIN
-    note: "UK conference airfare / Horizons. Not science. CONFLICTING. Park; not in this CL train."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Airfare pack ported. Closed 4 Sep 2026."
 
   - number: 61
-    action: KEEP_DEAD_PENDING_HUMAN
-    note: "Guo 2016 TV climate panel. Hogan refused TV-day counts in the live weather Methods. Unique scripts/CSV remain. Do not merge until Hogan accepts; do not delete the climate work."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Guo TV scripts/CSV ported; Hogan live Methods unchanged. Closed 4 Sep 2026."
 
   - number: 58
-    action: KEEP_UNIQUE
-    note: "18 Aug collab-draft roundtable. DRAFT + CONFLICTING. Park; craft already folded via merged #65."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Roundtable notes ported. Closed 4 Sep 2026."
 
   - number: 53
-    action: KEEP_UNIQUE
-    note: "Identification crucible. DRAFT + CONFLICTING. Explore record. Not in the Stage 3 CL train. Do not treat as findings."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Identification crucible Explore tree ported. Not findings. Closed 4 Sep 2026."
 
   - number: 46
-    action: KEEP_UNIQUE
-    note: "Week 4–6 Laidlaw blogs. DRAFT + CONFLICTING. Park; not journal-track."
+    action: CLOSE_SUPERSEDED
+    superseded_by: 82
+    note: "Week 4–6 blogs ported. Closed 4 Sep 2026."
 
 default_action: KEEP_REVIEW
 do_not_merge: true

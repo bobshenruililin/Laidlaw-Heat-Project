@@ -162,7 +162,7 @@ def render(prs: list[dict], policy: dict, unique_map: dict[int, list[str]], toda
         [
             "## Policy",
             "",
-            "Do not merge. Do not freeze Gate 3. Playbook 06 unique tree is on #94; leave #68/#67 open until unique-vs-main is empty.",
+            "Do not merge without a human ask. Do not freeze Gate 3. Open-PR count should be 0; living tip is origin/main.",
             "",
         ]
     )

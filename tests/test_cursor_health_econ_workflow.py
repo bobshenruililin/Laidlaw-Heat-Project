@@ -62,36 +62,11 @@ def test_playbook_07_does_not_merge_or_freeze():
     assert POLICY["do_not_merge"] is True
     assert POLICY["do_not_freeze_gate3"] is True
     close_nums = {row["number"] for row in POLICY["classified"] if row["action"] == "CLOSE_SUPERSEDED"}
-    assert close_nums == {81, 79, 78, 77, 69}
-    keep_unique = {row["number"] for row in POLICY["classified"] if row["action"].startswith("KEEP")}
-    for n in (
-        94,
-        93,
-        92,
-        91,
-        90,
-        89,
-        88,
-        87,
-        86,
-        85,
-        84,
-        83,
-        82,
-        80,
-        75,
-        74,
-        73,
-        68,
-        67,
-        66,
-        62,
-        61,
-        58,
-        53,
-        46,
-    ):
-        assert n in keep_unique
+    for n in (94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 81, 80, 79, 78, 77, 75, 74, 73, 69, 68, 67, 66, 62, 61, 58, 53, 46):
+        assert n in close_nums
+    keep = {row["number"] for row in POLICY["classified"] if row["action"].startswith("KEEP")}
+    assert 82 in keep
+    assert keep == {82}
 
 
 def test_playbook_08_never_writes_live_manuscript():

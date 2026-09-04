@@ -25,6 +25,7 @@
 ## Current meeting record
 
 - [`2026-09-02_autoresearch_hhap_paper.md`]
+- [`2026-08-27_lab_talk.md`](2026-08-27_lab_talk.md) — 27 Aug lab-talk archive. Event passed.
 - [`2026-08-23_form2a_research_topic.md`](2026-08-23_form2a_research_topic.md) — leftover Email A topic-off-AMI note. Worksheet already on main.
 - [`2026-08-25_bishai_form2a_signature.md`](2026-08-25_bishai_form2a_signature.md) — pre-sign form 2a memo. Signed record is 31 Aug foldback.(2026-09-02_autoresearch_hhap_paper.md) — WHO 2026 × HK instrument map. Mapping, not evaluation. Hogan live file not overwritten. Gate 3 open.
 - [`2026-08-25_bishai_form2a_thursday.md`](2026-08-25_bishai_form2a_thursday.md) — Thursday form 2a print pack (history). Do not swap trunk essay `1200082a`.

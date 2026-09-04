@@ -52,7 +52,8 @@ and footer (≈575 excluding the two small notes).
 
 Palette: deep ink/navy + teal on white; warm accent (#B84A2E) for heat, cool
 blue (#2F6C9C) for cold. Header top-right: HKU then Laidlaw Foundation logos,
-stacked on Navy with white wordmarks (both source lockups use dark type).
+stacked on Navy, same displayed width, centred on each other (white wordmarks;
+both source lockups use dark type).
 Assets: `assets/hku_logo.png`, `assets/laidlaw_logo.png` (cropped from supplied
 transparent PNGs; wordmarks reversed for the navy band).
 

@@ -25,6 +25,7 @@
 ## Current meeting record
 
 - [`2026-09-02_autoresearch_hhap_paper.md`]
+- [`../reports/blog/week4_methods_while_waiting.md`](../reports/blog/week4_methods_while_waiting.md) — Week 4–6 Laidlaw blog drafts. Not journal-track.
 - [`../reports/identification_crucible_2026-08-14.md`](../reports/identification_crucible_2026-08-14.md) — identification crucible (Explore). Not findings. Gate 3 open.
 - [`2026-08-18_collab_draft_roundtable.md`](2026-08-18_collab_draft_roundtable.md) — 18 Aug collab-draft roundtable record. Craft already folded via merged #65.
 - [`2026-08-20_jingjing_guo2016_tv.md`](2026-08-20_jingjing_guo2016_tv.md) — Guo 2016 TV climate scripts/CSV. Hogan refused TV-day counts in live Methods; those Methods are unchanged.

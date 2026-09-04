@@ -27,6 +27,13 @@ Monthly ecological first-hospitalisation counts after first CHD or HF diagnosis 
 - Pasting this abstract into the conference form: Bob.
 - Tests: `tests/test_laidlaw_conference_2026.py`. Ledger **A69**.
 
+## Talk pack (9 slides; identification theatre)
+
+- Path: [`reports/laidlaw_conference_2026/talk/`](../reports/laidlaw_conference_2026/talk/). Open `slides.html` in Chrome.
+- Same science as the submitted abstract. Title B, no joke kicker, no cartoon, no physiology slide. Equation (1) lights term by term. Failed daily recovery replaces the crossed-out sketch. 1.022 / 1.073 appear only on the same slide as *q* = 0.192. All twelve *q* > 0.19. Five is a ruler (2018: 26 official hot nights, zero ≥5-night-spell days).
+- This deck does **not** freeze Gate 3. Do not paste it into Hogan’s live file. Do not send him the file unless he asks. Overnight recovery / afterload stay in speaker notes as one spoken sentence.
+- Tests: `tests/test_laidlaw_conference_talk_2026.py`. Ledger **A72**.
+
 ## Caliber vs the Laidlaw Research channel (not a ranking)
 
 Sample: [`https://laidlawscholars.network/channels/2092-research`](https://laidlawscholars.network/channels/2092-research) titles plus accessible full texts (many poster bodies 404 or members-only). Laidlaw does not publish percentiles. This is a comparison, not a coefficient.

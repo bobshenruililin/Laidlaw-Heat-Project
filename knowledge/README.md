@@ -8,7 +8,7 @@ This directory holds durable, dated project knowledge that should survive a meet
 owns the final CHD/HF reanalysis, manuscript/report package, negative M|D
 feasibility result, and open human decisions.
 
-**Current programme action:** first public form is the Laidlaw Conference 2026 abstract ([`2026-09-04_laidlaw_conference_abstract.md`](2026-09-04_laidlaw_conference_abstract.md)). Same-day Hogan handout is one half-page ([`2026-09-04_hogan_physiology_briefing.md`](2026-09-04_hogan_physiology_briefing.md)). Form 2a still uses the Stage 3 essay (`2026-08-20_bishai_form2a.md`). Gate 3 remains open.
+**Current programme action:** first public form is the Laidlaw Conference 2026 abstract ([`2026-09-04_laidlaw_conference_abstract.md`](2026-09-04_laidlaw_conference_abstract.md)). If a talk slot is granted, the nine-slide deck is identification theatre, not a Gate 3 freeze ([`reports/laidlaw_conference_2026/talk/`](../reports/laidlaw_conference_2026/talk/)). Same-day Hogan handout is mechanism bullets, not a document ([`2026-09-04_hogan_physiology_briefing.md`](2026-09-04_hogan_physiology_briefing.md)). Form 2a still uses the Stage 3 essay (`2026-08-20_bishai_form2a.md`). Gate 3 remains open.
 
 ## Structure
 

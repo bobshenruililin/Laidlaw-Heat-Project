@@ -28,6 +28,8 @@ def test_ledger_and_project_state():
     assert "| A69 |" in ledger
     assert "| A70 |" in ledger
     assert "| A71 |" in ledger
+    assert "| A72 |" in ledger
+    assert "laidlaw_conference_2026/talk" in state
     assert "MECHANISM_BULLETS.md" in state
     assert "4 Sep 2026" in gates
     g = gates.lower()
@@ -45,6 +47,8 @@ def test_knowledge_entries_indexed():
     assert "2026-09-04_hogan_physiology_briefing.md" in index
     assert "laidlaw_conference_2026" in boot
     assert "BRIEFING.md" in boot
+    assert "laidlaw_conference_2026/talk" in boot
+    assert (ROOT / "reports" / "laidlaw_conference_2026" / "talk" / "slides.html").is_file()
 
 
 if __name__ == "__main__":

@@ -9,6 +9,35 @@ base_branch: main
 board_title: "Open PR board — Laidlaw Heat Project"
 
 classified:
+
+  - number: 94
+    action: KEEP_UNIQUE
+    note: "CL train: Playbook 06 harness onto main. No live-manuscript hunks. Successor of #68 unique tree."
+
+  - number: 93
+    action: KEEP_UNIQUE
+    note: "CL train: Fukuda pack onto main. Successor of #80 unique files."
+
+  - number: 92
+    action: KEEP_UNIQUE
+    note: "CL train: Laidlaw Conference 2026 + Hogan 4 Sep briefing onto main. Successor of #86 unique packs."
+
+  - number: 91
+    action: KEEP_UNIQUE
+    note: "CL train: Stage 3 poster logos onto main. Fresh port from #87; does not carry #84."
+
+  - number: 90
+    action: KEEP_UNIQUE
+    note: "CL train: Horizons 31 Aug send pack onto main. Successor of #83 unique files."
+
+  - number: 89
+    action: KEEP_UNIQUE
+    note: "CL train: form 2a signed memos onto main. Hash table of record. Successor of #84 unique files."
+
+  - number: 88
+    action: KEEP_UNIQUE
+    note: "CL train car 0: Playbook 07 board. Living tip origin/main. Does not merge unique science."
+
   - number: 87
     action: KEEP_UNIQUE
     note: "Stage 3 poster logos (HKU + Laidlaw). Port as its own CL vs main. Do not merge the caliber-review head. Navy lockups; equal width; centred."

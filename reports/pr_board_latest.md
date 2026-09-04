@@ -6,6 +6,13 @@
 
 | PR | Draft | Mergeable | Action | Unique vs living tip | Note |
 |---|---|---|---|---|---|
+| [#94](https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/94) Add Playbook 06 scientific-search harness without live-manuscript hunks | no | MERGEABLE | `KEEP_UNIQUE` | 22 | CL train: Playbook 06 harness onto main. No live-manuscript hunks. Successor of #68 unique tree. |
+| [#93](https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/93) Add the Fukuda pitch pack scoped to what this repo holds | no | MERGEABLE | `KEEP_UNIQUE` | 6 | CL train: Fukuda pack onto main. Successor of #80 unique files. |
+| [#92](https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/92) Add the Laidlaw Conference 2026 abstract and Hogan 4 Sep briefing | no | MERGEABLE | `KEEP_UNIQUE` | 19 | CL train: Laidlaw Conference 2026 + Hogan 4 Sep briefing onto main. Successor of #86 unique packs. |
+| [#91](https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/91) Put HKU and Laidlaw logos on the Stage 3 navy header | no | MERGEABLE | `KEEP_UNIQUE` | 2 | CL train: Stage 3 poster logos onto main. Fresh port from #87; does not carry #84. |
+| [#90](https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/90) Add the 31 August Horizons Stage 3 send pack | no | MERGEABLE | `KEEP_UNIQUE` | 8 | CL train: Horizons 31 Aug send pack onto main. Successor of #83 unique files. |
+| [#89](https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/89) Record that Bishai signed form 2a against the 22 Aug foldback | no | MERGEABLE | `KEEP_UNIQUE` | 2 | CL train: form 2a signed memos onto main. Hash table of record. Successor of #84 unique files. |
+| [#88](https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/88) Point the Playbook 07 board at origin/main after PR 82 | no | MERGEABLE | `KEEP_UNIQUE` | 1 | CL train car 0: Playbook 07 board. Living tip origin/main. Does not merge unique science. |
 | [#87](https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/87) Add HKU and Laidlaw logos to the Stage 3 poster header | no | MERGEABLE | `KEEP_UNIQUE` | 4 | Stage 3 poster logos (HKU + Laidlaw). Port as its own CL vs main. Do not merge the caliber-review head. Navy lockups; equal width; centred. |
 | [#86](https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/86) Laidlaw Conference 2026 abstract, Hogan bullets, and 9-slide talk | yes | MERGEABLE | `KEEP_UNIQUE` | 20 | Laidlaw Conference 2026 abstract/talk. MERGEABLE. Port as its own CL. Not journal-track. |
 | [#85](https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/85) WHO 2026 × Hong Kong HHAP companion; restore live S9 | yes | MERGEABLE | `KEEP_REVIEW` | 13 | WHO 2026 × HK HHAP companion plus Hogan Word/PDF rebuild. Park the Hogan binaries and S9 live-file rewrite. Not in the Stage 3 CL train. |
@@ -30,7 +37,7 @@ _None._
 
 ## Keep open
 
-#87, #86, #85, #84, #83, #80, #75, #74, #73, #68, #67, #66, #62, #61, #58, #53, #46
+#94, #93, #92, #91, #90, #89, #88, #87, #86, #85, #84, #83, #80, #75, #74, #73, #68, #67, #66, #62, #61, #58, #53, #46
 
 ## Unique paths (close-ready should be empty)
 

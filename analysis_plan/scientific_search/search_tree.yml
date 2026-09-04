@@ -1,0 +1,304 @@
+# Persistent scientific-search tree. Does not reset when a paper or chat ends.
+# Status: alive | blocked_human | killed | closed_lemma | queued
+# Kill only with a table contradiction or a forbidden-claim hit.
+# success_metric must never be a thermal discovery, a confirmatory primary, or a filled human gate.
+
+lab: heat_chd_hf_scientific_search
+updated: 2026-08-24
+inherits_from: analysis_plan/auto_research/approach_registry.yml
+objective: identification_defensibility
+compounding: true
+
+rails:
+  gate_3: open
+  contribution_type: aggregation_identifiability_calibrated_refusal
+  hogan_weather_must_contain: "Meteorological data was obtained from the HKO."
+  stage3_pdfs: byte_locked_on_main
+  auditor: scripts/50_audit_live_claim_ledger.py
+  require_search_class: true
+
+forbidden_success_metrics:
+  - found_significant_heat_effect
+  - confirmatory_primary
+  - minted_stroke_coefficient
+  - minted_daily_dlnm_coefficient
+  - minted_ami_principal_dx
+  - minted_heatwave_excess_death
+  - minted_monetisation
+  - gate_3_frozen_by_agent
+  - hogan_weather_rewritten
+  - filled_human_gate
+  - harness_failed_because_q_above_0.19
+
+human_owned_never_fill:
+  - gate_3_freeze
+  - hogan_weather_paragraph
+  - roro_icd_inpatient_semantics
+  - bishai_irb_dissemination
+  - authorship_order
+  - paste_into_hogan_live_file
+  - outlook_thread
+
+nodes:
+  - id: ROOT
+    search_class: agent_owned
+    parent: null
+    family: ROOT
+    title: Monthly CHD/HF first-hospitalisation panel, Hong Kong, Jan 2013–Dec 2023 (132 months)
+    status: alive
+    success_metric: identification_defensibility
+    evidence:
+      - manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+      - knowledge/CONTEXT_BOOTSTRAP.md
+    next_paper_inherits: true
+    note: "Admission cause absent. Stroke named, not delivered. Gate 3 open. Option A."
+
+  - id: F01
+    search_class: agent_owned
+    parent: ROOT
+    family: F01
+    title: Identification — aggregation-identifiability and calibrated refusal
+    status: alive
+    success_metric: identification_defensibility
+    evidence:
+      - analysis_plan/auto_research/aggregation_identifiability_calibrated_refusal_2026-08-23.md
+      - analysis_plan/auto_research/approach_registry.yml
+    next_paper_inherits: true
+    note: "Operational map for this extract. Not a theorem. No priority over Basagaña–Ballester."
+
+  - id: F01-framework
+    search_class: agent_owned
+    parent: F01
+    family: F01
+    title: Named grain → estimand map plus calibrated refusal
+    status: closed_lemma
+    success_metric: named_gap_closed_without_invention
+    evidence:
+      - analysis_plan/auto_research/aggregation_identifiability_calibrated_refusal_2026-08-23.md
+      - manuscript/live_collaborative/claim_ledger.yml
+      - knowledge/2026-08-23_aggregation_identifiability.md
+    next_paper_inherits: true
+    note: "estimand_policy is a string tripwire, not a semantic parser."
+
+  - id: F01-daily-recovery
+    search_class: refusal_solution
+    parent: F01
+    family: F01
+    title: Recover a real daily DLNM coefficient from 132 monthly sums
+    status: killed
+    success_metric: named_gap_closed_without_invention
+    kill_reason: "Clean-room monthly-outcome/daily-exposure calibration failed the pre-specified F1.2 gates. No real daily coefficient admitted. Do not claim daily lag is impossible at month grain; Basagaña–Ballester remain the aggregation literature. Failed here."
+    kill_with: table_contradiction
+    evidence:
+      - knowledge/2026-08-10_cns_final_reanalysis.md
+    next_paper_inherits: true
+
+  - id: F01-confirmatory-primary
+    search_class: refusal_solution
+    parent: F01
+    family: F01
+    title: Promote a core contrast to a confirmatory primary
+    status: killed
+    success_metric: named_gap_closed_without_invention
+    kill_reason: "All twelve core Benjamini–Hochberg q-values exceed 0.19. Lead recommendation is Option A. Gate 3 is open and is not an agent freeze."
+    kill_with: table_contradiction
+    evidence:
+      - outputs/release_chd_hf/tables/table2_core_models.csv
+    next_paper_inherits: true
+
+  - id: F01-winter-support
+    search_class: agent_owned
+    parent: F01
+    family: F01
+    title: DJF concentration of official cold days as identification display
+    status: closed_lemma
+    success_metric: identification_defensibility
+    evidence:
+      - outputs/live_identification/cold_days_by_month_year.csv
+    next_paper_inherits: true
+
+  - id: F02
+    search_class: agent_owned
+    parent: ROOT
+    family: F02
+    title: Multiplicity / uncertainty ladder
+    status: alive
+    success_metric: identification_defensibility
+    evidence:
+      - outputs/release_chd_hf/tables/table2_core_models.csv
+      - outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+    next_paper_inherits: true
+    note: "Report Model, HC1, NW3, NW6. Do not select the interval because it excludes 1."
+
+  - id: F02-pick-ci
+    search_class: refusal_solution
+    parent: F02
+    family: F02
+    title: Select the SE method whose interval excludes 1
+    status: killed
+    success_metric: named_gap_closed_without_invention
+    kill_reason: "Assumption A54: no SE method may be selected because its CI excludes 1. CHD hot nights change across the ladder."
+    kill_with: table_contradiction
+    evidence:
+      - outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+      - analysis_plan/assumption_ledger.md
+    next_paper_inherits: true
+
+  - id: F02-q-bar
+    search_class: refusal_solution
+    parent: F02
+    family: F02
+    title: Twelve-contrast family; all core q > 0.19
+    status: closed_lemma
+    success_metric: identification_defensibility
+    evidence:
+      - outputs/release_chd_hf/tables/table2_core_models.csv
+    next_paper_inherits: true
+
+  - id: F03
+    search_class: agent_owned
+    parent: ROOT
+    family: F03
+    title: Local daily history as distinct estimands
+    status: alive
+    success_metric: identification_defensibility
+    evidence:
+      - literature/jasmine_liu2020_confirmed.md
+    next_paper_inherits: true
+    note: "Goggins AMI/HF, Guo official vs hourly hot nights, Liu 2020 AF, Liu 2026 excess deaths. Do not rescale onto this panel's 1.022 / 1.073."
+
+  - id: F03-rescale
+    search_class: refusal_solution
+    parent: F03
+    family: F03
+    title: Rescale Goggins / Guo / Liu numerals onto this monthly panel
+    status: killed
+    success_metric: named_gap_closed_without_invention
+    kill_reason: "Different estimand class. Forbidden-claim hit: numerical equality of daily AMI/mortality/excess-death figures with monthly CHD/HF count ratios."
+    kill_with: forbidden_claim_hit
+    evidence:
+      - analysis_plan/auto_research/heat_lab_prompt.txt
+    next_paper_inherits: true
+
+  - id: F04
+    search_class: human_owned
+    parent: ROOT
+    family: F04
+    title: Hogan weather-definition lock
+    status: blocked_human
+    owner: Hogan
+    success_metric: rails_intact
+    blocked_reason: "Hogan has not written the definition lock. A blank Tuesday sheet is not evidence."
+    evidence:
+      - analysis_plan/auto_research/hogan_lock_readiness.md
+    next_paper_inherits: true
+    note: "Agents may refresh the readiness packet only."
+
+  - id: F05
+    search_class: human_owned
+    parent: ROOT
+    family: F05
+    title: Stroke file and still-at-risk person-time
+    status: blocked_human
+    owner: Roro
+    success_metric: rails_intact
+    blocked_reason: "Stroke file not attached; still-at-risk person-time not delivered."
+    evidence:
+      - analysis_plan/auto_research/stroke_person_time_idle_checklist.md
+    next_paper_inherits: true
+    note: "Agents may refresh the idle checklist only. No invented rows."
+
+  - id: F07
+    search_class: human_owned
+    parent: ROOT
+    family: F07
+    title: Gate 3 freeze, IRB, dissemination, authorship
+    status: blocked_human
+    owner: Bishai
+    success_metric: rails_intact
+    blocked_reason: "Gate 3 remains open. IRB, authorship, and dissemination are PI-owned."
+    evidence:
+      - analysis_plan/decision_gates.md
+    next_paper_inherits: true
+    note: "Agents do not freeze Gate 3."
+
+  - id: F06
+    search_class: agent_owned
+    parent: ROOT
+    family: F06
+    title: Public surfaces (blog / LSN / Stage 3 PDFs)
+    status: alive
+    owner: Bob
+    success_metric: rails_intact
+    evidence:
+      - knowledge/2026-07-26_laidlaw_blog_canon.md
+    next_paper_inherits: true
+    note: "Stage 3 PDFs byte-locked 22 Aug on main. Bob owns voice, privacy, posting, paste."
+
+  - id: F06-public-outcome-substitute
+    search_class: refusal_solution
+    parent: F06
+    family: F06
+    title: Substitute a public HA/DH file for governed monthly first-event CHD/HF
+    status: killed
+    success_metric: named_gap_closed_without_invention
+    kill_reason: "18 Aug public-file ceiling search: HA throughput JSON, DH ICD-chapter CSV, and CKAN quarterly tables are the wrong grain. Dead end demonstrated, not a health finding."
+    kill_with: table_contradiction
+    evidence:
+      - scripts/52_public_outcome_ceiling_search.py
+      - knowledge/2026-08-18_intern_ceiling_note.md
+    next_paper_inherits: true
+
+  - id: F06-health-econ-in-paper
+    search_class: refusal_solution
+    parent: F06
+    family: F06
+    title: Write health-econ Monte Carlo into the journal-track live file
+    status: killed
+    success_metric: rails_intact
+    kill_reason: "SYNTHETIC_THEORY / health-econ stays out of the paper. Forbidden-claim hit."
+    kill_with: forbidden_claim_hit
+    evidence:
+      - analysis_plan/auto_research/heat_lab_prompt.txt
+    next_paper_inherits: true
+
+frontier:
+  - id: P-keep-families
+    search_class: agent_owned
+    family: F01
+    status: queued
+    job: "Keep F01–F03 alive and incompatible. Do not collapse into a discovery headline."
+    success_metric: family_diversity
+  - id: P-hogan-readiness
+    search_class: human_owned
+    family: F04
+    status: blocked_human
+    owner: Hogan
+    job: "Refresh Hogan-lock readiness only. Do not lock definitions."
+    success_metric: rails_intact
+  - id: P-stroke-idle
+    search_class: human_owned
+    family: F05
+    status: blocked_human
+    owner: Roro
+    job: "Refresh stroke/person-time idle checklist only. Do not invent rows."
+    success_metric: rails_intact
+  - id: P-bob-paste
+    search_class: human_owned
+    family: F06
+    status: blocked_human
+    owner: Bob
+    job: "Paste into Hogan's shared live file remains human. Do not email Outlook. Do not rebuild Stage 3 PDFs."
+    success_metric: rails_intact
+  - id: P-permutation-park
+    search_class: agent_owned
+    family: F01
+    status: queued
+    job: "Park permutation / future-month negative-control as a later calibrated-refusal display. Not a primary. Do not run as a hunt for a significant heat effect."
+    success_metric: cycle_shortening
+  - id: P-next-paper-load
+    search_class: agent_owned
+    family: ROOT
+    status: queued
+    job: "Next paper or next extract loads this tree and memory first. Do not reset killed nodes."
+    success_metric: residue_for_next_cycle

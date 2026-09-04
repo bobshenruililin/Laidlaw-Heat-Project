@@ -87,10 +87,17 @@ def closable(action: str, unique: list[str]) -> bool:
 
 def render(prs: list[dict], policy: dict, unique_map: dict[int, list[str]], today: str) -> str:
     living = policy["living_science_pr"]
+    merged = policy.get("living_science_merged", False)
+    living_line = (
+        f"**Living science tip:** `{policy['living_science_ref']}` "
+        f"(PR #{living} merged)."
+        if merged
+        else f"**Living science PR:** #{living} (`{policy['living_science_ref']}`)."
+    )
     lines = [
         f"# Open PR board — {today}",
         "",
-        f"**Living science PR:** #{living} (`{policy['living_science_ref']}`).",
+        living_line,
         "**Rule:** do not merge. Close only `CLOSE_SUPERSEDED` rows with zero unique files versus the living tip.",
         f"**Gate 3:** remains open. Playbook: `analysis_plan/playbooks/07_pr_board.md`.",
         "",
@@ -155,7 +162,7 @@ def render(prs: list[dict], policy: dict, unique_map: dict[int, list[str]], toda
         [
             "## Policy",
             "",
-            "Do not merge. Do not freeze Gate 3. Playbook 06 lives on PR #68; this branch uses Playbooks 07 and 08 so the numbers do not collide.",
+            "Do not merge. Do not freeze Gate 3. Playbook 06 unique tree is on #94; leave #68/#67 open until unique-vs-main is empty.",
             "",
         ]
     )

@@ -57,12 +57,40 @@ def test_playbook_07_does_not_merge_or_freeze():
     assert (ROOT / ".cursor" / "skills" / "playbook-07-pr-board" / "SKILL.md").is_file()
     assert (ROOT / "scripts" / "69_pr_board.py").is_file()
     assert POLICY["living_science_pr"] == 82
+    assert POLICY["living_science_ref"] == "origin/main"
+    assert POLICY.get("living_science_merged") is True
     assert POLICY["do_not_merge"] is True
     assert POLICY["do_not_freeze_gate3"] is True
     close_nums = {row["number"] for row in POLICY["classified"] if row["action"] == "CLOSE_SUPERSEDED"}
     assert close_nums == {81, 79, 78, 77, 69}
     keep_unique = {row["number"] for row in POLICY["classified"] if row["action"].startswith("KEEP")}
-    for n in (82, 80, 75, 74, 73, 68, 67, 66, 62, 61, 58, 53, 46):
+    for n in (
+        94,
+        93,
+        92,
+        91,
+        90,
+        89,
+        88,
+        87,
+        86,
+        85,
+        84,
+        83,
+        82,
+        80,
+        75,
+        74,
+        73,
+        68,
+        67,
+        66,
+        62,
+        61,
+        58,
+        53,
+        46,
+    ):
         assert n in keep_unique
 
 

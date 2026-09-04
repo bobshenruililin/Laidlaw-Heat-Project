@@ -152,7 +152,7 @@ Executable workflow index:
 3. [`03_full_analysis_run.md`](analysis_plan/playbooks/03_full_analysis_run.md) — complete panel → team Gate 3 → manuscript tables.
 4. [`04_final_writeup.md`](analysis_plan/playbooks/04_final_writeup.md) — verified real estimates → CNS Results/Discussion.
 5. [`05_auto_research_lab.md`](analysis_plan/playbooks/05_auto_research_lab.md) — Jin-adapted lab: adversarial audit and readiness packets; does not invent findings or freeze Gate 3.
-6. Playbook 06 (scientific-search harness) lives on PR #68; do not reuse the number on this branch.
+6. [`06_scientific_search.md`](analysis_plan/playbooks/06_scientific_search.md) — compounding scientific-search harness (ported from PR #68; do not take that PR's live-manuscript hunks).
 7. [`07_pr_board.md`](analysis_plan/playbooks/07_pr_board.md) — classify open PRs; close only superseded zero-unique science PRs; do not merge.
 8. [`08_health_econ_identification_lab.md`](analysis_plan/playbooks/08_health_econ_identification_lab.md) — Explore health-econ practice on synthetic schemas; never the live manuscript.
 9. [`99_emergencies.md`](analysis_plan/playbooks/99_emergencies.md) — source, scope, governance, or provenance shocks.

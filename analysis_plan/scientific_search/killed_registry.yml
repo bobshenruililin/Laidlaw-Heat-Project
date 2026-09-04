@@ -1,0 +1,19 @@
+# Append-only record of killed and closed nodes for this extract.
+# The harness fails if any ID here is missing from the tree or has the wrong status.
+# A new extract gets a new registry; it does not reopen these under the same scope.
+
+updated: 2026-08-24
+scope: heat_chd_hf_monthly_first_hospitalisation
+
+killed:
+  - F01-daily-recovery
+  - F01-confirmatory-primary
+  - F02-pick-ci
+  - F03-rescale
+  - F06-public-outcome-substitute
+  - F06-health-econ-in-paper
+
+closed_lemma:
+  - F01-framework
+  - F01-winter-support
+  - F02-q-bar

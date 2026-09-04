@@ -1,0 +1,111 @@
+# Evaluator for scientific search — this extract.
+# STATUS: human-read rubric. Machine-enforced subset lives in
+# scripts/60_scientific_search_cycle.py. Weighted dimensions are not scored.
+# Never scores "found a significant heat effect."
+# search_power_proxy is diagnostic residue, never a target.
+
+updated: 2026-08-24
+objective: identification_defensibility
+not_objective:
+  - found_significant_heat_effect
+  - confirmatory_primary
+  - smaller_p_or_q
+  - minted_missing_coefficient
+  - gate_3_closed_by_agent
+
+hard_gates:
+  - id: auditor_green
+    command: python3 scripts/50_audit_live_claim_ledger.py
+    fail_cycle_if: red
+  - id: hogan_weather
+    must_contain_in_live: "Meteorological data was obtained from the HKO."
+    fail_cycle_if: missing
+  - id: gate_3_open
+    tree_rails_gate_3: open
+    fail_cycle_if: frozen_by_agent
+  - id: no_forbidden_success_metric
+    fail_cycle_if: node_or_frontier_uses_forbidden_success_metric
+  - id: human_holes_unfilled
+    fail_cycle_if: blocked_human_node_marked_alive_or_closed_without_owner_event
+  - id: killed_have_reasons
+    fail_cycle_if: killed_node_missing_kill_reason
+  - id: contribution_type
+    fail_cycle_if: tree_rails_contribution_type_is_not_aggregation_identifiability_calibrated_refusal
+
+dimensions:
+  identification_defensibility:
+    weight: 3
+    scores_up_when:
+      - grain_to_estimand_map_is_explicit
+      - refusals_are_split_not_lumped
+      - live_article_survives_auditor
+  named_gap_closed_without_invention:
+    weight: 3
+    scores_up_when:
+      - killed_node_has_table_contradiction_or_forbidden_claim_hit
+      - no_new_HA_stroke_daily_monetisation_number
+  residue_for_next_cycle:
+    weight: 2
+    scores_up_when:
+      - memory_lemmas_have_evidence
+      - killed_paths_are_loadable
+      - next_paper_load_order_exists
+  rails_intact:
+    weight: 3
+    scores_up_when:
+      - gate_3_open
+      - hogan_weather_untouched
+      - stage3_not_rebuilt
+      - no_paste_to_hogan_file
+  family_diversity:
+    weight: 2
+    scores_up_when:
+      - at_least_three_incompatible_families_alive_or_blocked_human
+      - F01_F02_F03_not_collapsed
+
+metrics:
+  width:
+    definition: count of distinct families still alive or queued, excluding ROOT bookkeeping
+    higher_is_better: true
+    do_not_raise_by: queue_stuffing_jobs_within_one_family
+    never_target: false
+  depth:
+    definition: longest path from ROOT through killed or closed_lemma nodes
+    higher_is_better: true
+    do_not_raise_by: restating_the_same_kill
+  cycle_length:
+    definition: wall time is not estimated here; cycle_length falls when the next agent can load memory instead of re-walking dead ends
+    higher_is_better: false
+    proxy_in_harness: n_inheritable_lemmas_plus_killed_nodes
+  search_power_proxy:
+    definition: unique-family width * depth * n_inheritable_constraints
+    never_include: p_values
+    never_target: true
+    do_not_raise_by: minted_lemmas_chained_kills_or_queue_stuffing
+
+harness_debt:
+  definition: >
+    Agent-owned inefficiency: frontier jobs that re-walk a named dead end,
+    missing search_class labels, or treating a refusal_solution as an open hunt.
+  higher_is_better: false
+  not_debt:
+    - blocked_human remaining open
+    - all_core_q_above_0.19
+    - F1.2_failed_here
+  is_debt:
+    - rewalking_killed_path
+    - collapsing_families
+    - resetting_tree
+    - scoring_null_as_harness_failure
+    - hunting_significance_after_q_bar
+    - inflating_proxy_by_minted_lemmas_chained_kills_or_queue_stuffing
+
+illegal_cycle_claims:
+  - "we found a heat effect"
+  - "promote to primary"
+  - "daily coefficient recovered"
+  - "stroke RR ="
+  - "Gate 3 closed"
+  - "rewrote Hogan weather"
+  - "harness failed because q > 0.19"
+  - "search harder until significant"

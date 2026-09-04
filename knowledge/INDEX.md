@@ -10,7 +10,8 @@
 
 - [CNS-writing skill](../.cursor/skills/cns-writing/SKILL.md) — publication-register scholarly writing mode.
 - [Slash-command and blog-drafting contract](2026-07-26_commands_and_blog_auto.md) — command inventory, deck trigger, and human publication gate.
-- [Playbook skill router](../.cursor/skills/playbook/SKILL.md) — explicit `/playbook` selection across `01–05`, `07–08`, `99` (Playbook 06 lives on PR #68).
+- [Playbook skill router](../.cursor/skills/playbook/SKILL.md) — explicit `/playbook` selection across `01–08`, `99`.
+- [Playbook 06: scientific-search harness](../analysis_plan/playbooks/06_scientific_search.md)
 - [Playbook 01: Hogan definition lock](../analysis_plan/playbooks/01_hogan_definition_lock.md)
 - [Playbook 02: HA data arrival](../analysis_plan/playbooks/02_ha_data_arrival.md)
 - [Playbook 03: full analysis run](../analysis_plan/playbooks/03_full_analysis_run.md)

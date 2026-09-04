@@ -25,6 +25,7 @@
 ## Current meeting record
 
 - [`2026-09-02_autoresearch_hhap_paper.md`]
+- [`2026-08-20_jingjing_guo2016_tv.md`](2026-08-20_jingjing_guo2016_tv.md) — Guo 2016 TV climate scripts/CSV. Hogan refused TV-day counts in live Methods; those Methods are unchanged.
 - [`2026-08-22_uk_conference_airfare.md`](2026-08-22_uk_conference_airfare.md) — UK conference airfare / Horizons. Not science.
 - [`2026-08-27_lab_talk.md`](2026-08-27_lab_talk.md) — 27 Aug lab-talk archive. Event passed.
 - [`2026-08-23_form2a_research_topic.md`](2026-08-23_form2a_research_topic.md) — leftover Email A topic-off-AMI note. Worksheet already on main.

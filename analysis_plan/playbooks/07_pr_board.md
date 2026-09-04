@@ -40,7 +40,7 @@ Close only if **all** hold:
 
 ## Failure modes
 
-- Closing PR 68 (Playbook 06) because the number is inconvenient. It conflicts with `main` and is still unique.
+- Closing PR 68 (Playbook 06) or PR 67 while unique-vs-`main` is still non-empty. The port CL is #94; close the sources only after it lands and the unique-path column is 0.
 - Closing PR 80 (Fukuda), 62 (airfare), 46 (blogs), 53 (crucible), 61 (Guo TV climate) without a human port.
 - Merging the living science PR without Bob asking.
 - Treating a closed PR as deleted science: GitHub keeps the branch until someone deletes it.

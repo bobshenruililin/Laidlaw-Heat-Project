@@ -24,4 +24,4 @@ Do not attach markdown, HA files, the Gate 3 packet, or Roro’s private mortali
 
 Default: the **22 August** files you uploaded with the signed form (student date 23 August).
 
-If Professor Bishai explicitly said he examined the **24 August** Email A PDF, send that essay instead (`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`, prefix `605cd8db43072cb5`) and say so in the spreadsheet. Do not mix the two.
+If Professor Bishai explicitly said he examined the **24 August** Email A PDF, send that essay (`605cd8db43072cb5`; recover from git, not the later `outputs/` cut `1200082a9e7c9caa`) and say so in the spreadsheet. Do not mix the two.

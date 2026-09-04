@@ -108,6 +108,13 @@ def test_knowledge_note_keeps_claim_boundary():
     assert "not implied" in text.lower() or "not implied by this form" in text.lower()
     assert "do not send" in (PACK / "README.md").read_text(encoding="utf-8").lower()
     assert "cardiovascular disease" in text  # Bishai wording preserved
+    assert REPO_ESSAY_PREFIX in text
+    assert "rebuild on `main` (`605cd8db" not in text
+    assert "2026-08-31_bishai_form2a_signed.md" in text
+    verify = (PACK / "HASH_VERIFY.md").read_text(encoding="utf-8")
+    assert "2026-08-31_bishai_form2a_signed.md" in verify
+    attach = (PACK / "WHAT_TO_ATTACH.md").read_text(encoding="utf-8")
+    assert "outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`, prefix `605cd8db43072cb5`" not in attach
 
 
 def test_endorsed_form_pdf_not_tracked():

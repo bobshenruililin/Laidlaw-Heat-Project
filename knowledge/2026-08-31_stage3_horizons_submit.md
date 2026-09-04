@@ -15,7 +15,7 @@ Professor Bishai completed form 2a (uploaded PDF `2a. Laidlaw - Report Form (HKU
 - Name Prof David Makram Bishai; ink signature; date 31 August 2026.
 - Bob signed page 1; Date of Submission 23 August 2026 (to supervisor). Year 2; attachment 4 July–14 August 2026.
 
-The programme essay and poster Bob uploaded with that form are byte-identical to the **22 August** fold-back lock (`c083d4096a0924b1` / `0ef58e0951bb2ffd`; git `8b91f3c`), not the 24 August Hogan-aligned rebuild on `main` (`605cd8db43072cb5` / `a972206e61932650`). Default: send the 22 August pair. If he told you he examined the 24 August Email A PDF, send that essay instead.
+The programme essay and poster Bob uploaded with that form are byte-identical to the **22 August** fold-back lock (`c083d4096a0924b1` / `0ef58e0951bb2ffd`; git `8b91f3c`). They are not the later `outputs/` cut on `main` (`1200082a9e7c9caa`) and not the 24 August Hogan-aligned essay (`605cd8db43072cb5`). Signature hashes: [`2026-08-31_bishai_form2a_signed.md`](2026-08-31_bishai_form2a_signed.md). Default: send the 22 August pair. If he told you he examined the 24 August Email A PDF, send that essay instead.
 
 Pack: [`../analysis_plan/send_pack_2026-08-31/`](../analysis_plan/send_pack_2026-08-31/).
 

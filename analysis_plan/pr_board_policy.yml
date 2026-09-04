@@ -3,14 +3,35 @@
 # living_science_ref is the branch that currently contains the journal-track tip.
 
 living_science_pr: 82
-living_science_ref: origin/cursor/model23-gate3-b75b
+living_science_ref: origin/main
+living_science_merged: true
 base_branch: main
 board_title: "Open PR board — Laidlaw Heat Project"
 
 classified:
+  - number: 87
+    action: KEEP_UNIQUE
+    note: "Stage 3 poster logos (HKU + Laidlaw). Port as its own CL vs main. Do not merge the caliber-review head. Navy lockups; equal width; centred."
+
+  - number: 86
+    action: KEEP_UNIQUE
+    note: "Laidlaw Conference 2026 abstract/talk. MERGEABLE. Port as its own CL. Not journal-track."
+
+  - number: 85
+    action: KEEP_REVIEW
+    note: "WHO 2026 × HK HHAP companion plus Hogan Word/PDF rebuild. Park the Hogan binaries and S9 live-file rewrite. Not in the Stage 3 CL train."
+
+  - number: 84
+    action: KEEP_UNIQUE
+    note: "Bishai form 2a signed (31 Aug) + caliber review. CONFLICTING vs main. Port memos only; do not swap Stage 3 essay PDFs."
+
+  - number: 83
+    action: KEEP_UNIQUE
+    note: "Horizons Stage 3 send pack 31 Aug. Port send_pack_2026-08-31/ as its own CL. Keep dated 30 Aug pack on main."
+
   - number: 82
     action: KEEP_LIVING_SCIENCE
-    note: "Living journal-track tip (audit cut, Model 2/3 plumbing, Cursor workflow). Update this PR; do not open a parallel science PR."
+    note: "Merged 31 Aug 2026 into main. Living journal-track tip is origin/main. Do not open a parallel science PR."
 
   - number: 81
     action: CLOSE_SUPERSEDED
@@ -39,35 +60,35 @@ classified:
 
   - number: 80
     action: KEEP_UNIQUE
-    note: "Fukuda pitch pack. MERGEABLE. Not science-stack. Do not fold into #82."
+    note: "Fukuda pitch pack. MERGEABLE. Port as its own CL. Not journal-track."
 
   - number: 75
     action: KEEP_UNIQUE
-    note: "27 Aug lab-talk slides. CONFLICTING. Event passed; unique HTML/notes remain on the branch. Port before close."
+    note: "27 Aug lab-talk slides. CONFLICTING. Event passed; unique HTML/notes remain. Park; not in this CL train."
 
   - number: 74
     action: KEEP_UNIQUE
-    note: "Thursday form 2a print pack. CONFLICTING. Unique send_pack_2026-08-25. Supersedes the meeting overlay of #73 but does not contain #73's four unique files."
+    note: "Thursday form 2a print pack. CONFLICTING. Unique send_pack_2026-08-25. Do not merge: regresses Stage 3 essay PDF. Park."
 
   - number: 73
     action: KEEP_UNIQUE
-    note: "Form 2a signature memo. CONFLICTING. Four unique files not in #74. Do not close as a duplicate of #74."
+    note: "Form 2a signature memo (pre-sign). CONFLICTING. Four unique files not in #74. Park; #84 is the signed record."
 
   - number: 68
     action: KEEP_UNIQUE
-    note: "Playbook 06 scientific-search harness. CONFLICTING. Unique analysis_plan/scientific_search/. Do not reuse number 06 in this branch."
+    note: "Playbook 06 scientific-search harness. CONFLICTING. Port harness only as a later CL; do not take live-manuscript hunks. Do not reuse number 06."
 
   - number: 67
     action: KEEP_UNIQUE
-    note: "Aggregation-identifiability contribution. DRAFT + CONFLICTING. Three unique memos."
+    note: "Aggregation-identifiability memos also live on #68. Close only after a Playbook 06 CL lands those files on main."
 
   - number: 66
     action: KEEP_UNIQUE
-    note: "Email A form 2a topic off AMI/stroke. DRAFT + CONFLICTING. One unique knowledge file."
+    note: "Email A form 2a topic off AMI/stroke. Worksheet topic already on main. Park the leftover knowledge file."
 
   - number: 62
     action: KEEP_ADMIN
-    note: "UK conference airfare / Horizons. Not science. CONFLICTING. Unique reports/horizons_uk_conference_2026/."
+    note: "UK conference airfare / Horizons. Not science. CONFLICTING. Park; not in this CL train."
 
   - number: 61
     action: KEEP_DEAD_PENDING_HUMAN
@@ -75,15 +96,15 @@ classified:
 
   - number: 58
     action: KEEP_UNIQUE
-    note: "18 Aug collab-draft roundtable. DRAFT + CONFLICTING. Unique knowledge + goal prompt."
+    note: "18 Aug collab-draft roundtable. DRAFT + CONFLICTING. Park; craft already folded via merged #65."
 
   - number: 53
     action: KEEP_UNIQUE
-    note: "Identification crucible. DRAFT + CONFLICTING. Unique outputs/identification_crucible/. Still the licensed-paragraph record."
+    note: "Identification crucible. DRAFT + CONFLICTING. Explore record. Not in the Stage 3 CL train. Do not treat as findings."
 
   - number: 46
     action: KEEP_UNIQUE
-    note: "Week 4–6 Laidlaw blogs. DRAFT + CONFLICTING. Unique reports/blog/week4–6."
+    note: "Week 4–6 Laidlaw blogs. DRAFT + CONFLICTING. Park; not journal-track."
 
 default_action: KEEP_REVIEW
 do_not_merge: true

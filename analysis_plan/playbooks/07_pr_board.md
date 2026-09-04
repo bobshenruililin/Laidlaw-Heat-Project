@@ -11,7 +11,7 @@ Do **not** run this playbook as a licence to merge, to freeze Gate 3, or to disc
 - [`knowledge/CONTEXT_BOOTSTRAP.md`](../../knowledge/CONTEXT_BOOTSTRAP.md) has been read.
 - Policy file [`analysis_plan/pr_board_policy.yml`](../pr_board_policy.yml) has been read.
 - `gh` is authenticated **read-only** for listing. Closing a PR is allowed only for rows whose policy action is `CLOSE_SUPERSEDED` **and** whose unique files versus the living science tip are empty.
-- The living science pull request is the `living_science_pr` in the policy (currently **#82**). Do not open a parallel science PR.
+- The living science tip is `living_science_ref` in the policy (currently **`origin/main`**, PR **#82** merged). Do not open a parallel science PR.
 
 ## Steps
 

@@ -26,3 +26,17 @@ Monthly ecological first-hospitalisation counts after first CHD or HF diagnosis 
 - Weather operators: Hogan (Playbook 01 only if he locks one).
 - Pasting this abstract into the conference form: Bob.
 - Tests: `tests/test_laidlaw_conference_2026.py`. Ledger **A69**.
+
+## Caliber vs the Laidlaw Research channel (not a ranking)
+
+Sample: [`https://laidlawscholars.network/channels/2092-research`](https://laidlawscholars.network/channels/2092-research) titles plus accessible full texts (many poster bodies 404 or members-only). Laidlaw does not publish percentiles. This is a comparison, not a coefficient.
+
+The modal product is a 6-week project outline in the future tense (skills + hoped-for impact; e.g. DDX53 mouse expression; ~20 Cambridge interviews on Just Stop Oil). A thinner finished-quantitative tail exists (long historical elections; London housing AVM; a Turkey water DiD *proposal*). Conference format is 3-minute thesis or poster among 200+ scholars, not journal review.
+
+Reasoned bands for this abstract, not a single percentile:
+
+- Substance / identification / data scale among Laidlaw research products: about the **90th–95th**.
+- Mixed-room 3-minute impressiveness if the abstract is read as written: about the **70th–80th** (q-values and a null can lose the room; SCRaMbLe/TET2 titles win “wow”).
+- Theme/leadership theatre: about the **middle**.
+- Epidemiology journals: the wrong class. Gate 3 is open. All twelve *q* > 0.19.
+

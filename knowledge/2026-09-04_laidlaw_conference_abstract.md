@@ -10,6 +10,7 @@
 - **Q13 title (room):** Hot nights rose. Cold days stayed. The first heart admission did not settle the argument.
 - **Q8 / Q12 spine:** ambition as refusal — what monthly first-hospitalisation counts cannot settle. Spare third-person. Weather sentences stay weather until the refusal lands.
 - **Abstract:** 156,156 CHD and 29,681 HF first-hospitalisation events; 132 territory-months; twelve Model 1 fits; all *q* > 0.19. HF×official cold days is the more coherent residual. CHD×official hot nights is not a twin confirmatory finding. Count ratios 1.022 / 1.073 / 1.113 are omitted. Physiology is interpretation. A WHO 2026 × Hong Kong instrument map is a companion, not an evaluation.
+- **Submitted:** Bob reports the Research form was submitted 4 September 2026. Completeness ≠ a guaranteed talk slot.
 - **Ticks:** Passion, Resilience, Possibility, Value-driven, Collectivity, Resisting and Reforming (refusing a confirmatory headline from unprotected monthly counts, not reforming Hong Kong’s warnings), Scale, Vision. **Do not tick Pace.**
 - **Categories:** Applied Health and Medicine; Climate and Sustainability; Technology and Mathematical Sciences.
 - **SDGs:** 3, 11, 13.

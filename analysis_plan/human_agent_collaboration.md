@@ -34,6 +34,8 @@ You are not an obstacle when you are slow. You are an obstacle only when context
 
 **July 2026 mentorship shape:** Roro guides regression / outcomes; Hogan guides climate definitions **and** academic writing (less flowery). Accept both. See `writing_standards_hogan.md`.
 
+**4 Sep 2026, Hogan’s words:** let him know beforehand which mechanisms are being thought about. Bullet point is fine. Do not write him another document.
+
 ---
 
 ## 3. Lab meetings as context engines

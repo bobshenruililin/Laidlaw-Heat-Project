@@ -1,27 +1,25 @@
-# 4 September 2026 — Hogan half-page update
+# 4 September 2026 — Hogan half-page update, then bullets
 
-**Why this entry exists:** the same-day Hogan object is one half-page status note, not a physiology workshop, not a weather lock, and not a paste into the live file.
+**Why this entry exists:** Hogan’s correction after the half-page: tell him beforehand which mechanisms are being thought about. Bullets are enough. Do not write him another document.
 
-**Mode:** Ship. Not Playbook 01 unless he actually locks an operator.
+**Mode:** Decide. Not Playbook 01. Not a Gate 3 freeze.
 
-## Confirmed (room product)
+## His words
 
-- Hogan is handed [`reports/hogan_2026-09-04/BRIEFING.md`](../reports/hogan_2026-09-04/BRIEFING.md) **only**.
-- Listen first; three beats; one ask: “Is anything in that update wrong?”
-- Hogan’s HKO paragraph stays, including “Meteorological data was obtained from the HKO.”
-- Residuals billed asymmetrically: HF×official cold days is the more coherent residual; CHD×official hot nights is smaller, SE-sensitive, and was not evident before 2020.
-- Physiology is labelled interpretation. Ioannou n=7 / bedroom T is an **agent-owned SHORTEN**, not a Hogan vote ([`AGENT_OWNED_SHORTEN.md`](../reports/hogan_2026-09-04/AGENT_OWNED_SHORTEN.md)).
-- Hogan comment H4 is already SATISFIED in the body (housing / behaviour / medication absent). It is a clause on the Bob scorecard, not an agenda item.
-- Live manuscript is not expanded in this session. Paste remains Bob’s.
+I would recommend that you let me know beforehand about which mechanisms you are thinking to include. Bullet point is fine (no need to write a document as you have done in the past).
 
-## Bob only (never handed over)
+## What to send him
 
-- [`TALKING_POINTS.md`](../reports/hogan_2026-09-04/TALKING_POINTS.md)
-- [`APPENDIX_SCORECARD.md`](../reports/hogan_2026-09-04/APPENDIX_SCORECARD.md) — live sentence vs citation estimand vs 132-month panel
-- [`APPENDIX_NEIGHBOURS.md`](../reports/hogan_2026-09-04/APPENDIX_NEIGHBOURS.md)
+[`reports/hogan_2026-09-04/MECHANISM_BULLETS.md`](../reports/hogan_2026-09-04/MECHANISM_BULLETS.md)
+
+Include (already in the live Discussion, labelled hypotheses): overnight recovery after hot nights; cold-related afterload on a failing heart.
+
+Drop-candidates, not additions: seven-person confinement study; bedroom temperature / HRV.
+
+Not proposing: indoor T, consecutive duration, housing, medication, warning performance.
 
 ## Still open / owners
 
-- Weather definition operators, uncited [3]/[5]: Hogan.
-- After the meeting: fill [`DEBRIEF_TEMPLATE.md`](../reports/hogan_2026-09-04/DEBRIEF_TEMPLATE.md). A blank sheet is not a lock.
-- Tests: `tests/test_hogan_2026-09-04.py`. Ledger **A70**.
+- Weather operators, uncited [3]/[5]: Hogan. He did not lock weather.
+- Live-file cut waits until he has seen the bullets. Paste remains Bob’s.
+- Debrief: [`DEBRIEF_TEMPLATE.md`](../reports/hogan_2026-09-04/DEBRIEF_TEMPLATE.md). Ledger **A71**.

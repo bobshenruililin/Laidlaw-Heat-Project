@@ -27,6 +27,8 @@ def test_ledger_and_project_state():
     assert "hogan_2026-09-04/BRIEFING.md" in state
     assert "| A69 |" in ledger
     assert "| A70 |" in ledger
+    assert "| A71 |" in ledger
+    assert "MECHANISM_BULLETS.md" in state
     assert "4 Sep 2026" in gates
     g = gates.lower()
     assert "do **not** close gate 3" in g or "do not close gate 3" in g

@@ -68,3 +68,7 @@ Overnight recovery and cold-related afterload remain labelled hypotheses, not id
 ## Word counts
 
 Q12: 78 words. Abstract: 243 words. Re-run `tests/test_laidlaw_conference_2026.py` before pasting into the form.
+
+## Submission status
+
+Bob reports the Research form was submitted 4 September 2026. Completeness is not a programme acceptance letter. Gate 3 remains open.

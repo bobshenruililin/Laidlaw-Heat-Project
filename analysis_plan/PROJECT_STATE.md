@@ -9,10 +9,10 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ## 0y. Canonical update — Laidlaw conference abstract + Hogan half-page (4 September)
 
-- Conference form: [`reports/laidlaw_conference_2026/ABSTRACT_SUBMISSION.md`](../reports/laidlaw_conference_2026/ABSTRACT_SUBMISSION.md). Title: *Hot nights rose. Cold days stayed. The first heart admission did not settle the argument.* Abstract omits 1.022/1.073/1.113. All twelve *q* > 0.19. HF×cold is the more coherent residual. HHAP is a map, not an evaluation. No Pace tick.
-- Hogan handout: [`reports/hogan_2026-09-04/BRIEFING.md`](../reports/hogan_2026-09-04/BRIEFING.md) only. Agent-owned SHORTEN of Ioannou n=7 / bedroom T. Not a weather lock. Not a Hogan vote.
+- Conference form: [`reports/laidlaw_conference_2026/ABSTRACT_SUBMISSION.md`](../reports/laidlaw_conference_2026/ABSTRACT_SUBMISSION.md). Title: *Hot nights rose. Cold days stayed. The first heart admission did not settle the argument.* Abstract omits 1.022/1.073/1.113. All twelve *q* > 0.19. HF×cold is the more coherent residual. HHAP is a map, not an evaluation. No Pace tick. **Bob reports the form was submitted 4 Sep.** Talk-slot acceptance is a programme decision; the form itself is complete.
+- Hogan’s correction (his words): let him know beforehand which mechanisms are being thought about; bullets are enough; no more documents. Paste: [`reports/hogan_2026-09-04/MECHANISM_BULLETS.md`](../reports/hogan_2026-09-04/MECHANISM_BULLETS.md). Earlier half-page: [`reports/hogan_2026-09-04/BRIEFING.md`](../reports/hogan_2026-09-04/BRIEFING.md). Not a weather lock. Not a live-file cut until he has seen the list.
 - Live manuscript, Table 2, Hogan weather, Gate 3 **OPEN** unchanged.
-- Durable: [`knowledge/2026-09-04_laidlaw_conference_abstract.md`](../knowledge/2026-09-04_laidlaw_conference_abstract.md); [`knowledge/2026-09-04_hogan_physiology_briefing.md`](../knowledge/2026-09-04_hogan_physiology_briefing.md). Ledger A69 (conference) and A70 (Hogan update, not a lock).
+- Durable: [`knowledge/2026-09-04_laidlaw_conference_abstract.md`](../knowledge/2026-09-04_laidlaw_conference_abstract.md); [`knowledge/2026-09-04_hogan_physiology_briefing.md`](../knowledge/2026-09-04_hogan_physiology_briefing.md). Ledger A69–A71.
 
 ## 0w. Canonical update — Hogan Word+PDF exceed 24 August snapshot (31 August)
 

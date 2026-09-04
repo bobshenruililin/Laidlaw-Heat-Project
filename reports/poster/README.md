@@ -21,6 +21,11 @@ phrases.
 the twelve thermal fits shown. Models 2 and 3 are specified, not shown. SHA
 prefixes are in `analysis_plan/send_pack_2026-08-24/HASH_VERIFY.md`.
 
+4 September 2026: HKU and Laidlaw Foundation logos stacked in the header
+top-right on Navy (wordmarks reversed to white; crests keep brand colour).
+No white plate --- the ink/navy/teal palette is unchanged. Science unchanged.
+Still one ISO A0 page.
+
 ### Layout (readability redesign v2, Aug 2026)
 
 Ground-up redesign after the dense two-column/15-box draft was rejected as
@@ -46,8 +51,11 @@ numbers 50 pt, figure labels ≈21–25 pt, captions 18.5 pt, definitions note
 and footer (≈575 excluding the two small notes).
 
 Palette: deep ink/navy + teal on white; warm accent (#B84A2E) for heat, cool
-blue (#2F6C9C) for cold. Typographic identity only — no logo assets exist, so
-none are faked.
+blue (#2F6C9C) for cold. Header top-right: HKU then Laidlaw Foundation logos,
+stacked on Navy, same displayed width, centred on each other (white wordmarks;
+both source lockups use dark type).
+Assets: `assets/hku_logo.png`, `assets/laidlaw_logo.png` (cropped from supplied
+transparent PNGs; wordmarks reversed for the navy band).
 
 ### Figures (poster-specific, reproducible)
 

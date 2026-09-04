@@ -43,7 +43,7 @@ unreadable at 1–2 m; v2 moves to a **band architecture** so the sheet is fille
    contact-email footer. Band gutters are 10 mm. Do not put `\vfill` before
    the strip — it ships the block to page 2.
 
-Type scale (actual printed sizes): title 74 pt, subtitle/author 30 pt, section
+Type scale (actual printed sizes): title 62 pt (fits beside the logo plate), subtitle 30 pt, author 26 pt, section
 headings 34 pt (uppercase), results sub-heading 26 pt, body 26 pt, callout
 numbers 50 pt, figure labels ≈21–25 pt, captions 18.5 pt, definitions note
 20 pt Ink, footer 17.5 pt, REFERENCES heading 22 pt / entries 17.5 pt. Roughly 650 poster words excluding labels, captions

@@ -60,14 +60,29 @@
   flowarrow/.style={-{Stealth[length=7mm,width=6mm]},line width=2.4pt,draw=Navy}}
 \begin{document}
 % ==================== HEADER (band aligned with columns) =====================
+% Logos sit on a white plate: both wordmarks are dark (HKU black, Laidlaw indigo)
+% and would vanish on Navy. Stack is vertical because both lockups are horizontal.
 \begin{tcolorbox}[enhanced,colback=Navy,colframe=Navy,boxrule=0pt,arc=0pt,
-  width=\linewidth,left=10mm,right=10mm,top=11mm,bottom=11mm,
+  width=\linewidth,left=10mm,right=10mm,top=8mm,bottom=8mm,
   borderline south={3mm}{0mm}{Teal},before skip=0pt,after skip=0mm]
-\textcolor{white}{\TitleFont Heat, cold and first hospitalisation\\[2mm]after cardiovascular diagnosis in Hong Kong}\\[6mm]
-\textcolor{PaleTeal}{\SubtitleFont An exploratory monthly study, 2013--2023}\\[8mm]
-\textcolor{white}{\AuthorFont \textbf{Shen Ruililin}\quad\textbar\quad Laidlaw Scholars Programme\quad\textbar\quad School of Public Health, The University of Hong Kong}
+\noindent\begin{minipage}[c]{0.735\linewidth}
+\raggedright
+\textcolor{white}{\bfseries\fontsize{62}{70}\selectfont Heat, cold and first hospitalisation\\[1.5mm]after cardiovascular diagnosis in Hong Kong}\\[5mm]
+\textcolor{PaleTeal}{\SubtitleFont An exploratory monthly study, 2013--2023}\\[6mm]
+\textcolor{white}{\fontsize{26}{32}\selectfont \textbf{Shen Ruililin}\quad\textbar\quad Laidlaw Scholars Programme\quad\textbar\quad School of Public Health, The University of Hong Kong}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.245\linewidth}
+\begin{tcolorbox}[enhanced,colback=white,colframe=PaleTeal,boxrule=1.1pt,arc=2.2mm,
+  left=5mm,right=5mm,top=4.5mm,bottom=4.5mm,boxsep=0pt,
+  before skip=0pt,after skip=0pt,width=\linewidth]
+\centering
+\includegraphics[width=\linewidth]{assets/hku_logo.png}\\[3mm]
+{\color{PaleTeal}\rule{0.92\linewidth}{0.8pt}}\\[3mm]
+\includegraphics[width=\linewidth]{assets/laidlaw_logo.png}
 \end{tcolorbox}
-\vspace{7mm}
+\end{minipage}
+\end{tcolorbox}
+\vspace{4mm}
 % ================= TOP BAND: INTRODUCTION | OBJECTIVE + METHODS ==============
 \noindent\begin{minipage}[t]{0.40\textwidth}
 \sechead{INTRODUCTION}
@@ -148,7 +163,7 @@ higher; cold day: minimum 12\,\textdegree C or lower (HKO
 definitions)\textsuperscript{[1]}. Estimates are count ratios per 5 extreme days
 or per 1\,\textdegree C.\par}
 \end{minipage}
-\vspace{7mm}
+\vspace{4mm}
 
 \sechead{RESULTS}
 \body

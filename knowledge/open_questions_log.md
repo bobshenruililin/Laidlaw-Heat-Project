@@ -2,7 +2,7 @@
 
 **Purpose:** living list of questions that must remain visible until a person, governed file or primary source closes them.
 
-**Last reviewed:** 29 August 2026.
+**Last reviewed:** 4 September 2026.
 
 Update a row by recording the decision, date and evidence link. Do not erase the old question or convert a working assumption into a fact without provenance.
 
@@ -12,7 +12,7 @@ Update a row by recording the decision, date and evidence link. Do not erase the
 |---|---|---|---|---|
 | W01 | What are Jasmine’s exact MMT, moderate/extreme cutoffs, temperature/lag basis and attributable-risk procedure? | Paper identity, model family and headline AFs are locked; exact methods are unavailable in the workspace | Bob / source holder; consult Jingwen if needed | Full paper and supplement ingested and transcribed into a versioned source manifest |
 | W02 | What changed between Roro’s revised manuscript and medRxiv v1? | `revised manuscript_clean.pdf` has not been ingested; v1 includes operator ambiguities | Roro / Bob | Versioned PDF comparison covering definitions, equations, tables and claims |
-| W03 | What is the executable Li-HW / `HM23` rule? | Event family and Hogan’s count-to-tail adaptation are known; reference period, percentile/tie method, gaps, missingness and month mapping remain open | Hogan with Bob implementing | Hogan’s wording recorded on the Tuesday decision sheet and reflected in the registry |
+| W03 | What is the executable Li-HW / `HM23` rule? | Event family and Hogan’s count-to-tail adaptation are known; reference period, percentile/tie method, gaps, missingness and month mapping remain open. The 4 Sep Hogan half-page is an update, not a lock. | Hogan with Bob implementing | Hogan’s wording in a debrief, then Playbook 01 / registry. A nod is not enough. |
 | W04 | Which hot and cold definitions should enter Gate 3 as the proposed co-primary pair? | Core starters exist; no pair is locked | Hogan / Bishai / team | Written pair and rationale, selected before substantive coefficient interpretation |
 | W05 | Should Roro’s four `HWD_*` definitions become four named monthly exposure siblings? | Proposed as siblings, not replacements; exact source operators still need the revised manuscript | Hogan for weather role; Roro for source truth | Written family role plus final executable source manifest |
 | W06 | Which threshold reference period and percentile implementation should all relative definitions use? | Options include 2013–2019, full 2013–2023 or a defensible pre-study/external climatology | Hogan / team | One primary reference, percentile algorithm and tie rule frozen before outcomes |
@@ -52,6 +52,7 @@ Update a row by recording the decision, date and evidence link. Do not erase the
 | A10 | Can a consecutive-day (e.g. 5 hot-night) warning trigger be tested for T2D/HTN CHD? | Monthly sums cannot. P05/HM15 are Explore and not Hogan-locked. M\|D daily recovery failed. HKO “Prolonged Heat” is already a qualitative multi-day tip. 2018: 26 official hot nights, 0 days in ≥5-night spells. | Hogan / Roro / Bishai if daily cause-recorded data are requested | Daily governed series, or an explicit decision that monthly counts will not set duration rules |
 | A11 | Is 6-df the named robustness check among 5/6/8? | **Scored 27 Aug:** only 6-df among more-flexible splines preserves both headlines. Table 2 remains 4-df. Bishai asked to crown one; the memo crowns 6 as robustness, not confirmatory. | Bishai / team | Human nod that Table 2 stays 4-df and 6-df is the named check; Gate 3 still open |
 | A12 | Can this panel evaluate Hong Kong’s heat/cold warnings or set HHAP triggers? | **Written 29 Aug as mapping, not evaluation.** WHO 2026 eight elements named; HKO/DH/HAD bundle named; Prolonged Heat already includes hot nights. Indoor temperature unmeasured. | Bishai / Hogan / DH if they want an evaluation design | Daily cause-recorded data and a predeclared evaluation protocol; this monthly panel will not become that evaluation |
+| A13 | Does the Laidlaw Conference 2026 abstract freeze a confirmatory headline? | **Closed 4 Sep (no).** Title B + ambition-as-refusal Q12. Abstract omits 1.022/1.073/1.113. All twelve *q* > 0.19. Form pack is identification, not Gate 3. | Bob | Only a dated team Gate 3 freeze note; pasting ratios back into the talk would re-open the risk |
 
 ## Hard stop rules while questions remain open
 

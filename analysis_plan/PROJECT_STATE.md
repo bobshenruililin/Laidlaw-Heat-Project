@@ -1,11 +1,18 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-31
+**Last updated:** 2026-09-04
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0y. Canonical update — Laidlaw conference abstract + Hogan half-page (4 September)
+
+- Conference form: [`reports/laidlaw_conference_2026/ABSTRACT_SUBMISSION.md`](../reports/laidlaw_conference_2026/ABSTRACT_SUBMISSION.md). Title: *Hot nights rose. Cold days stayed. The first heart admission did not settle the argument.* Abstract omits 1.022/1.073/1.113. All twelve *q* > 0.19. HF×cold is the more coherent residual. HHAP is a map, not an evaluation. No Pace tick.
+- Hogan handout: [`reports/hogan_2026-09-04/BRIEFING.md`](../reports/hogan_2026-09-04/BRIEFING.md) only. Agent-owned SHORTEN of Ioannou n=7 / bedroom T. Not a weather lock. Not a Hogan vote.
+- Live manuscript, Table 2, Hogan weather, Gate 3 **OPEN** unchanged.
+- Durable: [`knowledge/2026-09-04_laidlaw_conference_abstract.md`](../knowledge/2026-09-04_laidlaw_conference_abstract.md); [`knowledge/2026-09-04_hogan_physiology_briefing.md`](../knowledge/2026-09-04_hogan_physiology_briefing.md). Ledger A69 (conference) and A70 (Hogan update, not a lock).
 
 ## 0w. Canonical update — Hogan Word+PDF exceed 24 August snapshot (31 August)
 

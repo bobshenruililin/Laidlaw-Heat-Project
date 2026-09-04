@@ -3,7 +3,8 @@
 **Purpose:** Make productive wandering accumulate.  
 **Rule:** Every Explore-mode session adds at least one row. Ship-mode may add rows when something surprising appears.
 
-| 2026-09-04 | Decide | Hogan: mechanisms as bullets beforehand, not a document | His words. Overnight recovery and afterload are the include-list. Ioannou n=7 and bedroom T are drop-candidates. No live-file cut until he has seen the bullets. No weather lock. Gate 3 still open. | Keep | `reports/hogan_2026-09-04/MECHANISM_BULLETS.md`; `reports/hogan_2026-09-04/DEBRIEF_TEMPLATE.md` |
+| 2026-09-04 | Teach | Caliber of the conference abstract vs the Laidlaw Research channel | Modal Laidlaw product is a 6-week future-tense outline. This abstract is upper-decile on identification and scale, not a 3MT lock and not a journal paper. Not a ranking. | Keep | `knowledge/2026-09-04_laidlaw_conference_abstract.md` |
+
 | 2026-09-04 | Ship | Laidlaw conference abstract then Hogan half-page | Title B for the room; ambition as refusal; omit unprotected ratios. Hogan gets one half-page; Ioannou n=7 is agent-owned SHORTEN; not a weather lock. Four seats AGREE. Gate 3 still open. | Keep | `reports/laidlaw_conference_2026/`; `reports/hogan_2026-09-04/`; `knowledge/2026-09-04_laidlaw_conference_abstract.md`; `knowledge/2026-09-04_hogan_physiology_briefing.md` |
 
 | 2026-08-31 | Ship | Exceed 24 Aug Hogan snapshot; merge when Word+PDF ready | Snapshot `b172ed31659d6cd6` (14 pp). Current PDF `96b69b7b7ba38513` (22 pp), Word `852702ded2c4e968`. Comments no paste/pipeline. No orphan pages. Gate 3 still open. | Keep | `reports/hogan_exceeds_20260824_snapshot.md`; `knowledge/2026-08-31_hogan_exceeds_snapshot.md` |

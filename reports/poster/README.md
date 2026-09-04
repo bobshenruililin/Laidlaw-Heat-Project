@@ -22,8 +22,9 @@ the twelve thermal fits shown. Models 2 and 3 are specified, not shown. SHA
 prefixes are in `analysis_plan/send_pack_2026-08-24/HASH_VERIFY.md`.
 
 4 September 2026: HKU and Laidlaw Foundation logos stacked in the header
-top-right on a white plate (dark wordmarks are unreadable on Navy). Science
-unchanged. Still one ISO A0 page.
+top-right on Navy (wordmarks reversed to white; crests keep brand colour).
+No white plate --- the ink/navy/teal palette is unchanged. Science unchanged.
+Still one ISO A0 page.
 
 ### Layout (readability redesign v2, Aug 2026)
 
@@ -43,7 +44,7 @@ unreadable at 1–2 m; v2 moves to a **band architecture** so the sheet is fille
    contact-email footer. Band gutters are 10 mm. Do not put `\vfill` before
    the strip — it ships the block to page 2.
 
-Type scale (actual printed sizes): title 62 pt (fits beside the logo plate), subtitle 30 pt, author 26 pt, section
+Type scale (actual printed sizes): title 74 pt, subtitle/author 30 pt, section
 headings 34 pt (uppercase), results sub-heading 26 pt, body 26 pt, callout
 numbers 50 pt, figure labels ≈21–25 pt, captions 18.5 pt, definitions note
 20 pt Ink, footer 17.5 pt, REFERENCES heading 22 pt / entries 17.5 pt. Roughly 650 poster words excluding labels, captions
@@ -51,9 +52,9 @@ and footer (≈575 excluding the two small notes).
 
 Palette: deep ink/navy + teal on white; warm accent (#B84A2E) for heat, cool
 blue (#2F6C9C) for cold. Header top-right: HKU then Laidlaw Foundation logos,
-stacked on a white plate (both wordmarks are dark; they are unreadable on Navy).
+stacked on Navy with white wordmarks (both source lockups use dark type).
 Assets: `assets/hku_logo.png`, `assets/laidlaw_logo.png` (cropped from supplied
-transparent PNGs).
+transparent PNGs; wordmarks reversed for the navy band).
 
 ### Figures (poster-specific, reproducible)
 

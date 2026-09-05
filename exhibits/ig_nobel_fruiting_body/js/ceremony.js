@@ -71,6 +71,9 @@ export function createClock() {
   let elapsed = 0;
   let last = 0;
   const auto = /[?&]ceremony\b/.test(location.search);
+  const actParam = new URLSearchParams(location.search).get("act");
+  const jump = ACTS.find((a) => a.id === actParam);
+  if (jump) elapsed = jump.t0;
 
   return {
     get running() {

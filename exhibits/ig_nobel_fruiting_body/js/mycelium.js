@@ -166,6 +166,17 @@ export function createMycelium(scene) {
   });
   const hyphae = new THREE.LineSegments(hyphaGeo, hyphaMat);
   group.add(hyphae);
+  const hyphaLit = new THREE.LineSegments(
+    hyphaGeo.clone(),
+    new THREE.LineBasicMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.45,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    })
+  );
+  group.add(hyphaLit);
 
   const substrate = new THREE.Mesh(
     new THREE.CircleGeometry(7.2, 64),

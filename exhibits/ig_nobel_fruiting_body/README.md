@@ -19,10 +19,10 @@ Coupled systems, each a lemma:
 ## Keys
 
 - Space / Start 60s: ceremony clock
-- 1–8: jump acts
+- 1–8: jump acts (or `?act=board`)
 - Drag the mycelium (pointer attraction)
-- Publish buttons: fruiting attempt
-- Consecutive-nights slider: snaps at 5
+- Publish buttons: fruiting attempt (`?publish=chd`)
+- Consecutive-nights slider: snaps at 5 (`?nights=5`)
 
 ## Technique (public GitHub; not QF Network)
 

@@ -3,6 +3,8 @@
 **Purpose:** Make productive wandering accumulate.  
 **Rule:** Every Explore-mode session adds at least one row. Ship-mode may add rows when something surprising appears.
 
+| 2026-09-05 | Explore / Ship | Ig Nobel mycelium exhibit | Twelve-fit fruiting body that will not fruit. Ceremony chrome ≠ data. Not a submission. Gate 3 still open. | Keep | `exhibits/ig_nobel_fruiting_body/`; `knowledge/2026-09-05_ig_nobel_fruiting_body.md` |
+
 | 2026-08-31 | Ship | Exceed 24 Aug Hogan snapshot; merge when Word+PDF ready | Snapshot `b172ed31659d6cd6` (14 pp). Current PDF `96b69b7b7ba38513` (22 pp), Word `852702ded2c4e968`. Comments no paste/pipeline. No orphan pages. Gate 3 still open. | Keep | `reports/hogan_exceeds_20260824_snapshot.md`; `knowledge/2026-08-31_hogan_exceeds_snapshot.md` |
 | 2026-08-30 | Teach | How to get a 1-hour send-ready Hogan manuscript with no paste step | The attachable PDF already has no paste/circulate in body text (`346f2174cb7cc603`). “Paste” is Bob-facing repo notes. One-shot prompt: `analysis_plan/prompts/GOAL_hogan_send_ready.md`. One hour cannot invent IRB, authors, or Model 2 coefficients. | Keep | `analysis_plan/prompts/GOAL_hogan_send_ready.md` |
 | 2026-08-30 | Teach / Decide | What is Grok–Cursor best at? Are HHAP and 5-day physiology core? Are Desktop PDFs current? | Core paper remains twelve Model 1 contrasts. HHAP = mapping; 5 = reporting scale; physiology = hypothesis after WORSE cut. Canonical hashes Hogan `346f2174` / essay `1200082a` / poster `a972206e` (poster lagged). Desktop paths not hashed here. Drastic upgrade must not mint a 5-day trigger. | Keep | `knowledge/2026-08-30_grok_cursor_hhap_core.md` |

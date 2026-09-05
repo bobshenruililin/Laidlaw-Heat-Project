@@ -24,6 +24,7 @@
 
 ## Current meeting record
 
+- [`2026-09-05_ig_nobel_fruiting_body.md`](2026-09-05_ig_nobel_fruiting_body.md) — 60-second Ig Nobel-shaped mycelium exhibit; not a submission; Gate 3 open.
 - [`2026-09-02_autoresearch_hhap_paper.md`]
 - [`../reports/blog/week4_methods_while_waiting.md`](../reports/blog/week4_methods_while_waiting.md) — Week 4–6 Laidlaw blog drafts. Not journal-track.
 - [`../reports/identification_crucible_2026-08-14.md`](../reports/identification_crucible_2026-08-14.md) — identification crucible (Explore). Not findings. Gate 3 open.

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Fruiting Body That Did Not Fruit</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+<style>
+  :root {
+    --ink: #e8efe8;
+    --dim: #8fa39a;
+    --chd: #c56a42;
+    --hf: #4e8f92;
+    --gold: #e2c48a;
+    --void: #070b10;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--void); color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; overflow: hidden; }
+  #c { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  .hud { position: fixed; inset: 0; pointer-events: none; }
+  .hud button, .hud input, .hud .panel, .hud .brand, .hud .clockbox, .hud .controls, .hud .caption, .hud .kicker {
+    pointer-events: auto;
+  }
+  .top {
+    position: absolute; left: 28px; right: 28px; top: 22px;
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 24px;
+    pointer-events: none;
+  }
+  .brand { max-width: 62ch; }
+  .eyebrow {
+    letter-spacing: 0.18em; text-transform: uppercase; font-size: 11px; color: #9ec4b8;
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-family: Palatino, "Palatino Linotype", Georgia, serif;
+    font-size: clamp(22px, 3.2vw, 40px); line-height: 1.15; font-weight: 500;
+    margin: 0 0 10px; max-width: 22ch;
+  }
+  h1.quiet { opacity: 0.22; transform: scale(0.96); transform-origin: top left; }
+  #award {
+    font-size: 15px; line-height: 1.45; color: var(--gold); max-width: 52ch; margin: 0;
+    font-style: italic;
+  }
+  .clockbox { display: flex; align-items: center; gap: 12px; }
+  svg.ring { width: 72px; height: 72px; transform: rotate(-90deg); }
+  .ring-bg { fill: none; stroke: #1c2a28; stroke-width: 6; }
+  #clock-ring { fill: none; stroke: var(--gold); stroke-width: 6; stroke-dasharray: 113.1;
+    stroke-dashoffset: 113.1; stroke-linecap: round; }
+  #clock-read { font-variant-numeric: tabular-nums; font-size: 20px; }
+  #act-num { font-size: 12px; letter-spacing: 0.12em; color: var(--dim); }
+  .caption {
+    position: absolute; left: 28px; bottom: 28px; font-style: italic; font-size: 22px;
+    color: #c5d4cc; min-height: 1.4em;
+  }
+  .kicker {
+    position: absolute; left: 28px; bottom: 62px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-size: 12px; color: #9ec4b8;
+  }
+  .controls {
+    position: absolute; right: 28px; bottom: 24px; display: flex; gap: 8px; flex-wrap: wrap;
+    justify-content: flex-end; max-width: 46vw;
+  }
+  button, .pill {
+    background: #121a18; color: var(--ink); border: 1px solid #2a3c36; border-radius: 999px;
+    padding: 8px 14px; font-size: 13px; cursor: pointer;
+  }
+  button:hover { border-color: var(--gold); }
+  .pill { pointer-events: none; color: var(--gold); letter-spacing: 0.08em; }
+  .panel {
+    position: absolute; left: 50%; top: 22%; transform: translateX(-50%);
+    width: min(920px, 92vw); background: rgba(8,12,12,0.72); backdrop-filter: blur(8px);
+    border: 1px solid #24332e; border-radius: 16px; padding: 22px 26px;
+  }
+  .panel[hidden], [hidden] { display: none !important; }
+  .eq-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 8px; }
+  .eq-row button.on { background: #3a2418; border-color: var(--chd); }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .est { border-top: 5px solid var(--chd); padding-top: 8px; }
+  .est.hf { border-top-color: var(--hf); }
+  .est .who { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--chd); }
+  .est.hf .who { color: var(--hf); }
+  .est .num { font-size: 42px; font-weight: 700; letter-spacing: -0.03em; }
+  .stats { display: flex; gap: 28px; font-size: 28px; }
+  .stats b { display: block; font-size: 40px; }
+  .stats span { font-size: 13px; color: var(--dim); letter-spacing: 0.04em; }
+  #ruler.snap { accent-color: var(--chd); }
+  #ruler { width: 100%; }
+  #weather-line, #pool-line, #daily-line, #shepherd { font-size: 22px; line-height: 1.4; margin: 0; }
+  footer.meta {
+    position: absolute; right: 28px; top: 108px; left: auto; text-align: right; font-size: 11px;
+    color: var(--dim); letter-spacing: 0.06em; pointer-events: none; max-width: 36ch;
+  }
+  #ruler-panel {
+    left: 28px; top: auto; bottom: 118px; transform: none;
+    width: min(440px, 42vw);
+  }
+  .chrome { opacity: 0.7; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="hud">
+  <div class="top">
+    <div class="brand">
+      <p class="eyebrow" id="kicker">Award sentence</p>
+      <h1 id="title-b">Hot nights rose. Cold days stayed. The first heart admission did not settle the argument.</h1>
+      <p id="award">for demonstrating, with 156,156 first heart admissions and twelve mycelial fits, that a confirmatory mushroom still will not fruit when every q exceeds 0.19.</p>
+    </div>
+    <div class="clockbox">
+      <svg class="ring" viewBox="0 0 42 42" aria-hidden="true">
+        <circle class="ring-bg" cx="21" cy="21" r="18"></circle>
+        <circle id="clock-ring" cx="21" cy="21" r="18"></circle>
+      </svg>
+      <div>
+        <div id="clock-read">60.0s</div>
+        <div id="act-num">1/8</div>
+      </div>
+    </div>
+  </div>
+  <footer class="meta">
+    36th First Annual · fungi as chrome, not as data<br>
+    Ceremony chrome. Not an Ig Nobel submission. Not a win. Identification theatre.<br>
+    Provenance <span id="provenance">REAL</span>
+  </footer>
+
+  <p class="kicker" id="kicker-dup" hidden></p>
+
+  <div class="panel" id="weather-line" hidden>
+    Official hot nights increased. Official cold days persisted.
+  </div>
+  <div class="panel" id="pool-line" hidden>
+    <div class="stats">
+      <div><b id="chd-count">156,156</b><span>CHD first hospitalisations · REAL</span></div>
+      <div><b id="hf-count">29,681</b><span>HF first hospitalisations · REAL</span></div>
+      <div><b id="month-count">132</b><span>territory-months, 2013–2023 · REAL</span></div>
+    </div>
+    <p id="sprite-note">each sprite = 100 events · REAL</p>
+    <p>Admission cause was not recorded. People leave the pool.</p>
+  </div>
+  <div class="panel" id="glm-panel" hidden>
+    <p>Equation (1) · monthly count ratio e<sup>β</sup>, not incidence.</p>
+    <div class="eq-row">
+      <button type="button" data-term="offset">offset log(d<sub>t</sub>)</button>
+      <button type="button" data-term="month">month dummies</button>
+      <button type="button" data-term="spline">s(t; 4 df)</button>
+      <button type="button" data-term="x">one X<sub>t</sub></button>
+    </div>
+    <p id="term-note"></p>
+    <p class="chrome">\log \mathrm{E}(Y_t) = \log(d_t) + \alpha + \beta X_t + \sum_{m=2}^{12} \gamma_m I(\mathrm{month}_t = m) + s(t; 4~\mathrm{df})</p>
+  </div>
+  <div class="panel" id="daily-line" hidden>
+    A clean-room recovery of daily effects from monthly counts was run against 500 simulated replicates. It failed the calibration gate. No real daily coefficient is admitted from that method.
+  </div>
+  <div class="panel" id="board-panel" hidden>
+    <p id="q-fence">All twelve q-values exceeded 0.19 · minimum shown q = 0.192</p>
+    <div class="pair">
+      <div class="est">
+        <p class="who">CHD · official hot nights / 5 days · REAL</p>
+        <p class="num" id="rr-chd">1.022</p>
+        <p id="ci-chd">(1.002–1.042) · q = 0.192</p>
+        <p id="note-chd"></p>
+      </div>
+      <div class="est hf">
+        <p class="who">HF · official cold days / 5 days · REAL</p>
+        <p class="num" id="rr-hf">1.073</p>
+        <p id="ci-hf">(1.006–1.144) · q = 0.192</p>
+        <p id="note-hf">More coherent. Pre-2020: 1.113 (1.053–1.176), excludes 1.</p>
+      </div>
+    </div>
+    <p>they are not twins.</p>
+  </div>
+  <div class="panel" id="ruler-panel" hidden>
+    <p>Drag consecutive nights. At five, 2018 snaps.</p>
+    <p id="ruler-out"></p>
+  </div>
+  <div class="panel" id="shepherd" hidden>
+    Better claims need daily, cause-recorded, warning-day data. Sit down.
+  </div>
+
+  <p class="caption" id="caption"></p>
+  <div class="controls">
+    <span class="pill">REAL</span>
+    <button type="button" id="start">Start 60s</button>
+    <button type="button" id="publish-chd">Publish 1.022</button>
+    <button type="button" id="publish-hf">Publish 1.073</button>
+    <label class="pill" style="pointer-events:auto">nights
+      <input id="ruler" type="range" min="0" max="8" value="0" aria-label="consecutive hot nights">
+    </label>
+  </div>
+</div>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>

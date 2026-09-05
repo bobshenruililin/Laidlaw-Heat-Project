@@ -1,11 +1,16 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-31
+**Last updated:** 2026-09-05
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0x. Canonical update — Ig Nobel mycelium exhibit (5 September)
+
+- Exhibit: [`exhibits/ig_nobel_fruiting_body/`](../exhibits/ig_nobel_fruiting_body/). 60-second ceremony chrome (fungi, airplanes, shepherd) around the twelve-fit fence. 1.022 / 1.073 only beside *q* = 0.192. Not a submission, not a win, not a Gate 3 freeze. Do not send Hogan unless he asks. Ledger A73.
+- Durable: [`knowledge/2026-09-05_ig_nobel_fruiting_body.md`](../knowledge/2026-09-05_ig_nobel_fruiting_body.md).
 
 ## 0w. Canonical update — Hogan Word+PDF exceed 24 August snapshot (31 August)
 

@@ -264,7 +264,14 @@ function boot() {
     hud.rulerInput.classList.toggle("snap", five);
   }
   hud.rulerInput.addEventListener("input", snapRuler);
+
+  const demo = new URLSearchParams(location.search);
+  if (demo.get("nights")) {
+    hud.rulerInput.value = demo.get("nights");
+  }
   snapRuler();
+  if (demo.get("publish") === "chd") setTimeout(() => publish("chd"), 700);
+  if (demo.get("publish") === "hf") setTimeout(() => publish("hf"), 700);
 
   hud.startBtn.addEventListener("click", () => {
     if (clock.done) clock.seek(0);

@@ -96,9 +96,10 @@ def test_live_file_not_expanded_today():
 
 def test_mechanism_bullets_are_short_and_hogan_facing():
     text = (PACK / "MECHANISM_BULLETS.md").read_text(encoding="utf-8")
-    n = len(_words(text))
-    # Complete units, not a cryptic list and not another memo.
-    assert 140 <= n <= 280, n
+    prose = re.sub(r"https?://\S+", "", text)
+    n = len(_words(prose))
+    # Complete units plus a DOI line each. URLs are stripped from this count.
+    assert 140 <= n <= 360, n
     low = text.lower()
     assert "overnight recovery" in low
     assert "afterload" in low
@@ -111,15 +112,24 @@ def test_mechanism_bullets_are_short_and_hogan_facing():
     assert "indoor" in low
     assert "nothing new is proposed" in low
     assert "hko paragraph" in low
+    for doi in (
+        "10.1016/j.smrv.2024.101915",
+        "10.1186/s13643-024-02742-7",
+        "10.1080/23328940.2017.1414014",
+        "10.3389/fphys.2025.1740919",
+        "10.1139/apnm-2024-0105",
+        "10.1186/s12916-025-04513-0",
+    ):
+        assert doi in text, doi
     assert "1.022" not in text
     assert "1.073" not in text
     assert "gate 3" not in low
-    assert "ioannou" not in low
     assert "h4" not in low
     assert "housing" not in low
     assert "see briefing" not in low
     debrief = (PACK / "DEBRIEF_TEMPLATE.md").read_text(encoding="utf-8")
     assert "let me know beforehand about which mechanisms" in debrief
+    assert "link to the cited studies for each point" in debrief
     assert "Locked something? No." in debrief
     assert "complete unit" in debrief.lower()
 

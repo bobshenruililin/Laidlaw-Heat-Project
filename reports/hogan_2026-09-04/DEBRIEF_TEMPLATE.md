@@ -19,7 +19,7 @@ Writing Hogan another status memo, scorecard, or literature map. He asked for bu
 
 ## Newly allowed
 
-A short beforehand list of candidate mechanisms. Paste: [`MECHANISM_BULLETS.md`](MECHANISM_BULLETS.md).
+A short beforehand list of candidate mechanisms. Paste: [`MECHANISM_BULLETS.md`](MECHANISM_BULLETS.md). 8 Sep expansion: each bullet is a complete unit so Hogan does not have to search. Still not a document.
 
 ## Open questions still his
 

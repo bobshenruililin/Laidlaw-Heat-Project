@@ -97,19 +97,31 @@ def test_live_file_not_expanded_today():
 def test_mechanism_bullets_are_short_and_hogan_facing():
     text = (PACK / "MECHANISM_BULLETS.md").read_text(encoding="utf-8")
     n = len(_words(text))
-    assert n <= 120, n
+    # Complete units, not a cryptic list and not another memo.
+    assert 140 <= n <= 280, n
     low = text.lower()
     assert "overnight recovery" in low
     assert "afterload" in low
+    assert "pressure the heart pumps against" in low
+    assert "failing heart" in low
+    assert "only counts nights" in low
     assert "seven-person" in low or "confinement" in low
+    assert "not hong kong" in low
     assert "bedroom" in low
+    assert "indoor" in low
     assert "nothing new is proposed" in low
+    assert "hko paragraph" in low
     assert "1.022" not in text
+    assert "1.073" not in text
     assert "gate 3" not in low
     assert "ioannou" not in low
+    assert "h4" not in low
+    assert "housing" not in low
+    assert "see briefing" not in low
     debrief = (PACK / "DEBRIEF_TEMPLATE.md").read_text(encoding="utf-8")
     assert "let me know beforehand about which mechanisms" in debrief
     assert "Locked something? No." in debrief
+    assert "complete unit" in debrief.lower()
 
 
 if __name__ == "__main__":

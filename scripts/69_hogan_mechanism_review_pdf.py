@@ -75,7 +75,7 @@ def fig_nights_vs_spells(rows: list[dict]) -> Path:
     )
     ax.set_xticks(list(x), [str(y) for y in years], rotation=0)
     ax.set_ylabel("Days per year")
-    ax.set_title("Official hot-night counts are not consecutive-night spells")
+    ax.set_title("REFUSE: official hot-night counts are not consecutive-night spells")
     ax.legend(frameon=False, loc="upper left")
     ax.set_facecolor("white")
     ax.yaxis.grid(True, color=GRID)
@@ -106,7 +106,7 @@ def fig_heat_cold_annual(rows: list[dict]) -> Path:
     ax2 = ax1.twinx()
     ax2.plot(years, tmean, color=GREY, ls="--", marker=".", lw=1.2, label="Annual mean temperature")
     ax2.set_ylabel("Annual mean temperature (°C)")
-    ax1.set_title("Hot nights rose. Cold days stayed. Mean temperature is a third series.")
+    ax1.set_title("KEEP: night counts rose. Mean temperature is a third series.")
     h1, l1 = ax1.get_legend_handles_labels()
     h2, l2 = ax2.get_legend_handles_labels()
     ax1.legend(h1 + h2, l1 + l2, frameon=False, loc="upper left")
@@ -152,7 +152,7 @@ def fig_table2_forest() -> Path:
     ax.set_xlim(0.92, 1.18)
     ax.set_yticks(y, [lab for lab, *_ in rows], fontsize=8)
     ax.set_xlabel("Count ratio (Newey–West lag-6)")
-    ax.set_title("Table 2: twelve Model 1 fits. Minimum q = 0.192.")
+    ax.set_title("KEEP: two residuals; both q = 0.192. Gate 3 is open.")
     fig.text(
         0.01,
         0.01,
@@ -188,7 +188,7 @@ def fig_se_ladder() -> Path:
         ax.xaxis.grid(True, color=GRID)
     axes[0].set_xlabel("Count ratio")
     axes[1].set_xlabel("Count ratio")
-    fig.suptitle("Uncertainty ladder: CHD is construction-dependent; HF is not", fontsize=11, y=0.98)
+    fig.suptitle("KEEP: do not pick an SE because it excludes 1", fontsize=11, y=0.98)
     fig.text(
         0.01,
         0.01,
@@ -208,7 +208,7 @@ def fig_overnight_schematic() -> Path:
     ax.set_xlim(0, 10)
     ax.set_ylim(0, 6)
     ax.axis("off")
-    ax.set_title("Why a hot-night count can differ from monthly mean temperature", loc="left")
+    ax.set_title("KEEP: two months can share a mean T and differ in night counts", loc="left")
     for x0, title, nights, mean in (
         (0.4, "Month A", 8, "same mean T"),
         (5.3, "Month B", 2, "same mean T"),
@@ -264,7 +264,7 @@ def fig_afterload_schematic() -> Path:
     ax.set_xlim(0, 10)
     ax.set_ylim(0, 5)
     ax.axis("off")
-    ax.set_title("Cold-related afterload is a haemodynamic hypothesis, not an estimate", loc="left")
+    ax.set_title("KEEP: afterload is a chain this panel does not measure", loc="left")
     labels = [
         (0.4, "Official cold day\nTmin ≤ 12 °C"),
         (3.5, "Vasoconstriction\n↑ afterload"),
@@ -310,7 +310,7 @@ def fig_ioannou_mismatch() -> Path:
     ax.set_xlim(0, 10)
     ax.set_ylim(0, 5.2)
     ax.axis("off")
-    ax.set_title("Ioannou 2024 is a chamber study. This extract is a territory-month count.", loc="left")
+    ax.set_title("DROP: seven men in a chamber are not 132 Hong Kong months", loc="left")
     ax.add_patch(FancyBboxPatch((0.3, 1.2), 4.3, 3.4, boxstyle="round,pad=0.1,rounding_size=0.12", facecolor="#F7F8F9", edgecolor=GREY, lw=1.2))
     ax.add_patch(FancyBboxPatch((5.4, 1.2), 4.3, 3.4, boxstyle="round,pad=0.1,rounding_size=0.12", facecolor="#F7F8F9", edgecolor=TEAL, lw=1.2))
     ax.text(2.45, 4.2, "Ioannou et al. 2024", ha="center", fontsize=10, fontweight="bold")
@@ -344,7 +344,7 @@ def fig_indoor_outdoor() -> Path:
     ax.set_xlim(0, 10)
     ax.set_ylim(0, 5.2)
     ax.axis("off")
-    ax.set_title("Outdoor official counts do not measure bedroom temperature", loc="left")
+    ax.set_title("DROP: outdoor official counts are not bedroom temperature", loc="left")
     ax.add_patch(FancyBboxPatch((0.3, 1.3), 4.3, 3.3, boxstyle="round,pad=0.1,rounding_size=0.12", facecolor="#F7F8F9", edgecolor=TEAL, lw=1.2))
     ax.add_patch(FancyBboxPatch((5.4, 1.3), 4.3, 3.3, boxstyle="round,pad=0.1,rounding_size=0.12", facecolor="#F7F8F9", edgecolor=ACCENT, lw=1.2))
     ax.text(2.45, 4.15, "What this file has", ha="center", fontsize=10, fontweight="bold", color=TEAL)
@@ -371,11 +371,27 @@ def fig_indoor_outdoor() -> Path:
 def markdown_to_html(md_text: str) -> str:
     import markdown as md
 
+    # Page-break before every h2 except the conversation map (Chrome ignores
+    # h2:first-of-type { page-break-before: avoid } when h2 has break-before: page).
+    md_text = re.sub(
+        r"\n(?=## (?!Conversation map))",
+        '\n\n<div class="break"></div>\n\n',
+        md_text,
+    )
+
     body = md.markdown(
         md_text,
         extensions=["tables", "fenced_code", "sane_lists"],
     )
-    # Make image paths absolute for Chrome file://
+
+    def _figure(m: re.Match) -> str:
+        img = m.group(1)
+        alt_m = re.search(r'alt="([^"]*)"', img)
+        alt = alt_m.group(1) if alt_m else ""
+        return f"<figure>{img}<figcaption>{alt}</figcaption></figure>"
+
+    body = re.sub(r"<p>\s*(<img\b[^>]*>)\s*</p>", _figure, body)
+
     def _abs(m: re.Match) -> str:
         src = m.group(1)
         if src.startswith("http") or src.startswith("file:"):
@@ -385,39 +401,65 @@ def markdown_to_html(md_text: str) -> str:
 
     body = re.sub(r'src="([^"]+)"', _abs, body)
     css = """
-@page { size: A4; margin: 16mm 15mm 18mm 15mm; }
-html, body { font-family: "Liberation Serif", "Times New Roman", Times, serif; font-size: 11pt; line-height: 1.38; color: #202124; }
-h1 { font-size: 16pt; line-height: 1.25; margin: 0 0 0.4em; }
-h2 { font-size: 13pt; page-break-before: always; margin-top: 0.2em; border-bottom: 1px solid #cfd3d6; padding-bottom: 0.2em; }
-h2:first-of-type { page-break-before: avoid; }
-h3 { font-size: 11.5pt; margin-top: 1.1em; }
-p { margin: 0.55em 0; }
-.banner { background: #174d5b; color: #fff; padding: 10px 14px; margin: 0 0 14px; font-size: 10pt; }
+@page { size: A4; margin: 14mm 14mm 16mm 14mm; }
+html, body { font-family: "Liberation Serif", "Times New Roman", Times, serif; font-size: 11pt; line-height: 1.36; color: #202124; }
+h1 { font-size: 15.5pt; line-height: 1.2; margin: 0 0 0.3em; }
+h2 { font-size: 13pt; margin-top: 0.15em; border-bottom: 1px solid #cfd3d6; padding-bottom: 0.2em; }
+h3 { font-size: 11.5pt; margin-top: 0.95em; margin-bottom: 0.25em; page-break-after: avoid; }
+p { margin: 0.45em 0; }
+.banner { background: #174d5b; color: #fff; padding: 8px 12px; margin: 0 0 10px; font-size: 10pt; }
 .banner strong { letter-spacing: 0.02em; }
-img { max-width: 100%; height: auto; display: block; margin: 0.7em auto; }
+.banner code { color: #fff; }
+img { max-width: 100%; height: auto; display: block; margin: 0.4em auto 0; }
+strong { color: #174d5b; }
 em { color: #42464B; }
 ul, ol { margin: 0.4em 0 0.7em 1.2em; }
 li { margin: 0.15em 0; }
-table { border-collapse: collapse; width: 100%; font-size: 10pt; margin: 0.8em 0; }
+table { border-collapse: collapse; width: 100%; font-size: 10pt; margin: 0.55em 0; }
 th, td { border: 1px solid #d0d5d8; padding: 4px 6px; text-align: left; vertical-align: top; }
 th { background: #eef3f4; }
+.scoreboard { font-size: 9.4pt; }
+.scoreboard th, .scoreboard td { padding: 3px 6px; }
+.pill-keep { color: #174d5b; font-weight: 700; font-family: "Liberation Sans", Arial, sans-serif; }
+.pill-drop { color: #C45C26; font-weight: 700; font-family: "Liberation Sans", Arial, sans-serif; }
+.pill-refuse { color: #5F6368; font-weight: 700; font-family: "Liberation Sans", Arial, sans-serif; }
+.howto { background: #eef3f4; padding: 7px 10px; margin: 0.45em 0 0.6em; font-size: 10pt; page-break-inside: avoid; }
+.card { border: 2px solid; border-radius: 5px; padding: 8px 12px 10px; margin: 0.35em 0 0.85em; background: #f7f8f9; page-break-inside: avoid; }
+.card.keep { border-color: #174d5b; }
+.card.drop { border-color: #C45C26; }
+.card.refuse { border-color: #5F6368; }
+.card .label { display: inline-block; font-family: "Liberation Sans", Arial, sans-serif; font-weight: 700; letter-spacing: 0.08em; font-size: 10pt; color: #fff; padding: 2px 9px; border-radius: 3px; margin: 0 0 6px; }
+.card.keep .label { background: #174d5b; }
+.card.drop .label { background: #C45C26; }
+.card.refuse .label { background: #5F6368; }
+.card dl { margin: 0; }
+.card dt { font-family: "Liberation Sans", Arial, sans-serif; font-size: 9pt; font-weight: 700; margin-top: 0.4em; }
+.card.keep dt { color: #174d5b; }
+.card.drop dt { color: #7A2E32; }
+.card.refuse dt { color: #42464B; }
+.card dd { margin: 0.08em 0 0.2em 0; }
+figure { margin: 0.7em 0 1em; page-break-inside: avoid; }
+figcaption { font-size: 9.4pt; color: #3c4043; margin-top: 0.3em; font-style: italic; line-height: 1.32; }
 caption, .caption { font-size: 9pt; color: #5F6368; }
 .footer-note { font-size: 9pt; color: #5F6368; }
 a { color: #174d5b; }
+code { font-size: 0.92em; }
+.break { break-before: page; page-break-before: always; }
 """
     return (
         "<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'>"
-        "<title>Mechanism points for Bob’s review</title>"
+        "<title>What we are discussing — Bob review only</title>"
         f"<style>{css}</style></head><body>{body}</body></html>"
     )
 
 
 def chrome_pdf(html_path: Path, pdf_path: Path) -> None:
+    import tempfile
+
     chrome = Path("/usr/local/bin/google-chrome")
     if not chrome.exists():
         chrome = Path("/usr/bin/google-chrome")
-    profile = Path("/tmp/hogan-mechanism-review-chrome")
-    profile.mkdir(parents=True, exist_ok=True)
+    profile = Path(tempfile.mkdtemp(prefix="hogan-mechanism-review-chrome-"))
     cmd = [
         str(chrome),
         "--headless=new",

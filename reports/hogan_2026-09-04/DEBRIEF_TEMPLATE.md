@@ -21,7 +21,7 @@ Writing Hogan another status memo, scorecard, or literature map. He asked for bu
 
 ## Newly allowed
 
-A short beforehand list of candidate mechanisms. Paste: [`MECHANISM_BULLETS.md`](MECHANISM_BULLETS.md). 8 Sep expansion: each bullet is a complete unit so Hogan does not have to search. Still not a document. Same afternoon: he asked for a DOI under each point; the paste now carries those links. 9 Sep: a Bob-only PDF maps the discussion (conversation map + keep/drop/refuse cards; 500–1000 words per point: `mechanism_review/REVIEW.pdf`). Do not send it to Hogan.
+A short beforehand list of candidate mechanisms. Paste: [`MECHANISM_BULLETS.md`](MECHANISM_BULLETS.md). 8 Sep expansion: each bullet is a complete unit so Hogan does not have to search. Still not a document. Same afternoon: he asked for a DOI under each point; the paste now carries those links. 9 Sep: a Bob-only PDF maps the discussion (~200 words per paper: question, evidence, our file, the move). Do not send it to Hogan.
 
 ## Open questions still his
 

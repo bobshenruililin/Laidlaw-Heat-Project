@@ -6,6 +6,8 @@ Fill after the meeting. A blank sheet is not a weather lock. Run Playbook 01 onl
 
 I would recommend that you let me know beforehand about which mechanisms you are thinking to include. Bullet point is fine (no need to write a document as you have done in the past).
 
+8 Sep afternoon: Can you put the link to the cited studies for each point, so that I can have a look as well?
+
 ## What changed (before → after)
 
 | Before | After |
@@ -19,7 +21,7 @@ Writing Hogan another status memo, scorecard, or literature map. He asked for bu
 
 ## Newly allowed
 
-A short beforehand list of candidate mechanisms. Paste: [`MECHANISM_BULLETS.md`](MECHANISM_BULLETS.md).
+A short beforehand list of candidate mechanisms. Paste: [`MECHANISM_BULLETS.md`](MECHANISM_BULLETS.md). 8 Sep expansion: each bullet is a complete unit so Hogan does not have to search. Still not a document. Same afternoon: he asked for a DOI under each point; the paste now carries those links. 9 Sep: a Bob-only PDF maps the discussion (~200 words per paper: question, evidence, our file, the move). Do not send it to Hogan.
 
 ## Open questions still his
 
@@ -27,11 +29,11 @@ Weather operators. Uncited [3] and [5]. Whether overnight recovery and afterload
 
 ## Next executable step that does not invent data
 
-Bob sends the bullets. Do not paste into the live file. Do not run Playbook 01.
+Bob sends the linked bullets. Do not paste into the live file. Do not run Playbook 01.
 
 ## Physiology / Ioannou
 
-Did he ask to shorten the live file? No. He asked to be told beforehand which mechanisms are being thought about.
+Did he ask to shorten the live file? No. He asked to be told beforehand which mechanisms are being thought about, then to see the cited-study links.
 
 ## Weather lock
 

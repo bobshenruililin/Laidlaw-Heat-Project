@@ -38,7 +38,7 @@ Count ratios use the days-in-month offset. Intervals are model-based, HC1, Newey
 | HF | Cold days / 5 days | 1.073 (1.023–1.125) | 1.073 (1.011–1.138) | 1.073 (1.007–1.143) | 1.073 (1.006–1.144) |
 | HF | Very hot days / 5 days | 0.995 (0.964–1.027) | 0.995 (0.963–1.028) | 0.995 (0.964–1.027) | 0.995 (0.963–1.028) |
 
-## Supplementary Figure S2. Standard-error method ladder for the two leading exploratory contrasts
+## Supplementary Figure S2. Standard-error method ladder for two displayed exploratory contrasts
 
 ![Supplementary Figure S2](../../outputs/release_chd_hf/figures/figure5_se_method_ladder.png)
 
@@ -167,7 +167,8 @@ Source: `outputs/release_chd_hf/supplement/chd_pathway_core_diagnostics.csv` and
 
 ## Supplementary Table S7. Archive influenza co-exposure (pathway P14; 121 months)
 
-Missing influenza months were not zero-filled. This model uses a general-population × days offset and is not an adjusted version of Models 1–12. The live manuscript reports the CHD direction only.
+Missing influenza months were not zero-filled. This model uses a
+general-population × days offset and is not an adjusted version of Model 1.
 
 | Outcome | Term | Count ratio (95% CI) | Months |
 |:--|:--|--:|--:|

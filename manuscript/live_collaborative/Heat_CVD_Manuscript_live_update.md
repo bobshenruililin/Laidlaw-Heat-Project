@@ -12,9 +12,9 @@ Bob Ruililin Shen^1^, Author 2^1^, Author 3^1^, Author 4^1^, David Makram Bishai
 
 **Methods.** We analysed 132 territory-months (January 2013–December 2023) of monthly counts of first hospitalisation after a first diagnosis of coronary heart disease (CHD; 156,156 events) or heart failure (HF; 29,681 events) among people with type 2 diabetes and/or hypertension. Admission cause was not recorded. Model 1 is a separate negative-binomial model for each of three continuous temperature measures and the official counts of hot nights, very hot days, and cold days, with calendar-month indicators, a 4-df time spline, and an offset for the number of days in the month. Official-day exposures use \(I(\mathrm{count}/5)\) as a reporting scale, read per five additional such days in a month. A pre-2020 specification repeats Model 1 on January 2013–December 2019 (84 months). Intervals used model-based, HC1, and Newey–West lag-3 and lag-6 constructions. Benjamini–Hochberg *q*-values were computed across the twelve full-window Model 1 fits.
 
-**Results.** Annual first-event totals about halved from 2013 to 2023 (CHD 23,830 to 12,323; HF 4,336 to 2,296), with a further dip in 2020 (CHD 10,237; HF 1,964), while the Census and Statistics Department population aged 35 years or older rose by 17%. Under Newey–West lag-6 reporting, the HF cold-day count ratio per five days was 1.113 (1.053–1.176) before 2020 and 1.073 (1.006–1.144) in 2013–2023. The CHD cold-day ratio was 1.036 (1.007–1.067) before 2020 and 0.995 (0.949–1.043) in the full window. These nested-window intervals overlap. The CHD hot-night ratio was compatible with 1 before 2020 (1.011, 0.991–1.032) and was 1.022 (1.002–1.042) in the full window. Both full-window estimates have *q* = 0.192. All twelve full-window *q*-values exceeded 0.19. Later years were hotter, whereas monthly cold-day frequency was similar.
+**Results.** Annual first-event totals about halved from 2013 to 2023 (CHD 23,830 to 12,323; HF 4,336 to 2,296), with a further dip in 2020 (CHD 10,237; HF 1,964), while the Census and Statistics Department population aged 35 years or older rose by 17%. Under Newey–West lag-6 reporting, the HF cold-day count ratio per five days was 1.113 (1.053–1.176) before 2020 and 1.073 (1.006–1.144) in 2013–2023. The CHD cold-day ratio was 1.036 (1.007–1.067) before 2020 and 0.995 (0.949–1.043) in the full window. The 84 pre-2020 months are contained in the full window, so these estimates are not independent and interval overlap is not a test of a window difference. No separate 2020–2023 estimate is reported. The CHD hot-night ratio was compatible with 1 before 2020 (1.011, 0.991–1.032) and was 1.022 (1.002–1.042) in the full window. Both full-window estimates have *q* = 0.192. All twelve full-window *q*-values exceeded 0.19. Later years were hotter, whereas monthly cold-day frequency was similar.
 
-**Conclusions.** The first-event trajectory and thermal point estimates were sensitive to the analysis window. The nested fits do not estimate a pre/post effect. Observed thermal encodings do not supply a complete explanation for the count trajectory. The decline in first events is not a measure of physiological improvement.
+**Conclusions.** The first-event trajectory and thermal point estimates were sensitive to the analysis window. The nested fits do not estimate a pre/post effect. Observed thermal encodings do not supply a complete explanation for the count trajectory. The decline in first events cannot be read as physiological improvement.
 
 **Keywords:** analysis window; first hospitalisation; coronary heart disease; heart failure; Hong Kong; cold days; hot nights
 
@@ -144,7 +144,7 @@ Mean temperature, hot nights, and very hot days were higher in 2020–2022 than 
 
 Table 2 reports the official-day Model 1 count ratios, per five additional such days in the month, for the full 132 months and for the labelled 84-month specification. Figure 3 is the main identification display for this article, including trend-spline and COVID-phase rows.
 
-The HF cold-day point estimate was 1.113 (1.053–1.176) before 2020 and 1.073 (1.006–1.144) over 2013–2023. The CHD cold-day estimate was 1.036 (1.007–1.067) before 2020 and 0.995 (0.949–1.043) in the full window. Both pairs of intervals overlap. The CHD hot-night estimate was compatible with 1 before 2020 (1.011, 0.991–1.032) and was 1.022 (1.002–1.042) in the full window. Both displayed full-window estimates have *q* = 0.192. COVID-phase indicators on the full sample moved the CHD hot-night ratio to 1.013 (0.994–1.033) and left the HF cold-day ratio at 1.074 (1.006–1.145). These are nested-window sensitivity estimates. No interaction between thermal exposure and period was fitted, and there is no post-only Model 1 table.
+The HF cold-day point estimate was 1.113 (1.053–1.176) before 2020 and 1.073 (1.006–1.144) over 2013–2023. The CHD cold-day estimate was 1.036 (1.007–1.067) before 2020 and 0.995 (0.949–1.043) in the full window. The 84 pre-2020 months are contained in the full window, so the estimates are not independent and interval overlap is not a test of a window difference. The CHD hot-night estimate was compatible with 1 before 2020 (1.011, 0.991–1.032) and was 1.022 (1.002–1.042) in the full window. Both displayed full-window estimates have *q* = 0.192. COVID-phase indicators on the full sample moved the CHD hot-night ratio to 1.013 (0.994–1.033) and left the HF cold-day ratio at 1.074 (1.006–1.145). These are nested-window sensitivity estimates. No interaction between thermal exposure and period was fitted, and no separate 2020–2023 Model 1 estimate is reported.
 
 **Table 2. Official-day count ratios in the full window and in January 2013–December 2019 (Newey–West lag-6).** Each estimate is the Model 1 count ratio per five additional official days in the month. Pre-2020 is a labelled specification (84 months). Benjamini–Hochberg *q*-values apply to the twelve full-window Model 1 fits only.
 
@@ -172,7 +172,7 @@ multiplicity-protected confirmatory threshold.
 
 | Outcome and exposure | Model | HC1 | NW3 | NW6 |
 |:--|:--|:--|:--|:--|
-| CHD hot nights / 5 days | 1.022 (0.995–1.049) | 1.022 (0.997–1.047) | 1.022 (1.0003–1.0439) | 1.022 (1.002–1.042) |
+| CHD hot nights / 5 days | 1.022 (0.995–1.049) | 1.022 (0.997–1.047) | 1.022 (1.000–1.044) | 1.022 (1.002–1.042) |
 | HF mean temperature / 1 °C | 0.974 (0.956–0.993) | 0.974 (0.949–1.000) | 0.974 (0.949–1.001) | 0.974 (0.947–1.002) |
 | HF mean minimum temperature / 1 °C | 0.973 (0.956–0.991) | 0.973 (0.950–0.997) | 0.973 (0.948–0.999) | 0.973 (0.947–1.000) |
 | HF cold days / 5 days | 1.073 (1.023–1.125) | 1.073 (1.011–1.138) | 1.073 (1.007–1.143) | 1.073 (1.006–1.144) |
@@ -247,8 +247,8 @@ joint-temperature specification and a population × days offset
 (Supplementary Table S9). Infection and pollution therefore remain unresolved
 co-exposures rather than explanations established by this analysis.
 
-This negative result is useful because it identifies a common interpretive
-failure in coarse first-event series. A lower observed count can reflect a
+This result bears on a common interpretive failure in coarse first-event
+series. A lower observed count can reflect a
 smaller risk set or less hospital use. A smaller coefficient in a longer,
 nested window is not a period effect. A monthly official-day total also does
 not distinguish consecutive days from days scattered through the month.
@@ -282,8 +282,8 @@ further trough in 2020. Cold-day point estimates were larger in the nested
 pre-2020 window than in the full window, but the intervals overlapped and no
 period interaction was fitted. Later years were hotter, while cold-day
 frequency was similar. The thermal variables do not supply a complete
-explanation for the count trajectory. The data support an analysis-window
-sensitivity, not improved cardiovascular health after COVID-19.
+explanation for the count trajectory. The data show analysis-window
+sensitivity and do not show improved cardiovascular health after COVID-19.
 
 ## Declaration on the use of AI
 

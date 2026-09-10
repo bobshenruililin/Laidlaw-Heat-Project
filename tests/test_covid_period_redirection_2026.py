@@ -103,7 +103,8 @@ def test_live_authority_is_analysis_window_sensitivity_not_prepost_effect():
     assert HOGAN_AVG in text
     assert "nested fits do not estimate a pre/post effect" in low
     assert "no interaction between thermal exposure and period was fitted" in low
-    assert "these nested-window intervals overlap" in low
+    assert "the 84 pre-2020 months are contained in the full window" in low
+    assert "interval overlap is not a test of a window difference" in low
     assert "do not supply a complete explanation" in low
     assert "not evidence that weather was irrelevant" in low
     assert "improved cardiovascular health" in low  # explicit negation only

@@ -4,7 +4,7 @@
 # rewalk_markers are lowercase substring tripwires, negation-blind.
 # A marker hit is a stop-and-look, not a semantic verdict.
 
-updated: 2026-08-24
+updated: 2026-09-10
 paper: heat_chd_hf_monthly_first_hospitalisation
 compounding: true
 
@@ -69,10 +69,10 @@ lemmas:
     status: closed
     evidence: analysis_plan/auto_research/mde_from_ladder_2026-08-18.md
     next_paper: inherit
-  - id: L13
-    text: "Operating contract for this extract (CONSTITUTION §0, §9 — not an empirical lemma, not a general theory of science): research is treated as search here; after agents, low efficiency on agent-owned search is a harness problem. Human-owned gates and refusal-solutions (all q > 0.19; F1.2 failed here) are not harness failures. Searching harder for a significant heat effect is illegal."
+  - id: L14
+    text: "Hogan 10 Sep 2026 proposed a COVID-period journal angle. That is not a Gate 3 freeze. Falling first-event counts are not physiological improvement. Labs were never in the HA monthly transfer."
     status: closed
-    evidence: analysis_plan/scientific_search/CONSTITUTION.md
+    evidence: reports/meeting_debrief_2026-09-10.md
     next_paper: inherit
 
 dead_ends:
@@ -130,6 +130,14 @@ dead_ends:
       - "until q < 0.05"
       - "harness failed because q"
       - "search harder until"
+  - id: D10
+    text: "Physiology-from-counts, a 48-month post-only primary, or a React/D3 dashboard as the identification article."
+    why: "F08 killed children. Falling first-event counts are not health gain. UI is not the paper. TWFE/QALY/cartel stay out of the journal track."
+    rewalk_markers:
+      - "treat falling counts as physiology"
+      - "react/d3 as the paper"
+      - "confirmatory post-only table 2"
+      - "hospital cartel"
 
 human_gates:
   - id: H-hogan-weather
@@ -144,6 +152,9 @@ human_gates:
   - id: H-bob-paste
     owner: Bob
     hole: Paste into the shared live file; public blog/LSN voice; Stage 3 send
+  - id: H-hogan-covid-angle
+    owner: Hogan
+    hole: Whether “improved” means count decline, CR attenuation, or physiology; paste of any COVID-period Word
 
 next_paper_load_order:
   # Builder seats only. Independent adversary seats read
@@ -154,3 +165,5 @@ next_paper_load_order:
   - analysis_plan/scientific_search/eval_rubric.yml
   - knowledge/CONTEXT_BOOTSTRAP.md
   - manuscript/live_collaborative/claim_ledger.yml
+  - manuscript/covid_period/claim_ledger.yml
+  - analysis_plan/covid_period/hypothesis_registry.yml

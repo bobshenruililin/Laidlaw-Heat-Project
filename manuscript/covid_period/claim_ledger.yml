@@ -1,0 +1,61 @@
+# Claim ledger — COVID-period track
+# Every numeral in the skeleton must already exist in a named git CSV or the parked live file.
+# provenance: HA_APPROVED_AGGREGATE or REAL public climate. Never SYNTHETIC as a finding.
+
+hogan_weather:
+  must_contain: "Meteorological data was obtained from the HKO."
+  source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+
+gate_3: open
+
+numerals:
+  - name: chd_events
+    value: 156156
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: hf_events
+    value: 29681
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: chd_hot_nights_full
+    value: "1.022 (1.002–1.042)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: baseline_ns4
+  - name: hf_cold_days_full
+    value: "1.073 (1.006–1.144)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: baseline_ns4
+  - name: chd_hot_nights_pre2020
+    value: "1.011 (0.991–1.032)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+  - name: hf_cold_days_pre2020
+    value: "1.113 (1.053–1.176)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+  - name: chd_cold_days_pre2020
+    value: "1.036 (1.007–1.067)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+  - name: q_minimum
+    value: 0.192
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: chd_annual_2013
+    value: 23830
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: chd_annual_2023
+    value: 12323
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: hf_annual_2013
+    value: 4336
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: hf_annual_2023
+    value: 2296
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+
+forbidden_in_this_track:
+  - health improved
+  - admissions averted
+  - gate 3 is closed
+  - failing left ventricle
+  - TWFE
+  - QALY
+  - SYNTHETIC coefficients as findings

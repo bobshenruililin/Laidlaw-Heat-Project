@@ -1,8 +1,10 @@
 # Context bootstrap — read first in every new chat
 
-**Canon date:** 16 August 2026. Read [`PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md), [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md), [`2026-08-15_cns_paper_team.md`](2026-08-15_cns_paper_team.md), and [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md) for living detail. Update this file whenever a human gate changes.
+**Canon date:** 10 September 2026. Read [`PROJECT_STATE.md`](../analysis_plan/PROJECT_STATE.md), [`2026-08-16_auto_research_lab.md`](2026-08-16_auto_research_lab.md), [`2026-08-15_cns_paper_team.md`](2026-08-15_cns_paper_team.md), and [`2026-08-10_cns_final_reanalysis.md`](2026-08-10_cns_final_reanalysis.md) for living detail. Update this file whenever a human gate changes.
 
 ## Scientific contract
+
+**10 September 2026:** Hogan proposed redirecting the **candidate journal angle** from thermal extremes to the pre- vs post-COVID contrast, using thermal extremes as a ruling-out exhibit. That is **not** a Gate 3 freeze. The thermal live pack is parked at [`manuscript/archive/thermal_extremes_2026-08/`](../manuscript/archive/thermal_extremes_2026-08/). The new draft lives in [`manuscript/covid_period/`](../manuscript/covid_period/). Do not overwrite Hogan’s shared Word in place. Do not write “health improved.” Labs were never in the HA monthly transfer. Debrief: [`reports/meeting_debrief_2026-09-10.md`](../reports/meeting_debrief_2026-09-10.md).
 
 This project now has two distinct tracks. The runnable paper uses governed
 territory-month **CHD and HF first-hospitalisation counts** among people

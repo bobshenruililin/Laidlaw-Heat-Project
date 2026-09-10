@@ -1,11 +1,19 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-31
+**Last updated:** 2026-09-10
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0x. Canonical update — Hogan redirects the candidate journal angle (10 September)
+
+- Hogan’s words: pre- vs post-COVID is more interesting; cold days have “improved” CHD and HF admissions; use thermal extremes to say that is not why the period difference appears; check labs; literature on health improvement.
+- **File, not his verb:** HF cold-day CR 1.073 full vs 1.113 pre-2020; CHD cold-day CR excludes 1 only pre-2020; CHD hot nights need 2020–2023; first-event counts halved. No post-only 48-month Model 1. No labs in the transfer. Xin 2022: hospitalisations down, CVD deaths up.
+- Thermal live pack **parked** (`manuscript/archive/thermal_extremes_2026-08/`). New track `manuscript/covid_period/`. `live_collaborative/` not rewritten in place.
+- Gate 3 remains **OPEN**. Stage 3 PDFs stay byte-locked. Sol/Astra brief: `analysis_plan/prompts/GOAL_covid_period_sol_astra.md`.
+- Debrief: [`reports/meeting_debrief_2026-09-10.md`](../reports/meeting_debrief_2026-09-10.md). Incident: [`reports/incident_2026-09-10_scientific_angle_covid.md`](../reports/incident_2026-09-10_scientific_angle_covid.md).
 
 ## 0w. Canonical update — Hogan Word+PDF exceed 24 August snapshot (31 August)
 

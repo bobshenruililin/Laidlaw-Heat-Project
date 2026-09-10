@@ -4,7 +4,7 @@
 # success_metric must never be a thermal discovery, a confirmatory primary, or a filled human gate.
 
 lab: heat_chd_hf_scientific_search
-updated: 2026-08-24
+updated: 2026-09-10
 inherits_from: analysis_plan/auto_research/approach_registry.yml
 objective: identification_defensibility
 compounding: true
@@ -222,6 +222,58 @@ nodes:
     next_paper_inherits: true
     note: "Agents do not freeze Gate 3."
 
+  - id: F08
+    search_class: agent_owned
+    parent: ROOT
+    family: F08
+    title: COVID-period window dependence as candidate journal angle
+    status: alive
+    success_metric: identification_defensibility
+    evidence:
+      - reports/meeting_debrief_2026-09-10.md
+      - manuscript/covid_period/Manuscript_covid_period_draft.md
+    next_paper_inherits: true
+    note: "Hogan 10 Sep proposal. Not a Gate 3 freeze. Thermal pack parked."
+
+  - id: F08-physiology-from-counts
+    search_class: refusal_solution
+    parent: F08
+    family: F08
+    title: Treat falling first-event counts as physiological improvement
+    status: killed
+    success_metric: rails_intact
+    kill_reason: "Xin 2022 neighbour is hospitalisations down and CVD deaths up. Playbook 99 case 4. Forbidden-claim hit."
+    kill_with: forbidden_claim_hit
+    evidence:
+      - literature/covid_period_mechanism_memo.md
+    next_paper_inherits: true
+
+  - id: F08-post-only-primary
+    search_class: refusal_solution
+    parent: F08
+    family: F08
+    title: Mint a 48-month post-COVID confirmatory Model 1 primary
+    status: killed
+    success_metric: named_gap_closed_without_invention
+    kill_reason: "No post-only table on file. 48 months with month factors plus ns4 is thin. q-bar still applies."
+    kill_with: table_contradiction
+    evidence:
+      - outputs/tables/cvd_trend_depletion_sensitivity.csv
+    next_paper_inherits: true
+
+  - id: F08-react-dashboard-as-paper
+    search_class: refusal_solution
+    parent: F08
+    family: F08
+    title: A React/D3 dashboard as the identification article
+    status: killed
+    success_metric: rails_intact
+    kill_reason: "UI is not this extract's paper. Forbidden-claim hit."
+    kill_with: forbidden_claim_hit
+    evidence:
+      - analysis_plan/covid_period/hypothesis_registry.yml
+    next_paper_inherits: true
+
   - id: F06
     search_class: agent_owned
     parent: ROOT
@@ -263,6 +315,12 @@ nodes:
     next_paper_inherits: true
 
 frontier:
+  - id: P-covid-period
+    search_class: agent_owned
+    family: F08
+    status: queued
+    job: "Keep F08 alive as period-identification. Do not freeze Gate 3. Do not write health improved. Do not mint a post-only primary."
+    success_metric: identification_defensibility
   - id: P-keep-families
     search_class: agent_owned
     family: F01

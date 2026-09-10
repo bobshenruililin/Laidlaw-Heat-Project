@@ -75,6 +75,8 @@ does **not** close Gate 3 or convert A1 into a confirmatory analysis.
 
 **29 Aug 2026:** Bob asked an agent to close Gate 3 and fit Models 2/3. **Still OPEN.** Confirmatory freeze remains false (all twelve *q* > 0.19). Team request: `reports/gate3_option_a_team_request_2026-08-29.md`. Models 2/3 remain unfitted (panels absent).
 
+**10 Sep 2026:** Hogan proposed changing the **headline** from thermal extremes to the pre- vs post-COVID contrast. That is a **candidate** Gate 3 object, not a freeze. Thermal live pack parked; new track `manuscript/covid_period/`. Agents do not freeze. Debrief: `reports/meeting_debrief_2026-09-10.md`.
+
 ---
 
 ## Gate 4 — Multi-method association runs

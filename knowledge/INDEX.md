@@ -24,7 +24,8 @@
 
 ## Current meeting record
 
-- [`2026-09-02_autoresearch_hhap_paper.md`]
+- [`2026-09-10_covid_period_redirection.md`](2026-09-10_covid_period_redirection.md) — Hogan 10 Sep angle change. Park thermal; COVID-period track. Gate 3 open.
+- [`2026-09-02_autoresearch_hhap_paper.md`](2026-09-02_autoresearch_hhap_paper.md) — WHO 2026 × HK instrument map. Mapping, not evaluation. Hogan live file not overwritten. Gate 3 open.
 - [`../reports/blog/week4_methods_while_waiting.md`](../reports/blog/week4_methods_while_waiting.md) — Week 4–6 Laidlaw blog drafts. Not journal-track.
 - [`../reports/identification_crucible_2026-08-14.md`](../reports/identification_crucible_2026-08-14.md) — identification crucible (Explore). Not findings. Gate 3 open.
 - [`2026-08-18_collab_draft_roundtable.md`](2026-08-18_collab_draft_roundtable.md) — 18 Aug collab-draft roundtable record. Craft already folded via merged #65.
@@ -32,7 +33,7 @@
 - [`2026-08-22_uk_conference_airfare.md`](2026-08-22_uk_conference_airfare.md) — UK conference airfare / Horizons. Not science.
 - [`2026-08-27_lab_talk.md`](2026-08-27_lab_talk.md) — 27 Aug lab-talk archive. Event passed.
 - [`2026-08-23_form2a_research_topic.md`](2026-08-23_form2a_research_topic.md) — leftover Email A topic-off-AMI note. Worksheet already on main.
-- [`2026-08-25_bishai_form2a_signature.md`](2026-08-25_bishai_form2a_signature.md) — pre-sign form 2a memo. Signed record is 31 Aug foldback.(2026-09-02_autoresearch_hhap_paper.md) — WHO 2026 × HK instrument map. Mapping, not evaluation. Hogan live file not overwritten. Gate 3 open.
+- [`2026-08-25_bishai_form2a_signature.md`](2026-08-25_bishai_form2a_signature.md) — pre-sign form 2a memo. Signed record is 31 Aug foldback.
 - [`2026-08-25_bishai_form2a_thursday.md`](2026-08-25_bishai_form2a_thursday.md) — Thursday form 2a print pack (history). Do not swap trunk essay `1200082a`.
 - [`2026-08-31_hogan_exceeds_snapshot.md`](2026-08-31_hogan_exceeds_snapshot.md) — Hogan Word+PDF exceed Desktop 24 August snapshot (`b172ed31659d6cd6`). Current PDF `96b69b7b7ba38513`, Word `852702ded2c4e968`. Gate 3 still open.
 - [`2026-09-04_laidlaw_conference_abstract.md`](2026-09-04_laidlaw_conference_abstract.md) — Laidlaw Conference 2026 abstract pack (`reports/laidlaw_conference_2026/`).

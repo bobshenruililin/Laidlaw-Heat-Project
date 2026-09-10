@@ -2,7 +2,7 @@
 # The harness fails if any ID here is missing from the tree or has the wrong status.
 # A new extract gets a new registry; it does not reopen these under the same scope.
 
-updated: 2026-08-24
+updated: 2026-09-10
 scope: heat_chd_hf_monthly_first_hospitalisation
 
 killed:
@@ -12,6 +12,9 @@ killed:
   - F03-rescale
   - F06-public-outcome-substitute
   - F06-health-econ-in-paper
+  - F08-physiology-from-counts
+  - F08-post-only-primary
+  - F08-react-dashboard-as-paper
 
 closed_lemma:
   - F01-framework

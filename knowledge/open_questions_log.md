@@ -2,7 +2,7 @@
 
 **Purpose:** living list of questions that must remain visible until a person, governed file or primary source closes them.
 
-**Last reviewed:** 29 August 2026.
+**Last reviewed:** 10 September 2026.
 
 Update a row by recording the decision, date and evidence link. Do not erase the old question or convert a working assumption into a fact without provenance.
 
@@ -45,13 +45,14 @@ Update a row by recording the decision, date and evidence link. Do not erase the
 | A03 | How should the 11 missing CHP influenza months be handled? | Flu coverage is 121/132 months; `CM30` is a sensitivity | Bob / team | Frozen complete-case/imputation decision with a missingness audit; no silent zero fill |
 | A04 | Should 2024 be added? | Optional extension; must not delay the 2013–2023 core | Roro / team | Availability and governance confirmed, then a written core-versus-extension decision |
 | A05 | Can historical change be tested rather than discussed qualitatively? | Goggins used daily outcomes and different exposures/lags; direct coefficient comparison is currently invalid | Team | A genuinely harmonized design, otherwise retain qualitative comparison only |
-| A06 | How will COVID-era care-seeking be handled? | Sensitivity phases exist; final role is not frozen | Team | Gate 3 sensitivity specification recorded before interpreting results |
+| A06 | How will COVID-era care-seeking be handled? | **10 Sep 2026:** Hogan proposed this contrast as the *candidate* journal angle, not a Gate 3 freeze. File supports window-dependent CRs + count decline, not physiology. Sensitivity phases still exist. | Hogan / Bishai / Bob | Written headline freeze (team) plus a named role for care-seeking vs depletion vs weather |
 | A07 | Are pollution, humidity and influenza confounders, mediators or effect modifiers in each pathway? | Staged models are proposed; causal roles differ and 132 months limit interactions | Team | Pathway-specific adjustment rationale and model ladder frozen in the SAP |
 | A08 | What result, if any, would justify an adaptation discussion? | No stroke result exists; the design cannot identify genes or ancestry effects | Team | At most a carefully bounded discussion after real results, with non-genetic alternatives; no genetic inference from this study |
 | A09 | How should Supplementary Figure S1 (and Tables S7/S9) be numbered across the live paper, repo supplement, and Sol map? | **Live pack closed 16 Aug:** S1 = residual ACF; S7 = archive flu; S9 = archive pollution (`supplement_inventory.md`). 10 August supplement PDF still uses the heatmap filename and is not rebuilt. | Bob pastes; do not rebuild Stage 3/supplement PDFs | Hogan shared-file paste uses the live-pack list |
 | A10 | Can a consecutive-day (e.g. 5 hot-night) warning trigger be tested for T2D/HTN CHD? | Monthly sums cannot. P05/HM15 are Explore and not Hogan-locked. M\|D daily recovery failed. HKO “Prolonged Heat” is already a qualitative multi-day tip. 2018: 26 official hot nights, 0 days in ≥5-night spells. | Hogan / Roro / Bishai if daily cause-recorded data are requested | Daily governed series, or an explicit decision that monthly counts will not set duration rules |
 | A11 | Is 6-df the named robustness check among 5/6/8? | **Scored 27 Aug:** only 6-df among more-flexible splines preserves both headlines. Table 2 remains 4-df. Bishai asked to crown one; the memo crowns 6 as robustness, not confirmatory. | Bishai / team | Human nod that Table 2 stays 4-df and 6-df is the named check; Gate 3 still open |
 | A12 | Can this panel evaluate Hong Kong’s heat/cold warnings or set HHAP triggers? | **Written 29 Aug as mapping, not evaluation.** WHO 2026 eight elements named; HKO/DH/HAD bundle named; Prolonged Heat already includes hot nights. Indoor temperature unmeasured. | Bishai / Hogan / DH if they want an evaluation design | Daily cause-recorded data and a predeclared evaluation protocol; this monthly panel will not become that evaluation |
+| A13 | What object is Hogan’s “improved” (counts, cold-day CR attenuation, or physiology)? | Email language vs file: HF cold CR 1.113 pre-2020 vs 1.073 full; counts halved. No labs. Xin 2022 is utilisation-down / deaths-up. | Hogan | One sentence from Hogan naming the object before any live-file cut |
 
 ## Hard stop rules while questions remain open
 

@@ -25,6 +25,7 @@
 - Principal diagnosis / admission cause (already no).
 - Medications, BMI, or other patient-level Table 1 fields from the July thread (not in this extract).
 - Redistributing HA microdata.
+- **Lab tests** (HbA1c, BNP, troponin, lipids, …) unless Bishai opens a new governed extract. They were never in this transfer (`analysis_plan/covid_period/ha_metadata_inventory.md`).
 
 ## Draft (short)
 

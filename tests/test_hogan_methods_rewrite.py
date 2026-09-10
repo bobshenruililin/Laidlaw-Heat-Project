@@ -1,7 +1,8 @@
-"""Contract checks for the 24 Aug Hogan Methods rewrite (merged Model 1/2/3).
+"""Historical contract checks for the archived 24 Aug Hogan Methods rewrite.
 
 Does not fit health models. Does not read governed HA panels.
-Stage 3 programme PDFs are rebuilt on a separate branch; this file does not freeze their hashes.
+The current live manuscript has moved to the 10 September analysis-window
+angle; these checks protect the byte-preserved thermal object.
 """
 from __future__ import annotations
 
@@ -10,10 +11,17 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MS = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_live_update.md"
+ARCHIVE = (
+    ROOT
+    / "manuscript"
+    / "archive"
+    / "thermal_extremes_2026-08"
+    / "live_collaborative_snapshot"
+)
+MS = ARCHIVE / "Heat_CVD_Manuscript_live_update.md"
 CLIM = ROOT / "data_processed" / "hogan_abnormal_day_counts_2013_2023.csv"
-DOCX = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_20260824_hogan.docx"
-PDF = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_20260824_hogan.pdf"
+DOCX = ARCHIVE / "Heat_CVD_Manuscript_20260824_hogan.docx"
+PDF = ARCHIVE / "Heat_CVD_Manuscript_20260824_hogan.pdf"
 
 HOGAN_OPEN = "Meteorological data was obtained from the HKO."
 HOGAN_AVG = (

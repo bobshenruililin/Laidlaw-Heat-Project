@@ -5,8 +5,8 @@
 `96b69b7b7ba38513`).
 
 **New object:** `Heat_CVD_Manuscript_20260910_hogan.pdf` (21 A4 pages;
-`4f19c70f456ae8c9`) plus an 18-page formatted supplement
-(`992e1ac0b1069bda`).
+`3db488899b9db977`) plus an 18-page formatted supplement
+(`fdaa4b231b8f922d`).
 
 “Exceeds” is limited to agent-owned dimensions. The data and human approvals
 cannot be improved by editing.

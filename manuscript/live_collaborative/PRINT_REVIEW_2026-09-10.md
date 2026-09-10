@@ -4,10 +4,10 @@
 
 | Object | Pages | Bytes | SHA-256 prefix |
 |:--|--:|--:|:--|
-| `Heat_CVD_Manuscript_20260910_hogan.docx` | — | 789,283 | `73973d670d5e1730` |
-| `Heat_CVD_Manuscript_20260910_hogan.pdf` | 21 | 844,336 | `4f19c70f456ae8c9` |
-| `Heat_CVD_Supplement_20260910_hogan.docx` | — | 1,215,672 | `24563b5b04d11b62` |
-| `Heat_CVD_Supplement_20260910_hogan.pdf` | 18 | 1,205,575 | `992e1ac0b1069bda` |
+| `Heat_CVD_Manuscript_20260910_hogan.docx` | — | 789,298 | `5102d547d191dfed` |
+| `Heat_CVD_Manuscript_20260910_hogan.pdf` | 21 | 844,436 | `3db488899b9db977` |
+| `Heat_CVD_Supplement_20260910_hogan.docx` | — | 1,215,669 | `7be4fff85940b0d6` |
+| `Heat_CVD_Supplement_20260910_hogan.pdf` | 18 | 1,205,655 | `fdaa4b231b8f922d` |
 
 Builder: `scripts/77_hogan_20260910_live_docx.py`.
 

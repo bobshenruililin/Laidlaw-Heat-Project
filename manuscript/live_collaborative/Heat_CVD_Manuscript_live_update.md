@@ -229,8 +229,7 @@ cold-day frequency was similar. Hot nights rose in the same years in which
 care-seeking changed, and the CHD hot-night interval excluded 1 only when
 those years were included. Continuous-temperature and official-day estimates
 also differed in the nested window. The observed thermal encodings therefore
-do not supply a complete explanation for the count trajectory. They are not
-evidence that weather was irrelevant.
+do not supply a complete explanation for the count trajectory. They are not evidence that weather was irrelevant.
 
 An immune-recovery explanation is not supported by this extract. Studies in
 Hong Kong have associated vaccination with lower cardiovascular risk after

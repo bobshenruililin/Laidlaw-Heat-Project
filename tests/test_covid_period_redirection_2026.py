@@ -57,7 +57,7 @@ def test_park_readme_exists_and_does_not_freeze_gate3():
     assert (PARK / "Heat_CVD_Manuscript_live_update.md").is_file()
     assert (PARK / "claim_ledger.yml").is_file()
     assert "96b69b7b7ba38513" in cover
-    assert "not a Gate 3 freeze" in cover.lower() or "Parking is not a Gate 3 freeze" in cover
+    assert "not a gate 3 freeze" in cover.lower()
 
 
 def test_archived_thermal_file_uncut():

@@ -2,18 +2,18 @@
 
 ## Agent-owned checks
 
-- [ ] Main Word and PDF match the Hogan A4/Times contract.
-- [ ] Supplement Word and PDF contain S1–S10 and Supplementary Note S1.
-- [ ] Main tables and figures occupy separate pages without orphan pages.
-- [ ] Word comments contain no paste, circulation, pipeline, or Gate language.
-- [ ] Claim-ledger auditor passes.
-- [ ] Hogan’s weather paragraph is verbatim.
-- [ ] Full Model / HC1 / NW3 / NW6 ladder is visible.
-- [ ] All twelve full-window *q*-values above 0.19 are stated.
-- [ ] Nested windows are not described as independent pre/post groups.
-- [ ] Neighbour-study numerals are not imported into manuscript tables.
-- [ ] Stage 3 PDF and poster hashes are unchanged.
-- [ ] Thermal predecessor hashes match `../archive/thermal_extremes_2026-08/MANIFEST.sha256`.
+- [x] Main Word and PDF match the Hogan A4/Times contract.
+- [x] Supplement Word and PDF contain S1–S10 and Supplementary Note S1.
+- [x] Main tables and figures occupy separate pages without orphan pages.
+- [x] Word comments contain no paste, circulation, pipeline, or Gate language.
+- [x] Claim-ledger auditor passes.
+- [x] Hogan’s weather paragraph is verbatim.
+- [x] Full Model / HC1 / NW3 / NW6 ladder is visible.
+- [x] All twelve full-window *q*-values above 0.19 are stated.
+- [x] Nested windows are not described as independent pre/post groups.
+- [x] Neighbour-study numerals are not imported into manuscript tables.
+- [x] Stage 3 PDF and poster files are unchanged by this branch.
+- [x] Thermal predecessor hashes match `../archive/thermal_extremes_2026-08/MANIFEST.sha256`.
 
 ## Human-owned checks
 

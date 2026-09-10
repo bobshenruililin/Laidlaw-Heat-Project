@@ -1,10 +1,16 @@
-# COVID-period journal track (candidate)
+# COVID-period development track (promoted)
 
 **Audience:** Bob and later Sol/Astra. **Not** a send to Hogan until Bob pastes. **Not** Stage 3.
 
 Hogan (10 September 2026) asked to change the angle from thermal extremes to the pre- vs post-COVID contrast, and to use thermal extremes to say weather is not why the period difference appears.
 
-This folder is the **candidate** Hogan-register article. Confirmatory freeze has not been declared. The thermal paper is parked at [`../archive/thermal_extremes_2026-08/`](../archive/thermal_extremes_2026-08/). Hogan’s shared Word remains the live collaborative file until Bob owns paste. Agents do not paste into that Word.
+This folder records the development draft that preceded the in-place live
+rewrite. Bob authorised promotion on 10 September. Current wording authority,
+Word/PDF outputs, and the submission supplement now live in
+[`../live_collaborative/`](../live_collaborative/). Confirmatory freeze has not
+been declared. The thermal predecessor is fully preserved at
+[`../archive/thermal_extremes_2026-08/`](../archive/thermal_extremes_2026-08/).
+Agents did not paste into or send Hogan’s shared Word.
 
 ## Rails
 
@@ -21,8 +27,8 @@ This folder is the **candidate** Hogan-register article. Confirmatory freeze has
 
 | File | Role |
 |---|---|
-| [`Manuscript_covid_period_draft.md`](Manuscript_covid_period_draft.md) | Hogan-register IMRD (scientific body: no Gate jargon) |
-| [`Heat_CVD_Manuscript_covid_period.docx`](Heat_CVD_Manuscript_covid_period.docx) | Word export (`scripts/74_covid_period_manuscript_docx.py`) |
+| [`Manuscript_covid_period_draft.md`](Manuscript_covid_period_draft.md) | Development IMRD before promotion |
+| [`Heat_CVD_Manuscript_covid_period.docx`](Heat_CVD_Manuscript_covid_period.docx) | Intermediate Word export; not current |
 | [`claim_ledger.yml`](claim_ledger.yml) | Every numeral → existing CSV or parked live file |
 | [`../../analysis_plan/covid_period/fable_gates_2026-09-10.md`](../../analysis_plan/covid_period/fable_gates_2026-09-10.md) | Two Fable 5.1 keep/cut gates |
 | [`../../analysis_plan/covid_period/night_shift_checkpoint_2026-09-10.md`](../../analysis_plan/covid_period/night_shift_checkpoint_2026-09-10.md) | Killed-paradigm checkpoint |
@@ -30,4 +36,7 @@ This folder is the **candidate** Hogan-register article. Confirmatory freeze has
 
 ## Next human step
 
-Bob confirms Hogan’s “improved” means CR attenuation (Figure 3), not raw counts and not labs. Bishai decides whether the journal paper may leave thermal as primary after Stage 3.
+Hogan confirms whether “improved” meant point-estimate attenuation, the count
+trajectory, or physiology. Bishai decides whether this candidate may replace
+thermal extremes as the journal primary and whether to open a new governed
+extract.

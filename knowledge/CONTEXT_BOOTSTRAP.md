@@ -4,7 +4,19 @@
 
 ## Scientific contract
 
-**10 September 2026:** Hogan proposed redirecting the **candidate journal angle** from thermal extremes to the pre- vs post-COVID contrast, using thermal extremes as a ruling-out exhibit. That is **not** a Gate 3 freeze. The thermal live pack is parked at [`manuscript/archive/thermal_extremes_2026-08/`](../manuscript/archive/thermal_extremes_2026-08/). The new draft lives in [`manuscript/covid_period/`](../manuscript/covid_period/). Do not overwrite Hogan’s shared Word in place. Do not write “health improved.” Labs were never in the HA monthly transfer. Debrief: [`reports/meeting_debrief_2026-09-10.md`](../reports/meeting_debrief_2026-09-10.md).
+**10 September 2026:** Hogan proposed redirecting the **candidate journal
+angle** from thermal extremes to the pre- vs post-COVID contrast. Bob
+authorised the repository live Markdown to become an analysis-window
+sensitivity paper. It explicitly does not estimate a pre/post effect. The
+complete thermal predecessor—live folder, builder, Word, PDF, and hashes—is
+preserved at
+[`manuscript/archive/thermal_extremes_2026-08/`](../manuscript/archive/thermal_extremes_2026-08/).
+The current live package is 21 A4 main pages (`3db488899b9db977`) plus an
+18-page supplement (`fdaa4b231b8f922d`). Fable 5.1 and Sol 5.6 stop at caliber
+7 / scientific strength 5. Gate 3 remains open. No agent pasted or sent the
+package. Do not write “health improved.” Labs were never in the HA monthly
+transfer. Durable note:
+[`2026-09-10_highest_reachable_live_paper.md`](2026-09-10_highest_reachable_live_paper.md).
 
 This project now has two distinct tracks. The runnable paper uses governed
 territory-month **CHD and HF first-hospitalisation counts** among people
@@ -71,7 +83,16 @@ The definition catalogue contains `HM01–HM50` and `CM01–CM48`. Core starters
 3. **Gate 3:** lead recommendation is explicit no confirmatory primary
    (Option A); freeze with the team only.
 4. **Hogan weather lock:** provisional HM/CM reference period is study-window only. Run [Playbook 01](../analysis_plan/playbooks/01_hogan_definition_lock.md) when locked.
-5. **Live manuscript:** Hogan Word+PDF now exceed the 24 August Desktop snapshot (`b172ed31659d6cd6`, 14 pages). Current PDF `96b69b7b7ba38513` (22 A4); Word `852702ded2c4e968`. Short night/CHD and HF/cold hypotheses + instruments-only WHO/HK map remain. Table 2 = Model 1; Hogan HKO paragraph untouched. Word comments no longer say paste/pipeline. Model 2/3 still need a governed-panel fit. Roro still owns ICD/timing and the IRB number. Gate 3 remains open. Scorecard: [`../reports/hogan_exceeds_20260824_snapshot.md`](../reports/hogan_exceeds_20260824_snapshot.md). Durable: [`2026-08-31_hogan_exceeds_snapshot.md`](2026-08-31_hogan_exceeds_snapshot.md).
+5. **Live manuscript:** the repository authority is now the 10 September
+   analysis-window sensitivity paper. The current main PDF is
+   `3db488899b9db977` (21 A4); the supplement is `fdaa4b231b8f922d`
+   (18 A4). It states that the 84-month window is nested inside the full
+   window, no period interaction or separate post-2020 estimate was fitted,
+   and “improved” is not a physiological finding. Hogan’s HKO paragraph is
+   untouched. The 24 August thermal object is fully archived. Roro still owns
+   outcome semantics; Bishai owns IRB, dissemination, and any new extract.
+   Gate 3 remains open. Scorecard:
+   [`../reports/hogan_covid_period_exceeds_20260824_2026-09-10.md`](../reports/hogan_covid_period_exceeds_20260824_2026-09-10.md).
 6. **Stage 3 programme (30 Aug 2026 send pack):** [`ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) SHA prefix `1200082a9e7c9caa`. Send pack: [`send_pack_2026-08-30/`](../analysis_plan/send_pack_2026-08-30/). Same science as the live Discussion; Appendix Table A2 is instruments-only. Reported estimates remain Model 1; Models 2–3 specified, not fitted. Poster optional (`a972206e61932650`). Form 2a signed 31 Aug against the 22 Aug foldback — hashes: [`2026-08-31_bishai_form2a_signed.md`](2026-08-31_bishai_form2a_signed.md). Do not attach the live manuscript. Gate 3 remains open.
 7. **Submission gates (journal):** PI IRB decision, ICD/inpatient semantics, authorship/order, and cohort risk-set decision. Gate 3 remains open.
 8. **Final packet:** integrated report in

@@ -24,6 +24,7 @@
 
 ## Current meeting record
 
+- [`2026-09-10_highest_reachable_live_paper.md`](2026-09-10_highest_reachable_live_paper.md) — repository live paper rewritten as nested analysis-window sensitivity; complete thermal archive; main/supplement Word+PDF; final Fable/Sol ceiling 7/5; Gate 3 open.
 - [`2026-09-10_covid_period_redirection.md`](2026-09-10_covid_period_redirection.md) — Hogan 10 Sep angle change. Park thermal; COVID-period track. Gate 3 open.
 - [`2026-09-02_autoresearch_hhap_paper.md`](2026-09-02_autoresearch_hhap_paper.md) — WHO 2026 × HK instrument map. Mapping, not evaluation. Hogan live file not overwritten. Gate 3 open.
 - [`../reports/blog/week4_methods_while_waiting.md`](../reports/blog/week4_methods_while_waiting.md) — Week 4–6 Laidlaw blog drafts. Not journal-track.

@@ -24,6 +24,7 @@ This folder is the **candidate** Hogan-register article. Confirmatory freeze has
 | [`Manuscript_covid_period_draft.md`](Manuscript_covid_period_draft.md) | Hogan-register IMRD (scientific body: no Gate jargon) |
 | [`Heat_CVD_Manuscript_covid_period.docx`](Heat_CVD_Manuscript_covid_period.docx) | Word export (`scripts/74_covid_period_manuscript_docx.py`) |
 | [`claim_ledger.yml`](claim_ledger.yml) | Every numeral → existing CSV or parked live file |
+| [`../../analysis_plan/covid_period/fable_gates_2026-09-10.md`](../../analysis_plan/covid_period/fable_gates_2026-09-10.md) | Two Fable 5.1 keep/cut gates |
 | [`../../analysis_plan/covid_period/night_shift_checkpoint_2026-09-10.md`](../../analysis_plan/covid_period/night_shift_checkpoint_2026-09-10.md) | Killed-paradigm checkpoint |
 | [`../archive/thermal_extremes_2026-08/`](../archive/thermal_extremes_2026-08/) | Parked thermal paper |
 

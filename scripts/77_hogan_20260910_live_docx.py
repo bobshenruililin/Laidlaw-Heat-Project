@@ -13,6 +13,7 @@ from __future__ import annotations
 import re
 import shutil
 import subprocess
+import tempfile
 from pathlib import Path
 
 from docx import Document
@@ -644,8 +645,8 @@ def build_main() -> None:
             _comment(
                 doc,
                 _find_run(runs, "UW XX-XXX"),
-                "Professor Bishai should replace UW XX-XXX with the approved "
-                "reference before submission.",
+                "Professor Bishai should replace the IRB placeholder UW XX-XXX "
+                "with the approved reference before submission.",
             )
         if plain.startswith("The dependent variable is") and runs:
             _comment(
@@ -775,19 +776,18 @@ def convert_pdf(docx_path: Path, pdf_path: Path) -> None:
     binary = _office_binary()
     if pdf_path.exists():
         pdf_path.unlink()
-    profile = ROOT / ".tmp" / f"lo-{docx_path.stem}"
-    profile.mkdir(parents=True, exist_ok=True)
-    cmd = [
-        binary,
-        f"-env:UserInstallation=file://{profile}",
-        "--headless",
-        "--convert-to",
-        "pdf",
-        "--outdir",
-        str(pdf_path.parent),
-        str(docx_path),
-    ]
-    proc = subprocess.run(cmd, check=False, capture_output=True, text=True)
+    with tempfile.TemporaryDirectory(prefix=f"lo-{docx_path.stem}-") as profile:
+        cmd = [
+            binary,
+            f"-env:UserInstallation=file://{profile}",
+            "--headless",
+            "--convert-to",
+            "pdf",
+            "--outdir",
+            str(pdf_path.parent),
+            str(docx_path),
+        ]
+        proc = subprocess.run(cmd, check=False, capture_output=True, text=True)
     if proc.returncode != 0 or not pdf_path.is_file():
         raise SystemExit(
             f"LibreOffice conversion failed ({proc.returncode}): "

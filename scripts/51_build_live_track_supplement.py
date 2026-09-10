@@ -69,7 +69,12 @@ def md_table(headers: list[str], body: list[list[str]]) -> str:
     lines = ["| " + " | ".join(headers) + " |"]
     aligns = []
     for h in headers:
-        aligns.append("--:" if h not in ("Outcome", "Exposure", "Exposure contrast", "Stage", "Term") else ":--")
+        aligns.append(
+            "--:"
+            if h
+            not in ("Outcome", "Exposure", "Exposure contrast", "Stage", "Term", "Period")
+            else ":--"
+        )
     lines.append("|" + "|".join(aligns) + "|")
     for row in body:
         lines.append("| " + " | ".join(row) + " |")
@@ -372,11 +377,11 @@ This file is the journal-takeable supplement for the analysis-window sensitivity
 
 Numbering matches the live body: Supplementary Figure S1 is residual ACF; Supplementary Tables S7 and S9 are archive influenza and archive pollution. The release heatmap filename `figureS1_exposure_correlation.png` is Supplementary Figure **S4** here.
 
-## Supplementary Figure S1. Residual autocorrelation in two displayed exploratory core models
+## Supplementary Figure S1. Residual autocorrelation in two displayed exploratory models
 
 ![Supplementary Figure S1](../../figures/live_identification/figure_C_residual_acf.png)
 
-Bars show the Pearson residual autocorrelation function for the separate-exposure negative-binomial CHD hot-night and HF cold-day models. Dashed lines mark ±1.96/√132. Lag-1 residual autocorrelation was 0.508 for CHD hot nights and 0.146 for HF cold days. These diagnostics motivate reporting more than one covariance estimator; they do not establish that a particular estimator is correct, protect either contrast from multiplicity, or identify a causal thermal effect. Source: residuals from the governed aggregate core models.
+Bars show the Pearson residual autocorrelation function for the separate-exposure negative-binomial CHD hot-night and HF cold-day models. Dashed lines mark ±1.96/√132. Lag-1 residual autocorrelation was 0.508 for CHD hot nights and 0.146 for HF cold days. These diagnostics motivate reporting more than one covariance estimator; they do not establish that a particular estimator is correct, protect either contrast from multiplicity, or identify a causal thermal effect. Source: residuals from the governed aggregate Model 1 fits.
 
 ## Supplementary Table S1. Complete Model 1 uncertainty ladder
 
@@ -402,11 +407,11 @@ January 2013–December 2019; 84 months. Nine of twelve intervals exclude 1. All
 
 Same nine trend, window, and COVID-period specifications as main-text Figure 3. Each estimate is per 1 °C. Pre-2020 inverse associations for mean, maximum, and minimum temperature are in this panel. Rows labelled 3, 6, or 8 df change the time-trend spline, not heatwave length. Source: `outputs/tables/cvd_trend_depletion_sensitivity.csv` (`HA_APPROVED_AGGREGATE`). No new health model.
 
-## Supplementary Figure S3. Complete twelve-contrast core forest (Newey–West lag-6)
+## Supplementary Figure S3. Complete twelve-contrast Model 1 forest (Newey–West lag-6)
 
 ![Supplementary Figure S3](../../outputs/release_chd_hf/figures/figure3_core_forest.png)
 
-Main-text Table 2 remains the reporting table. Source: `outputs/release_chd_hf/figures/figure3_core_forest.png`.
+This figure shows the complete full-window Model 1 panel; main-text Table 2 instead reports the nested-window official-day sensitivity. Source: `outputs/release_chd_hf/figures/figure3_core_forest.png`.
 
 ## Supplementary Figure S4. Pairwise exposure correlations
 
@@ -436,7 +441,7 @@ Variance inflation factors are identical for the CHD and HF design matrices. Joi
 
 {table_s6()}
 
-Source: `outputs/release_chd_hf/supplement/chd_pathway_core_diagnostics.csv` and `hf_pathway_core_diagnostics.csv` (days-in-month offset core pathways).
+Source: `outputs/release_chd_hf/supplement/chd_pathway_core_diagnostics.csv` and `hf_pathway_core_diagnostics.csv` (days-in-month offset Model 1 pathways).
 
 ## Supplementary Table S7. Archive influenza co-exposure (pathway P14; 121 months)
 

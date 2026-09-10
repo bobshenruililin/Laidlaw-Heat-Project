@@ -1,0 +1,25 @@
+{
+  "data_status": "SYNTHETIC",
+  "n_reps": 200,
+  "true_count_ratio": 1.1,
+  "flu_coef_count_ratio": 1.08,
+  "utilisation_multiplier_from_2020": 0.55,
+  "scenarios": {
+    "flu_collapse_only": {
+      "mean_pre_window_cr": 1.1460812109391836,
+      "mean_full_window_cr": 1.1182850764099534,
+      "median_pre_minus_full": 0.026313315879790578
+    },
+    "utilisation_only": {
+      "mean_pre_window_cr": 1.0779356433323863,
+      "mean_full_window_cr": 1.055344207561245,
+      "median_pre_minus_full": 0.023513906069386636
+    },
+    "flu_plus_utilisation": {
+      "mean_pre_window_cr": 1.1391065349108536,
+      "mean_full_window_cr": 1.1030466533539933,
+      "median_pre_minus_full": 0.036617438977435746
+    }
+  },
+  "note": "SYNTHETIC. Constant true beta; influenza-like term collapses after month 84. Optional utilisation multiplier 0.55 from month 85. Not HA. Not a physiology result. Playbook 08. Do not quote as a Hong Kong count ratio."
+}

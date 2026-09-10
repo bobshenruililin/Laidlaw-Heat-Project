@@ -15,9 +15,9 @@ K1 physiology-from-counts; K2 TWFE/Callaway/Medicaid; K3 QALY/CEA/cartel/time-in
 - `scripts/72_synthetic_utilisation_shock.py`
 - `scripts/73_synthetic_mnar_selection.py` (Y-only MNAR, truncation, and X-and-Y MNAR)
 
-## Next legal mutation (journal track still monthly NB)
+## Flu-collapse mutation (done; still not a finding)
 
-Influenza-collapse DGP on SYNTHETIC counts (a flu term that drops after month 84) versus the utilisation multiplier. Still labelled SYNTHETIC. Still not pasted into `manuscript/covid_period/` as a number.
+`scripts/75_synthetic_flu_collapse.py` → `outputs/health_econ/synthetic_flu_collapse_2026-09-10.json`. Influenza-like winter term collapses after month 84, with and without utilisation. Labelled SYNTHETIC. Not pasted into `manuscript/covid_period/` as a number. The IMRD may mention the exercise as a methods warning only.
 
 Illegal mutations: cartel, time-inconsistency as a demand-side theory in the live file, React tabs, TWFE.
 

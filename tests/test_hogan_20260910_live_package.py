@@ -41,6 +41,7 @@ def test_live_scientific_body_is_nested_window_not_prepost_effect():
     assert text.count(HOGAN_OPEN) == 1
     assert text.count(HOGAN_AVG) == 1
     assert "nested fits do not estimate a pre/post effect" in low
+    assert "### nested-window official-day panel" in low
     assert "no interaction between thermal exposure and period was fitted" in low
     assert "84 pre-2020 months are contained in the full window" in low
     assert "interval overlap is not a test of a window difference" in low
@@ -135,7 +136,7 @@ def test_main_pdf_has_distinct_float_pages_and_no_process_banner():
         page_with("Figure 3. Model 1 count ratios"),
     )
     assert len(set(floats)) == 6
-    assert "HF mean minimum temperature" in pages[floats[2]]
+    assert "HF mean minimum temperature / 1 °C" in pages[floats[2]]
 
 
 def test_supplement_resolves_s1_s7_s9_s10_and_is_formatted():
@@ -153,6 +154,7 @@ def test_supplement_resolves_s1_s7_s9_s10_and_is_formatted():
         "Supplementary Note S1",
         "SYNTHETIC_CALIBRATION",
         "Later years were hotter",
+        "Figure S5 remains unassigned",
     ):
         assert required in text
         assert required in full

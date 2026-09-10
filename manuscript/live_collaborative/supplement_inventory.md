@@ -26,6 +26,8 @@ The live body cites these supplementary objects. They resolve in `supplement_liv
 Filename collisions that must not override this list:
 
 - `outputs/release_chd_hf/supplement/figureS1_exposure_correlation.png` is an **exposure-correlation heatmap**. Live-pack display number is **S4**.
+- Supplementary Figure **S5 is unassigned**. S6 keeps the established
+  continuous-temperature forest number used by the main text.
 - `manuscript/chd_hf_supplement.md` uses **section** numbers S7 (M\|D calibration) and S9 (reproducibility) as well as **Tables** S7 and S9 in section S12. The live body means the tables in the live-track SI.
 - `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv` is Supplementary Table **S1** in the live-track SI; manuscript Table 3 remains the two-contrast ladder.
 

@@ -36,9 +36,11 @@ instruction.
 
 ## Supplement
 
-The 18-page supplement contains Supplementary Figures S1–S6, Tables S1–S10,
-and Supplementary Note S1. Table S9 (archive pollution models) is on page 15;
-Table S10 (period weather summaries) is on page 16; Note S1 is on page 17.
+The 18-page supplement contains Supplementary Figures S1–S4 and S6, Tables
+S1–S10, and Supplementary Note S1. Figure S5 is unassigned so the established
+continuous-temperature display retains S6. Table S9 (archive pollution
+models) is on page 15; Table S10 (period weather summaries) is on page 16;
+Note S1 is on page 17.
 Archive influenza and pollution estimates remain labelled as non-core.
 Daily-recovery calibration remains `SYNTHETIC_CALIBRATION`, not a health
 finding.

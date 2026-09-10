@@ -371,11 +371,10 @@ def main() -> int:
 
 **Authority:** live collaborative manuscript `Heat_CVD_Manuscript_live_update.md`.  
 **Not** the 10 August `manuscript/chd_hf_supplement.pdf` (do not rebuild).  
-**Not** Hogan’s shared Word/Google file (Bob pastes; agents do not).
 
 This file is the journal-takeable supplement for the analysis-window sensitivity manuscript. Every numeral is transcribed from an existing `HA_APPROVED_AGGREGATE`, `REAL`, or `SYNTHETIC_CALIBRATION` table. No new health model was fitted. The twelve thermal fits are **Model 1**. Archive influenza and pollution models are **not** adjusted versions of Model 1. No confirmatory primary is declared.
 
-Numbering matches the live body: Supplementary Figure S1 is residual ACF; Supplementary Tables S7 and S9 are archive influenza and archive pollution. The release heatmap filename `figureS1_exposure_correlation.png` is Supplementary Figure **S4** here.
+Numbering matches the live body: Supplementary Figure S1 is residual ACF; Supplementary Tables S7 and S9 are archive influenza and archive pollution. The release heatmap filename `figureS1_exposure_correlation.png` is Supplementary Figure **S4** here. Figure S5 remains unassigned so the established continuous-temperature display can remain Supplementary Figure S6.
 
 ## Supplementary Figure S1. Residual autocorrelation in two displayed exploratory models
 

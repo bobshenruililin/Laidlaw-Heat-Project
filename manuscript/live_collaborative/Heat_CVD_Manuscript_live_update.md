@@ -140,7 +140,7 @@ Mean temperature, hot nights, and very hot days were higher in 2020–2022 than 
 
 ![Figure 2](../../figures/live_identification/figure_A_cold_day_identification.png)
 
-### Period-split official-day panel
+### Nested-window official-day panel
 
 Table 2 reports the official-day Model 1 count ratios, per five additional such days in the month, for the full 132 months and for the labelled 84-month specification. Figure 3 is the main identification display for this article, including trend-spline and COVID-phase rows.
 
@@ -204,9 +204,10 @@ Across trend, window, and COVID-phase specifications, the CHD hot-night point es
 The principal result is sensitivity to the analysis window, not a pre/post
 effect. First-event counts had already fallen substantially by 2019, followed
 by a further trough in 2020. The cold-day point estimates were smaller in the
-full window than in the nested pre-2020 window, but their confidence intervals
-overlapped. The CHD hot-night interval excluded 1 only in the full window.
-No exposure-by-period interaction was fitted. All twelve full-window *q*-values
+full window than in the nested pre-2020 window. Because the 84-month window is
+contained in the full window, this comparison does not estimate a period
+contrast. The CHD hot-night interval excluded 1 only in the full window. No
+exposure-by-period interaction was fitted. All twelve full-window *q*-values
 exceeded 0.19.
 
 **Utilisation.** Hong Kong studies reported fewer public hospitalisations and
@@ -240,16 +241,16 @@ risk [41]. Infection, vaccination, antibody levels, and laboratory measures
 were not in the monthly transfer.
 
 Influenza transmission fell sharply during Hong Kong’s early pandemic
-interventions [40]. The archive influenza model covers 121 months and is not a
-core-adjusted Model 1 estimate (Supplementary Table S7). Pollution also
+interventions [40]. The archive influenza model covers 121 months and is not
+an adjusted Model 1 estimate (Supplementary Table S7). Pollution also
 declined across the decade [7]. Archive pollution models use a different
 joint-temperature specification and a population × days offset
 (Supplementary Table S9). Infection and pollution therefore remain unresolved
 co-exposures rather than explanations established by this analysis.
 
 This result bears on a common interpretive failure in coarse first-event
-series. A lower observed count can reflect a
-smaller risk set or less hospital use. A smaller coefficient in a longer,
+series. A lower observed count can reflect a smaller risk set or less hospital
+use. A smaller coefficient in a longer,
 nested window is not a period effect. A monthly official-day total also does
 not distinguish consecutive days from days scattered through the month.
 Five additional official days is a reporting scale, not a duration threshold.
@@ -279,8 +280,8 @@ unresolved. Stroke was not available.
 
 Monthly first CHD and HF hospitalisations declined across 2013–2023, with a
 further trough in 2020. Cold-day point estimates were larger in the nested
-pre-2020 window than in the full window, but the intervals overlapped and no
-period interaction was fitted. Later years were hotter, while cold-day
+pre-2020 window than in the full window. No period interaction or separate
+post-2020 Model 1 estimate was fitted. Later years were hotter, while cold-day
 frequency was similar. The thermal variables do not supply a complete
 explanation for the count trajectory. The data show analysis-window
 sensitivity and do not show improved cardiovascular health after COVID-19.

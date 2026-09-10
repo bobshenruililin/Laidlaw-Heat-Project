@@ -95,6 +95,31 @@ def test_covid_period_imrd_keeps_hogan_weather_and_refuses_improvement():
     assert "Figure 3" in text and "main identification" in text.lower()
 
 
+def test_live_authority_is_analysis_window_sensitivity_not_prepost_effect():
+    text = _live()
+    low = text.lower()
+    assert text.startswith("# Analysis-window sensitivity")
+    assert HOGAN_OPEN in text
+    assert HOGAN_AVG in text
+    assert "nested fits do not estimate a pre/post effect" in low
+    assert "no interaction between thermal exposure and period was fitted" in low
+    assert "these nested-window intervals overlap" in low
+    assert "do not supply a complete explanation" in low
+    assert "not evidence that weather was irrelevant" in low
+    assert "improved cardiovascular health" in low  # explicit negation only
+    assert "Supplementary Table S9" in text
+    assert "Supplementary Table S10" in text
+    for forbidden in (
+        "health improved",
+        "cold days became protective",
+        "Hogan asked",
+        "Gate 3",
+        "candidate article",
+        "admissions averted",
+    ):
+        assert forbidden.lower() not in low
+
+
 def test_ledger_a69_a71_and_gate3_still_open():
     ledger = LEDGER.read_text(encoding="utf-8")
     gates = GATES.read_text(encoding="utf-8")
@@ -249,7 +274,7 @@ def test_scientific_search_tree_memory_rails_green():
     assert fails == [], fails
 
 
-def test_claim_ledger_auditor_preexisting_s9_only():
+def test_live_claim_ledger_auditor_is_green():
     proc = subprocess.run(
         ["python3", str(ROOT / "scripts" / "50_audit_live_claim_ledger.py")],
         cwd=ROOT,
@@ -257,12 +282,10 @@ def test_claim_ledger_auditor_preexisting_s9_only():
         text=True,
         check=False,
     )
-    assert proc.returncode != 0
-    assert "supp_table_s9" in proc.stdout
+    assert proc.returncode == 0, proc.stdout + proc.stderr
     audit = json.loads(
         (ROOT / "outputs" / "auto_research" / "claim_ledger_audit.json").read_text(
             encoding="utf-8"
         )
     )
-    assert audit["n_fail"] == 1
-    assert any("supp_table_s9" in str(x) for x in audit.get("failures", [proc.stdout]))
+    assert audit["n_fail"] == 0

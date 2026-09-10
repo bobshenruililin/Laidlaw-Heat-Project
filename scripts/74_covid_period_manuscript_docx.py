@@ -35,7 +35,7 @@ HOGAN_AVG = (
 
 TOKEN = re.compile(
     r"(\*\*.+?\*\*|T~min~|T~max~|NO~2~|SO~2~|O~3~|PM~2\.5~|\^[0-9]+\^|"
-    r"\\\(.+?\\\)|`[^`]+`)"
+    r"\\\(.+?\\\)|`[^`]+`|\*[qp]\*)"
 )
 
 
@@ -215,7 +215,13 @@ def add_rich_runs(p, text, *, size=12, italic=False):
             run = p.add_run(tok[1:-1])
             set_run_font(run, size=size, superscript=True)
         elif tok.startswith(r"\(") and tok.endswith(r"\)"):
-            run = p.add_run(tok[2:-2])
+            inner = tok[2:-2]
+            inner = re.sub(r"\\mathrm\{([^}]+)\}", r"\1", inner)
+            inner = inner.replace("\\,", "")
+            run = p.add_run(inner)
+            set_run_font(run, size=size, italic=True)
+        elif tok in ("*q*", "*p*"):
+            run = p.add_run(tok[1])
             set_run_font(run, size=size, italic=True)
         elif tok.startswith("`") and tok.endswith("`"):
             run = p.add_run(tok[1:-1])

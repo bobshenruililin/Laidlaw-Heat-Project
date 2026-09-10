@@ -14,6 +14,7 @@ LIVE = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_live_up
 COVID = ROOT / "manuscript" / "covid_period" / "Manuscript_covid_period_draft.md"
 PARK = ROOT / "manuscript" / "archive" / "thermal_extremes_2026-08"
 LEDGER = ROOT / "analysis_plan" / "assumption_ledger.md"
+LEDGER_COVID = ROOT / "manuscript" / "covid_period" / "claim_ledger.yml"
 GATES = ROOT / "analysis_plan" / "decision_gates.md"
 INVENTORY = ROOT / "analysis_plan" / "covid_period" / "ha_metadata_inventory.md"
 MEMO = ROOT / "literature" / "covid_period_mechanism_memo.md"
@@ -21,6 +22,8 @@ REGISTRY = ROOT / "analysis_plan" / "covid_period" / "hypothesis_registry.yml"
 LAB = ROOT / "analysis_plan" / "health_econ" / "lab_note_2026-09-10.md"
 JSON72 = ROOT / "outputs" / "health_econ" / "synthetic_utilisation_shock_2026-09-10.json"
 JSON73 = ROOT / "outputs" / "health_econ" / "synthetic_mnar_selection_2026-09-10.json"
+JSON75 = ROOT / "outputs" / "health_econ" / "synthetic_flu_collapse_2026-09-10.json"
+DOCX = ROOT / "manuscript" / "covid_period" / "Heat_CVD_Manuscript_covid_period.docx"
 HOGAN_OPEN = "Meteorological data was obtained from the HKO."
 HOGAN_AVG = (
     "All monthly data were derived by taking the average of daily data in each calendar month."
@@ -65,16 +68,28 @@ def test_live_thermal_file_uncut():
     assert methods.count(HOGAN_OPEN) == 1
 
 
-def test_covid_period_skeleton_keeps_hogan_weather_and_refuses_improvement():
+def test_covid_period_imrd_keeps_hogan_weather_and_refuses_improvement():
     text = _covid()
     assert HOGAN_OPEN in text
     assert HOGAN_AVG in text
     low = text.lower()
     for phrase in FORBIDDEN_COVID:
         assert phrase.lower() not in low, phrase
-    assert "Gate 3 is open" in text or "Gate 3 remains" in text
+    assert "placeholder" not in low
+    assert "hogan asked" not in low
+    assert "gate 3" not in text
     assert "not a measure of physiological improvement" in text
     assert "I(\\mathrm{count}/5)" in text or r"I(\mathrm{count}/5)" in text
+    assert text.split("## Abstract", 1)[0].count("Window dependence") >= 1
+    assert "Wai AKC" in text
+    assert "10.1016/j.annemergmed.2021.09.424" in text
+    hung_block = text.split("10.1016/j.annemergmed.2021.09.424")[0][-120:]
+    assert "Hung KK" not in hung_block
+    assert "Hung et al. 2022" not in text
+    assert "10.2196/41792" in text
+    assert "Xin H" in text
+    assert "insufficient" in low and "not irrelevant" in low
+    assert "Figure 3" in text and "main identification" in text.lower()
 
 
 def test_ledger_a69_a71_and_gate3_still_open():
@@ -116,15 +131,53 @@ def test_hypothesis_registry_kills_twfe_physiology_react():
 def test_playbook_08_synthetic_json_labelled_and_not_in_covid_draft_as_finding():
     assert JSON72.is_file(), "run python3 scripts/72_synthetic_utilisation_shock.py"
     assert JSON73.is_file(), "run python3 scripts/73_synthetic_mnar_selection.py"
+    assert JSON75.is_file(), "run python3 scripts/75_synthetic_flu_collapse.py"
     p72 = json.loads(JSON72.read_text(encoding="utf-8"))
     p73 = json.loads(JSON73.read_text(encoding="utf-8"))
+    p75 = json.loads(JSON75.read_text(encoding="utf-8"))
     assert "xy_mnar" in p73.get("scenarios", {})
+    assert p75["data_status"] == "SYNTHETIC"
+    assert "flu_collapse_only" in p75.get("scenarios", {})
     covid = _covid()
     assert "mean_pre_window_cr" not in covid
     assert str(p72["mean_full_window_cr"]) not in covid
+    flu_full = str(p75["scenarios"]["flu_collapse_only"]["mean_full_window_cr"])
+    assert flu_full not in covid
     lab = LAB.read_text(encoding="utf-8")
     assert "SYNTHETIC" in lab
     assert "Not copied into" in lab or "not a finding" in lab.lower() or "Not HA" in lab
+    assert "flu" in lab.lower()
+
+
+def test_covid_period_docx_exists_and_keeps_hogan_weather():
+    assert DOCX.is_file(), "run python3 scripts/74_covid_period_manuscript_docx.py"
+    from docx import Document
+
+    doc = Document(str(DOCX))
+    joined = "\n".join(p.text for p in doc.paragraphs)
+    assert HOGAN_OPEN in joined
+    assert HOGAN_AVG in joined
+    assert "Gate 3" not in joined
+    assert "placeholder" not in joined.lower()
+    assert "Wai AKC" in joined
+    assert "Window dependence" in joined
+
+
+def test_covid_claim_ledger_covers_headline_numerals():
+    ledger = LEDGER_COVID.read_text(encoding="utf-8")
+    text = _covid()
+    for needle in (
+        "1.022 (1.002–1.042)",
+        "1.073 (1.006–1.144)",
+        "1.113 (1.053–1.176)",
+        "1.011 (0.991–1.032)",
+        "0.980 (0.970–0.990)",
+        "0.945 (0.927–0.963)",
+        "0.192",
+        "1.036 (1.007–1.067)",
+    ):
+        assert needle in ledger, needle
+        assert needle in text, needle
 
 
 def test_mechanism_review_leftover_is_not_the_covid_sendable():

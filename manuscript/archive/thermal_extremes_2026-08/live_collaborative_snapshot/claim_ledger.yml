@@ -1,0 +1,489 @@
+# Machine-checkable sibling of claim_ledger.md
+# Auditor: python3 scripts/50_audit_live_claim_ledger.py
+# Provenance: HA_APPROVED_AGGREGATE, REAL, or cited_paper. Never invent.
+
+version: 2026-08-18
+manuscript: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+human_ledger: manuscript/live_collaborative/claim_ledger.md
+
+hogan_weather:
+  must_contain: "Meteorological data was obtained from the HKO."
+  also_must_contain:
+    - "the number of hot nights"
+    - "the number of very hot days"
+    - "the number of extremely hot days"
+    - "the number of cold days"
+    - "Hong Kong Environmental Protection Department (EPD)"
+
+forbidden_in_manuscript:
+  - "Gate 3"
+  - "health-econ"
+  - "housing"
+  - "medication"
+  - "AMI and stroke may respond"
+  - "Acute myocardial infarction and stroke may respond"
+  - "the environmental context has also evolved"
+  - "work in progress"
+  - "SYNTHETIC_THEORY"
+  - "F1.1"
+  - "F1.2"
+
+claims:
+  - id: chd_n
+    display: "156,156"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table1_outcome_summary.csv
+    csv:
+      match: {outcome: chd}
+      column: total_events
+      equals: 156156
+
+  - id: hf_n
+    display: "29,681"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table1_outcome_summary.csv
+    csv:
+      match: {outcome: hf}
+      column: total_events
+      equals: 29681
+
+  - id: chd_mean
+    display: "1,183.0"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table1_outcome_summary.csv
+    csv:
+      match: {outcome: chd}
+      column: monthly_mean_rounded
+      equals: 1183
+
+  - id: hf_mean
+    display: "224.9"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table1_outcome_summary.csv
+    csv:
+      match: {outcome: hf}
+      column: monthly_mean_rounded
+      equals: 224.9
+
+  - id: chd_annual_2013
+    display: "23,830"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/tables/cvd_descriptive_annual_totals.csv
+    csv:
+      match: {outcome: chd, year: "2013"}
+      column: total_events
+      equals: 23830
+
+  - id: chd_annual_2023
+    display: "12,323"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/tables/cvd_descriptive_annual_totals.csv
+    csv:
+      match: {outcome: chd, year: "2023"}
+      column: total_events
+      equals: 12323
+
+  - id: hf_annual_2013
+    display: "4,336"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/tables/cvd_descriptive_annual_totals.csv
+    csv:
+      match: {outcome: hf, year: "2013"}
+      column: total_events
+      equals: 4336
+
+  - id: hf_annual_2023
+    display: "2,296"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/tables/cvd_descriptive_annual_totals.csv
+    csv:
+      match: {outcome: hf, year: "2023"}
+      column: total_events
+      equals: 2296
+
+  - id: chd_hot_nights_nw6
+    display: "1.022 (1.002–1.042)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: chd, exposure: hot_nights}
+      column: count_ratio_95CI
+      equals_display: "1.022 (1.002-1.042)"
+
+  - id: hf_cold_days_nw6
+    display: "1.073 (1.006–1.144)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: cold_days}
+      column: count_ratio_95CI
+      equals_display: "1.073 (1.006-1.144)"
+
+  - id: min_q
+    display: "0.192"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    note: "minimum q_value_core_bh across twelve core rows"
+    csv_min:
+      column: q_value_core_bh
+      n_rows_equals: 12
+      round: 3
+      equals: 0.192
+
+  - id: chd_hot_nights_pre2020
+    display: "1.011 (0.991–1.032)"
+    display_alt: "1.011, 0.991–1.032"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    csv_rr_ci:
+      match: {outcome: chd, exposure: hot_nights, scenario: pre_covid}
+      decimals: 3
+      equals: "1.011 (0.991-1.032)"
+
+  - id: hf_cold_days_pre2020
+    display: "1.113 (1.053–1.176)"
+    display_alt: "1.113, 1.053–1.176"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    csv_rr_ci:
+      match: {outcome: hf, exposure: cold_days, scenario: pre_covid}
+      decimals: 3
+      equals: "1.113 (1.053-1.176)"
+
+  - id: chd_hot_nights_model
+    display: "1.022 (0.995–1.049)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+    csv:
+      match: {outcome: chd, exposure: hot_nights, se_method: model}
+      column: count_ratio_95CI
+      equals_display: "1.022 (0.995-1.049)"
+
+  - id: chd_hot_nights_hc1
+    display: "1.022 (0.997–1.047)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+    csv:
+      match: {outcome: chd, exposure: hot_nights, se_method: HC1}
+      column: count_ratio_95CI
+      equals_display: "1.022 (0.997-1.047)"
+
+  - id: hf_cold_days_model
+    display: "1.073 (1.023–1.125)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+    csv:
+      match: {outcome: hf, exposure: cold_days, se_method: model}
+      column: count_ratio_95CI
+      equals_display: "1.073 (1.023-1.125)"
+
+  - id: months_with_cold_day
+    display: "29 of 132"
+    display_alt: "Twenty-nine of 132"
+    provenance: REAL
+    source: outputs/live_identification/cold_days_by_month_year.csv
+    csv_count_where:
+      column: cold_days
+      op: ">="
+      value: 1
+      equals: 29
+      n_rows_equals: 132
+
+  - id: cold_days_djf
+    display: "141 of 145"
+    provenance: REAL
+    source: outputs/live_identification/cold_days_by_month_year.csv
+    csv_sum_where:
+      column: cold_days
+      where_in:
+        month: [12, 1, 2]
+      equals: 141
+      total_equals: 145
+
+  - id: epd_no2_2013
+    display: "53.7"
+    provenance: REAL
+    source: outputs/tables/pollution_annual_means_general_2013_2023.csv
+    csv:
+      match: {year: "2013"}
+      column: NO2
+      round: 1
+      equals: 53.7
+
+  - id: epd_no2_2023
+    display: "32.1"
+    provenance: REAL
+    source: outputs/tables/pollution_annual_means_general_2013_2023.csv
+    csv:
+      match: {year: "2023"}
+      column: NO2
+      round: 1
+      equals: 32.1
+
+  - id: epd_pm25_2013
+    display: "30.8"
+    provenance: REAL
+    source: outputs/tables/pollution_annual_means_general_2013_2023.csv
+    csv:
+      match: {year: "2013"}
+      column: PM25
+      round: 1
+      equals: 30.8
+
+  - id: epd_pm25_2023
+    display: "14.6"
+    provenance: REAL
+    source: outputs/tables/pollution_annual_means_general_2013_2023.csv
+    csv:
+      match: {year: "2023"}
+      column: PM25
+      round: 1
+      equals: 14.6
+
+  - id: epd_o3_2013
+    display: "42.6"
+    provenance: REAL
+    source: outputs/tables/pollution_annual_means_general_2013_2023.csv
+    csv:
+      match: {year: "2013"}
+      column: O3
+      round: 1
+      equals: 42.6
+
+  - id: epd_o3_2023
+    display: "58.3"
+    provenance: REAL
+    source: outputs/tables/pollution_annual_means_general_2013_2023.csv
+    csv:
+      match: {year: "2023"}
+      column: O3
+      round: 1
+      equals: 58.3
+
+  - id: goggins_hf_2017
+    display: "2.63 (2.43–2.84)"
+    provenance: cited_paper
+    citation: "Goggins and Chan Int J Cardiol 2017;228:537-542"
+
+  - id: goggins_ami_2013
+    display: "3.7%"
+    provenance: cited_paper
+    citation: "Goggins et al. Heart 2013"
+
+  - id: goggins_stroke_2012
+    display: "22 °C"
+    display_alt: "22 °C"
+    provenance: cited_paper
+    citation: "Goggins et al. stroke admissions 1999–2006; live file [11]"
+
+  - id: liu2020_cold_af
+    display: "4.72%"
+    provenance: cited_paper
+    citation: "Liu et al. Sustainable Cities and Society 2020;57:102131"
+
+  - id: liu2020_heat_af
+    display: "0.16%"
+    provenance: cited_paper
+    citation: "Liu et al. Sustainable Cities and Society 2020;57:102131"
+
+  - id: liu2020_moderate_af
+    display: "4.25%"
+    provenance: cited_paper
+    citation: "Liu et al. Sustainable Cities and Society 2020;57:102131"
+
+  - id: liu2020_extreme_af
+    display: "0.63%"
+    provenance: cited_paper
+    citation: "Liu et al. Sustainable Cities and Society 2020;57:102131"
+
+  - id: liu2026_excess_range
+    display: "1,455 to 3,238"
+    provenance: cited_paper
+    citation: "Liu et al. medRxiv 2026; 10.64898/2026.03.05.26347683"
+
+  - id: hf_cold_days_hc1
+    display: "1.073 (1.011–1.138)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+    csv:
+      match: {outcome: hf, exposure: cold_days, se_method: HC1}
+      column: count_ratio_95CI
+      equals_display: "1.073 (1.011-1.138)"
+
+  - id: hf_cold_days_nw3
+    display: "1.073 (1.007–1.143)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+    csv:
+      match: {outcome: hf, exposure: cold_days, se_method: NeweyWest_lag3}
+      column: count_ratio_95CI
+      equals_display: "1.073 (1.007-1.143)"
+
+  - id: chd_hot_nights_nw3_unrounded
+    display: "1.000253 to 1.043860"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+    note: "Live Table 3 prints extra precision 1.0003–1.0439; unrounded bounds are the audit target."
+    csv_rr_ci:
+      match: {outcome: chd, exposure: hot_nights, se_method: NeweyWest_lag3}
+      decimals: 6
+      equals: "1.021824 (1.000253-1.043860)"
+
+  - id: n_months
+    display: "132 territory-months"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table1_outcome_summary.csv
+    csv:
+      match: {outcome: chd}
+      column: n_months
+      equals: 132
+
+  - id: chd_hot_nights_covid_phase
+    display: "1.013 (0.994–1.033)"
+    display_alt: "1.013, 0.994–1.033"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    csv_rr_ci:
+      match: {outcome: chd, exposure: hot_nights, scenario: covid_phase_adjusted}
+      decimals: 3
+      equals: "1.013 (0.994-1.033)"
+
+  - id: hf_tmin_unrounded_upper
+    display: "1.00005"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: mean_tmin}
+      column: rr_high
+      round: 5
+      equals: 1.00005
+
+  - id: chd_mean_temp_nw6
+    display: "0.993 (0.976–1.010)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: chd, exposure: mean_temp}
+      column: count_ratio_95CI
+      equals_display: "0.993 (0.976-1.010)"
+
+  - id: chd_tmax_nw6
+    display: "0.993 (0.979–1.007)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: chd, exposure: mean_tmax}
+      column: count_ratio_95CI
+      equals_display: "0.993 (0.979-1.007)"
+
+  - id: chd_tmin_nw6
+    display: "0.994 (0.977–1.012)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: chd, exposure: mean_tmin}
+      column: count_ratio_95CI
+      equals_display: "0.994 (0.977-1.012)"
+
+  - id: chd_cold_days_nw6
+    display: "0.995 (0.949–1.043)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: chd, exposure: cold_days}
+      column: count_ratio_95CI
+      equals_display: "0.995 (0.949-1.043)"
+
+  - id: chd_vhd_nw6
+    display: "0.999 (0.974–1.025)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: chd, exposure: very_hot_days}
+      column: count_ratio_95CI
+      equals_display: "0.999 (0.974-1.025)"
+
+  - id: hf_mean_temp_nw6
+    display: "0.974 (0.947–1.002)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: mean_temp}
+      column: count_ratio_95CI
+      equals_display: "0.974 (0.947-1.002)"
+
+  - id: hf_tmax_nw6
+    display: "0.981 (0.958–1.005)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: mean_tmax}
+      column: count_ratio_95CI
+      equals_display: "0.981 (0.958-1.005)"
+
+  - id: hf_tmin_nw6
+    display: "0.973 (0.947–1.000)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: mean_tmin}
+      column: count_ratio_95CI
+      equals_display: "0.973 (0.947-1.000)"
+
+  - id: hf_hot_nights_nw6
+    display: "1.003 (0.976–1.031)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: hot_nights}
+      column: count_ratio_95CI
+      equals_display: "1.003 (0.976-1.031)"
+
+  - id: hf_vhd_nw6
+    display: "0.995 (0.963–1.028)"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/tables/table2_core_models.csv
+    csv:
+      match: {outcome: hf, exposure: very_hot_days}
+      column: count_ratio_95CI
+      equals_display: "0.995 (0.963-1.028)"
+
+  - id: pre2020_nw6_nine_of_twelve
+    display: "nine of the twelve Newey–West lag-6 intervals excluded 1"
+    provenance: HA_APPROVED_AGGREGATE
+    source: outputs/release_chd_hf/supplement/cvd_trend_depletion_sensitivity.csv
+    csv_ci_excludes_one:
+      match: {scenario: pre_covid}
+      n_rows_equals: 12
+      equals: 9
+
+  - id: supp_fig_s1
+    display: "Supplementary Figure S1"
+    provenance: manuscript_meta
+    source: manuscript/live_collaborative/supplement_inventory.md
+    note: "Live-pack S1 is residual ACF, not the release heatmap filename."
+
+  - id: supp_table_s2
+    display: "Supplementary Table S2"
+    provenance: manuscript_meta
+    source: manuscript/live_collaborative/supplement_live_track.md
+
+  - id: supp_table_s7
+    display: "Supplementary Table S7"
+    provenance: manuscript_meta
+    source: manuscript/live_collaborative/supplement_inventory.md
+
+  - id: supp_table_s8
+    display: "Supplementary Table S8"
+    provenance: manuscript_meta
+    source: manuscript/live_collaborative/supplement_live_track.md
+
+  - id: supp_table_s9
+    display: "Supplementary Table S9"
+    provenance: manuscript_meta
+    source: manuscript/live_collaborative/supplement_inventory.md
+
+  - id: running_title
+    display: "Thermal extremes and first CHD/HF hospitalisation"
+    provenance: manuscript_meta
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md

@@ -1,0 +1,76 @@
+# Hypothesis registry — COVID-period angle (anti-convergence)
+
+**Rule:** If a proposed mechanism is already here, reject it and name a different family. Journal track stays monthly NB. Playbook 08 may stress-test on SYNTHETIC schemas only.
+
+updated: 2026-09-10
+
+alive_on_this_extract:
+  - id: H1
+    family: utilisation
+    claim: "Care-seeking and hospital avoidance can drop first-event counts without better hearts."
+    evidence: literature/covid_period_mechanism_memo.md
+    status: alive
+  - id: H2
+    family: depletion
+    claim: "A closed 2013–2023 diagnosis window depletes the first-event risk set."
+    evidence: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+    status: alive
+  - id: H3
+    family: window_dependent_CR
+    claim: "Cold-day count ratios are stronger pre-2020 than in the full sample; CHD hot nights need 2020–2023."
+    evidence: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    status: alive
+  - id: H4
+    family: weather_falsification
+    claim: "Official extremes are a ruling-out exhibit, not the headline, and not a proof that weather is irrelevant."
+    evidence: reports/meeting_debrief_2026-09-10.md
+    status: alive
+  - id: H5
+    family: flu
+    claim: "Influenza coverage is 121/132 months; never zero-filled; not Model 1."
+    evidence: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+    status: alive
+  - id: H6
+    family: pollution_trend
+    claim: "NO2 and PM2.5 fell 2013–2023; that is a slow co-trend, not a 2020 physiology switch."
+    evidence: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+    status: alive
+  - id: H7
+    family: influence_months
+    claim: "2020-02 and 2022-02 are already named influence months in the thermal paper."
+    evidence: knowledge/2026-08-12_existing_data_insights.md
+    status: alive
+  - id: H8
+    family: synthetic_mnar_selection
+    claim: "On SYNTHETIC data, MNAR missingness and truncating high post-2020 counts can further move full-window CRs. Not a Hong Kong result."
+    evidence: analysis_plan/health_econ/lab_note_2026-09-10.md
+    status: alive
+
+killed_do_not_rewalk:
+  - id: K1
+    paradigm: physiological_improvement_from_count_drop
+    kill_reason: "Xin 2022: hospitalisations down, CVD deaths up. Forbidden as a finding on this file."
+  - id: K2
+    paradigm: TWFE_Callaway_Medicaid
+    kill_reason: "A67 / Playbook 08. Wrong design."
+  - id: K3
+    paradigm: QALY_CEA_cartel_time_inconsistency
+    kill_reason: "Not this extract. Playbook 08 synthetic only if ever, never the journal draft."
+  - id: K4
+    paradigm: behavioral_nudge
+    kill_reason: "No treatment assignment."
+  - id: K5
+    paradigm: labs_inferred_from_outdoor_T
+    kill_reason: "Labs never transferred; indoor T refused."
+  - id: K6
+    paradigm: post_only_48m_confirmatory_primary
+    kill_reason: "Table does not exist; window is thin; q-bar still applies."
+  - id: K7
+    paradigm: admissions_averted
+    kill_reason: "Does not evaluate VHWW/CWW."
+  - id: K8
+    paradigm: react_dashboard_as_paper
+    kill_reason: "UI is not the identification article. Forbidden-claim hit if used as a finding surface."
+  - id: K9
+    paradigm: health_econ_night_engine_in_live_file
+    kill_reason: "PR 54 residue. F06-health-econ-in-paper."

@@ -25,7 +25,7 @@ That claim is true only after a three-way split. Mixing the buckets is how this 
 | **Human-owned gate** | Hogan weather lock, Roro stroke/person-time/ICD, Bishai Gate 3/IRB, Bob paste | Not a harness failure. Readiness packets only. |
 | **Refusal is the solution** | All twelve core *q* > 0.19; F1.2 failed *here*; public files cannot replace the governed series; CI-picking is illegal | A found constraint. Treating it as “search harder” is illegal. |
 
-The solution this harness is allowed to search for is a **defensible identification article plus calibrated refusal**, not a significant heat coefficient. “We did not find a protected thermal effect” is not evidence that the harness is weak. “We re-walked F1.2,” “we collapsed six families into one story,” or “we reset the tree at paper end” *is* evidence that the harness is weak.
+The solution this harness is allowed to search for is a **defensible identification article plus calibrated refusal**, not a significant heat coefficient. After 10 September 2026, that article may be **F08 period-identification** (window-dependent count ratios; thermal as a ruling-out exhibit) without rewriting `live_collaborative/` in place and without freezing Gate 3. “We did not find a protected thermal effect” is not evidence that the harness is weak. “We re-walked F1.2,” “we collapsed six families into one story,” or “we reset the tree at paper end” *is* evidence that the harness is weak. A React/D3 dashboard is not an identification article.
 
 ## 1. What R is allowed to mean
 

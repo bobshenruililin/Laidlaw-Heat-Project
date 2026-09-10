@@ -1,0 +1,10 @@
+{
+  "data_status": "SYNTHETIC",
+  "n_reps": 200,
+  "true_count_ratio": 1.1,
+  "utilisation_multiplier_from_2020": 0.55,
+  "mean_pre_window_cr": 1.080745859371352,
+  "mean_full_window_cr": 1.060936616201491,
+  "median_pre_minus_full": 0.02025872367212289,
+  "note": "SYNTHETIC. Constant true beta; utilisation shock after month 84. Not HA. Not a physiology result. Playbook 08."
+}

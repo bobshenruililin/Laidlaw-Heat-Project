@@ -1,0 +1,33 @@
+{
+  "data_status": "SYNTHETIC",
+  "parent": "scripts/72_synthetic_utilisation_shock.py",
+  "n_reps": 200,
+  "true_count_ratio": 1.1,
+  "note": "SYNTHETIC night-shift mutation. Constant true beta. Not HA. Not physiology. Not a cartel/QALY/TWFE model.",
+  "scenarios": {
+    "utilisation_only": {
+      "mean_pre_window_cr": 1.093475293774479,
+      "mean_full_window_cr": 1.068576656962712,
+      "median_pre_minus_full": 0.02418972035339928,
+      "n_finite": 200
+    },
+    "mnar_missing": {
+      "mean_pre_window_cr": 1.093475293774479,
+      "mean_full_window_cr": 1.074591424460161,
+      "median_pre_minus_full": 0.016561630200498056,
+      "n_finite": 200
+    },
+    "selected_truncation": {
+      "mean_pre_window_cr": 1.093475293774479,
+      "mean_full_window_cr": 1.0686087898178693,
+      "median_pre_minus_full": 0.02418972035339928,
+      "n_finite": 200
+    },
+    "xy_mnar": {
+      "mean_pre_window_cr": 1.093475293774479,
+      "mean_full_window_cr": 1.093176330334431,
+      "median_pre_minus_full": 0.002420518888570533,
+      "n_finite": 200
+    }
+  }
+}

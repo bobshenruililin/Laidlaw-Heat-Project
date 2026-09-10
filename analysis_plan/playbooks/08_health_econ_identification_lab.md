@@ -69,7 +69,9 @@ A worked DAG sketch lives in [`analysis_plan/health_econ/dag_this_extract.md`](.
 - `analysis_plan/health_econ/lab_note_YYYY-MM-DD.md` (create when the lab is actually run)
 - `analysis_plan/context_compound_log.md`
 - Optional `outputs/health_econ/` synthetic artifacts
+- 10 Sep 2026 run: `lab_note_2026-09-10.md`; `scripts/72_synthetic_utilisation_shock.py`; `scripts/73_synthetic_mnar_selection.py`
 - Not `manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md`
+- Not `manuscript/covid_period/Manuscript_covid_period_draft.md` as a findings dump
 - Not `scripts/64_hogan_20260824_manuscript_docx.py` Hogan strings
 
 ## Claim boundaries

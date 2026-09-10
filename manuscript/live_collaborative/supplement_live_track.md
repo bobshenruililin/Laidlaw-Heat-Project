@@ -2,19 +2,18 @@
 
 **Authority:** live collaborative manuscript `Heat_CVD_Manuscript_live_update.md`.  
 **Not** the 10 August `manuscript/chd_hf_supplement.pdf` (do not rebuild).  
-**Not** Hogan’s shared Word/Google file (Bob pastes; agents do not).
 
-This file is the journal-takeable supplement for Environmental Research. Every numeral is transcribed from an existing `HA_APPROVED_AGGREGATE`, `REAL`, or `SYNTHETIC_CALIBRATION` table. No new health model was fitted. In the live manuscript, the twelve thermal fits are **Model 1**; “Models 1–12” in this supplement means those twelve Model 1 fits. Archive influenza and pollution models are **not** adjusted versions of Model 1. No confirmatory primary is declared.
+This file is the journal-takeable supplement for the analysis-window sensitivity manuscript. Every numeral is transcribed from an existing `HA_APPROVED_AGGREGATE`, `REAL`, or `SYNTHETIC_CALIBRATION` table. No new health model was fitted. The twelve thermal fits are **Model 1**. Archive influenza and pollution models are **not** adjusted versions of Model 1. No confirmatory primary is declared.
 
-Numbering matches the live body: Supplementary Figure S1 is residual ACF; Supplementary Tables S7 and S9 are archive influenza and archive pollution. The release heatmap filename `figureS1_exposure_correlation.png` is Supplementary Figure **S4** here.
+Numbering matches the live body: Supplementary Figure S1 is residual ACF; Supplementary Tables S7 and S9 are archive influenza and archive pollution. The release heatmap filename `figureS1_exposure_correlation.png` is Supplementary Figure **S4** here. Figure S5 remains unassigned so the established continuous-temperature display can remain Supplementary Figure S6.
 
 ## Supplementary Figure S1. Residual autocorrelation in two displayed exploratory models
 
 ![Supplementary Figure S1](../../figures/live_identification/figure_C_residual_acf.png)
 
-Bars show the Pearson residual autocorrelation function for the separate-exposure negative-binomial CHD hot-night and HF cold-day models. Dashed lines mark ±1.96/√132. Lag-1 residual autocorrelation was 0.508 for CHD hot nights and 0.146 for HF cold days. These diagnostics motivate reporting more than one covariance estimator; they do not establish that a particular estimator is correct, protect either contrast from multiplicity, or identify a causal thermal effect. Source: residuals from the governed aggregate models.
+Bars show the Pearson residual autocorrelation function for the separate-exposure negative-binomial CHD hot-night and HF cold-day models. Dashed lines mark ±1.96/√132. Lag-1 residual autocorrelation was 0.508 for CHD hot nights and 0.146 for HF cold days. These diagnostics motivate reporting more than one covariance estimator; they do not establish that a particular estimator is correct, protect either contrast from multiplicity, or identify a causal thermal effect. Source: residuals from the governed aggregate Model 1 fits.
 
-## Supplementary Table S1. Uncertainty ladder for Models 1–12
+## Supplementary Table S1. Complete Model 1 uncertainty ladder
 
 Count ratios use the days-in-month offset. Intervals are model-based, HC1, Newey–West lag 3, and Newey–West lag 6. No interval was selected because it excluded 1. Display strings are those in `outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv`.
 
@@ -33,13 +32,13 @@ Count ratios use the days-in-month offset. Intervals are model-based, HC1, Newey
 | HF | Cold days / 5 days | 1.073 (1.023–1.125) | 1.073 (1.011–1.138) | 1.073 (1.007–1.143) | 1.073 (1.006–1.144) |
 | HF | Very hot days / 5 days | 0.995 (0.964–1.027) | 0.995 (0.963–1.028) | 0.995 (0.964–1.027) | 0.995 (0.963–1.028) |
 
-## Supplementary Figure S2. Standard-error method ladder for the two leading exploratory contrasts
+## Supplementary Figure S2. Standard-error method ladder for two displayed exploratory contrasts
 
 ![Supplementary Figure S2](../../outputs/release_chd_hf/figures/figure5_se_method_ladder.png)
 
 The figure displays the same four constructions as Table 3 of the main paper. Concordance across constructions is not multiplicity protection. Source: `outputs/release_chd_hf/figures/figure5_se_method_ladder.png`.
 
-## Supplementary Table S2. Models 1–12 in the pre-2020 window (Newey–West lag-6)
+## Supplementary Table S2. Model 1 contrasts in the pre-2020 window (Newey–West lag-6)
 
 January 2013–December 2019; 84 months. Nine of twelve intervals exclude 1. All six continuous temperature contrasts are inverse. No multiplicity control was computed within this window, and no pre-2020 estimate is promoted beyond a sensitivity. Source: `pre_covid` rows of `outputs/release_chd_hf/supplement/cvd_trend_depletion_sensitivity.csv`. Main-text Figure 3 shows the six official-count fits. Continuous-temperature fits for the same nine specifications are Supplementary Figure S6.
 
@@ -64,11 +63,11 @@ January 2013–December 2019; 84 months. Nine of twelve intervals exclude 1. All
 
 Same nine trend, window, and COVID-period specifications as main-text Figure 3. Each estimate is per 1 °C. Pre-2020 inverse associations for mean, maximum, and minimum temperature are in this panel. Rows labelled 3, 6, or 8 df change the time-trend spline, not heatwave length. Source: `outputs/tables/cvd_trend_depletion_sensitivity.csv` (`HA_APPROVED_AGGREGATE`). No new health model.
 
-## Supplementary Figure S3. Complete twelve-contrast core forest (Newey–West lag-6)
+## Supplementary Figure S3. Complete twelve-contrast Model 1 forest (Newey–West lag-6)
 
 ![Supplementary Figure S3](../../outputs/release_chd_hf/figures/figure3_core_forest.png)
 
-Main-text Table 2 remains the reporting table. Source: `outputs/release_chd_hf/figures/figure3_core_forest.png`.
+This figure shows the complete full-window Model 1 panel; main-text Table 2 instead reports the nested-window official-day sensitivity. Source: `outputs/release_chd_hf/figures/figure3_core_forest.png`.
 
 ## Supplementary Figure S4. Pairwise exposure correlations
 
@@ -141,7 +140,7 @@ Joint Newey–West lag-6 estimates (diagnostics, not preferred):
 | HF | Cold days / 5 days | 1.073 (1.006–1.144) |
 | HF | Very hot days / 5 days | 0.986 (0.946–1.028) |
 
-## Supplementary Table S6. Residual diagnostics for Models 1–12
+## Supplementary Table S6. Residual diagnostics for the twelve Model 1 fits
 
 | Outcome | Core exposure | Pearson ACF lag 1 | Ljung–Box p, lag 6 | Ljung–Box p, lag 12 |
 |:--|--:|--:|--:|--:|
@@ -158,11 +157,11 @@ Joint Newey–West lag-6 estimates (diagnostics, not preferred):
 | HF | Cold days | 0.146 | 0.356 | 0.177 |
 | HF | Very hot days | 0.179 | 0.319 | 0.144 |
 
-Source: `outputs/release_chd_hf/supplement/chd_pathway_core_diagnostics.csv` and `hf_pathway_core_diagnostics.csv` (days-in-month offset core pathways).
+Source: `outputs/release_chd_hf/supplement/chd_pathway_core_diagnostics.csv` and `hf_pathway_core_diagnostics.csv` (days-in-month offset Model 1 pathways).
 
 ## Supplementary Table S7. Archive influenza co-exposure (pathway P14; 121 months)
 
-Missing influenza months were not zero-filled. This model uses a general-population × days offset and is not an adjusted version of Models 1–12. The live manuscript reports the CHD direction only.
+Missing influenza months were not zero-filled. This model uses a general-population × days offset and is not an adjusted version of Model 1.
 
 | Outcome | Term | Count ratio (95% CI) | Months |
 |:--|:--|--:|--:|
@@ -173,7 +172,7 @@ Source: `outputs/release_chd_hf/supplement/combined_pathway_panel_estimates.csv`
 
 ## Supplementary Table S8. Daily-recovery calibration gates (methods validation, not a health finding)
 
-Source: synthetic calibration (`SYNTHETIC_CALIBRATION`); methods validation, not a CHD/HF health finding. The live manuscript reports the refusal and the four worst-cell summaries (Type I error 0.048–0.150; minimum coverage 0.840; maximum non-null relative bias 32.8; maximum moderate false-sign rate 0.808). No real daily coefficient is admitted. This table does not establish a general failure of recovering daily effects from aggregated outcomes.
+Source: synthetic calibration (`SYNTHETIC_CALIBRATION`); methods validation, not a CHD/HF health finding. No real daily coefficient is admitted. This table does not establish a general failure of recovering daily effects from aggregated outcomes.
 
 | Gate | Observed (methods validation) | Result |
 |--:|--:|--:|
@@ -214,6 +213,26 @@ Count ratios are for a 1 °C temperature contrast or a 1 µg m^−3^ pollutant c
 
 Nitrogen dioxide retains a positive coefficient in the CHD and HF archive fits. That is a co-predictor fact, not a thermal finding. Source: `outputs/release_chd_hf/supplement/combined_pathway_panel_estimates.csv`, P11 rows.
 
+## Supplementary Table S10. Weather summaries by analysis period
+
+These are exposure summaries, not health effects. Pre-2020 is January 2013–December 2019. The pandemic-era row is January 2020–December 2022. The 2023 row is shown separately because reopening is not the same object as the earlier pandemic period.
+
+| Period | Months | Mean temperature, °C | Hot nights / month | Very hot days / month | Cold days / month |
+|:--|--:|--:|--:|--:|--:|
+| 2013–2019 | 84 | 23.83 | 2.74 | 2.55 | 1.12 |
+| 2020–2022 | 36 | 24.30 | 4.53 | 4.25 | 1.03 |
+| 2023 | 12 | 24.50 | 4.67 | 4.50 | 1.17 |
+
+Source: HKO Headquarters monthly series in `outputs/share_for_roro/temperature_monthly_panel_2013_2023.csv` (`REAL`). The same summaries are cross-checked in `outputs/tables/cvd_descriptive_covid_era_means.csv`. Later years were hotter; official cold-day frequency was similar rather than absent.
+
+## Supplementary Note S1. Thermal and mechanistic context
+
+Earlier Hong Kong studies used daily, cause-coded or unplanned admissions. Goggins et al. reported a cold association for acute myocardial infarction [1]. Goggins and Chan reported a cumulative heart-failure admission contrast for 11 °C versus 25 °C over daily lags [21]. Guo et al. distinguished the official hot-night flag from hourly nighttime excess heat [17]. None of those estimands transfers to monthly counts of first hospitalisation after a first diagnosis.
+
+Hong Kong mortality studies are complementary rather than interchangeable. Liu et al. reported temperature-attributable mortality fractions [12]. Liu et al. later modelled heatwave-associated excess deaths [13]. Neither quantity can be rescaled into the count ratios in the main manuscript.
+
+Sleep, nighttime core temperature, heart-rate variability, cold afterload, and heat-health action plans were reviewed in the thermal manuscript [23–33]. Those sources remain hypotheses or policy context. The monthly series measures none of those mechanisms and does not evaluate Hong Kong’s warnings. The HKO yearbooks for 2013, 2017, 2021, and 2024 remain in the reference block [2–5]; the 2024 yearbook is outside the analysis window and is not used in an estimate.
+
 ## Scope of this supplement
 
-This supplement does not contain stroke results, principal-diagnosis or AMI claims, cohort incidence, a real daily-recovery coefficient, a confounding-adjusted version of Models 1–12, or a health-economic result. Hogan weather reference rules remain unlocked; provisional hot-month and cold-month estimates are ineligible as a primary claim.
+This supplement does not contain stroke results, principal-diagnosis or AMI claims from this extract, cohort incidence, a real daily-recovery coefficient, a confounding-adjusted version of Model 1, or a health-economic result. Provisional hot-month and cold-month estimates are ineligible as a primary claim.

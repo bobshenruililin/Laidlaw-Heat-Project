@@ -1,9 +1,9 @@
-"""Current Hogan Word+PDF must exceed the 24 August snapshot in every scored dimension.
+"""Archived thermal Word+PDF preserve the 31 August exceed-snapshot contract.
 
 Snapshot file (Bob Desktop / upload): Heat_CVD_Manuscript_20260824_hogan.pdf
 SHA-256 prefix b172ed31659d6cd6, 14 pages. The snapshot is not committed.
 
-Does not fit health models. Does not freeze Gate 3. Does not invent Model 2/3 coefficients.
+The current live manuscript has a separate 10 September package test.
 """
 from __future__ import annotations
 
@@ -11,8 +11,15 @@ import hashlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DOCX = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_20260824_hogan.docx"
-PDF = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_20260824_hogan.pdf"
+ARCHIVE = (
+    ROOT
+    / "manuscript"
+    / "archive"
+    / "thermal_extremes_2026-08"
+    / "live_collaborative_snapshot"
+)
+DOCX = ARCHIVE / "Heat_CVD_Manuscript_20260824_hogan.docx"
+PDF = ARCHIVE / "Heat_CVD_Manuscript_20260824_hogan.pdf"
 SNAPSHOT_SHA16 = "b172ed31659d6cd6"
 SNAPSHOT_CANDIDATES = [
     Path("/home/ubuntu/.cursor/projects/workspace/uploads/Heat_CVD_Manuscript_20260824_hogan_1e60.pdf"),

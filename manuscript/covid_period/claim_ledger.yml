@@ -1,0 +1,300 @@
+# Claim ledger — COVID-period Hogan-register IMRD
+# Every numeral in Manuscript_covid_period_draft.md must already exist in a
+# named git CSV or the parked live file. provenance: HA_APPROVED_AGGREGATE
+# or REAL public climate. Never SYNTHETIC as a finding.
+
+hogan_weather:
+  must_contain: "Meteorological data was obtained from the HKO."
+  averaging: "All monthly data were derived by taking the average of daily data in each calendar month."
+  source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+
+gate_3: open
+scientific_body_forbids:
+  - placeholder
+  - Gate 3
+  - Hogan asked
+  - health improved
+  - admissions averted
+  - failing left ventricle
+  - TWFE
+  - QALY
+  - Callaway
+  - SYNTHETIC coefficients as findings
+
+numerals:
+  - name: n_months_full
+    value: 132
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: n_months_pre2020
+    value: 84
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+  - name: chd_events
+    value: 156156
+    display: "156,156"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: hf_events
+    value: 29681
+    display: "29,681"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: chd_mean_monthly
+    value: 1183.0
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: hf_mean_monthly
+    value: 224.9
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: chd_annual_2013
+    value: 23830
+    source: outputs/tables/cvd_descriptive_annual_totals.csv
+  - name: chd_annual_2023
+    value: 12323
+    source: outputs/tables/cvd_descriptive_annual_totals.csv
+  - name: hf_annual_2013
+    value: 4336
+    source: outputs/tables/cvd_descriptive_annual_totals.csv
+  - name: hf_annual_2023
+    value: 2296
+    source: outputs/tables/cvd_descriptive_annual_totals.csv
+  - name: chd_annual_2020
+    value: 10237
+    source: outputs/tables/cvd_descriptive_annual_totals.csv
+  - name: hf_annual_2020
+    value: 1964
+    source: outputs/tables/cvd_descriptive_annual_totals.csv
+  - name: csd_35plus_rise
+    value: "17%"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: chd_mean_monthly_pre2020
+    value: 1315
+    source: outputs/tables/cvd_descriptive_covid_era_means.csv
+    note: "1315.2976 rounded"
+  - name: hf_mean_monthly_pre2020
+    value: 252
+    source: outputs/tables/cvd_descriptive_covid_era_means.csv
+    note: "252.0238 rounded"
+  - name: chd_mean_monthly_2020_2022
+    value: 926
+    source: outputs/tables/cvd_descriptive_covid_era_means.csv
+    note: "926.333 rounded"
+  - name: hf_mean_monthly_2020_2022
+    value: 173
+    source: outputs/tables/cvd_descriptive_covid_era_means.csv
+    note: "172.639 rounded"
+  - name: chd_january_mean
+    value: 1386
+    source: outputs/tables/cvd_descriptive_seasonality_by_month.csv
+  - name: chd_september_mean
+    value: 1097
+    source: outputs/tables/cvd_descriptive_seasonality_by_month.csv
+  - name: hf_january_mean
+    value: 287
+    source: outputs/tables/cvd_descriptive_seasonality_by_month.csv
+  - name: hf_september_mean
+    value: 196
+    source: outputs/tables/cvd_descriptive_seasonality_by_month.csv
+  - name: q_minimum
+    value: 0.192
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: chd_hot_nights_full
+    value: "1.022 (1.002–1.042)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: baseline_ns4
+  - name: hf_cold_days_full
+    value: "1.073 (1.006–1.144)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: baseline_ns4
+  - name: chd_hot_nights_pre2020
+    value: "1.011 (0.991–1.032)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+  - name: hf_cold_days_pre2020
+    value: "1.113 (1.053–1.176)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+  - name: chd_cold_days_pre2020
+    value: "1.036 (1.007–1.067)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+  - name: chd_cold_days_full
+    value: "0.995 (0.949–1.043)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: baseline_ns4
+  - name: chd_hot_nights_covid_phase
+    value: "1.013 (0.994–1.033)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: covid_phase_adjusted
+  - name: hf_cold_days_covid_phase
+    value: "1.074 (1.006–1.145)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: covid_phase_adjusted
+  - name: chd_mean_temp_full
+    value: "0.993 (0.976–1.010)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: baseline_ns4
+  - name: hf_mean_temp_full
+    value: "0.974 (0.947–1.002)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: baseline_ns4
+  - name: chd_mean_temp_pre2020
+    value: "0.980 (0.970–0.990)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+  - name: hf_mean_temp_pre2020
+    value: "0.945 (0.927–0.963)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+  - name: chd_mean_temp_covid_phase
+    value: "0.989 (0.975–1.003)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: covid_phase_adjusted
+  - name: hf_mean_temp_covid_phase
+    value: "0.967 (0.944–0.991)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: covid_phase_adjusted
+  - name: chd_cold_covid_phase
+    value: "0.991 (0.943–1.041)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: covid_phase_adjusted
+  - name: hf_hot_nights_pre2020
+    value: "0.965 (0.937–0.994)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+  - name: hf_hot_nights_covid_phase
+    value: "0.994 (0.972–1.016)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: covid_phase_adjusted
+  - name: chd_vhd_pre2020
+    value: "0.997 (0.982–1.012)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+  - name: hf_vhd_pre2020
+    value: "0.990 (0.960–1.021)"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+  - name: mean_hot_nights_pre2020
+    value: 2.7
+    source: outputs/tables/cvd_descriptive_covid_era_means.csv
+    note: "2.738 rounded"
+  - name: mean_hot_nights_2020_2022
+    value: 4.5
+    source: outputs/tables/cvd_descriptive_covid_era_means.csv
+    note: "4.528 rounded"
+  - name: hot_nights_2013
+    value: 10
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: hot_nights_2021
+    value: 61
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: hot_nights_2023
+    value: 56
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: very_hot_days_2013
+    value: 17
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: very_hot_days_2021_2023
+    value: 54
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: cold_days_2013
+    value: 14
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: cold_days_2019
+    value: 1
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: cold_days_2021
+    value: 13
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: cold_days_2023
+    value: 14
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: cold_days_total
+    value: 145
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: cold_days_djf
+    value: 141
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: cold_days_dec
+    value: 40
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: cold_days_jan
+    value: 54
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: cold_days_feb
+    value: 47
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: cold_days_mar
+    value: 4
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: months_with_cold
+    value: 29
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: no2_2013
+    value: 53.7
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: no2_2023
+    value: 32.1
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: pm25_2013
+    value: 30.8
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: pm25_2023
+    value: 14.6
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: ozone_2013
+    value: 42.6
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: ozone_2023
+    value: 58.3
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: influenza_months
+    value: 121
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: acf_chd_hot_nights
+    value: 0.508
+    source: outputs/tables/chd_pathway_residual_acf.csv
+  - name: acf_hf_cold_days
+    value: 0.146
+    source: outputs/tables/hf_pathway_residual_acf.csv
+  - name: vif_tmax_tmin
+    value: 4.66
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: vif_hot_vhd
+    value: 1.96
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: chd_hot_nights_joint
+    value: "1.045 (1.015–1.075)"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: chd_hot_nights_range
+    value: "1.011 to 1.025"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: hf_cold_days_range
+    value: "1.043 to 1.113"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: nw3_unrounded_low
+    value: 1.000253
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+  - name: nw3_unrounded_high
+    value: 1.043860
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+  - name: hf_tmin_unrounded_upper
+    value: 1.00005
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: goggins_hf_rr
+    value: "2.63 (2.43–2.84)"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+    note: neighbour; not imported into Table 2
+  - name: influence_chd
+    value: "2020-02"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: influence_hf
+    value: "2022-02"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+
+forbidden_in_this_track:
+  - health improved
+  - admissions averted
+  - gate 3 is closed
+  - failing left ventricle
+  - TWFE
+  - QALY
+  - SYNTHETIC coefficients as findings
+  - Hung et al. as author of 10.1016/j.annemergmed.2021.09.424

@@ -31,12 +31,13 @@ def git_show(ref: str, path: str) -> str:
 
 
 PR69 = "origin/cursor/hogan-methods-rewrite-1754"
+PR70 = "origin/cursor/hogan-methods-rewrite-b75b"
 MS = "manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md"
 
 pr69_ms = git_show(PR69, MS)
-pr70_ms = (ROOT / MS).read_text(encoding="utf-8")
+pr70_ms = git_show(PR70, MS)
 pr69_test = git_show(PR69, "tests/test_hogan_methods_rewrite.py")
-pr70_test = (ROOT / "tests" / "test_hogan_methods_rewrite.py").read_text(encoding="utf-8")
+pr70_test = git_show(PR70, "tests/test_hogan_methods_rewrite.py")
 
 
 def methods(text: str) -> str:
@@ -386,4 +387,11 @@ if FAIL:
     for line in FAIL:
         print(f"  UNCONFIRMED  {line}")
 print(f"\n{'=' * 74}\n{len(PASS)} confirmed, {len(FAIL)} unconfirmed\n{'=' * 74}")
-raise SystemExit(1 if FAIL else 0)
+
+
+def test_opus_verdict_evidence_harness() -> None:
+    assert FAIL == [], "\n".join(FAIL)
+
+
+if __name__ == "__main__":
+    raise SystemExit(1 if FAIL else 0)

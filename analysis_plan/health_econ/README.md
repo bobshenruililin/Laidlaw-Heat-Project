@@ -12,5 +12,6 @@ Prior closed work: [PR 54](https://github.com/bobshenruililin/Laidlaw-Heat-Proje
 | `dag_this_extract.md` | Observational DAG sketch for **this** monthly panel |
 | `generic_advice_map.yml` | Generic US health-econ checklist → what this repo actually does |
 | `lab_note_YYYY-MM-DD.md` | Dated runs (create when the lab is executed) |
+| `lab_note_2026-09-10.md` | Utilisation-shock + MNAR/selection Monte Carlo (SYNTHETIC). Not a finding. |
 
 Schema for pipeline mocking: [`data_processed/samples/SYNTHETIC_chd_hf_schema.csv`](../../data_processed/samples/SYNTHETIC_chd_hf_schema.csv).

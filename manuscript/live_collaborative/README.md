@@ -1,49 +1,69 @@
-# Cover note — paste into the shared live manuscript
+# Live manuscript — analysis-window sensitivity
 
-This folder is the **journal-track** paste pack for Hogan’s live shared file. It is **not** the Laidlaw Stage 3 report. The Stage 3 report and A0 poster stay byte-locked (`knowledge/2026-08-12_sol_stage3_outputs_lock.md`). Do not paste Laidlaw-essay voice, Gate 3 jargon, or F1.1/F1.2 labels into Hogan’s document.
+This folder is the repository wording authority for the candidate journal
+article. On 10 September 2026, Bob authorised an in-place rewrite around
+analysis-window sensitivity during pandemic-era disruption. The rewrite does
+not close Gate 3 and is not a tested pre/post effect.
 
-**Source file:** `Heat_CVD_Manuscript_20260728.docx` (Hogan skeleton, 28 July 2026), archived here as `Heat_CVD_Manuscript_20260728_hogan_comments.docx`.  
-**This update:** 27 August 2026 print copy for Bishai (circulation banner removed; tables unsplit; 21 A4 pages). Science is the 24 August Hogan Methods rewrite (nested Model 1 / Model 2 / Model 3; Table 2 = Model 1; RH and rainfall specified as Model 2; climatology day counts as Model 3; no Results in Methods). Leave his HKO weather paragraph. Health-data ICD/timing remain Roro’s. Author order remains a Bishai/team decision (live-file comment, not a body sentence). Table 2 still needs a governed-panel Model 2 fit. Print file: `Heat_CVD_Manuscript_20260824_hogan.pdf`. Review: [`PRINT_REVIEW_2026-08-27.md`](PRINT_REVIEW_2026-08-27.md).
+The complete thermal-extremes object that preceded this rewrite is frozen at
+[`../archive/thermal_extremes_2026-08/`](../archive/thermal_extremes_2026-08/),
+including the exact Word, PDF, live folder, builder, and SHA-256 manifest.
+Stage 3 outputs remain byte-locked.
 
-**Paste:** use [`LIVE_DOC_EDITS.md`](LIVE_DOC_EDITS.md). 24 Aug comment replies: [`hogan_20260824_paste_replies.md`](hogan_20260824_paste_replies.md). Do **not** email a Word copy. Do not overwrite “Meteorological data was obtained from the HKO.” The 15 August `.docx` is **stale for Methods**.
+## Authority and outputs
 
-**Files**
+| File | Role |
+|:--|:--|
+| `Heat_CVD_Manuscript_live_update.md` | Scientific wording authority |
+| `claim_ledger.md` | Human-readable claim map |
+| `claim_ledger.yml` | Machine ledger for `scripts/50_audit_live_claim_ledger.py` |
+| `supplement_live_track.md` | Assembled live supplement, including S1–S10 |
+| `supplement_inventory.md` | Supplement numbering and provenance |
+| `Heat_CVD_Manuscript_20260910_hogan.docx` | Current Hogan-format Word output |
+| `Heat_CVD_Manuscript_20260910_hogan.pdf` | Current Hogan-format print output |
 
-| File | Use |
-|---|---|
-| `LIVE_DOC_EDITS.md` | Paste order, what not to touch, and how to answer his comments |
-| `hogan_comment_paste_replies.md` | Copy these seven blocks into the live-file bubbles |
-| `hogan_comment_responses.md` | Table of anchors, his comments, and the edits |
-| `hogan_20260824_comment_inventory.md` | Every readable balloon from the 24 Aug PDF |
-| `hogan_20260824_paste_replies.md` | Copy these KW/email replies into the live-file bubbles |
-| `Heat_CVD_Manuscript_live_update.md` | Full draft (Markdown) — **wording authority** |
-| `COMMITTEE_REVIEW_PR69_vs_PR70.md` | Why this pack kept or rejected PR 70 choices (for the PR 70 editor and committee) |
-| `Heat_CVD_Manuscript_20260824_hogan.docx` | Word sibling of the print PDF (24 Aug Methods; Hogan weather verbatim) |
-| `Heat_CVD_Manuscript_20260824_hogan.pdf` | **Print this for Bishai** (banner removed 27 Aug) |
-| `PRINT_REVIEW_2026-08-27.md` | Layout/science check of that PDF |
-| `Heat_CVD_Manuscript_20260815_collab_draft.docx` | Stale for Methods; figures only |
-| `Heat_CVD_Manuscript_20260728_hogan_comments.docx` | Commented 28 July original (provenance) |
-| `Heat_CVD_Manuscript_20260813_collab_draft.docx` | Stale 13 Aug Word copy; do not paste over the 15 Aug text |
-| `methods_remainder_paste.md` | Methods only, with Hogan’s weather paragraph left as a hole |
-| `claim_ledger.md` | Every number → source table (human) |
-| `claim_ledger.yml` | Machine sibling; `python3 scripts/50_audit_live_claim_ledger.py` |
-| `supplement_inventory.md` | Live-pack S1 = residual ACF; S2 = pre-2020 panel; S7 = archive flu; S8 = calibration gates; S9 = archive pollution |
-| `supplement_live_track.md` | Assembled ER-takeable SI (rebuild: `python3 scripts/51_build_live_track_supplement.py`) |
-| `REPASTE_2026-08-18.md` | Short delta after the 15 August paste; do not re-paste the full pack |
-| `../cns_team/` | Architecture, drop-ins, venue note, parent synthesis |
+The dated 24 August Word/PDF remain in this folder for continuity and are also
+copied byte-for-byte into the thermal archive. They are not the scientific
+authority for the new angle.
 
-**How to use**
+## Scientific reading
 
-1. Open the shared Word/Google file. Do not start a parallel manuscript.
-2. Reply to the seven 28 July threads from `hogan_comment_paste_replies.md`.
-3. If Hogan’s *Weather and pollutants data* paragraph is unchanged, paste scientific sections from the Markdown or the 15 August Word file around it. If he has edited weather, paste from `methods_remainder_paste.md` around his current paragraph.
-4. Ask Roro to replace or expand *Health data*.
-5. **Figures.** Insert Figure 1 depletion, Figure 2 DJF heatmap, Figure 3 official-count trend/window forest from `figures/live_identification/figure_D_trend_depletion_sensitivity.png` (portrait rebuild; not a copy of release figure 4). Residual ACF is S1. Continuous-temperature forest is S6.
+- Outcome: monthly count of first hospitalisation after first CHD or HF
+  diagnosis among people with T2D and/or HTN.
+- Full window: January 2013–December 2023 (132 months).
+- Nested window: January 2013–December 2019 (84 months).
+- The two fits do not estimate a post-only effect or a period interaction.
+- Official-day exposures use `I(count/5)` as a reporting scale, not consecutive
+  duration.
+- Model 1 remains the separate-exposure negative-binomial model with
+  calendar-month factors, `ns(time, 4)`, and a days-in-month offset.
+- The uncertainty ladder is Model / HC1 / Newey–West lag 3 / Newey–West lag 6.
+- All twelve full-window Model 1 *q*-values exceed 0.19.
+- Admission cause, still-at-risk person-time, laboratory data, infection,
+  vaccination, serology, age strata, and stroke were not delivered.
 
-**What changed scientifically since 13 August**
+## Hogan constraints
 
-No new health model. The Abstract now carries window dependence. Figure 3 does identification work. Twenty-nine of 132 months carry an official cold day. Ljung–Box reporting was corrected. The archive influenza numeral left the Discussion. The contribution sentence is identification, not discovery. Hogan’s running-title, AMI-scope, factor-list, pollution-window, and thesis comments are answered in the Introduction. Gate 3 remains open.
+Hogan’s HKO paragraph remains verbatim, including:
 
-**What this draft is not**
+> Meteorological data was obtained from the HKO.
 
-It is not a Gate 3 freeze, not a confirmatory primary claim, not a Nature/Science/Cell submission, and not a substitute for Roro’s health-data Methods or Hogan’s weather lock.
+and:
+
+> All monthly data were derived by taking the average of daily data in each calendar month.
+
+Bob owns any paste into Hogan’s shared Word. The repository output is a
+candidate article, not an email attachment sent by an agent.
+
+## Human-owned remainder
+
+- Bishai: whether this candidate replaces thermal extremes as the journal
+  primary; whether a new governed extract is in scope; IRB and dissemination.
+- Hogan: what “improved” meant (point-estimate attenuation, count decline, or
+  physiology).
+- Roro, only after Bishai: outcome semantics, stroke, person-time, age bands,
+  and any approved new extract.
+- Team: authorship and Gate 3.
+
+Prepared questions:
+[`../../analysis_plan/covid_period/bishai_roro_metadata_decision_2026-09-10.md`](../../analysis_plan/covid_period/bishai_roro_metadata_decision_2026-09-10.md).

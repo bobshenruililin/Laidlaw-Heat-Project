@@ -1,11 +1,21 @@
 # Project state & living context — Laidlaw Heat Project
 
-**Last updated:** 2026-08-31
+**Last updated:** 2026-09-10
 **Purpose:** Recover what is true now — science, people, tone, meeting notes — so context compounds.
 
 Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md`.
 
 ---
+
+## 0x. Canonical update — Hogan redirects the candidate journal angle (10 September)
+
+- Hogan’s words: pre- vs post-COVID is more interesting; cold days have “improved” CHD and HF admissions; use thermal extremes to say that is not why the period difference appears; check labs; literature on health improvement.
+- **File, not his verb:** the pre-2020 84 months are contained in the 132-month full window. These are not independent pre/post groups. No interaction or separate 2020–2023 Model 1 is reported. HF cold-day CR is 1.113 pre-2020 vs 1.073 full; CHD cold-day CR is 1.036 vs 0.995; the intervals overlap. First-event counts declined before 2020 and dipped further in 2020.
+- Later years were hotter, while official cold-day frequency was similar. Weather does not supply a complete account and is not irrelevant. Labs, infection, vaccination, antibodies, and person-time were not in the transfer.
+- Bob authorised an in-place repository rewrite. `manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md` is now an **analysis-window sensitivity** paper. The complete thermal predecessor—including live folder, builder, Word, PDF, and hashes—is frozen at `manuscript/archive/thermal_extremes_2026-08/`.
+- Current package: main PDF 21 A4 pages (`3db488899b9db977`), supplement 18 A4 pages (`fdaa4b231b8f922d`). Fable 5.1 and Sol 5.6 stop at **caliber 7 / scientific strength 5**. No agent-owned full-point move remains.
+- Gate 3 remains **OPEN**. Stage 3 PDFs stay byte-locked. No agent sent or pasted the package. Run note: `analysis_plan/prompts/goal_run_2026-09-10.md`.
+- Debrief: [`reports/meeting_debrief_2026-09-10.md`](../reports/meeting_debrief_2026-09-10.md). Incident: [`reports/incident_2026-09-10_scientific_angle_covid.md`](../reports/incident_2026-09-10_scientific_angle_covid.md).
 
 ## 0w. Canonical update — Hogan Word+PDF exceed 24 August snapshot (31 August)
 

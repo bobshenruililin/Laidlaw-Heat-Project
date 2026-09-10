@@ -19,6 +19,8 @@ Assume **non-experimental, ecological, territory-month** data unless a file is l
 
 **Provenance labels.** `REAL`, `SYNTHETIC`, `HA_APPROVED_AGGREGATE`. Never invent HA row counts, ICD lists, IRB numbers, or Model 2/3 health coefficients when panels are absent.
 
-**Generic US health-econ defaults are out of scope for the journal track.** Do not reach for TWFE, Callaway & Sant'Anna, Sun & Abraham, did2s, synthdid, Medicaid expansion DiD, or QALY/CEA simulations when editing `manuscript/live_collaborative/` or Stage 3. Those tools belong only in Playbook 08 (Explore, synthetic).
+**Generic US health-econ defaults are out of scope for the journal track.** Do not reach for TWFE, Callaway & Sant'Anna, Sun & Abraham, did2s, synthdid, Medicaid expansion DiD, or QALY/CEA simulations when editing `manuscript/live_collaborative/`, `manuscript/covid_period/`, or Stage 3. Those tools belong only in Playbook 08 (Explore, synthetic).
+
+**10 Sep 2026 angle (Hogan proposed, not frozen).** Candidate journal headline is pre- vs post-COVID window dependence. Thermal live pack is parked at `manuscript/archive/thermal_extremes_2026-08/`. Do not rewrite `live_collaborative/` in place. Do not write “health improved.” Labs were never in the HA monthly transfer.
 
 **Code defaults when writing estimators for this extract.** R (`MASS::glm.nb`, `splines`, project helpers in `scripts/final_model_helpers.R`), not `fixest` TWFE. Tables already export CSV for the Hogan builder (`scripts/64_hogan_20260824_manuscript_docx.py`) and Laidlaw Quarto/R path.

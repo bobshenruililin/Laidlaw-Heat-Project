@@ -36,7 +36,7 @@ Research is search. After agents, low efficiency on **agent-owned** search is a 
 | **Human-owned gate** | Hogan weather lock; Roro stroke/person-time/ICD; Bishai Gate 3/IRB; Bob paste | Not harness failure. Readiness packets only. |
 | **Refusal is the solution** | All twelve core *q* > 0.19; F1.2 failed *here*; public files cannot replace the governed series; CI-picking is illegal | Found constraint. “Search harder” is illegal. |
 
-The searchable object is a **defensible identification article plus calibrated refusal**, not a significant heat coefficient.
+The searchable object is a **defensible identification article plus calibrated refusal**, not a significant heat coefficient. After 10 Sep 2026 that object may include **F08 period-identification** (`manuscript/covid_period/`). Do not start a silent parallel rewrite of Hogan’s shared live file. Do not treat a dashboard as the paper.
 
 ## Steps
 
@@ -69,6 +69,7 @@ The searchable object is a **defensible identification article plus calibrated r
 - Treating `estimand_policy` as a semantic parser rather than a string tripwire.
 - Claiming this constitution as a new theory of science or priority over Playbook 05 / Basagaña–Ballester.
 - Rebuilding Stage 3 PDFs.
+- Starting a silent parallel live-file rewrite, or promoting a React/D3 dashboard as the identification article.
 
 ## Which files to update
 

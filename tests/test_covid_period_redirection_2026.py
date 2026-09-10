@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LIVE = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_live_update.md"
 COVID = ROOT / "manuscript" / "covid_period" / "Manuscript_covid_period_draft.md"
 PARK = ROOT / "manuscript" / "archive" / "thermal_extremes_2026-08"
+THERMAL_SNAPSHOT = PARK / "live_collaborative_snapshot"
 LEDGER = ROOT / "analysis_plan" / "assumption_ledger.md"
 LEDGER_COVID = ROOT / "manuscript" / "covid_period" / "claim_ledger.yml"
 GATES = ROOT / "analysis_plan" / "decision_gates.md"
@@ -59,12 +60,14 @@ def test_park_readme_exists_and_does_not_freeze_gate3():
     assert "not a Gate 3 freeze" in cover.lower() or "Parking is not a Gate 3 freeze" in cover
 
 
-def test_live_thermal_file_uncut():
-    live = _live()
-    assert "confinement study of seven men" in live
-    assert HOGAN_OPEN in live
-    assert HOGAN_AVG in live
-    methods = live.split("## Methods", 1)[1].split("## Results", 1)[0]
+def test_archived_thermal_file_uncut():
+    archived = (
+        THERMAL_SNAPSHOT / "Heat_CVD_Manuscript_live_update.md"
+    ).read_text(encoding="utf-8")
+    assert "confinement study of seven men" in archived
+    assert HOGAN_OPEN in archived
+    assert HOGAN_AVG in archived
+    methods = archived.split("## Methods", 1)[1].split("## Results", 1)[0]
     assert methods.count(HOGAN_OPEN) == 1
 
 
@@ -208,15 +211,21 @@ def test_search_tree_f08_and_killed_children():
     assert "id: D10" in mem
 
 
-def test_live_hash_unchanged_by_this_track():
-    """Park copies live markdown; live path itself must still be the 10 Sep bytes."""
+def test_thermal_archive_hashes_are_byte_preserved():
+    """The pre-pivot thermal object stays byte-preserved after the live rewrite."""
     import hashlib
 
-    live_sha = hashlib.sha256(LIVE.read_bytes()).hexdigest()[:16]
-    park_sha = hashlib.sha256(
-        (PARK / "Heat_CVD_Manuscript_live_update.md").read_bytes()
-    ).hexdigest()[:16]
-    assert live_sha == park_sha == "21c024bda975f9f5"
+    expected = {
+        "Heat_CVD_Manuscript_live_update.md": "21c024bda975f9f5",
+        "Heat_CVD_Manuscript_20260824_hogan.docx": "852702ded2c4e968",
+        "Heat_CVD_Manuscript_20260824_hogan.pdf": "96b69b7b7ba38513",
+        "claim_ledger.yml": "28a8cf48fd5b3268",
+    }
+    for name, want in expected.items():
+        got = hashlib.sha256((THERMAL_SNAPSHOT / name).read_bytes()).hexdigest()[:16]
+        assert got == want, (name, got, want)
+    builder = PARK / "builder_snapshot" / "64_hogan_20260824_manuscript_docx.py"
+    assert hashlib.sha256(builder.read_bytes()).hexdigest()[:16] == "57e772ec74662999"
 
 
 def test_scientific_search_tree_memory_rails_green():

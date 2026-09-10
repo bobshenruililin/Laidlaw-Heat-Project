@@ -134,13 +134,7 @@ changes in care-seeking without monthly still-at-risk person-time.
 
 ### Exposure context
 
-Mean temperature, hot nights, and very hot days were higher in 2020–2022 than
-in 2013–2019, whereas monthly cold-day frequency was similar (Supplementary
-Table S10). These are exposure summaries, not health effects. Of 145 cold days
-in 2013–2023, 141 fell in December–February. Twenty-nine of 132 months carried
-at least one official cold day (Figure 2). After calendar-month indicators,
-the remaining cold-day variation is between-year winter variation, not a
-summer-versus-winter contrast.
+Mean temperature, hot nights, and very hot days were higher in 2020–2022 than in 2013–2019, whereas monthly cold-day frequency was similar (Supplementary Table S10). These are exposure summaries, not health effects. Of 145 cold days in 2013–2023, 141 fell in December–February. Twenty-nine of 132 months carried at least one official cold day (Figure 2). After calendar-month indicators, the remaining cold-day variation is between-year winter variation, not a summer-versus-winter contrast.
 
 **Figure 2. Official cold days by year and month, Hong Kong Observatory Headquarters, 2013–2023.** Source: Hong Kong Observatory official daily cold-day flags (T~min~ ≤ 12 °C), aggregated to calendar months. Identification is between winters, not a consecutive-duration spell, and not a physiological mechanism.
 
@@ -150,16 +144,7 @@ summer-versus-winter contrast.
 
 Table 2 reports the official-day Model 1 count ratios, per five additional such days in the month, for the full 132 months and for the labelled 84-month specification. Figure 3 is the main identification display for this article, including trend-spline and COVID-phase rows.
 
-The HF cold-day point estimate was 1.113 (1.053–1.176) before 2020 and
-1.073 (1.006–1.144) over 2013–2023. The CHD cold-day estimate was 1.036
-(1.007–1.067) before 2020 and 0.995 (0.949–1.043) in the full window. Both
-pairs of intervals overlap. The CHD hot-night estimate was compatible with 1
-before 2020 (1.011, 0.991–1.032) and was 1.022 (1.002–1.042) in the full
-window. Both displayed full-window estimates have *q* = 0.192. COVID-phase
-indicators on the full sample moved the CHD hot-night ratio to 1.013
-(0.994–1.033) and left the HF cold-day ratio at 1.074 (1.006–1.145). These are
-nested-window sensitivity estimates. No interaction between thermal exposure
-and period was fitted, and there is no post-only Model 1 table.
+The HF cold-day point estimate was 1.113 (1.053–1.176) before 2020 and 1.073 (1.006–1.144) over 2013–2023. The CHD cold-day estimate was 1.036 (1.007–1.067) before 2020 and 0.995 (0.949–1.043) in the full window. Both pairs of intervals overlap. The CHD hot-night estimate was compatible with 1 before 2020 (1.011, 0.991–1.032) and was 1.022 (1.002–1.042) in the full window. Both displayed full-window estimates have *q* = 0.192. COVID-phase indicators on the full sample moved the CHD hot-night ratio to 1.013 (0.994–1.033) and left the HF cold-day ratio at 1.074 (1.006–1.145). These are nested-window sensitivity estimates. No interaction between thermal exposure and period was fitted, and there is no post-only Model 1 table.
 
 **Table 2. Official-day count ratios in the full window and in January 2013–December 2019 (Newey–West lag-6).** Each estimate is the Model 1 count ratio per five additional official days in the month. Pre-2020 is a labelled specification (84 months). Benjamini–Hochberg *q*-values apply to the twelve full-window Model 1 fits only.
 
@@ -202,15 +187,7 @@ constructions does not create multiplicity protection.
 
 ### Analysis-window context
 
-Before 2020, mean temperature was inversely associated with both outcomes
-(CHD 0.980, 0.970–0.990; HF 0.945, 0.927–0.963). In the same 84 months, the
-HF hot-night estimate was 0.965 (0.937–0.994), while the HF cold-day estimate
-was 1.113 (1.053–1.176). Nine of the twelve Newey–West lag-6 intervals
-excluded 1 in that nested window, including all six continuous-temperature
-contrasts (Supplementary Table S2; Supplementary Figure S6). No multiplicity
-control was computed within that window. The panel is not a uniformly null
-monthly result, and the pre-2020 estimates are not promoted beyond sensitivity
-analyses.
+Before 2020, mean temperature was inversely associated with both outcomes (CHD 0.980, 0.970–0.990; HF 0.945, 0.927–0.963). In the same 84 months, the HF hot-night estimate was 0.965 (0.937–0.994), while the HF cold-day estimate was 1.113 (1.053–1.176). Nine of the twelve Newey–West lag-6 intervals excluded 1 in that nested window, including all six continuous-temperature contrasts (Supplementary Table S2; Supplementary Figure S6). No multiplicity control was computed within that window. The panel is not a uniformly null monthly result, and the pre-2020 estimates are not promoted beyond sensitivity analyses.
 
 ### Joint models, residuals, and influence
 
@@ -220,13 +197,7 @@ and 0.146 in the HF cold-day model. Ljung–Box tests at lag 6 gave *p* <
 Serial dependence is therefore part of the CHD mean-model problem, not only an
 interval problem.
 
-Across trend, window, and COVID-phase specifications, the CHD hot-night point
-estimate ranged from 1.011 to 1.025, and the HF cold-day estimate from 1.043
-to 1.113 (Figure 3). February 2020 had the largest Cook’s distance for CHD;
-February 2022 did so for HF cold days. Excluding those months left the
-directions unchanged (CHD hot nights 1.021, 1.001–1.040; HF cold days 1.088,
-1.034–1.144). Full lag, influence, collinearity, residual, and daily-recovery
-diagnostics are reported in Supplementary Tables S3–S8.
+Across trend, window, and COVID-phase specifications, the CHD hot-night point estimate ranged from 1.011 to 1.025, and the HF cold-day estimate from 1.043 to 1.113 (Figure 3). February 2020 had the largest Cook’s distance for CHD; February 2022 did so for HF cold days. Excluding those months left the directions unchanged (CHD hot nights 1.021, 1.001–1.040; HF cold days 1.088, 1.034–1.144). Full lag, influence, collinearity, residual, and daily-recovery diagnostics are reported in Supplementary Tables S3–S8.
 
 ## Discussion
 

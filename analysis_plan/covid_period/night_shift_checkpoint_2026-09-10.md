@@ -13,7 +13,7 @@ K1 physiology-from-counts; K2 TWFE/Callaway/Medicaid; K3 QALY/CEA/cartel/time-in
 ## SYNTHETIC runs this checkpoint
 
 - `scripts/72_synthetic_utilisation_shock.py`
-- `scripts/73_synthetic_mnar_selection.py`
+- `scripts/73_synthetic_mnar_selection.py` (Y-only MNAR, truncation, and X-and-Y MNAR)
 
 ## Next legal mutation (journal track still monthly NB)
 

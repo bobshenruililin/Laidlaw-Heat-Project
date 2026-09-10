@@ -49,3 +49,7 @@ It can show: the **same** official-day encoding, under the **same** Model 1 skel
 ## 5. Kill list (never promote)
 
 Physiological improvement from a count drop; TWFE/Callaway/Medicaid; QALY/cartel/nudge; labs from outdoor T; post-only confirmatory primary; admissions averted; React dashboard as the paper; synthetic Monte Carlo as a Hong Kong result.
+
+## 6. Night-cycle follow-up (read-only audit, then patched)
+
+Independent Grok read: forbidden-phrase PASS; Hogan weather character-identical; CR numerals match NW6 rounding. Gaps closed here: 2020 dips and C&SD 17% entered the claim ledger; *q* = 0.192 attached to both CHD hot nights and HF cold days; literature memo first authors corrected (Wai, not Hung/Wong, on those two DOIs). X-and-Y MNAR added to `scripts/73_synthetic_mnar_selection.py`. Still not a finding.

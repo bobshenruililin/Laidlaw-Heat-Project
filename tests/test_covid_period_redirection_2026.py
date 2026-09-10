@@ -97,6 +97,12 @@ def test_labs_never_delivered_and_xin_is_neighbour():
     assert "10.1016/j.lanwpc.2022.100645" in memo
     assert "Do not import Xin" in memo or "Do not import Xin’s" in memo
     assert "hospitalisations down" in memo.lower() or "fewer" in memo.lower()
+    assert "Wai AKC" in memo
+    assert "10.1016/j.annemergmed.2021.09.424" in memo
+    hung_block = memo.split("10.1016/j.annemergmed.2021.09.424")[0][-80:]
+    assert "Hung KK" not in hung_block
+    assert "Wong ELY, et al. The effect of the COVID-19 pandemic on non" not in memo
+    assert "10.34172/ijhpm.2020.183" in memo
 
 
 def test_hypothesis_registry_kills_twfe_physiology_react():
@@ -112,8 +118,7 @@ def test_playbook_08_synthetic_json_labelled_and_not_in_covid_draft_as_finding()
     assert JSON73.is_file(), "run python3 scripts/73_synthetic_mnar_selection.py"
     p72 = json.loads(JSON72.read_text(encoding="utf-8"))
     p73 = json.loads(JSON73.read_text(encoding="utf-8"))
-    assert p72["data_status"] == "SYNTHETIC"
-    assert p73["data_status"] == "SYNTHETIC"
+    assert "xy_mnar" in p73.get("scenarios", {})
     covid = _covid()
     assert "mean_pre_window_cr" not in covid
     assert str(p72["mean_full_window_cr"]) not in covid

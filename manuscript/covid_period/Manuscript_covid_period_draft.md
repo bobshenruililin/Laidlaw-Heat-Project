@@ -6,7 +6,7 @@
 
 ## Abstract (placeholder)
 
-Do not freeze. Report the existing Newey–West lag-6 window panel. CHD hot nights / 5 days: 1.022 (1.002–1.042) over 132 months, *q* = 0.192; pre-2020 1.011 (0.991–1.032) includes 1. HF cold days / 5 days: 1.073 (1.006–1.144); pre-2020 1.113 (1.053–1.176). All twelve Model 1 *q*-values exceed 0.19. First-event counts halved from 2013 to 2023. Do not call this health improvement.
+Do not freeze. Report the existing Newey–West lag-6 window panel. CHD hot nights / 5 days: 1.022 (1.002–1.042) over 132 months; HF cold days / 5 days: 1.073 (1.006–1.144). Both of those Model 1 contrasts have *q* = 0.192. Pre-2020: CHD hot nights 1.011 (0.991–1.032) includes 1; HF cold days 1.113 (1.053–1.176). All twelve Model 1 *q*-values exceed 0.19. First-event counts halved from 2013 to 2023. Do not call this health improvement.
 
 ## Introduction
 

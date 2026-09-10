@@ -62,6 +62,19 @@ def _truncation_mask(y: np.ndarray) -> np.ndarray:
     return mask
 
 
+def _xy_mnar_mask(y: np.ndarray, x: np.ndarray) -> np.ndarray:
+    """Post-2020 missingness rises with both residualised Y and cold-day X (identifying winters)."""
+    mask = np.ones(N_MONTHS, dtype=bool)
+    post = np.arange(N_MONTHS) >= PRE
+    zy = (y - y.mean()) / max(float(y.std()), 1e-6)
+    zx = (x - x.mean()) / max(float(x.std()), 1e-6)
+    logit = 0.6 * zy + 0.8 * zx
+    p_miss = np.clip(0.12 + 0.28 * (1.0 / (1.0 + np.exp(-logit))), 0.05, 0.65)
+    drop = post & (RNG.uniform(size=N_MONTHS) < p_miss)
+    mask[drop] = False
+    return mask
+
+
 def main() -> None:
     x, days, month = HELPER._design()
     u = np.ones(N_MONTHS)
@@ -70,6 +83,7 @@ def main() -> None:
         "utilisation_only": {"pre": [], "full": []},
         "mnar_missing": {"pre": [], "full": []},
         "selected_truncation": {"pre": [], "full": []},
+        "xy_mnar": {"pre": [], "full": []},
     }
     for _ in range(N_REPS):
         mu = HELPER._mu(x, days, month, u)
@@ -78,12 +92,15 @@ def main() -> None:
         p0, f0 = _fit_pair(y, x, days, complete)
         p1, f1 = _fit_pair(y, x, days, _mnar_mask(y))
         p2, f2 = _fit_pair(y, x, days, _truncation_mask(y))
+        p3, f3 = _fit_pair(y, x, days, _xy_mnar_mask(y, x))
         scenarios["utilisation_only"]["pre"].append(p0)
         scenarios["utilisation_only"]["full"].append(f0)
         scenarios["mnar_missing"]["pre"].append(p1)
         scenarios["mnar_missing"]["full"].append(f1)
         scenarios["selected_truncation"]["pre"].append(p2)
         scenarios["selected_truncation"]["full"].append(f2)
+        scenarios["xy_mnar"]["pre"].append(p3)
+        scenarios["xy_mnar"]["full"].append(f3)
 
     payload: dict = {
         "data_status": "SYNTHETIC",

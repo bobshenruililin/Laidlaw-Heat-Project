@@ -31,12 +31,13 @@ def git_show(ref: str, path: str) -> str:
 
 
 PR69 = "origin/cursor/hogan-methods-rewrite-1754"
+PRE_PIVOT_REF = "637eb6b"
 MS = "manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md"
 
 pr69_ms = git_show(PR69, MS)
-pr70_ms = (ROOT / MS).read_text(encoding="utf-8")
+pr70_ms = git_show(PRE_PIVOT_REF, MS)
 pr69_test = git_show(PR69, "tests/test_hogan_methods_rewrite.py")
-pr70_test = (ROOT / "tests" / "test_hogan_methods_rewrite.py").read_text(encoding="utf-8")
+pr70_test = git_show(PRE_PIVOT_REF, "tests/test_hogan_methods_rewrite.py")
 
 
 def methods(text: str) -> str:

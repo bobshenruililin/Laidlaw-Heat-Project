@@ -1,4 +1,4 @@
-"""Contract checks for the 29 August STORM physiology + HHAP write.
+"""Historical contract checks for the archived 29 August STORM write.
 
 Physiology is labelled hypothesis. HHAP mapping informs and does not evaluate
 Hong Kong warnings. Table 2, Abstract, and Hogan weather sentences stay locked.
@@ -9,10 +9,11 @@ from __future__ import annotations
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MS = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_live_update.md"
+THERMAL_ARCHIVE = ROOT / "manuscript" / "archive" / "thermal_extremes_2026-08"
+MS = THERMAL_ARCHIVE / "live_collaborative_snapshot" / "Heat_CVD_Manuscript_live_update.md"
 ESSAY = ROOT / "reports" / "laidlaw_stage3" / "laidlaw_research_report_2026.md"
 STORM = ROOT / "reports" / "storm_physio_hhap_2026-08-29"
-BUILDER = ROOT / "scripts" / "64_hogan_20260824_manuscript_docx.py"
+BUILDER = THERMAL_ARCHIVE / "builder_snapshot" / "64_hogan_20260824_manuscript_docx.py"
 
 MS_TEXT = MS.read_text(encoding="utf-8")
 ESSAY_TEXT = ESSAY.read_text(encoding="utf-8")

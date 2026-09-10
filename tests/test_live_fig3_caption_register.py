@@ -1,4 +1,4 @@
-"""Contract checks for the live-manuscript Figure 3 caption and the two
+"""Historical contract checks for the archived thermal Figure 3 caption and two
 sensitivity Discussion paragraphs (spline df; consecutive days and warnings).
 
 Locks the Hogan-register wording, the quoted spline-df numerals, and the scope
@@ -14,7 +14,14 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MS = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_live_update.md"
+MS = (
+    ROOT
+    / "manuscript"
+    / "archive"
+    / "thermal_extremes_2026-08"
+    / "live_collaborative_snapshot"
+    / "Heat_CVD_Manuscript_live_update.md"
+)
 SRC = ROOT / "outputs" / "tables" / "cvd_trend_depletion_sensitivity.csv"
 CONTRACT = ROOT / "figures" / "live_identification" / "figure_D_relabel_contract.json"
 

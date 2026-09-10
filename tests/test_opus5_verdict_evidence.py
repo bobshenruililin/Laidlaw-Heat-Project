@@ -387,4 +387,11 @@ if FAIL:
     for line in FAIL:
         print(f"  UNCONFIRMED  {line}")
 print(f"\n{'=' * 74}\n{len(PASS)} confirmed, {len(FAIL)} unconfirmed\n{'=' * 74}")
-raise SystemExit(1 if FAIL else 0)
+
+
+def test_opus_verdict_evidence_harness() -> None:
+    assert FAIL == [], "\n".join(FAIL)
+
+
+if __name__ == "__main__":
+    raise SystemExit(1 if FAIL else 0)

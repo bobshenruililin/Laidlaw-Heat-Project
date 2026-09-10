@@ -17,7 +17,14 @@ CONTRACT = ROOT / "reports" / "crown_df_physiology_2026-08-27" / "crown_contract
 SPELL = ROOT / "reports" / "crown_df_physiology_2026-08-27" / "spell_2018_firewall.json"
 SRC = ROOT / "outputs" / "tables" / "cvd_trend_depletion_sensitivity.csv"
 TABLE2 = ROOT / "outputs" / "release_chd_hf" / "tables" / "table2_core_models.csv"
-MS = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_live_update.md"
+MS = (
+    ROOT
+    / "manuscript"
+    / "archive"
+    / "thermal_extremes_2026-08"
+    / "live_collaborative_snapshot"
+    / "Heat_CVD_Manuscript_live_update.md"
+)
 ANNUAL = ROOT / "outputs" / "tables" / "exposure_aging" / "annual_extremes_and_spell_burden.csv"
 
 

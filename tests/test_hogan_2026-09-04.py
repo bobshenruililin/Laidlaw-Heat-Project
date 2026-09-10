@@ -13,7 +13,14 @@ BRIEF = PACK / "BRIEFING.md"
 TALK = PACK / "TALKING_POINTS.md"
 SCORE = PACK / "APPENDIX_SCORECARD.md"
 SHORT = PACK / "AGENT_OWNED_SHORTEN.md"
-LIVE = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_live_update.md"
+LIVE = (
+    ROOT
+    / "manuscript"
+    / "archive"
+    / "thermal_extremes_2026-08"
+    / "live_collaborative_snapshot"
+    / "Heat_CVD_Manuscript_live_update.md"
+)
 
 
 def _words(text: str) -> list[str]:

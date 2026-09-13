@@ -464,9 +464,9 @@ def _table_widths(caption_text: str, columns: int) -> list[float] | None:
     if caption_text.startswith("Table 2."):
         return [0.85, 1.45, 1.90, 1.90]
     if caption_text.startswith("Table 3."):
-        return [0.85, 2.05, 1.55, 0.85, 0.80]
-    if caption_text.startswith("Table 5."):
         return [0.80, 1.55, 1.25, 1.25, 1.25]
+    if caption_text.startswith("Table 4."):
+        return [0.85, 2.05, 1.55, 0.85, 0.80]
     if columns:
         return [6.1 / columns] * columns
     return None
@@ -939,9 +939,9 @@ def review_main(summary: dict) -> None:
         HOGAN_AVG,
         "Table 1. Outcome summary",
         "Table 2. Official-day count ratios",
-        "Table 3. Model 1",
-        "Table 4. Uncertainty ladder",
-        "Table 5. Mean temperature",
+        "Table 3. Mean temperature",
+        "Table 4. Model 1",
+        "Table 5. Uncertainty ladder",
         "Figure 1. First-event",
         "Figure 2. Official cold days",
         "Figure 3. Model 1 count ratios",
@@ -965,8 +965,8 @@ def review_main(summary: dict) -> None:
     for caption, marker in (
         ("Table 1. Outcome summary", "Coronary heart disease"),
         ("Table 2. Official-day count ratios", "Hot nights / 5 days"),
-        ("Table 4. Uncertainty ladder", "CHD hot nights / 5 days"),
-        ("Table 5. Mean temperature", "Mean temperature / 1 °C"),
+        ("Table 3. Mean temperature", "Mean temperature / 1 °C"),
+        ("Table 5. Uncertainty ladder", "CHD hot nights / 5 days"),
     ):
         assert marker in page_texts[page_of(caption)], (caption, marker)
 
@@ -974,8 +974,8 @@ def review_main(summary: dict) -> None:
     for label, first_cell, last_cell in (
         ("Table 1. Outcome summary", "Coronary heart disease", "Heart failure"),
         ("Table 2. Official-day count ratios", "Hot nights / 5 days", "Cold days / 5 days"),
-        ("Table 3. Model 1", "Mean temperature / 1 °C", "Very hot days / 5 days"),
-        ("Table 5. Mean temperature", "Mean temperature / 1 °C", "Cold days / 5 days"),
+        ("Table 3. Mean temperature", "Mean temperature / 1 °C", "Cold days / 5 days"),
+        ("Table 4. Model 1", "Mean temperature / 1 °C", "Very hot days / 5 days"),
     ):
         page = page_of(label)
         assert first_cell in page_texts[page], (label, first_cell)

@@ -46,7 +46,7 @@ Word file.
 | File | Role |
 |---|---|
 | [`Manuscript_covid_period_draft.md`](Manuscript_covid_period_draft.md) | Candidate IMRD; the scientific object |
-| [`INDEPENDENT_REVIEW.md`](INDEPENDENT_REVIEW.md) | August vs 10 September rewrite vs this draft; diagnosis only |
+| [`INDEPENDENT_REVIEW.md`](INDEPENDENT_REVIEW.md) | August vs 10 September rewrite vs this draft; diagnosis, then 13 September hostile-read FIXes |
 | [`claim_ledger.yml`](claim_ledger.yml) | Every numeral → existing CSV or parked live file; reference, figure, and print bindings |
 | [`Heat_CVD_Manuscript_covid_period.docx`](Heat_CVD_Manuscript_covid_period.docx) | Word view, built by [`../../scripts/78_covid_period_manuscript_docx.py`](../../scripts/78_covid_period_manuscript_docx.py) |
 | [`Heat_CVD_Manuscript_covid_period.pdf`](Heat_CVD_Manuscript_covid_period.pdf) | Print view from the same builder |
@@ -72,4 +72,5 @@ Hogan Word and PDF and forces a page break after every table and figure.
 Hogan confirms whether "improved" meant point-estimate attenuation, the count trajectory, or
 physiology. Bishai decides whether this candidate may replace thermal extremes as the journal
 primary and whether to open a new governed extract. Bob pastes the Astra hostile-read prompt
-after this repair; no agent consults Astra on his behalf.
+after this repair; no agent consults Astra on his behalf. A 13 September in-repo hostile read
+already applied the FIX list in [`INDEPENDENT_REVIEW.md`](INDEPENDENT_REVIEW.md) §8.

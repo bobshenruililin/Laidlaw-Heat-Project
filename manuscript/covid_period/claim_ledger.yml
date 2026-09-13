@@ -297,6 +297,12 @@ numerals:
     value: "2022-02"
     display: "February 2022"
     source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: chd_hot_nights_influence
+    value: "1.021 (1.001–1.040)"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: hf_cold_days_influence
+    value: "1.088 (1.034–1.144)"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
 
 forbidden_in_this_track:
   - health improved

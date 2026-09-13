@@ -1,7 +1,7 @@
 {
   "draft": "manuscript/covid_period/Manuscript_covid_period_draft.md",
   "ledger": "manuscript/covid_period/claim_ledger.yml",
-  "n_pass": 211,
+  "n_pass": 227,
   "n_fail": 0,
   "facts": {
     "citations": {
@@ -36,8 +36,8 @@
       "missing": []
     },
     "page_map": {
-      "pages": 15,
-      "mean_fill_interior": 0.9,
+      "pages": 14,
+      "mean_fill_interior": 0.905,
       "pages_below_45pct": []
     }
   },
@@ -203,6 +203,10 @@
     "source:influence_chd",
     "numeral:influence_hf",
     "source:influence_hf",
+    "numeral:chd_hot_nights_influence",
+    "source:chd_hot_nights_influence",
+    "numeral:hf_cold_days_influence",
+    "source:hf_cold_days_influence",
     "forbidden_absent:Callaway",
     "forbidden_absent:Gate 3",
     "forbidden_absent:Hogan asked",
@@ -229,6 +233,18 @@
     "figure_named:1",
     "figure_named:2",
     "figure_named:3",
+    "results_heading:### Outcome series",
+    "results_heading:### Exposure context",
+    "results_heading:### Nested-window official-day panel",
+    "results_heading:### Twelve-fit thermal exhibit",
+    "results_heading:### Uncertainty ladder",
+    "results_headings:august_scan_order",
+    "results:no_sixth_heading",
+    "cut_absent:The main reported interval is Newey\u2013West",
+    "cut_absent:Nine of the twelve",
+    "cut_absent:left to the supplement",
+    "cut_absent:### Specification and diagnostic checks",
+    "imrd:strengths_before_conclusion",
     "citations:no_missing_entries",
     "citations:no_orphans",
     "citations:list_is_sequential",

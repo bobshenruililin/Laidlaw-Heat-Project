@@ -71,6 +71,21 @@ CR_PATTERN = re.compile(r"\d\.\d{2,3}\s*\(")
 MIN_INTERIOR_FILL = 0.45
 MIN_MEAN_FILL = 0.80
 
+RESULTS_HEADINGS = (
+    "### Outcome series",
+    "### Exposure context",
+    "### Nested-window official-day panel",
+    "### Twelve-fit thermal exhibit",
+    "### Uncertainty ladder",
+)
+
+CUT_RESIDUE = (
+    "The main reported interval is Newey–West",
+    "Nine of the twelve",
+    "left to the supplement",
+    "### Specification and diagnostic checks",
+)
+
 
 def load_yaml(path: Path) -> dict:
     try:
@@ -277,6 +292,59 @@ def check_figures(draft: str) -> tuple[list[str], list[str]]:
     return passes, failures
 
 
+def check_imrd_spine(draft: str) -> tuple[list[str], list[str]]:
+    """One IMRD: named Results headings, no thermal-glue residue, Strengths before Conclusion."""
+    passes: list[str] = []
+    failures: list[str] = []
+    body, _ = split_body_refs(draft)
+
+    positions = []
+    for heading in RESULTS_HEADINGS:
+        idx = body.find(heading)
+        if idx < 0:
+            failures.append(f"missing Results heading: {heading}")
+        else:
+            positions.append(idx)
+            passes.append(f"results_heading:{heading}")
+    if len(positions) == len(RESULTS_HEADINGS) and positions != sorted(positions):
+        failures.append(f"Results headings out of order: {RESULTS_HEADINGS}")
+    elif len(positions) == len(RESULTS_HEADINGS):
+        passes.append("results_headings:august_scan_order")
+
+    extra = re.findall(r"^### .+$", body, re.M)
+    extra = [h for h in extra if h not in RESULTS_HEADINGS]
+    # Methods subheads and other IMRD h2s are ##, so ### should be Results only
+    # plus Methods h3 (####) is not ###. Data-source #### is h3. Statistical
+    # analysis is ### under Methods.
+    allowed_methods = {
+        "### Data sources",
+        "### Statistical analysis",
+        "### Sensitivity analysis",
+        "### Software",
+    }
+    unexpected = [h for h in extra if h not in allowed_methods]
+    if unexpected:
+        failures.append(f"unexpected ### headings: {unexpected}")
+    else:
+        passes.append("results:no_sixth_heading")
+
+    for residue in CUT_RESIDUE:
+        if residue in draft:
+            failures.append(f"cut residue present: {residue!r}")
+        else:
+            passes.append(f"cut_absent:{residue}")
+
+    strengths = body.find("## Strengths and limitations")
+    conclusion = body.find("## Conclusion")
+    if strengths < 0 or conclusion < 0:
+        failures.append("missing Strengths or Conclusion heading")
+    elif strengths > conclusion:
+        failures.append("Strengths and limitations follows Conclusion")
+    else:
+        passes.append("imrd:strengths_before_conclusion")
+    return passes, failures
+
+
 def check_ledger_bindings(ledger: dict, citation_facts: dict) -> tuple[list[str], list[str]]:
     """The ledger binds the reference count, the figure files, and the print outputs."""
     passes: list[str] = []
@@ -426,6 +494,7 @@ def main(argv: list[str] | None = None) -> int:
         lambda: check_forbidden(draft, ledger),
         lambda: check_no_invented_coefficients(draft),
         lambda: check_figures(draft),
+        lambda: check_imrd_spine(draft),
     ):
         ok, bad = fn()
         passes += ok

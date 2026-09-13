@@ -179,7 +179,7 @@ def test_playbook_08_synthetic_json_labelled_and_not_in_covid_draft_as_finding()
 
 
 def test_covid_period_docx_exists_and_keeps_hogan_weather():
-    assert DOCX.is_file(), "run python3 scripts/74_covid_period_manuscript_docx.py"
+    assert DOCX.is_file(), "run python3 scripts/78_covid_period_manuscript_docx.py"
     from docx import Document
 
     doc = Document(str(DOCX))

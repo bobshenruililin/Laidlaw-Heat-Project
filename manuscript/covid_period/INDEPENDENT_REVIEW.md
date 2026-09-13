@@ -125,3 +125,19 @@ Scope is `manuscript/covid_period/` plus new scripts. `live_collaborative/` and
 
 No numeral changed. The parked Model 1 estimates in [`claim_ledger.yml`](claim_ledger.yml) are quoted as they
 already stood.
+
+## 8. Hostile-read pass (13 September 2026)
+
+The 12 September rebuild was one IMRD, not the 10 September glue job. It still carried thermal-paper residue that a hostile read would mark FIX. This pass applied those FIXes. Numerals were not moved. No governed field was invented.
+
+Applied:
+
+- Abstract Methods now names the nested 84 ⊂ 132 official-day ratios as the ruling-out exhibit, not as an afterthought to a thermal primary.
+- Newey–West lag-6 is a display convention matching the parked tables. It is not called the main reported interval. Table 5 is the Model / HC1 / NW3 / NW6 ladder.
+- Table 3 is the encoding contrast (mean temperature versus official days in both windows), inside the nested-window section. Table 4 is the twelve-fit thermal exhibit. The sixth Results heading is gone.
+- "Nine of the twelve" significance-count is cut. Inverse nested-window continuous-temperature fits remain.
+- Daily-recovery Type I error numbers are cut from Results. Methods still records that the method was not applied to the hospital counts.
+- Discussion stops after the three rivals plus one refusal for daily neighbours, Liu mortality, physiology, and heat–health action plans. It does not point at a missing supplement. Influenza and pollution moved to limitations.
+- Strengths and limitations precede Conclusion.
+
+Human-owned leftovers: IRB `UW XX-XXX`; Author 2–4; Acknowledgements `None.`; still-at-risk person-time; stroke file; whether this angle replaces the parked thermal paper. Gate 3 stays open.

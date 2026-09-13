@@ -1,0 +1,60 @@
+{
+  "figure3_png": "figures/covid_period/figure_3_ruling_out_exhibit.png",
+  "live_source_png_untouched": "figures/live_identification/figure_D_trend_depletion_sensitivity.png",
+  "width_in": 6.2,
+  "height_in": 7.35,
+  "dpi": 320,
+  "y_labels": [
+    "Model 1 (time-trend spline, 4 df)",
+    "Time-trend spline, 3 df",
+    "Time-trend spline, 6 df",
+    "Time-trend spline, 8 df",
+    "Year indicators",
+    "Nested 84-month overlapping refit",
+    "COVID-phase intercept (full sample)",
+    "Drop first 12 months",
+    "Drop first 24 months"
+  ],
+  "specification_class": {
+    "baseline_ns4": "trend",
+    "trend_ns3": "trend",
+    "trend_ns6": "trend",
+    "trend_ns8": "trend",
+    "year_fixed_effects": "trend",
+    "pre_covid": "nested",
+    "covid_phase_adjusted": "phase",
+    "drop_first_12_months": "trend",
+    "drop_first_24_months": "trend"
+  },
+  "class_colours": {
+    "trend": "#174d5b",
+    "nested": "#8A3E4C",
+    "phase": "#3D5A80"
+  },
+  "official_column_titles": [
+    "Hot nights / per 5 more official hot nights",
+    "Very hot days / per 5 more official very hot days",
+    "Cold days / per 5 more official cold days"
+  ],
+  "legend_labels": [
+    "Trend / sample-start",
+    "Nested 84-month refit",
+    "COVID-phase intercepts"
+  ],
+  "forbidden_in_figure": [
+    "95% CI excludes 1",
+    "95% CI includes 1",
+    "Supplementary Figure S6",
+    "COVID-period indicators",
+    "Official-count Model 1 estimates: time-trend and window checks"
+  ],
+  "required_in_y_labels": [
+    "Time-trend spline, 6 df",
+    "Time-trend spline, 8 df",
+    "Time-trend spline, 3 df",
+    "Model 1 (time-trend spline, 4 df)",
+    "Nested 84-month overlapping refit",
+    "COVID-phase intercept (full sample)"
+  ],
+  "note": "covid_period Figure 3 is a separate asset. It must not overwrite figures/live_identification/."
+}

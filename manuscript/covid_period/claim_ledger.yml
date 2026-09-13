@@ -68,25 +68,17 @@ numerals:
   - name: hf_annual_2020
     value: 1964
     source: outputs/tables/cvd_descriptive_annual_totals.csv
+  - name: chd_annual_2019
+    value: 12396
+    display: "12,396"
+    source: outputs/tables/cvd_descriptive_annual_totals.csv
+  - name: hf_annual_2019
+    value: 2344
+    display: "2,344"
+    source: outputs/tables/cvd_descriptive_annual_totals.csv
   - name: csd_35plus_rise
     value: "17%"
     source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: chd_mean_monthly_pre2020
-    value: 1315
-    source: outputs/tables/cvd_descriptive_covid_era_means.csv
-    note: "1315.2976 rounded"
-  - name: hf_mean_monthly_pre2020
-    value: 252
-    source: outputs/tables/cvd_descriptive_covid_era_means.csv
-    note: "252.0238 rounded"
-  - name: chd_mean_monthly_2020_2022
-    value: 926
-    source: outputs/tables/cvd_descriptive_covid_era_means.csv
-    note: "926.333 rounded"
-  - name: hf_mean_monthly_2020_2022
-    value: 173
-    source: outputs/tables/cvd_descriptive_covid_era_means.csv
-    note: "172.639 rounded"
   - name: chd_january_mean
     value: 1386
     source: outputs/tables/cvd_descriptive_seasonality_by_month.csv
@@ -106,6 +98,20 @@ numerals:
     value: "1.022 (1.002–1.042)"
     source: outputs/tables/cvd_trend_depletion_sensitivity.csv
     scenario: baseline_ns4
+  - name: chd_hot_nights_model
+    value: "1.022 (0.995–1.049)"
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+  - name: chd_hot_nights_hc1
+    value: "1.022 (0.997–1.047)"
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+  - name: p_model_hf_cold_days
+    value: 0.004
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+    note: "model-based p 0.003959 rounded; not a freeze"
+  - name: p_model_chd_hot_nights
+    value: 0.112
+    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+    note: "model-based p 0.111944 rounded"
   - name: hf_cold_days_full
     value: "1.073 (1.006–1.144)"
     source: outputs/tables/cvd_trend_depletion_sensitivity.csv
@@ -258,9 +264,20 @@ numerals:
   - name: acf_chd_hot_nights
     value: 0.508
     source: outputs/tables/chd_pathway_residual_acf.csv
+  - name: acf_chd_hot_nights_nested
+    value: 0.171
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+    note: "CHD hot nights residual_acf1 0.170878 rounded"
   - name: acf_hf_cold_days
     value: 0.146
     source: outputs/tables/hf_pathway_residual_acf.csv
+  - name: acf_hf_cold_days_nested
+    value: -0.046
+    display: "−0.046"
+    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
+    scenario: pre_covid
+    note: "HF cold days residual_acf1 -0.046486 rounded"
   - name: vif_tmax_tmin
     value: 4.66
     source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
@@ -346,8 +363,8 @@ figures:
     file: figures/live_identification/figure_A_cold_day_identification.png
     role: which months carry the official cold-day contrast
   - label: Figure 3
-    file: figures/live_identification/figure_D_trend_depletion_sensitivity.png
-    role: main identification display across trend, window, and COVID-phase fits
+    file: figures/covid_period/figure_3_ruling_out_exhibit.png
+    role: ruling-out exhibit across trend-spline checks, nested overlapping refit, and full-sample COVID-phase intercept adjustment
 
 print:
   builder: scripts/78_covid_period_manuscript_docx.py

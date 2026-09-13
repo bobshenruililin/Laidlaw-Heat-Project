@@ -363,8 +363,8 @@ figures:
     file: figures/live_identification/figure_A_cold_day_identification.png
     role: which months carry the official cold-day contrast
   - label: Figure 3
-    file: figures/live_identification/figure_D_trend_depletion_sensitivity.png
-    role: ruling-out exhibit across trend, window, and COVID-phase fits
+    file: figures/covid_period/figure_3_ruling_out_exhibit.png
+    role: ruling-out exhibit across trend-spline checks, nested overlapping refit, and full-sample COVID-phase intercept adjustment
 
 print:
   builder: scripts/78_covid_period_manuscript_docx.py

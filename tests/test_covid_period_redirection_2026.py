@@ -91,7 +91,20 @@ def test_covid_period_imrd_keeps_hogan_weather_and_refuses_improvement():
     assert "Hung et al. 2022" not in text
     assert "10.2196/41792" in text
     assert "Xin H" in text
-    assert "insufficient" in low and "not irrelevant" in low
+    assert "insufficient" not in low
+    assert "they remain part of the exposure record" in low
+    assert "weak falsifier" in low
+    assert "ruled out" not in low
+    abstract = text.split("## Abstract", 1)[1].split("## Introduction", 1)[0]
+    intro = text.split("## Introduction", 1)[1].split("## Methods", 1)[0]
+    assert "xin et al." in abstract.lower()
+    assert "cardiovascular deaths" in abstract.lower()
+    assert "neighbouring hong kong series report fewer public hospitalisations and more cardiovascular deaths" not in abstract.lower()
+    assert "cohort of non-covid deaths" not in intro.lower()
+    assert "hong kong studies of 2020 describe fewer cardiovascular admissions" not in intro.lower()
+    assert "figure_3_ruling_out_exhibit.png" in text
+    assert "figure_D_trend_depletion_sensitivity.png" not in text
+    assert "COVID-period specifications" not in text
     assert "Figure 3" in text
     assert "ruling-out exhibit" in text.lower()
     assert "the main identification display" not in text.lower()
@@ -297,3 +310,24 @@ def test_live_claim_ledger_auditor_is_green():
         )
     )
     assert audit["n_fail"] == 0
+
+
+def test_covid_period_figure3_is_a_separate_asset():
+    png = ROOT / "figures" / "covid_period" / "figure_3_ruling_out_exhibit.png"
+    contract_path = ROOT / "figures" / "covid_period" / "figure_3_ruling_out_contract.json"
+    live = ROOT / "figures" / "live_identification" / "figure_D_trend_depletion_sensitivity.png"
+    assert png.is_file()
+    assert live.is_file()
+    contract = json.loads(contract_path.read_text(encoding="utf-8"))
+    labels = " | ".join(contract["y_labels"] + contract["legend_labels"])
+    for bad in contract["forbidden_in_figure"]:
+        assert bad not in labels
+        assert bad not in contract["figure3_png"]
+    for needed in contract["required_in_y_labels"]:
+        assert needed in contract["y_labels"]
+    assert "95% CI excludes 1" not in labels
+    assert "Supplementary Figure S6" not in labels
+    assert contract["figure3_png"] == "figures/covid_period/figure_3_ruling_out_exhibit.png"
+    assert "live_identification" not in contract["figure3_png"]
+    ledger = LEDGER_COVID.read_text(encoding="utf-8")
+    assert "figures/covid_period/figure_3_ruling_out_exhibit.png" in ledger

@@ -45,7 +45,7 @@ MAIN_PDF = COVID_DIR / "Heat_CVD_Manuscript_covid_period.pdf"
 PAGE_MAP = COVID_DIR / "PRINT_PAGE_MAP.md"
 LIVE_PDF = ROOT / "manuscript" / "live_collaborative" / "Heat_CVD_Manuscript_20260910_hogan.pdf"
 
-RUNNING_TITLE = "Window dependence of first CHD/HF hospitalisation"
+RUNNING_TITLE = "Window dependence of first-event counts: official-day exhibit"
 
 # A4 with 2.54 cm margins: the text column is the page height less both margins.
 PAGE_MARGIN_PT = 72.0

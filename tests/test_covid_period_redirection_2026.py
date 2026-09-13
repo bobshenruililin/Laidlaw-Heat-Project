@@ -92,7 +92,14 @@ def test_covid_period_imrd_keeps_hogan_weather_and_refuses_improvement():
     assert "10.2196/41792" in text
     assert "Xin H" in text
     assert "insufficient" in low and "not irrelevant" in low
-    assert "Figure 3" in text and "main identification" in text.lower()
+    assert "Figure 3" in text
+    assert "ruling-out exhibit" in text.lower()
+    assert "the main identification display" not in text.lower()
+    assert "leading exploratory" not in text.lower()
+    assert "Closest to the present heart-failure outcome" not in text
+    assert "Liu et al. (2020, 2026)" not in text
+    assert "type 2 diabetes and/or hypertension" in text.lower()
+    assert "admission cause was not recorded" in text.lower()
 
 
 def test_live_authority_is_analysis_window_sensitivity_not_prepost_effect():

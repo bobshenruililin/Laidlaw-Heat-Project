@@ -17,9 +17,9 @@ OUT = ROOT / "outputs" / "covid_period" / "rails_checks.json"
 
 RESULTS_HEADINGS = (
     "### Outcome series",
-    "### Exposure context",
     "### Nested-window official-day panel",
-    "### Twelve-fit thermal exhibit",
+    "### Encoding contrast",
+    "### Full-window twelve-fit panel",
     "### Uncertainty ladder",
 )
 

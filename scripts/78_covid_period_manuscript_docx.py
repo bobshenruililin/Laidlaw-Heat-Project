@@ -73,8 +73,8 @@ FLOAT_CONTRACT = {"page_break_before_references": False}
 
 # Rendered height caps in inches, chosen so that a caption and its figure fit under
 # body text rather than claiming a page of their own.
-FIGURE_MAX_HEIGHT = {"Figure 1.": 4.4, "Figure 2.": 4.4, "Figure 3.": 4.2}
-FIGURE_DEFAULT_MAX_HEIGHT = 4.4
+FIGURE_MAX_HEIGHT = {"Figure 1.": 5.35, "Figure 2.": 6.80}
+FIGURE_DEFAULT_MAX_HEIGHT = 5.35
 
 TOKEN = re.compile(
     r"(\*\*.+?\*\*|T~min~|T~max~|NO~2~|SO~2~|O~3~|PM~2\.5~|"
@@ -249,7 +249,15 @@ def add_body(
     return p, runs
 
 
-def add_heading(doc: Document, text: str, level: int, *, size: float, new_page: bool = False):
+def add_heading(
+    doc: Document,
+    text: str,
+    level: int,
+    *,
+    size: float,
+    new_page: bool = False,
+    keep_with_next: bool = True,
+):
     p = doc.add_paragraph()
     set_paragraph_format(
         p,
@@ -257,7 +265,7 @@ def add_heading(doc: Document, text: str, level: int, *, size: float, new_page: 
         space_before=0 if new_page else (12 if level == 1 else 8),
         space_after=6,
     )
-    p.paragraph_format.keep_with_next = True
+    p.paragraph_format.keep_with_next = keep_with_next
     p.paragraph_format.keep_together = True
     if new_page:
         p.paragraph_format.page_break_before = True
@@ -443,6 +451,7 @@ def parse_blocks(markdown: str) -> list[tuple[str, list[str]]]:
                 idx < len(lines)
                 and lines[idx].strip()
                 and not lines[idx].startswith(("#", "|", "![", "\\["))
+                and not re.match(r"^\d+\.\s", lines[idx])
             ):
                 paragraph.append(lines[idx])
                 idx += 1
@@ -460,7 +469,7 @@ def _find_run(runs, needle: str):
 
 def _table_widths(caption_text: str, columns: int) -> list[float] | None:
     if caption_text.startswith("Table 1."):
-        return [1.25, 0.75, 0.45, 0.80, 0.70, 2.15]
+        return [1.20, 0.72, 0.58, 0.78, 0.68, 2.14]
     if caption_text.startswith("Table 2."):
         return [0.85, 1.45, 1.90, 1.90]
     if caption_text.startswith("Table 3."):
@@ -483,7 +492,10 @@ BODY_WIDTH_IN = 6.27
 CAPTION_CHARS_PER_LINE = 95
 CAPTION_LINE_IN = 0.16
 TABLE_ROW_IN = 0.17
-CHAIN_LIMIT_IN = 3.5
+# Short floats (Table 1, Table 5) may travel with the sentence that names them.
+# Six-row official-day tables must not: chaining heading + intro + caption + table
+# is what stranded the lower third of pages 9 and 10.
+CHAIN_LIMIT_IN = 1.20
 
 
 def _caption_height(text: str) -> float:
@@ -536,7 +548,7 @@ def _chain_with_caption(blocks: list[tuple[str, list[str]]], index: int) -> bool
     if kind != "paragraph":
         return False
     caption = clean_cell(" ".join(line.strip() for line in lines))
-    if not caption.startswith(("Table ", "Figure ")):
+    if not re.match(r"^(Table|Figure) \d+\.", caption):
         return False
     return _float_block_height(blocks, index + 1) <= CHAIN_LIMIT_IN
 
@@ -573,7 +585,20 @@ def build_main() -> None:
             continue
 
         if kind in ("h2", "h3"):
-            add_heading(doc, lines[0], 2 if kind == "h2" else 3, size=12)
+            keep = True
+            if index + 1 < len(blocks):
+                next_kind, next_lines = blocks[index + 1]
+                if next_kind == "paragraph":
+                    nxt = clean_cell(" ".join(line.strip() for line in next_lines))
+                    if re.match(r"^(Table|Figure) \d+\.", nxt):
+                        keep = _float_block_height(blocks, index + 1) <= CHAIN_LIMIT_IN
+            add_heading(
+                doc,
+                lines[0],
+                2 if kind == "h2" else 3,
+                size=12,
+                keep_with_next=keep,
+            )
             continue
 
         if kind == "equation":
@@ -637,23 +662,29 @@ def build_main() -> None:
             add_body(doc, text, size=10, first_line=False, italic=True, align="center")
             continue
 
-        if plain.startswith(("Table ", "Figure ")):
+        if re.match(r"^(Table|Figure) \d+\.", plain):
             _, runs = add_caption(doc, plain, size=11)
             pending_caption = plain
-            if plain.startswith("Table 2.") and runs:
-                _comment(
-                    doc,
-                    runs[0],
-                    "The 84-month window is contained in the full window. These are "
-                    "nested sensitivity fits, not independent period estimates.",
-                )
             continue
 
         if references and re.match(r"^\d+\.", plain):
             p = doc.add_paragraph()
-            set_paragraph_format(p, first_line=False, space_after=3, align="left")
+            set_paragraph_format(p, first_line=False, space_after=2, align="left")
+            p.paragraph_format.space_after = Pt(2)
+            p.paragraph_format.keep_together = True
             p.paragraph_format.left_indent = Cm(0.75)
             p.paragraph_format.first_line_indent = Cm(-0.75)
+            next_is_ref = False
+            if index + 1 < len(blocks):
+                nxt = " ".join(blocks[index + 1][1]).lstrip()
+                next_is_ref = bool(re.match(r"^\d+\.\s", nxt))
+            remaining_refs = sum(
+                1
+                for j in range(index, len(blocks))
+                if re.match(r"^\d+\.\s", " ".join(blocks[j][1]).lstrip())
+            )
+            # Keep the closing entries together so two citations are not stranded.
+            p.paragraph_format.keep_with_next = next_is_ref and remaining_refs <= 5
             add_rich_runs(p, text, size=11)
             continue
 
@@ -770,7 +801,6 @@ FLOAT_LABELS = (
     "Table 5.",
     "Figure 1.",
     "Figure 2.",
-    "Figure 3.",
 )
 
 
@@ -943,8 +973,7 @@ def review_main(summary: dict) -> None:
         "Table 4. Model 1",
         "Table 5. Uncertainty ladder",
         "Figure 1. First-event",
-        "Figure 2. Official cold days",
-        "Figure 3. Model 1 count ratios",
+        "Figure 2. Official-day Model 1 count ratios",
         "1.022 (1.002-1.042)",
         "1.073 (1.006-1.144)",
         "1.113 (1.053-1.176)",

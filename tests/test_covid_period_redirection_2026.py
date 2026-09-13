@@ -92,7 +92,7 @@ def test_covid_period_imrd_keeps_hogan_weather_and_refuses_improvement():
     assert "10.2196/41792" in text
     assert "Xin H" in text
     assert "insufficient" not in low
-    assert "they remain part of the exposure record" in low
+    assert "remain part of the exposure record" in low
     assert "weak falsifier" in low
     assert "ruled out" not in low
     abstract = text.split("## Abstract", 1)[1].split("## Introduction", 1)[0]
@@ -102,10 +102,13 @@ def test_covid_period_imrd_keeps_hogan_weather_and_refuses_improvement():
     assert "neighbouring hong kong series report fewer public hospitalisations and more cardiovascular deaths" not in abstract.lower()
     assert "cohort of non-covid deaths" not in intro.lower()
     assert "hong kong studies of 2020 describe fewer cardiovascular admissions" not in intro.lower()
-    assert "figure_3_ruling_out_exhibit.png" in text
+    assert "figure_2_nested_vs_full.png" in text
+    assert "figure_1_count_path.png" in text
+    assert "figure_3_ruling_out_exhibit.png" not in text
     assert "figure_D_trend_depletion_sensitivity.png" not in text
+    assert "figure_A_cold_day_identification.png" not in text
     assert "COVID-period specifications" not in text
-    assert "Figure 3" in text
+    assert "Figure 2" in text
     assert "ruling-out exhibit" in text.lower()
     assert "the main identification display" not in text.lower()
     assert "leading exploratory" not in text.lower()
@@ -312,22 +315,34 @@ def test_live_claim_ledger_auditor_is_green():
     assert audit["n_fail"] == 0
 
 
-def test_covid_period_figure3_is_a_separate_asset():
-    png = ROOT / "figures" / "covid_period" / "figure_3_ruling_out_exhibit.png"
+def test_covid_period_figures_are_separate_assets():
+    fig1 = ROOT / "figures" / "covid_period" / "figure_1_count_path.png"
+    fig2 = ROOT / "figures" / "covid_period" / "figure_2_nested_vs_full.png"
     contract_path = ROOT / "figures" / "covid_period" / "figure_3_ruling_out_contract.json"
-    live = ROOT / "figures" / "live_identification" / "figure_D_trend_depletion_sensitivity.png"
-    assert png.is_file()
-    assert live.is_file()
+    live_d = ROOT / "figures" / "live_identification" / "figure_D_trend_depletion_sensitivity.png"
+    live_a = ROOT / "figures" / "live_identification" / "figure_A_cold_day_identification.png"
+    live_b = ROOT / "figures" / "live_identification" / "figure_B_first_event_depletion.png"
+    assert fig1.is_file()
+    assert fig2.is_file()
+    assert live_d.is_file()
+    assert live_a.is_file()
+    assert live_b.is_file()
     contract = json.loads(contract_path.read_text(encoding="utf-8"))
     labels = " | ".join(contract["y_labels"] + contract["legend_labels"])
     for bad in contract["forbidden_in_figure"]:
         assert bad not in labels
-        assert bad not in contract["figure3_png"]
+        assert bad not in (contract.get("figure2_png") or "")
     for needed in contract["required_in_y_labels"]:
         assert needed in contract["y_labels"]
     assert "95% CI excludes 1" not in labels
     assert "Supplementary Figure S6" not in labels
-    assert contract["figure3_png"] == "figures/covid_period/figure_3_ruling_out_exhibit.png"
-    assert "live_identification" not in contract["figure3_png"]
+    assert contract["figure1_png"] == "figures/covid_period/figure_1_count_path.png"
+    assert contract["figure2_png"] == "figures/covid_period/figure_2_nested_vs_full.png"
+    assert "live_identification" not in contract["figure1_png"]
+    assert "live_identification" not in contract["figure2_png"]
+    assert contract["printed_width_in"]["figure1"] >= 5.9
+    assert contract["printed_width_in"]["figure2"] >= 5.9
     ledger = LEDGER_COVID.read_text(encoding="utf-8")
-    assert "figures/covid_period/figure_3_ruling_out_exhibit.png" in ledger
+    assert "figures/covid_period/figure_1_count_path.png" in ledger
+    assert "figures/covid_period/figure_2_nested_vs_full.png" in ledger
+    assert "figure_A_cold_day_identification.png" not in ledger.split("figures:", 1)[-1]

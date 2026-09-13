@@ -73,9 +73,9 @@ MIN_MEAN_FILL = 0.80
 
 RESULTS_HEADINGS = (
     "### Outcome series",
-    "### Exposure context",
     "### Nested-window official-day panel",
-    "### Twelve-fit thermal exhibit",
+    "### Encoding contrast",
+    "### Full-window twelve-fit panel",
     "### Uncertainty ladder",
 )
 
@@ -84,6 +84,8 @@ CUT_RESIDUE = (
     "Nine of the twelve",
     "left to the supplement",
     "### Specification and diagnostic checks",
+    "### Exposure context",
+    "### Twelve-fit thermal exhibit",
 )
 
 
@@ -269,9 +271,13 @@ def check_figures(draft: str) -> tuple[list[str], list[str]]:
     passes: list[str] = []
     failures: list[str] = []
     images = re.findall(r"!\[([^\]]*)\]\(([^)]+)\)", draft)
-    if len(images) != 3:
-        failures.append(f"expected 3 figure embeds, found {len(images)}")
+    if len(images) != 2:
+        failures.append(f"expected 2 figure embeds, found {len(images)}")
     for alt, rel in images:
+        if "live_identification" in rel:
+            failures.append(f"covid_period draft still embeds a live_identification figure: {rel}")
+        if "figure_A_cold_day" in rel or "figure_D_trend_depletion" in rel:
+            failures.append(f"leftover thermal-identification figure: {rel}")
         path = (DRAFT.parent / rel).resolve()
         if not path.is_file():
             failures.append(f"figure file missing: {rel}")
@@ -282,7 +288,7 @@ def check_figures(draft: str) -> tuple[list[str], list[str]]:
             failures.append(f"{label} has no bold caption")
         elif label:
             passes.append(f"figure_caption:{label}")
-    for number in (1, 2, 3):
+    for number in (1, 2):
         body, _ = split_body_refs(draft)
         prose = re.sub(r"\*\*Figure \d[^*]*\*\*", "", body)
         if f"Figure {number}" not in prose:
@@ -370,8 +376,8 @@ def check_ledger_bindings(ledger: dict, citation_facts: dict) -> tuple[list[str]
         passes.append("ledger:reference_count")
 
     figures = ledger.get("figures") or []
-    if len(figures) != 3:
-        failures.append(f"ledger binds {len(figures)} figures, expected 3")
+    if len(figures) != 2:
+        failures.append(f"ledger binds {len(figures)} figures, expected 2")
     for figure in figures:
         rel = figure.get("file", "")
         if not (ROOT / rel).is_file():

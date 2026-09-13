@@ -2,6 +2,13 @@
 # Every numeral in Manuscript_covid_period_draft.md must already exist in a
 # named git CSV or the parked live file. provenance: HA_APPROVED_AGGREGATE
 # or REAL public climate. Never SYNTHETIC as a finding.
+#
+# Audited by scripts/79_covid_period_rails_checks.py. This schema uses `numerals:`,
+# so scripts/50_audit_live_claim_ledger.py cannot read it: pointed here it reports a
+# vacuous one-check pass. The 12 September repair moved no numeral; it added display
+# strings for the influence months and the reference, figure, and print bindings below.
+
+manuscript: manuscript/covid_period/Manuscript_covid_period_draft.md
 
 hogan_weather:
   must_contain: "Meteorological data was obtained from the HKO."
@@ -284,9 +291,17 @@ numerals:
     note: neighbour; not imported into Table 2
   - name: influence_chd
     value: "2020-02"
+    display: "February 2020"
     source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
   - name: influence_hf
     value: "2022-02"
+    display: "February 2022"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: chd_hot_nights_influence
+    value: "1.021 (1.001–1.040)"
+    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
+  - name: hf_cold_days_influence
+    value: "1.088 (1.034–1.144)"
     source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
 
 forbidden_in_this_track:
@@ -298,3 +313,46 @@ forbidden_in_this_track:
   - QALY
   - SYNTHETIC coefficients as findings
   - Hung et al. as author of 10.1016/j.annemergmed.2021.09.424
+
+# References are renumbered in Vancouver order of first appearance. Entries that the
+# repaired body no longer cites were dropped from the main list rather than left
+# unread; none of them was a fabricated citation.
+references:
+  numbering: vancouver_order_of_appearance
+  n_entries: 23
+  dropped_as_uncited:
+    - Ye 2012 ambient temperature and morbidity review
+    - Goggins 2012 daily stroke admissions
+    - Yang 2025 cold weather, influenza, and stroke
+    - Chevance 2024, Ioannou 2024, O'Connor 2025, Ashe 2025 (heat and sleep)
+    - Ikaheimo 2018, Li 2026 (cold exposure physiology)
+    - WHO 2026 heat-health action plan guidance
+    - HKO and CHP heat and cold warning pages, Home Affairs heat shelters
+    - HKO The Year's Weather 2017 and 2024
+  kept_methods_citations:
+    - Bhaskaran 2013 time series regression
+    - Newey and West 1987
+    - Benjamini and Hochberg 1995
+    - Greenland and Morgenstern 1989
+    - Basagana and Ballester 2024, 2026 (aggregation refusal)
+    - HKO, EPD, and Census and Statistics Department sources
+    - Goggins and Chan 2017 humidity, Chan 2013 rainfall
+
+figures:
+  - label: Figure 1
+    file: figures/live_identification/figure_B_first_event_depletion.png
+    role: first-event count path against general population
+  - label: Figure 2
+    file: figures/live_identification/figure_A_cold_day_identification.png
+    role: which months carry the official cold-day contrast
+  - label: Figure 3
+    file: figures/live_identification/figure_D_trend_depletion_sensitivity.png
+    role: main identification display across trend, window, and COVID-phase fits
+
+print:
+  builder: scripts/78_covid_period_manuscript_docx.py
+  word: manuscript/covid_period/Heat_CVD_Manuscript_covid_period.docx
+  pdf: manuscript/covid_period/Heat_CVD_Manuscript_covid_period.pdf
+  page_map: manuscript/covid_period/PRINT_PAGE_MAP.md
+  page_break_after_every_float: false
+  do_not_run_for_this_track: scripts/77_hogan_20260910_live_docx.py

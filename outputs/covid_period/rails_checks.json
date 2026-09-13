@@ -36,8 +36,8 @@
       "missing": []
     },
     "page_map": {
-      "pages": 15,
-      "mean_fill_interior": 0.924,
+      "pages": 16,
+      "mean_fill_interior": 0.884,
       "pages_below_45pct": []
     }
   },
@@ -236,7 +236,7 @@
     "figure_caption:Figure 1",
     "figure_file:figure_A_cold_day_identification.png",
     "figure_caption:Figure 2",
-    "figure_file:figure_D_trend_depletion_sensitivity.png",
+    "figure_file:figure_3_ruling_out_exhibit.png",
     "figure_caption:Figure 3",
     "figure_named:1",
     "figure_named:2",

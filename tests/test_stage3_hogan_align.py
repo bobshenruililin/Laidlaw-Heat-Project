@@ -17,9 +17,9 @@ REPORT_COPY = ROOT / "reports" / "laidlaw_stage3" / "ShenRuililin_Laidlaw_Stage3
 POSTER_COPY = ROOT / "reports" / "poster" / "ShenRuililin_Laidlaw_Stage3Poster.pdf"
 
 # Essay remains the 29 Aug cut. Poster hash is the 15 Sep 2026
-# one-phrase header swap (Laidlaw Scholars Programme → Professor David Bishai).
+# author-line swap plus collaborator-footnote removal.
 REPORT_SHA_PREFIX = "1200082a9e7c9caa"
-POSTER_SHA_PREFIX = "dc7ce3e2f09f6e9a"
+POSTER_SHA_PREFIX = "e3f149ae2ee3f2bd"
 
 BANNED = (
     "core panel",
@@ -93,6 +93,9 @@ def test_poster_is_model1_shown_model23_specified():
     assert "shenrll@connect.hku.hk" in tex or "shen ruililin" in low
     assert "Professor David Bishai" in tex
     assert "Laidlaw Scholars Programme" not in tex
+    assert "Collaborators:" not in tex
+    assert "Hogan (weather definitions)" not in tex
+    assert "Zhenyuan Liu" not in tex
     assert "1.022" in tex and "1.073" in tex
     assert "0.192" in tex
 

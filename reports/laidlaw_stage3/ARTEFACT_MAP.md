@@ -6,7 +6,7 @@
 | Surface | Audience | Status | Route |
 |---|---|---|---|
 | `ShenRuililin_Laidlaw_Stage3Report.pdf` | HKU Laidlaw | **Current lock** — 24 Aug Hogan-aligned rebuild | Submit this essay. Hashes in `analysis_plan/send_pack_2026-08-24/HASH_VERIFY.md`. |
-| `ShenRuililin_Laidlaw_Stage3Poster.pdf` | HKU Laidlaw events | **Current lock** — 24 Aug Hogan-aligned rebuild | One-page A0 portrait. REFERENCES strip, pre-2020 callouts, human collaborator footer. |
+| `ShenRuililin_Laidlaw_Stage3Poster.pdf` | HKU Laidlaw events | **Current lock** — 15 Sep Bishai author line | One-page A0 portrait. REFERENCES strip, pre-2020 callouts, email footer. |
 | `submission_checklist.md` | Bob, supervisor, HKU administration | Living status record | Update administrative completion only. Current send pack: `analysis_plan/send_pack_2026-08-24/`. |
 | `analysis_plan/send_pack_2026-08-24/` | Professor Bishai (programme) | **Current Email A — Bob sends** | Form 2a + 24 Aug essay + optional poster; Thursday 27 Aug print backup. Do not send from an agent account. |
 | `analysis_plan/send_pack_2026-08-22/` | Professor Bishai (programme) | Superseded for sending | 22 August pack. Keep as history. |

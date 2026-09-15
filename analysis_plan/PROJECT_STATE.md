@@ -9,8 +9,8 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 
 ## 0y. Canonical update — Stage 3 poster names Bishai on the header (15 September)
 
-- Bob asked to keep the original A0 layout and replace **Laidlaw Scholars Programme** with **Professor David Bishai**. No “Supervisor:” label, no extra line, no larger type. Footer collaborators restored. Science and figures unchanged. Essay SHA prefix remains `1200082a9e7c9caa`.
-- Current poster SHA prefix `dc7ce3e2f09f6e9a` (1 ISO A0 page). Note: [`knowledge/2026-09-15_stage3_poster_bishai_header.md`](../knowledge/2026-09-15_stage3_poster_bishai_header.md).
+- Bob asked to keep the original A0 layout and replace **Laidlaw Scholars Programme** with **Professor David Bishai**. No “Supervisor:” label, no extra line, no larger type. Hogan and Zhenyuan Liu are removed from the footer; the contact email remains. Science and figures unchanged. Essay SHA prefix remains `1200082a9e7c9caa`.
+- Current poster SHA prefix `e3f149ae2ee3f2bd` (1 ISO A0 page). Note: [`knowledge/2026-09-15_stage3_poster_bishai_header.md`](../knowledge/2026-09-15_stage3_poster_bishai_header.md).
 - Gate 3 remains **OPEN**. This is not a journal authorship decision.
 
 ## 0x. Canonical update — Hogan redirects the candidate journal angle (10 September)
@@ -20,7 +20,7 @@ Also read: `README.md`, `AGENTS.md`, `analysis_plan/human_agent_collaboration.md
 - Later years were hotter, while official cold-day frequency was similar. Weather does not supply a complete account and is not irrelevant. Labs, infection, vaccination, antibodies, and person-time were not in the transfer.
 - Bob authorised an in-place repository rewrite. `manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md` is now an **analysis-window sensitivity** paper. The complete thermal predecessor—including live folder, builder, Word, PDF, and hashes—is frozen at `manuscript/archive/thermal_extremes_2026-08/`.
 - Current package: main PDF 21 A4 pages (`3db488899b9db977`), supplement 18 A4 pages (`fdaa4b231b8f922d`). Fable 5.1 and Sol 5.6 stop at **caliber 7 / scientific strength 5**. No agent-owned full-point move remains.
-- Gate 3 remains **OPEN**. Stage 3 essay stays `1200082a9e7c9caa`. Poster header swap 15 Sep (`dc7ce3e2f09f6e9a`). No agent sent or pasted the package. Run note: `analysis_plan/prompts/goal_run_2026-09-10.md`.
+- Gate 3 remains **OPEN**. Stage 3 essay stays `1200082a9e7c9caa`. Poster header swap 15 Sep (`e3f149ae2ee3f2bd`). No agent sent or pasted the package. Run note: `analysis_plan/prompts/goal_run_2026-09-10.md`.
 - Debrief: [`reports/meeting_debrief_2026-09-10.md`](../reports/meeting_debrief_2026-09-10.md). Incident: [`reports/incident_2026-09-10_scientific_angle_covid.md`](../reports/incident_2026-09-10_scientific_angle_covid.md).
 
 ## 0w. Canonical update — Hogan Word+PDF exceed 24 August snapshot (31 August)

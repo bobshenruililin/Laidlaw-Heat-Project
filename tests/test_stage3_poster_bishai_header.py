@@ -1,4 +1,4 @@
-"""Stage 3 poster: original layout; Laidlaw Scholars Programme replaced by Professor David Bishai."""
+"""Stage 3 poster: original layout; Bishai on the author line; collaborator footnote removed."""
 from __future__ import annotations
 
 import hashlib
@@ -13,7 +13,7 @@ TEX = ROOT / "reports" / "poster" / "Laidlaw_Stage3_A0_portrait.tex"
 PDF = ROOT / "outputs" / "ShenRuililin_Laidlaw_Stage3Poster.pdf"
 PDF_A0 = ROOT / "reports" / "poster" / "Laidlaw_Stage3_A0_portrait.pdf"
 PDF_COPY = ROOT / "reports" / "poster" / "ShenRuililin_Laidlaw_Stage3Poster.pdf"
-POSTER_SHA_PREFIX = "dc7ce3e2f09f6e9a"
+POSTER_SHA_PREFIX = "e3f149ae2ee3f2bd"
 
 
 def _header_tex() -> str:
@@ -32,7 +32,10 @@ def test_tex_replaces_programme_with_bishai_on_original_author_line():
     # Original compact row: one AuthorFont line, not a stacked supervisor block.
     assert header.count("AuthorFont") == 1
     footer = TEX.read_text(encoding="utf-8").split("REFERENCES", 1)[1]
-    assert "Collaborators:" in footer
+    assert "Collaborators:" not in footer
+    assert "Hogan (weather definitions)" not in footer
+    assert "Zhenyuan Liu" not in footer
+    assert "Supervisor:" not in footer
     assert "shenrll@connect.hku.hk" in footer
 
 
@@ -48,6 +51,10 @@ def test_pdf_header_is_original_row_with_bishai_name():
     assert "Professor David Bishai" in text
     assert "Shen Ruililin" in text
     assert "Laidlaw Scholars Programme" not in text
+    assert "Collaborators:" not in text
+    assert "Hogan" not in text
+    assert "Zhenyuan" not in text
+    assert "Supervisor:" not in text
     assert "shenrll@connect.hku.hk" in text
 
     shen = page.search_for("Shen Ruililin")[0]

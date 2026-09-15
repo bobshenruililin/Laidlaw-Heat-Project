@@ -14,7 +14,7 @@ pdflatex -interaction=nonstopmode Laidlaw_Stage3_A0_portrait.tex
 15 September 2026: Bob-authorised one-phrase header swap. Author line is
 **Shen Ruililin | Professor David Bishai | School of Public Health, The University of Hong Kong**
 (original 30 pt row). Laidlaw Scholars Programme text replaced; no extra
-line. Footer is the original collaborator line. Science, figures, and
+line. Footer is the contact email only. Science, figures, and
 callouts are unchanged.
 
 22 August 2026 (night): roundtable fold-back. REFERENCES strip kept. Callouts

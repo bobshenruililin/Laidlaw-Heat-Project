@@ -357,14 +357,11 @@ references:
 
 figures:
   - label: Figure 1
-    file: figures/live_identification/figure_B_first_event_depletion.png
-    role: first-event count path against general population
+    file: figures/covid_period/figure_1_count_path.png
+    role: first-event count path against general population (object 1)
   - label: Figure 2
-    file: figures/live_identification/figure_A_cold_day_identification.png
-    role: which months carry the official cold-day contrast
-  - label: Figure 3
-    file: figures/covid_period/figure_3_ruling_out_exhibit.png
-    role: ruling-out exhibit across trend-spline checks, nested overlapping refit, and full-sample COVID-phase intercept adjustment
+    file: figures/covid_period/figure_2_nested_vs_full.png
+    role: nested 84 versus full 132 official-day ruling-out exhibit (object 2)
 
 print:
   builder: scripts/78_covid_period_manuscript_docx.py

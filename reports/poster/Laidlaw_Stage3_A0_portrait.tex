@@ -34,7 +34,8 @@
 % ---- type scale (actual sizes on A0 print) ----------------------------------
 \newcommand{\TitleFont}{\bfseries\fontsize{74}{84}\selectfont}
 \newcommand{\SubtitleFont}{\fontsize{30}{37}\selectfont}
-\newcommand{\AuthorFont}{\fontsize{30}{37}\selectfont}
+\newcommand{\AuthorFont}{\fontsize{32}{38}\selectfont}
+\newcommand{\SupervisorFont}{\bfseries\fontsize{48}{56}\selectfont}
 \newcommand{\sechead}[1]{%
   {\color{Navy}\bfseries\fontsize{34}{40}\selectfont #1\par}%
   \vspace{1.4mm}{\color{Teal}\rule{\linewidth}{2.6pt}\par}\vspace{7mm}}
@@ -63,13 +64,16 @@
 % Logos sit on Navy, not a white plate: wordmarks reversed to white; crests stay
 % in colour. Stack is vertical because both lockups are horizontal.
 \begin{tcolorbox}[enhanced,colback=Navy,colframe=Navy,boxrule=0pt,arc=0pt,
-  width=\linewidth,left=10mm,right=10mm,top=11mm,bottom=11mm,
+  width=\linewidth,left=10mm,right=10mm,top=9mm,bottom=9mm,
   borderline south={3mm}{0mm}{Teal},before skip=0pt,after skip=0mm]
 \noindent\begin{minipage}[c]{0.74\linewidth}
 \raggedright
-\textcolor{white}{\TitleFont Heat, cold and first hospitalisation\\[2mm]after cardiovascular diagnosis in Hong Kong}\\[6mm]
-\textcolor{PaleTeal}{\SubtitleFont An exploratory monthly study, 2013--2023}\\[8mm]
-\textcolor{white}{\AuthorFont \textbf{Shen Ruililin}\quad\textbar\quad Laidlaw Scholars Programme\quad\textbar\quad School of Public Health, The University of Hong Kong}
+\textcolor{white}{\TitleFont Heat, cold and first hospitalisation\\[2mm]after cardiovascular diagnosis in Hong Kong}\\[4mm]
+\textcolor{PaleTeal}{\SubtitleFont An exploratory monthly study, 2013--2023}\\[5mm]
+\textcolor{white}{\AuthorFont \textbf{Shen Ruililin}}\\[3mm]
+{\color{PaleTeal}\fontsize{26}{32}\selectfont Supervisor:}\quad
+\textcolor{white}{\SupervisorFont Professor David Bishai}\\[2.5mm]
+\textcolor{PaleTeal}{\fontsize{24}{30}\selectfont Laidlaw Scholars Programme\quad\textbar\quad School of Public Health, The University of Hong Kong}
 \end{minipage}\hfill
 \begin{minipage}[c]{0.24\linewidth}
 \centering
@@ -77,7 +81,7 @@
 \includegraphics[width=0.88\linewidth]{assets/laidlaw_logo.png}
 \end{minipage}
 \end{tcolorbox}
-\vspace{6mm}
+\vspace{4mm}
 % ================= TOP BAND: INTRODUCTION | OBJECTIVE + METHODS ==============
 \noindent\begin{minipage}[t]{0.40\textwidth}
 \sechead{INTRODUCTION}
@@ -293,8 +297,6 @@ doi:10.1093/ije/18.1.269\par}
 \end{minipage}
 \end{tcolorbox}
 \vspace{2mm}
-% Footer: human credits; do not restore robotic stock phrases.
-{\fontsize{17.5}{22}\selectfont\color{Slate}Collaborators: Hogan (weather definitions)~\textperiodcentered~
-Zhenyuan Liu (Hospital Authority aggregates)~\textperiodcentered~
-Supervisor: Prof.~David Bishai\hfill shenrll@connect.hku.hk\par}
+% Footer: contact only. Supervisor is in the header; do not restore collaborator names.
+{\fontsize{17.5}{22}\selectfont\color{Slate}\hfill shenrll@connect.hku.hk\par}
 \end{document}

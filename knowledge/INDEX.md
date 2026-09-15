@@ -24,6 +24,7 @@
 
 ## Current meeting record
 
+- [`2026-09-15_stage3_poster_bishai_header.md`](2026-09-15_stage3_poster_bishai_header.md) — A0 poster header names Professor Bishai at 48 pt; Hogan/Zhenyuan off the footer. Essay unchanged. Gate 3 open.
 - [`2026-09-10_highest_reachable_live_paper.md`](2026-09-10_highest_reachable_live_paper.md) — repository live paper rewritten as nested analysis-window sensitivity; complete thermal archive; main/supplement Word+PDF; final Fable/Sol ceiling 7/5; Gate 3 open.
 - [`2026-09-10_covid_period_redirection.md`](2026-09-10_covid_period_redirection.md) — Hogan 10 Sep angle change. Park thermal; COVID-period track. Gate 3 open.
 - [`2026-09-02_autoresearch_hhap_paper.md`](2026-09-02_autoresearch_hhap_paper.md) — WHO 2026 × HK instrument map. Mapping, not evaluation. Hogan live file not overwritten. Gate 3 open.
@@ -104,7 +105,7 @@
 - [`analysis_plan/hogan_live_manuscript_handoff.md`](../analysis_plan/hogan_live_manuscript_handoff.md) — reusable YES/NO decision table and live-manuscript workflow.
 - [`manuscript/live_collaborative/`](../manuscript/live_collaborative/) — journal-track paste pack for Hogan’s shared file (not the Laidlaw report). Present from `Heat_CVD_Manuscript_20260824_hogan.pdf` / `.docx`.
 - [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) — current Laidlaw Stage 3 essay (SHA prefix `1200082a9e7c9caa`, 29 Aug objective-audit cut).
-- [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) — current A0 portrait poster (SHA prefix `a972206e61932650`); Model 1 shown; Models 2–3 specified, not fitted.
+- [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](../outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) — current A0 portrait poster (SHA prefix `340f39cc301622bb`); Professor Bishai on the header; Model 1 shown; Models 2–3 specified, not fitted.
 - [`analysis_plan/send_pack_2026-08-24/`](../analysis_plan/send_pack_2026-08-24/) — current Email A: 24 August essay + form 2a. Replaces the 22 August PDFs for sending.
 - [`analysis_plan/send_pack_2026-08-22/`](../analysis_plan/send_pack_2026-08-22/) — 22 August Email A origin. Superceded for sending.
 - [`analysis_plan/send_pack_2026-08-20/`](../analysis_plan/send_pack_2026-08-20/) — 20 August Email A origin (worksheet, hashes, Q/R). Superseded for sending.

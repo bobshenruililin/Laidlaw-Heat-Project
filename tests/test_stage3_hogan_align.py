@@ -19,7 +19,7 @@ POSTER_COPY = ROOT / "reports" / "poster" / "ShenRuililin_Laidlaw_Stage3Poster.p
 # Essay remains the 29 Aug cut. Poster hash is the 15 Sep 2026
 # authorship rebuild (Bishai on the header; collaborators off the footer).
 REPORT_SHA_PREFIX = "1200082a9e7c9caa"
-POSTER_SHA_PREFIX = "340f39cc301622bb"
+POSTER_SHA_PREFIX = "7881d3a3e6f19640"
 
 BANNED = (
     "core panel",
@@ -91,8 +91,9 @@ def test_poster_is_model1_shown_model23_specified():
     assert "machine-validated" not in low
     assert "privacy-protected" not in low
     assert "shenrll@connect.hku.hk" in tex or "shen ruililin" in low
-    assert "Professor David Bishai" in tex
+    assert "Prof.~David Bishai" in tex or "Prof. David Bishai" in tex
     assert "Collaborators:" not in tex
+    assert "Laidlaw Scholars Programme" not in tex
     assert "1.022" in tex and "1.073" in tex
     assert "0.192" in tex
 

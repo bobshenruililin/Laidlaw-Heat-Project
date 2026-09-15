@@ -11,10 +11,11 @@ pdflatex -interaction=nonstopmode Laidlaw_Stage3_A0_portrait.tex
 - Output: `Laidlaw_Stage3_A0_portrait.pdf` (ISO **A0 portrait**, 841 × 1189 mm, single page)
 - Submission copy: `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` (also copied as `ShenRuililin_Laidlaw_Stage3Poster.pdf` in this folder)
 
-15 September 2026: Bob-authorised authorship rebuild. Header names
-**Shen Ruililin** then **Supervisor: Professor David Bishai** at 48 pt.
-Footer is contact email only. Hogan and Zhenyuan Liu are no longer on the
-sheet. Science, figures, and callouts are unchanged.
+15 September 2026: Bob-authorised authorship rebuild. Header author line is
+**Shen Ruililin | Prof. David Bishai | School of Public Health, The University of Hong Kong**
+(same 30 pt). Laidlaw Scholars Programme text removed. Footer is contact
+email only. Hogan and Zhenyuan Liu are no longer on the sheet. Science,
+figures, and callouts are unchanged.
 
 22 August 2026 (night): roundtable fold-back. REFERENCES strip kept. Callouts
 show pre-2020 CHD 1.011 (includes 1) vs HF 1.113 (excludes 1), with unequal
@@ -47,12 +48,11 @@ unreadable at 1–2 m; v2 moves to a **band architecture** so the sheet is fille
    contact-email footer. Band gutters are 10 mm. Do not put `\vfill` before
    the strip — it ships the block to page 2.
 
-Type scale (actual printed sizes): title 74 pt, subtitle 30 pt, student name
-32 pt, supervisor name 48 pt, affiliation 24 pt, section headings 34 pt
-(uppercase), results sub-heading 26 pt, body 26 pt, callout numbers 50 pt,
-figure labels ≈21–25 pt, captions 18.5 pt, definitions note 20 pt Ink, footer
-17.5 pt, REFERENCES heading 22 pt / entries 17.5 pt. Roughly 650 poster words
-excluding labels, captions and footer (≈575 excluding the two small notes).
+Type scale (actual printed sizes): title 74 pt, subtitle/author 30 pt, section
+headings 34 pt (uppercase), results sub-heading 26 pt, body 26 pt, callout
+numbers 50 pt, figure labels ≈21–25 pt, captions 18.5 pt, definitions note
+20 pt Ink, footer 17.5 pt, REFERENCES heading 22 pt / entries 17.5 pt. Roughly 650 poster words excluding labels, captions
+and footer (≈575 excluding the two small notes).
 
 Palette: deep ink/navy + teal on white; warm accent (#B84A2E) for heat, cool
 blue (#2F6C9C) for cold. Header top-right: HKU then Laidlaw Foundation logos,
@@ -112,4 +112,4 @@ pdflatex -interaction=nonstopmode GEST2026_poster.tex
 
 ## Author
 
-Shen Ruililin — BASc (Global Health and Development), School of Public Health, The University of Hong Kong. Supervisor: Professor David Bishai.
+Shen Ruililin — BASc (Global Health and Development), School of Public Health, The University of Hong Kong. Prof. David Bishai (supervisor).

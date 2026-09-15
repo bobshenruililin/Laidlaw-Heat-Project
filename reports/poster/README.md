@@ -11,11 +11,11 @@ pdflatex -interaction=nonstopmode Laidlaw_Stage3_A0_portrait.tex
 - Output: `Laidlaw_Stage3_A0_portrait.pdf` (ISO **A0 portrait**, 841 × 1189 mm, single page)
 - Submission copy: `outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf` (also copied as `ShenRuililin_Laidlaw_Stage3Poster.pdf` in this folder)
 
-15 September 2026: Bob-authorised authorship rebuild. Header author line is
-**Shen Ruililin | Prof. David Bishai | School of Public Health, The University of Hong Kong**
-(same 30 pt). Laidlaw Scholars Programme text removed. Footer is contact
-email only. Hogan and Zhenyuan Liu are no longer on the sheet. Science,
-figures, and callouts are unchanged.
+15 September 2026: Bob-authorised one-phrase header swap. Author line is
+**Shen Ruililin | Professor David Bishai | School of Public Health, The University of Hong Kong**
+(original 30 pt row). Laidlaw Scholars Programme text replaced; no extra
+line. Footer is the original collaborator line. Science, figures, and
+callouts are unchanged.
 
 22 August 2026 (night): roundtable fold-back. REFERENCES strip kept. Callouts
 show pre-2020 CHD 1.011 (includes 1) vs HF 1.113 (excludes 1), with unequal

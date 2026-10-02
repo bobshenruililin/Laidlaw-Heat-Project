@@ -15,12 +15,12 @@ def test_source_bound_tables_and_claims():
     assert all(x['passed']for x in report['checks'])
 def test_scientific_structure_and_identification_boundaries():
     text=COVID.read_text()
-    headings=['## Abstract','## Introduction','## Methods','## Results','## Discussion','## Conclusion','## Data and code availability','## References']
+    headings=['## Abstract','## Introduction','## Results','## Discussion','## Methods','## Data availability','## Code availability','## References']
     positions=[text.index(h)for h in headings]
     assert positions==sorted(positions)
     assert 'No 2020–2023-only model or exposure-by-period interaction was available.'in text
     assert 'Their difference is not an estimated pre/post effect.'in text
-    assert 'It does not supply the eligible person-time denominator needed for incidence rates.'in text
-    assert 'The thermal panel also cannot exclude weather as an explanation'in text
+    assert 'it does not supply the eligible person-time denominator needed for incidence rates.'in text
+    assert 'the weather models do not exclude a weather contribution'in text
     assert 'UW XX-XXX'not in text
     assert 'Author 2'not in text

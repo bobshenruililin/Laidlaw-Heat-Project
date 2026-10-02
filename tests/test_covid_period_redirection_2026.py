@@ -77,7 +77,7 @@ def test_covid_period_imrd_keeps_hogan_weather_and_refuses_improvement():
     for phrase in FORBIDDEN_COVID:
         assert phrase.lower() not in text.lower(), phrase
     assert "Gate 3" not in text
-    assert "admission cause was not recorded" in text.lower()
+    assert "the transfer did not record admission cause" in text.lower()
     assert "type 2 diabetes and/or hypertension" in text.lower()
     assert "not evidence that cold became protective" in text
     assert "five-day reporting scale did not require consecutive days" in text
@@ -85,7 +85,7 @@ def test_covid_period_imrd_keeps_hogan_weather_and_refuses_improvement():
     assert "10.1016/j.annemergmed.2021.09.424" in text
     assert "10.1016/j.lanwpc.2022.100645" in text
     assert "2023;30:100645" in text
-    assert "figure_annual_counts_20261002.png" in text
+    assert "frozen_publication/annual_counts.png" in text
 
 
 def test_live_authority_is_analysis_window_sensitivity_not_prepost_effect():
@@ -189,6 +189,7 @@ def test_covid_period_docx_exists_and_keeps_hogan_weather():
 def test_covid_claim_ledger_covers_headline_numerals():
     ledger = LEDGER_COVID.read_text(encoding="utf-8")
     text = _covid()
+    supplement = (ROOT / "manuscript/covid_period/Supplement_covid_period.md").read_text()
     for needle in (
         "1.022 (1.002–1.042)",
         "1.073 (1.006–1.144)",
@@ -200,7 +201,7 @@ def test_covid_claim_ledger_covers_headline_numerals():
         "1.036 (1.007–1.067)",
     ):
         assert needle in ledger, needle
-        assert needle in text, needle
+        assert needle in text + supplement, needle
 
 
 def test_mechanism_review_leftover_is_not_the_covid_sendable():
@@ -304,4 +305,4 @@ def test_covid_period_figure3_is_a_separate_asset():
     assert contract["figure3_png"] == "figures/covid_period/figure_3_ruling_out_exhibit.png"
     assert "live_identification" not in contract["figure3_png"]
     ledger = LEDGER_COVID.read_text(encoding="utf-8")
-    assert "figure_annual_counts_20261002.png" in ledger  # Current figure; historical Figure 3 remains parked.
+    assert "frozen_publication/annual_counts.png" in ledger  # Current figure; historical Figure 3 remains parked.

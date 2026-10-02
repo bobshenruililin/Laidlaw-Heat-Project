@@ -1,33 +1,24 @@
-# Current COVID manuscript development track
+# Current COVID manuscript — frozen editorial revision
 
-**Evidence-led revision, 2 October 2026:** a complete exploratory paper on recorded first hospitalisation burden before and during the pandemic. Annual counts declined before 2020, dipped further in 2020 and returned towards 2019 levels by 2023. Thermal models are sensitivity analyses. They do not identify physiological improvement or exclude a weather contribution.
+**2 October 2026:** the article's contribution is a recorded-burden trajectory: counts declined before 2020, fell further in 2020 and approached 2019 levels by 2023. Weather analyses assess the stability of associated interpretations; physiological improvement, a causal COVID effect and changed thermal susceptibility remain unidentified.
 
-Edit `Manuscript_covid_period_draft.md` here. `Heat_CVD_Manuscript_covid_period.docx` and `.pdf` are its review exports. `Supplement_covid_period.md`, `.docx` and `.pdf` report disjoint period means, all twelve baseline models, the complete official-day calendar sensitivity panel and all uncertainty constructions. `claim_ledger.yml` binds their values to approved CSVs and source hashes. `PRINT_PAGE_MAP.md` records the verified exports.
+The editorial evidence authority is [`MANUSCRIPT_FREEZE.md`](../../MANUSCRIPT_FREEZE.md), anchored to PR #103 at `7060606fbe44b14b6b2893929781ac477cea1d46`. This is not a confirmatory primary freeze, clinical verification or dissemination approval. Gate 3 remains open. No new transfer or approved output was available.
 
-The protected HKO paragraph remains verbatim. The following paragraph clarifies that official days are summed threshold indicators and rainfall is a total. Admission cause and eligible person-time remain unavailable. The nested 84-month and full 132-month fits overlap and use recalculated spline bases. No independent 48-month later-era fit or interaction has arrived. Gate 3 remains open.
+Edit `Manuscript_covid_period_draft.md` and `Supplement_covid_period.md`. Their Word and reviewed PDF exports are alongside them. The main article follows Abstract → Introduction → Results → Discussion → Methods → availability → references, with a 190-word abstract and approximately 2,700 words of main prose. It has three main figures: annual counts, the complete twelve-model weather panel, and calendar/uncertainty criticism of two historically discussed associations. The five-page supplement retains seven numbered tables, all 48 baseline interval constructions, diagnostics and two figures. All 108 calendar/window source rows remain available in the numerical source package, including estimates not expanded into the printed tables.
 
-The live shared-document paste target in `../live_collaborative/`, the thermal archive, Stage 3 essay and poster are preserved. This revision supersedes the September candidate here; its earlier wording, ledger and export builder remain recoverable in Git. Do not rebuild the current paper with scripts 78/79/80: those enforce September page/prose/figure contracts, including the obsolete ruling-out framing.
+The entire protected HKO paragraph is unchanged. Its following clarification distinguishes summed threshold-day indicators, monthly means and rainfall totals. Admission cause and eligible person-time remain unavailable. Nested 84-month and full 132-month fits overlap and use recalculated spline bases. They do not supply a direct period difference.
 
-## Reproduce this revision
+[`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) separates the completed reconstruction from historical model generators and unexecuted readiness. Script 86 produces the three new figures from immutable approved summary files; script 81 audits their values and builds Word exports with script 78's formatting helpers. Do not execute historical builders 78/79/80 to rebuild this paper; their September prose contracts are superseded. `claim_ledger.yml`, `frozen_evidence_manifest.json` and `PRINT_PAGE_MAP.md` bind sources, claims and reviewed outputs.
 
-Use the bundled document Python identified by the workspace dependency loader:
+Final review records:
 
-```sh
-python scripts/81_covid_research_manuscript.py --audit
-python scripts/81_covid_research_manuscript.py
-```
+- [`FROZEN_VERIFICATION.md`](../../reports/auto_research/2026-10-02/FROZEN_VERIFICATION.md)
+- [`FROZEN_STATISTICAL_REVIEW.md`](../../reports/auto_research/2026-10-02/FROZEN_STATISTICAL_REVIEW.md)
+- [`FROZEN_CLINICAL_REVIEW.md`](../../reports/auto_research/2026-10-02/FROZEN_CLINICAL_REVIEW.md)
+- [`FROZEN_EDITORIAL_REVIEW.md`](../../reports/auto_research/2026-10-02/FROZEN_EDITORIAL_REVIEW.md)
+- [`FROZEN_REVIEWER_RISK.md`](../../reports/auto_research/2026-10-02/FROZEN_REVIEWER_RISK.md)
+- [`FROZEN_JOURNAL_FIT.md`](../../reports/auto_research/2026-10-02/FROZEN_JOURNAL_FIT.md)
 
-The audit reads only approved aggregate CSVs. It checks actual table values, not their mere presence, and writes the ledger. Render both Word files with the packaged `documents/render_docx.py --emit_pdf`, using bundled LibreOffice, and inspect every page before replacing the PDF exports. The four source-bound figures are produced by `scripts/84_covid_evidence_figures.py` using standard Matplotlib and already-approved summaries; script 82 delegates to this builder. PDF/SVG vector exports and figure-source CSVs accompany the PNGs. Three figures appear in the main article and one in the supplement. No governed monthly health file is read by these operations.
+The previous evidence-led packet, prospective clinical protocol, unsent data request and internal briefing remain historical/planning records. This writing pass changes presentation, not the evidence or the scientific decision recorded in that briefing. No replacement deck was created. The shared live manuscript, thermal archive and programme artifacts are preserved.
 
-Scientific review and next steps:
-
-- `../../reports/auto_research/2026-10-02/EVIDENCE_LED_PACKET.md`
-- `../../reports/auto_research/2026-10-02/EVIDENCE_LED_ADVERSARIAL_REVIEW.md`
-- `../../reports/auto_research/2026-10-02/EVIDENCE_LED_VERIFICATION.md`
-- `../../literature/covid_novelty_audit_2026-10-02.md`
-- `../../analysis_plan/covid_period/evidence_led_protocol_2026-10-02.md`
-- `../../analysis_plan/covid_period/ha_data_request_2026-10-02.md` — DRAFT UNSENT
-- `SUBMISSION_COMPLETION.md`
-
-The closest 2025–2026 diabetes, hypertension and continuity-of-care studies are discussed among the seventeen references. Access limitations and unchecked supplements are in the novelty audit. The prepared common-basis runner is unexecuted and uncalibrated here. Earlier Phase 2 review files are historical checks of their earlier exports.
-No new transfer or approved output was available. Human ethics, event-definition, authorship and dissemination confirmations remain separate from completion of the scientific prose. No sending or submission has occurred.
+Human event-definition, ethics, authorship, dissemination, access-route and submission facts remain in [`SUBMISSION_COMPLETION.md`](SUBMISSION_COMPLETION.md). No collaborator contact, data transfer or journal submission occurred.

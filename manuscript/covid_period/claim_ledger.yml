@@ -5,7 +5,7 @@
   "scope": "Direct source-to-table/value and interpretation checks; no health models run; no governance approval inferred",
   "checks": [
     {
-      "check": "main annual table matches all 22 approved outcome totals",
+      "check": "supplement annual table matches all 22 approved outcome totals",
       "passed": true
     },
     {
@@ -73,6 +73,10 @@
       "passed": true
     },
     {
+      "check": "references follow first-citation order",
+      "passed": true
+    },
+    {
       "check": "entire protected weather paragraph unchanged",
       "passed": true
     },
@@ -81,11 +85,11 @@
       "passed": true
     },
     {
-      "check": "all four figure source and export hashes match the current artifacts",
+      "check": "all three publication figure source and export hashes match current artifacts",
       "passed": true
     },
     {
-      "check": "conceptual diagram is not labelled as a clinical outcome result",
+      "check": "conceptual diagram remains supplementary and explicitly hypothetical",
       "passed": true
     },
     {
@@ -114,6 +118,30 @@
     },
     {
       "check": "interpretation is exploratory",
+      "passed": true
+    },
+    {
+      "check": "all immutable evidence hashes equal the selected PR103 revision",
+      "passed": true
+    },
+    {
+      "check": "manuscript architecture follows the selected publication register",
+      "passed": true
+    },
+    {
+      "check": "all numerical tables retained in supplement",
+      "passed": true
+    },
+    {
+      "check": "all twelve released diagnostic rows match source",
+      "passed": true
+    },
+    {
+      "check": "abstract and prose meet editorial length targets",
+      "passed": true
+    },
+    {
+      "check": "figure and supplement cross references are complete",
       "passed": true
     }
   ],
@@ -498,6 +526,104 @@
           "1.0065–1.1435"
         ]
       ]
+    ],
+    "diagnostics": [
+      [
+        "CHD",
+        "Mean temperature",
+        "160.456",
+        "1.114",
+        "0.534",
+        "1.24e-09"
+      ],
+      [
+        "CHD",
+        "Mean maximum",
+        "160.760",
+        "1.114",
+        "0.533",
+        "1.36e-09"
+      ],
+      [
+        "CHD",
+        "Mean minimum",
+        "160.190",
+        "1.114",
+        "0.532",
+        "1.48e-09"
+      ],
+      [
+        "CHD",
+        "Hot nights",
+        "163.009",
+        "1.116",
+        "0.508",
+        "1.17e-08"
+      ],
+      [
+        "CHD",
+        "Cold days",
+        "159.450",
+        "1.114",
+        "0.528",
+        "2.24e-09"
+      ],
+      [
+        "CHD",
+        "Very hot days",
+        "159.359",
+        "1.114",
+        "0.529",
+        "2.05e-09"
+      ],
+      [
+        "HF",
+        "Mean temperature",
+        "186.459",
+        "1.149",
+        "0.139",
+        "0.469"
+      ],
+      [
+        "HF",
+        "Mean maximum",
+        "178.627",
+        "1.147",
+        "0.150",
+        "0.397"
+      ],
+      [
+        "HF",
+        "Mean minimum",
+        "190.800",
+        "1.151",
+        "0.131",
+        "0.514"
+      ],
+      [
+        "HF",
+        "Hot nights",
+        "164.480",
+        "1.139",
+        "0.174",
+        "0.364"
+      ],
+      [
+        "HF",
+        "Cold days",
+        "188.039",
+        "1.149",
+        "0.146",
+        "0.356"
+      ],
+      [
+        "HF",
+        "Very hot days",
+        "164.636",
+        "1.140",
+        "0.179",
+        "0.319"
+      ]
     ]
   },
   "nested_continuous": {
@@ -519,106 +645,148 @@
     "outputs/tables/cvd_trend_depletion_sensitivity.csv": "061158111bbc79478b8cb54f27687447c213fd1bfc13efe9cf3309996f348e5e",
     "outputs/tables/cvd_core_model_fit.csv": "a486c75264f15fca2e71afed6b0132d49fa301aeae04ae9bb8747a64f76de124"
   },
-  "manuscript_sha256": "8bab6dc9868f5104d594cf23b0a287fbc04df026faf560f55ed2aba9d50efe0c",
+  "freeze_anchor_commit": "7060606fbe44b14b6b2893929781ac477cea1d46",
+  "word_counts": {
+    "abstract": 190,
+    "main_prose": 2717
+  },
+  "claims": {
+    "C01": {
+      "claim": "annual trajectory and totals",
+      "source": "outputs/tables/cvd_descriptive_annual_totals.csv",
+      "transform": "sum/annual totals; percent difference against2019"
+    },
+    "C02": {
+      "claim": "disjoint means are descriptive",
+      "source": "outputs/tables/cvd_descriptive_covid_era_means.csv"
+    },
+    "C03": {
+      "claim": "complete twelve-fit family and multiplicity",
+      "source": "outputs/tables/cvd_core_robust_estimates.csv",
+      "filter": "negative_binomial/days_only/single_exposure/NW6"
+    },
+    "C04": {
+      "claim": "calendar and overlapping-window sensitivity",
+      "source": "outputs/tables/cvd_trend_depletion_sensitivity.csv"
+    },
+    "C05": {
+      "claim": "uncertainty constructions",
+      "source": "outputs/tables/cvd_core_robust_estimates.csv"
+    },
+    "C06": {
+      "claim": "released residual/dispersion diagnostics",
+      "source": "outputs/tables/cvd_core_model_fit.csv"
+    },
+    "C07": {
+      "claim": "recorded outcome, absent cause/person-time",
+      "source": "reports/data_receipt_2026-08-07.md"
+    },
+    "C08": {
+      "claim": "external clinical context, not local measurement",
+      "source": "literature/covid_novelty_sources_2026-10-02.json",
+      "limits": "qualitative evidence only; access statuses retained in source audit"
+    }
+  },
+  "manuscript_sha256": "de0d9dac038b5449b7dc7bf12feb71f60ce23b4f852d8fbd6847f44c6716a045",
   "figures": [
     {
-      "name": "figure_observation_process_20261002",
-      "description": "Conceptual design schematic, not a validated cohort flow or identified causal DAG. Candidate pathways coexist, signs unspecified; no clinical quantities or cohort row counts invented.",
-      "sources": [
-        {
-          "path": "reports/data_receipt_2026-08-07.md",
-          "sha256": "bc54ade4d974a3400692fd5500e68c4f557c75f7af0b33de17b96263e4206497"
-        }
-      ],
-      "outputs": [
-        {
-          "path": "figures/covid_period/figure_observation_process_20261002.png",
-          "sha256": "2c5258f8e5d3587121b6af310888d776b54145b6bf6e0ba3e514d69fbd8f1c15"
-        },
-        {
-          "path": "figures/covid_period/figure_observation_process_20261002.pdf",
-          "sha256": "6518f222e358fd8f3b0863956c2f396e5f01f85bb767252c774805b5cec20404"
-        },
-        {
-          "path": "figures/covid_period/figure_observation_process_20261002.svg",
-          "sha256": "ae15356ef3fa703748f73936537fc6cde7610fa3d4f4aac71b7faaa639119dc9"
-        }
-      ],
-      "data_status": "CONCEPTUAL_HYPOTHESIS"
-    },
-    {
-      "name": "figure_annual_counts_20261002",
-      "description": "Annual raw counts. Shading marks calendar years 2020-2023, not an identified intervention. Panel y-axis ranges differ. No person-time or incidence shown.",
-      "sources": [
+      "name": "annual_counts",
+      "description": "Two zero-origin annual count panels, no territory population rates or inferred monthly records.",
+      "data_status": "HA_APPROVED_AGGREGATE",
+      "width_mm": 180,
+      "minimum_font_pt": 9,
+      "inputs": [
         {
           "path": "outputs/tables/cvd_descriptive_annual_totals.csv",
           "sha256": "2d4997276d77e28761083117e292f438506d07db639deba5bc17c1843e4862e8"
         }
       ],
+      "source_snapshot": {
+        "path": "figures/covid_period/frozen_publication/annual_counts_source.csv",
+        "sha256": "ebe38735ff9f5bc038175b9bf45c85b898cc1dce2991bbc88f9135f399a180b4"
+      },
       "outputs": [
         {
-          "path": "figures/covid_period/figure_annual_counts_20261002.png",
-          "sha256": "9ea8034d6e0af9e3cc14f6118a8b2c7ef0306bdbb282a1e7edb19fd708d58bb0"
+          "path": "figures/covid_period/frozen_publication/annual_counts.png",
+          "sha256": "9cd56e415f1c233fa0c3a75261645c50a1e983d44fa3341da0ec07d3a95768ef"
         },
         {
-          "path": "figures/covid_period/figure_annual_counts_20261002.pdf",
-          "sha256": "69e49970042ac0931340f0cf4aebecd5fc005f6f49c981bf68d7d68d4e424450"
+          "path": "figures/covid_period/frozen_publication/annual_counts.svg",
+          "sha256": "e5792572ee7ee7a65a7ab0ec2688de92dcf37da9fee993987bf87a38a4b9f5c7"
         },
         {
-          "path": "figures/covid_period/figure_annual_counts_20261002.svg",
-          "sha256": "f0f2043617af698c193f77af4453c627dc9b071fc3f58764736f52ee460276ab"
+          "path": "figures/covid_period/frozen_publication/annual_counts.pdf",
+          "sha256": "e80384a408e7676c234149a3439f659909820364375f62bf2b4e134342ce1b40"
         }
       ]
     },
     {
-      "name": "figure_nested_window_associations_20261002",
-      "description": "Six official-count exposure/outcome pairs, two overlapping fits. Recomputed spline bases differ. Full 12-contrast family has BH q>0.19. No significance symbols or post-period contrast.",
-      "sources": [
+      "name": "complete_weather",
+      "description": "Complete twelve baseline NW6 count ratios. Units separated into four panels, exact q-values shown to three decimals, no significance stars.",
+      "data_status": "HA_APPROVED_AGGREGATE",
+      "width_mm": 180,
+      "minimum_font_pt": 9,
+      "inputs": [
         {
-          "path": "outputs/tables/cvd_trend_depletion_sensitivity.csv",
-          "sha256": "061158111bbc79478b8cb54f27687447c213fd1bfc13efe9cf3309996f348e5e"
+          "path": "outputs/tables/cvd_core_robust_estimates.csv",
+          "sha256": "6acfc6f5082780c681c05c48b5953579ad7095d379429dc6125230c8c0824dd4"
         }
       ],
+      "source_snapshot": {
+        "path": "figures/covid_period/frozen_publication/complete_weather_source.csv",
+        "sha256": "e9e4c09482c020bbac20e52037024b32cd8d7723ac15b837f87c152adcf2ab7e"
+      },
       "outputs": [
         {
-          "path": "figures/covid_period/figure_nested_window_associations_20261002.png",
-          "sha256": "181b34e129ebb4f24a19da2ceb32080178ed055f81fa154e17ddb1d0a2902709"
+          "path": "figures/covid_period/frozen_publication/complete_weather.png",
+          "sha256": "58f0454d6731ad5398568f5fdc2a64ece0201733693aef65a4989a5a7a7d6253"
         },
         {
-          "path": "figures/covid_period/figure_nested_window_associations_20261002.pdf",
-          "sha256": "12a7b17e68cd2139fc12d0ca4dd58f5be14e09fb046ec42ef4e03bbeec38c8a4"
+          "path": "figures/covid_period/frozen_publication/complete_weather.svg",
+          "sha256": "b605638f45958834135c10eb1b425e710aff52faccd4485da08b76b7d7a71e45"
         },
         {
-          "path": "figures/covid_period/figure_nested_window_associations_20261002.svg",
-          "sha256": "5972f76298fe5ac71a26b9a17ba69a072866236ce96dae8cb82279127354bd0e"
+          "path": "figures/covid_period/frozen_publication/complete_weather.pdf",
+          "sha256": "76207415f285a716d7435dd6462973a2b4bfa533accb995760e9ec128c008a81"
         }
       ]
     },
     {
-      "name": "figure_calendar_sensitivity_20261002",
-      "description": "Seven fixed displays: baseline plus six calendar/start-window checks for the two historically discussed contrasts. The phase-adjusted intercept fit remains in Supplement Table S3. Other exposures remain in the complete source panel. No refitting or preferred-fit selection.",
-      "sources": [
+      "name": "model_criticism",
+      "description": "Four panels: two seven-scenario calendar displays and two four-method baseline uncertainty ladders. Phase-adjustment and complete 48-interval ladder remain in supplement.",
+      "data_status": "HA_APPROVED_AGGREGATE",
+      "width_mm": 180,
+      "minimum_font_pt": 9,
+      "inputs": [
         {
           "path": "outputs/tables/cvd_trend_depletion_sensitivity.csv",
           "sha256": "061158111bbc79478b8cb54f27687447c213fd1bfc13efe9cf3309996f348e5e"
+        },
+        {
+          "path": "outputs/tables/cvd_core_robust_estimates.csv",
+          "sha256": "6acfc6f5082780c681c05c48b5953579ad7095d379429dc6125230c8c0824dd4"
         }
       ],
+      "source_snapshot": {
+        "path": "figures/covid_period/frozen_publication/model_criticism_source.csv",
+        "sha256": "e189f1c1b615300307898702359a29737b6236e3739cf0adc80688a9e9402884"
+      },
       "outputs": [
         {
-          "path": "figures/covid_period/figure_calendar_sensitivity_20261002.png",
-          "sha256": "221910a57d11c8b184945717199bfbb36286839122058e6ec6c2054cc88229fd"
+          "path": "figures/covid_period/frozen_publication/model_criticism.png",
+          "sha256": "82df0c2d57a4865882ea540995cb213e07b0e5dd832e76cbea3ec94ef58b3a33"
         },
         {
-          "path": "figures/covid_period/figure_calendar_sensitivity_20261002.pdf",
-          "sha256": "26659ef161f4073793f611f6d2805525e1fd04a182496e98762d9b85d4d11ad5"
+          "path": "figures/covid_period/frozen_publication/model_criticism.svg",
+          "sha256": "f907799f70279fb4334c753beaa954d442e8529f60f9a6d08d3dd27f14c5839a"
         },
         {
-          "path": "figures/covid_period/figure_calendar_sensitivity_20261002.svg",
-          "sha256": "cdf7dde7901dedfe88e18b91109ca1cab87652f3df6f670558af51e5537ac24f"
+          "path": "figures/covid_period/frozen_publication/model_criticism.pdf",
+          "sha256": "1f2b1e457f8473dfb92fa0d6e9a2c8aa6134a98de7f35d707dd44e8d6cb31201"
         }
       ]
     }
   ],
   "literature_register_sha256": "5e18f2ddf12d63338accc143e132c78d4998242309b462540cd527e4fce679de",
-  "supplement_sha256": "26a04d776634a6bcd8e212f41b78cd37a5a23b7302d85c957ec9298615dfdeed"
+  "supplement_sha256": "9a8f7f90ac3150418a060a86637e3c173402c7a6d9bfdacd28d37802efcdf926"
 }

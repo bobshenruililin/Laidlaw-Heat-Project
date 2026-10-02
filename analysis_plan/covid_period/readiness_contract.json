@@ -1,0 +1,178 @@
+{
+  "schema_version": "evidence-led-readiness-v1",
+  "status": "PROPOSED_NOT_DELIVERED_NOT_FROZEN",
+  "date": "2026-10-02",
+  "current_transfer": {
+    "provenance": "HA_APPROVED_AGGREGATE",
+    "grain": "territory_calendar_month",
+    "months": 132,
+    "start": "2013-01",
+    "end": "2023-12",
+    "event": "first recorded hospitalisation after first relevant CHD/HF diagnosis among recorded T2D and/or HTN",
+    "admission_cause": "ABSENT",
+    "risk_person_time": "NOT_DELIVERED",
+    "labs": "NOT_DELIVERED",
+    "source_extraction_query": "NOT_LOCATED"
+  },
+  "monthly_runner_input": {
+    "paths": "explicit --chd and --hf; no default secure paths",
+    "required_columns": [
+      "month_id",
+      "year",
+      "month",
+      "time_index",
+      "n_events",
+      "data_status",
+      "days_in_month",
+      "mean_temp",
+      "mean_tmax",
+      "mean_tmin",
+      "hot_nights",
+      "cold_days",
+      "very_hot_days"
+    ],
+    "real_label": "HA_APPROVED_AGGREGATE",
+    "synthetic_labels": [
+      "SYNTHETIC",
+      "SYNTHETIC_CALIBRATION"
+    ],
+    "rules": [
+      "uniform provenance; no real/synthetic mixing",
+      "132 unique continuous months 2013-01 through 2023-12",
+      "time_index exactly 1 through 132",
+      "calendar-derived days agree",
+      "nonnegative integer counts and official day counts; official day counts at most calendar days",
+      "no missing required values; no implicit outcome imputation",
+      "joint CHD/HF calendar and exposure panels must agree"
+    ],
+    "offset": "log(days_in_month); not cohort person-time"
+  },
+  "execution_receipt": {
+    "status": "TEMPLATE_ONLY_DO_NOT_TREAT_AS_APPROVAL",
+    "required_fields": {
+      "schema_version": "analyst-execution-v1",
+      "authorisation_status": "APPROVED_ANALYST_EXECUTION",
+      "input_sha256": {
+        "chd": "EXPLICIT_APPROVED_INPUT_SHA256",
+        "hf": "EXPLICIT_APPROVED_INPUT_SHA256"
+      }
+    },
+    "meaning": "human analyst-execution authority only; not data export or dissemination permission"
+  },
+  "prospective_linked_measurements": {
+    "status": "PROPOSED_NOT_DELIVERED",
+    "minimum": [
+      "validated event definition and ascertainment",
+      "outcome-specific eligible person-time/entry/exit",
+      "death linkage",
+      "care-contact/testing coverage"
+    ],
+    "additional": [
+      "repeated HbA1c/glucose",
+      "blood pressure",
+      "lipids",
+      "creatinine/eGFR",
+      "treatment",
+      "infection/test/vaccination history"
+    ],
+    "handling": "row-level clinical dates and measurements stay in approved environment; only authorised schema/aggregate outputs leave"
+  },
+  "analysis": {
+    "family": "negative_binomial_separate_exposures",
+    "outcomes": [
+      "chd",
+      "hf"
+    ],
+    "exposures": [
+      {
+        "name": "mean_temp",
+        "scale": 1,
+        "unit": "degree_C"
+      },
+      {
+        "name": "mean_tmax",
+        "scale": 1,
+        "unit": "degree_C"
+      },
+      {
+        "name": "mean_tmin",
+        "scale": 1,
+        "unit": "degree_C"
+      },
+      {
+        "name": "hot_nights",
+        "scale": 5,
+        "unit": "official_days"
+      },
+      {
+        "name": "cold_days",
+        "scale": 5,
+        "unit": "official_days"
+      },
+      {
+        "name": "very_hot_days",
+        "scale": 5,
+        "unit": "official_days"
+      }
+    ],
+    "splits": [
+      "2020-01",
+      "2020-02"
+    ],
+    "trend_df": [
+      4,
+      6,
+      8
+    ],
+    "basis": "one full-series basis per declared trend scenario",
+    "se_methods": [
+      "model",
+      "HC1",
+      "NeweyWest_lag3",
+      "NeweyWest_lag6"
+    ],
+    "interaction_family_size": 12,
+    "multiplicity": "BH within split/trend/SE scenario, retaining failed slots; NW6 Jan2020 df4 continuity display",
+    "claim_class": "EXPLORATORY_ASSOCIATION_NOT_CAUSAL_COVID_EFFECT",
+    "numeric_execution_status": "NOT_RUN_R_UNAVAILABLE"
+  },
+  "output_contract": {
+    "release_status": "AWAITING_DISCLOSURE_REVIEW",
+    "location": "explicit absolute empty analyst output directory with existing parent; real outputs outside repository",
+    "artifacts": [
+      "contrasts.csv",
+      "joint_uncertainty.csv",
+      "exposure_support.csv",
+      "dependence.csv",
+      "fit_status.csv",
+      "run_manifest.json"
+    ],
+    "manifest": [
+      "input SHA-256",
+      "execution receipt SHA-256 for real mode",
+      "script SHA-256",
+      "package/runtime versions",
+      "cut dates/trend/scales/SE settings",
+      "all-family membership and fit status",
+      "provenance/output disclosure status"
+    ],
+    "no_patient_rows": true
+  },
+  "validation": {
+    "external": "separately governed independent population with harmonised targets",
+    "internal": "hospital-cluster holdout or temporal replication",
+    "triangulation": "public mortality/other-source pattern checks, not matched cohort validation",
+    "external_results": "reserved until primary schema/SAP lock"
+  },
+  "freeze": {
+    "status": "NOT_FROZEN",
+    "requires": [
+      "schema and extraction semantics verified",
+      "novelty audit resolved",
+      "prospective estimands and rival predictions fixed",
+      "clinical meaningful-difference definitions agreed",
+      "human scientific and access approval",
+      "validation definitions fixed before new associations"
+    ]
+  }
+}

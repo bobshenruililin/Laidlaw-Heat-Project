@@ -94,3 +94,10 @@ The nested pre-2020 continuous-temperature fits were CHD mean temperature 0.980 
 The pre-2020 fit uses 84 of the 132 full-window months and a recalculated spline basis. No independent 2020–2023 coefficient, interaction test or weather standardisation is reported. General-population rates in older aggregate files are omitted because the population is not the eligible first-event risk set.
 
 Tables draw from the repository files outputs/tables/cvd_descriptive_annual_totals.csv, cvd_descriptive_covid_era_means.csv, cvd_core_robust_estimates.csv and cvd_trend_depletion_sensitivity.csv. Baseline diagnostics are in cvd_core_model_fit.csv. All health values have HA_APPROVED_AGGREGATE provenance; no monthly governed files were read to produce this revision.
+
+
+## Visual comparison of nested and full windows
+
+**Supplementary Figure S1. Official day associations in overlapping analysis windows.** Points and Newey–West lag-six 95% confidence intervals reproduce main Table 2. The pre-2020 84 months are contained within the full 132 months, and the spline basis is recalculated in each fit. The paired display is a sensitivity comparison, not independent pre/post estimates or a test of a change. Ratios are per five additional official days, without a consecutive-day requirement.
+
+![Nested and full window associations](../../figures/covid_period/figure_nested_window_associations_20261002.png)

@@ -1,0 +1,103 @@
+{
+  "data_status": "HA_APPROVED_AGGREGATE",
+  "operations": "Released summary-table plotting only; no model fits",
+  "figures": [
+    {
+      "name": "figure_observation_process_20261002",
+      "description": "Conceptual design schematic, not a validated cohort flow or identified causal DAG. Candidate pathways coexist, signs unspecified; no clinical quantities or cohort row counts invented.",
+      "sources": [
+        {
+          "path": "reports/data_receipt_2026-08-07.md",
+          "sha256": "bc54ade4d974a3400692fd5500e68c4f557c75f7af0b33de17b96263e4206497"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "figures/covid_period/figure_observation_process_20261002.png",
+          "sha256": "2c5258f8e5d3587121b6af310888d776b54145b6bf6e0ba3e514d69fbd8f1c15"
+        },
+        {
+          "path": "figures/covid_period/figure_observation_process_20261002.pdf",
+          "sha256": "6518f222e358fd8f3b0863956c2f396e5f01f85bb767252c774805b5cec20404"
+        },
+        {
+          "path": "figures/covid_period/figure_observation_process_20261002.svg",
+          "sha256": "ae15356ef3fa703748f73936537fc6cde7610fa3d4f4aac71b7faaa639119dc9"
+        }
+      ],
+      "data_status": "CONCEPTUAL_HYPOTHESIS"
+    },
+    {
+      "name": "figure_annual_counts_20261002",
+      "description": "Annual raw counts. Shading marks calendar years 2020-2023, not an identified intervention. Panel y-axis ranges differ. No person-time or incidence shown.",
+      "sources": [
+        {
+          "path": "outputs/tables/cvd_descriptive_annual_totals.csv",
+          "sha256": "2d4997276d77e28761083117e292f438506d07db639deba5bc17c1843e4862e8"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "figures/covid_period/figure_annual_counts_20261002.png",
+          "sha256": "9ea8034d6e0af9e3cc14f6118a8b2c7ef0306bdbb282a1e7edb19fd708d58bb0"
+        },
+        {
+          "path": "figures/covid_period/figure_annual_counts_20261002.pdf",
+          "sha256": "69e49970042ac0931340f0cf4aebecd5fc005f6f49c981bf68d7d68d4e424450"
+        },
+        {
+          "path": "figures/covid_period/figure_annual_counts_20261002.svg",
+          "sha256": "f0f2043617af698c193f77af4453c627dc9b071fc3f58764736f52ee460276ab"
+        }
+      ]
+    },
+    {
+      "name": "figure_nested_window_associations_20261002",
+      "description": "Six official-count exposure/outcome pairs, two overlapping fits. Recomputed spline bases differ. Full 12-contrast family has BH q>0.19. No significance symbols or post-period contrast.",
+      "sources": [
+        {
+          "path": "outputs/tables/cvd_trend_depletion_sensitivity.csv",
+          "sha256": "061158111bbc79478b8cb54f27687447c213fd1bfc13efe9cf3309996f348e5e"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "figures/covid_period/figure_nested_window_associations_20261002.png",
+          "sha256": "181b34e129ebb4f24a19da2ceb32080178ed055f81fa154e17ddb1d0a2902709"
+        },
+        {
+          "path": "figures/covid_period/figure_nested_window_associations_20261002.pdf",
+          "sha256": "12a7b17e68cd2139fc12d0ca4dd58f5be14e09fb046ec42ef4e03bbeec38c8a4"
+        },
+        {
+          "path": "figures/covid_period/figure_nested_window_associations_20261002.svg",
+          "sha256": "5972f76298fe5ac71a26b9a17ba69a072866236ce96dae8cb82279127354bd0e"
+        }
+      ]
+    },
+    {
+      "name": "figure_calendar_sensitivity_20261002",
+      "description": "Seven fixed displays: baseline plus six calendar/start-window checks for the two historically discussed contrasts. The phase-adjusted intercept fit remains in Supplement Table S3. Other exposures remain in the complete source panel. No refitting or preferred-fit selection.",
+      "sources": [
+        {
+          "path": "outputs/tables/cvd_trend_depletion_sensitivity.csv",
+          "sha256": "061158111bbc79478b8cb54f27687447c213fd1bfc13efe9cf3309996f348e5e"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "figures/covid_period/figure_calendar_sensitivity_20261002.png",
+          "sha256": "221910a57d11c8b184945717199bfbb36286839122058e6ec6c2054cc88229fd"
+        },
+        {
+          "path": "figures/covid_period/figure_calendar_sensitivity_20261002.pdf",
+          "sha256": "26659ef161f4073793f611f6d2805525e1fd04a182496e98762d9b85d4d11ad5"
+        },
+        {
+          "path": "figures/covid_period/figure_calendar_sensitivity_20261002.svg",
+          "sha256": "cdf7dde7901dedfe88e18b91109ca1cab87652f3df6f670558af51e5537ac24f"
+        }
+      ]
+    }
+  ]
+}

@@ -182,7 +182,8 @@ def test_covid_period_docx_exists_and_keeps_hogan_weather():
     assert "Gate 3" not in joined
     assert "placeholder" not in joined.lower()
     assert "Wai AKC" in joined
-    assert "First recorded hospitalisations" in joined
+    assert doc.paragraphs[0].text == _covid().splitlines()[0].removeprefix("# ")
+    assert "first recorded hospitalisation after" in joined.lower()
 
 
 def test_covid_claim_ledger_covers_headline_numerals():

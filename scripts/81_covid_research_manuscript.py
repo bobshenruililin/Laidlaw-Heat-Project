@@ -49,14 +49,21 @@ def audit():
    pct=100*(1-a[o,y]/a[o,2019]);ck(f'{o} {y} percentage versus 2019',f'{pct:.1f}%'in main)
  ck('multiplicity minimum correctly displayed',round(min(float(r['q_value_core_bh'])for r in d.values()),3)==.192 and '0.192'in main)
  ck('near-null HF minimum interval and p value use unrounded source',f"{float(d['hf','mean_tmin']['rr_high']):.10f}"in supp and f"{float(d['hf','mean_tmin']['p_value']):.4f}"in supp)
- ck('reference numbering complete',sorted(set(int(x)for group in re.findall(r'\[([0-9, ]+)\]',main) for x in group.split(',')))==list(range(1,15)) and len(re.findall(r'^\d+\. ',main,re.M))==14)
+ ck('reference numbering complete',sorted(set(int(x)for group in re.findall(r'\[([0-9, ]+)\]',main) for x in group.split(',')))==list(range(1,18)) and len(re.findall(r'^\d+\. ',main,re.M))==17)
  weather=next(x for x in main.split('\n\n')if x.startswith(b.HOGAN_OPEN));live=(ROOT/'manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md').read_text();ck('entire protected weather paragraph unchanged',weather in live)
  ck('all health source rows retain approved aggregate label',all(r['data_status']=='HA_APPROVED_AGGREGATE'for r in annual+era+core+sens))
+ fm=json.loads((ROOT/'figures/covid_period/evidence_figures_manifest_20261002.json').read_text())
+ ck('all four figure source and export hashes match the current artifacts',len(fm['figures'])==4 and all(hashlib.sha256((ROOT/item['path']).read_bytes()).hexdigest()==item['sha256'] for f in fm['figures'] for item in f['sources']+f['outputs']))
+ ck('conceptual diagram is not labelled as a clinical outcome result',fm['figures'][0]['data_status']=='CONCEPTUAL_HYPOTHESIS' and 'Conceptual diagram' in main)
+ ck('three new close precedents are cited without inconsistent abstract numbers',all(doi in main for doi in ['10.1002/hsr2.71291','10.1038/s41440-025-02230-y','10.1111/dom.70984']) and '1,226,685' not in main and '1.108' not in main)
+ ck('actual annual counts caption matches the revised figure', 'Separate panels show annual counts' in main and 'indexed to 2013' not in main)
+ ck('new clinical follow-up is external evidence, with less conclusive endpoints shown','results for stroke and all-cause mortality were less conclusive' in main)
+
  ck('no temporary tokens or fabricated declarations',not any(x in main+supp for x in ['ANNUAL_TABLE','OFFICIAL_TABLE','REFERENCES','UW XX-XXX','Author 2','Gate 3','ruling-out exhibit','Positive serial correlation should inflate']))
  ck('later-era limitation remains explicit','No 2020–2023-only model or exposure-by-period interaction was available.'in main)
  ck('weather exclusion is not inferred','The thermal panel also cannot exclude weather as an explanation'in main)
  ck('interpretation is exploratory','not evidence that cold became protective'in main)
- out={'date':'2026-10-02','status':'PASS','scope':'Direct source-to-table/value and interpretation checks; no health models run; no governance approval inferred','checks':checks,'tables':{'annual':mt[0],'official_nested_full':mt[1],'disjoint_periods':st[0],'full_panel':st[1],'calendar_sensitivity':st[2:4],'uncertainty':st[4:6]},'nested_continuous':{o:{e:ci(s[o,e,'pre_covid'])for e in EXPS[:3]}for o in ['chd','hf']},'sources':{f:hashlib.sha256((ROOT/f).read_bytes()).hexdigest()for f in SOURCES},'manuscript_sha256':hashlib.sha256((M/'Manuscript_covid_period_draft.md').read_bytes()).hexdigest(),'figure':{'path':'figures/covid_period/figure_annual_counts_20261002.png','sha256':hashlib.sha256((ROOT/'figures/covid_period/figure_annual_counts_20261002.png').read_bytes()).hexdigest()},'supplement_sha256':hashlib.sha256((M/'Supplement_covid_period.md').read_bytes()).hexdigest()}
+ out={'date':'2026-10-02','status':'PASS','scope':'Direct source-to-table/value and interpretation checks; no health models run; no governance approval inferred','checks':checks,'tables':{'annual':mt[0],'official_nested_full':mt[1],'disjoint_periods':st[0],'full_panel':st[1],'calendar_sensitivity':st[2:4],'uncertainty':st[4:6]},'nested_continuous':{o:{e:ci(s[o,e,'pre_covid'])for e in EXPS[:3]}for o in ['chd','hf']},'sources':{f:hashlib.sha256((ROOT/f).read_bytes()).hexdigest()for f in SOURCES},'manuscript_sha256':hashlib.sha256((M/'Manuscript_covid_period_draft.md').read_bytes()).hexdigest(),'figures':fm['figures'],'literature_register_sha256':hashlib.sha256((ROOT/'literature/covid_novelty_sources_2026-10-02.json').read_bytes()).hexdigest(),'supplement_sha256':hashlib.sha256((M/'Supplement_covid_period.md').read_bytes()).hexdigest()}
  (M/'claim_ledger.yml').write_text('# JSON is a YAML subset. Audit of the current COVID revision; historical ledger is in Git.\n'+json.dumps(out,indent=2,ensure_ascii=False)+'\n')
  print(f"PASS: {len(checks)} source and claim checks")
 
@@ -81,7 +88,7 @@ def build():
    if kind in ['h1','h2','h3']:
     p,_=b.add_heading(doc,txt,1 if kind=='h1'else 2,size=11.5);p.style='Heading 1'if kind=='h1'else'Heading 2';continue
    if kind=='equation':
-    b.add_body(doc,'log E(Yₜ) = log(dₜ) + α + βXₜ + Σₘ₌₂¹² γₘ I(monthₜ = m) + s(t; 4 df).  (1)',size=11,first_line=False,align='center');continue
+    equation_paragraph,_=b.add_body(doc,'log E(Yₜ) = log(dₜ) + α + βXₜ + Σₘ₌₂¹² γₘ I(monthₜ = m) + s(t; 4 df).  (1)',size=11,first_line=False,align='center');equation_paragraph.paragraph_format.keep_with_next=True;continue
    if kind=='table':
     headers,rows=b.parse_table(lines);n=len(headers)
     widths=([.7,2.7,2.7]if n==3 else[.65,1.6,1.925,1.925]if source.startswith('Manuscript')else[1.85]+[4.25/(n-1)]*(n-1))

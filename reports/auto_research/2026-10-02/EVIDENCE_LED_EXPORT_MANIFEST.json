@@ -1,0 +1,57 @@
+{
+  "status": "REVIEW_EXPORTS_NOT_SUBMITTED",
+  "governed_inputs_opened": false,
+  "new_models_executed": false,
+  "artifacts": [
+    {
+      "path": "manuscript/covid_period/Manuscript_covid_period_draft.md",
+      "sha256": "8bab6dc9868f5104d594cf23b0a287fbc04df026faf560f55ed2aba9d50efe0c",
+      "bytes": 31422
+    },
+    {
+      "path": "manuscript/covid_period/Heat_CVD_Manuscript_covid_period.docx",
+      "sha256": "4cbd020ea004cbb977c8de8a11aceeb7b41335830bb1071dda83e6e1c51c3c7e",
+      "bytes": 430461
+    },
+    {
+      "path": "manuscript/covid_period/Heat_CVD_Manuscript_covid_period.pdf",
+      "sha256": "e3f98775e59b62cbd3a7efabf8282a1a3b31a872a3848dd334fe1f402128eaea",
+      "bytes": 572117
+    },
+    {
+      "path": "manuscript/covid_period/Supplement_covid_period.md",
+      "sha256": "26a04d776634a6bcd8e212f41b78cd37a5a23b7302d85c957ec9298615dfdeed",
+      "bytes": 7431
+    },
+    {
+      "path": "manuscript/covid_period/Supplement_covid_period.docx",
+      "sha256": "f7d1c9e674cf4bbc75a604d7daf33013e3da97c90cbafe3985b28786910c1b76",
+      "bytes": 134645
+    },
+    {
+      "path": "manuscript/covid_period/Supplement_covid_period.pdf",
+      "sha256": "dbc2ad9e84f8cbe2fbe3c4105bbf6c1324ac62dc72561d3b43639405279a06b4",
+      "bytes": 292008
+    },
+    {
+      "path": "reports/auto_research/2026-10-02/Research_State_Briefing.pdf",
+      "sha256": "2d640a94f8a1bc990655e6b344efec9cdd65b598180c29ae6b12b37b99bb418f",
+      "bytes": 215930
+    },
+    {
+      "path": "reports/auto_research/2026-10-02/Research_State_Briefing.pptx",
+      "sha256": "ad337d5c53852a4795e65de8dc2f19b490d609f9ae488117dde6999753dfc04a",
+      "bytes": 46330
+    },
+    {
+      "path": "figures/covid_period/evidence_figures_manifest_20261002.json",
+      "sha256": "6ae83d224fc9e2a11df9472a1dfc3a38503c8661f6fd8d5968ee2562599ceaea",
+      "bytes": 4540
+    },
+    {
+      "path": "manuscript/covid_period/claim_ledger.yml",
+      "sha256": "dc9baf1ac016df0270b55bc98f2737e44ce7eb1e1f2c463d8ec87e2499242af1",
+      "bytes": 16555
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "audit_date": "2026-10-02",
+  "review_type": "targeted_competitor_audit_not_systematic",
+  "provenance": "PUBLISHED_EXTERNAL_RESEARCH",
+  "records": [
+    {
+      "id": "N01",
+      "citation": "Youn HM, Hu Z, Park YS, et al. Health Sci Rep. 2025;8(10):e71291.",
+      "doi": "10.1002/hsr2.71291",
+      "pmid": "41049877",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41049877/",
+      "main_text_status": "abstract_only",
+      "supplement_status": "not_checked",
+      "locators": [
+        "PubMed Abstract Methods/Results"
+      ],
+      "unresolved": [
+        "Full cohort/risk-set construction",
+        "Detailed outcome codes",
+        "Implementation of infection exclusion",
+        "Inconsistent printed aggregate sample size and Korea 2021 interval"
+      ],
+      "access_attempts": [
+        "PMC browser challenge",
+        "Wiley no usable fetch",
+        "Europe PMC no usable fetch"
+      ]
+    },
+    {
+      "id": "N02",
+      "citation": "Hu Z, Yau YK, Quan J, et al. Hypertens Res. 2025;48(8):2197–2208.",
+      "doi": "10.1038/s41440-025-02230-y",
+      "pmid": "40410292",
+      "url": "https://research.aston.ac.uk/en/publications/indirect-effect-of-thecovid-19-pandemic-on-cardiovascular-disease/",
+      "main_text_status": "abstract_only",
+      "supplement_status": "not_checked",
+      "locators": [
+        "Author-repository Abstract"
+      ],
+      "unresolved": [
+        "CVD phenotypes",
+        "Risk-set denominators",
+        "BP measurement selection",
+        "Full counterfactual assumptions"
+      ],
+      "access_attempts": [
+        "Publisher no usable fetch",
+        "Listed accepted-manuscript PDF403"
+      ]
+    },
+    {
+      "id": "N03",
+      "citation": "Yau YK, Li M, Quan J, et al. Diabetes Obes Metab. 2026;28(9):8016–8024.",
+      "doi": "10.1111/dom.70984",
+      "pmid": "42297752",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13449042/",
+      "main_text_status": "full_main_text_checked",
+      "supplement_status": "links_catalogue_only_contents_not_checked",
+      "locators": [
+        "Methods2.1–2.5",
+        "Discussion limitations",
+        "Supporting information catalogue"
+      ],
+      "publication_date": "2026-06-15",
+      "issue_date": "2026-09",
+      "unresolved": [
+        "Exact TableS1 disease-code lists",
+        "Supplemental sensitivity tables and figures"
+      ],
+      "access_attempts": [
+        "PMC main text accessible",
+        "Linked Word supplements no usable fetch"
+      ]
+    },
+    {
+      "id": "N04",
+      "citation": "Xin H, Wu P, Wong JY, et al. Lancet Reg Health West Pac. 2023;30:100645.",
+      "doi": "10.1016/j.lanwpc.2022.100645",
+      "pmid": "36438907",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36438907/",
+      "main_text_status": "abstract_checked_this_run_no_new_full_text_audit",
+      "supplement_status": "not_checked_this_run",
+      "locators": [
+        "PubMed abstract",
+        "HKU author-repository abstract"
+      ],
+      "unresolved": [
+        "Full outcome coding/standardisation audit"
+      ],
+      "access_attempts": [
+        "PMC browser challenge",
+        "Publisher no usable fetch"
+      ]
+    },
+    {
+      "id": "N05",
+      "citation": "Wong CM, Lai KPL, Luk MHM, et al. BMC Prim Care. 2025;26:182.",
+      "doi": "10.1186/s12875-025-02893-z",
+      "pmid": "40410724",
+      "url": "https://link.springer.com/article/10.1186/s12875-025-02893-z",
+      "main_text_status": "full_main_text_checked",
+      "supplement_status": "not_used",
+      "locators": [
+        "Methodology/Subject",
+        "Data collection",
+        "Multivariate Results"
+      ],
+      "unresolved": [
+        "No individual longitudinal target or care-defaulter measurements"
+      ]
+    },
+    {
+      "id": "N06",
+      "citation": "Cezard GI, Denholm RE, Knight R, et al. Nat Commun. 2024;15:2173.",
+      "doi": "10.1038/s41467-024-46497-0",
+      "pmid": "38467603",
+      "url": "https://www.nature.com/articles/s41467-024-46497-0",
+      "main_text_status": "full_main_text_checked",
+      "supplement_status": "not_checked",
+      "locators": [
+        "Methods/Study design and data source",
+        "Study population",
+        "Statistical analyses",
+        "Discussion limitations"
+      ],
+      "unresolved": [
+        "Supplemental code lists/protocol not independently audited"
+      ]
+    },
+    {
+      "id": "N07",
+      "citation": "Spetz M, Natt och Dag Y, Li H, et al. Nat Commun. 2025;16:10115.",
+      "doi": "10.1038/s41467-025-66270-1",
+      "url": "https://www.nature.com/articles/s41467-025-66270-1",
+      "main_text_status": "relevant_main_text_sections_checked",
+      "supplement_status": "not_checked",
+      "locators": [
+        "Methods/Study design and study population",
+        "Results",
+        "Discussion"
+      ],
+      "publication_date": "2025-11-18",
+      "unresolved": [
+        "Supplemental phenotype and sensitivity details not independently audited"
+      ]
+    }
+  ]
+}

@@ -1,22 +1,24 @@
-# First recorded hospitalisations after coronary heart disease or heart failure diagnosis before and during the COVID pandemic in Hong Kong from 2013 to 2023
+# First hospitalisations after cardiovascular diagnosis before and during COVID in Hong Kong
 
 *Running title:* Pandemic era first hospitalisation counts
 
 ## Abstract
 
-**Background.** Fewer recorded hospitalisations during the COVID-19 pandemic can reflect changes in disease burden, care use or event ascertainment. We examined first-hospitalisation counts among people with type 2 diabetes and/or hypertension in Hong Kong, placing the pandemic years within the preceding trend and assessing the sensitivity of weather associations to the analysis window.
+**Background.** Fewer hospitalisations during a health-system disruption may reflect changes in health, care use or ascertainment. We examined recorded first-hospitalisation burden before and during COVID in Hong Kong.
 
-**Methods.** We analysed two territory-wide monthly series from January 2013 to December 2023. The event was the first recorded hospitalisation after a first coronary heart disease (CHD) or heart failure (HF) diagnosis; admission cause was unavailable. We described annual counts and three non-overlapping calendar periods. Twelve separate negative-binomial weather models included calendar-month indicators, a four-degree-of-freedom time spline and a days-in-month offset. We compared the full 132-month fit with a nested 84-month fit ending in 2019. These overlapping fits were sensitivity analyses, not a pre/post interaction test.
+**Methods.** Two monthly series covered 2013–2023 among people with type 2 diabetes and/or hypertension. Events were first recorded hospitalisations after coronary heart disease (CHD) or heart failure (HF) diagnosis; admission cause and eligible person-time were unavailable. We described annual counts and assessed twelve negative-binomial weather models with calendar-month, time-trend and month-length controls. Full and nested pre-2020 fits were sensitivity comparisons, not independent pre/post estimates.
 
-**Results.** There were 156,156 first recorded hospitalisations after CHD diagnosis and 29,681 after HF diagnosis. Counts declined before 2020. Compared with 2019, annual counts were 17.4% lower for CHD and 16.2% lower for HF in 2020, but only 0.6% and 2.0% lower in 2023. The cold-day count ratio per five additional days was 1.036 (Newey–West lag-six 95% CI 1.007–1.067) for CHD in the pre-2020 fit and 0.995 (0.949–1.043) in the full fit; corresponding HF ratios were 1.113 (1.053–1.176) and 1.073 (1.006–1.144). All twelve full-window multiplicity-adjusted q-values exceeded 0.19. No laboratory measurements or cohort person-time were available.
+**Results.** The series contained 156,156 hospitalisations after CHD diagnosis and 29,681 after HF diagnosis. Counts declined before 2020. Relative to 2019, counts were 17.4% and 16.2% lower in 2020, but 0.6% and 2.0% lower in 2023. Cold-day estimates were smaller in the full window, but depended on calendar specification. All twelve full-window adjusted q-values exceeded 0.19.
 
-**Conclusions.** Recorded first-hospitalisation counts dipped in 2020 after a substantial earlier decline and recovered towards 2019 levels by 2023. Thermal estimates depended on the window and calendar specification. Neither the count trajectory nor these sensitivity fits identify physiological improvement or exclude a contribution from weather.
+**Conclusions.** Recorded counts dipped in 2020 after an earlier decline and approached 2019 levels by 2023. Neither these trajectories nor weather sensitivity fits identify physiological improvement or exclude weather. Distinguishing clinical change from care and recording requires validated events, denominators and linked measurements.
 
 **Keywords:** COVID-19; first hospitalisation; coronary heart disease; heart failure; diabetes; hypertension; Hong Kong
 
 ## Introduction
 
 A fall in hospitalisations during a public health emergency is difficult to interpret. It may indicate fewer events requiring care, reduced access or willingness to attend, or a change in which events are recorded. In Hong Kong, Xin and colleagues reported fewer hospitalisations alongside higher mortality in 2020, including more deaths outside public hospitals [1]. Wai and colleagues likewise found fewer emergency-department visits and higher subsequent mortality among attenders [2]. These findings make it unsafe to equate a lower recorded hospital count with better cardiovascular health.
+
+More closely matched studies have examined cardiovascular outcomes among people with chronic disease. Youn and colleagues compared cardiovascular diagnoses, mortality and healthcare use among people with diabetes in Hong Kong and Korea [15]. Hu and colleagues examined cardiovascular incidence, mortality, blood-pressure control and healthcare use among Hong Kong patients with hypertension, including the early Omicron period [16]. Yau and colleagues subsequently related changes in continuity of diabetes care to later cardiovascular outcomes and mortality [17]. These studies already address several explanations for falling recorded events. A different event definition or longer series does not by itself establish a new clinical contribution.
 
 The distinction is particularly important for first events. A monthly count of first hospitalisations depends on how people enter the eligible population, which previous diagnoses and admissions are recognised, and how many people remain able to contribute an event. These processes can change without a change in individual susceptibility. They also differ from the repeated, cause-coded admissions generally used to study short-term temperature effects. Hong Kong studies of daily HF admissions and unplanned emergency hospitalisations provide relevant thermal context [3,4], but their outcomes and temporal resolution differ from a monthly first-hospitalisation series without recorded admission cause.
 
@@ -33,6 +35,10 @@ This ecological time-series study covered January 2013 to December 2023. The Hos
 Admission cause was not recorded. The events therefore cannot be interpreted as admissions principally for CHD, HF, acute myocardial infarction or acute coronary syndrome. The transfer did not establish whether the diagnosis episode itself counted as the first hospitalisation or whether a later stay was required. It also did not provide the diagnostic code list, look-back period, washout, entry and exit dates, or separate inpatient, emergency and day-procedure classifications. We retained the supplied first-hospitalisation label without assuming these details. The diagnosis interval does not establish a closed cohort or a monotonically declining population at risk.
 
 Age and sex strata, laboratory measurements, medication records, infection and vaccination histories, and person-time at risk were unavailable. This study therefore estimated recorded burden and ecological count associations, rather than individual disease incidence or physiological change.
+
+**Figure 1. Observation processes underlying the recorded outcome.** Conceptual diagram of how disease, diagnosis recording, care contact and extraction rules can affect a first counted stay. Arrows denote plausible pathways, not effects identified by this study. The counted stay is not validated as an admission principally for CHD or HF. Eligible person-time, clinical measurements and linked deaths were not supplied; no numerical cohort flow is inferred.
+
+![Conceptual observation process](../../figures/covid_period/figure_observation_process_20261002.png)
 
 ### Weather data
 
@@ -52,7 +58,7 @@ For each outcome, we fitted a separate negative-binomial regression for monthly 
 log E(Y_t) = log(d_t) + alpha + beta X_t + calendar month indicators + s(t; 4 df).
 \]
 
-Here Y_t is the monthly first-hospitalisation count, d_t is the number of days in that month, X_t is one weather exposure, and s(t; 4 df) is a natural cubic spline of calendar time with four degrees of freedom. January was the reference calendar month. We reported exp(beta) per 1°C for continuous temperature or per five additional official days. The offset accounts for month length. It does not supply the eligible person-time denominator needed for incidence rates. General-population counts are not a substitute for that denominator.
+Here Yₜ is the monthly first-hospitalisation count, dₜ is the number of days in that month, Xₜ is one weather exposure, and s(t; 4 df) is a natural cubic spline of calendar time with four degrees of freedom. January was the reference calendar month. We reported exp(β) per 1°C for continuous temperature or per five additional official days. The offset accounts for month length. It does not supply the eligible person-time denominator needed for incidence rates. General-population counts are not a substitute for that denominator.
 
 We refitted the specification on January 2013–December 2019. These 84 months are contained within the full 132 months. The natural spline basis, including its knots and boundaries, was recalculated on the subset. Consequently, the two fitted coefficients differ in both sample and calendar control. Their difference is not an estimated pre/post effect. Neither overlap of confidence intervals nor a change in whether an interval contains one constitutes a test of such a difference. No 2020–2023-only model or exposure-by-period interaction was available.
 
@@ -68,7 +74,7 @@ Calendar sensitivity replaced the four-degree-of-freedom spline with three, six 
 
 The series contained 156,156 first recorded hospitalisations after CHD diagnosis and 29,681 after HF diagnosis. Annual counts fell from 23,830 to 12,396 for CHD and from 4,336 to 2,344 for HF between 2013 and 2019 (Table 1). A substantial decline therefore preceded the pandemic.
 
-Counts fell further in 2020, to 10,237 for CHD and 1,964 for HF. These totals were 17.4% and 16.2% below 2019. Both series rose in 2021, fell in 2022 and rose again in 2023. By 2023, CHD and HF totals were 12,323 and 2,296, respectively: 0.6% and 2.0% below 2019. Counts returned towards the late pre-pandemic level rather than the much higher 2013 level (Figure 1).
+Counts fell further in 2020, to 10,237 for CHD and 1,964 for HF. These totals were 17.4% and 16.2% below 2019. Both series rose in 2021, fell in 2022 and rose again in 2023. By 2023, CHD and HF totals were 12,323 and 2,296, respectively: 0.6% and 2.0% below 2019. Counts returned towards the late pre-pandemic level rather than the much higher 2013 level (Figure 2).
 
 **Table 1. Annual recorded first hospitalisation counts.** Each event is a first recorded hospitalisation after the relevant diagnosis in the supplied type 2 diabetes and/or hypertension population. Admission cause was unavailable. These are counts, not incidence rates.
 
@@ -86,7 +92,7 @@ Counts fell further in 2020, to 10,237 for CHD and 1,964 for HF. These totals we
 | 2022 | 11,076 | 1,976 |
 | 2023 | 12,323 | 2,296 |
 
-**Figure 1. Annual first hospitalisation counts indexed to 2013.** Each series uses its own 2013 total as 100. The shaded interval begins in 2020 and marks calendar years, not an estimated treatment effect. Source: Hospital Authority aggregate annual summaries.
+**Figure 2. Annual recorded first hospitalisation counts after CHD or HF diagnosis.** Separate panels show annual counts on their own outcome scales. The shaded interval begins in 2020 and marks calendar years, not an estimated treatment effect. These are observed totals, without population or trend adjustment. Source: Hospital Authority aggregate annual summaries.
 
 ![Annual first hospitalisation trajectory](../../figures/covid_period/figure_annual_counts_20261002.png)
 
@@ -115,6 +121,10 @@ The complete twelve-fit full-window panel is reported in Supplementary Table S2.
 
 The exploratory associations varied across calendar specifications (Supplementary Table S3). The full-window HF cold-day lag-six interval included one with an eight-degree-of-freedom spline, year indicators, or omission of the first twelve or twenty-four months. Adding COVID-phase intercepts gave a CHD hot-night ratio of 1.013 (0.994–1.033) and an HF cold-day ratio of 1.074 (1.006–1.145). This adjustment changed the calendar comparison but did not identify a pandemic effect or separate its mechanisms.
 
+**Figure 3. Calendar specification sensitivity of selected exploratory associations.** CHD hot-night and HF cold-day count ratios per five additional days, with Newey–West lag-six 95% confidence intervals. These previously discussed contrasts are displayed to reveal specification dependence; they were not selected as confirmatory findings. The complete official-day sensitivity panel is in Supplementary Table S3 and the complete baseline family in S2. Omission checks change the sample as well as the calendar fit. An interval crossing one is not a formal test of a difference between specifications.
+
+![Calendar specification sensitivity](../../figures/covid_period/figure_calendar_sensitivity_20261002.png)
+
 Uncertainty construction also affected interpretation (Supplementary Table S4). For full-window CHD hot nights, the model-based interval was 0.995–1.049 and the HC1 interval was 0.997–1.047, whereas the lag-six interval was 1.002–1.042. Pearson residual autocorrelation at lag one was 0.508 for that model. The lag-six interval being narrower does not itself show that the covariance estimate is invalid: a sandwich covariance depends on regression score autocovariances, not solely on residual autocorrelation. Residual dependence nevertheless warrants caution about finite-sample inference. Agreement among baseline HF cold-day uncertainty methods did not overcome its calendar sensitivity or multiplicity adjustment.
 
 ## Discussion
@@ -123,7 +133,7 @@ The count trajectory has three features: a substantial decline before 2020, a fu
 
 ### Care use and first event ascertainment
 
-Care disruption is a plausible explanation for part of the 2020 dip. Hong Kong studies reported fewer hospitalisations or emergency visits alongside higher mortality [1,2]. They caution against interpreting fewer recorded events as a health benefit, but they involve different outcomes and populations. They cannot explain this series by direct transfer of their effect estimates. Nor can evidence confined to 2020 explain the preceding decline or the 2022 dip.
+Care disruption is a plausible explanation for part of the 2020 dip. Hong Kong studies reported fewer hospitalisations or emergency visits alongside higher mortality [1,2]. The more closely matched diabetes and hypertension studies examined cardiovascular diagnosis rates alongside care use and mortality [15,16]. Hu and colleagues also reported blood-pressure control below pre-pandemic levels among measured patients [16]. These studies weaken a general interpretation of fewer recorded events as better cardiovascular health. They cannot explain this particular series by direct transfer of their effect estimates: our outcome is a first recorded stay after diagnosis, with neither validated admission cause nor eligible person-time.
 
 First-event ascertainment offers another explanation. Entry into the eligible population, diagnosis look-back, removal after a first recorded event, competing deaths and changes in service coding may all alter counts. The available metadata do not show which of these processes occurred. In particular, the early maximum does not prove an artefact of first-in-window recording, and the later rebound does not disprove a changing risk set. These possibilities require the extraction rules and eligible population by month, rather than another temperature specification.
 
@@ -131,11 +141,17 @@ First-event ascertainment offers another explanation. Entry into the eligible po
 
 Evidence of metabolic improvement during pandemic restrictions is heterogeneous. Huang and colleagues observed lower HbA1c and fasting glucose after restrictions among retained diabetes outpatients in Taiwan [7]. A Tokyo diabetes cohort instead showed small adverse changes in glycaemia and lipids [8]. Both studies concerned patients who remained under observation, with potential changes in treatment, attendance and seasonal timing. Neither establishes a population-wide cardiovascular benefit in Hong Kong.
 
-The most directly relevant local study, by Wong and colleagues, found no evidence of an overall adjusted improvement in HbA1c or blood pressure among regular primary-care attenders with type 2 diabetes [9]. Its group labels referred to 2019 and 2020, but the actual sampling windows were February–March 2020 and February–March 2021. Its first window was already after the initial Hong Kong outbreak. It is therefore neither a clean pre-pandemic comparison nor an individual longitudinal assessment. A separate small Hong Kong follow-up of COVID-19 survivors with acute dysglycaemia found worsening rather than improved glycaemic status [10]. These findings weaken a broad metabolic-improvement explanation without excluding benefits in particular patient groups.
+A local primary-care study, by Wong and colleagues, found no evidence of an overall adjusted improvement in HbA1c or blood pressure among regular primary-care attenders with type 2 diabetes [9]. Its group labels referred to 2019 and 2020, but the actual sampling windows were February–March 2020 and February–March 2021. Its first window was already after the initial Hong Kong outbreak. It is therefore neither a clean pre-pandemic comparison nor an individual longitudinal assessment. A separate small Hong Kong follow-up of COVID-19 survivors with acute dysglycaemia found worsening rather than improved glycaemic status [10]. These findings weaken a broad metabolic-improvement explanation without excluding benefits in particular patient groups.
 
 Reduced respiratory infection is another candidate. Hong Kong non-pharmaceutical interventions coincided with reduced influenza transmission in early 2020 [11]. Laboratory-confirmed influenza has been associated with acute myocardial infarction in a self-controlled study [12], and community influenza-like illness activity with HF hospitalisation in the ARIC study [13]. A reduction in winter respiratory triggers could change observed cold-day associations without any reduction in the direct physiological effect of cold. This remains an untested explanation here: infection was not measured in the study population, and these external outcomes differ from the first recorded post-diagnosis stay.
 
 Vaccination and changes in prevention may have affected later years. Wan and colleagues reported lower acute and post-acute cardiovascular event risk among vaccinated than unvaccinated people with SARS-CoV-2 infection in Hong Kong [14]. That comparison concerns vaccination among infected people, with observational confounding and a different cardiovascular endpoint. It does not establish better baseline health in the whole eligible population, and it cannot explain a dip that preceded vaccination. Treatment, behaviour, infection, care use and recording may have operated simultaneously.
+
+### Clinical follow up and the scope of inference
+
+Yau and colleagues examined continuity of diabetes care in patients who attended repeatedly and remained alive and free of the study outcomes at a June 2022 landmark [17]. Their later follow-up associated reduced continuity with CHD, HF and kidney failure; results for stroke and all-cause mortality were less conclusive. Such a design supplies clinical and service information absent here, but it addresses a selected population and a different question. Selection on continued attendance, survival and future infection status can alter who contributes to an analysis. These choices require explicit interpretation rather than being treated as complete removal of confounding.
+
+A study that distinguishes health change from observation change would need to evaluate eligible populations, validated events, deaths, care contacts and testing together. Repeated measurements should be analysed alongside the probability and timing of measurement. The explanations can coexist: care disruption may delay diagnoses while changes in infection exposure or treatment alter disease risk. Neither a better biomarker profile in retained patients nor attenuation after adding a service-use covariate would alone identify the mechanism.
 
 ### What the thermal models establish
 
@@ -146,6 +162,8 @@ The thermal panel also cannot exclude weather as an explanation for the count tr
 ### Limitations and implications
 
 The main limitation is the event construction. Without recorded admission cause, eligible person-time or validated first-event rules, these counts cannot measure disease-specific incidence. Laboratory and medication data were absent, preventing direct assessment of physiological change. Monthly aggregation obscures daily timing, and secular trends may reflect changing diagnosis, treatment, eligibility and recording. The available thermal models did not include a separate later-era coefficient or an interaction, and exploratory sensitivity analyses did not receive joint multiplicity adjustment. Annual comparisons did not estimate a counterfactual pandemic effect.
+
+The incremental value of this analysis is its description and criticism of a particular first-hospitalisation series, rather than a new estimate of physiological benefit. The close prior studies mean that adding clinical covariates or later follow-up alone would not establish novelty. A stronger clinical contribution would require measurements and a design that distinguish explanations left unresolved by those studies.
 
 The next discriminating analysis should separate change in recorded burden from change in weather association. A common full-series model with exposure-by-period terms could estimate the latter, provided calendar structure and exposure support are handled consistently. Testing physiological explanations would additionally require repeated clinical measurements, treatment and attendance information, and explicit attention to who was tested. Lower values among tested attenders could reflect selection rather than improved health. Confirmation of event rules and denominators has priority over adding further speculative mechanisms.
 
@@ -186,3 +204,9 @@ Individual records and the underlying monthly hospitalisation files are not repr
 13. Kytömaa S, Hegde S, Claggett B, et al. Association of Influenza-like Illness Activity With Hospitalizations for Heart Failure: The Atherosclerosis Risk in Communities Study. JAMA Cardiol. 2019;4:363–369. doi:10.1001/jamacardio.2019.0549
 
 14. Wan EYF, Mok AHY, Yan VKC, et al. Association between BNT162b2 and CoronaVac vaccination and risk of CVD and mortality after COVID-19 infection: A population-based cohort study. Cell Rep Med. 2023;4:101195. doi:10.1016/j.xcrm.2023.101195
+
+15. Youn HM, Hu Z, Park YS, et al. Indirect Impact of the COVID-19 Pandemic on All-Cause Mortality and Cardiovascular Disease Among People With Diabetes Mellitus From Korea and Hong Kong: An Interrupted Time Series Analysis. Health Sci Rep. 2025;8:e71291. doi:10.1002/hsr2.71291
+
+16. Hu Z, Yau YK, Quan J, et al. Indirect effect of the COVID-19 pandemic on cardiovascular diseases incidence, mortality, and healthcare use among patients with hypertension but without SARS-CoV-2 infection in Hong Kong: an interrupted time series analysis. Hypertens Res. 2025;48:2197–2208. doi:10.1038/s41440-025-02230-y
+
+17. Yau YK, Li M, Quan J, et al. Association of Reduction in Continuity of Care During COVID-19 Pandemic With Cardiovascular Diseases, Kidney Failure and All-Cause Mortality for People With Diabetes: A Cohort Study in Hong Kong. Diabetes Obes Metab. 2026;28:8016–8024. doi:10.1111/dom.70984

@@ -24,6 +24,7 @@
 
 ## Current meeting record
 
+- [2 October 2026 epistemic reconstruction](../reports/auto_research/2026-10-02/RESEARCH_STATE.md) — reviewed evidence boundaries, scoped negative knowledge, PR selection and five Phase 2 questions; internal briefing included. Exploratory; Gate 3 unchanged.
 - [`2026-09-15_stage3_poster_bishai_header.md`](2026-09-15_stage3_poster_bishai_header.md) — A0 poster: original author row; Laidlaw Scholars Programme replaced by Professor David Bishai; collaborator footnote removed. Essay unchanged. Gate 3 open.
 - [`2026-09-10_highest_reachable_live_paper.md`](2026-09-10_highest_reachable_live_paper.md) — repository live paper rewritten as nested analysis-window sensitivity; complete thermal archive; main/supplement Word+PDF; final Fable/Sol ceiling 7/5; Gate 3 open.
 - [`2026-09-10_covid_period_redirection.md`](2026-09-10_covid_period_redirection.md) — Hogan 10 Sep angle change. Park thermal; COVID-period track. Gate 3 open.

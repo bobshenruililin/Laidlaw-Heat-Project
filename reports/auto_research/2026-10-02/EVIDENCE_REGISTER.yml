@@ -1,0 +1,1419 @@
+schema_version: 1
+run:
+  date: '2026-10-02'
+  mode: epistemic_reconstruction
+  base_sha: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  pr100_head: 8695c2cc86e6d99f23677e73b9858f1d985052c3
+  gate_3: open; unchanged; human_owned
+  secure_inputs: not accessed; no row reconstruction
+  outcome_fits: none run
+  scope: Public repository, released tables, selected PR records and bounded primary-source checks. No
+    exhaustive PR diff audit.
+  provenance_rule: HA_APPROVED_AGGREGATE labels inherited from public release, not a new governance certification.
+    Reported human decisions remain reported-only.
+  head_to_main_comparison_limit: Unmerged PR100 was inspected as a separate wording proposal. Its head-to-current-main
+    diff includes unrelated later-main poster changes; these were not interpreted as scientific proposals
+    or incorporated.
+sources:
+- id: S01
+  path: reports/meeting_debrief_2026-07-17.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 13
+  sha256: 63ab68168bc83d111f00c5036bd193535110ad26092c287682f1bf7f9c7357e6
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/reports/meeting_debrief_2026-07-17.md#L13
+  provenance: REPORTED_HUMAN_DECISION
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S02
+  path: reports/data_receipt_2026-08-07.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 1
+  sha256: bc54ade4d974a3400692fd5500e68c4f557c75f7af0b33de17b96263e4206497
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/reports/data_receipt_2026-08-07.md#L1
+  provenance: REPORTED_RECEIPT
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S03
+  path: scripts/31_cvd_core_robustness.R
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 29
+  sha256: 39ae5abc6eea82f3af86c08ddd9de3f65d1ee6b3caf64643be28772da6e5e40f
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/scripts/31_cvd_core_robustness.R#L29
+  provenance: CODE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S04
+  path: scripts/32_cvd_trend_depletion_lag.R
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 107
+  sha256: 2ea664ca9ca2256ec1327b29e588cbe4f1edd4f7c8ff019b62c9ab85044e848a
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/scripts/32_cvd_trend_depletion_lag.R#L107
+  provenance: CODE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S05
+  path: reports/meeting_debrief_2026-09-10.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 5
+  sha256: 1c3546d7bf6d327785135ee0bf340ac2abc9e12b5ca11d47bd4389550b76c761
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/reports/meeting_debrief_2026-09-10.md#L5
+  provenance: REPORTED_HUMAN_DIRECTION
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S06
+  path: reports/incident_2026-09-10_scientific_angle_covid.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 11
+  sha256: 5acd9a3d65ceae788f9883e04c7a8b9a37b02711e427629a8cb3a8735fc692bc
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/reports/incident_2026-09-10_scientific_angle_covid.md#L11
+  provenance: REPORTED_HUMAN_DIRECTION
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S07
+  path: analysis_plan/PROJECT_STATE.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 10
+  sha256: 4c1a4c614b0351d7569fffcff20705209cfa58f9a28f86eef036ca419553cd72
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/analysis_plan/PROJECT_STATE.md#L10
+  provenance: REPOSITORY_STATE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S08
+  path: knowledge/CONTEXT_BOOTSTRAP.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 8
+  sha256: 1f2d5f22afabeb5cf9e1b34ef6f5c8e7edcf42fc352bbbdb8578b581458b6f18
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/knowledge/CONTEXT_BOOTSTRAP.md#L8
+  provenance: REPOSITORY_ORIENTATION
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S09
+  path: manuscript/covid_period/INDEPENDENT_REVIEW.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 39
+  sha256: 3cc6f92ef8bedf3316fa9275102748cc832246823b7145e677ea6caa8000c7c4
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/manuscript/covid_period/INDEPENDENT_REVIEW.md#L39
+  provenance: AGENT_REVIEW
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S10
+  path: manuscript/covid_period/Manuscript_covid_period_draft.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 5
+  sha256: 3ef11e7ea9662110b310b326bfd38fcfa66339f198b809f77b1b7b019db90a71
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/manuscript/covid_period/Manuscript_covid_period_draft.md#L5
+  provenance: EXPLORATORY_CANDIDATE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S11
+  path: outputs/release_chd_hf/tables/table2_core_models.csv
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 5
+  sha256: 9e72f5b8063b9460a7c5ef2f58d42fdcd29da271cd7c72bce1178094e8c32e1e
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/outputs/release_chd_hf/tables/table2_core_models.csv#L5
+  provenance: HA_APPROVED_AGGREGATE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S12
+  path: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 14
+  sha256: 5632cf47b16d3914b82a00038e27b76b3435b2c1bf2a4e4055641dca75b866f2
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv#L14
+  provenance: HA_APPROVED_AGGREGATE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S13
+  path: outputs/tables/cvd_trend_depletion_sensitivity.csv
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 9
+  sha256: 061158111bbc79478b8cb54f27687447c213fd1bfc13efe9cf3309996f348e5e
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/outputs/tables/cvd_trend_depletion_sensitivity.csv#L9
+  provenance: HA_APPROVED_AGGREGATE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S14
+  path: outputs/tables/cvd_descriptive_annual_totals.csv
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 2
+  sha256: 2d4997276d77e28761083117e292f438506d07db639deba5bc17c1843e4862e8
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/outputs/tables/cvd_descriptive_annual_totals.csv#L2
+  provenance: HA_APPROVED_AGGREGATE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S15
+  path: outputs/calibration_md/md_calibration_f1_2_decision_report.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 5
+  sha256: 636418c62bb231d863afd0ba960a7738ef3bf3e97b21d04104abaf269228c582
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/outputs/calibration_md/md_calibration_f1_2_decision_report.md#L5
+  provenance: SYNTHETIC_CALIBRATION
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S16
+  path: reports/identification_crucible_2026-08-14.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 34
+  sha256: c69492efb4e5e99c865883a3583d83ae14f1ddaa3a68977e701331d0a048eae2
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/reports/identification_crucible_2026-08-14.md#L34
+  provenance: AGENT_ADVERSARIAL_RECORD
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S17
+  path: knowledge/2026-08-27_crown_df_physiology_policy.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 20
+  sha256: 66203fcec9fb35db76d93daa3f04a83ae8841c58f439c12496faab974f788ddc
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/knowledge/2026-08-27_crown_df_physiology_policy.md#L20
+  provenance: RESULT_DEPENDENT_SELECTION_RECORD
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S18
+  path: analysis_plan/covid_period/hypothesis_registry.yml
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 15
+  sha256: 1024f2370bd680308e7435c592c614e4f76fdab1079093d8d844e14684b302c1
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/analysis_plan/covid_period/hypothesis_registry.yml#L15
+  provenance: HYPOTHESIS_RECORD_NOT_EVIDENCE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S19
+  path: analysis_plan/covid_period/ha_metadata_inventory.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 1
+  sha256: 825e496885ba1ba3ea64fa2ba24a36c9c5865c0362d0bc9b93fa7613c3224bc2
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/analysis_plan/covid_period/ha_metadata_inventory.md#L1
+  provenance: METADATA_UNKNOWN_RECORD
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S20
+  path: scripts/50_audit_live_claim_ledger.py
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 107
+  sha256: f22e3817ecb5ca7e822c87f0fb8c7890bd72e10f44648796ed7e0fddde8958da
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/scripts/50_audit_live_claim_ledger.py#L107
+  provenance: AUDITOR_CODE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S21
+  path: scripts/79_covid_period_rails_checks.py
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 133
+  sha256: becc34ce7e1297a4d67f2b92e29c61c31ae6ed568a9612c84c6d934fc11a24bf
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/scripts/79_covid_period_rails_checks.py#L133
+  provenance: AUDITOR_CODE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S22
+  path: manuscript/covid_period/claim_ledger.yml
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 6
+  sha256: 36745cbb6f7175d3100b7d3defae09f42f12c74d6a5ffcc2be81666026b04e5a
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/manuscript/covid_period/claim_ledger.yml#L6
+  provenance: CLAIM_LEDGER_NOT_INDEPENDENT_EVIDENCE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S23
+  path: AGENTS.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 35
+  sha256: fb72c2003e32d60a831ec40850e16c905b14a7ccff8bf74fe66d9b220691bbda
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/AGENTS.md#L35
+  provenance: GOVERNANCE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S24
+  path: .cursorrules
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 15
+  sha256: 54d818cb715df745446c7bdfad8490c559ab8ebbe1116d25f8a21ee63e87a889
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/.cursorrules#L15
+  provenance: GOVERNANCE_AND_HISTORY
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S25
+  path: analysis_plan/decision_gates.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 5
+  sha256: 6ff24681e7ac6d8f75fce85e4cedabbdb0404346a6bf85fb2856fe7298857c2b
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/analysis_plan/decision_gates.md#L5
+  provenance: GOVERNANCE
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+- id: S26
+  path: analysis_plan/assumption_ledger.md
+  revision: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+  anchor_line: 54
+  sha256: 5913ff1825debd63f7fbe1ec7e77478b0b64b20e0eb55cc16faafa55e151ab0c
+  url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/blob/b103e96c6761f3409fab6f116c6675b43fdb2ee3/analysis_plan/assumption_ledger.md#L54
+  provenance: ASSUMPTIONS
+  inspection: targeted reading; anchor is an entry point, not the entire supporting passage
+claims:
+- id: C01
+  claim: July demoted AMI/principal-diagnosis claims and planned monthly stroke aggregates.
+  status: supported
+  source_ids:
+  - S01
+  - S23
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: Scope correction, not heat falsification.
+  next_evidence: Only reopen cause-specific framing after a governed definition.
+  proposed_owner: Roro/DAE
+- id: C02
+  claim: Receipt describes CHD/HF first hospitalisation after diagnosis in T2D/HTN; admission cause and
+    cohort person-time absent.
+  status: supported_with_definition_uncertainty
+  source_ids:
+  - S02
+  - S19
+  provenance: REPORTED_RECEIPT
+  limit: Reported receipt; query and secure inputs not independently inspected.
+  next_evidence: Dictionary, query and construction confirmation.
+  proposed_owner: Roro/DAE
+- id: C03
+  claim: Amended core uses separate exposure NB fits, days-only offset, month indicators and a 4-df time
+    smooth.
+  status: supported
+  source_ids:
+  - S03
+  - S11
+  - S26
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: Code inspected; no secure-data refit.
+  next_evidence: Reproduce only in an authorized governed environment.
+  proposed_owner: research agent
+- id: C04
+  claim: Older joint-model CHD hot-night 1.044 is obsolete for the amended core; official days /5 is a
+    scale.
+  status: obsolete_as_core
+  source_ids:
+  - S03
+  - S11
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: Other joint fits remain labelled sensitivity records.
+  next_evidence: Keep source labels and complete model family.
+  proposed_owner: research agent
+- id: C05
+  claim: COVID redirection is attributed to Hogan on 10 September; it supplied questions, not new estimates.
+  status: reported_not_independently_confirmed
+  source_ids:
+  - S05
+  - S06
+  provenance: REPORTED_HUMAN_DIRECTION
+  limit: Private original correspondence unavailable; no authority inferred from agent prose.
+  next_evidence: Confirm intended question and decision status.
+  proposed_owner: Bob/Hogan
+- id: C06
+  claim: Incident/review and later live/state records disagree on in-place manuscript authority.
+  status: unresolved_conflict
+  source_ids:
+  - S06
+  - S07
+  - S08
+  - S09
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: Merge and recency do not resolve human authorization; shared human file uninspected.
+  next_evidence: Identify authoritative shared document and human instruction.
+  proposed_owner: Bob/Hogan
+- id: C07
+  claim: 84-month pre-2020 fit is nested in 132; spline is re-knotted; no fitted period difference or
+    post-only 48 core is reported.
+  status: supported
+  source_ids:
+  - S04
+  - S10
+  - S13
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: Change of sample, basis, support and nuisance fit occur together.
+  next_evidence: Predefine a meaningful contrast and bounded diagnostic protocol.
+  proposed_owner: research agent
+- id: C08
+  claim: Weather ruling-out is not a severe test of a specified rival.
+  status: weakened
+  source_ids:
+  - S10
+  - S04
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: No explicit null/pattern/equivalence margin/detection analysis; movement may have several causes.
+  next_evidence: Predictions and error sensitivity before testing.
+  proposed_owner: research agent
+- id: C09
+  claim: All 12 full-window BH q-values exceed 0.19; no multiplicity-protected discovery in this family.
+  status: supported
+  source_ids:
+  - S11
+  provenance: HA_APPROVED_AGGREGATE
+  limit: No null-effect proof; BH covers this12-fit family only and depends on valid underlying p-values.
+  next_evidence: Report full family and uncertainty; no significance rescue.
+  proposed_owner: research agent
+- id: C10
+  claim: Recorded monthly-to-daily implementation failed F1.2 admission gates.
+  status: falsified_scoped_method_admission
+  source_ids:
+  - S15
+  provenance: SYNTHETIC_CALIBRATION
+  limit: Synthetic scenarios only; F1.2 is post-run summary, not universal nonidentification proof.
+  next_evidence: New justified validation if later needed; no retuning in Phase1.
+  proposed_owner: research agent
+- id: C11
+  claim: Identification-crucible residual rejects no-association and denominator-primarily explanations
+    as established conclusions.
+  status: supported_as_scoped_criticism
+  source_ids:
+  - S16
+  - S11
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: Agent criticism is argument, not independent health evidence or mandatory manuscript thesis.
+  next_evidence: Retain estimand boundary while reconsidering thesis.
+  proposed_owner: research agent
+- id: C12
+  claim: 6-df crown uses retention of preferred intervals as selection criterion.
+  status: weakened_as_corroboration
+  source_ids:
+  - S17
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: 4-df core was retained; historical claim of prospectiveness not independently demonstrated.
+  next_evidence: Use complete sensitivity panel and an independent selection rationale.
+  proposed_owner: research agent
+- id: C13
+  claim: Closed 2013 cohort and mechanical depletion explanation are unverified.
+  status: uncertain
+  source_ids:
+  - S18
+  - S10
+  - S19
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: Candidate says new diagnoses enter through 2023; risk-set trajectory cannot be inferred from
+    counts.
+  next_evidence: Entry/exit/event query and risk-set person-time.
+  proposed_owner: Roro/DAE
+- id: C14
+  claim: Labs, infection, vaccination and serology are absent from this delivered monthly transfer.
+  status: supported_as_availability_boundary
+  source_ids:
+  - S02
+  - S19
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: Not a statement of impossibility in HA or absence of biological effects.
+  next_evidence: Feasibility inquiry only for evidence needed to distinguish a specified rival.
+  proposed_owner: Roro/Bishai
+- id: C15
+  claim: Large2013–2023 count decline predates 2020; 2020 trough is followed by partial recovery.
+  status: supported
+  source_ids:
+  - S14
+  provenance: HA_APPROVED_AGGREGATE
+  limit: Annual descriptive totals do not identify trend break or disease incidence.
+  next_evidence: Define counterfactual/time pattern before new fitting.
+  proposed_owner: research agent
+- id: C16
+  claim: Cold-day and CHD-hot-night estimates move differently between nested and full fits.
+  status: supported_as_point_estimate_description
+  source_ids:
+  - S13
+  provenance: HA_APPROVED_AGGREGATE
+  limit: Not independent samples, not significance of difference, not causal modification.
+  next_evidence: Separate support, basis, influential-month and mechanism predictions.
+  proposed_owner: research agent
+- id: C17
+  claim: CHD hot-night inference changes across model/HC1/NW3/NW6 intervals.
+  status: supported
+  source_ids:
+  - S12
+  - S13
+  provenance: HA_APPROVED_AGGREGATE
+  limit: Choosing a covariance by null exclusion is invalid; positive residual ACF alone does not impose
+    coefficient-wise inflation.
+  next_evidence: Inspect score dependence and covariance sensitivity under justified conditions.
+  proposed_owner: research agent
+- id: C18
+  claim: Registry label physiological improvement killed is not empirical falsification in this cohort.
+  status: unidentified
+  source_ids:
+  - S18
+  - S19
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: Neighbour evidence plus missing measures defeats the claim on this file, not every biological
+    hypothesis.
+  next_evidence: Discriminating clinical/utilization/mortality evidence or narrow target.
+  proposed_owner: Roro/Bishai
+- id: C19
+  claim: Cold exposure concentration, serial dependence and influence months weaken simple model interpretation.
+  status: supported_as_diagnostic_concern
+  source_ids:
+  - S10
+  - S13
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: No effective sample-size calculation or universal power failure asserted.
+  next_evidence: Specify support and influence diagnostics plus failures the model must explain.
+  proposed_owner: research agent
+- id: C20
+  claim: Script50 gives a one-check pass on COVID numerals schema; check_claim_ledger79 tests display
+    and source existence.
+  status: supported
+  source_ids:
+  - S20
+  - S21
+  - S22
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: Dedicated rails include other checks, but are not independent per-value CSV or causal audits.
+  next_evidence: Keep semantic audit plus direct trace checks.
+  proposed_owner: research agent
+- id: C21
+  claim: Pivotal public numbers and BH arithmetic agree; governed fits remain unreproduced.
+  status: supported_with_reproducibility_limit
+  source_ids:
+  - S11
+  - S12
+  - S13
+  - S14
+  provenance: RECONSTRUCTION_FROM_PUBLIC_RECORD
+  limit: Transcription verification only; original governed files inaccessible and not opened.
+  next_evidence: Governed replication only if necessary and authorized.
+  proposed_owner: research agent
+literature:
+- id: L01
+  citation: Xin et al. Lancet Regional Health Western Pacific. 2023;30:100645. DOI10.1016/j.lanwpc.2022.100645.
+  url: https://hub.hku.hk/handle/10722/327560
+  verified_level: primary institutional abstract and bibliographic metadata
+  design_boundary: Weekly Hong Kong2010–2020 hospitalisation/mortality study; hospitalization decline
+    accompanied mortality increase in2020. Different population/event and no transport of coefficients.
+  record_error: Candidate lists2022;21:100645 and a modified title; online2022 differs from issue2023.
+- id: L02
+  citation: Wai et al. Annals of Emergency Medicine. 2022;79(2):148–157. DOI10.1016/j.annemergmed.2021.09.424.
+  url: https://pubmed.ncbi.nlm.nih.gov/34742591/
+  verified_level: Primary indexed abstract and bibliographic metadata via cached search; direct page access
+    challenged.
+  design_boundary: 18public acute hospitals, Jan–Aug2019 versus2020; ED attendance and28-day mortality.
+    Not first-event T2D/HTN counts.
+- id: L03
+  citation: Wai et al. JMIR Public Health and Surveillance. 2024;10:e41792.
+  url: https://publichealth.jmir.org/2024/1/e41792/
+  verified_level: primary publisher article passages and methods/period metadata
+  design_boundary: 2016–2021 emergency records,2SLS and longitudinal analyses;2016–2019 baseline and2020–2021
+    pandemic outcomes. Identification assumptions need independent assessment, not transferred here.
+- id: L04
+  citation: Hung et al. International Journal of Health Policy and Management.2022;11(4):508–513. DOI10.34172/ijhpm.2020.183.
+  url: https://www.ijhpm.com/article_3929.html
+  verified_level: primary publisher methods and abstract
+  design_boundary: Landline cross-sectional survey March22–April1,2020; self-reported consultation avoidance.
+    Plausibility evidence, not this extraction process.
+- id: L05
+  citation: 'Tam et al. Circulation: Cardiovascular Quality and Outcomes.2020;13:e006631.'
+  url: https://hub.hku.hk/handle/10722/287281
+  verified_level: primary institutional bibliographic record only
+  design_boundary: STEMI-care endpoint differs; detailed effects not independently verified in this run
+    and no values imported.
+- id: L06
+  citation: R splines documentation:ns.
+  url: https://stat.ethz.ch/CRAN/doc/manuals/r-patched/packages/splines/refman/splines.html
+  verified_level: official method documentation
+  design_boundary: Default interior knots depend on data quantiles; boundary knots on range. Subsetting
+    before ns changes basis.
+- id: L07
+  citation: sandwich:NeweyWest and package overview.
+  url: https://sandwich.r-forge.r-project.org/reference/NeweyWest.html
+  additional_url: https://sandwich.r-forge.r-project.org/articles/sandwich.html
+  verified_level: official package documentation
+  design_boundary: Covariance uses estimating-function cross-products. Residual ACF alone is not a coefficient-wise
+    HAC inflation theorem.
+negative_knowledge:
+- claim_id: C01
+  reuse_rule: Do not rebuild AMI/principal-diagnosis framing without new definitions.
+- claim_id: C04
+  reuse_rule: Do not use1.044 as amended core.
+- claim_id: C09
+  reuse_rule: No protected discovery does not imply no effect.
+- claim_id: C10
+  reuse_rule: Do not rerun failed daily-recovery method unchanged or generalise failure beyond scenarios.
+- claim_id: C12
+  reuse_rule: Do not select spline for retaining headlines.
+- claim_id: C18
+  reuse_rule: Missing mechanism measures is an evidence boundary, not global biological falsification.
+- claim_id: C20
+  reuse_rule: No schema-vacuous audit or causal truth inferred from phrase/layout tests.
+rival_families:
+- name: Entry/risk-set and extraction change
+  prediction: Count movement tracks eligibility, entry/exit, look-back or query changes; stable-risk-set
+    analyses may differ.
+  needed: Query provenance and dynamic denominators.
+  current_discrimination: not available
+- name: Utilisation/recording and competing mortality
+  prediction: Contacts/admissions fall while delayed presentation, severity or out-of-hospital death rises;
+    patterns may track service restrictions.
+  needed: Service, diagnosis and mortality linkage; comparable definitions.
+  current_discrimination: neighbouring evidence only
+- name: Biological or co-exposure change
+  prediction: Clinical risk/severity or infections/pollution change coherently beyond recording effects.
+  needed: Specified clinical measures, co-exposure trajectories and defensible comparison.
+  current_discrimination: not measured in delivered transfer
+- name: Model/support/uncertainty artefact
+  prediction: Coefficient movement follows basis, exposure support, influential months or covariance construction
+    without biological modification.
+  needed: Bounded diagnostics specified before looking at favourable outputs.
+  current_discrimination: plausible; some existing sensitivities informative, not isolated
+phase_2_gate: Choose a target; state rival predictions and rejection criteria; determine discriminating
+  data feasibility. No causal manuscript promise or significance search. Descriptive narrowing, pivot
+  or stop are acceptable.
+verification_summary:
+  core_rows: 12
+  bh_max_absolute_error: 9.992007221626409e-16
+  minimum_core_q: 0.1922390598515658
+  baseline_cross_table_max_absolute_error: 0.0
+  nested_estimate_traces:
+  - outcome: hf
+    exposure: cold_days
+    scenario: pre_covid
+    n_months: 84
+    rr: 1.11283089052394
+    rr_low: 1.05303734075742
+    rr_high: 1.17601963669547
+  - outcome: hf
+    exposure: cold_days
+    scenario: baseline_ns4
+    n_months: 132
+    rr: 1.07280014928024
+    rr_low: 1.00645431800469
+    rr_high: 1.14351952165835
+  - outcome: chd
+    exposure: cold_days
+    scenario: pre_covid
+    n_months: 84
+    rr: 1.03638701985241
+    rr_low: 1.00650546105469
+    rr_high: 1.0671557149755
+  - outcome: chd
+    exposure: cold_days
+    scenario: baseline_ns4
+    n_months: 132
+    rr: 0.994631216608471
+    rr_low: 0.948784429293951
+    rr_high: 1.04269339431323
+  - outcome: chd
+    exposure: hot_nights
+    scenario: pre_covid
+    n_months: 84
+    rr: 1.0109822438503
+    rr_low: 0.990758328483629
+    rr_high: 1.03161898113428
+  - outcome: chd
+    exposure: hot_nights
+    scenario: baseline_ns4
+    n_months: 132
+    rr: 1.02182421201542
+    rr_low: 1.00185374479531
+    rr_high: 1.04219276085479
+pr_selection:
+  universe: 101
+  selected: 15
+  logic: Screen all metadata, trace a small set of scientific transitions, stop when further records do
+    not change pivotal claims/questions. Exclusion is prioritisation, not proof of no unique science.
+  records:
+  - number: 1
+    title: First-stage HK thermal extremes & CVD admissions research pipeline (2013–2023)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/1
+    state: merged
+    head_sha: 556549b9b6b8a3e6055ba636ddda47c7ffb6ee26
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 2
+    title: 'Professor Bishai progress package: audit, email, decisions, manuscript drafts'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/2
+    state: merged
+    head_sha: 5d782d4437bf1871342fff7fc2801dbccc1eec86
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 3
+    title: 'Lean Bishai reply: email + 2-page brief + 1-page decisions PDFs'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/3
+    state: merged
+    head_sha: 5c2502cfc73b497ef2558edbaf53ea6650fa557d
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 4
+    title: HKO figure + first-stage research note PDF for Bishai
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/4
+    state: merged
+    head_sha: 2097ced72871c116209cabef025a055fa5025fbf
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 5
+    title: Organize repository and rewrite academic README
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/5
+    state: merged
+    head_sha: 2fe7bc1d966770327c43286f14142e289876fef1
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 6
+    title: Critical literature review with design and pipeline implications
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/6
+    state: merged
+    head_sha: 533fff85a22cb0d12dfd3c56767e8daa831041bc
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 7
+    title: Optimize pipeline + import real C&SD population denominators
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/7
+    state: merged
+    head_sha: 441ca47dbd7a79ce3d62c9ff186e4876891c0e5b
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 8
+    title: Ship exposure & aging context note (LaTeX, PDF, figures)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/8
+    state: merged
+    head_sha: fc133b9ed060d199930d534c88de84f5b3189f37
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 9
+    title: Lab meeting deck (17 July) and CI recalibration sync
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/9
+    state: merged
+    head_sha: 9aedfe7202e399a91fe43c0f6872c8d206eb185d
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 10
+    title: 'Lab meeting deck: real HKO temps, questions, softer tone'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/10
+    state: merged
+    head_sha: 49a13e5227309e9f024eb2eb970f2dcdd6ce379b
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 11
+    title: 'Revise 17 July lab deck: design fork, verified numbers, originals preserved'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/11
+    state: merged
+    head_sha: 06e4fbb57944ddcadf1bf98d754aca010d7656ce
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 12
+    title: Finalize 17 July Temperature–CVD lab deck and decision gates
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/12
+    state: merged
+    head_sha: 4bdfb43b09b18227a4e576a0b19c56c5852654e8
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 13
+    title: Polish 17 July lab deck from technical staff review
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/13
+    state: merged
+    head_sha: 29439dfcba3a5322489d828be1f69c04051e5e87
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 14
+    title: Objective lab meeting briefing PDF
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/14
+    state: merged
+    head_sha: b3ec3d80fe6bf7087faa83fa677ba5dbedd6d58d
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 15
+    title: Recalibrate analysis plan after 17 July lab meeting
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/15
+    state: merged
+    head_sha: 211a9b9f0e751c8017328638c0f54f8051e4b1fa
+    selected: true
+    reason: July scope recalibration
+    inspection: Body, selected current/historical source records, public issue comments; targeted changed
+      hunks also inspected for97 and100. Not an exhaustive diff audit.
+    comment_result: No public issue comments returned; no human scientific review inferred.
+  - number: 16
+    title: Slim the repo and recenter on the README
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/16
+    state: merged
+    head_sha: 22477a2c30e677ae97dcdc5676912f29744e0f19
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 17
+    title: Add GEST-2026 poster abstract (Shen Ruililin)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/17
+    state: merged
+    head_sha: 436c96464cd10aefc2f75b3da065204b4da14c71
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 18
+    title: Crawl real EPD EPIC pollution data (2013–2023)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/18
+    state: merged
+    head_sha: 95d46ed58b0a60713b4259083de33fdd38a23880
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 19
+    title: Multi-pathway analysis pipeline ready for hospital stroke aggregates
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/19
+    state: merged
+    head_sha: 0b535ba2755e2b1fb5ab68639e85f6424a1e9e0d
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 20
+    title: Add GEST-2026 A0 poster (Shen Ruililin)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/20
+    state: merged
+    head_sha: 447d8e9abbff455624360f5e2a4b80fb90020f2e
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 21
+    title: Rebuild GEST-2026 A0 poster with filled equal columns
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/21
+    state: merged
+    head_sha: dba38bfbfa27f551ad934c3d5623c5175d672fe9
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 22
+    title: 'Week 2 progress report: Beamer deck, brief, and decisions sheet'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/22
+    state: merged
+    head_sha: b7330b8403f86dcd874e7de90e8a1db54fc604a0
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 23
+    title: Encode compound-context collaboration for humans and future agents
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/23
+    state: merged
+    head_sha: ba6fc6a5e129aceb23c3419f6110ffa7322d2477
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 24
+    title: Reframe Week 2 progress sharing for teamwork and compound context
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/24
+    state: merged
+    head_sha: 88e6b2a502197e352f835c301b0473a108576b78
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 25
+    title: Week 2 team-credited deck + Laidlaw lit/methods draft
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/25
+    state: merged
+    head_sha: 87ddc011fdbfab3ac0f66b6d7112829ef8b3c4e6
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 26
+    title: Jasmine signal + hot/cold-month definition catalogue (next week)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/26
+    state: merged
+    head_sha: 79bc8de21d1738e48a562a2a08d8c4214f7ca2d7
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 27
+    title: Week 2 deck speaker notes (point-based script + jargon)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/27
+    state: merged
+    head_sha: 54d4adfb9391bfaf66d239916191f5bb56cde204
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 28
+    title: Lock Jasmine (Liu J 2020 SCS) + deep-read Roro heatwave excess-mortality baseline
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/28
+    state: merged
+    head_sha: ef2352176701292714f625b68403c0bca6cdd984
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 29
+    title: Hogan Tuesday weather-lock pack + permanent knowledge base
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/29
+    state: merged
+    head_sha: 8d75e8fcadf6826eff6e1dc57aa601a234e40a57
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 30
+    title: Rewrite Stage 3 essay to CNS-calibre publication register
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/30
+    state: merged
+    head_sha: af833f29c85adfd37dd3571bd16d0e924569e738
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 31
+    title: CNS-writing skill, workflow playbooks, and context bootstrap
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/31
+    state: merged
+    head_sha: 4c42582cc1eb641e6fec5a966ea189fbcb4a2305
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 32
+    title: 'Laidlaw website drafts: About, project outline, Week 1–2 reflections'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/32
+    state: closed_unmerged
+    head_sha: 56cbd307c92d2f12b4576ef033d0a7811cbeb323
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 33
+    title: Laidlaw Weeks 1–2 blogs (MIT Admissions register)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/33
+    state: merged
+    head_sha: 80eece02e476ed2a5492957c45695df544aacede
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 34
+    title: Playbook slash commands + semi-automatic blog-from-deck
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/34
+    state: merged
+    head_sha: a977f6363252860fc643346d656b6f16ab72de5c
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 35
+    title: 'Hogan live-manuscript handoff: reuse Intro substrate; Methods remainder for Aug 5'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/35
+    state: merged
+    head_sha: 3882375ed815beb6be339ad0dba8015c3c3eb90b
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 36
+    title: LSN research summary + interactive climate companion
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/36
+    state: merged
+    head_sha: 8b57eab9598eee5817ae9e1474e6844c0e8a1a6f
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 37
+    title: CHD/HF amended real reanalysis and manuscript (Gate 3 open)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/37
+    state: merged
+    head_sha: 4a0a54dfa602d7b5db91a6ed85deda6a9aade648
+    selected: true
+    reason: receipt/amended core
+    inspection: Body, selected current/historical source records, public issue comments; targeted changed
+      hunks also inspected for97 and100. Not an exhaustive diff audit.
+    comment_result: Disabled bot-review notice only; no scientific comment.
+  - number: 38
+    title: CNS-calibre integrated CHD/HF reanalysis and final reports
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/38
+    state: merged
+    head_sha: 59f82ccc2e60250b3285d94fd7467ebc3f525dde
+    selected: true
+    reason: released evidence and calibration failure
+    inspection: Body, selected current/historical source records, public issue comments; targeted changed
+      hunks also inspected for97 and100. Not an exhaustive diff audit.
+    comment_result: No public issue comments returned; no human scientific review inferred.
+  - number: 39
+    title: Polish Laidlaw Stage 3 report and readable A0 poster
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/39
+    state: merged
+    head_sha: 76e05e9144969c16c46d734375021c4c77e2ee37
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 40
+    title: 'Reconcile external review: NW3 wording, diagnostics, M|D bounds'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/40
+    state: closed_unmerged
+    head_sha: 2916a7e34a351c5eb1604bdc8dc8e9afb10c43c6
+    selected: true
+    reason: post-run calibration/prospectiveness and uncertainty caveats
+    inspection: body/metadata and current counterpart; historical diff not deeply audited
+  - number: 41
+    title: Hogan Methods reply + documented temperature share for Roro
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/41
+    state: closed_unmerged
+    head_sha: 50ddab4239c8ae2ecdd178a11c8238e731d4c567
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 42
+    title: 'Laidlaw Stage 3: publish pattern (Sol) — submit, don’t re-research'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/42
+    state: closed_unmerged
+    head_sha: 319cc966d4aa5c2d79cbf482f79b60729fb7ac1f
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 43
+    title: 'Hogan tonight + Bishai Stage 3: insights from existing tables'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/43
+    state: closed_unmerged
+    head_sha: 6918a8080d9802c655c4e8dbd451b2b3a7c283ea
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 44
+    title: Live manuscript collab; Sol Stage 3 report and poster frozen
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/44
+    state: merged
+    head_sha: d3d3f3350bb3470cdd7c9c0706642f972c7aeecd
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 45
+    title: 'Research-team live paste pack: Fable honesty pass and Kimi harvest'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/45
+    state: merged
+    head_sha: 1cb227f5157bf2502552f1c3bf177ba97503a075
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 46
+    title: Week 4–6 Laidlaw blogs and Week 6 compute menu
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/46
+    state: closed_unmerged
+    head_sha: d63d65b681b491cc2e7253a1ccfd53e456df81db
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 47
+    title: Add peer-city maps and a Bishai-ready exposure-identification pack
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/47
+    state: closed_unmerged
+    head_sha: 3c1494139c1ae52187f8da61438883e1104d9c8e
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 48
+    title: 'Overnight identification: intensive residual, flag rank, and a same-night scrubber'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/48
+    state: closed_unmerged
+    head_sha: 86b84ca7e56029e2c4065bb89d6160c2d12a02fe
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 49
+    title: 'Identification laboratory: Jaccard 0.031 is an integral'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/49
+    state: closed_unmerged
+    head_sha: 2af9efb17de20f65ee78fdda57e71a4420063213
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 50
+    title: Close parked identification objects from public HKO and WorldPop
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/50
+    state: closed_unmerged
+    head_sha: 696b97cc969c904109165511b6c8f1d2395f881a
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 51
+    title: Raise the live manuscript to CNS register with monthly identification
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/51
+    state: closed_unmerged
+    head_sha: db16a39a033f830175b4078131fcc30cb2aebf53
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 52
+    title: Ingest Imperial conference deadlines without touching Stage 3
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/52
+    state: closed_unmerged
+    head_sha: 58c059ebb77bc83ecd6917cb6fd62c2aca6ddda1
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 53
+    title: 'Identification crucible: what the monthly panel can actually license'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/53
+    state: closed_unmerged
+    head_sha: d1e2dcceeb046f92822fea2f9514987403b61537
+    selected: true
+    reason: unique scoped identification criticism
+    inspection: Body, selected current/historical source records, public issue comments; targeted changed
+      hunks also inspected for97 and100. Not an exhaustive diff audit.
+    comment_result: Bot port/closure notes; not independent scientific review.
+  - number: 54
+    title: Health-economics identification laboratory (Explore, SYNTHETIC)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/54
+    state: closed_unmerged
+    head_sha: e9ddc66ce12336c93c8197187c761e3e5e64c6d0
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 55
+    title: CNS-register identification paper for the live collaborative manuscript
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/55
+    state: closed_unmerged
+    head_sha: c7d4b8c15126a200871b63001f953cab55c314ef
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 56
+    title: 'Live manuscript protocol: Hogan comments, citation audit, continuous .md'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/56
+    state: merged
+    head_sha: 1629dbc79e7358011bb65033d53af6180c09027e
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 57
+    title: Add Playbook 05 auto-research lab (Jin pattern, epidemiology stop rule)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/57
+    state: merged
+    head_sha: 79648ff166817feb25e7db187c16805677dd8946
+    selected: true
+    reason: prior Auto Research stop rule and ledger reliance
+    inspection: Body, selected current/historical source records, public issue comments; targeted changed
+      hunks also inspected for97 and100. Not an exhaustive diff audit.
+    comment_result: No public issue comments returned; no human scientific review inferred.
+  - number: 58
+    title: Record 18 Aug roundtable on the 15 Aug collab draft
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/58
+    state: closed_unmerged
+    head_sha: 63cca73101bd47884fc921f81475c6874d5354db
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 59
+    title: Raise the live identification paper; intern ceiling note for Hogan and Bishai
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/59
+    state: merged
+    head_sha: e010b743df0be99170aa4e2d9cb0a43a8d769a87
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 60
+    title: Draft Email A for Bishai Stage 3 form 2a endorsement
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/60
+    state: merged
+    head_sha: 2541cfabf26a32952ff0e3d38017b1e1c55aa517
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 61
+    title: Add Guo 2016 temperature variability to the climate panel
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/61
+    state: closed_unmerged
+    head_sha: dafe6e0b5b76557c67e0b64fb96ef5611d43d3e4
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 62
+    title: 'UK conference airfare: ask Horizons if the named CX itinerary is okay'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/62
+    state: closed_unmerged
+    head_sha: 12b7e3d815fc282eb90ad15c258a2f1fb01ad029
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 63
+    title: 'Stage 3 essay and send pack: accessible report, not live manuscript'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/63
+    state: merged
+    head_sha: 7bdcae17fc7ed9c6a6ec9e6ece0d891bd44a3cc1
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 64
+    title: 'Stage 3 essay: Word-register cut, Bishai credit, Table 1 fit'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/64
+    state: merged
+    head_sha: 29a9526c2f31c4c928e0d7871208a7b6f69befea
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 65
+    title: Fold roundtable craft into the Stage 3 report and poster
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/65
+    state: merged
+    head_sha: 8b91f3c4977f757f0cd759e5e3313868410c6126
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 66
+    title: 'Email A: change form 2a research topic off AMI/stroke'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/66
+    state: closed_unmerged
+    head_sha: 5364a7834a2f8f974f61d9754478a903641523c8
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 67
+    title: Name aggregation-identifiability and calibrated refusal as the contribution
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/67
+    state: closed_unmerged
+    head_sha: a85142caf40a5a14e7c95bab5e3ebb657582bad8
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 68
+    title: Add compounding scientific-search system (Playbook 06)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/68
+    state: closed_unmerged
+    head_sha: 04c8587dc54c7401afa37b3db8bc9d3745fb45c5
+    selected: true
+    reason: superseded harness plus manuscript hunks boundary
+    inspection: body/metadata and current counterpart; historical diff not deeply audited
+  - number: 69
+    title: 'Hogan Methods: Model 1/2/3 Word manuscript and PDF'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/69
+    state: closed_unmerged
+    head_sha: 8eba07881d3ec3769bd59afac490698c0ae01d96
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 70
+    title: Rewrite live Methods for Hogan Model 1/2/3 and climatology-relative days
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/70
+    state: merged
+    head_sha: eb211288e301d6178db66f040271e1524a9fdf54
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 71
+    title: 'Hogan 24 Aug Methods: committee merge of PR 69 and PR 70'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/71
+    state: merged
+    head_sha: 0dfbcc63f0adcb34503907df0e8944042aee0f5b
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 72
+    title: Rebuild Stage 3 essay and poster with Hogan Model 1/2/3 language
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/72
+    state: merged
+    head_sha: 277d8d0f56f6f43af295568f3e25fce2f6acbeb1
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 73
+    title: Bishai can sign form 2a without another Hogan review
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/73
+    state: closed_unmerged
+    head_sha: 79ac418b8e5ec250c8920c3f5c49f62faebf1255
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 74
+    title: 'Thursday form 2a pack: Hogan is not the signer'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/74
+    state: closed_unmerged
+    head_sha: 30ccc1839bbbd4311ffbdddd9563abd8c5413060
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 75
+    title: 27 August lab talk slides for the Bishai meeting
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/75
+    state: closed_unmerged
+    head_sha: 387eed6eda28c1ed7178a2aef6041d6ed6ea9029
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 76
+    title: Print-ready Hogan manuscript for Bishai (banner off, tables unsplit)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/76
+    state: merged
+    head_sha: 717cbf8001a0e9d969018096eb83947331a3d9b7
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 77
+    title: 'Map Bishai Figure 3 comments: pre-COVID, spline df, 5-day rule, HHAP'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/77
+    state: closed_unmerged
+    head_sha: 29b37136126f0691ac43394f95db3c5256102292
+    selected: true
+    reason: pre-COVID and spline/duration interpretation
+    inspection: body/metadata and current counterpart; historical diff not deeply audited
+  - number: 78
+    title: Rebuild live Figure 3 so spline df cannot be read as heatwave duration
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/78
+    state: closed_unmerged
+    head_sha: c790597b538a868b413d7524188a9f9907ea700d
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 79
+    title: Crown 6-df as robustness among 5, 6, and 8
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/79
+    state: closed_unmerged
+    head_sha: a0421639e1c89b3c3df868e55de4a4a9f1b9b06a
+    selected: true
+    reason: explicit result-dependent6df selection
+    inspection: Body, selected current/historical source records, public issue comments; targeted changed
+      hunks also inspected for97 and100. Not an exhaustive diff audit.
+    comment_result: Bot port/closure notes; not independent scientific review.
+  - number: 80
+    title: Fukuda brief scoped to what this Laidlaw repo actually holds
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/80
+    state: closed_unmerged
+    head_sha: 4bb4c3e2ac9635ec40fdc6a48759f3b0dc6f75bc
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 81
+    title: Physiology hypotheses and WHO–HK HHAP mapping in manuscript and Laidlaw report
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/81
+    state: closed_unmerged
+    head_sha: 2cb4efed3384cd9b8972a3336d9c2fd957502804
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 82
+    title: Hogan Word+PDF exceed 24 August snapshot (Gate 3 still open)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/82
+    state: merged
+    head_sha: d637f026d36b9edd70b61f2184d3b1ce79dbb57a
+    selected: true
+    reason: port/preservation of old reporting preferences
+    inspection: body/metadata and current counterpart; historical diff not deeply audited
+  - number: 83
+    title: Horizons Stage 3 send pack (31 August)
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/83
+    state: closed_unmerged
+    head_sha: 74feac4287f67e07cb49d6e2e3041e31b6e2c861
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 84
+    title: Record Bishai form 2a signature and Stage 3 caliber review
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/84
+    state: closed_unmerged
+    head_sha: a744d47a91d6cad3ff9ffac68f794b80489ab97b
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 85
+    title: WHO 2026 × Hong Kong HHAP companion; restore live S9
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/85
+    state: closed_unmerged
+    head_sha: 3cc93cb5f4077cba36d349e1c2ef94f6d836f762
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 86
+    title: Laidlaw Conference 2026 abstract, Hogan bullets, and 9-slide talk
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/86
+    state: closed_unmerged
+    head_sha: 460867632c3b04ea43d089d8cb230a0411bfc934
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 87
+    title: Add HKU and Laidlaw logos to the Stage 3 poster header
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/87
+    state: closed_unmerged
+    head_sha: 714b20e5d09702301e688b341623dec47264b0af
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 88
+    title: Point the Playbook 07 board at origin/main after PR 82
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/88
+    state: merged
+    head_sha: 48a947e6be6a914e80ec19ad35f28e99b78232b5
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 89
+    title: Record that Bishai signed form 2a against the 22 Aug foldback
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/89
+    state: merged
+    head_sha: bd9c51115f66722642385f5a2871eb3fafd0989f
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 90
+    title: Add the 31 August Horizons Stage 3 send pack
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/90
+    state: merged
+    head_sha: e8673984ab6a473107c4770988377915994cb623
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 91
+    title: Put HKU and Laidlaw logos on the Stage 3 navy header
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/91
+    state: merged
+    head_sha: 5b47bc5ecce0fcb7d44658a7984a21d7f13a1061
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 92
+    title: Add the Laidlaw Conference 2026 abstract and Hogan 4 Sep briefing
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/92
+    state: merged
+    head_sha: 2310a5ad7cae65e4def91b0d99ca658f20da27fb
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 93
+    title: Add the Fukuda pitch pack scoped to what this repo holds
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/93
+    state: merged
+    head_sha: 7ddf98ea3bb514a9eb88e207b7a570cc8bde5232
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 94
+    title: Add Playbook 06 scientific-search harness without live-manuscript hunks
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/94
+    state: merged
+    head_sha: d382707a96fa8b164e7dc03ac06d7fd4a502d180
+    selected: true
+    reason: harness port without manuscript changes
+    inspection: Body, selected current/historical source records, public issue comments; targeted changed
+      hunks also inspected for97 and100. Not an exhaustive diff audit.
+    comment_result: No public issue comments returned; no human scientific review inferred.
+  - number: 95
+    title: 'Ig Nobel mycelium exhibit: the fruiting body that did not fruit'
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/95
+    state: open
+    head_sha: a8bb6ae6d791b7bf26d44d17b71f29369a7cb905
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 96
+    title: Hogan mechanism bullets plus a Bob-only 200-word discussion brief
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/96
+    state: open
+    head_sha: cbf517ad73a2a3612a6f4b131ee80362262b3fe3
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  - number: 97
+    title: Reframe live manuscript as analysis-window sensitivity
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/97
+    state: merged
+    head_sha: 8b45be36dbdde83e3d31317cf8f36502d6625be6
+    selected: true
+    reason: COVID shift/in-place rewrite
+    inspection: Body, selected current/historical source records, public issue comments; targeted changed
+      hunks also inspected for97 and100. Not an exhaustive diff audit.
+    comment_result: No public issue comments returned; no human scientific review inferred.
+  - number: 98
+    title: covid_period IMRD repair after independent review
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/98
+    state: merged
+    head_sha: b8cb632114f59f744b4c6317141f16096d934ae6
+    selected: true
+    reason: authority conflict and structural repair
+    inspection: Body, selected current/historical source records, public issue comments; targeted changed
+      hunks also inspected for97 and100. Not an exhaustive diff audit.
+    comment_result: No public issue comments returned; no human scientific review inferred.
+  - number: 99
+    title: Apply round-1 and round-2 scientific panel FIXes to the covid_period candidate
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/99
+    state: merged
+    head_sha: 9caf99484fa0306c628957a1dfe3df15261c959d
+    selected: true
+    reason: weak weather-falsifier revision
+    inspection: Body, selected current/historical source records, public issue comments; targeted changed
+      hunks also inspected for97 and100. Not an exhaustive diff audit.
+    comment_result: No public issue comments returned; no human scientific review inferred.
+  - number: 100
+    title: Align covid_period to one window-dependence thesis
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/100
+    state: open
+    head_sha: 8695c2cc86e6d99f23677e73b9858f1d985052c3
+    selected: true
+    reason: unmerged competing wording and figure narrowing
+    inspection: Body, selected current/historical source records, public issue comments; targeted changed
+      hunks also inspected for97 and100. Not an exhaustive diff audit.
+    comment_result: No public issue comments returned; no human scientific review inferred.
+  - number: 101
+    title: Name Professor David Bishai on the Stage 3 poster and drop the collaborator footnote
+    url: https://github.com/bobshenruililin/Laidlaw-Heat-Project/pull/101
+    state: merged
+    head_sha: b103e96c6761f3409fab6f116c6675b43fdb2ee3
+    selected: false
+    inspection: metadata/title screen only; no zero-unique-science certification
+    reason: Common exclusion rationale; reopen only if a pivotal claim needs it.
+  common_exclusion_rationale: Metadata screen deprioritises admin/presentation, repeated writing and legacy
+    branches not needed for the present measurement, authority and evidence questions; not a zero-unique-science
+    judgment.

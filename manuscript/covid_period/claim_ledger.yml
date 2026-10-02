@@ -1,375 +1,508 @@
-# Claim ledger — COVID-period Hogan-register IMRD
-# Every numeral in Manuscript_covid_period_draft.md must already exist in a
-# named git CSV or the parked live file. provenance: HA_APPROVED_AGGREGATE
-# or REAL public climate. Never SYNTHETIC as a finding.
-#
-# Audited by scripts/79_covid_period_rails_checks.py. This schema uses `numerals:`,
-# so scripts/50_audit_live_claim_ledger.py cannot read it: pointed here it reports a
-# vacuous one-check pass. The 12 September repair moved no numeral; it added display
-# strings for the influence months and the reference, figure, and print bindings below.
-
-manuscript: manuscript/covid_period/Manuscript_covid_period_draft.md
-
-hogan_weather:
-  must_contain: "Meteorological data was obtained from the HKO."
-  averaging: "All monthly data were derived by taking the average of daily data in each calendar month."
-  source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-
-gate_3: open
-scientific_body_forbids:
-  - placeholder
-  - Gate 3
-  - Hogan asked
-  - health improved
-  - admissions averted
-  - failing left ventricle
-  - TWFE
-  - QALY
-  - Callaway
-  - SYNTHETIC coefficients as findings
-
-numerals:
-  - name: n_months_full
-    value: 132
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: n_months_pre2020
-    value: 84
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: pre_covid
-  - name: chd_events
-    value: 156156
-    display: "156,156"
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: hf_events
-    value: 29681
-    display: "29,681"
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: chd_mean_monthly
-    value: 1183.0
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: hf_mean_monthly
-    value: 224.9
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: chd_annual_2013
-    value: 23830
-    source: outputs/tables/cvd_descriptive_annual_totals.csv
-  - name: chd_annual_2023
-    value: 12323
-    source: outputs/tables/cvd_descriptive_annual_totals.csv
-  - name: hf_annual_2013
-    value: 4336
-    source: outputs/tables/cvd_descriptive_annual_totals.csv
-  - name: hf_annual_2023
-    value: 2296
-    source: outputs/tables/cvd_descriptive_annual_totals.csv
-  - name: chd_annual_2020
-    value: 10237
-    source: outputs/tables/cvd_descriptive_annual_totals.csv
-  - name: hf_annual_2020
-    value: 1964
-    source: outputs/tables/cvd_descriptive_annual_totals.csv
-  - name: chd_annual_2019
-    value: 12396
-    display: "12,396"
-    source: outputs/tables/cvd_descriptive_annual_totals.csv
-  - name: hf_annual_2019
-    value: 2344
-    display: "2,344"
-    source: outputs/tables/cvd_descriptive_annual_totals.csv
-  - name: csd_35plus_rise
-    value: "17%"
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: chd_january_mean
-    value: 1386
-    source: outputs/tables/cvd_descriptive_seasonality_by_month.csv
-  - name: chd_september_mean
-    value: 1097
-    source: outputs/tables/cvd_descriptive_seasonality_by_month.csv
-  - name: hf_january_mean
-    value: 287
-    source: outputs/tables/cvd_descriptive_seasonality_by_month.csv
-  - name: hf_september_mean
-    value: 196
-    source: outputs/tables/cvd_descriptive_seasonality_by_month.csv
-  - name: q_minimum
-    value: 0.192
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: chd_hot_nights_full
-    value: "1.022 (1.002–1.042)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: baseline_ns4
-  - name: chd_hot_nights_model
-    value: "1.022 (0.995–1.049)"
-    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
-  - name: chd_hot_nights_hc1
-    value: "1.022 (0.997–1.047)"
-    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
-  - name: p_model_hf_cold_days
-    value: 0.004
-    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
-    note: "model-based p 0.003959 rounded; not a freeze"
-  - name: p_model_chd_hot_nights
-    value: 0.112
-    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
-    note: "model-based p 0.111944 rounded"
-  - name: hf_cold_days_full
-    value: "1.073 (1.006–1.144)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: baseline_ns4
-  - name: chd_hot_nights_pre2020
-    value: "1.011 (0.991–1.032)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: pre_covid
-  - name: hf_cold_days_pre2020
-    value: "1.113 (1.053–1.176)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: pre_covid
-  - name: chd_cold_days_pre2020
-    value: "1.036 (1.007–1.067)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: pre_covid
-  - name: chd_cold_days_full
-    value: "0.995 (0.949–1.043)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: baseline_ns4
-  - name: chd_hot_nights_covid_phase
-    value: "1.013 (0.994–1.033)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: covid_phase_adjusted
-  - name: hf_cold_days_covid_phase
-    value: "1.074 (1.006–1.145)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: covid_phase_adjusted
-  - name: chd_mean_temp_full
-    value: "0.993 (0.976–1.010)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: baseline_ns4
-  - name: hf_mean_temp_full
-    value: "0.974 (0.947–1.002)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: baseline_ns4
-  - name: chd_mean_temp_pre2020
-    value: "0.980 (0.970–0.990)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: pre_covid
-  - name: hf_mean_temp_pre2020
-    value: "0.945 (0.927–0.963)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: pre_covid
-  - name: chd_mean_temp_covid_phase
-    value: "0.989 (0.975–1.003)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: covid_phase_adjusted
-  - name: hf_mean_temp_covid_phase
-    value: "0.967 (0.944–0.991)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: covid_phase_adjusted
-  - name: chd_cold_covid_phase
-    value: "0.991 (0.943–1.041)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: covid_phase_adjusted
-  - name: hf_hot_nights_pre2020
-    value: "0.965 (0.937–0.994)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: pre_covid
-  - name: hf_hot_nights_covid_phase
-    value: "0.994 (0.972–1.016)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: covid_phase_adjusted
-  - name: chd_vhd_pre2020
-    value: "0.997 (0.982–1.012)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: pre_covid
-  - name: hf_vhd_pre2020
-    value: "0.990 (0.960–1.021)"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: pre_covid
-  - name: mean_hot_nights_pre2020
-    value: 2.7
-    source: outputs/tables/cvd_descriptive_covid_era_means.csv
-    note: "2.738 rounded"
-  - name: mean_hot_nights_2020_2022
-    value: 4.5
-    source: outputs/tables/cvd_descriptive_covid_era_means.csv
-    note: "4.528 rounded"
-  - name: hot_nights_2013
-    value: 10
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: hot_nights_2021
-    value: 61
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: hot_nights_2023
-    value: 56
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: very_hot_days_2013
-    value: 17
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: very_hot_days_2021_2023
-    value: 54
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: cold_days_2013
-    value: 14
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: cold_days_2019
-    value: 1
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: cold_days_2021
-    value: 13
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: cold_days_2023
-    value: 14
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: cold_days_total
-    value: 145
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: cold_days_djf
-    value: 141
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: cold_days_dec
-    value: 40
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: cold_days_jan
-    value: 54
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: cold_days_feb
-    value: 47
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: cold_days_mar
-    value: 4
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: months_with_cold
-    value: 29
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: no2_2013
-    value: 53.7
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: no2_2023
-    value: 32.1
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: pm25_2013
-    value: 30.8
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: pm25_2023
-    value: 14.6
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: ozone_2013
-    value: 42.6
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: ozone_2023
-    value: 58.3
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: influenza_months
-    value: 121
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: acf_chd_hot_nights
-    value: 0.508
-    source: outputs/tables/chd_pathway_residual_acf.csv
-  - name: acf_chd_hot_nights_nested
-    value: 0.171
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: pre_covid
-    note: "CHD hot nights residual_acf1 0.170878 rounded"
-  - name: acf_hf_cold_days
-    value: 0.146
-    source: outputs/tables/hf_pathway_residual_acf.csv
-  - name: acf_hf_cold_days_nested
-    value: -0.046
-    display: "−0.046"
-    source: outputs/tables/cvd_trend_depletion_sensitivity.csv
-    scenario: pre_covid
-    note: "HF cold days residual_acf1 -0.046486 rounded"
-  - name: vif_tmax_tmin
-    value: 4.66
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: vif_hot_vhd
-    value: 1.96
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: chd_hot_nights_joint
-    value: "1.045 (1.015–1.075)"
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: chd_hot_nights_range
-    value: "1.011 to 1.025"
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: hf_cold_days_range
-    value: "1.043 to 1.113"
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: nw3_unrounded_low
-    value: 1.000253
-    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
-  - name: nw3_unrounded_high
-    value: 1.043860
-    source: outputs/release_chd_hf/tables/table4_uncertainty_ladder.csv
-  - name: hf_tmin_unrounded_upper
-    value: 1.00005
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: goggins_hf_rr
-    value: "2.63 (2.43–2.84)"
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-    note: neighbour; not imported into Table 2
-  - name: influence_chd
-    value: "2020-02"
-    display: "February 2020"
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: influence_hf
-    value: "2022-02"
-    display: "February 2022"
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: chd_hot_nights_influence
-    value: "1.021 (1.001–1.040)"
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-  - name: hf_cold_days_influence
-    value: "1.088 (1.034–1.144)"
-    source: manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md
-
-forbidden_in_this_track:
-  - health improved
-  - admissions averted
-  - gate 3 is closed
-  - failing left ventricle
-  - TWFE
-  - QALY
-  - SYNTHETIC coefficients as findings
-  - Hung et al. as author of 10.1016/j.annemergmed.2021.09.424
-
-# References are renumbered in Vancouver order of first appearance. Entries that the
-# repaired body no longer cites were dropped from the main list rather than left
-# unread; none of them was a fabricated citation.
-references:
-  numbering: vancouver_order_of_appearance
-  n_entries: 23
-  dropped_as_uncited:
-    - Ye 2012 ambient temperature and morbidity review
-    - Goggins 2012 daily stroke admissions
-    - Yang 2025 cold weather, influenza, and stroke
-    - Chevance 2024, Ioannou 2024, O'Connor 2025, Ashe 2025 (heat and sleep)
-    - Ikaheimo 2018, Li 2026 (cold exposure physiology)
-    - WHO 2026 heat-health action plan guidance
-    - HKO and CHP heat and cold warning pages, Home Affairs heat shelters
-    - HKO The Year's Weather 2017 and 2024
-  kept_methods_citations:
-    - Bhaskaran 2013 time series regression
-    - Newey and West 1987
-    - Benjamini and Hochberg 1995
-    - Greenland and Morgenstern 1989
-    - Basagana and Ballester 2024, 2026 (aggregation refusal)
-    - HKO, EPD, and Census and Statistics Department sources
-    - Goggins and Chan 2017 humidity, Chan 2013 rainfall
-
-figures:
-  - label: Figure 1
-    file: figures/live_identification/figure_B_first_event_depletion.png
-    role: first-event count path against general population
-  - label: Figure 2
-    file: figures/live_identification/figure_A_cold_day_identification.png
-    role: which months carry the official cold-day contrast
-  - label: Figure 3
-    file: figures/covid_period/figure_3_ruling_out_exhibit.png
-    role: ruling-out exhibit across trend-spline checks, nested overlapping refit, and full-sample COVID-phase intercept adjustment
-
-print:
-  builder: scripts/78_covid_period_manuscript_docx.py
-  word: manuscript/covid_period/Heat_CVD_Manuscript_covid_period.docx
-  pdf: manuscript/covid_period/Heat_CVD_Manuscript_covid_period.pdf
-  page_map: manuscript/covid_period/PRINT_PAGE_MAP.md
-  page_break_after_every_float: false
-  do_not_run_for_this_track: scripts/77_hogan_20260910_live_docx.py
+# JSON is a YAML subset. Audit of the current COVID revision; historical ledger is in Git.
+{
+  "date": "2026-10-02",
+  "status": "PASS",
+  "scope": "Direct source-to-table/value and interpretation checks; no health models run; no governance approval inferred",
+  "checks": [
+    {
+      "check": "main annual table matches all 22 approved outcome totals",
+      "passed": true
+    },
+    {
+      "check": "nested and full official panel matches 12 source estimates and intervals",
+      "passed": true
+    },
+    {
+      "check": "disjoint era means and month counts match approved summaries",
+      "passed": true
+    },
+    {
+      "check": "complete twelve-fit panel and q family match source",
+      "passed": true
+    },
+    {
+      "check": "chd all 21 alternative-calendar estimates match source",
+      "passed": true
+    },
+    {
+      "check": "chd all uncertainty bounds match source",
+      "passed": true
+    },
+    {
+      "check": "hf all 21 alternative-calendar estimates match source",
+      "passed": true
+    },
+    {
+      "check": "hf all uncertainty bounds match source",
+      "passed": true
+    },
+    {
+      "check": "chd cumulative total in body",
+      "passed": true
+    },
+    {
+      "check": "chd 2020 percentage versus 2019",
+      "passed": true
+    },
+    {
+      "check": "chd 2023 percentage versus 2019",
+      "passed": true
+    },
+    {
+      "check": "hf cumulative total in body",
+      "passed": true
+    },
+    {
+      "check": "hf 2020 percentage versus 2019",
+      "passed": true
+    },
+    {
+      "check": "hf 2023 percentage versus 2019",
+      "passed": true
+    },
+    {
+      "check": "multiplicity minimum correctly displayed",
+      "passed": true
+    },
+    {
+      "check": "near-null HF minimum interval and p value use unrounded source",
+      "passed": true
+    },
+    {
+      "check": "reference numbering complete",
+      "passed": true
+    },
+    {
+      "check": "entire protected weather paragraph unchanged",
+      "passed": true
+    },
+    {
+      "check": "all health source rows retain approved aggregate label",
+      "passed": true
+    },
+    {
+      "check": "no temporary tokens or fabricated declarations",
+      "passed": true
+    },
+    {
+      "check": "later-era limitation remains explicit",
+      "passed": true
+    },
+    {
+      "check": "weather exclusion is not inferred",
+      "passed": true
+    },
+    {
+      "check": "interpretation is exploratory",
+      "passed": true
+    }
+  ],
+  "tables": {
+    "annual": [
+      [
+        "2013",
+        "23,830",
+        "4,336"
+      ],
+      [
+        "2014",
+        "17,760",
+        "3,675"
+      ],
+      [
+        "2015",
+        "15,411",
+        "2,934"
+      ],
+      [
+        "2016",
+        "14,510",
+        "2,734"
+      ],
+      [
+        "2017",
+        "13,962",
+        "2,620"
+      ],
+      [
+        "2018",
+        "12,616",
+        "2,527"
+      ],
+      [
+        "2019",
+        "12,396",
+        "2,344"
+      ],
+      [
+        "2020",
+        "10,237",
+        "1,964"
+      ],
+      [
+        "2021",
+        "12,035",
+        "2,275"
+      ],
+      [
+        "2022",
+        "11,076",
+        "1,976"
+      ],
+      [
+        "2023",
+        "12,323",
+        "2,296"
+      ]
+    ],
+    "official_nested_full": [
+      [
+        "CHD",
+        "Hot nights / 5 days",
+        "1.011 (0.991–1.032)",
+        "1.022 (1.002–1.042)"
+      ],
+      [
+        "CHD",
+        "Very hot days / 5 days",
+        "0.997 (0.982–1.012)",
+        "0.999 (0.974–1.025)"
+      ],
+      [
+        "CHD",
+        "Cold days / 5 days",
+        "1.036 (1.007–1.067)",
+        "0.995 (0.949–1.043)"
+      ],
+      [
+        "HF",
+        "Hot nights / 5 days",
+        "0.965 (0.937–0.994)",
+        "1.003 (0.976–1.031)"
+      ],
+      [
+        "HF",
+        "Very hot days / 5 days",
+        "0.990 (0.960–1.021)",
+        "0.995 (0.963–1.028)"
+      ],
+      [
+        "HF",
+        "Cold days / 5 days",
+        "1.113 (1.053–1.176)",
+        "1.073 (1.006–1.144)"
+      ]
+    ],
+    "disjoint_periods": [
+      [
+        "2013–2019",
+        "84",
+        "1315.3",
+        "252.0"
+      ],
+      [
+        "2020–2022",
+        "36",
+        "926.3",
+        "172.6"
+      ],
+      [
+        "2023",
+        "12",
+        "1026.9",
+        "191.3"
+      ]
+    ],
+    "full_panel": [
+      [
+        "CHD",
+        "Mean temperature / 1°C",
+        "0.993 (0.976–1.010)",
+        "0.424",
+        "0.726"
+      ],
+      [
+        "CHD",
+        "Mean maximum / 1°C",
+        "0.993 (0.979–1.007)",
+        "0.321",
+        "0.642"
+      ],
+      [
+        "CHD",
+        "Mean minimum / 1°C",
+        "0.994 (0.977–1.012)",
+        "0.509",
+        "0.764"
+      ],
+      [
+        "CHD",
+        "Hot nights / 5 days",
+        "1.022 (1.002–1.042)",
+        "0.032",
+        "0.192"
+      ],
+      [
+        "CHD",
+        "Very hot days / 5 days",
+        "0.999 (0.974–1.025)",
+        "0.962",
+        "0.962"
+      ],
+      [
+        "CHD",
+        "Cold days / 5 days",
+        "0.995 (0.949–1.043)",
+        "0.823",
+        "0.900"
+      ],
+      [
+        "HF",
+        "Mean temperature / 1°C",
+        "0.974 (0.947–1.002)",
+        "0.069",
+        "0.207"
+      ],
+      [
+        "HF",
+        "Mean maximum / 1°C",
+        "0.981 (0.958–1.005)",
+        "0.113",
+        "0.272"
+      ],
+      [
+        "HF",
+        "Mean minimum / 1°C",
+        "0.973 (0.947–1.000)",
+        "0.050",
+        "0.202"
+      ],
+      [
+        "HF",
+        "Hot nights / 5 days",
+        "1.003 (0.976–1.031)",
+        "0.825",
+        "0.900"
+      ],
+      [
+        "HF",
+        "Very hot days / 5 days",
+        "0.995 (0.963–1.028)",
+        "0.764",
+        "0.900"
+      ],
+      [
+        "HF",
+        "Cold days / 5 days",
+        "1.073 (1.006–1.144)",
+        "0.031",
+        "0.192"
+      ]
+    ],
+    "calendar_sensitivity": [
+      [
+        [
+          "Time spline 3 df",
+          "1.011 (0.990–1.032)",
+          "0.993 (0.967–1.020)",
+          "0.989 (0.934–1.046)"
+        ],
+        [
+          "Time spline 6 df",
+          "1.024 (1.005–1.044)",
+          "0.999 (0.975–1.023)",
+          "0.999 (0.952–1.047)"
+        ],
+        [
+          "Time spline 8 df",
+          "1.023 (1.005–1.042)",
+          "0.997 (0.974–1.021)",
+          "0.997 (0.950–1.047)"
+        ],
+        [
+          "Year indicators",
+          "1.025 (1.000–1.050)",
+          "1.006 (0.983–1.029)",
+          "0.994 (0.939–1.052)"
+        ],
+        [
+          "Omit first 12 months",
+          "1.020 (1.000–1.040)",
+          "0.995 (0.969–1.022)",
+          "1.008 (0.954–1.065)"
+        ],
+        [
+          "Omit first 24 months",
+          "1.017 (0.999–1.036)",
+          "0.993 (0.966–1.020)",
+          "0.989 (0.930–1.053)"
+        ],
+        [
+          "COVID phase intercepts",
+          "1.013 (0.994–1.033)",
+          "0.993 (0.973–1.013)",
+          "0.991 (0.943–1.041)"
+        ]
+      ],
+      [
+        [
+          "Time spline 3 df",
+          "0.993 (0.963–1.025)",
+          "0.989 (0.956–1.024)",
+          "1.066 (1.005–1.131)"
+        ],
+        [
+          "Time spline 6 df",
+          "1.004 (0.977–1.032)",
+          "0.995 (0.963–1.028)",
+          "1.072 (1.005–1.143)"
+        ],
+        [
+          "Time spline 8 df",
+          "1.002 (0.978–1.028)",
+          "0.993 (0.963–1.024)",
+          "1.062 (0.994–1.135)"
+        ],
+        [
+          "Year indicators",
+          "1.004 (0.982–1.026)",
+          "0.997 (0.971–1.024)",
+          "1.061 (0.997–1.129)"
+        ],
+        [
+          "Omit first 12 months",
+          "1.007 (0.977–1.038)",
+          "0.995 (0.963–1.029)",
+          "1.067 (0.995–1.143)"
+        ],
+        [
+          "Omit first 24 months",
+          "1.003 (0.974–1.034)",
+          "0.988 (0.957–1.021)",
+          "1.043 (0.965–1.127)"
+        ],
+        [
+          "COVID phase intercepts",
+          "0.994 (0.972–1.016)",
+          "0.990 (0.963–1.017)",
+          "1.074 (1.006–1.145)"
+        ]
+      ]
+    ],
+    "uncertainty": [
+      [
+        [
+          "Mean temperature / 1°C",
+          "0.9772–1.0092",
+          "0.9745–1.0120",
+          "0.9759–1.0105",
+          "0.9762–1.0102"
+        ],
+        [
+          "Mean maximum / 1°C",
+          "0.9788–1.0073",
+          "0.9764–1.0098",
+          "0.9784–1.0077",
+          "0.9791–1.0069"
+        ],
+        [
+          "Mean minimum / 1°C",
+          "0.9788–1.0098",
+          "0.9763–1.0124",
+          "0.9768–1.0119",
+          "0.9771–1.0116"
+        ],
+        [
+          "Hot nights / 5 days",
+          "0.9950–1.0494",
+          "0.9973–1.0469",
+          "1.0003–1.0439",
+          "1.0019–1.0422"
+        ],
+        [
+          "Very hot days / 5 days",
+          "0.9741–1.0254",
+          "0.9747–1.0247",
+          "0.9735–1.0260",
+          "0.9744–1.0251"
+        ],
+        [
+          "Cold days / 5 days",
+          "0.9539–1.0371",
+          "0.9555–1.0353",
+          "0.9495–1.0419",
+          "0.9488–1.0427"
+        ]
+      ],
+      [
+        [
+          "Mean temperature / 1°C",
+          "0.9561–0.9929",
+          "0.9494–0.9999",
+          "0.9487–1.0006",
+          "0.9474–1.0020"
+        ],
+        [
+          "Mean maximum / 1°C",
+          "0.9645–0.9981",
+          "0.9584–1.0044",
+          "0.9593–1.0035",
+          "0.9583–1.0046"
+        ],
+        [
+          "Mean minimum / 1°C",
+          "0.9556–0.9909",
+          "0.9500–0.9967",
+          "0.9483–0.9986",
+          "0.9469–1.0000"
+        ],
+        [
+          "Hot nights / 5 days",
+          "0.9702–1.0372",
+          "0.9706–1.0367",
+          "0.9739–1.0332",
+          "0.9759–1.0311"
+        ],
+        [
+          "Very hot days / 5 days",
+          "0.9637–1.0274",
+          "0.9629–1.0282",
+          "0.9637–1.0273",
+          "0.9630–1.0281"
+        ],
+        [
+          "Cold days / 5 days",
+          "1.0227–1.1253",
+          "1.0113–1.1381",
+          "1.0066–1.1434",
+          "1.0065–1.1435"
+        ]
+      ]
+    ]
+  },
+  "nested_continuous": {
+    "chd": {
+      "mean_temp": "0.980 (0.970–0.990)",
+      "mean_tmax": "0.982 (0.974–0.991)",
+      "mean_tmin": "0.982 (0.972–0.992)"
+    },
+    "hf": {
+      "mean_temp": "0.945 (0.927–0.963)",
+      "mean_tmax": "0.958 (0.939–0.977)",
+      "mean_tmin": "0.944 (0.927–0.961)"
+    }
+  },
+  "sources": {
+    "outputs/tables/cvd_descriptive_annual_totals.csv": "2d4997276d77e28761083117e292f438506d07db639deba5bc17c1843e4862e8",
+    "outputs/tables/cvd_descriptive_covid_era_means.csv": "338b3a0b426238013f9d11e37e8225d42c2a1f4279eb80a825e3e5407b4fe84c",
+    "outputs/tables/cvd_core_robust_estimates.csv": "6acfc6f5082780c681c05c48b5953579ad7095d379429dc6125230c8c0824dd4",
+    "outputs/tables/cvd_trend_depletion_sensitivity.csv": "061158111bbc79478b8cb54f27687447c213fd1bfc13efe9cf3309996f348e5e",
+    "outputs/tables/cvd_core_model_fit.csv": "a486c75264f15fca2e71afed6b0132d49fa301aeae04ae9bb8747a64f76de124"
+  },
+  "manuscript_sha256": "54a9bca2ac2a99331a7712da7ea6b3ca6e7adfb9db71fc9eceaa16596080487f",
+  "figure": {
+    "path": "figures/covid_period/figure_annual_counts_20261002.png",
+    "sha256": "4a8257b854c2579398cb3a3a6ac6631eef32e4ba0ae3337f566650332da9cbd1"
+  },
+  "supplement_sha256": "41331722f679d9a0cf21ce76a347f7950ab80031c604d04f2be903e4e78c9ef3"
+}

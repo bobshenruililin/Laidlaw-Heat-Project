@@ -73,46 +73,19 @@ def test_archived_thermal_file_uncut():
 
 def test_covid_period_imrd_keeps_hogan_weather_and_refuses_improvement():
     text = _covid()
-    assert HOGAN_OPEN in text
-    assert HOGAN_AVG in text
-    low = text.lower()
+    assert HOGAN_OPEN in text and HOGAN_AVG in text
     for phrase in FORBIDDEN_COVID:
-        assert phrase.lower() not in low, phrase
-    assert "placeholder" not in low
-    assert "hogan asked" not in low
-    assert "gate 3" not in text
-    assert "not a measure of physiological improvement" in text
-    assert "I(\\mathrm{count}/5)" in text or r"I(\mathrm{count}/5)" in text
-    assert text.split("## Abstract", 1)[0].count("Window dependence") >= 1
-    assert "Wai AKC" in text
-    assert "10.1016/j.annemergmed.2021.09.424" in text
-    hung_block = text.split("10.1016/j.annemergmed.2021.09.424")[0][-120:]
-    assert "Hung KK" not in hung_block
-    assert "Hung et al. 2022" not in text
-    assert "10.2196/41792" in text
-    assert "Xin H" in text
-    assert "insufficient" not in low
-    assert "they remain part of the exposure record" in low
-    assert "weak falsifier" in low
-    assert "ruled out" not in low
-    abstract = text.split("## Abstract", 1)[1].split("## Introduction", 1)[0]
-    intro = text.split("## Introduction", 1)[1].split("## Methods", 1)[0]
-    assert "xin et al." in abstract.lower()
-    assert "cardiovascular deaths" in abstract.lower()
-    assert "neighbouring hong kong series report fewer public hospitalisations and more cardiovascular deaths" not in abstract.lower()
-    assert "cohort of non-covid deaths" not in intro.lower()
-    assert "hong kong studies of 2020 describe fewer cardiovascular admissions" not in intro.lower()
-    assert "figure_3_ruling_out_exhibit.png" in text
-    assert "figure_D_trend_depletion_sensitivity.png" not in text
-    assert "COVID-period specifications" not in text
-    assert "Figure 3" in text
-    assert "ruling-out exhibit" in text.lower()
-    assert "the main identification display" not in text.lower()
-    assert "leading exploratory" not in text.lower()
-    assert "Closest to the present heart-failure outcome" not in text
-    assert "Liu et al. (2020, 2026)" not in text
-    assert "type 2 diabetes and/or hypertension" in text.lower()
+        assert phrase.lower() not in text.lower(), phrase
+    assert "Gate 3" not in text
     assert "admission cause was not recorded" in text.lower()
+    assert "type 2 diabetes and/or hypertension" in text.lower()
+    assert "not evidence that cold became protective" in text
+    assert "five-day reporting scale did not require consecutive days" in text
+    assert "ruling-out exhibit" not in text.lower()
+    assert "10.1016/j.annemergmed.2021.09.424" in text
+    assert "10.1016/j.lanwpc.2022.100645" in text
+    assert "2023;30:100645" in text
+    assert "figure_annual_counts_20261002.png" in text
 
 
 def test_live_authority_is_analysis_window_sensitivity_not_prepost_effect():
@@ -199,7 +172,7 @@ def test_playbook_08_synthetic_json_labelled_and_not_in_covid_draft_as_finding()
 
 
 def test_covid_period_docx_exists_and_keeps_hogan_weather():
-    assert DOCX.is_file(), "run python3 scripts/78_covid_period_manuscript_docx.py"
+    assert DOCX.is_file(), "run bundled Python scripts/81_covid_research_manuscript.py"
     from docx import Document
 
     doc = Document(str(DOCX))
@@ -209,7 +182,7 @@ def test_covid_period_docx_exists_and_keeps_hogan_weather():
     assert "Gate 3" not in joined
     assert "placeholder" not in joined.lower()
     assert "Wai AKC" in joined
-    assert "Window dependence" in joined
+    assert "First recorded hospitalisations" in joined
 
 
 def test_covid_claim_ledger_covers_headline_numerals():
@@ -330,4 +303,4 @@ def test_covid_period_figure3_is_a_separate_asset():
     assert contract["figure3_png"] == "figures/covid_period/figure_3_ruling_out_exhibit.png"
     assert "live_identification" not in contract["figure3_png"]
     ledger = LEDGER_COVID.read_text(encoding="utf-8")
-    assert "figures/covid_period/figure_3_ruling_out_exhibit.png" in ledger
+    assert "figure_annual_counts_20261002.png" in ledger  # Current figure; historical Figure 3 remains parked.

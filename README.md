@@ -1,9 +1,11 @@
-# Thermal extremes and cardiovascular first-hospitalisation burden in Hong Kong, 2013–2023
+# First hospitalisation burden before and during COVID in Hong Kong, 2013–2023
 
 Laidlaw Scholars project · The University of Hong Kong  
 **Bob Shen Ruililin** · Supervisor: **Professor David Bishai**
 
 **For agents / new chats:** read [`knowledge/CONTEXT_BOOTSTRAP.md`](knowledge/CONTEXT_BOOTSTRAP.md) first, then use its linked playbook for the current gate.
+
+**Current research direction (2 October 2026):** recorded first-hospitalisation burden before and during the pandemic. The completed exploratory [COVID manuscript and supplement](manuscript/covid_period/README.md) supersede the thermal predecessor as the active repository candidate. Counts declined before 2020, dipped further in 2020 and approached 2019 levels by 2023. Neither physiological improvement nor a weather explanation is identified. No new transfer or approved output has arrived. [Research decisions](reports/auto_research/2026-10-02/PHASE2_RESEARCH_DECISIONS.md) and [human submission items](manuscript/covid_period/SUBMISSION_COMPLETION.md) state the boundaries. The historical thermal readiness material below remains background.
 
 This repository is the working home for a monthly climate–health analysis.
 The current governed paper examines **CHD and HF first-hospitalisation

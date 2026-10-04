@@ -1,6 +1,6 @@
-# Verified page map — frozen editorial revision, 2 October 2026
+# Verified page map — 4 October 2026
 
-Root visually inspected all nine final main pages and all five final supplement pages. After widening the outcome column, only supplement page 2 changed visually and was inspected again; the other thirteen rendered page hashes were unchanged. All three main vector PDF figures were rasterised and inspected separately. The final degree-unit correction was rechecked in the vector PDF and article proof.
+Root visually inspected main pages 1–5; the separate argument reviewer inspected main pages 6–9. The statistical reviewer inspected all six supplement pages. Every page was opened individually. Three main vector figures were inspected panel by panel and in assembled form by the figure reviewer; root also inspected them embedded in the article. No consequential clipping, table/caption mismatch, unreadable glyph or page-number defect remained.
 
 ## Heat_CVD_Manuscript_covid_period.pdf
 
@@ -8,29 +8,30 @@ Root visually inspected all nine final main pages and all five final supplement 
 
 - Page 1: Recorded first hospitalisations after cardiovascular diagnosis before and
 - Page 2: Results
-- Page 3: The smallest Benjamini–Hochberg-adjusted q-value in the twelve-fit lag-six family was 0.192; all twelve
-- Page 4: 1.013 (0.994–1.033) and an HF cold-day ratio of 1.074 (1.006–1.145). Those intercepts were adjustments
-- Page 5: would mix those changes with the earlier trend. The annual summaries locate the change in recorded
-- Page 6: Several limitations determine what this analysis can support. Cause-coded events, validated first-event
-- Page 7: Daily Hong Kong HF admissions and unplanned emergency admissions have been studied in relation to
-- Page 8: inferential family. All official-day calendar results and all baseline uncertainty constructions were
-- Page 9: 10. Cowling BJ, Ali ST, Ng TWY, et al. Impact assessment of non-pharmaceutical interventions against
+- Page 3: official-day models also represent different exposure contrasts, so their numerical magnitudes cannot be
+- Page 4: 0.997–1.047, whereas the lag-six interval was 1.002–1.042. Lag-one Pearson residual autocorrelation was
+- Page 5: changes in the eligible population. The clinical significance of the trajectory depends on whether the
+- Page 6: population comprised people diagnosed with type 2 diabetes and/or hypertension during 2013–2023. For
+- Page 7: reference calendar month. Each model contained one exposure, rather than a joint temperature/extreme-
+- Page 8: Code availability
+- Page 9: 15. Guo YT, Chan KH, Qiu H, Wong ELY, Ho KF. The risk of hospitalization associated with hot nights and
 
 ## Supplement_covid_period.pdf
 
-5 A4 pages.
+6 A4 pages.
 
 - Page 1: Supplementary results for first hospitalisation counts before and during
 - Page 2: Complete baseline panel
 - Page 3: Calendar specification sensitivity
 - Page 4: HF
-- Page 5: Conceptual observation process
+- Page 5: cvd_trend_depletion_sensitivity.csv. Baseline diagnostics are in cvd_core_model_fit.csv. All health
+- Page 6: Visual comparison of nested and full windows
 
 ## Export binding
 
-- `manuscript/covid_period/Manuscript_covid_period_draft.md` — SHA-256 `de0d9dac038b5449b7dc7bf12feb71f60ce23b4f852d8fbd6847f44c6716a045`.
-- `manuscript/covid_period/Heat_CVD_Manuscript_covid_period.docx` — SHA-256 `da2cf0f25d02919b96f151503abfe4945ed8a72a6bd4c1b687ae3a5ad3b88f38`.
-- `manuscript/covid_period/Heat_CVD_Manuscript_covid_period.pdf` — SHA-256 `09bad10b6da1d32a4ea8e7fb40b31b177329f5742452302c599b622bd8bbc0ff`.
-- `manuscript/covid_period/Supplement_covid_period.md` — SHA-256 `9a8f7f90ac3150418a060a86637e3c173402c7a6d9bfdacd28d37802efcdf926`.
-- `manuscript/covid_period/Supplement_covid_period.docx` — SHA-256 `9eb933597687f4019697776b6a65ad23a14720812c8eb16762daef9b903f5484`.
-- `manuscript/covid_period/Supplement_covid_period.pdf` — SHA-256 `56bd147cabf5a3a25a6ec3b2f4e0790948395cf3d46d2ae95b477f07297b3924`.
+- `manuscript/covid_period/Manuscript_covid_period_draft.md` — SHA-256 `191c33f104c0a6ee7a0a7dbf5bbe0a1087be1f66689d8a1e6a0d435982335cd4`.
+- `manuscript/covid_period/Heat_CVD_Manuscript_covid_period.docx` — SHA-256 `6302599be12e357db481d2a1cd634280a8ae38e0def82bb382f6ae2b940c0e9e`.
+- `manuscript/covid_period/Heat_CVD_Manuscript_covid_period.pdf` — SHA-256 `35dfe2bf4b13b2ef92354ab2d5ce9a2bd02e212dbce68d4b0bafb5fc5478a68c`.
+- `manuscript/covid_period/Supplement_covid_period.md` — SHA-256 `35595709a25d9927b26e18a20b81e936152a7c9368b227e96df961b5afdf0b03`.
+- `manuscript/covid_period/Supplement_covid_period.docx` — SHA-256 `e05211cc354d24806c2ea05959baa798cedf865bf8b2738e79a4747e73129b9f`.
+- `manuscript/covid_period/Supplement_covid_period.pdf` — SHA-256 `2d29997e0fdf88e4189729083c62f72fbd98c3b356eede1af5add24cb780d353`.

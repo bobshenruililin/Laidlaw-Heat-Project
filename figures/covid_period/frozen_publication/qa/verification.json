@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-04",
+  "generator_sha256": "007cb7906562a8c84069180094493c526ae039d0b53fd84760d274ffb16cea16",
+  "repeated_default_rebuild_byte_identical": true,
+  "source_snapshots_byte_identical_to_previous_revision": true,
+  "auditors": {
+    "validate_figure.py": "c548e180d31fc1557cbfcd452ab78c7a969273a80b311068aa80acfe86ecfd90",
+    "audit_panel_alignment.py": "43958e6b49d897f326ff64e73cbed0bf057e17c06533b5b57d3dededf8111e76",
+    "audit_pdf_text.py": "11b8f3ec50bc13e2bd8561eeb7cd204307f4ce5a70ac57fa24c809ce1b9c252c",
+    "audit_figure_collisions.py": "841ede7dcaefa3ab11576b5ba52375d1678a71f77d39f553d5464e81b0699283"
+  },
+  "figures": {
+    "annual_counts": {
+      "pdf_sha256": "dae2d0d24ed8a530de68034cb186230164895ea0fdeeb4fe23bc1e41bebcf404",
+      "pdf_minimum_font_pt": 9.0,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 4,
+        "contained_image_overlays": 0
+      },
+      "alignment": {
+        "fail": 0,
+        "warn": 0,
+        "comparisons": 1,
+        "exemptions": 0
+      }
+    },
+    "complete_weather": {
+      "pdf_sha256": "c88a80a96310c2413cab1f93f0826f8ba5c648a9306fbc5b94114ba78494e7fb",
+      "pdf_minimum_font_pt": 9.0,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "alignment": {
+        "fail": 0,
+        "warn": 0,
+        "comparisons": 4,
+        "exemptions": 0
+      }
+    },
+    "model_criticism": {
+      "pdf_sha256": "d04dbdb26ad61f6eedaf85ed18b173681b05169847e1a6078f452d1358380e04",
+      "pdf_minimum_font_pt": 9.0,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "alignment": {
+        "fail": 0,
+        "warn": 0,
+        "comparisons": 4,
+        "exemptions": 0
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # Verification of the frozen editorial package
 
+**Later editorial revision:** [4 October 2026 verification](REVISION_2026-10-04.md) binds the current exports. The checks below document the earlier 2 October revision.
+
 **2 October 2026. Evidence anchor:** PR #103, `7060606fbe44b14b6b2893929781ac477cea1d46`. Local baseline `fa90abb7f855c0b3774ff20063609cffb372343f` has the identical tree, `fe1c2560d9367483df8d4d327cff3d26e61e1ae6`. `MANUSCRIPT_FREEZE.md` is an editorial boundary, not a confirmatory or human-governance approval.
 
 ## Quantitative and source verification

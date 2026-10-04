@@ -1,6 +1,6 @@
 # JSON is a YAML subset. Audit of the current COVID revision; historical ledger is in Git.
 {
-  "date": "2026-10-02",
+  "date": "2026-10-04",
   "status": "PASS",
   "scope": "Direct source-to-table/value and interpretation checks; no health models run; no governance approval inferred",
   "checks": [
@@ -66,6 +66,22 @@
     },
     {
       "check": "near-null HF minimum interval and p value use unrounded source",
+      "passed": true
+    },
+    {
+      "check": "hf cold-day trend_ns8 diagnostic example matches frozen estimate and interval",
+      "passed": true
+    },
+    {
+      "check": "hf cold-day drop_first_24_months diagnostic example matches frozen estimate and interval",
+      "passed": true
+    },
+    {
+      "check": "nominal pointwise intervals and two-sided tests explicitly distinguished from BH adjustment",
+      "passed": true
+    },
+    {
+      "check": "window lengths not misrepresented as independently verified fitted observations",
       "passed": true
     },
     {
@@ -647,8 +663,8 @@
   },
   "freeze_anchor_commit": "7060606fbe44b14b6b2893929781ac477cea1d46",
   "word_counts": {
-    "abstract": 190,
-    "main_prose": 2717
+    "abstract": 200,
+    "main_prose": 2528
   },
   "claims": {
     "C01": {
@@ -687,7 +703,7 @@
       "limits": "qualitative evidence only; access statuses retained in source audit"
     }
   },
-  "manuscript_sha256": "de0d9dac038b5449b7dc7bf12feb71f60ce23b4f852d8fbd6847f44c6716a045",
+  "manuscript_sha256": "191c33f104c0a6ee7a0a7dbf5bbe0a1087be1f66689d8a1e6a0d435982335cd4",
   "figures": [
     {
       "name": "annual_counts",
@@ -708,15 +724,15 @@
       "outputs": [
         {
           "path": "figures/covid_period/frozen_publication/annual_counts.png",
-          "sha256": "9cd56e415f1c233fa0c3a75261645c50a1e983d44fa3341da0ec07d3a95768ef"
+          "sha256": "e515c4f544c5905a3c92677956e47ff4435da7496dabd5f942c3995840e68b72"
         },
         {
           "path": "figures/covid_period/frozen_publication/annual_counts.svg",
-          "sha256": "e5792572ee7ee7a65a7ab0ec2688de92dcf37da9fee993987bf87a38a4b9f5c7"
+          "sha256": "1616f746a8ccb88b94f756b6486bc2a48927350e80119a7b36b2ea3864ffcfb1"
         },
         {
           "path": "figures/covid_period/frozen_publication/annual_counts.pdf",
-          "sha256": "e80384a408e7676c234149a3439f659909820364375f62bf2b4e134342ce1b40"
+          "sha256": "dae2d0d24ed8a530de68034cb186230164895ea0fdeeb4fe23bc1e41bebcf404"
         }
       ]
     },
@@ -739,15 +755,15 @@
       "outputs": [
         {
           "path": "figures/covid_period/frozen_publication/complete_weather.png",
-          "sha256": "58f0454d6731ad5398568f5fdc2a64ece0201733693aef65a4989a5a7a7d6253"
+          "sha256": "6ea3619e031b4356d80aee38b43e441dac5806dbb59ecb460ff7bbeba727099a"
         },
         {
           "path": "figures/covid_period/frozen_publication/complete_weather.svg",
-          "sha256": "b605638f45958834135c10eb1b425e710aff52faccd4485da08b76b7d7a71e45"
+          "sha256": "7cff2fa4d62e3a4f6b210e9cba8619d4040a6277ff0db4f5b036ad9823f2a980"
         },
         {
           "path": "figures/covid_period/frozen_publication/complete_weather.pdf",
-          "sha256": "76207415f285a716d7435dd6462973a2b4bfa533accb995760e9ec128c008a81"
+          "sha256": "c88a80a96310c2413cab1f93f0826f8ba5c648a9306fbc5b94114ba78494e7fb"
         }
       ]
     },
@@ -774,19 +790,19 @@
       "outputs": [
         {
           "path": "figures/covid_period/frozen_publication/model_criticism.png",
-          "sha256": "82df0c2d57a4865882ea540995cb213e07b0e5dd832e76cbea3ec94ef58b3a33"
+          "sha256": "7b2540d4347dd784606d88233d0206c996b90a7539011ec266f08697872df596"
         },
         {
           "path": "figures/covid_period/frozen_publication/model_criticism.svg",
-          "sha256": "f907799f70279fb4334c753beaa954d442e8529f60f9a6d08d3dd27f14c5839a"
+          "sha256": "1ca6c387d8515f846c09d4989079f4bf77d73c371893b642838972bcf95aca15"
         },
         {
           "path": "figures/covid_period/frozen_publication/model_criticism.pdf",
-          "sha256": "1f2b1e457f8473dfb92fa0d6e9a2c8aa6134a98de7f35d707dd44e8d6cb31201"
+          "sha256": "d04dbdb26ad61f6eedaf85ed18b173681b05169847e1a6078f452d1358380e04"
         }
       ]
     }
   ],
   "literature_register_sha256": "5e18f2ddf12d63338accc143e132c78d4998242309b462540cd527e4fce679de",
-  "supplement_sha256": "9a8f7f90ac3150418a060a86637e3c173402c7a6d9bfdacd28d37802efcdf926"
+  "supplement_sha256": "35595709a25d9927b26e18a20b81e936152a7c9368b227e96df961b5afdf0b03"
 }

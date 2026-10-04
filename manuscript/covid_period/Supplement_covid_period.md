@@ -1,6 +1,6 @@
 # Supplementary results for first hospitalisation counts before and during the COVID pandemic
 
-The tables distinguish disjoint descriptive periods from overlapping model fits. Confidence intervals describe exploratory associations; no later-era effect is inferred by subtracting nested coefficients.
+The tables distinguish disjoint descriptive periods from overlapping model fits. Confidence intervals are nominal pointwise 95% normal-reference Wald intervals for exploratory associations; no later-era effect is inferred by subtracting nested coefficients.
 
 ## Annual recorded counts
 
@@ -32,7 +32,7 @@ The tables distinguish disjoint descriptive periods from overlapping model fits.
 
 ## Complete baseline panel
 
-**Supplementary Table S3. All twelve baseline weather models, January 2013–December 2023.** CHD denotes coronary heart disease; HF denotes heart failure. Days-in-month offset, calendar-month indicators, four-degree-of-freedom natural time spline; Newey–West lag-six intervals. BH q-values cover these twelve Wald tests only.
+**Supplementary Table S3. All twelve baseline weather models, January 2013–December 2023.** CHD denotes coronary heart disease; HF denotes heart failure. Days-in-month offset, calendar-month indicators, four-degree-of-freedom natural time spline; Newey–West lag-six intervals. BH q-values cover these twelve two-sided Wald tests of zero exposure coefficient only; interval endpoints are not multiplicity-adjusted. The window spans 132 calendar months, not 132 independent replicates.
 
 | Outcome | Exposure | Count ratio and 95% CI | p | BH q |
 |:--|:--|:--|:--|:--|
@@ -68,7 +68,7 @@ The nested pre-2020 continuous-temperature fits were CHD mean temperature 0.980 
 
 ## Calendar specification sensitivity
 
-**Supplementary Table S5. Complete official day panel under alternative calendar specifications.** Coronary heart disease (CHD) and heart failure (HF) ratios per five days with Newey–West lag-six intervals. The full series is January 2013–December 2023. Baseline and nested values are in Supplementary Table S4. Year indicators replace the spline. COVID-phase intercepts supplement the baseline in the full series; they are not a third window. Omission checks shorten the series. These sensitivity estimates have no multiplicity adjustment.
+**Supplementary Table S5. Complete official day panel under alternative calendar specifications.** Coronary heart disease (CHD) and heart failure (HF) ratios per five days with Newey–West lag-six intervals. The full series is January 2013–December 2023. Baseline and nested values are in Supplementary Table S4. Year indicators replace the spline. COVID-phase intercepts supplement the baseline in the full series; they are not a third window. Omission checks shorten the 132-calendar-month window to 120 or 108 months. These window lengths are not independently verified fitted-observation counts. These sensitivity estimates have no multiplicity adjustment.
 
 ### CHD
 
@@ -122,7 +122,7 @@ The nested pre-2020 continuous-temperature fits were CHD mean temperature 0.980 
 
 ## Released baseline diagnostics
 
-**Supplementary Table S7. Diagnostics from all twelve baseline models, January 2013–December 2023.** CHD denotes coronary heart disease; HF denotes heart failure. Theta is the negative-binomial dispersion parameter. Pearson dispersion, lag-one Pearson residual autocorrelation and lag-six Ljung–Box p-values describe the released fits; no new diagnostic test was performed. Small Ljung–Box p-values indicate residual dependence, not a calibration certificate or a rule that HAC intervals must widen. All released baseline convergence flags were true.
+**Supplementary Table S7. Diagnostics from all twelve baseline models, January 2013–December 2023.** CHD denotes coronary heart disease; HF denotes heart failure. Theta is the negative-binomial dispersion parameter. Pearson dispersion, lag-one Pearson residual autocorrelation and lag-six Ljung–Box p-values describe the released fits; no new diagnostic test was performed. Small Ljung–Box p-values indicate residual dependence; they do not establish interval calibration. Sandwich covariance depends on regression-score autocovariances, so positive residual autocorrelation alone does not require HAC intervals to widen. All released baseline convergence flags were true.
 
 | Outcome | Exposure | Theta | Pearson dispersion | Residual ACF1 | Ljung–Box p lag6 |
 |:--|:--|:--|:--|:--|:--|
@@ -141,7 +141,7 @@ The nested pre-2020 continuous-temperature fits were CHD mean temperature 0.980 
 
 ## Interpretation and source binding
 
-The pre-2020 fit uses 84 of the 132 full-window months and a recalculated spline basis. No independent 2020–2023 coefficient, interaction test or weather standardisation is reported. General-population rates in older aggregate files are omitted because the population is not the eligible first-event risk set.
+The pre-2020 window contains 84 of the 132 full-window calendar months, with a recalculated spline basis. Released metadata record window length rather than the number of observations used by each fitted model. Complete-case handling was not independently documented; this does not establish that any observations were missing. No independent 2020–2023 coefficient, interaction test or weather standardisation is reported. General-population rates in older aggregate files are omitted because the population is not the eligible first-event risk set.
 
 Tables draw from the repository files outputs/tables/cvd_descriptive_annual_totals.csv, cvd_descriptive_covid_era_means.csv, cvd_core_robust_estimates.csv and cvd_trend_depletion_sensitivity.csv. Baseline diagnostics are in cvd_core_model_fit.csv. All health values have HA_APPROVED_AGGREGATE provenance; no monthly governed files were read to produce this revision.
 

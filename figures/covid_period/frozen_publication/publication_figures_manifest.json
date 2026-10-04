@@ -9,7 +9,7 @@
   "metadata_date": "2026-10-02 (fixed for reproducible rendering)",
   "generator": {
     "path": "scripts/86_frozen_publication_figures.py",
-    "sha256": "384a12700700bc5719766ffe5939dfa5e98b2627706c127f1617cf0a5aa598f2"
+    "sha256": "007cb7906562a8c84069180094493c526ae039d0b53fd84760d274ffb16cea16"
   },
   "source_files_unchanged": true,
   "figures": [
@@ -32,15 +32,15 @@
       "outputs": [
         {
           "path": "figures/covid_period/frozen_publication/annual_counts.png",
-          "sha256": "9cd56e415f1c233fa0c3a75261645c50a1e983d44fa3341da0ec07d3a95768ef"
+          "sha256": "e515c4f544c5905a3c92677956e47ff4435da7496dabd5f942c3995840e68b72"
         },
         {
           "path": "figures/covid_period/frozen_publication/annual_counts.svg",
-          "sha256": "e5792572ee7ee7a65a7ab0ec2688de92dcf37da9fee993987bf87a38a4b9f5c7"
+          "sha256": "1616f746a8ccb88b94f756b6486bc2a48927350e80119a7b36b2ea3864ffcfb1"
         },
         {
           "path": "figures/covid_period/frozen_publication/annual_counts.pdf",
-          "sha256": "e80384a408e7676c234149a3439f659909820364375f62bf2b4e134342ce1b40"
+          "sha256": "dae2d0d24ed8a530de68034cb186230164895ea0fdeeb4fe23bc1e41bebcf404"
         }
       ]
     },
@@ -63,15 +63,15 @@
       "outputs": [
         {
           "path": "figures/covid_period/frozen_publication/complete_weather.png",
-          "sha256": "58f0454d6731ad5398568f5fdc2a64ece0201733693aef65a4989a5a7a7d6253"
+          "sha256": "6ea3619e031b4356d80aee38b43e441dac5806dbb59ecb460ff7bbeba727099a"
         },
         {
           "path": "figures/covid_period/frozen_publication/complete_weather.svg",
-          "sha256": "b605638f45958834135c10eb1b425e710aff52faccd4485da08b76b7d7a71e45"
+          "sha256": "7cff2fa4d62e3a4f6b210e9cba8619d4040a6277ff0db4f5b036ad9823f2a980"
         },
         {
           "path": "figures/covid_period/frozen_publication/complete_weather.pdf",
-          "sha256": "76207415f285a716d7435dd6462973a2b4bfa533accb995760e9ec128c008a81"
+          "sha256": "c88a80a96310c2413cab1f93f0826f8ba5c648a9306fbc5b94114ba78494e7fb"
         }
       ]
     },
@@ -98,17 +98,31 @@
       "outputs": [
         {
           "path": "figures/covid_period/frozen_publication/model_criticism.png",
-          "sha256": "82df0c2d57a4865882ea540995cb213e07b0e5dd832e76cbea3ec94ef58b3a33"
+          "sha256": "7b2540d4347dd784606d88233d0206c996b90a7539011ec266f08697872df596"
         },
         {
           "path": "figures/covid_period/frozen_publication/model_criticism.svg",
-          "sha256": "f907799f70279fb4334c753beaa954d442e8529f60f9a6d08d3dd27f14c5839a"
+          "sha256": "1ca6c387d8515f846c09d4989079f4bf77d73c371893b642838972bcf95aca15"
         },
         {
           "path": "figures/covid_period/frozen_publication/model_criticism.pdf",
-          "sha256": "1f2b1e457f8473dfb92fa0d6e9a2c8aa6134a98de7f35d707dd44e8d6cb31201"
+          "sha256": "d04dbdb26ad61f6eedaf85ed18b173681b05169847e1a6078f452d1358380e04"
         }
       ]
     }
-  ]
+  ],
+  "layout_checks": {
+    "tolerance_pt": 1.5,
+    "geometry_reports": [
+      "figures/covid_period/frozen_publication/qa/annual_counts.geometry.json",
+      "figures/covid_period/frozen_publication/qa/complete_weather.geometry.json",
+      "figures/covid_period/frozen_publication/qa/model_criticism.geometry.json"
+    ],
+    "description": "Measured rendered plot areas before export; portable assertion for the three equal-grid figures."
+  },
+  "publication_qa": {
+    "reports_directory": "figures/covid_period/frozen_publication/qa",
+    "review_record": "reports/auto_research/2026-10-02/FIGURE_QA_2026-10-04.md",
+    "description": "Source validation, detailed alignment, final PDF glyph and collision audits are separate from statistical validation."
+  }
 }

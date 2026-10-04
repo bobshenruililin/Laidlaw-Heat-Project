@@ -1,76 +1,26 @@
-# COVID-period development track (wording authority for the candidate article)
+# Current COVID manuscript — frozen editorial revision
 
-**Audience:** Bob, then Sol/Astra. **Not** a send to Hogan until Bob pastes. **Not** Stage 3.
+**4 October 2026 editorial refinement:** the article's contribution is a recorded-burden trajectory: counts declined before 2020, fell further in 2020 and approached 2019 levels by 2023. Weather analyses assess the stability of associated interpretations; physiological improvement, a causal COVID effect and changed thermal susceptibility remain unidentified.
 
-Hogan (10 September 2026) asked to change the angle from thermal extremes to the pre- vs
-post-COVID contrast, and to use thermal extremes to say weather is not why the period
-difference appears.
+The editorial evidence authority is [`MANUSCRIPT_FREEZE.md`](../../MANUSCRIPT_FREEZE.md), anchored to PR #103 at `7060606fbe44b14b6b2893929781ac477cea1d46`. This is not a confirmatory primary freeze, clinical verification or dissemination approval. Gate 3 remains open. No new transfer or approved output was available.
 
-**This folder is where that candidate article is written.** Playbook 99
-([`../../reports/incident_2026-09-10_scientific_angle_covid.md`](../../reports/incident_2026-09-10_scientific_angle_covid.md))
-opened it for exactly that purpose and said not to rewrite
-[`../live_collaborative/`](../live_collaborative/) in place. The live folder was rewritten in
-place anyway on 10 September, which produced two authorities and one confused article; the
-independent review in [`INDEPENDENT_REVIEW.md`](INDEPENDENT_REVIEW.md) records that
-diagnosis. The 12 September repair rebuilt the draft here and left `live_collaborative/`
-and the thermal archive untouched.
+Edit `Manuscript_covid_period_draft.md` and `Supplement_covid_period.md`. Their Word and reviewed PDF exports are alongside them. The main article follows Abstract → Introduction → Results → Discussion → Methods → availability → references, with a 200-word abstract and 2,528 words of main prose. It has three main figures: annual counts, the complete twelve-model weather panel, and calendar/uncertainty criticism of two historically discussed associations. The six-page supplement retains seven numbered tables, all 48 baseline interval constructions, diagnostics and two figures. All 108 calendar/window source rows remain available in the numerical source package, including estimates not expanded into the printed tables.
 
-| Object | Where | Status |
-|---|---|---|
-| Candidate wording authority | [`Manuscript_covid_period_draft.md`](Manuscript_covid_period_draft.md) | Edit here |
-| Hogan paste target | [`../live_collaborative/Heat_CVD_Manuscript_live_update.md`](../live_collaborative/Heat_CVD_Manuscript_live_update.md) | Do not edit; Bob pastes when he chooses |
-| Thermal predecessor | [`../archive/thermal_extremes_2026-08/`](../archive/thermal_extremes_2026-08/) | Heritage; byte-locked |
+The entire protected HKO paragraph is unchanged. Its following clarification distinguishes summed threshold-day indicators, monthly means and rainfall totals. Admission cause and eligible person-time remain unavailable. Nested 84-month and full 132-month fits overlap and use recalculated spline bases. They do not supply a direct period difference.
 
-Confirmatory freeze has not been declared. Agents did not paste into or send Hogan's shared
-Word file.
+[`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) separates the completed reconstruction from historical model generators and unexecuted readiness. Script 86 produces the three new figures from immutable approved summary files; script 81 audits their values and builds Word exports with script 78's formatting helpers. Do not execute historical builders 78/79/80 to rebuild this paper; their September prose contracts are superseded. `claim_ledger.yml`, `frozen_evidence_manifest.json` and `PRINT_PAGE_MAP.md` bind sources, claims and reviewed outputs.
 
-## Rails
+Current review: [4 October revision and verification](../../reports/auto_research/2026-10-02/REVISION_2026-10-04.md), [statistical review](../../reports/auto_research/2026-10-02/STATISTICAL_REVIEW_2026-10-04.md), [argument review](../../reports/auto_research/2026-10-02/ARGUMENT_REVIEW_2026-10-04.md), and [figure review](../../reports/auto_research/2026-10-02/FIGURE_QA_2026-10-04.md). The source freeze is unchanged. The revised nine-page article prioritises the count trajectory, compresses repeated evidence, and distinguishes nominal pointwise intervals from adjusted p-values. The six-page supplement preserves every printed estimate and clarifies window length versus verified fitted observations.
 
-- Same extract: territory-month CHD/HF first hospitalisation among T2D/HTN, Hong Kong,
-  January 2013–December 2023 (132 months). Admission cause absent. Stroke not delivered.
-- Estimand class remains a negative-binomial **count ratio** with calendar-month factors,
-  `ns(time, 4)`, days-in-month offset. Not TWFE. Not incidence.
-- The nested window is January 2013–December 2019 (84 months), **contained in** the 132.
-  It is not a fitted pre/post effect, and interval overlap is not a test of a window
-  difference. There is **no** post-only 48-month Model 1 table on file.
-- Hogan's HKO paragraph is **verbatim**, including the averaging sentence.
-- `I(count/5)` is a reporting scale, not a consecutive spell.
-- Gate 3 is **open**. This folder does not freeze a confirmatory primary.
-- Do not write "health improved." Window-dependent count ratios and falling first-event
-  totals are different objects from physiology.
-- Playbook 08 synthetic lab output is **not** a result in the scientific body. Methods may
-  warn, labelled SYNTHETIC, without quoting lab coefficients as Hong Kong estimates.
+Earlier review records and continuing risks:
 
-## Files
+- [`FROZEN_VERIFICATION.md`](../../reports/auto_research/2026-10-02/FROZEN_VERIFICATION.md)
+- [`FROZEN_STATISTICAL_REVIEW.md`](../../reports/auto_research/2026-10-02/FROZEN_STATISTICAL_REVIEW.md)
+- [`FROZEN_CLINICAL_REVIEW.md`](../../reports/auto_research/2026-10-02/FROZEN_CLINICAL_REVIEW.md)
+- [`FROZEN_EDITORIAL_REVIEW.md`](../../reports/auto_research/2026-10-02/FROZEN_EDITORIAL_REVIEW.md)
+- [`FROZEN_REVIEWER_RISK.md`](../../reports/auto_research/2026-10-02/FROZEN_REVIEWER_RISK.md)
+- [`FROZEN_JOURNAL_FIT.md`](../../reports/auto_research/2026-10-02/FROZEN_JOURNAL_FIT.md)
 
-| File | Role |
-|---|---|
-| [`Manuscript_covid_period_draft.md`](Manuscript_covid_period_draft.md) | Candidate IMRD; the scientific object |
-| [`INDEPENDENT_REVIEW.md`](INDEPENDENT_REVIEW.md) | August vs 10 September rewrite vs this draft; diagnosis, then 13 September hostile-read FIXes |
-| [`claim_ledger.yml`](claim_ledger.yml) | Every numeral → existing CSV or parked live file; reference, figure, and print bindings |
-| [`Heat_CVD_Manuscript_covid_period.docx`](Heat_CVD_Manuscript_covid_period.docx) | Word view, built by [`../../scripts/78_covid_period_manuscript_docx.py`](../../scripts/78_covid_period_manuscript_docx.py) |
-| [`Heat_CVD_Manuscript_covid_period.pdf`](Heat_CVD_Manuscript_covid_period.pdf) | Print view from the same builder |
-| [`PRINT_PAGE_MAP.md`](PRINT_PAGE_MAP.md) | Page-by-page fill map and the float contract |
-| [`../../analysis_plan/prompts/GOAL_covid_period_astra_hostile_read.md`](../../analysis_plan/prompts/GOAL_covid_period_astra_hostile_read.md) | Paste-ready hostile-read prompt for after this repair |
-| [`../../analysis_plan/covid_period/fable_gates_2026-09-10.md`](../../analysis_plan/covid_period/fable_gates_2026-09-10.md) | Two Fable 5.1 keep/cut gates |
-| [`../../analysis_plan/covid_period/night_shift_checkpoint_2026-09-10.md`](../../analysis_plan/covid_period/night_shift_checkpoint_2026-09-10.md) | Killed-paradigm checkpoint |
-| [`../archive/thermal_extremes_2026-08/`](../archive/thermal_extremes_2026-08/) | Parked thermal paper |
+The previous evidence-led packet, prospective clinical protocol, unsent data request and internal briefing remain historical/planning records. This writing pass changes presentation, not the evidence or the scientific decision recorded in that briefing. No replacement deck was created. The shared live manuscript, thermal archive and programme artifacts are preserved.
 
-## Rebuild and check
-
-```bash
-python3 scripts/78_covid_period_manuscript_docx.py   # Word, PDF, page map
-python3 scripts/79_covid_period_rails_checks.py      # ledger, citations, rails, page map
-python3 -m pytest tests/test_covid_period_imrd_repair.py tests/test_covid_period_redirection_2026.py
-```
-
-Do **not** run `scripts/77_hogan_20260910_live_docx.py` for this track: it rebuilds the live
-Hogan Word and PDF and forces a page break after every table and figure.
-
-## Next human step
-
-Hogan confirms whether "improved" meant point-estimate attenuation, the count trajectory, or
-physiology. Bishai decides whether this candidate may replace thermal extremes as the journal
-primary and whether to open a new governed extract. Bob pastes the Astra hostile-read prompt
-after this repair; no agent consults Astra on his behalf. A 13 September in-repo hostile read
-already applied the FIX list in [`INDEPENDENT_REVIEW.md`](INDEPENDENT_REVIEW.md) §8.
+Human event-definition, ethics, authorship, dissemination, access-route and submission facts remain in [`SUBMISSION_COMPLETION.md`](SUBMISSION_COMPLETION.md). No collaborator contact, data transfer or journal submission occurred.

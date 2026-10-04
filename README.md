@@ -1,9 +1,13 @@
-# Thermal extremes and cardiovascular first-hospitalisation burden in Hong Kong, 2013–2023
+# First hospitalisation burden before and during COVID in Hong Kong, 2013–2023
 
 Laidlaw Scholars project · The University of Hong Kong  
 **Bob Shen Ruililin** · Supervisor: **Professor David Bishai**
 
 **For agents / new chats:** read [`knowledge/CONTEXT_BOOTSTRAP.md`](knowledge/CONTEXT_BOOTSTRAP.md) first, then use its linked playbook for the current gate.
+
+**Current research direction (2 October 2026):** an evidence-led study of whether changing recorded hospitalisations reflect health, care or observation. The [novelty, feasibility and study-design packet](reports/auto_research/2026-10-02/EVIDENCE_LED_PACKET.md) contains an unsent data-request draft and a prospective protocol. The [exploratory COVID manuscript and supplement](manuscript/covid_period/README.md) report current approved summaries: counts declined before 2020, dipped in 2020 and approached 2019 levels by 2023. Physiological improvement and causal COVID effects remain unidentified. No new transfer or approved output has arrived; linked clinical analysis and validation are conditional. [Current handoff](knowledge/2026-10-02_evidence_led_research.md) and [human submission items](manuscript/covid_period/SUBMISSION_COMPLETION.md) state the boundaries. Historical thermal readiness material below remains background.
+
+The [editorial evidence freeze](MANUSCRIPT_FREEZE.md) now anchors the completed writing pass to PR #103's selected evidence. The revised article has three main figures, a complete supplement, released-summary reconstruction package and separate statistical, clinical and editorial reviews. [Final verification and limits](reports/auto_research/2026-10-02/FROZEN_VERIFICATION.md) distinguish presentation/source checks from primary-data replication and human submission approval.
 
 This repository is the working home for a monthly climate–health analysis.
 The current governed paper examines **CHD and HF first-hospitalisation

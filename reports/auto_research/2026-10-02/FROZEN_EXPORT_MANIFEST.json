@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-04",
+  "evidence_anchor": "7060606fbe44b14b6b2893929781ac477cea1d46",
+  "kind": "EDITORIAL_EXPORT_VERIFICATION_NOT_PRIMARY_DATA_REPLICATION",
+  "word_counts": {
+    "abstract": 200,
+    "main_prose": 2528
+  },
+  "source_and_claim_checks": 39,
+  "pages": {
+    "main": 9,
+    "supplement": 6
+  },
+  "artifacts": [
+    {
+      "path": "manuscript/covid_period/Manuscript_covid_period_draft.md",
+      "sha256": "191c33f104c0a6ee7a0a7dbf5bbe0a1087be1f66689d8a1e6a0d435982335cd4",
+      "bytes": 28462
+    },
+    {
+      "path": "manuscript/covid_period/Heat_CVD_Manuscript_covid_period.docx",
+      "sha256": "6302599be12e357db481d2a1cd634280a8ae38e0def82bb382f6ae2b940c0e9e",
+      "bytes": 597590
+    },
+    {
+      "path": "manuscript/covid_period/Heat_CVD_Manuscript_covid_period.pdf",
+      "sha256": "35dfe2bf4b13b2ef92354ab2d5ce9a2bd02e212dbce68d4b0bafb5fc5478a68c",
+      "bytes": 826996
+    },
+    {
+      "path": "manuscript/covid_period/Supplement_covid_period.md",
+      "sha256": "35595709a25d9927b26e18a20b81e936152a7c9368b227e96df961b5afdf0b03",
+      "bytes": 12389
+    },
+    {
+      "path": "manuscript/covid_period/Supplement_covid_period.docx",
+      "sha256": "e05211cc354d24806c2ea05959baa798cedf865bf8b2738e79a4747e73129b9f",
+      "bytes": 267375
+    },
+    {
+      "path": "manuscript/covid_period/Supplement_covid_period.pdf",
+      "sha256": "2d29997e0fdf88e4189729083c62f72fbd98c3b356eede1af5add24cb780d353",
+      "bytes": 519239
+    }
+  ],
+  "immutable_evidence_preserved": true,
+  "primary_health_data_replication": false,
+  "calibration_performed": false,
+  "new_health_models_fit": false
+}

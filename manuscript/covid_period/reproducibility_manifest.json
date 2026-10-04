@@ -1,0 +1,296 @@
+{
+  "date": "2026-10-04",
+  "anchor_commit": "7060606fbe44b14b6b2893929781ac477cea1d46",
+  "scope": "RELEASED_SUMMARY_RECONSTRUCTION_ONLY",
+  "new_models": false,
+  "governed_inputs_included": false,
+  "calibration_performed": false,
+  "prospective_runner_included": false,
+  "document_runtime": {
+    "python": "3.12.14",
+    "python-docx": "1.2.0",
+    "Pillow": "12.3.0",
+    "lxml": "6.1.1"
+  },
+  "plot_runtime": {
+    "python": "3.11.4",
+    "matplotlib": "3.11.0"
+  },
+  "items": [
+    {
+      "path": "MANUSCRIPT_FREEZE.md",
+      "sha256": "290c368f0f0df807fc478f0ebdee6b11599e1d49b34ad5ef6dea9cea5c2893a6",
+      "bytes": 5276
+    },
+    {
+      "path": "figures/covid_period/figure_nested_window_associations_20261002.pdf",
+      "sha256": "12a7b17e68cd2139fc12d0ca4dd58f5be14e09fb046ec42ef4e03bbeec38c8a4",
+      "bytes": 66883
+    },
+    {
+      "path": "figures/covid_period/figure_nested_window_associations_20261002.png",
+      "sha256": "181b34e129ebb4f24a19da2ceb32080178ed055f81fa154e17ddb1d0a2902709",
+      "bytes": 106462
+    },
+    {
+      "path": "figures/covid_period/figure_nested_window_associations_20261002.svg",
+      "sha256": "5972f76298fe5ac71a26b9a17ba69a072866236ce96dae8cb82279127354bd0e",
+      "bytes": 26907
+    },
+    {
+      "path": "figures/covid_period/figure_nested_window_associations_20261002_source.csv",
+      "sha256": "8f03a0328a3000aefb41fbb65c0482b055c3883fbb2de15c5c65006926b614b6",
+      "bytes": 1343
+    },
+    {
+      "path": "figures/covid_period/figure_observation_process_20261002.pdf",
+      "sha256": "6518f222e358fd8f3b0863956c2f396e5f01f85bb767252c774805b5cec20404",
+      "bytes": 69778
+    },
+    {
+      "path": "figures/covid_period/figure_observation_process_20261002.png",
+      "sha256": "2c5258f8e5d3587121b6af310888d776b54145b6bf6e0ba3e514d69fbd8f1c15",
+      "bytes": 138366
+    },
+    {
+      "path": "figures/covid_period/figure_observation_process_20261002.svg",
+      "sha256": "ae15356ef3fa703748f73936537fc6cde7610fa3d4f4aac71b7faaa639119dc9",
+      "bytes": 11132
+    },
+    {
+      "path": "figures/covid_period/figure_observation_process_20261002_source.csv",
+      "sha256": "babd627ad0a381e869fa776c7ab1736a62eedfc28e614f8a244575dd2f6a7b73",
+      "bytes": 368
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/annual_counts.pdf",
+      "sha256": "dae2d0d24ed8a530de68034cb186230164895ea0fdeeb4fe23bc1e41bebcf404",
+      "bytes": 68928
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/annual_counts.png",
+      "sha256": "e515c4f544c5905a3c92677956e47ff4435da7496dabd5f942c3995840e68b72",
+      "bytes": 157864
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/annual_counts.svg",
+      "sha256": "1616f746a8ccb88b94f756b6486bc2a48927350e80119a7b36b2ea3864ffcfb1",
+      "bytes": 20692
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/annual_counts_source.csv",
+      "sha256": "ebe38735ff9f5bc038175b9bf45c85b898cc1dce2991bbc88f9135f399a180b4",
+      "bytes": 905
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/complete_weather.pdf",
+      "sha256": "c88a80a96310c2413cab1f93f0826f8ba5c648a9306fbc5b94114ba78494e7fb",
+      "bytes": 72734
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/complete_weather.png",
+      "sha256": "6ea3619e031b4356d80aee38b43e441dac5806dbb59ecb460ff7bbeba727099a",
+      "bytes": 205774
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/complete_weather.svg",
+      "sha256": "7cff2fa4d62e3a4f6b210e9cba8619d4040a6277ff0db4f5b036ad9823f2a980",
+      "bytes": 31827
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/complete_weather_source.csv",
+      "sha256": "e9e4c09482c020bbac20e52037024b32cd8d7723ac15b837f87c152adcf2ab7e",
+      "bytes": 2567
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/model_criticism.pdf",
+      "sha256": "d04dbdb26ad61f6eedaf85ed18b173681b05169847e1a6078f452d1358380e04",
+      "bytes": 74253
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/model_criticism.png",
+      "sha256": "7b2540d4347dd784606d88233d0206c996b90a7539011ec266f08697872df596",
+      "bytes": 236425
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/model_criticism.svg",
+      "sha256": "1ca6c387d8515f846c09d4989079f4bf77d73c371893b642838972bcf95aca15",
+      "bytes": 44793
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/model_criticism_source.csv",
+      "sha256": "e189f1c1b615300307898702359a29737b6236e3739cf0adc80688a9e9402884",
+      "bytes": 3243
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/publication_figures_manifest.json",
+      "sha256": "0e868d05ab22af13fc9f12e8c8639b843f00f3a32339d753e8148fb422bd291b",
+      "bytes": 5435
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/annual_counts.alignment.json",
+      "sha256": "748d551d6ae37a36679116e59a96a927fb0a7f92b9ed9be812e5418c00c97aed",
+      "bytes": 1584
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/annual_counts.collision.json",
+      "sha256": "75eb21c1ac56e992c43a531c636c7cd5e4a4c95981036a9184780d4213480b10",
+      "bytes": 524
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/annual_counts.geometry.json",
+      "sha256": "fc8ec379a3d1eb5d8d1087b1602a7cf53dcf64eebc7c00339897a51512b875ab",
+      "bytes": 460
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/annual_counts.text.json",
+      "sha256": "19af5af37f4150f46398584afa18d1c0b0ccc61c33998a3702a03422eb8aaa1c",
+      "bytes": 244
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/complete_weather.alignment.json",
+      "sha256": "847466e487a8c1220dfe9d995d491cb6f84eeb43663644ea0258ecdbeb058c4d",
+      "bytes": 2804
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/complete_weather.collision.json",
+      "sha256": "ca30e069520f2cefa757c6ac60b0f9ef4e243ca9a9e0f473324783230bcd3d26",
+      "bytes": 527
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/complete_weather.geometry.json",
+      "sha256": "231ff7b7223295e1e90911716a5a5258f9f5815e64885c1510beb820e9bc720c",
+      "bytes": 781
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/complete_weather.text.json",
+      "sha256": "f8f4f0f24ad16d635e50c092bf92dcea90b2fe83b9b0ea881bbfc650cca9da39",
+      "bytes": 247
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/model_criticism.alignment.json",
+      "sha256": "ac3816e5a1364122487d09bb053d8f3ca34dadb9a8a03d0dbd270a91fa9182c4",
+      "bytes": 2823
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/model_criticism.collision.json",
+      "sha256": "c23db9e135fa517af4c08255e30cc4c2d64dab3081fccaf593d2b6637afb7558",
+      "bytes": 527
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/model_criticism.geometry.json",
+      "sha256": "6ee502516f5a832afee6005c9af585a6483414ab90bbcdecc71fe26a24bfb616",
+      "bytes": 790
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/model_criticism.text.json",
+      "sha256": "945e97f59df794a55cbd455cb140f60b9d7bef2bdb2154c4d447a7f71a46c500",
+      "bytes": 246
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/source-validation.json",
+      "sha256": "fba4b2e63978613a23fd1c7f8a8eb473d194ad14cbbb109bfe606841f31fc095",
+      "bytes": 3899
+    },
+    {
+      "path": "figures/covid_period/frozen_publication/qa/verification.json",
+      "sha256": "c918ffe03a151f1feddeadb4ddb7f42a2fb7d456b3b639401e61944251a15d96",
+      "bytes": 1904
+    },
+    {
+      "path": "literature/covid_novelty_audit_2026-10-02.md",
+      "sha256": "c2c6a3c0b9fdc9b56fc8c520f7a7aff4f43503bb7d1fa1a92dc787c9efbc44c9",
+      "bytes": 11810
+    },
+    {
+      "path": "literature/covid_novelty_sources_2026-10-02.json",
+      "sha256": "5e18f2ddf12d63338accc143e132c78d4998242309b462540cd527e4fce679de",
+      "bytes": 4985
+    },
+    {
+      "path": "literature/covid_physiology_evidence_2026-10-02.md",
+      "sha256": "10ffcb962e64fe81c9fa3181fceeef6e4772b73153bd5e53dd079d60184246be",
+      "bytes": 7768
+    },
+    {
+      "path": "manuscript/covid_period/Manuscript_covid_period_draft.md",
+      "sha256": "191c33f104c0a6ee7a0a7dbf5bbe0a1087be1f66689d8a1e6a0d435982335cd4",
+      "bytes": 28462
+    },
+    {
+      "path": "manuscript/covid_period/REPRODUCIBILITY.md",
+      "sha256": "60d562418eb35befea47d80991d52930cba3ab4614c0036ee3aaca770f5fd39f",
+      "bytes": 5230
+    },
+    {
+      "path": "manuscript/covid_period/Supplement_covid_period.md",
+      "sha256": "35595709a25d9927b26e18a20b81e936152a7c9368b227e96df961b5afdf0b03",
+      "bytes": 12389
+    },
+    {
+      "path": "manuscript/covid_period/claim_ledger.yml",
+      "sha256": "917d0d9682a88ab12b8426afd8404afe2f647f1d1bd909d4e7cf4e99d42a8c29",
+      "bytes": 20570
+    },
+    {
+      "path": "manuscript/covid_period/frozen_evidence_manifest.json",
+      "sha256": "6d41ec786e11e9611c8fb055b3cf58ab4a83c71da2a16cb55b7b874a82457c16",
+      "bytes": 2490
+    },
+    {
+      "path": "manuscript/live_collaborative/Heat_CVD_Manuscript_live_update.md",
+      "sha256": "f7c0a155756b892515c98f8eab276613ff1c82e10297b8964832eb19b3a0cd8c",
+      "bytes": 36281
+    },
+    {
+      "path": "outputs/tables/cvd_core_model_fit.csv",
+      "sha256": "a486c75264f15fca2e71afed6b0132d49fa301aeae04ae9bb8747a64f76de124",
+      "bytes": 15409
+    },
+    {
+      "path": "outputs/tables/cvd_core_robust_estimates.csv",
+      "sha256": "6acfc6f5082780c681c05c48b5953579ad7095d379429dc6125230c8c0824dd4",
+      "bytes": 88439
+    },
+    {
+      "path": "outputs/tables/cvd_descriptive_annual_totals.csv",
+      "sha256": "2d4997276d77e28761083117e292f438506d07db639deba5bc17c1843e4862e8",
+      "bytes": 2509
+    },
+    {
+      "path": "outputs/tables/cvd_descriptive_covid_era_means.csv",
+      "sha256": "338b3a0b426238013f9d11e37e8225d42c2a1f4279eb80a825e3e5407b4fe84c",
+      "bytes": 1382
+    },
+    {
+      "path": "outputs/tables/cvd_trend_depletion_sensitivity.csv",
+      "sha256": "061158111bbc79478b8cb54f27687447c213fd1bfc13efe9cf3309996f348e5e",
+      "bytes": 23477
+    },
+    {
+      "path": "reports/auto_research/2026-10-02/FIGURE_QA_2026-10-04.md",
+      "sha256": "d6a91ff470f9abccfa6dddf1bb76c02acad1a0312941d1ab6ea4ebc65186d58e",
+      "bytes": 7915
+    },
+    {
+      "path": "reports/data_receipt_2026-08-07.md",
+      "sha256": "bc54ade4d974a3400692fd5500e68c4f557c75f7af0b33de17b96263e4206497",
+      "bytes": 4114
+    },
+    {
+      "path": "scripts/78_covid_period_manuscript_docx.py",
+      "sha256": "0016d669f10a0600273bbb3e52ba081da4df788c7dbafdab55cd081b89dae4e4",
+      "bytes": 36758
+    },
+    {
+      "path": "scripts/81_covid_research_manuscript.py",
+      "sha256": "429f212bf03e0154ed8913d9bf8668632be09ab3a438fd5d2e4a4b72d1ab3f59",
+      "bytes": 15450
+    },
+    {
+      "path": "scripts/86_frozen_publication_figures.py",
+      "sha256": "007cb7906562a8c84069180094493c526ae039d0b53fd84760d274ffb16cea16",
+      "bytes": 14132
+    }
+  ]
+}

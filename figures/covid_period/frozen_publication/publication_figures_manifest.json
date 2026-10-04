@@ -1,0 +1,128 @@
+{
+  "scientific_anchor_commit": "7060606fbe44b14b6b2893929781ac477cea1d46",
+  "data_status": "HA_APPROVED_AGGREGATE",
+  "operations": "Selection, display and immutable approved-table plotting only. No model fits or secure inputs.",
+  "runtime": {
+    "python": "3.11.4",
+    "matplotlib": "3.11.0"
+  },
+  "metadata_date": "2026-10-02 (fixed for reproducible rendering)",
+  "generator": {
+    "path": "scripts/86_frozen_publication_figures.py",
+    "sha256": "007cb7906562a8c84069180094493c526ae039d0b53fd84760d274ffb16cea16"
+  },
+  "source_files_unchanged": true,
+  "figures": [
+    {
+      "name": "annual_counts",
+      "description": "Two zero-origin annual count panels, no territory population rates or inferred monthly records.",
+      "data_status": "HA_APPROVED_AGGREGATE",
+      "width_mm": 180,
+      "minimum_font_pt": 9,
+      "inputs": [
+        {
+          "path": "outputs/tables/cvd_descriptive_annual_totals.csv",
+          "sha256": "2d4997276d77e28761083117e292f438506d07db639deba5bc17c1843e4862e8"
+        }
+      ],
+      "source_snapshot": {
+        "path": "figures/covid_period/frozen_publication/annual_counts_source.csv",
+        "sha256": "ebe38735ff9f5bc038175b9bf45c85b898cc1dce2991bbc88f9135f399a180b4"
+      },
+      "outputs": [
+        {
+          "path": "figures/covid_period/frozen_publication/annual_counts.png",
+          "sha256": "e515c4f544c5905a3c92677956e47ff4435da7496dabd5f942c3995840e68b72"
+        },
+        {
+          "path": "figures/covid_period/frozen_publication/annual_counts.svg",
+          "sha256": "1616f746a8ccb88b94f756b6486bc2a48927350e80119a7b36b2ea3864ffcfb1"
+        },
+        {
+          "path": "figures/covid_period/frozen_publication/annual_counts.pdf",
+          "sha256": "dae2d0d24ed8a530de68034cb186230164895ea0fdeeb4fe23bc1e41bebcf404"
+        }
+      ]
+    },
+    {
+      "name": "complete_weather",
+      "description": "Complete twelve baseline NW6 count ratios. Units separated into four panels, exact q-values shown to three decimals, no significance stars.",
+      "data_status": "HA_APPROVED_AGGREGATE",
+      "width_mm": 180,
+      "minimum_font_pt": 9,
+      "inputs": [
+        {
+          "path": "outputs/tables/cvd_core_robust_estimates.csv",
+          "sha256": "6acfc6f5082780c681c05c48b5953579ad7095d379429dc6125230c8c0824dd4"
+        }
+      ],
+      "source_snapshot": {
+        "path": "figures/covid_period/frozen_publication/complete_weather_source.csv",
+        "sha256": "e9e4c09482c020bbac20e52037024b32cd8d7723ac15b837f87c152adcf2ab7e"
+      },
+      "outputs": [
+        {
+          "path": "figures/covid_period/frozen_publication/complete_weather.png",
+          "sha256": "6ea3619e031b4356d80aee38b43e441dac5806dbb59ecb460ff7bbeba727099a"
+        },
+        {
+          "path": "figures/covid_period/frozen_publication/complete_weather.svg",
+          "sha256": "7cff2fa4d62e3a4f6b210e9cba8619d4040a6277ff0db4f5b036ad9823f2a980"
+        },
+        {
+          "path": "figures/covid_period/frozen_publication/complete_weather.pdf",
+          "sha256": "c88a80a96310c2413cab1f93f0826f8ba5c648a9306fbc5b94114ba78494e7fb"
+        }
+      ]
+    },
+    {
+      "name": "model_criticism",
+      "description": "Four panels: two seven-scenario calendar displays and two four-method baseline uncertainty ladders. Phase-adjustment and complete 48-interval ladder remain in supplement.",
+      "data_status": "HA_APPROVED_AGGREGATE",
+      "width_mm": 180,
+      "minimum_font_pt": 9,
+      "inputs": [
+        {
+          "path": "outputs/tables/cvd_trend_depletion_sensitivity.csv",
+          "sha256": "061158111bbc79478b8cb54f27687447c213fd1bfc13efe9cf3309996f348e5e"
+        },
+        {
+          "path": "outputs/tables/cvd_core_robust_estimates.csv",
+          "sha256": "6acfc6f5082780c681c05c48b5953579ad7095d379429dc6125230c8c0824dd4"
+        }
+      ],
+      "source_snapshot": {
+        "path": "figures/covid_period/frozen_publication/model_criticism_source.csv",
+        "sha256": "e189f1c1b615300307898702359a29737b6236e3739cf0adc80688a9e9402884"
+      },
+      "outputs": [
+        {
+          "path": "figures/covid_period/frozen_publication/model_criticism.png",
+          "sha256": "7b2540d4347dd784606d88233d0206c996b90a7539011ec266f08697872df596"
+        },
+        {
+          "path": "figures/covid_period/frozen_publication/model_criticism.svg",
+          "sha256": "1ca6c387d8515f846c09d4989079f4bf77d73c371893b642838972bcf95aca15"
+        },
+        {
+          "path": "figures/covid_period/frozen_publication/model_criticism.pdf",
+          "sha256": "d04dbdb26ad61f6eedaf85ed18b173681b05169847e1a6078f452d1358380e04"
+        }
+      ]
+    }
+  ],
+  "layout_checks": {
+    "tolerance_pt": 1.5,
+    "geometry_reports": [
+      "figures/covid_period/frozen_publication/qa/annual_counts.geometry.json",
+      "figures/covid_period/frozen_publication/qa/complete_weather.geometry.json",
+      "figures/covid_period/frozen_publication/qa/model_criticism.geometry.json"
+    ],
+    "description": "Measured rendered plot areas before export; portable assertion for the three equal-grid figures."
+  },
+  "publication_qa": {
+    "reports_directory": "figures/covid_period/frozen_publication/qa",
+    "review_record": "reports/auto_research/2026-10-02/FIGURE_QA_2026-10-04.md",
+    "description": "Source validation, detailed alignment, final PDF glyph and collision audits are separate from statistical validation."
+  }
+}

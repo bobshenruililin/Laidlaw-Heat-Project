@@ -16,11 +16,17 @@ from __future__ import annotations
 import csv
 import json
 import math
+import sys
 from pathlib import Path
 
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
+# Direct script execution needs the repository root to find the shared module.
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from research_lab.weather_design import natural_spline
+
 CLIMATE = ROOT / "data_processed" / "climate_monthly_2013_2023.csv"
 TABLE2 = ROOT / "outputs" / "release_chd_hf" / "tables" / "table2_core_models.csv"
 TABLE4 = ROOT / "outputs" / "release_chd_hf" / "tables" / "table4_uncertainty_ladder.csv"
@@ -38,60 +44,8 @@ def as_float(x: str) -> float:
 
 
 def ns_basis(t: np.ndarray, df: int = 4) -> np.ndarray:
-    """Natural cubic spline basis with df columns, knots at interior quantiles.
-
-    Truncated-power construction with linear-tail constraints, matching the
-    usual ns(time, df) shape enough for an identification R^2, not for
-    reproducing MASS::glm.nb coefficients.
-    """
-    t = np.asarray(t, dtype=float)
-    n = t.size
-    # df natural-spline columns: intercept is handled separately, so we want
-    # df = (degree 1 linear) + (K-2 free knots) with K interior+boundary knots.
-    # For df=4: linear term + 3 constrained truncated powers = 4 columns
-    # without intercept. Use K = df interior quantile knots plus boundaries.
-    qs = np.linspace(0, 1, df + 1)
-    knots = np.quantile(t, qs)
-    knots = np.unique(knots)
-    if knots.size < 3:
-        # degenerate: return orthonormal polynomials
-        x = (t - t.mean()) / (t.std() or 1.0)
-        return np.column_stack([x, x**2, x**3, x**4])[:, :df]
-
-    k0, kL = knots[0], knots[-1]
-    interiors = knots[1:-1]
-    def tp(x, k):
-        return np.maximum(x - float(k), 0.0) ** 3
-
-    if interiors.size == 0:
-        x = (t - t.mean()) / (t.std() or 1.0)
-        return np.column_stack([x ** i for i in range(1, df + 1)])
-
-    k_penult = interiors[-1] if interiors.size else k0
-    # Use all interior knots except last as free; last two boundary knots
-    # impose natural constraints.
-    free = interiors[:-1] if interiors.size > 1 else interiors
-    cols = [(t - t.mean()) / (t.std() or 1.0)]
-    denom = kL - k_penult
-    if denom == 0:
-        denom = 1.0
-    for kj in free:
-        d_j = tp(t, kj)
-        d_k = tp(t, k_penult)
-        d_L = tp(t, kL)
-        col = d_j - d_k * (kL - kj) / denom - d_L * (k_penult - kj) / denom
-        cols.append(col)
-    basis = np.column_stack(cols)
-    # pad/truncate to df
-    if basis.shape[1] < df:
-        x = (t - t.mean()) / (t.std() or 1.0)
-        extra = []
-        p = 2
-        while basis.shape[1] + len(extra) < df:
-            extra.append(x**p)
-            p += 1
-        basis = np.column_stack([basis] + extra)
-    return basis[:, :df]
+    """Use the shared natural cubic spline span with an intercept supplied separately."""
+    return natural_spline(t, df)
 
 
 def month_dummies(months: np.ndarray) -> np.ndarray:

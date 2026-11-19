@@ -3,6 +3,7 @@
 # Real outcome-specific residual, autocorrelation and influence diagnostics.
 
 source(file.path("scripts", "utils.R"))
+source(file.path("scripts", "cvd_rerun_contracts.R"))
 root <- project_root()
 setwd(root)
 cfg <- load_config(root)
@@ -18,7 +19,11 @@ if (!file.exists(panel_path) || !file.exists(fit_path)) {
   stop("Run the ", outcome, " pathway fit first (panel + fit stats required).")
 }
 
-panel <- utils::read.csv(panel_path, stringsAsFactors = FALSE)
+panel <- if (identical(mode, "real") && outcome %in% c("chd", "hf")) {
+  read_cvd_model_panel(panel_path, outcome)
+} else {
+  utils::read.csv(panel_path, stringsAsFactors = FALSE)
+}
 fit <- utils::read.csv(fit_path, stringsAsFactors = FALSE)
 validate_required_columns(
   panel,
@@ -91,34 +96,45 @@ for (pid in targets) {
 
   fit_family <- "negative_binomial"
   model <- tryCatch(
-    MASS::glm.nb(fml, data = panel),
+    MASS::glm.nb(fml, data = panel, na.action = stats::na.omit),
     error = function(e) {
       fit_family <<- "quasipoisson_fallback"
-      stats::glm(fml, data = panel, family = stats::quasipoisson())
+      stats::glm(fml, data = panel, family = stats::quasipoisson(), na.action = stats::na.omit)
     }
   )
 
   res <- stats::residuals(model, type = "pearson")
+  fitted_rows <- cvd_fitted_rows(model, panel)
+  if (length(res) != length(fitted_rows)) stop("Residuals do not match the fitted frame")
   keep <- is.finite(res)
   res <- res[keep]
-  month_ids <- panel$month_id[keep]
+  source_rows <- fitted_rows[keep]
+  month_ids <- panel$month_id[source_rows]
   n <- length(res)
+  if (n < 2L) stop("Too few finite residuals for diagnostics")
+  ordered_months <- as.integer(substr(month_ids, 1L, 4L)) * 12L +
+    as.integer(substr(month_ids, 6L, 7L))
+  regular <- all(diff(ordered_months) == 1L)
   rdf <- max(stats::df.residual(model), 1)
   dispersion <- sum(res^2, na.rm = TRUE) / rdf
-  cooks <- tryCatch(stats::cooks.distance(model), error = function(e) rep(NA_real_, nrow(panel)))
+  cooks <- tryCatch(stats::cooks.distance(model), error = function(e) rep(NA_real_, length(fitted_rows)))
+  if (length(cooks) != length(fitted_rows)) stop("Cook's distances do not match the fitted frame")
   cooks <- cooks[keep]
   max_cook_idx <- if (all(is.na(cooks))) NA_integer_ else which.max(cooks)
 
-  acf_obj <- stats::acf(res, plot = FALSE, lag.max = min(12, n - 1), na.action = na.pass)
-  pacf_obj <- stats::pacf(res, plot = FALSE, lag.max = min(12, n - 1), na.action = na.pass)
-  acf_values <- as.numeric(acf_obj$acf)[-1]
-  pacf_values <- as.numeric(pacf_obj$acf)
-  lags <- seq_along(acf_values)
+  lags <- seq_len(min(12L, n - 1L))
+  acf_values <- pacf_values <- rep(NA_real_, length(lags))
+  if (regular) {
+    acf_values <- as.numeric(stats::acf(res, plot = FALSE, lag.max = max(lags))$acf)[-1]
+    pacf_values <- as.numeric(stats::pacf(res, plot = FALSE, lag.max = max(lags))$acf)
+  }
 
   diag_rows[[pid]] <- data.frame(
     outcome = outcome,
     pathway_id = pid,
     n = n,
+    n_fitted = stats::nobs(model),
+    regular_monthly_residuals = regular,
     data_status = paste(statuses, collapse = ";"),
     family = fit_family,
     offset_policy = spec$offset %||% "population_x_days",
@@ -128,8 +144,8 @@ for (pid in targets) {
     pearson_abs_gt2 = sum(abs(res) > 2, na.rm = TRUE),
     pearson_abs_gt3 = sum(abs(res) > 3, na.rm = TRUE),
     residual_acf1 = if (length(acf_values)) acf_values[1] else NA_real_,
-    ljung_box_p_lag6 = if (n > 6) stats::Box.test(res, lag = 6, type = "Ljung-Box", fitdf = 0)$p.value else NA_real_,
-    ljung_box_p_lag12 = if (n > 12) stats::Box.test(res, lag = 12, type = "Ljung-Box", fitdf = 0)$p.value else NA_real_,
+    ljung_box_p_lag6 = if (regular && n > 6) stats::Box.test(res, lag = 6, type = "Ljung-Box", fitdf = 0)$p.value else NA_real_,
+    ljung_box_p_lag12 = if (regular && n > 12) stats::Box.test(res, lag = 12, type = "Ljung-Box", fitdf = 0)$p.value else NA_real_,
     max_cooks_distance = if (all(is.na(cooks))) NA_real_ else max(cooks, na.rm = TRUE),
     max_cook_month = if (is.na(max_cook_idx)) NA_character_ else month_ids[max_cook_idx],
     aic = tryCatch(stats::AIC(model), error = function(e) NA_real_),

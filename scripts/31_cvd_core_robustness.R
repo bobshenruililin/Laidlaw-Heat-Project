@@ -3,6 +3,7 @@
 # Amended single-exposure CHD/HF models with alternative offsets and robust SEs.
 
 source(file.path("scripts", "utils.R"))
+source(file.path("scripts", "cvd_rerun_contracts.R"))
 root <- project_root()
 setwd(root)
 ensure_packages(c("dplyr", "MASS", "splines", "sandwich", "lmtest"))
@@ -26,9 +27,9 @@ se_methods <- c("model", "HC1", "NeweyWest_lag3", "NeweyWest_lag6")
 
 fit_count_model <- function(formula, data, family_name) {
   if (identical(family_name, "negative_binomial")) {
-    return(MASS::glm.nb(formula, data = data))
+    return(MASS::glm.nb(formula, data = data, na.action = stats::na.fail))
   }
-  stats::glm(formula, data = data, family = stats::quasipoisson())
+  stats::glm(formula, data = data, family = stats::quasipoisson(), na.action = stats::na.fail)
 }
 
 vcov_for <- function(model, method) {
@@ -44,7 +45,7 @@ extract_term <- function(model, term, vcov_mat, metadata) {
   if (!term %in% names(stats::coef(model))) return(NULL)
   b <- unname(stats::coef(model)[term])
   se <- sqrt(diag(vcov_mat))[term]
-  if (!is.finite(se)) return(NULL)
+  if (!is.finite(b) || !is.finite(se) || se <= 0) return(NULL)
   z <- b / se
   dplyr::bind_cols(
     metadata,
@@ -108,13 +109,7 @@ vif_rows <- list()
 for (outcome in outcomes) {
   panel_path <- file.path(root, "data_processed", paste0(outcome, "_analysis_panel.csv"))
   if (!file.exists(panel_path)) stop("Missing real panel: ", panel_path)
-  dat <- utils::read.csv(panel_path, stringsAsFactors = FALSE) |>
-    dplyr::arrange(time_index) |>
-    dplyr::mutate(month_f = factor(month))
-  statuses <- unique(as.character(dat$data_status))
-  if (!identical(statuses, "HA_APPROVED_AGGREGATE") || nrow(dat) != 132L) {
-    stop("Core robustness requires a 132-month HA_APPROVED_AGGREGATE panel for ", outcome)
-  }
+  dat <- read_cvd_model_panel(panel_path, outcome)
 
   for (pid in names(core_specs)) {
     spec <- core_specs[[pid]]
@@ -135,7 +130,15 @@ for (outcome in outcomes) {
             NULL
           }
         )
-        if (is.null(model)) next
+        if (!cvd_converged(model)) {
+          se_status_rows[[paste(outcome, pid, offset_name, family_name)]] <- data.frame(
+            outcome = outcome, pathway_id = pid, exposure = spec$exposure,
+            offset_policy = offset_name, family = family_name, se_method = se_methods,
+            status = "FAILED", message = "Model failed or did not converge",
+            data_status = "HA_APPROVED_AGGREGATE", stringsAsFactors = FALSE
+          )
+          next
+        }
 
         fit_meta <- data.frame(
           outcome = outcome,
@@ -147,6 +150,7 @@ for (outcome in outcomes) {
           family = family_name,
           offset_policy = offset_name,
           n_months = nrow(dat),
+          n_fitted = stats::nobs(model),
           data_status = "HA_APPROVED_AGGREGATE",
           stringsAsFactors = FALSE
         )
@@ -224,11 +228,15 @@ for (outcome in outcomes) {
   for (pid in names(joint_specs)) {
     fml <- build_formula(joint_specs[[pid]], offsets$days_only)
     model_result <- tryCatch(
-      list(ok = TRUE, value = MASS::glm.nb(fml, data = dat), message = ""),
+      list(ok = TRUE, value = MASS::glm.nb(fml, data = dat, na.action = stats::na.fail), message = ""),
       error = function(e) {
         list(ok = FALSE, value = NULL, message = conditionMessage(e))
       }
     )
+    if (isTRUE(model_result$ok) && !cvd_converged(model_result$value)) {
+      model_result$ok <- FALSE
+      model_result$message <- "Joint negative-binomial fit did not converge"
+    }
     if (!isTRUE(model_result$ok)) {
       for (se_method in c("HC1", "NeweyWest_lag6")) {
         for (term in joint_specs[[pid]]) {
@@ -287,6 +295,7 @@ for (outcome in outcomes) {
           family = "negative_binomial",
           offset_policy = "days_only",
           n_months = nrow(dat),
+          n_fitted = stats::nobs(model),
           data_status = "HA_APPROVED_AGGREGATE",
           se_method = se_method,
           stringsAsFactors = FALSE
@@ -382,10 +391,11 @@ vif_df <- dplyr::bind_rows(vif_rows)
 main_idx <- est_df$family == "negative_binomial" &
   est_df$offset_policy == "days_only" &
   est_df$se_method == "NeweyWest_lag6"
+core_q <- cvd_core_bh(est_df[main_idx, , drop = FALSE])
 est_df$q_value_core_bh <- NA_real_
-est_df$q_value_core_bh[main_idx] <- stats::p.adjust(est_df$p_value[main_idx], method = "BH")
+est_df$q_value_core_bh[main_idx] <- core_q
 est_df$manuscript_role <- ifelse(main_idx, "amended_core_candidate", "sensitivity")
-joint_df$manuscript_role <- "joint_collinearity_sensitivity"
+joint_df$manuscript_role <- rep("joint_collinearity_sensitivity", nrow(joint_df))
 
 out_dir <- file.path(root, "outputs", "tables")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
@@ -395,6 +405,12 @@ write_csv_safe(fit_df, file.path(out_dir, "cvd_core_model_fit.csv"))
 write_csv_safe(se_status_df, file.path(out_dir, "cvd_core_se_fit_status.csv"))
 write_csv_safe(cor_df, file.path(out_dir, "cvd_exposure_correlations.csv"))
 write_csv_safe(vif_df, file.path(out_dir, "cvd_exposure_vif.csv"))
+versioned_packages <- c("MASS", "splines", "sandwich", "dplyr", "lmtest")
+versions <- vapply(versioned_packages, function(p) as.character(utils::packageVersion(p)),
+                   character(1))
+write_csv_safe(data.frame(component = c("R", versioned_packages),
+                          version = c(as.character(getRversion()), unname(versions))),
+               file.path(out_dir, "cvd_core_runtime_versions.csv"))
 
 message(
   "Core robustness complete: ", nrow(est_df), " single-exposure estimates; ",

@@ -1,0 +1,14 @@
+{
+  "comparison": "at_least",
+  "family": "threshold_days",
+  "metric": "months_for_half_ss",
+  "question": "Does each threshold-day exposure require at least six months to account for half its calendar-adjusted variation during 2020–2023 at every specified calendar flexibility?",
+  "spline_df": [
+    3,
+    4,
+    6,
+    8
+  ],
+  "threshold": 6,
+  "window": "2020-2023"
+}

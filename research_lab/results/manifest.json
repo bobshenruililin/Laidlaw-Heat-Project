@@ -1,0 +1,41 @@
+{
+  "code_sha256": {
+    "__main__.py": "2d42851c295edb694c2174c9c29e4ab43d543cc50cc1cc77789f8e8d106c9ddb",
+    "hindcast.py": "46b6b5b1095c00ca3473e0cc891d1191064d7b096a8281c197986ddf9113a0c4",
+    "protocol.json": "55b5f6b09580d2313bb34006b0227de612f525ea5790abcd402ab5afc27de1b3",
+    "release.py": "3559f0a6480699cfe1922d80bac81333c8e076c37d40db93b0267afbf7b25a21",
+    "service_context.py": "aca06b8f0be47d2992e67d965f5fcc9a7075c4d1e201ab8c9a26c1483e8ac681",
+    "weather_design.py": "b500db981fe4052c1a56198a38583474bf3bd12e1075c23e93f4049e312acbf9",
+    "weather_sources.py": "8d53e3827a14b33a54335a2cdd5b6e4e7e9d0cb9e5a341fc4985b1028514a274"
+  },
+  "inputs_sha256": {
+    "data_processed/climate_monthly_2013_2023.csv": "85acacff8597d67232db34acfba2442329526b9891b392ea8e87f92e0175af52",
+    "data_raw/hko/CLMMAXT_HKO.csv": "5a0a646b4d125e40c25871abbccd5cd24e4f552063a547803ebac820166be4c9",
+    "data_raw/hko/CLMMINT_HKO.csv": "e1db1ce51271f9a635ecb1ad593fbe3f368d1ed647232bf397d0d6b3bde8826b",
+    "data_raw/hko/CLMTEMP_HKO.csv": "7146b3b156c874a9330796683188ee97687cb0c500082cf8ef1d37518ae96aba",
+    "data_raw/hko/daily_extract/dailyExtract_2013.xml": "52729d026c9ec9454e6d7934d786b738a1e85a6bafc0971fe89001c30967a95a",
+    "data_raw/hko/daily_extract/dailyExtract_2014.xml": "a9e662061008ae04eff02114bf7ae96d5bc765958f7620eb1023a49f36ff6bf0",
+    "data_raw/hko/daily_extract/dailyExtract_2015.xml": "bc2f1199c43dce592c0a8a0e3f6e87a3a5e923086afc19232f860f0f2bb14a39",
+    "data_raw/hko/daily_extract/dailyExtract_2016.xml": "6d912b8e6430caef98773cbedd960ddead9e73abc792f330c3124e4b0c0fbec4",
+    "data_raw/hko/daily_extract/dailyExtract_2017.xml": "cf98111157c47bda53cdced2759bc3974b0e2ec2a75e589e0d3fd739236f1624",
+    "data_raw/hko/daily_extract/dailyExtract_2018.xml": "7577e08a49677abd119039adf42ac8ac84436f803272ad3e586f879b1c03f50f",
+    "data_raw/hko/daily_extract/dailyExtract_2019.xml": "446cb40fc832c097a5a59f7c283dd5bc3522298ef15fd43584d3844523a08e49",
+    "data_raw/hko/daily_extract/dailyExtract_2020.xml": "6ac8fb4b43e4b40887d37e119ea9a6417b9c4634407c6ac6548edfa472f74546",
+    "data_raw/hko/daily_extract/dailyExtract_2021.xml": "9aa6d8e1a375a75351176fbcea05c95c01bbd2e3c305e77faf479f2d58bb1290",
+    "data_raw/hko/daily_extract/dailyExtract_2022.xml": "e3bfdb6ad83c6bda637314212218ceb0c8c5694e40341994119da74d5066dffc",
+    "data_raw/hko/daily_extract/dailyExtract_2023.xml": "0aec65724f4f6da2c241fa6e5096e50abd271c52bef26c775cb6c7f224f4372d",
+    "outputs/tables/cvd_core_robust_estimates.csv": "6acfc6f5082780c681c05c48b5953579ad7095d379429dc6125230c8c0824dd4",
+    "outputs/tables/cvd_descriptive_annual_totals.csv": "2d4997276d77e28761083117e292f438506d07db639deba5bc17c1843e4862e8",
+    "outputs/tables/cvd_exposure_correlations.csv": "dbf2a4af2ab3f8616898cfd5a6bffce47c00da8cd51e80326d660a0ec09a1cff",
+    "research_lab/sources/hk_inpatient_digest_cells.csv": "3c0d328399fdc1afbd2519e94e8724448ea2fd7d304f8807a6f4fbaa2c26ece1"
+  },
+  "kind": "November descriptive research release",
+  "output_sha256": {
+    "annual_changes.csv": "d7c9cb202dff0ac118870a2547cfd8a9db59a087ceae1278e6976e315b3ee1db",
+    "hindcast.csv": "dc023318a8e0126a0eb9e197f2d74c9dd653c2c916c109f543c1640d4ac7e2b0",
+    "service_context.csv": "c9d5d5b89e7c3cfd9f8e8d8af528acbe103bbdc1bfb63ddeab0d536837fb00e5",
+    "weather_design.csv": "314639beee5a26b11ee8d5731674b52d824524ccb5803efb920703a8f0773481",
+    "weather_models.csv": "06310e72cf3a6d93f87efeb3d9b7ff21389ad1f5f3d08b4e51ce4f572bb6029c",
+    "weather_source_agreement.json": "888366a749913da7f0f406246dea2ac127349e06d2d7e55e25d9728d0aac83b0"
+  }
+}

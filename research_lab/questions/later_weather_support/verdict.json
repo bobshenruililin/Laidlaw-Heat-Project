@@ -1,0 +1,8 @@
+{
+  "all_selected_cells_meet_criterion": false,
+  "cells_evaluated": 12,
+  "cells_meeting_criterion": 0,
+  "grid_rows_returned": 72,
+  "question": "Does each threshold-day exposure require at least six months to account for half its calendar-adjusted variation during 2020–2023 at every specified calendar flexibility?",
+  "scope": "Unweighted exposure geometry; no health outcomes."
+}

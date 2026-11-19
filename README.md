@@ -1,193 +1,26 @@
-# First hospitalisation burden before and during COVID in Hong Kong, 2013–2023
+# First hospitalisations after cardiovascular diagnosis in Hong Kong
 
-Laidlaw Scholars project · The University of Hong Kong  
-**Bob Shen Ruililin** · Supervisor: **Professor David Bishai**
+From 2013 to 2019, recorded first hospitalisations after coronary heart disease (CHD) or heart failure (HF) diagnosis fell every year in the two study series. Total inpatient episodes across Hong Kong rose every year. Over the next four annual transitions, the series moved together. This repository contains the paper, annual source tables and executable analyses behind that comparison.
 
-**For agents / new chats:** read [`knowledge/CONTEXT_BOOTSTRAP.md`](knowledge/CONTEXT_BOOTSTRAP.md) first, then use its linked playbook for the current gate.
+[Read the paper](manuscript/covid_period/november/Manuscript.pdf) · [Editable Word version](manuscript/covid_period/november/Manuscript.docx) · [Read on GitHub](manuscript/covid_period/november/Manuscript.md)
 
-**Current research direction (2 October 2026):** an evidence-led study of whether changing recorded hospitalisations reflect health, care or observation. The [novelty, feasibility and study-design packet](reports/auto_research/2026-10-02/EVIDENCE_LED_PACKET.md) contains an unsent data-request draft and a prospective protocol. The [exploratory COVID manuscript and supplement](manuscript/covid_period/README.md) report current approved summaries: counts declined before 2020, dipped in 2020 and approached 2019 levels by 2023. Physiological improvement and causal COVID effects remain unidentified. No new transfer or approved output has arrived; linked clinical analysis and validation are conditional. [Current handoff](knowledge/2026-10-02_evidence_led_research.md) and [human submission items](manuscript/covid_period/SUBMISSION_COMPLETION.md) state the boundaries. Historical thermal readiness material below remains background.
+## Reproduce the results
 
-The [editorial evidence freeze](MANUSCRIPT_FREEZE.md) now anchors the completed writing pass to PR #103's selected evidence. The revised article has three main figures, a complete supplement, released-summary reconstruction package and separate statistical, clinical and editorial reviews. [Final verification and limits](reports/auto_research/2026-10-02/FROZEN_VERIFICATION.md) distinguish presentation/source checks from primary-data replication and human submission approval.
+From the repository root with Python 3.10 or later and NumPy installed, run the following commands.
 
-This repository is the working home for a monthly climate–health analysis.
-The current governed paper examines **CHD and HF first-hospitalisation
-aggregates among people with T2D and/or HTN**; stroke was named but not
-delivered and remains a future track. The README is the primary orientation
-document; code and data sit underneath it.
+```bash
+python3 -m research_lab check
+python3 -m unittest discover -s research_lab/tests -v
+```
 
-**Compounding context:** lab meetings, assumptions, and agent briefs are meant to accumulate in-repo — not only in chat. See [`AGENTS.md`](AGENTS.md) (for agents) and [`analysis_plan/human_agent_collaboration.md`](analysis_plan/human_agent_collaboration.md) (for Bob + future collaborators). Detours and dead ends go in [`analysis_plan/context_compound_log.md`](analysis_plan/context_compound_log.md).
+[Installation and commands](research_lab/README.md) · [Protocol](research_lab/protocol.json) · [Numerical tables](research_lab/results/)
 
----
-
-## What this project is (now)
-
-| | |
+| Question | Evidence |
 |---|---|
-| **Design** | Ecological **monthly** time series (132 months, Jan 2013–Dec 2023) |
-| **Exposures** | HKO Headquarters temperature (mean / Tmax / Tmin, lags) plus official extreme-day counts and Ren/Wang-style heatwave-burden metrics (spells, 2D3N) |
-| **Outcome (current)** | **CHD and HF first recorded hospitalisations after first diagnosis** among a T2D/HTN cohort |
-| **Outcome (pending)** | Stroke file not delivered; no stroke coefficients |
-| **Not available** | General HA extract **does not specify reasons for admission** — no AMI / principal-dx CVD panel from that file |
-| **Strategy** | Explore a labelled panel of ~10 specifications (continuous temperature, lags, extremes, heatwave definitions, cold-side, strata, sensitivities) |
-| **Not claimed** | Individual causality; daily DLNM triggering; excess-death estimates from the lab’s separate heatwave–mortality work |
+| When did the two study series and wider inpatient activity diverge? | [Eleven annual observations per series](research_lab/results/service_context.csv) and [official source definitions](research_lab/sources/HK_INPATIENT.md) |
+| How large was the 2020 departure from earlier years? | [Three benchmarks for each outcome and target year](research_lab/results/hindcast.csv). Every forecast uses only earlier observations. |
+| Which months supply the weather comparisons? | [Six exposures across three time windows](research_lab/results/weather_design.csv) and [a question you can change and rerun](research_lab/questions/later_weather_support.json) |
+| Which historical estimates need another calculation? | [Time-series uncertainty corrections](reports/legacy_uncertainty_correction_2026-11-19.md) |
+| What additional data would distinguish changing first-event risk from changing observation? | [Measurement and replication](research_lab/measurement.md) |
 
-Full post-meeting recalibration: [`reports/meeting_debrief_2026-07-17.md`](reports/meeting_debrief_2026-07-17.md).
-
----
-
-## Current status
-
-| Domain | Status |
-|---|---|
-| HKO weather (monthly panel + extremes / spells) | **Ready** — annual extremes validated 33/33 vs HKO *Year’s Weather* |
-| C&SD age–sex denominators | **Ready** (Table 110-01001 MDT) |
-| Air pollution | **Ready (EPD EPIC)** | Monthly NO₂, O₃, PM₂.₅, PM₁₀ — general-station means; roadside archived for sensitivity |
-| HA outcomes | **CHD + HF received 7 Aug 2026** (T2D/HTN cohort; first hosp. after first CVD dx). **Stroke file not attached.** |
-| Multi-pathway analysis | **REAL panel complete for CHD & HF** (`run_cvd_full_analysis.R`); Gate 3 open |
-| Association estimates | **Panel estimates exist for CHD/HF** — not a team-frozen headline; stroke none |
-| Final publication package | **Ready for team decision** — integrated report + manuscript + supplement PDFs; release checks 29/29 |
-| Daily-effect recovery | **Rejected for this dataset** — 500-replicate M\|D calibration failed strict gates; no real daily coefficient |
-
-Do not treat synthetic practice runs as results. Do not treat open-Gate-3 panel coefficients as the primary manuscript claim.
-
----
-
-## Quick start
-
-Final packet (no governed source files required to read):
-
-- `reports/bishai_integrated_report/integrated_project_report.pdf`
-- `manuscript/chd_hf_thermal_associations_2013_2023.pdf`
-- `manuscript/chd_hf_supplement.pdf`
-- `outputs/release_chd_hf/` (29/29 validation checks)
-
-Re-run public exposure and release checks:
-
-```bash
-Rscript scripts/35_build_spillover_exposures.R
-Rscript scripts/38_cns_final_release_artifacts.R
-Rscript scripts/34_cvd_real_release_checks.R
-```
-
-The complete real-outcome rerun additionally requires governed local CHD/HF
-files matching the receipt hashes.
-
-```bash
-Rscript scripts/00_setup.R
-Rscript scripts/run_pipeline_dev.R   # weather / population / legacy dry-run
-```
-
-**Multi-pathway stroke panel** (preferred once aggregates exist or for synthetic dry-run):
-
-```bash
-Rscript scripts/run_pathway_pipeline.R              # PATHWAY_MODE=dev (synthetic stroke)
-PATHWAY_MODE=real Rscript scripts/run_pathway_pipeline.R   # requires real file in data_raw/ha_secure_placeholder/
-```
-
-Pollution (official EPD EPIC monthly averages):
-
-```bash
-python3 scripts/18_download_epd_epic_monthly.py --include-roadside
-Rscript scripts/04_build_pollution_monthly.R
-```
-
-Real-outcome track (expects an approved aggregate file):
-
-```bash
-Rscript scripts/run_pipeline_real.R
-```
-
-Config lives in `config.yml`. Rebuild the validated annual extremes figure with `scripts/14_hko_annual_extremes_figure.R`.
-
----
-
-## Repository map
-
-```text
-README.md                 ← start here
-config.yml
-analysis_plan/            ledger, gates, pathway catalogue + registry, gap analysis
-scripts/                  numbered pipeline + run_pathway_pipeline.R
-data_raw/                 HKO, C&SD, EPD, HA placeholder (no microdata)
-data_processed/           climate, exposures (with lags), pollution, population, panels
-figures/                  validated extremes, exposure/aging, pollution
-outputs/                  tables + pathway panel reports
-literature/               bibliography, evidence matrix, pathway evidence memo
-reports/                  meeting debrief, literature review PDF
-schemas/                  stroke aggregate + environmental contracts
-```
-
-Raw correspondence and private manuscript PDFs are **not** kept in this repo.
-Scientific decisions extracted from them are stored in redacted knowledge
-records.
-
----
-
-## Exposure definitions (HKO Headquarters)
-
-| Metric | Definition |
-|---|---|
-| Hot night | Daily Tmin ≥ 28°C |
-| Very hot day | Daily Tmax ≥ 33°C |
-| Extremely hot day | Daily Tmax ≥ 35°C |
-| Cold day | Daily Tmin ≤ 12°C |
-
-Monthly spell / combined day–night metrics (including 2D3N-style windows) are built in `data_processed/climate_monthly_2013_2023.csv` for the multi-method heatwave family.
-
----
-
-## Key files
-
-| What | Where |
-|---|---|
-| Final integrated report | `reports/bishai_integrated_report/integrated_project_report.{md,pdf}` |
-| Journal manuscript + supplement | `manuscript/chd_hf_thermal_associations_2013_2023.{md,pdf}` · `manuscript/chd_hf_supplement.{md,pdf}` |
-| Live candidate (Hogan/Roro/Bishai) | `manuscript/live_collaborative/` — 10 Sep analysis-window sensitivity Word/PDF + supplement; complete thermal predecessor in `manuscript/archive/thermal_extremes_2026-08/`; Bob owns any paste/send; Hogan weather Methods stay verbatim |
-| Validated disclosure-minimised release | `outputs/release_chd_hf/` |
-| Final reanalysis handoff | `knowledge/2026-08-10_cns_final_reanalysis.md` |
-| Post-meeting strategy + next actions | `reports/meeting_debrief_2026-07-17.md` |
-| Pathway catalogue (P01–P18) | `analysis_plan/pathway_catalogue.md` |
-| Pathway registry (machine) | `analysis_plan/pathway_registry.yml` |
-| Hot/cold month catalogue + Jasmine extension protocol | [`analysis_plan/hot_cold_month_catalogue.md`](analysis_plan/hot_cold_month_catalogue.md) · [`analysis_plan/jasmine_extension_protocol.md`](analysis_plan/jasmine_extension_protocol.md) |
-| Statistical analysis protocol | `analysis_plan/statistical_analysis_protocol.md` |
-| Readiness gap analysis | `analysis_plan/gap_analysis_readiness.md` |
-| Scientist runbook | `analysis_plan/scientist_runbook.md` |
-| Human–agent collaboration | `analysis_plan/human_agent_collaboration.md` |
-| Context compound log | `analysis_plan/context_compound_log.md` |
-| Agent protocol | `AGENTS.md` |
-| Methods scaffold | `reports/methods_pathway_panel_scaffold.md` |
-| Pathway evidence memo | `literature/pathway_evidence_memo.md` |
-| Jasmine/Roro literature set | [`jasmine_liu2020_confirmed.md`](literature/jasmine_liu2020_confirmed.md) · [`roro_manuscript_deep_read.md`](literature/roro_manuscript_deep_read.md) · [`exceed_jasmine_and_roro_baseline.md`](literature/exceed_jasmine_and_roro_baseline.md) · [`jasmine_roro_family_map.md`](literature/jasmine_roro_family_map.md) |
-| Jasmine-adjacent DOI crawl | [`jasmine_adjacent_crawl.md`](literature/jasmine_adjacent_crawl.md) |
-| Dry-run pathway summary | `outputs/reports/pathway_panel_summary.md` |
-| Week~2 progress deck | `reports/Week2_Progress_Deck.pdf` |
-| Week~2 progress brief | `reports/Week2_Progress_Brief.pdf` |
-| Living project state (science + people) | [`analysis_plan/PROJECT_STATE.md`](analysis_plan/PROJECT_STATE.md) |
-| How Bob + agents work | [`AGENTS.md`](AGENTS.md) · [`analysis_plan/human_agent_collaboration.md`](analysis_plan/human_agent_collaboration.md) |
-| Hogan writing / mentorship bar | [`analysis_plan/writing_standards_hogan.md`](analysis_plan/writing_standards_hogan.md) |
-| **Permanent knowledge base** | [`knowledge/README.md`](knowledge/README.md) · [`knowledge/INDEX.md`](knowledge/INDEX.md) |
-| **Laidlaw Stage 3 submission packet** | [`outputs/ShenRuililin_Laidlaw_Stage3Report.pdf`](outputs/ShenRuililin_Laidlaw_Stage3Report.pdf) · [`outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf`](outputs/ShenRuililin_Laidlaw_Stage3Poster.pdf) · [`reports/laidlaw_stage3/README.md`](reports/laidlaw_stage3/README.md) |
-| **Laidlaw website blogs** (MIT Admissions-style) | [`reports/blog/`](reports/blog/) · [`knowledge/2026-07-26_laidlaw_blog_canon.md`](knowledge/2026-07-26_laidlaw_blog_canon.md) |
-| **Hogan Tuesday pack (28 Jul 2026)** | [`reports/hogan_tuesday/README.md`](reports/hogan_tuesday/README.md) |
-
-| HKO extremes figure | `figures/hko_annual_extremes_2013_2023.pdf` |
-| Exposure & aging note | `reports/Exposure_Aging_Context_Note.pdf` |
-| Figure validation | `reports/hko_figure_validation_note.md` |
-
----
-
-## Rules of the road
-
-1. Label provenance (`REAL`, `PLACEHOLDER_NOT_FOR_INFERENCE`, `SYNTHETIC`, …).
-2. Never commit Hospital Authority microdata.
-3. Prefer rebuilding processed files from `data_raw/` via scripts.
-4. Monthly associations ≠ daily DLNM coefficients ≠ excess-death mortality counts.
-5. Record open design choices in the assumption ledger; freeze a headline method only after Gate 3.
-
----
-
-## Scientific context (short)
-
-Earlier Hong Kong daily studies (e.g. Goggins) reported cold-dominant cardiovascular admission patterns. Guo et al. (2024) found official binary hot nights alone were weak for hospitalization risk relative to nighttime heat *intensity*. Wang/Ren-style EHWE definitions (very hot days, hot nights, combined windows) matter for heatwave specification. A related lab line of work quantifies **daily multi-definition heatwave excess mortality**; this project is complementary: **monthly stroke-aggregate burden**, not a duplicate of that mortality analysis.
-
-See `reports/Literature_Review_Critical.pdf` for the literature map.
+The two outcome series describe people with type 2 diabetes and/or hypertension. Each counts the first recorded hospitalisation after a relevant diagnosis. The two outcomes can overlap. The public episode series include repeat stays and day inpatients. Each of the five series is indexed to its own 2019 total. The comparison describes recorded use.

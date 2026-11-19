@@ -1,0 +1,13 @@
+spline_df,exposure,window,metric,value,criterion_met
+3,hot_nights,2020-2023,months_for_half_ss,3,False
+3,cold_days,2020-2023,months_for_half_ss,2,False
+3,very_hot_days,2020-2023,months_for_half_ss,3,False
+4,hot_nights,2020-2023,months_for_half_ss,3,False
+4,cold_days,2020-2023,months_for_half_ss,2,False
+4,very_hot_days,2020-2023,months_for_half_ss,3,False
+6,hot_nights,2020-2023,months_for_half_ss,3,False
+6,cold_days,2020-2023,months_for_half_ss,2,False
+6,very_hot_days,2020-2023,months_for_half_ss,3,False
+8,hot_nights,2020-2023,months_for_half_ss,3,False
+8,cold_days,2020-2023,months_for_half_ss,2,False
+8,very_hot_days,2020-2023,months_for_half_ss,3,False

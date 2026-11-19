@@ -36,11 +36,17 @@ from __future__ import annotations
 import csv
 import json
 import math
+import sys
 from pathlib import Path
 
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
+# Direct script execution needs the repository root to find the shared module.
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from research_lab.weather_design import natural_spline
+
 CLIMATE = ROOT / "data_processed" / "climate_monthly_2013_2023.csv"
 ANNUAL = ROOT / "outputs" / "tables" / "cvd_descriptive_annual_totals.csv"
 SCENARIOS = ROOT / "outputs" / "tables" / "cvd_trend_depletion_sensitivity.csv"
@@ -73,45 +79,8 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 
 
 def ns_basis(t: np.ndarray, df: int = 4) -> np.ndarray:
-    """Same truncated-power natural-spline construction as script 48.
-
-    Shape-faithful for an identification R^2; not a MASS::ns clone.
-    """
-    t = np.asarray(t, dtype=float)
-    qs = np.linspace(0, 1, df + 1)
-    knots = np.unique(np.quantile(t, qs))
-    if knots.size < 3:
-        x = (t - t.mean()) / (t.std() or 1.0)
-        return np.column_stack([x**i for i in range(1, df + 1)])[:, :df]
-    k0, kL = knots[0], knots[-1]
-    interiors = knots[1:-1]
-
-    def tp(x, k):
-        return np.maximum(x - float(k), 0.0) ** 3
-
-    if interiors.size == 0:
-        x = (t - t.mean()) / (t.std() or 1.0)
-        return np.column_stack([x**i for i in range(1, df + 1)])[:, :df]
-    k_penult = interiors[-1]
-    free = interiors[:-1] if interiors.size > 1 else interiors
-    cols = [(t - t.mean()) / (t.std() or 1.0)]
-    denom = (kL - k_penult) or 1.0
-    for kj in free:
-        col = (
-            tp(t, kj)
-            - tp(t, k_penult) * (kL - kj) / denom
-            - tp(t, kL) * (k_penult - kj) / denom
-        )
-        cols.append(col)
-    basis = np.column_stack(cols)
-    if basis.shape[1] < df:
-        x = (t - t.mean()) / (t.std() or 1.0)
-        extra, p = [], 2
-        while basis.shape[1] + len(extra) < df:
-            extra.append(x**p)
-            p += 1
-        basis = np.column_stack([basis] + extra)
-    return basis[:, :df]
+    """Use the shared natural cubic spline span with an intercept supplied separately."""
+    return natural_spline(t, df)
 
 
 def month_dummies(months: np.ndarray) -> np.ndarray:

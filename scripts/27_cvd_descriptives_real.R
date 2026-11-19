@@ -4,6 +4,7 @@
 # Provenance: HA_APPROVED_AGGREGATE. Does NOT dump full month-level HA count tables to markdown.
 
 source(file.path("scripts", "utils.R"))
+source(file.path("scripts", "cvd_rerun_contracts.R"))
 root <- project_root()
 setwd(root)
 ensure_packages(c("dplyr", "tidyr", "ggplot2"))
@@ -18,11 +19,23 @@ load_panel <- function(outcome) {
   path <- file.path(root, "data_processed", paste0(outcome, "_analysis_panel.csv"))
   if (!file.exists(path)) stop("Missing ", path)
   d <- utils::read.csv(path, stringsAsFactors = FALSE)
+  assert_cvd_outcome(d, outcome)
   stop_if_synthetic(d)
-  if (!all(d$data_status == "HA_APPROVED_AGGREGATE")) {
+  if (!identical(unique(as.character(d$data_status)), "HA_APPROVED_AGGREGATE")) {
     stop(outcome, " panel is not uniformly HA_APPROVED_AGGREGATE")
   }
-  d$month_date <- as.Date(paste0(d$month_id, "-01"))
+  calendar <- make_month_grid(2013, 1, 2023, 12)
+  assert_cvd_event_calendar(d$month_id, d$n_events, calendar$month_id)
+  calendar <- calendar[match(d$month_id, calendar$month_id), ]
+  for (field in c("year", "month", "days_in_month")) {
+    if (!identical(as.numeric(d[[field]]), as.numeric(calendar[[field]]))) {
+      stop(outcome, " panel disagrees with its month IDs: ", field)
+    }
+  }
+  d$month_date <- calendar$month_date
+  # The ecological population offset is optional for a count description.
+  # A missing or unusable denominator propagates to its own summaries.
+  d$population[!is.finite(d$population) | d$population <= 0] <- NA_real_
   d$outcome <- outcome
   d
 }
@@ -36,13 +49,13 @@ annual <- all_df |>
   dplyr::group_by(outcome, year, data_status) |>
   dplyr::summarise(
     n_months = dplyr::n(),
-    total_events = sum(n_events, na.rm = TRUE),
-    mean_monthly_events = mean(n_events, na.rm = TRUE),
-    sd_monthly_events = sd(n_events, na.rm = TRUE),
-    mean_population = mean(population, na.rm = TRUE),
+    total_events = sum(n_events),
+    mean_monthly_events = mean(n_events),
+    sd_monthly_events = sd(n_events),
+    mean_population = mean(population),
     crude_rate_per_100k_person_years =
-      sum(n_events, na.rm = TRUE) /
-        sum(population * days_in_month, na.rm = TRUE) * 365.25 * 1e5,
+      sum(n_events) /
+        sum(population * days_in_month) * 365.25 * 1e5,
     .groups = "drop"
   )
 write_csv_safe(annual, file.path(tab_dir, "cvd_descriptive_annual_totals.csv"))
@@ -52,8 +65,8 @@ season <- all_df |>
   dplyr::group_by(outcome, month, data_status) |>
   dplyr::summarise(
     n_years = dplyr::n(),
-    mean_events = mean(n_events, na.rm = TRUE),
-    sd_events = sd(n_events, na.rm = TRUE),
+    mean_events = mean(n_events),
+    sd_events = sd(n_events),
     mean_temp = mean(mean_temp, na.rm = TRUE),
     mean_tmax = mean(mean_tmax, na.rm = TRUE),
     mean_tmin = mean(mean_tmin, na.rm = TRUE),
@@ -73,8 +86,8 @@ covid_means <- all_df |>
   dplyr::group_by(outcome, period, data_status) |>
   dplyr::summarise(
     n_months = dplyr::n(),
-    mean_events = mean(n_events, na.rm = TRUE),
-    sd_events = sd(n_events, na.rm = TRUE),
+    mean_events = mean(n_events),
+    sd_events = sd(n_events),
     mean_temp = mean(mean_temp, na.rm = TRUE),
     mean_tmax = mean(mean_tmax, na.rm = TRUE),
     mean_tmin = mean(mean_tmin, na.rm = TRUE),
@@ -82,8 +95,8 @@ covid_means <- all_df |>
     mean_cold_days = mean(cold_days, na.rm = TRUE),
     mean_very_hot_days = mean(very_hot_days, na.rm = TRUE),
     crude_rate_per_100k_person_years =
-      sum(n_events, na.rm = TRUE) /
-        sum(population * days_in_month, na.rm = TRUE) * 365.25 * 1e5,
+      sum(n_events) /
+        sum(population * days_in_month) * 365.25 * 1e5,
     .groups = "drop"
   )
 write_csv_safe(covid_means, file.path(tab_dir, "cvd_descriptive_covid_era_means.csv"))
@@ -117,10 +130,10 @@ snapshot <- all_df |>
     n_months = dplyr::n(),
     year_start = min(year),
     year_end = max(year),
-    total_events = sum(n_events, na.rm = TRUE),
-    mean_monthly = mean(n_events, na.rm = TRUE),
-    min_monthly = min(n_events, na.rm = TRUE),
-    max_monthly = max(n_events, na.rm = TRUE),
+    total_events = sum(n_events),
+    mean_monthly = mean(n_events),
+    min_monthly = min(n_events),
+    max_monthly = max(n_events),
     .groups = "drop"
   )
 write_csv_safe(snapshot, file.path(tab_dir, "cvd_descriptive_snapshot.csv"))

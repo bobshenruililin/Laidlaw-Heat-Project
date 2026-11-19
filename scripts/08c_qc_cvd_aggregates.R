@@ -4,6 +4,7 @@
 # OUTCOME env: chd | hf | stroke (default chd)
 
 source(file.path("scripts", "utils.R"))
+source(file.path("scripts", "cvd_rerun_contracts.R"))
 root <- project_root()
 setwd(root)
 cfg <- load_config(root)
@@ -107,9 +108,14 @@ if ("suppression_flag" %in% names(df)) {
 }
 
 months <- sort(unique(df$month_id))
-expected <- make_month_grid(cfg$study$start_year, 1, cfg$study$end_year, 12)$month_id
+expected <- make_month_grid(cfg$study$start_year, cfg$study$start_month,
+                            cfg$study$end_year, cfg$study$end_month)$month_id
 missing_months <- setdiff(expected, months)
 extra_months <- setdiff(months, expected)
+if (identical(mode, "real") && outcome %in% c("chd", "hf") && !has_age && !has_sex) {
+  assert_cvd_event_calendar(df$month_id, df$n_events, expected)
+  if (n_supp > 0L) stop("Suppressed territory counts require a disclosure-reviewed rule")
+}
 
 # Secular trend diagnostics (critical for first-event cohorts)
 by_year <- tapply(df$n_events, substr(df$month_id, 1, 4), sum, na.rm = TRUE)

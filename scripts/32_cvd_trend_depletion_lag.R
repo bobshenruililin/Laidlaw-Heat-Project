@@ -3,6 +3,7 @@
 # Trend, first-event depletion, lag, influence and count-time-series sensitivities.
 
 source(file.path("scripts", "utils.R"))
+source(file.path("scripts", "cvd_rerun_contracts.R"))
 root <- project_root()
 setwd(root)
 ensure_packages(c("dplyr", "MASS", "splines", "sandwich", "tscount"))
@@ -22,36 +23,6 @@ term_for <- function(exposure, scale) {
   if (scale == 1) exposure else sprintf("I(%s/%s)", exposure, scale)
 }
 
-fit_nb_nw <- function(dat, term, controls, offset = "offset(offset_log_days)") {
-  rhs <- c(term, controls, offset)
-  fml <- stats::as.formula(paste("n_events ~", paste(rhs, collapse = " + ")))
-  model <- MASS::glm.nb(fml, data = dat)
-  vm <- sandwich::NeweyWest(model, lag = 6, prewhite = FALSE, adjust = TRUE)
-  if (!term %in% names(stats::coef(model))) stop("Term not found: ", term)
-  b <- unname(stats::coef(model)[term])
-  se <- unname(sqrt(diag(vm))[term])
-  res <- stats::residuals(model, type = "pearson")
-  list(
-    model = model,
-    row = data.frame(
-      term = term,
-      estimate = b,
-      std_error_nw6 = se,
-      p_value_nw6 = 2 * stats::pnorm(abs(b / se), lower.tail = FALSE),
-      rr = exp(b),
-      rr_low = exp(b - 1.96 * se),
-      rr_high = exp(b + 1.96 * se),
-      n_months = nrow(dat),
-      residual_acf1 = if (length(res) > 1) {
-        as.numeric(stats::acf(res, plot = FALSE, lag.max = 1)$acf[2])
-      } else {
-        NA_real_
-      },
-      stringsAsFactors = FALSE
-    )
-  )
-}
-
 trend_rows <- list()
 lag_rows <- list()
 influence_rows <- list()
@@ -59,17 +30,11 @@ ts_rows <- list()
 
 for (outcome in outcomes) {
   panel_path <- file.path(root, "data_processed", paste0(outcome, "_analysis_panel.csv"))
-  dat <- utils::read.csv(panel_path, stringsAsFactors = FALSE) |>
-    dplyr::arrange(time_index) |>
+  dat <- read_cvd_model_panel(panel_path, outcome) |>
     dplyr::mutate(
-      month_f = factor(month),
       year_f = factor(year),
       covid_phase_f = factor(covid_phase)
     )
-  if (!identical(unique(as.character(dat$data_status)), "HA_APPROVED_AGGREGATE") ||
-      nrow(dat) != 132L) {
-    stop("Trend/depletion sensitivity requires real 132-month panel for ", outcome)
-  }
 
   for (pid in names(specs)) {
     spec <- specs[[pid]]
@@ -134,8 +99,8 @@ for (outcome in outcomes) {
     }
 
     if (!is.null(baseline_fit)) {
-      cooks <- stats::cooks.distance(baseline_fit)
-      max_idx <- which.max(cooks)
+      selected <- cvd_max_cook_row(baseline_fit, dat)
+      max_idx <- selected$index
       reduced <- dat[-max_idx, , drop = FALSE]
       influence_fit <- fit_nb_nw(
         reduced,
@@ -149,7 +114,7 @@ for (outcome in outcomes) {
       row$scale <- spec$scale
       row$scenario <- "exclude_max_cooks_month"
       row$excluded_month <- dat$month_id[max_idx]
-      row$max_cooks_distance <- max(cooks)
+      row$max_cooks_distance <- selected$distance
       row$data_status <- "HA_APPROVED_AGGREGATE"
       influence_rows[[paste(outcome, pid, sep = "_")]] <- row
     }
@@ -202,16 +167,18 @@ for (outcome in outcomes) {
         xreg = xreg,
         link = "log",
         distr = "nbinom",
+        info = "score",
         init.method = "marginal"
       ),
       error = function(e) NULL
     )
     if (!is.null(tsfit) && exposure_col %in% names(stats::coef(tsfit))) {
       b <- unname(stats::coef(tsfit)[exposure_col])
-      covariance <- tryCatch(solve(tsfit$info.matrix_corrected), error = function(e) NULL)
-      se <- if (is.null(covariance)) NA_real_ else {
-        sqrt(diag(covariance))[exposure_col]
+      covariance <- cvd_ingarch_vcov(tsfit)
+      variance <- if (is.null(covariance)) NA_real_ else {
+        unname(diag(covariance)[exposure_col])
       }
+      se <- if (is.finite(variance) && variance > 0) sqrt(variance) else NA_real_
       res <- stats::residuals(tsfit)
       ts_rows[[paste(outcome, pid, sep = "_")]] <- data.frame(
         outcome = outcome,
@@ -223,6 +190,9 @@ for (outcome in outcomes) {
         term = exposure_col,
         estimate = b,
         std_error = unname(se),
+        covariance_method = "tscount_vcov_score_sandwich",
+        covariance_status = if (is.finite(se)) "AVAILABLE" else "UNAVAILABLE",
+        tscount_version = as.character(utils::packageVersion("tscount")),
         rr = exp(b),
         rr_low = if (is.finite(se)) exp(b - 1.96 * se) else NA_real_,
         rr_high = if (is.finite(se)) exp(b + 1.96 * se) else NA_real_,
@@ -232,6 +202,7 @@ for (outcome in outcomes) {
           NA_real_
         },
         n_months = nrow(dat),
+        n_fitted = tsfit$n_eff,
         data_status = "HA_APPROVED_AGGREGATE",
         stringsAsFactors = FALSE
       )

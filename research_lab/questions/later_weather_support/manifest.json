@@ -1,0 +1,18 @@
+{
+  "code_sha256": {
+    "__main__.py": "2d42851c295edb694c2174c9c29e4ab43d543cc50cc1cc77789f8e8d106c9ddb",
+    "challenge.py": "eab8540769ea87fa8ad51bf9310c6095fca403cce7264bbebb201d57b16eb5c7",
+    "weather_design.py": "b500db981fe4052c1a56198a38583474bf3bd12e1075c23e93f4049e312acbf9"
+  },
+  "inputs_sha256": {
+    "data_processed/climate_monthly_2013_2023.csv": "85acacff8597d67232db34acfba2442329526b9891b392ea8e87f92e0175af52",
+    "outputs/tables/cvd_exposure_correlations.csv": "dbf2a4af2ab3f8616898cfd5a6bffce47c00da8cd51e80326d660a0ec09a1cff"
+  },
+  "kind": "Weather-only question card",
+  "output_sha256": {
+    "all_designs.csv": "6058570de5b0adf9ff08441b1583652dc2ab27b182a12f664573cdec113c84f6",
+    "question.json": "be40cc745c49d1df9476e55f8ad40744499b6aca11545c6749f00e5bfc3dc23e",
+    "selected_checks.csv": "4ceaac1be277a8e3be17e99ab57aed455cfc6d42b0cd5068e68e43be9079d759",
+    "verdict.json": "51083830df49af8794325776ea86fcf8834e96cd919e3c42ca8bcf1ba0bb8cd1"
+  }
+}

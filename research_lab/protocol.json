@@ -1,0 +1,20 @@
+{
+  "edition": "2026-11-19",
+  "parent_evidence_commit": "b3380ded3c9c65e47c69be2984d32cf404504a11",
+  "status": "Retrospective exploratory extension. Decisions below specify this reproducible run. The annual counts were already known.",
+  "inputs": {
+    "outputs/tables/cvd_descriptive_annual_totals.csv": "2d4997276d77e28761083117e292f438506d07db639deba5bc17c1843e4862e8",
+    "outputs/tables/cvd_core_robust_estimates.csv": "6acfc6f5082780c681c05c48b5953579ad7095d379429dc6125230c8c0824dd4",
+    "data_processed/climate_monthly_2013_2023.csv": "85acacff8597d67232db34acfba2442329526b9891b392ea8e87f92e0175af52",
+    "outputs/tables/cvd_exposure_correlations.csv": "dbf2a4af2ab3f8616898cfd5a6bffce47c00da8cd51e80326d660a0ec09a1cff",
+    "research_lab/sources/hk_inpatient_digest_cells.csv": "3c0d328399fdc1afbd2519e94e8724448ea2fd7d304f8807a6f4fbaa2c26ece1"
+  },
+  "experiments": {
+    "service_context": "Retain 2013–2023 for both first-event series, all-cause and broad circulatory episodes in all hospitals, and the HA-only all-cause sensitivity. Index each to its own 2019 total. Verify provider sums and overlapping Digest editions. The series may overlap and have different eligibility.",
+    "hindcast": "Predict each of 2017, 2018 and 2019 using earlier observations only. Reserve 2020 as a descriptive stress case. Carry the previous count forward or extrapolate the unweighted OLS trend in log counts over all prior years or the last three. Keep every result. Never choose a winning model on these folds.",
+    "weather_design": "For all six weather exposures measure unweighted within-calendar variation in the full 132 months and disjoint 84- and 48-month windows. Rebuild the four-df natural spline and month indicators in each window. Match the released full-design correlations. Rank squared residuals for concentration.",
+    "weather_models": "Verify all twelve original full-series lag-six p-values against the released Benjamini–Hochberg adjustment and retain all four uncertainty constructions. Output the archived estimates and do no outcome fitting.",
+    "annual_changes": "Calculate each annual change against its immediate predecessor. For CHD and HF, report the eligible person-time ratio that gives equal recorded-event rates in that year and 2019. This is an algebraic threshold, with no empirical denominator."
+  },
+  "stopping_rule": "Keep discordant results. A missing, duplicate, changed or inconsistent input fails the run. A question requiring observation history, person-time or endpoint codes returns to the responsible analyst. These checks cannot choose a confirmatory exposure or estimate an intervention effect."
+}

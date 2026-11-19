@@ -1,0 +1,55 @@
+{
+  "daily_differences": [
+    {
+      "daily_extract_c": 21.3,
+      "date": "2013-01-22",
+      "exposure": "mean_temp",
+      "station_csv_c": 21.4
+    },
+    {
+      "daily_extract_c": 23.3,
+      "date": "2015-04-22",
+      "exposure": "mean_temp",
+      "station_csv_c": 23.4
+    },
+    {
+      "daily_extract_c": 24.3,
+      "date": "2015-11-14",
+      "exposure": "mean_temp",
+      "station_csv_c": 24.4
+    }
+  ],
+  "monthly_differences": [
+    {
+      "daily_extract": 16.7032258065,
+      "exposure": "mean_temp",
+      "month": "2013-01",
+      "station_csv": 16.7064516129,
+      "station_minus_extract": 0.0032258065
+    },
+    {
+      "daily_extract": 23.6066666667,
+      "exposure": "mean_temp",
+      "month": "2015-04",
+      "station_csv": 23.61,
+      "station_minus_extract": 0.0033333333
+    },
+    {
+      "daily_extract": 24.0233333333,
+      "exposure": "mean_temp",
+      "month": "2015-11",
+      "station_csv": 24.0266666667,
+      "station_minus_extract": 0.0033333333
+    }
+  ],
+  "monthly_matches_by_exposure": {
+    "cold_days": 132,
+    "hot_nights": 132,
+    "mean_temp": 129,
+    "mean_tmax": 132,
+    "mean_tmin": 132,
+    "very_hot_days": 132
+  },
+  "n_dates": 4017,
+  "n_months": 132
+}
